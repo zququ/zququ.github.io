@@ -209,6 +209,35 @@ Python 3 正则表达式的特殊符号及用法见 [re regular expression 文�
 pattern = '\w+' # 把不限長度的數字、字母和底線字符當做符合搜尋
 pattern = 'John\w' # John開頭後面接0~多個數字、字母和底線字符
 ```
+## 搜索时的特殊符号
+
+### 使用 `？` 做搜寻
+
+正则表达式中若某些括号内的字符串或正则表达式可有可无，执行搜寻时皆算成功。如，
+
+
+```python
+msg = 'Please call my secretary using 02-26669999'
+pattern = r'(\d\d-)?(\d{8})`
+phoneNum = re.search(pattern, msg)
+print("完整的号码是： %s" % phoneNum.group())
+```
+
+### 使用 `*` 做搜寻
+
+正则表达式中若某些字符串或者正则表达式可从0到多次，执行皆算成功，例如，na 字可从0到多次，表达方式是 (na)\*。
+
+### 使用 `+` 做搜寻
+
+正则表达式中若某些字符串或者正则表达式可从1到多次，执行皆算成功，例如，na 字可从1到多次，表达方式是 (na)+。
+
+### 搜寻时忽略大小写
+
+在 `search()` 和 `find()` 内增加第三个参数（`flags`），`re.I` 或者 `re.IGNORECASE`，搜寻结果就会忽略大小写，至于打印时仍然会以原字符打印。如，
+
+```python
+txt = re.findall(pattern, msg, re.I)
+```
 
 ## 元字符
 
