@@ -147,7 +147,7 @@ Python 3 正则表达式的特殊符号及用法见 [re regular expression 文�
 >>> re.search(r"FishC$", "FishC.com"
 ```
 
-<++>
+
 
 
 
