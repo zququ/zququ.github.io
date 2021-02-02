@@ -4,6 +4,11 @@ title: Ranger 操作手册
 date: 2021-02-01 17:16:00:24.000000000 +09:00
 tags: Linux
 ---
+之前年前一直在忙，现在把 ranger 的配置文件和相应操作命令行总结一下，发出来备用吧。
+
+首先是 ranger 配置文件, [ranger\_config](https://github.com/zququ/ranger/blob/master/rc.conf) 
+
+下面是对应的操作命令行：
 
 ## Ranger 快捷命令行
 
