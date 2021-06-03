@@ -54,13 +54,32 @@ $$
 又因为由 forword propagation 可以得到，
 
 $$
-z_k^{(l+1)} = \sum_p^{s_{(l)}}\theta_{kp}^{(l)}\cdot g(z_j^{(l)}) + b_k^{(l)}
+z_k^{(l+1)} = \sum_p^{s_{(l)}}\theta_{kp}^{(l)}\cdot g(z_j^{(l)}) + b_k^{(l)} \tag 3
 $$
 
 代入 $(2)$ 中，
 
 $$
 \delta_j^{(l)} = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot g^{'}(z_j^{(l)}) = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot a_j^{(l)}\cdot(1-a_j^{(l)})
+$$
+
+再来观察关于 $J$ 和 $\theta_{ij}^{(l)}$ 的求导关系：
+
+$$
+L \rightarrow z_k^{(l+1)} (k = 1, ..., s_{(l)}) \rightarrow \theta_{ij}^{(l)}
+$$
+
+由链式法则，
+
+$$
+\frac{\partial L}{\theta_{ij}^{(l)}} = \sum_k^{s_{(l)}}\frac{\partial L}{\partial z_j^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial \theta_{ij}^{(l)}}= \sum_k^{s_{(l)}} \delta_j^{(l+1)}\cdot \frac{\partial z_k^{(l+1)}}{\partial \theta_{ij}^{(l)}}
+
+$$
+
+当 $k = i, p = j$ 时，$(3)$ 代入原式求导可消去 $\sum$ 留下一项，
+
+$$
+\frac{\partial L}{\theta_{ij}^{(l)}} = \delta_j^{(l+1)}\cdot g(z_j^{(l)}) = \delta_j^{(l+1)}\cdot a_j^{(l)}
 $$
 
 
