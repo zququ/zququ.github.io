@@ -11,6 +11,10 @@ tags: DailyUpdate
 
 用于添加软件到 Ubuntu 软件库，供兼容 i3wm rofi。
 
+其中桌面文件的地址，一般系统桌面文件在 `/usr/share/applications/`
+
+而 alacarte 的桌面文件管理地址为 `~/.local/applications`
+
 ### i3-get-window-criteria
 
 查看 windows 信息，供添加到 i3wm config 文件。
