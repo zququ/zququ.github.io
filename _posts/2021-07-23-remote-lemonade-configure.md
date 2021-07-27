@@ -31,7 +31,7 @@ fi
 ssh -R 2489:127.0.0.1:2489 -p $port $user@$ipadress
 ```
 
-where, \$port is the port, and \$user is the user, $ipadress is the ip adress of the remote Server IP adress :)
+where, `$port` is the port, and `$user` is the user, `$ipadress` is the I adress of the remote Server IP adress :)
 
 3. Then copy these in neovim's init.vim to config the copy or paste key to set the copy command.
 
