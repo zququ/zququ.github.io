@@ -30,3 +30,12 @@ tags: DailyUpdate
 ### fisher
 
 fish shell 里非常好用的软件管理程序。
+
+### sshfs
+
+sshfs　可以将远程服务器文件夹直接发送到本地，就像挂载外置硬盘一样，非常好用，命令行如下：
+
+```bash
+$'sudo sshfs -o allow_other -p $PORT $USER@$IP:/file/fold/to/mount /file/fold/mount/to/'
+```
+
