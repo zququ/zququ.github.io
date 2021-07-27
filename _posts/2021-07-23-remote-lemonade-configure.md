@@ -11,13 +11,13 @@ You can find lemonade here.
 
 [github\_lemonade](https://github.com/lemonade-command/lemonade) 
 
-Because, neovim depends on xclip to copy and pasta from the remote Client (e.g. The computers in remote which has a greater computation power), for which, the $DISPLAY is needed. So we can only do copy from the Server(local computer), we cannot do copy from the Client, however.
+Because, neovim depends on xclip to copy and pasta from the remote Server (e.g. The computers in remote which has a greater computation power), for which, the $DISPLAY is needed. So we can only do copy from the local Client (local computer), we cannot do copy from the remote Server, however.
 
 Here is a way to have the lemonade to make it.
 
-First, we need to install lemonade in both Client and the Server, attention about the environment.
+1. First, we need to install lemonade in both Client and the Server, be attention to the environment set.
 
-Second, we need to write a script in Server, named with remote:
+2. Second, we need to write a script in Server, named with remote:
 
 ```bash
 #!/bin/bash
@@ -31,9 +31,9 @@ fi
 ssh -R 2489:127.0.0.1:2489 -p $port $user@$ipadress
 ```
 
-where, $port is the port, $user is the user, $ipadress is the ip adress of the Client :)
+where, \$port is the port, and \$user is the user, $ipadress is the ip adress of the remote Server IP adress :)
 
-Then copy these in neovim's init.vim to config the copy or paste key.
+3. Then copy these in neovim's init.vim to config the copy or paste key to set the copy command.
 
 ```vimrc
 let g:clipboard = {
@@ -43,8 +43,7 @@ let g:clipboard = {
             \}
 ```
 
-After `chmod u+x remote` ( which you created in the second step), you can 
-register in the Cline after running remote and inputing the password in the command-line.
+After `chmod u+x remote` ( which you created in the second step), you can then register to the Remote after running remote and inputing the password in the command-line.
 
 
 
