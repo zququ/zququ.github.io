@@ -58,10 +58,19 @@ $$
 \begin{aligned}
 D_{KL}(p\|q) & = \sum_{i=1}^{n}p(x_i)log(p(x_i)) - \sum_{i=1}^{n}p(x_i)log(q(x_i)) \\
 & = -H(p(x)) + H(p,q)
-\end{aligned}
+\end{aligned}\tag{5}
 $$
 
 where, the $H(p,q)$ is the so called **cross entropy**, we use the $H(p,q)$ to evaluate the loss of training model instead of the relative entropy $D_{KL}(p\|q)$ , it is because the entropy ( $H(p)$ ) is remaining unchanged during the model training process.
+
+In the problem of binary classification, $(5)$ will be transformed into, 
+
+$$
+\begin{aligned}
+H(p,q) & = -\sum_{i=1}^{n}p(x_i)log(q(x_i)) \\
+& = -p(x)log(q(x)) - (1-p(x))\log(1-q(x))
+\end{aligned}\tag{6}
+$$
 
 
 
