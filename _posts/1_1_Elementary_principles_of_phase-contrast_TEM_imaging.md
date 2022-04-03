@@ -7,6 +7,14 @@ tags: cryoEM
 
 All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition) from John C. H. Spence.
 
+
+<!-- TOC GFM -->
+
+- [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
+- [Discussion about How to Increase Contrast](#discussion-about-how-to-increase-contrast)
+- [The Reason of the Lack of Contrast](#the-reason-of-the-lack-of-contrast)
+
+<!-- /TOC -->
 ### A Simple Optical Bench Experiment
 
 Here is the optical bench arrangement to record the images:
