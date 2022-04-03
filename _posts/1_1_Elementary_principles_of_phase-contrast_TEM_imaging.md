@@ -7,7 +7,6 @@ tags: cryoEM
 
 All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition) from John C. H. Spence.
 
-
 <!-- TOC GFM -->
 
 - [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
@@ -15,6 +14,7 @@ All contents are summarised from High-Resolution Electron Microscopy (Fourth Edi
 - [The Reason of the Lack of Contrast](#the-reason-of-the-lack-of-contrast)
 
 <!-- /TOC -->
+
 ### A Simple Optical Bench Experiment
 
 Here is the optical bench arrangement to record the images:
@@ -120,7 +120,4 @@ In both electron and optical microscopy the reasons for the lack of contrast at 
 That is, they behave like **a medium of variable refractive index**. It is this variation in refractive index from point to point across the specimen (proportional to the specimen’s atomic potential in volts 6 Preliminaries for electron microscopy) which must be converted into intensity variations in the image if we are to ‘see’, for example, atoms in the electron microscope
 
 For the piece of glass shown in Fig. 1.2, the phase of the wave transmitted through the glass differs from that of an unobstructed reference wave by 2π(n − 1)/λ times the thickness of the glass, where n is the refractive index of the glass.
-
-
-
 
