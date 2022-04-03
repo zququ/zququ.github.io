@@ -2,7 +2,7 @@
 layout: post
 title: Elementary principles of phase-contrast TEM imaging
 date: 2022-03-31 15:57:55:24.000000000 +09:00
-tags: Study Notes of High-Resolution Electron Microscopy (Fourth Edition) from John C. H. Spence
+tags: cryoEM
 ---
 
 All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition) from John C. H. Spence.
