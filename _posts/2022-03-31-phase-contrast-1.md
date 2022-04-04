@@ -5,7 +5,7 @@ date: 2022-03-31 15:57:55:24.000000000 +09:00
 tags: cryoEM
 ---
 
-All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) from John C. H. Spence.
+All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.
 
 <!-- TOC GFM -->
 

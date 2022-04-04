@@ -4,8 +4,7 @@ title: Electron optics 1 - The electron wavelength and relativity
 date: 2022-04-04 11:18:00:24.000000000 +09:00
 tags: cryo-EM
 ---
-All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) from John C. H. Spence.s
-
+All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.
 
 <!-- TOC GFM -->
 
