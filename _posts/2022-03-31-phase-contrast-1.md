@@ -2,23 +2,21 @@
 layout: post
 title: Elementary principles of phase-contrast TEM imaging
 date: 2022-03-31 15:57:55:24.000000000 +09:00
-tags: cryoEM
+tags: cryo-EM
 ---
 
 All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.
 
 <!-- TOC GFM -->
 
-- [1.1 A Simple Optical Bench Experiment](#11-a-simple-optical-bench-experiment)
-	+ [Result sugested:](#result-sugested)
+- [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
 - [Discussion about How to Increase Contrast](#discussion-about-how-to-increase-contrast)
 - [The Reason why Coherent but not Incoherent Illumination](#the-reason-why-coherent-but-not-incoherent-illumination)
-	+ [Conclusion:](#conclusion)
 - [How to Increase Coherent in TEM](#how-to-increase-coherent-in-tem)
 
 <!-- /TOC -->
 
-### 1.1 A Simple Optical Bench Experiment
+### A Simple Optical Bench Experiment
 
 Here is the optical bench arrangement to record the images:
 
@@ -30,7 +28,7 @@ Here is the optical bench arrangement to record the images:
 
 **Figure 2.** Optical through-focus series showing the effect of focus changes on the image of a small indentation in a glass plate (phase object). The image at (a) was recorded under-focus, that is, with the object too close to the lens L3. It shows a bright fringe surrounding the indentation similar to that seen on electron micrographs of small holes; image (b) is recorded at exact focus and shows only very faint contrast; image (c\) is recorded at an over-focus setting (object too far from L3) and so shows a dark Fresnel fringe outlining the indentation. The background fringes arise in the illuminating system.
 
-#### Result sugested:
+The result sugested:
 
 High-resolution specimens will be imaged with strong contrast only if a **coherent source of illumination is used (if not see Figure 3)** and if **images are recorded slightly out of focus (defocus)**.
 
@@ -112,7 +110,7 @@ $$
 |\exp{-2\pi i t(x) n/\lambda}|^2 = 1
 $$
 
-#### Conclusion:
+And Here is the Conclusion:
 
 1. Only by using coherent illumination and an ‘imperfect’ microscope can we hope to obtain contrast variations in the image of a specimen showing only variations in refractive index. 
 2. **In high-resolution electron microscopy of thin specimens the accurate control of illumination coherence and defect of focus are crucial for success**. 
@@ -124,7 +122,7 @@ In practice, for a microscope ﬁtted with a conventional hair-pin ﬁlament, **
 
 ![Figure 10](/assets/2022-03-31/2022-04-04-173305.png)
 
-Figure 10 Two electron microscope images of amorphous carbon ﬁlms recorded at the same focus setting but using diﬀerent condenser apertures. In (a) a small second condenser aperture has been used, resulting in an image showing high contrast and ﬁne detail. This contrast is lost in (b), where a large aperture has been used.
+**Figure 10.** Two electron microscope images of amorphous carbon ﬁlms recorded at the same focus setting but using diﬀerent condenser apertures. In (a) a small second condenser aperture has been used, resulting in an image showing high contrast and ﬁne detail. This contrast is lost in (b), where a large aperture has been used.
 
 In most cases of practical interest the imaging is partially coherent. By this we loosely mean that for object detail below a certain size $X_c$ we can use the model of coherent phase contrast imaging (see Fig. 1.2) while for detail much larger than $X_c$ the imaging is incoherent.
 

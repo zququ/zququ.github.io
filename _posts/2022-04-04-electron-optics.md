@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Electron optics 1 - The electron wavelength and relativity
+title: Electron optics 1
 date: 2022-04-04 11:18:00:24.000000000 +09:00
 tags: cryo-EM
 ---
@@ -8,10 +8,13 @@ All content are summarised from High-Resolution Electron Microscopy (Fourth Edit
 
 <!-- TOC GFM -->
 
-- [Four Problems of EM](#four-problems-of-em)
-- [The Wavelength $\lambda$](#the-wavelength-lambda)
+* [The Electron Wavelength and Relativity](#the-electron-wavelength-and-relativity)
+	- [Four Problems of EM](#four-problems-of-em)
+	- [The Wavelength $\lambda$](#the-wavelength-lambda)
 
 <!-- /TOC -->
+
+## The Electron Wavelength and Relativity
 
 ### Four Problems of EM
 
