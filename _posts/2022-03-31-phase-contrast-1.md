@@ -22,7 +22,7 @@ Here is the optical bench arrangement to record the images:
 ![The optical bench arrangement to record the images](/assets/2022-03-31/20220331_1.png)
 
 <center>
-<b>Figure 1.</b> Here L1 is a ×40 microscope objective lens at the focus of which is placed a pin-hole aperture P. Lenses L2 and L3 have a focal length of f0 = 14 cm. The object is shown at O and the film plane at F; distances are Y =30cm, U = 17 cm, and V = 80 cm. The pin-hole aperture is used as a spatial filter to provide more uniform illumination. Back-focal plane masks may be inserted at M.
+<b>Figure 1.</b> Here L1 is a ×40 microscope objective lens at the focus of which is placed a pin-hole aperture P. Lenses L2 and L3 have a focal length of f0 = 14 cm. The object is shown at O and the film plane at F; distances are Y =30cm, U = 17 cm, and V = 80 cm. The pin-hole aperture is used as a spatial filter to provide more uniform illumination. Back-focal plane masks may be inserted at M.</center>
 
 ![Figure 2](/assets/2022-03-31/2022-03-31_2.png)
 
