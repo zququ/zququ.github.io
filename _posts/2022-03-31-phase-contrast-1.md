@@ -9,7 +9,7 @@ All contents are summarised from High-Resolution Electron Microscopy (Fourth Edi
 
 <!-- TOC GFM -->
 
-- [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
+- [1.1 A Simple Optical Bench Experiment](#11-a-simple-optical-bench-experiment)
 	+ [Result sugested:](#result-sugested)
 - [Discussion about How to Increase Contrast](#discussion-about-how-to-increase-contrast)
 - [The Reason why Coherent but not Incoherent Illumination](#the-reason-why-coherent-but-not-incoherent-illumination)
@@ -18,7 +18,7 @@ All contents are summarised from High-Resolution Electron Microscopy (Fourth Edi
 
 <!-- /TOC -->
 
-### A Simple Optical Bench Experiment
+### 1.1 A Simple Optical Bench Experiment
 
 Here is the optical bench arrangement to record the images:
 
@@ -109,7 +109,7 @@ $$
 From the $(1)(2)$ and $(3)$ we can find in the incoherent lumination, the image intensity from such a phase object does not vary with position in the object, since
 
 $$
-|\exp{-2\pi i t(x) n/\lambda}^2 = 1
+|\exp{-2\pi i t(x) n/\lambda}|^2 = 1
 $$
 
 #### Conclusion:
@@ -122,14 +122,12 @@ $$
 
 In practice, for a microscope ﬁtted with a conventional hair-pin ﬁlament, **the illumination coherence is determined by the size of the second condenser lens aperture, a small aperture producing high coherence**. As shown in Figure 10.
 
-![](<++>) <++>
+![Figure 10](/assets/2022-03-31/2022-04-04-173305.png)
 
+**Figure 10** Two electron microscope images of amorphous carbon ﬁlms recorded at the same focus setting but using diﬀerent condenser apertures. In (a) a small second condenser aperture has been used, resulting in an image showing high contrast and ﬁne detail. This contrast is lost in (b), where a large aperture has been used.
 
+In most cases of practical interest the imaging is partially coherent. By this we loosely mean that for object detail below a certain size $X_c$ we can use the model of coherent phase contrast imaging (see Fig. 1.2) while for detail much larger than $X_c$ the imaging is incoherent.
 
-
-
-
-
-
+The distance **$X_c$ is given approximately by the electron wavelength divided by the semi-angle subtended by the second condenser aperture at the specimen**, when using a hair-pin ﬁlament.
 
 
