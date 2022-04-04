@@ -5,13 +5,16 @@ date: 2022-03-31 15:57:55:24.000000000 +09:00
 tags: cryoEM
 ---
 
-All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition) from John C. H. Spence.
+All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) from John C. H. Spence.
 
 <!-- TOC GFM -->
 
 - [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
+	+ [Result sugested:](#result-sugested)
 - [Discussion about How to Increase Contrast](#discussion-about-how-to-increase-contrast)
-- [The Reason of the Lack of Contrast](#the-reason-of-the-lack-of-contrast)
+- [The Reason why Coherent but not Incoherent Illumination](#the-reason-why-coherent-but-not-incoherent-illumination)
+	+ [Conclusion:](#conclusion)
+- [How to Increase Coherent in TEM](#how-to-increase-coherent-in-tem)
 
 <!-- /TOC -->
 
@@ -27,7 +30,7 @@ Here is the optical bench arrangement to record the images:
 
 **Figure 2.** Optical through-focus series showing the effect of focus changes on the image of a small indentation in a glass plate (phase object). The image at (a) was recorded under-focus, that is, with the object too close to the lens L3. It shows a bright fringe surrounding the indentation similar to that seen on electron micrographs of small holes; image (b) is recorded at exact focus and shows only very faint contrast; image (c\) is recorded at an over-focus setting (object too far from L3) and so shows a dark Fresnel fringe outlining the indentation. The background fringes arise in the illuminating system.
 
-> Result sugested:
+#### Result sugested:
 
 High-resolution specimens will be imaged with strong contrast only if a **coherent source of illumination is used (if not see Figure 3)** and if **images are recorded slightly out of focus (defocus)**.
 
@@ -75,7 +78,7 @@ Figure 3 shows the same object imaged using a conventional tungsten lamp-bulb as
 
 	**Figure 9.** Images of ice-embedded T4 bacteriophage. (A) Defocus phase contrast image, defocus 1.6 mm. (B) Zernike phase contrast image close to focus. (C) and (D) moduli of the Fourier transforms of the images in (A) and (B) respectively. White arrows in (C) indicate the first two zeros ofthe contrast transfer function. Black arrows in (C) and (D) indicate the ring corresponding to the 2.3 nm periodicity of the DNA packed in the phase capsids. Experimental conditions: acceleration voltage 200 kV, electron dose 20 e /A˚2. Scale bars: 50 nm.
 	
-### The Reason of the Lack of Contrast
+### The Reason why Coherent but not Incoherent Illumination
 
 In both electron and optical microscopy the reasons for the lack of contrast at exact focus are the same—these thin specimens (‘phase objects’) affect only the phase of the wave transmitted by the specimen and not its amplitude.
 
@@ -101,13 +104,27 @@ $$
 I(x)_i = |f(x)|^2 * |S(x)|^2 \tag{3}
 $$
 
-Where $S(x)$ specifies all the instrumental imperfections and parameters such as objective aperture size (which determines the diffraction limit), the lens aberrations, and the magnitude of any focusing error.
+**Where $S(x)$ specifies all the instrumental imperfections and parameters** such as objective aperture size (which determines the diffraction limit), the lens aberrations, and the magnitude of any focusing error. **And $f(x)$ represents the object function**.
 
-Conclusion:
+From the $(1)(2)$ and $(3)$ we can find in the incoherent lumination, the image intensity from such a phase object does not vary with position in the object, since
+
+$$
+|\exp{-2\pi i t(x) n/\lambda}^2 = 1
+$$
+
+#### Conclusion:
 
 1. Only by using coherent illumination and an ‘imperfect’ microscope can we hope to obtain contrast variations in the image of a specimen showing only variations in refractive index. 
 2. **In high-resolution electron microscopy of thin specimens the accurate control of illumination coherence and defect of focus are crucial for success**. 
 3. The amount of fine detail in a high-resolution TEM micrograph increases dramatically with improved coherence of illumination, while completely misleading detail may be observed in images recorded at the wrong focus setting.
+
+### How to Increase Coherent in TEM
+
+In practice, for a microscope ﬁtted with a conventional hair-pin ﬁlament, **the illumination coherence is determined by the size of the second condenser lens aperture, a small aperture producing high coherence**. As shown in Figure 10.
+
+![](<++>) <++>
+
+
 
 
 
