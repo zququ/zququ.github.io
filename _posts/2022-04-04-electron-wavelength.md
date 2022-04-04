@@ -6,6 +6,14 @@ tags: cryo-EM
 ---
 All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) from John C. H. Spence.s
 
+
+<!-- TOC GFM -->
+
+- [Four Problems of EM](#four-problems-of-em)
+- [The Wavelength $\lambda$](#the-wavelength-lambda)
+
+<!-- /TOC -->
+
 ### Four Problems of EM
 
 Rather than solve the Schrodinger equation for the electron microscope as a whole, it is simpler to separate the four problems:
