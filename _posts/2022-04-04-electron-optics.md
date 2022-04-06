@@ -11,6 +11,9 @@ All content are summarised from High-Resolution Electron Microscopy (Fourth Edit
 * [The Electron Wavelength and Relativity](#the-electron-wavelength-and-relativity)
 	- [Four Problems of EM](#four-problems-of-em)
 	- [The Wavelength $\lambda$](#the-wavelength-lambda)
+		+ [The Wavelength at the anode ($\lambda$)](#the-wavelength-at-the-anode-lambda)
+		+ [The Wavelength Through the Specimen ($\lambda'$)](#the-wavelength-through-the-specimen-lambda)
+	- [Simple lens properties](#simple-lens-properties)
 
 <!-- /TOC -->
 
@@ -28,6 +31,8 @@ Rather than solve the Schrodinger equation for the electron microscope as a whol
 And a wavelength is assigned to the fast electron.
 
 ### The Wavelength $\lambda$ 
+
+#### The Wavelength at the anode ($\lambda$)
 
 From the ***de Broglie*** relation,
 
@@ -76,7 +81,7 @@ with $m_0$ the electron rest mass and c the velocity of light. These equations m
 $$
 \lambda = h/(2m_0eV_r)^{1/2} \tag{4}
 $$
-S
+
 where
 
 $$
@@ -90,6 +95,49 @@ $$
 $$
 
 with $V_0$ the microscope accelerating voltage in volts and $\lambda$ in nanometres.
+
+####  The Wavelength Through the Specimen ($\lambda'$)
+The positive electrostatic potential $\phi(r)$ (in volts) inside the specimen further accelerates the incident fast electron, resulting in a small reduction in wavelength inside the specimen.
+
+![Figure 1](/assets/20220404/2022-04-06-15-47-17.png) 
+
+**Figure 1** Simpliﬁed potential energy (PE) diagram for an electron microscope. The length of the vertical arrow is proportional to the kinetic energy of the fast electron and inversely proportional to the square of its wavelength. The sum of the electron’s potential energy (represented by the height of the graph) and its kinetic energy is constant. Electrons leave the ﬁlament with low kinetic energy and high potential energy (supplied by the high-voltage set) and exchange this for kinetic energy on their way to the anode, which is at ground potential. As with a ball rolling down a hill, they are further accelerated as they ‘fall in’ to the specimen. Approximate distance down the microscope column is represented on the abscissa and the potential step at the specimen has been exaggerated.
+
+The mean value of this inner potential is given by the zero-order Fourier coeﬃcient of potential, $\upsilon_0 = \phi_0$. The refractive index $n$ of a material for electrons is then given by the ratio of wavelength $\lambda$ in a vacuum to that inside the specimen $\lambda$, so that
+
+$$
+n = \frac{\lambda}{\lambda'}=\frac{\left(\frac{1.23}{\sqrt{V_0}}\right)}{\left(\frac{1.23}{\sqrt{V_0 + \phi_0}}\right)}\approx 1 + \frac{\phi_0}{2V_0} \tag{6}
+$$
+
+**The phase shift** of a fast electron passing through a specimen of thickness t with respect to that of the vacuum is then
+
+$$
+\theta = 2\pi(n-1)t/\lambda = \pi\phi_0t/\lambda V_0 = \sigma\phi _0t \tag{7}
+$$
+
+Where, from the $eqn (1)$ we can get
+
+$$
+\begin{aligned}
+\sigma & = \pi/\lambda V_0 \\
+& = 2\pi me\lambda/h
+\end{aligned}
+$$
+
+If the approximation is then made that the exit-face wave function can be found by computing its phase along a single optical path such as AB (contributions from paths such as CA has been neglected), as shown in Figure 2.
+
+![Figure 2](/assets/20220404/2022-04-06-17-27-40.png)
+
+**Figure 2** The electron wave illustrated in two cases passing through a specimen. The wave passing through the centre of an atom (where the potential is high) has its wavelength reduced and so suﬀers a phase advance relative to the wave passing between the atoms, which experiences little change in its wavelength. The assumption of this simpliﬁed model, used in the phase grating approximation, is that the amplitude at A can be calculated along the optical path AB with no contribution at A from a point such as C. For thick specimens this approximation is unsatisfactory.
+
+### Simple lens properties
+
+At the high magniﬁcations usually used for high-resolution microscopy, **the lens currents (which determine the focal lengths) of lenses L2, L3, and L4**, for example, might be used to control the magniﬁcation.
+
+
+
+
+
 
 
 
