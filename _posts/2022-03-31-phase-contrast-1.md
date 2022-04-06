@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Elementary principles of phase-contrast TEM imaging
+title: Preliminaries of TEM
 date: 2022-03-31 15:57:55:24.000000000 +09:00
 tags: cryo-EM
 ---
@@ -9,12 +9,16 @@ All contents are summarised from High-Resolution Electron Microscopy (Fourth Edi
 
 <!-- TOC GFM -->
 
-- [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
-- [Discussion about How to Increase Contrast](#discussion-about-how-to-increase-contrast)
-- [The Reason why Coherent but not Incoherent Illumination](#the-reason-why-coherent-but-not-incoherent-illumination)
-- [How to Increase Coherent in TEM](#how-to-increase-coherent-in-tem)
+* [Elementary principles of phase-contrast TEM imaging](#elementary-principles-of-phase-contrast-tem-imaging)
+	- [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
+	- [Discussion about How to Increase Contrast](#discussion-about-how-to-increase-contrast)
+	- [The Reason why Coherent but not Incoherent Illumination](#the-reason-why-coherent-but-not-incoherent-illumination)
+	- [How to Increase Coherent in TEM](#how-to-increase-coherent-in-tem)
+* [Instrumental Requirement for high resolution](#instrumental-requirement-for-high-resolution)
 
 <!-- /TOC -->
+
+## Elementary principles of phase-contrast TEM imaging
 
 ### A Simple Optical Bench Experiment
 
@@ -127,4 +131,22 @@ In practice, for a microscope ﬁtted with a conventional hair-pin ﬁlament, **
 In most cases of practical interest the imaging is partially coherent. By this we loosely mean that for object detail below a certain size $X_c$ we can use the model of coherent phase contrast imaging (see Fig. 1.2) while for detail much larger than $X_c$ the imaging is incoherent.
 
 The distance **$X_c$ is given approximately by the electron wavelength divided by the semi-angle subtended by the second condenser aperture at the specimen**, when using a hair-pin ﬁlament.
+
+## Instrumental Requirement for high resolution
+
+A laboratory which has recently purchased a TEM and wishes to use it for high-resolution studies should consider the following points.
+
+1. The microscope site must be acceptable. Mechanical vibration, stray magnetic ﬁelds, and room temperature must all be within acceptable limits.
+2. A reliable supply of clean cooling water at constant temperature and pressure must be assured.
+3. In addition, **the spherical aberration constant Cs must be known** for the optimum objective lens excitation. This should be less than 2 mm at 100 kV if high-resolution results are expected.
+4. The specimen position, for many lens designs the chromatic aberration coeﬃcient Cc passes through a minimum as a function of lens excitation, and this parameter aﬀects both the contrast and resolution of ﬁne image detail.
+	* The complicated interaction between all these factors which depend on specimen position can best be understood using the ‘damping envelope’, This ‘damping envelope’ controls the information resolution limit (loosely referred to by manufacturers as the ‘line’ or ‘lattice’ resolution) of the instrument and depends chiefly on the size of the illumination aperture and Cc.
+	* The point resolution, however, is determined by **spherical aberration**. A method has been described which would **allow both these important resolution limits to be measured as a function of specimen position in the lens** bore through an analysis of optical diﬀractogram pairs
+5. A vacuum of 0.5 × 10−7 Torr or better is needed.
+6. The high-voltage supply of the microscope must be suﬃciently stable to allow high-resolution images to be obtained.
+7. The room containing the microscope must be easily darkened completely, and a room-light dimmer control needs to be ﬁtted within arm’s reach of the operator’s chair.
+
+
+
+
 

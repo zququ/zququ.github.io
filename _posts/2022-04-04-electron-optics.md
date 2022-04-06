@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Electron optics 1
+title: Electron optics
 date: 2022-04-04 11:18:00:24.000000000 +09:00
 tags: cryo-EM
 ---
