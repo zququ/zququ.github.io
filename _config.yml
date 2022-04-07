@@ -26,7 +26,9 @@ nav:
     - {title: 标签, description: Tags Page, url: 'http://life.zququ.fun/tags/'}
 
 # Pagination
-plugins: [jekyll-paginate]
+plugins: 
+  - jekyll-paginate
+  - jekyll-spaceship
 paginate: 10
 paginate_path: "page/:num/"
 
