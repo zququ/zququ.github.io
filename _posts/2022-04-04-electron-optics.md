@@ -14,6 +14,7 @@ All content are summarised from High-Resolution Electron Microscopy (Fourth Edit
 		+ [The Wavelength at the anode ($\lambda$)](#the-wavelength-at-the-anode-lambda)
 		+ [The Wavelength Through the Specimen ($\lambda'$)](#the-wavelength-through-the-specimen-lambda)
 	- [Simple lens properties](#simple-lens-properties)
+		+ [The ideal lens](#the-ideal-lens)
 
 <!-- /TOC -->
 
@@ -132,7 +133,58 @@ If the approximation is then made that the exit-face wave function can be found 
 
 ### Simple lens properties
 
-At the high magniﬁcations usually used for high-resolution microscopy, **the lens currents (which determine the focal lengths) of lenses L2, L3, and L4**, for example, might be used to control the magniﬁcation.
+At the high magniﬁcations usually used for high-resolution microscopy, **the lens currents (which determine the focal lengths) of lenses L2, L3, and L4**, for example, might be used to control the magniﬁcation. For a ﬁxed magniﬁcation setting, focusing is achieved by adjusting the strength of the objective lens L1 until the ﬁxed plane P1 is conjugate to the exit face of the specimen.
+
+```mermaid
+	graph LR
+	A(Lens currents of L2, L3 and L4) --> B(Focal lengths) --> C(Control the magnifications)
+	 --> G(Fixed  magnifications)
+	M(Fixed magnifications)-->D(Lens currents of object lens L1) --> E(P1 is conjugate to the exit face of the specimen) --> F(Focusing)
+```
+![Figure 3](/assets/20220404/2022-04-06-222144.png)
+
+**Figure 3** Ray diagram for an electron microscope with two condenser lenses, C1 and C2 and four imaging lenses, L1, L2, L3, and L4, operating at high magniﬁcation. A typical set of dimensions for D1 to D7 is given in Table 1, together with the possible range of focal lengths. These values may be used for examples throughout this book. Here OA is the objective aperture, P1 is a ﬁxed plane, and SA is the selected area aperture.
+
+| Distances btween lens centres (approximate) (mm) | Focal length range (mm) |
+|--------------------------------------------------|-------------------------|
+| D1 = 143.6                                       | 1.65 < f(C1) < 19       |
+| D2 = 94.3                                        | 30 < f(C2) < 1060       |
+| D3 = 251.4                                       | 15.4 < f((L2) < 281     |
+| D4 = 215.5                                       | 3.1 < f((L3) < 99.5     |
+| D5 = 44.9                                        | 2.06 < f(L4) < 16.4     |
+| D6 = 73.6                                        |                         |
+| D7 = 345.6                                       |                         |
+
+**Table 1.** Electron-optical data for a typical electron microscope. For magniﬁcations greater than 100 000 the magniﬁcation is controlled by adjusting the focal length of L3 with f(L2) = 15.4 mm ﬁxed and f(L4) = 2.1 mm ﬁxed. The focal length of L3 is set as follows: f(L3) = 9.8, 7.0, 5.0, 3.1 mm for M = 150, 200, 400, 750 K, respectively.
+
+> Why to study electron optics, seeks to determine the conditions under which the electron waveﬁeld passing through an electron lens satisﬁes the requirements for perfect image formation.
+
+#### The ideal lens
+
+The ideal lens is a mathematical abstraction which provides perfect imaging given by a projective transformation between the object and image space.
+
+The constants appearing in this transformation specify the positions of the cardinal planes of the lens. The six important cardinal planes are the two focus planes, the two principal planes, and the two nodal planes.
+
+```mermaid
+graph LR
+A(Six important cardinal planes) --> B(two focus planes)
+A --> C(two principal planes)
+A --> D(two nodal planes)
+```
+
+![Figure 4](/assets/20220404/2022-04-06-231108.png)
+
+**Figure 4.** The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.
+
+
+
+
+
+
+
+
+
+
 
 
 
