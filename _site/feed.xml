@@ -5,8 +5,8 @@
     <description>嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Apr 2022 23:08:02 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Apr 2022 23:08:02 +0800</lastBuildDate>
+    <pubDate>Fri, 08 Apr 2022 23:11:16 +0800</pubDate>
+    <lastBuildDate>Fri, 08 Apr 2022 23:11:16 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -35,45 +35,45 @@ Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your 
 
 &lt;ol&gt;
   &lt;li&gt;在自己的博客库根目录下添加文件 –&amp;gt; .github/workflows/build-jekyll.yml&lt;/li&gt;
-  &lt;li&gt;build-jekyll.yml中添加如下：
-```
-name: Build and Deploy to Github Pages&lt;/li&gt;
+  &lt;li&gt;build-jekyll.yml中添加如下：&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;on:
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name: Build and Deploy to Github Pages
+
+on:
   push:
     branches:
-      - master  # Here source code branch is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;, it could be other branch&lt;/p&gt;
+&lt;span class=&quot;p&quot;&gt;      -&lt;/span&gt; master  # Here source code branch is &lt;span class=&quot;sb&quot;&gt;`master`&lt;/span&gt;, it could be other branch
 
-&lt;p&gt;jobs:
+jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2&lt;/p&gt;
+&lt;span class=&quot;p&quot;&gt;      -&lt;/span&gt; uses: actions/checkout@v2&lt;span class=&quot;sb&quot;&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # Use GitHub Actions' cache to cache dependencies on servers
-  - uses: actions/cache@v2
-    with:
-      path: vendor/bundle
-      key: $-gems-$
-      restore-keys: |
-        $-gems-
+      # Use GitHub Actions' cache to cache dependencies on servers
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: $-gems-$
+          restore-keys: |
+            $-gems-
 
-  # Use GitHub Deploy Action to build and deploy to Github
-  - uses: jeffreytse/jekyll-deploy-action@v0.3.1
-    with:
-      provider: 'github'
-      token: $ # It's your Personal Access Token(PAT)
-      repository: ''             # Default is current repository
-      branch: 'gh-pages'         # Default is gh-pages for github provider
-      jekyll_src: './'           # Default is root directory
-      jekyll_cfg: '_config.yml'  # Default is _config.yml
-      jekyll_baseurl: ''         # Default is according to _config.yml
-      bundler_ver: '&amp;gt;=0'         # Default is latest bundler version
-      cname: ''                  # Default is to not use a cname
-      actor: ''                  # Default is the GITHUB_ACTOR
-      pre_build_commands: ''     # Installing additional dependencies (Arch Linux) ```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+      # Use GitHub Deploy Action to build and deploy to Github
+      - uses: jeffreytse/jekyll-deploy-action@v0.3.1
+        with:
+          provider: 'github'
+          token: $ # It's your Personal Access Token(PAT)
+          repository: ''             # Default is current repository
+          branch: 'gh-pages'         # Default is gh-pages for github provider
+          jekyll_src: './'           # Default is root directory
+          jekyll_cfg: '_config.yml'  # Default is _config.yml
+          jekyll_baseurl: ''         # Default is according to _config.yml
+          bundler_ver: '&amp;gt;=0'         # Default is latest bundler version
+          cname: ''                  # Default is to not use a cname
+          actor: ''                  # Default is the GITHUB_ACTOR
+          pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;其中将branches下master改为自己的推送branch名。&lt;/p&gt;
 
