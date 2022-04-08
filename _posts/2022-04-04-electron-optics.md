@@ -135,7 +135,7 @@ If the approximation is then made that the exit-face wave function can be found 
 
 At the high magniﬁcations usually used for high-resolution microscopy, **the lens currents (which determine the focal lengths) of lenses L2, L3, and L4**, for example, might be used to control the magniﬁcation. For a ﬁxed magniﬁcation setting, focusing is achieved by adjusting the strength of the objective lens L1 until the ﬁxed plane P1 is conjugate to the exit face of the specimen.
 
-```mermaid
+```mermaid!
 	graph LR
 	A(Lens currents of L2, L3 and L4) --> B(Focal lengths) --> C(Control the magnifications)
 	 --> G(Fixed  magnifications)
@@ -165,7 +165,7 @@ The ideal lens is a mathematical abstraction which provides perfect imaging give
 
 The constants appearing in this transformation specify the positions of the cardinal planes of the lens. The six important cardinal planes are the two focus planes, the two principal planes, and the two nodal planes.
 
-```mermaid
+```mermaid!
 graph LR
 A(Six important cardinal planes) --> B(two focus planes)
 A --> C(two principal planes)
