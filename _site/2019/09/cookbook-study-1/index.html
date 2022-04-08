@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -12,7 +14,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-<head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,7 +31,7 @@ var _hmt = _hmt || [];
   <meta property="og:title" content="PCB1.1 - Squence unpacking, Star syntax, deque, yield, Keeping the Last N Items, Finding the Largest or Smallest N Items, and Implementing a Priority Queue">
   <meta property="og:description" content="About the titlePython - Cookbook study CHAPTER 1 - Data Strucutres and Algorithms - PCB1 for shortSomething to say before everything beginsI plan to have a p...">
   
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
   
   <link rel="stylesheet" href="/css/main.css">
@@ -38,7 +40,7 @@ var _hmt = _hmt || [];
   <link rel="canonical" href="http://localhost:4000/2019/09/cookbook-study-1/">
   <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
   
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
   <!-- Icons -->
   <link rel="shortcut icon" href="img/favicon.ico">
   <!-- mathjax -->
@@ -56,16 +58,18 @@ var _hmt = _hmt || [];
   </script>
   <!--script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script--!>
+  </script-->
   <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <!-- Valine Comment -->
   
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
-
 <body>
 
 	<span class="mobile btn-mobile-menu">
@@ -79,17 +83,17 @@ var _hmt = _hmt || [];
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
-        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo" /></a>
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
         
         <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
         
-        <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)，预防兽医专业，农学博士。</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
         
         
-        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 计划开展免疫原改造相关研究，可以在 RG 上找到我已发表的论文</a></p>
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
         
         
         <div class="navigation-wrapper">
@@ -106,14 +110,15 @@ var _hmt = _hmt || [];
             </nav>
           </div>
           
-          <div><nav class="cover-navigation navigation--social">
+          <div>
+<nav class="cover-navigation navigation--social">
   <ul class="navigation">
 
   
   <!-- Weibo -->
   <li class="navigation__item">
     <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
-      <i class='social fa fa-weibo'></i>
+      <i class="social fa fa-weibo"></i>
       <span class="label">Weibo</span>
     </a>
   </li>
@@ -123,7 +128,7 @@ var _hmt = _hmt || [];
   <!-- Github -->
   <li class="navigation__item">
     <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
-      <i class='social fa fa-github'></i>
+      <i class="social fa fa-github"></i>
       <span class="label">Github</span>
     </a>
   </li>
@@ -133,7 +138,7 @@ var _hmt = _hmt || [];
   <!-- Twitter -->
   <li class="navigation__item">
     <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
-      <i class='social fa fa-twitter'></i>
+      <i class="social fa fa-twitter"></i>
       <span class="label">Twitter</span>
     </a>
   </li>
@@ -144,7 +149,7 @@ var _hmt = _hmt || [];
   <!-- RSS -->
   <li class="navigation__item">
     <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-      <i class='social fa fa-rss'></i>
+      <i class="social fa fa-rss"></i>
       <span class="label">RSS</span>
     </a>
   </li>
@@ -153,7 +158,7 @@ var _hmt = _hmt || [];
   <!-- Email -->
   <li class="navigation__item">
     <a href="mailto:qzh813@gmail.com" title="Contact me">
-      <i class='social fa fa-envelope'></i>
+      <i class="social fa fa-envelope"></i>
       <span class="label">Email</span>
     </a>
   </li>
@@ -163,7 +168,7 @@ var _hmt = _hmt || [];
   <!-- Research Gate  -->
   <li class="navigation__item">
     <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
-      <i class='fa fa-book'></i>
+      <i class="fa fa-book"></i>
       <span class="label">Researchgate</span>
     </a>
   </li>
@@ -177,7 +182,7 @@ var _hmt = _hmt || [];
     </div>
     
     
-    <div class="panel-cover--overlay cover-red"></div>
+    <div class="panel-cover--overlay cover-blue"></div>
     
   </div>
 </header>
@@ -185,16 +190,14 @@ var _hmt = _hmt || [];
 
 	<div class="content-wrapper">
 		<div class="content-wrapper__inner">
-			<!doctype html>
-<html>
+			
 
-<head>
+
+
 	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
 		<header class="post-header">
 			<div class="post-meta">
-				<time datetime="2019-09-16 07:21:24 +0800" itemprop="datePublished"
-					class="post-meta__date date">2019-09-16</time> &#8226; <span
-					class="post-meta__tags tags">python</span>
+				<time datetime="2019-09-16 07:21:24 +0800" itemprop="datePublished" class="post-meta__date date">2019-09-16</time> • <span class="post-meta__tags tags">python</span>
 			</div>
 
 			<div class="post-tags">
@@ -311,7 +314,7 @@ var _hmt = _hmt || [];
 <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p>apply the star unpacking to recursive algorithm <br />
+<p>apply the star unpacking to recursive algorithm <br>
 (not recommand, because of Python is not strong about inherent recursion limit)</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
         <span class="n">head</span><span class="p">,</span> <span class="o">*</span><span class="n">tail</span> <span class="o">=</span> <span class="n">items</span>
@@ -328,7 +331,8 @@ var _hmt = _hmt || [];
 <p>Related codes and text translated from <a href="https://blog.csdn.net/hellojoy/article/details/81281367">HERE</a>.</p>
 <ol>
   <li>Similirity with list
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># deque provides the same function with part of list
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1"># deque provides the same function with part of list
 </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>  <span class="c1">#Create a 'deque' sequence
 </span><span class="n">d</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -345,7 +349,8 @@ var _hmt = _hmt || [];
 </code></pre></div>    </div>
   </li>
   <li>The use of pop of deque
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="s">'12345'</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="s">'12345'</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s">'1'</span><span class="p">,</span> <span class="s">'2'</span><span class="p">,</span> <span class="s">'3'</span><span class="p">,</span> <span class="s">'4'</span><span class="p">,</span> <span class="s">'5'</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
 <span class="mi">5</span>
@@ -354,7 +359,8 @@ var _hmt = _hmt || [];
 </code></pre></div>    </div>
   </li>
   <li>The ‘length limit fuction’ of deque
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
  <span class="n">d</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)):</span>
      <span class="n">d</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
@@ -375,9 +381,10 @@ d = deque([8, 7, 6, 1, 2, 3, 4, 5, 0])
 </code></pre>
 <h4 id="yield">Yield?</h4>
 <p>Codes and text is tranlated <a href="https://blog.csdn.net/mieleizhi0522/article/details/82142856">HERE</a>
-Another thing to concern is the yield, here I find some explain about this function. <br /></p>
+Another thing to concern is the yield, here I find some explain about this function. <br></p>
 
-<h4 id="at-first-you-can-just-think-yield-as-return-for-easy-understanding-and-next-think-it-as-a-generator">At first, you can just think <code class="language-plaintext highlighter-rouge">yield</code> as <code class="language-plaintext highlighter-rouge">return</code> for easy understanding. And next, think it as a <em>generator</em></h4>
+<h4 id="at-first-you-can-just-think-yield-as-return-for-easy-understanding-and-next-think-it-as-a-generator">At first, you can just think <code class="language-plaintext highlighter-rouge">yield</code> as <code class="language-plaintext highlighter-rouge">return</code> for easy understanding. And next, think it as a <em>generator</em>
+</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'starting...'</span><span class="p">)</span>
@@ -398,9 +405,10 @@ Another thing to concern is the yield, here I find some explain about this funct
 </span></code></pre></div></div>
 
 <p>Here you may understand the relationship between yield and return, <code class="language-plaintext highlighter-rouge">yield</code> is a generator but not a function. There is a function of <code class="language-plaintext highlighter-rouge">yield</code>, <code class="language-plaintext highlighter-rouge">next()</code>, means which function to generate next step, and this time the fuction will continue from where previous <code class="language-plaintext highlighter-rouge">next()</code> stops, and when call the <code class="language-plaintext highlighter-rouge">next()</code>, generator will not begin from <code class="language-plaintext highlighter-rouge">foo()</code>, but from the previous stopped point. Then when meet the <code class="language-plaintext highlighter-rouge">yield</code> again, return the generated number, and this stip will stop.
-<br /></p>
+<br></p>
 
-<h4 id="then-another-example-about-send">Then another example about <code class="language-plaintext highlighter-rouge">send()</code></h4>
+<h4 id="then-another-example-about-send">Then another example about <code class="language-plaintext highlighter-rouge">send()</code>
+</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'starting...'</span><span class="p">)</span>
@@ -424,7 +432,7 @@ Another thing to concern is the yield, here I find some explain about this funct
 
 <h4 id="why-need-the-yield">Why need the yield?</h4>
 
-<p><br />
+<p><br>
 If there is a very big data, like (0 ~ 1000).</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">n</span>
@@ -482,7 +490,7 @@ If there is a very big data, like (0 ~ 1000).</p>
 </code></pre></div></div>
 
 <p>When writing code to search for items, it is common to use a generator function involving <code class="language-plaintext highlighter-rouge">yield</code>, this decouples the process of searching from the code that uses the reults. And using <code class="language-plaintext highlighter-rouge">deque(maxlen=N)</code> creates a fixed-sized queue. When new items are added and the queue is full, the oldest item is automatically removed.
-<br />
+<br>
 More generally, a deque can be used whenever you need a simple queue structure. If you don’t give it a maximum size, you get an unbounded queue that lets you append and pop items on either end. Adding or popping items from either end of a queue has O(1) complexity. This is unlike a list where inserting or removing items from the front of the list is O(N).</p>
 
 <h2 id="14-finding-the-largest-or-smallest-n-items">1.4. Finding the Largest or Smallest N Items</h2>
@@ -524,7 +532,7 @@ More generally, a deque can be used whenever you need a simple queue structure. 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">heapq</span><span class="p">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
 <span class="mi">2</span>
 </code></pre></div></div>
-<p>If you just want to find the single largest or smallest, <code class="language-plaintext highlighter-rouge">max()</code> and <code class="language-plaintext highlighter-rouge">min()</code> is faster.<br />
+<p>If you just want to find the single largest or smallest, <code class="language-plaintext highlighter-rouge">max()</code> and <code class="language-plaintext highlighter-rouge">min()</code> is faster.<br>
 If N is about the same size as the collection itself, sort first and take a slice (<code class="language-plaintext highlighter-rouge">sorted(items)[:N]</code> or <code class="language-plaintext highlighter-rouge">sorted(items)[-N:]</code> is faster).</p>
 
 <h2 id="15-implemeting-a-priority-queue">1.5. Implemeting a Priority Queue</h2>
@@ -572,7 +580,7 @@ If N is about the same size as the collection itself, sort first and take a slic
 
 <span class="nb">TypeError</span><span class="p">:</span> <span class="n">unorderable</span> <span class="n">types</span><span class="p">:</span> <span class="n">Item</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">Item</span><span class="p">()</span>
 </code></pre></div></div>
-<p><br />
+<p><br>
 &lt;-**-&gt; Here index will function as a proper way to handle the problems when two items possess the same priority.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Item</span><span class="p">(</span><span class="s">'foo'</span><span class="p">))</span>
@@ -594,13 +602,11 @@ If N is about the same size as the collection itself, sort first and take a slic
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Last One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2019/09/LA-the-nullspace/"
-				title="link to LA3.2 The Nullspace of A">LA3.2 The Nullspace of A</a></h2>
-		<p class="excerpt">The Nullspace of A  The nullspace $N(A)$ consists of all solutions to $Ax=0$. These vectors $x$ are in $R^n$.The solution vectors $x$ have $n$ components. They are vectors in $R^n$, so the nullspace is a subspace of $R^n$. The $C(A)$ is a subspace...&hellip;</p>
-		<div class="post-list__meta"><time datetime="2019-09-17 07:50:24 +0800"
-				class="post-list__meta--date date">2019-09-17</time> &#8226; <span
-				class="post-list__meta--tags tags">数学</span><a class="btn-border-small"
-				href=/2019/09/LA-the-nullspace/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2019/09/LA-the-nullspace/" title="link to LA3.2 The Nullspace of A">LA3.2 The Nullspace of A</a></h2>
+		<p class="excerpt">The Nullspace of A  The nullspace $N(A)$ consists of all solutions to $Ax=0$. These vectors $x$ are in $R^n$.The solution vectors $x$ have $n$ components. They are vectors in $R^n$, so the nullspace is a subspace of $R^n$. The $C(A)$ is a subspace...…</p>
+		<div class="post-list__meta">
+<time datetime="2019-09-17 07:50:24 +0800" class="post-list__meta--date date">2019-09-17</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2019/09/LA-the-nullspace/">More</a>
+</div>
 	</div>
 	
 
@@ -608,42 +614,39 @@ If N is about the same size as the collection itself, sort first and take a slic
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Next One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2019/09/static-class-abstract-method/"
-				title="link to Python - Binding and the Static, Class, Abstract Method">Python - Binding and the Static, Class, Abstract Method</a></h2>
-		<p class="excerpt">Something about parameter bindingFunction is stored as the attribute of class, as you can see in the code followed.class Pizza(object):    def __init__(self, size):        self.size = size    def get_size(self):        return self.sizeprint(Pizza....&hellip;</p>
-		<div class="post-list__meta"><time datetime="2019-09-04 15:45:24 +0800"
-				class="post-list__meta--date date">2019-09-04</time> &#8226; <span
-				class="post-list__meta--tags tags">python</span><a class="btn-border-small"
-				href=/2019/09/static-class-abstract-method/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2019/09/static-class-abstract-method/" title="link to Python - Binding and the Static, Class, Abstract Method">Python - Binding and the Static, Class, Abstract Method</a></h2>
+		<p class="excerpt">Something about parameter bindingFunction is stored as the attribute of class, as you can see in the code followed.class Pizza(object):    def __init__(self, size):        self.size = size    def get_size(self):        return self.sizeprint(Pizza....…</p>
+		<div class="post-list__meta">
+<time datetime="2019-09-04 15:45:24 +0800" class="post-list__meta--date date">2019-09-04</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/09/static-class-abstract-method/">More</a>
+</div>
 	</div>
 	
 </section>
 
 	<section class="post-comments">
-<!--
-  
-    <div id="disqus_thread"></div>
-    <script>
-    var disqus_config = function () {
-        this.page.url = "http://localhost:4000/2019/09/cookbook-study-1/";
-        this.page.identifier = "/2019/09/cookbook-study-1/";
-    };
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2019/09/cookbook-study-1/";
+			this.page.identifier = "/2019/09/cookbook-study-1/";
+		};
 
-    var disqus_shortname = 'zququ';
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
-   
--->
-  
-    <div id="comments"></div> 
-   
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
 
 	<script>
     var valine = new Valine();
@@ -660,15 +663,28 @@ If N is about the same size as the collection itself, sort first and take a slic
 </script>
 
 
-</html>
+
 
 			<section class="footer">
-    <footer>
-        <span class="footer__copyright">&copy; 2020  <a href="https://zququcv.netlify.com">@zququ</a> Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
-    </footer>
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
 </section>
 
-		</div>
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
 	</div>
 
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -678,6 +694,7 @@ If N is about the same size as the collection itself, sort first and take a slic
 
 
 
-</body>
 
+
+</body>
 </html>

@@ -1,0 +1,2 @@
+I"C<p>对于time对象t来说，str(t)相当于t.isoformat()</p>
+:ET

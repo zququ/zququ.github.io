@@ -1,0 +1,2 @@
+I"_<p>等同于timedelta(-t1.days, -t1.seconds, -t1.microseconds)，并且相当于t1*-1</p>
+:ET

@@ -1,0 +1,2 @@
+I"N<p>tzinfo为None，返回None；否则返回self.tzinfo.tzname(self)</p>
+:ET

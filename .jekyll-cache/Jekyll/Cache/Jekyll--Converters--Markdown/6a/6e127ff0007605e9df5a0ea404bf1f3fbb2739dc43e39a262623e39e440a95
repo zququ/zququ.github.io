@@ -1,0 +1,97 @@
+I"<h3 id="absolute-value-norm">Absolute-value norm</h3>
+<p>$$
+| x| = |x|
+$$</p>
+
+<p>is a norm on the $\Bbb R^1$ vector spaces formed by the real or complex numbers. Any norm $p$ on a $\Bbb R^1$ is equivalent (norm-preserving isomorphism of vector spaces).</p>
+
+<h3 id="euclidean-norm">Euclidean norm</h3>
+
+<p>On the $\Bbb R^n$ Euclidean space, intuitive notion of length of the vector $\pmb x = (x_1, x_2, …, x_n)$ is</p>
+
+<p>$$
+|\pmb x|_2 := \sqrt{x^2_1+x^2_2+…+x^2_n}
+$$</p>
+
+<p>or for two vectors</p>
+
+<p>$$
+|\pmb x|:= \sqrt{\pmb x\cdot \pmb x}
+$$</p>
+
+<p>which is also called the $L^2$ norm,  $\ell^2$ norm, 2-norm or square norm. And the distance defined by euclidean norm is called the Euclidean length, $L^2$ distance or $\ell^2$ distance.</p>
+
+<h3 id="euclidean-norm-of-complex-numbers">Euclidean norm of complex numbers</h3>
+
+<p>The Euclidean norm of a complex number is the absolute value (also called the modulus) of it, if the complex plane is identified with the Euclidean plane $\Bbb R^2$ , the Euclidean norm is,</p>
+
+<p>$$
+|x + iy| = \sqrt{x^2 + y^2}
+$$</p>
+
+<h3 id="finite-dimensional-complex-normed-spaces">Finite-dimensional complex normed spaces</h3>
+
+<p>On an n-dimensional complex space $\Bbb C^n$, the most common norm is</p>
+
+<p>$$
+|z||:=\sqrt{|z_1|^2 + … + |z_n|^2} = \sqrt{z_1\bar z_1 + … +z_n\bar z_n}
+$$</p>
+
+<p>And can be expressed as the square root of the inner product of the vector and itself,</p>
+
+<p>$$
+|\pmb x|:=\sqrt{\pmb x^H\cdot \pmb x}
+$$</p>
+
+<p>where, $\pmb x$ is represented as a column vector $[x_1;x_2;…;x_n]$, and $\pmb x^H$ denotes its conjugate transpose. Which also can be denoted with,</p>
+
+<p>$$
+|\pmb x|:=\sqrt{\pmb x\cdot \pmb x}
+$$</p>
+
+<h3 id="quaternions-and-octonions">Quaternions and octonions</h3>
+
+<p>There are exactly four Euclidean Hurwitz algebras over the real numbers. real number $\Bbb R$, the complex numbers $\Bbb C$, the quaternions $\Bbb H$ and the octonions $\Bbb O$, with dimension of 1, 2, 4 and 8, respectively.</p>
+
+<h3 id="taxicab-norm-or-manhattan-norm">Taxicab norm or Manhattan norm</h3>
+
+<p>$$
+|\pmb x|_1:= \sum_{i=1}^{n}|x_i|
+$$</p>
+
+<p>Related to the distance a taxi has to drive in a rectangular street grid to get from the origin to the point $x$ . Which can be also called the $\ell^1$ norm, and the distance derived from this norm is called the Manhattan distance or $\ell_1$ distance.</p>
+
+<p>Attention, can’t written into, $\sum_{i=1}^{n}x_i$ instead, because it may yield negative results.</p>
+
+<h3 id="p-norm">p-norm</h3>
+
+<p>Let $p\ge1$ be a real number. The p-norm (also called $\ell_p$-norm) of vector $\pmb x = (x_1, …, x_n)$ is,</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$$|\pmb x|<em>p:=\left(\sum</em>{i-i}^{n}</td>
+      <td>x_i</td>
+      <td>^p\right)^{1/p}$$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>when $p = 1$, we get taxicab norm, $p=2$, we get Euclidean norm and if $p$ approaches $\infty$, we will get the infinity norm or maximum norm:</p>
+
+<p>$$
+|\pmb x|_{\infty}:=\max_i|x_i|.
+$$</p>
+
+<p>The p-norm is related to the generalized mean or power mean.</p>
+
+<p>when $0&lt;p&lt;1$ (wiki)</p>
+
+<h3 id="maximum-norm-special-case-of--infinity-norm--uniform-norm-or-supremum-norm">Maximum norm (special case of : infinity norm , uniform norm or supremum norm)</h3>
+
+<p>$$
+|x|_{\infty} :=max(|x_1|, …, |x+|)
+$$</p>
+
+<p>&lt;++&gt;</p>
+:ET

@@ -1,0 +1,91 @@
+I"2<p>之前年前一直在忙，现在把 ranger 的配置文件和相应操作命令行总结一下，发出来备用吧。</p>
+
+<p>首先是 ranger 配置文件, <a href="https://github.com/zququ/ranger/blob/master/rc.conf">ranger_config</a></p>
+
+<p>下面是对应的操作命令行：</p>
+
+<h2 id="ranger-快捷命令行">Ranger 快捷命令行</h2>
+
+<ol>
+  <li>gg 到文件最上面；G 到文件最下面</li>
+  <li>可以用默认编辑器打开文档或按 “r” 直接运行对应脚本</li>
+  <li>’[‘，’]’来移动副目录</li>
+  <li>‘H’退回历史操作；’L’历史记录上调</li>
+  <li>可自定义进入文件夹的快捷键, 例如
+    <ul>
+      <li>gi -&gt; github</li>
+      <li>gh -&gt; home</li>
+      <li>gr -&gt; root</li>
+      <li>g 显示可跳跃的目录快捷键</li>
+    </ul>
+  </li>
+  <li>zh 显示掩藏文件</li>
+  <li>o 排序模式</li>
+  <li>’/’ -&gt; ： search() 搜索</li>
+  <li>f -&gt; 只显示含有目标文件</li>
+  <li>真正进入文件夹 (shift+s) ‘S’</li>
+  <li><em>fzf 显示出好多文件，可以模糊匹配</em></li>
+  <li>复制文件内容：
+    <ul>
+      <li>yp -&gt; 复制文件地址</li>
+      <li>yn -&gt; 复制文件名</li>
+      <li>y. -&gt; 复制去掉文件后缀的文件名</li>
+    </ul>
+  </li>
+  <li>‘V’ -&gt; 用vim打开文件</li>
+  <li>‘M’ -&gt; 创建文件夹</li>
+  <li>cw -&gt; 重新命名文件，或者’a’与’A’句前句后重命名</li>
+  <li>按 v 或 space 多选文件，按 cw，识别是否为多文件，如果为多文件则打开vim，并将文件名复制进入批量处理（调用’:bulkrename’）
+    <ul>
+      <li>操作方法：Ctrl + v -&gt; 进入 visual box 模式，选中后 ‘shift + u’ (‘U’) 插入</li>
+    </ul>
+  </li>
+  <li>文件操作方法：
+    <ul>
+      <li>yy -&gt; 文件变灰</li>
+      <li>pp -&gt; 粘贴，当文件较大按’w’可看进度条</li>
+      <li>再 pp -&gt; 文件名.txt_ 加下划线</li>
+      <li>po 覆盖粘贴</li>
+      <li>dd 剪切</li>
+      <li>dD 删除，当删除文件夹时会询问</li>
+      <li>dU 看文件目录大小</li>
+      <li>退出任务管理器 -&gt; ‘q’或’w’</li>
+      <li>打包压缩 -&gt; v选中后  ‘:compress’</li>
+      <li>‘x’ -&gt; 解压缩</li>
+      <li>Markdwon -&gt; cp 制作成pdf</li>
+      <li>ytv -&gt; 下载文件（视频）</li>
+    </ul>
+  </li>
+  <li>配置 ranger:
+    <ul>
+      <li>ranger 目录: ~/.config/ranger/</li>
+      <li>ranger –copy-config=all</li>
+      <li>RANGER_LOAD_DEFAULT_RC FALSE</li>
+      <li><code class="language-plaintext highlighter-rouge">export RANGER_LOAD_DEFAULT_RC=FALSE</code> -&gt; bashrc</li>
+      <li><code class="language-plaintext highlighter-rouge">set -g -x RANGER_LOAD_DEFAULT_RC FALSE</code> -&gt; fishrc</li>
+      <li>command.py</li>
+      <li>rc.conf -&gt; 主要配置</li>
+      <li>rifle.conf -&gt; 默认程序</li>
+      <li>scope.sh -&gt; 预览配置</li>
+      <li>github plugins -&gt; Ranger Devicon (depand on nerdfont)</li>
+      <li>github 脚本 -&gt; Custom commands</li>
+      <li>console -&gt; 执行 ranger 命令等</li>
+    </ul>
+  </li>
+  <li>其他:
+    <ul>
+      <li>vcs_aware 改成TRUE -&gt; github查看状态:<code class="language-plaintext highlighter-rouge">set vcs_aware true</code></li>
+      <li>
+        <p>官方image preview，安装 w3m 浏览器 image loader -&gt; terminal里显示文件</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  set preview_images w3m
+  set preview_images_method w3m
+</code></pre></div>        </div>
+      </li>
+      <li>视频：<code class="language-plaintext highlighter-rouge">scope_sh -&gt; vedeo</code>取消批注</li>
+    </ul>
+  </li>
+  <li>如何定义快捷键 -&gt;github -&gt; keybindings -&gt; Archwikis</li>
+</ol>
+
+:ET

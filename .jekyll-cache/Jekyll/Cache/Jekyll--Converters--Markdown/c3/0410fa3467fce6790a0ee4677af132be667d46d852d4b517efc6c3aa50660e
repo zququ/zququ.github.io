@@ -1,0 +1,2 @@
+I"|<p>返回一个表示日期的字符串，相当于time模块的time.ctime(time.ctime(time.mktime(d.timetuple())))</p>
+:ET

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -12,7 +14,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-<head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,7 +31,7 @@ var _hmt = _hmt || [];
   <meta property="og:title" content="ml-P2 Regression Case Study and Basic Concept">
   <meta property="og:description" content="整理自李宏毅教授 2020 机器学习课程">
   
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
   
   <link rel="stylesheet" href="/css/main.css">
@@ -38,7 +40,7 @@ var _hmt = _hmt || [];
   <link rel="canonical" href="http://localhost:4000/2020/06/ml-Regression-P1/">
   <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
   
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
   <!-- Icons -->
   <link rel="shortcut icon" href="img/favicon.ico">
   <!-- mathjax -->
@@ -56,16 +58,18 @@ var _hmt = _hmt || [];
   </script>
   <!--script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script--!>
+  </script-->
   <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <!-- Valine Comment -->
   
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
-
 <body>
 
 	<span class="mobile btn-mobile-menu">
@@ -79,17 +83,17 @@ var _hmt = _hmt || [];
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
-        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo" /></a>
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
         
         <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
         
-        <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)，预防兽医专业，农学博士。</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
         
         
-        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 计划开展免疫原改造相关研究，可以在 RG 上找到我已发表的论文</a></p>
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
         
         
         <div class="navigation-wrapper">
@@ -106,14 +110,15 @@ var _hmt = _hmt || [];
             </nav>
           </div>
           
-          <div><nav class="cover-navigation navigation--social">
+          <div>
+<nav class="cover-navigation navigation--social">
   <ul class="navigation">
 
   
   <!-- Weibo -->
   <li class="navigation__item">
     <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
-      <i class='social fa fa-weibo'></i>
+      <i class="social fa fa-weibo"></i>
       <span class="label">Weibo</span>
     </a>
   </li>
@@ -123,7 +128,7 @@ var _hmt = _hmt || [];
   <!-- Github -->
   <li class="navigation__item">
     <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
-      <i class='social fa fa-github'></i>
+      <i class="social fa fa-github"></i>
       <span class="label">Github</span>
     </a>
   </li>
@@ -133,7 +138,7 @@ var _hmt = _hmt || [];
   <!-- Twitter -->
   <li class="navigation__item">
     <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
-      <i class='social fa fa-twitter'></i>
+      <i class="social fa fa-twitter"></i>
       <span class="label">Twitter</span>
     </a>
   </li>
@@ -144,7 +149,7 @@ var _hmt = _hmt || [];
   <!-- RSS -->
   <li class="navigation__item">
     <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-      <i class='social fa fa-rss'></i>
+      <i class="social fa fa-rss"></i>
       <span class="label">RSS</span>
     </a>
   </li>
@@ -153,7 +158,7 @@ var _hmt = _hmt || [];
   <!-- Email -->
   <li class="navigation__item">
     <a href="mailto:qzh813@gmail.com" title="Contact me">
-      <i class='social fa fa-envelope'></i>
+      <i class="social fa fa-envelope"></i>
       <span class="label">Email</span>
     </a>
   </li>
@@ -163,7 +168,7 @@ var _hmt = _hmt || [];
   <!-- Research Gate  -->
   <li class="navigation__item">
     <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
-      <i class='fa fa-book'></i>
+      <i class="fa fa-book"></i>
       <span class="label">Researchgate</span>
     </a>
   </li>
@@ -177,7 +182,7 @@ var _hmt = _hmt || [];
     </div>
     
     
-    <div class="panel-cover--overlay cover-red"></div>
+    <div class="panel-cover--overlay cover-blue"></div>
     
   </div>
 </header>
@@ -185,16 +190,14 @@ var _hmt = _hmt || [];
 
 	<div class="content-wrapper">
 		<div class="content-wrapper__inner">
-			<!doctype html>
-<html>
+			
 
-<head>
+
+
 	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
 		<header class="post-header">
 			<div class="post-meta">
-				<time datetime="2020-06-26 20:08:24 +0800" itemprop="datePublished"
-					class="post-meta__date date">2020-06-26</time> &#8226; <span
-					class="post-meta__tags tags">MachineLearning</span>
+				<time datetime="2020-06-26 20:08:24 +0800" itemprop="datePublished" class="post-meta__date date">2020-06-26</time> • <span class="post-meta__tags tags">MachineLearning</span>
 			</div>
 
 			<div class="post-tags">
@@ -218,12 +221,16 @@ var _hmt = _hmt || [];
 
 <ul>
   <li><a href="#regression">Regression</a></li>
-  <li><a href="#example-application">Example Application</a>
-      + <a href="#step-1-model">Step 1: Model</a></li>
-  <li><a href="#basic-concept---where-does-the-error-come-from">Basic Concept - Where does the error come from?</a>
+  <li>
+<a href="#example-application">Example Application</a>
+      + <a href="#step-1-model">Step 1: Model</a>
+</li>
+  <li>
+<a href="#basic-concept---where-does-the-error-come-from">Basic Concept - Where does the error come from?</a>
     <ul>
       <li><a href="#estimator">Estimator</a></li>
-      <li><a href="#bias-and-variance-of-estimator">Bias and Variance of Estimator</a>
+      <li>
+<a href="#bias-and-variance-of-estimator">Bias and Variance of Estimator</a>
         <ul>
           <li><a href="#variance">Variance</a></li>
           <li><a href="#bias">Bias</a></li>
@@ -232,7 +239,8 @@ var _hmt = _hmt || [];
       </li>
       <li><a href="#what-to-do-with-large-variance">What to do with large variance?</a></li>
       <li><a href="#model-selection">Model Selection</a></li>
-      <li><a href="#cross-validation">Cross Validation</a>
+      <li>
+<a href="#cross-validation">Cross Validation</a>
         <ul>
           <li><a href="#n-fold-cross-validation">N-fold Cross Validation</a></li>
         </ul>
@@ -249,19 +257,25 @@ var _hmt = _hmt || [];
   <li>Stock Market Forecast</li>
 </ul>
 
-\[f("股票数据") = Dow\ Jones\ Industrial\ Average\ at\ tomorrow\]
+<p>$$
+f(“股票数据”) = Dow\ Jones\ Industrial\ Average\ at\ tomorrow
+$$</p>
 
 <ul>
   <li>Self-driving Car</li>
 </ul>
 
-\[f("无人车的Sensor") = 方向盘角度\]
+<p>$$
+f(“无人车的Sensor”) = 方向盘角度
+$$</p>
 
 <ul>
   <li>Recommendation</li>
 </ul>
 
-\[f("使用者A\ \ 商品B") = 购买可能性\]
+<p>$$
+f(“使用者A\ \ 商品B”) = 购买可能性
+$$</p>
 
 <h2 id="example-application">Example Application</h2>
 
@@ -273,7 +287,9 @@ var _hmt = _hmt || [];
   </li>
 </ul>
 
-\[f("宝可梦的参数\rightarrow x") = "CP\ after \ evolution \rightarrow y"\]
+<p>$$
+f(“宝可梦的参数\rightarrow x”) = “CP\ after \ evolution \rightarrow y”
+$$</p>
 
 <h4 id="step-1-model">Step 1: Model</h4>
 
@@ -281,19 +297,19 @@ var _hmt = _hmt || [];
   <li>
     <p>A set of function 去描述一个Model:</p>
 
-\[y = b + w\cdot x_{cp}\]
+    <p>$$ y = b + w\cdot x_{cp} $$</p>
 
     <p>$w$ and $b$ are parameters (can be any value), eg:</p>
 
-\[f_1:y=10.0+9.0\cdot x_{cp} \\f_2:y=9.8 + 9.2\cdot x_{cp} \\f_3:y=-0.8-1.2\cdot x_{cp} \\......\]
+    <p>$$f_1:y=10.0+9.0\cdot x_{cp} \f_2:y=9.8 + 9.2\cdot x_{cp} \f_3:y=-0.8-1.2\cdot x_{cp} \……$$</p>
 
     <p>用以上去描述宝可梦的函数式:</p>
 
-\[f(x)="CP\ after\ evolution" \rightarrow y\]
+    <p>$$f(x)=”CP\ after\ evolution” \rightarrow y$$</p>
 
     <p>这叫做 <strong>Linear model</strong>，</p>
 
-\[y = b + \sum{w_ix_i}\]
+    <p>$$ y = b + \sum{w_ix_i} $$</p>
 
     <p>其中，$x_i$：An attribute of input x, 用来描述 <code class="language-plaintext highlighter-rouge">feature</code>，$w_i$：weight，$b$: bias 。</p>
   </li>
@@ -304,17 +320,17 @@ var _hmt = _hmt || [];
 
     <p>接下来的 Training Data 假设就是 10 只宝可梦。即，</p>
 
-\[(x^1, \hat{y}^1)\\ (x^2, \hat{y}^2)\\... \\(x^{10}，\hat{y}^{10})\]
+    <p>$$(x^1, \hat{y}^1)\\ (x^2, \hat{y}^2)\… \(x^{10}，\hat{y}^{10})$$</p>
 
     <p>对应图像如下，</p>
 
-    <p><img src="/assets/202006/2020-06-26-22-17-41.png" alt="figure1" /></p>
+    <p><img src="/assets/202006/2020-06-26-22-17-41.png" alt="figure1"></p>
 
     <p>图中任意一点的值为 $(x^n_{cp}, \hat{y}^n)$。</p>
 
     <p>在有了 training data 以后，需要定义另一个Loss function $L$: 其中input 为对应的 function，output 即为 how bad it is，即：</p>
 
-\[L(f) = L(w, b)\\ =\sum^{10}_{n=1}(\hat{y}^n - (b+w\cdot x^n_{cp}))^2\]
+    <p>$$L(f) = L(w, b)\\ =\sum^{10}<em>{n=1}(\hat{y}^n - (b+w\cdot x^n</em>{cp}))^2$$</p>
 
     <p>衡量参数的好坏, 即$w$ 和$b$ 的好坏，</p>
 
@@ -324,14 +340,14 @@ var _hmt = _hmt || [];
 
     <p>图像为，</p>
 
-    <p><img src="/assets/202006/2020-06-26-22-36-19.png" alt="figure2" /></p>
+    <p><img src="/assets/202006/2020-06-26-22-36-19.png" alt="figure2"></p>
   </li>
   <li>
     <p>Step: Best Function</p>
 
     <p>在建立了 A set of function 之后，要 pick the BEST Function，</p>
 
-\[\begin{aligned}f^{*}=&amp; \arg \min _{f} L(f) \\w^{*}, b^{*} &amp;=\arg \min _{w, b} L(w, b) \\&amp;=\arg \min _{w, b} \sum_{n=1}^{10}\left(\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)^{2}\end{aligned}\]
+    <p>$$\begin{aligned}f^{<em>}=&amp; \arg \min _{f} L(f) \w^{</em>}, b^{*} &amp;=\arg \min <em>{w, b} L(w, b) \&amp;=\arg \min _{w, b} \sum</em>{n=1}^{10}\left(\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)^{2}\end{aligned}$$</p>
 
     <p>可以利用 <strong>Gradient Descent</strong> 来解这个 function。</p>
   </li>
@@ -347,28 +363,42 @@ var _hmt = _hmt || [];
           <li>
             <p>Compute</p>
 
-\[\left.\frac{dL}{dw}\right|_{w=w^0}\]
+            <table>
+              <tbody>
+                <tr>
+                  <td>$$\left.\frac{dL}{dw}\right</td>
+                  <td>_{w=w^0}$$</td>
+                </tr>
+              </tbody>
+            </table>
 
             <p>用图像来表示即为，</p>
 
-            <p><img src="/assets/202006/2020-06-26-22-49-54.png" alt="figure3" /></p>
+            <p><img src="/assets/202006/2020-06-26-22-49-54.png" alt="figure3"></p>
 
             <p>寻找下一个$w^1$的值，即为</p>
 
-\[w^1 \leftarrow w^0 - \left.\eta \frac{dL}{dw}\right|_{w=w^0}\]
+            <table>
+              <tbody>
+                <tr>
+                  <td>$$w^1 \leftarrow w^0 - \left.\eta \frac{dL}{dw}\right</td>
+                  <td>_{w=w^0}$$</td>
+                </tr>
+              </tbody>
+            </table>
 
             <p>其中 $\eta$ 被称为 “<strong>learning rate</strong>“，越大学习速度越快。</p>
           </li>
           <li>
             <p>下一步重复 Compute 
-  \(\left.\frac{dL}{dw}\right| _{w=w^1}\)</p>
+  $$\left.\frac{dL}{dw}\right| _{w=w^1}$$</p>
           </li>
           <li>
             <p>… Many iterations ( T times )</p>
 
             <p>这时候的情况如下图：</p>
 
-            <p><img src="/assets/202006/2020-06-26-23-00-53.png" alt="figure4" /></p>
+            <p><img src="/assets/202006/2020-06-26-23-00-53.png" alt="figure4"></p>
 
             <p>这时获得了 <strong>Local optimal</strong> $\rightarrow w^T$，但注意是并非 <strong>Global optimal</strong> 。</p>
           </li>
@@ -379,7 +409,7 @@ var _hmt = _hmt || [];
 
         <p>对应公式如下，</p>
 
-\[w^*, b^* = \arg \min_{w, b}L(w, b)\]
+        <p>$$w^<em>, b^</em> = \arg \min_{w, b}L(w, b)$$</p>
 
         <ul>
           <li>
@@ -390,25 +420,57 @@ var _hmt = _hmt || [];
           </li>
         </ul>
 
-\[\left.\frac{\partial L}{\partial w}\right|_{w=w^{0}, b=b^{0}},\left.\frac{\partial L}{\partial b}\right|_{w=w^0, b=b^0}\]
+        <table>
+          <tbody>
+            <tr>
+              <td>$$\left.\frac{\partial L}{\partial w}\right</td>
+              <td>_{w=w^{0}, b=b^{0}},\left.\frac{\partial L}{\partial b}\right</td>
+              <td>_{w=w^0, b=b^0}$$</td>
+            </tr>
+          </tbody>
+        </table>
 
         <ul>
           <li>分别更新 $w$ 与 $b$ 的值</li>
         </ul>
 
-\[w^1 \leftarrow w^0 - \left.\eta\frac{\partial L}{\partial w}\right|_{w=w^0, b=b^0}\\ b^1 \leftarrow b^0 - \left.\eta\frac{\partial L}{\partial b}\right|_{w=w^0, b=b^0}\]
+        <table>
+          <tbody>
+            <tr>
+              <td>$$ w^1 \leftarrow w^0 - \left.\eta\frac{\partial L}{\partial w}\right</td>
+              <td>_{w=w^0, b=b^0}\ b^1 \leftarrow b^0 - \left.\eta\frac{\partial L}{\partial b}\right</td>
+              <td>_{w=w^0, b=b^0}$$</td>
+            </tr>
+          </tbody>
+        </table>
 
         <ul>
           <li>Compute</li>
         </ul>
 
-\[\left.\frac{\partial L}{\partial w}\right|_{w=w^1, b=b^1}, \left.\frac{\partial L}{\partial b}\right|_{w=w^1, b=b^1}\]
+        <table>
+          <tbody>
+            <tr>
+              <td>$$ \left.\frac{\partial L}{\partial w}\right</td>
+              <td>_{w=w^1, b=b^1}, \left.\frac{\partial L}{\partial b}\right</td>
+              <td>_{w=w^1, b=b^1}$$</td>
+            </tr>
+          </tbody>
+        </table>
 
         <ul>
           <li>再次更新 $w$，$b$ 的值</li>
         </ul>
 
-\[w^2 \leftarrow w^1 - \left.\eta\frac{\partial L}{\partial w}\right|_{w=w^1, b=b^1}\\ b^2 \leftarrow b^1 - \left.\eta\frac{\partial L}{\partial b}\right|_{w=w^1, b=b^1}\]
+        <table>
+          <tbody>
+            <tr>
+              <td>$$ w^2 \leftarrow w^1 - \left.\eta\frac{\partial L}{\partial w}\right</td>
+              <td>_{w=w^1, b=b^1}\ b^2 \leftarrow b^1 - \left.\eta\frac{\partial L}{\partial b}\right</td>
+              <td>_{w=w^1, b=b^1}$$</td>
+            </tr>
+          </tbody>
+        </table>
 
         <ul>
           <li>
@@ -419,16 +481,17 @@ var _hmt = _hmt || [];
           </li>
         </ul>
 
-\[\nabla L=\left[\begin{array}{l}\frac{\partial L}{\partial w} \\ \frac{\partial L}{\partial b}\end{array}\right] _\text { gradient }\]
+        <p>$$\nabla L=\left[\begin{array}{l}\frac{\partial L}{\partial w} \\ \frac{\partial L}{\partial b}\end{array}\right] _\text { gradient }$$</p>
 
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  其中，将两个偏微分排成一个 vector
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  其中，将两个偏微分排成一个 vector
 </code></pre></div>        </div>
 
         <ul>
           <li>示意图如下，</li>
         </ul>
 
-        <p><img src="/assets/202006/2020-06-27-13-42-50.png" alt="figure5" /></p>
+        <p><img src="/assets/202006/2020-06-27-13-42-50.png" alt="figure5"></p>
 
         <p>其中每一次的 <strong>gradient</strong> 即为等高线的法线法向。</p>
 
@@ -436,29 +499,29 @@ var _hmt = _hmt || [];
           <li>但用这种方法，会出现问题，即如下图左侧所示，如果起点不同可能会找到不同的输出值，但实际上，利用这种方法是不会产生 <strong>local optimal</strong> 的</li>
         </ul>
 
-        <p><img src="/assets/202006/2020-06-27_13-47-03.png" alt="figure6" /></p>
+        <p><img src="/assets/202006/2020-06-27_13-47-03.png" alt="figure6"></p>
 
         <ul>
           <li>Formulation of $\partial L / \partial w$ and $\partial L / \partial b$，即为</li>
         </ul>
 
-\[\begin{array}{l}L(w, b)=\sum_{n=1}^{10} ({\left.\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)^{2}} \\\\\frac{\partial L}{\partial w}=? \sum_{n=1}^{10} 2\left(\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)\left(-x_{c p}^{n}\right) \\\\\frac{\partial L}{\partial b}=? \sum_{n=1}^{10} 2\left(\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)(-1)\end{array}\]
+        <p>$$\begin{array}{l}L(w, b)=\sum_{n=1}^{10} ({\left.\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)^{2}} \\\frac{\partial L}{\partial w}=? \sum_{n=1}^{10} 2\left(\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)\left(-x_{c p}^{n}\right) \\\frac{\partial L}{\partial b}=? \sum_{n=1}^{10} 2\left(\hat{y}^{n}-\left(b+w \cdot x_{c p}^{n}\right)\right)(-1)\end{array}$$</p>
       </li>
       <li>
         <p>How’s the results?</p>
 
-        <p><img src="/assets/202006/2020-06-27-14-55-10.png" alt="figure6" /></p>
+        <p><img src="/assets/202006/2020-06-27-14-55-10.png" alt="figure6"></p>
 
-        <p>可以获得 Average Error on Training Data为，</p>
+        <p>Error 值即为真实值与预测值之间的距离。可以获得 Average Error on Training Data为，</p>
 
-\[\sum_{n=1}^{10}e^n = 31.9\]
+        <p>$$ \sum_{n=1}^{10}e^n = 31.9 $$</p>
       </li>
       <li>
         <p>但是真正关心的应该是 <strong>Generalization</strong>，What we reaaly care about is the error on new data (testing data)</p>
 
         <p>于是又取了十只 Pokemon，情况如下</p>
 
-        <p><img src="/assets/202006/2020-06-27-15-00-34.png" alt="figure7" /></p>
+        <p><img src="/assets/202006/2020-06-27-15-00-34.png" alt="figure7"></p>
 
         <p>而新的数据中的 Average Error on Training Data 为 35.0</p>
       </li>
@@ -469,13 +532,13 @@ var _hmt = _hmt || [];
           <li>
             <p>从上图中可见在CP较低和较高的区域，拟合不好，于是我们选择令 Selecting another Model</p>
 
-\[y = b+ w_1\cdot x_{cp}+w_2\cdot (x_{cp})^2\]
+            <p>$$ y = b+ w_1\cdot x_{cp}+w_2\cdot (x_{cp})^2$$</p>
 
             <p>找出 Best function，这时</p>
 
-\[b= -10.3, \\w_1=1.0, w_2=2.7*10^{-3}\\ \text{Average Error} = 18.4\]
+            <p>$$ b= -10.3, \w_1=1.0, w_2=2.7*10^{-3}\\ \text{Average Error} = 18.4$$</p>
 
-            <p><img src="/assets/202006/2020-06-27_15-10-09.png" alt="figure8" /></p>
+            <p><img src="/assets/202006/2020-06-27_15-10-09.png" alt="figure8"></p>
 
             <p>重新取 10 只 Pokemon 得出，Average Error = 18.4</p>
           </li>
@@ -484,46 +547,46 @@ var _hmt = _hmt || [];
 
             <p>引入更复杂的model，</p>
 
-\[y = b + w_1 \cdot x_{cp}+w_2\cdot (x_{cp})^2 + w_3\cdot (x_{cp})^3\]
+            <p>$$ y = b + w_1 \cdot x_{cp}+w_2\cdot (x_{cp})^2 + w_3\cdot (x_{cp})^3$$</p>
 
             <p>找出 Best Function，</p>
 
-\[b=6.4, w_1=0.66\\ w_2=4.3*10^{-3},\\ w_3=-1.8*1-^{-6}, \\Average Error = 15.3\]
+            <p>$$ b=6.4, w_1=0.66\\ w_2=4.3<em>10^{-3},\\ w_3=-1.8</em>1-^{-6}, \Average Error = 15.3$$</p>
 
             <p>同样重新取 10 只 Pokemon ，得出 Average Error = 18.1</p>
 
-            <p><img src="/assets/202006/2020-06-27_15-17-30.png" alt="figure9" /></p>
+            <p><img src="/assets/202006/2020-06-27_15-17-30.png" alt="figure9"></p>
           </li>
           <li>
             <p>用同样的方法，Try to make it better</p>
 
-\[y = b + w_1\cdot x_{cp}+ w_2\cdot (x_{cp})^2 + w_3\cdot (x_{cp})^3 + w_4\cdot (x_{cp})^4\]
+            <p>$$ y = b + w_1\cdot x_{cp}+ w_2\cdot (x_{cp})^2 + w_3\cdot (x_{cp})^3 + w_4\cdot (x_{cp})^4$$</p>
 
             <p>并获得图像，</p>
 
-            <p><img src="/assets/202006/2020-06-27_15-21-53.png" alt="figure10" /></p>
+            <p><img src="/assets/202006/2020-06-27_15-21-53.png" alt="figure10"></p>
 
             <p>这时的 Average Error = 14.9，但重新取 10 只 Average Error = 28.8 变得比之前更高了</p>
           </li>
           <li>
             <p>继续使用更加复杂的 Model，结果会变得更加糟糕</p>
 
-\[y = b+w_1\cdot x_{cp} +w_2\cdot (x_{cp})^2 + w_3\cdot(x_{cp})^3 + w_4\cdot (x_{cp})^4 + w_5\cdot (x_{cp})^5\]
+            <p>$$ y = b+w_1\cdot x_{cp} +w_2\cdot (x_{cp})^2 + w_3\cdot(x_{cp})^3 + w_4\cdot (x_{cp})^4 + w_5\cdot (x_{cp})^5 $$</p>
 
-            <p><img src="/assets/202006/2020-06-27_20-54-10.png" alt="figure11" /></p>
+            <p><img src="/assets/202006/2020-06-27_20-54-10.png" alt="figure11"></p>
           </li>
           <li>
             <p>分析这 5 个 Model，对这5次的 Training Data 的 Average Error 进行统计，如下图</p>
 
-            <p><img src="/assets/202006/2020-06-27_20-59-37.png" alt="figure12" /></p>
+            <p><img src="/assets/202006/2020-06-27_20-59-37.png" alt="figure12"></p>
 
             <p>这是因为更复杂的 Model 的 Function Space 会包含低级的 Model Space，如下图描述</p>
 
-            <p><img src="/assets/202006/2020-06-27_21-04-39.png" alt="figure13" /></p>
+            <p><img src="/assets/202006/2020-06-27_21-04-39.png" alt="figure13"></p>
 
             <p>但如果针对于，Testing Data，则情况会不同，</p>
 
-            <p><img src="/assets/202006/2020-06-27_21-06-56.png" alt="figure14" /></p>
+            <p><img src="/assets/202006/2020-06-27_21-06-56.png" alt="figure14"></p>
 
             <p>A more complex model does not always lead to better performance on <strong>testing data</strong>, This is <strong>Overfitting</strong>.</p>
 
@@ -538,7 +601,7 @@ var _hmt = _hmt || [];
 
     <p>在计算CP值时，前面的 input 数据选用的只有杰尼龟一种，一旦要是，但是要去 make a more general model，就要考虑Pokemon的种类这一问题。</p>
 
-    <p><img src="/assets/202006/2020-06-27_21-18-21.png" alt="figure15" /></p>
+    <p><img src="/assets/202006/2020-06-27_21-18-21.png" alt="figure15"></p>
 
     <p>如何解决这个问题呢？</p>
 
@@ -548,40 +611,40 @@ var _hmt = _hmt || [];
 
         <p>可以套用 <code class="language-plaintext highlighter-rouge">if</code> 语句：</p>
 
-        <p><img src="/assets/202006/2020-06-27_21-21-42.png" alt="figure16" /></p>
+        <p><img src="/assets/202006/2020-06-27_21-21-42.png" alt="figure16"></p>
 
         <p>接下来，我们需要将加入<code class="language-plaintext highlighter-rouge">if</code>语句的 Model 改写为 Linear model ($y=b+\sum{w_i x_i}$)：</p>
 
-\[\begin{aligned}y=&amp; b_{1} \cdot \delta\left(x_{s}=\text { Pidgey }\right) \\&amp;+w_{1} \cdot \delta\left(x_{s}=\text { Pidgey }\right) x_{c p} \\&amp;+b_{2} \cdot \delta\left(x_{s}=\text { Weedle }\right) \\&amp;+w_{2} \cdot \delta\left(x_{s}=\text { Weedle }\right) x_{c p} \\&amp;+b_{3} \cdot \delta\left(x_{s}=\text { Caterpie }\right) \\&amp;+w_{3} \cdot \delta\left(x_{s}=\text { caterpie }\right) x_{c p} \\&amp;+b_{4} \cdot \delta\left(x_{s}=\text { Eevee }\right) \\&amp;+w_{4} \cdot \delta\left(x_{s}=\text { Eevee }\right) x_{c p}\end{aligned}\]
+        <p>$$\begin{aligned}y=&amp; b_{1} \cdot \delta\left(x_{s}=\text { Pidgey }\right) \&amp;+w_{1} \cdot \delta\left(x_{s}=\text { Pidgey }\right) x_{c p} \&amp;+b_{2} \cdot \delta\left(x_{s}=\text { Weedle }\right) \&amp;+w_{2} \cdot \delta\left(x_{s}=\text { Weedle }\right) x_{c p} \&amp;+b_{3} \cdot \delta\left(x_{s}=\text { Caterpie }\right) \&amp;+w_{3} \cdot \delta\left(x_{s}=\text { caterpie }\right) x_{c p} \&amp;+b_{4} \cdot \delta\left(x_{s}=\text { Eevee }\right) \&amp;+w_{4} \cdot \delta\left(x_{s}=\text { Eevee }\right) x_{c p}\end{aligned}$$</p>
 
         <p>其中，</p>
 
-\[\delta(x_s = Pidgey) \ \  \left\{\begin{array}{ll}=1 &amp; \text { If } x_{s}=\text { Pidgey } \\ =0 &amp; \text { otherwise }\end{array}\right.\]
+        <p>$$ \delta(x_s = Pidgey) \ \  \left{\begin{array}{ll}=1 &amp; \text { If } x_{s}=\text { Pidgey } \\ =0 &amp; \text { otherwise }\end{array}\right.$$</p>
 
         <p>这样就有:</p>
 
-\[if \ x_s = Pidgey，\\ y = b_1 + w_1\cdot x_{cp}\]
+        <p>$$ if \ x_s = Pidgey，\\ y = b_1 + w_1\cdot x_{cp} $$</p>
 
         <p>其中，</p>
 
-\[\delta(x_s = Pidgey)\]
+        <p>$$\delta(x_s = Pidgey)$$</p>
 
         <p>这一项即为 Linear model 中的 $x_i$，也就是 <strong>feature</strong></p>
 
         <p>引入不同 $x_s$ 后的分析图像如下图，</p>
 
-        <p><img src="/assets/202006/2020-06-27_21-40-34.png" alt="figure17" /></p>
+        <p><img src="/assets/202006/2020-06-27_21-40-34.png" alt="figure17"></p>
 
         <p>从图中可见，不考虑伊布的曲线fit的不好，是因为伊布可以进化为不同的精灵，但其他宝可梦也有一些或多或少fit不好的情况，可能是进化时候加了一个 random number，但也可能不是 random number，也可能有其他factors</p>
       </li>
       <li>
         <p>Are there any other hidden factors？</p>
 
-        <p><img src="/assets/202006/2020-06-27_21-47-07.png" alt="figure18" /></p>
+        <p><img src="/assets/202006/2020-06-27_21-47-07.png" alt="figure18"></p>
 
         <p>对待这个问题，有可能是很多因素导致的，如 weight，HP 等等，那么如何解决这个问题呢？我们可以将所有的能考虑到因素加进去：</p>
 
-        <p><img src="/assets/202006/2020-06-27_22-11-13.png" alt="figure19" /></p>
+        <p><img src="/assets/202006/2020-06-27_22-11-13.png" alt="figure19"></p>
 
         <p>这么复杂的 Model 给出了很低的 Training Error = 1.9，但Testing Error 却非常糟糕 = 102.3，发生了严重的 Overfitting。</p>
 
@@ -592,7 +655,7 @@ var _hmt = _hmt || [];
 
         <p>即在原有的 Loss function 后添加一项：</p>
 
-\[L = \sum_n(\hat{y}^n - (b + \sum{w_i x_i}))^2 + \lambda \sum(w_i)^2\]
+        <p>$$ L = \sum_n(\hat{y}^n - (b + \sum{w_i x_i}))^2 + \lambda \sum(w_i)^2$$</p>
 
         <p>而这个 $\lambda\sum(w_i)^2$ 项，The functions with smaller w_i are better</p>
 
@@ -602,7 +665,7 @@ var _hmt = _hmt || [];
 
         <p><strong>If some noises corrupt input $x_i$ when testing</strong>，也就是是说 function 如果变得不平滑了，A smoother function has less influence。</p>
 
-        <p><img src="/assets/202006/2020-06-27_22-30-35.png" alt="figure20" /></p>
+        <p><img src="/assets/202006/2020-06-27_22-30-35.png" alt="figure20"></p>
 
         <p>首先可以确定，当 $lambda$ 越大，function 越平滑，但 function 越平滑，Traning data error 越大，这是因为：<strong>Larger $lambda$，considering the training error less</strong>，越倾向于考虑 $w_i$ 本来的值。</p>
 
@@ -613,7 +676,7 @@ var _hmt = _hmt || [];
       <li>
         <p>另外需要注意的是，对于 Regularization 项：</p>
 
-\[\lambda\sum(w_i)^2\]
+        <p>$$\lambda\sum(w_i)^2$$</p>
 
         <p>只包含有 $w_i$，但却没有 $b$，其实在考虑 Regularization时，不需要考虑 bias。因为加 bias 只会对 function 进行平移，不会影响 function 的平滑度。</p>
       </li>
@@ -656,7 +719,7 @@ var _hmt = _hmt || [];
 
 <p>在之前的实例中，我们发现选择不同的 Function Set，也就是选择不同的 Model，往往会给出不同的 Average error，而且越复杂的 Model，不见得会给出越低的 Error。</p>
 
-<p><img src="/assets/202006/2020-06-28_21-22-38.png" alt="figure21" /></p>
+<p><img src="/assets/202006/2020-06-28_21-22-38.png" alt="figure21"></p>
 
 <p>而其中 error 有两个来源：</p>
 
@@ -669,11 +732,11 @@ var _hmt = _hmt || [];
 
 <p>对于一个 Estimator, 如</p>
 
-\[\hat{y} = \hat{f}(\text{Pokemon CP})\]
+<p>$$\hat{y} = \hat{f}(\text{Pokemon CP})$$</p>
 
 <p>From this training data, we find $f^*$ ，那么有 <strong>$f^*$ is an estimator of $\hat{f}$</strong>。二者关系可以用下图表示，</p>
 
-<p><img src="/assets/202006/2020-06-28_21-34-48.png" alt="figure22" /></p>
+<p><img src="/assets/202006/2020-06-28_21-34-48.png" alt="figure22"></p>
 
 <p>靶标的中心点是 $\hat{f}$，而 $f^*$ 则在偏离靶中心的位置，而这个偏离，就是又 <strong>Bias</strong> 以及 <strong>Variance</strong> 共同决定的。</p>
 
@@ -695,30 +758,30 @@ var _hmt = _hmt || [];
       <li>
         <p>Sample N points: ${x^1, x^2, …, x^N}$</p>
 
-\[m = \frac{1}{N}\sum_n{n^n} \neq \mu\]
+        <p>$$ m = \frac{1}{N}\sum_n{n^n} \neq \mu$$</p>
 
         <p>这时 $m$ 和 $\mu$ 的值是不相等的，示意图如下</p>
       </li>
     </ul>
 
-    <p><img src="/assets/202006/2020-06-28_23-07-07.png" alt="figure23" /></p>
+    <p><img src="/assets/202006/2020-06-28_23-07-07.png" alt="figure23"></p>
 
     <ul>
       <li>
         <p>但是如果我们计算这些 $m$ 的期望值，就会得到我们想要的 $\mu$</p>
 
-\[E[m] = E\biggl[\frac{1}{N}\sum_n x^n\biggr] = \frac{1}{N}\sum_n E[x^n] = \mu\]
+        <p>$$E[m] = E\biggl[\frac{1}{N}\sum_n x^n\biggr] = \frac{1}{N}\sum_n E[x^n] = \mu$$</p>
 
         <p>这个问题就像打靶，每次打靶都会偏离中心，但当打靶次数足够多，最终这些偏离中心的打点的中心就是最终的期望。</p>
       </li>
       <li>
         <p>这个散布在期望周围, 散的有多开取决于 $m$ 的 <strong>Variance</strong> ，这个 Variance 的表达式为，</p>
 
-\[Var[m] = \frac{\sigma^2}{N}\]
+        <p>$$Var[m] = \frac{\sigma^2}{N}$$</p>
 
         <p><strong>Varicance depends on the number of samples</strong>，如图所示</p>
 
-        <p><img src="/assets/202006/2020-06-29_09-40-36.png" alt="figure24" /></p>
+        <p><img src="/assets/202006/2020-06-29_09-40-36.png" alt="figure24"></p>
       </li>
     </ul>
   </li>
@@ -733,12 +796,12 @@ var _hmt = _hmt || [];
           <li>
             <p>首先估计 $m$ 的值，</p>
 
-\[m = \frac{1}{N}\sum_n x^n\]
+            <p>$$ m = \frac{1}{N}\sum_n x^n $$</p>
           </li>
           <li>
             <p>之后再计算估计 $s^2$，</p>
 
-\[s^2 = \frac{1}{N}\sum_n (x^n - m)^2\]
+            <p>$$ s^2 = \frac{1}{N}\sum_n (x^n - m)^2 $$</p>
 
             <p>这个 $s^2$ 可以用来估计 $\sigma^2$</p>
           </li>
@@ -746,11 +809,11 @@ var _hmt = _hmt || [];
 
         <p>但是，需要注意，这个对于 $\sigma ^2$ 的估计是<strong>Biased estimator</strong>，</p>
 
-\[E[s^2] = \frac{N-1}{N} \sigma ^2\]
+        <p>$$ E[s^2] = \frac{N-1}{N} \sigma ^2$$</p>
 
         <p>也就是说 $s^2$ 的期望值并不正好等于 $\sigma^2$ ，如果我们增加样本量，这一现象就会减轻：</p>
 
-        <p><img src="/assets/202006/2020-06-29_10-03-27.png" alt="figure25" /></p>
+        <p><img src="/assets/202006/2020-06-29_10-03-27.png" alt="figure25"></p>
 
         <p>用打靶来描述这件事情，如下图</p>
       </li>
@@ -759,7 +822,7 @@ var _hmt = _hmt || [];
   <li>
     <p>Parallel Universes</p>
 
-    <p><img src="/assets/202006/2020-06-29_10-18-48.png" alt="figure26" /></p>
+    <p><img src="/assets/202006/2020-06-29_10-18-48.png" alt="figure26"></p>
 
     <p>而打靶打的准或不准是由 <strong>Variance</strong> 和 <strong>Bias</strong> 两部分共同决定的。</p>
   </li>
@@ -769,31 +832,31 @@ var _hmt = _hmt || [];
 
 <p>In all the universes, we are collecting (catching) 10 Pokemons as training data to find $f^*$</p>
 
-<p><img src="/assets/202006/2020-06-29_10-24-39.png" alt="figure27" /></p>
+<p><img src="/assets/202006/2020-06-29_10-24-39.png" alt="figure27"></p>
 
 <p>我们在不同宇宙中抓到的宝可梦是不一样的。</p>
 
 <p>In different universes, we use the same model, but obtain different $f^*$</p>
 
-<p><img src="/assets/202006/2020-06-29_10-28-31.png" alt="figure28" /></p>
+<p><img src="/assets/202006/2020-06-29_10-28-31.png" alt="figure28"></p>
 
 <p>最终的结果如果我们用越来越复杂的 model ，就会给出越来越崩溃的结果,</p>
 
-<p><img src="/assets/202006/2020-06-29_10-31-14.png" alt="figure29" /></p>
+<p><img src="/assets/202006/2020-06-29_10-31-14.png" alt="figure29"></p>
 
 <p>而这几种越来越复杂的 model 所带来的混乱的情况，用打靶来形容，如下图所示，</p>
 
-<p><img src="/assets/202006/2020-06-29_10-35-57.png" alt="figure30" /></p>
+<p><img src="/assets/202006/2020-06-29_10-35-57.png" alt="figure30"></p>
 
 <p>可以看出，越简单的 model，对应的 Variance 越小，这可以认为是因为，<strong>Simpler model is less influenced by the sampled data</strong> 。可以考虑一个极端的例子：</p>
 
-\[f(x) = c\]
+<p>$$ f(x) = c $$</p>
 
 <p>对于这个常值函数的 model，其 Variance = 0，不会受到 sampled data 影响。</p>
 
 <h4 id="bias">Bias</h4>
 
-\[E[f^*] = \overline{f}\]
+<p>$$ E[f^*] = \overline{f}$$</p>
 
 <ul>
   <li>
@@ -803,19 +866,19 @@ var _hmt = _hmt || [];
       <li>
         <p>先引入打靶问题，来描述 Bias 大小对于靶标的影响，</p>
 
-        <p><img src="/assets/202006/2020-06-29_15-35-04.png" alt="figure31" /></p>
+        <p><img src="/assets/202006/2020-06-29_15-35-04.png" alt="figure31"></p>
 
         <p>可见，如果 Bias 很小，即使数据很离散，其平均值 $\overline{f}$ 也会很接近 $\hat{f}$。</p>
       </li>
       <li>
         <p>下面需要确定一条 $\hat{y}$，我们只能先假设一个 $\hat{f}$</p>
 
-        <p><img src="/assets/202006/2020-06-29_15-35-05.png" alt="figure32" /></p>
+        <p><img src="/assets/202006/2020-06-29_15-35-05.png" alt="figure32"></p>
       </li>
       <li>
         <p>然后我们分别对不同复杂程度下的 model 给出的 $\overline{f}$ 与 $\hat{f}$ 之间的关系，如下图</p>
 
-        <p><img src="/assets/202006/2020-06-29_15-47-58.png" alt="figure32" /></p>
+        <p><img src="/assets/202006/2020-06-29_15-47-58.png" alt="figure32"></p>
 
         <ul>
           <li>
@@ -830,14 +893,14 @@ var _hmt = _hmt || [];
           <li>
             <p>当考虑一个较为复杂的三次 Model，如下图</p>
 
-            <p><img src="/assets/202006/2020-06-29_16-06-38.png" alt="figure33" /></p>
+            <p><img src="/assets/202006/2020-06-29_16-06-38.png" alt="figure33"></p>
 
             <p>虽然单独每一次和 $\hat{f}$ 可能相差很多，但平均下来与 $\hat{f}$ 却较为接近。</p>
           </li>
           <li>
             <p>当复杂程度继续升高，即考虑五次的 Model，$\overline{f}$ 则进一步趋近于 $\hat{f}$，如下图所示:</p>
 
-            <p><img src="/assets/202006/2020-06-29_16-10-08.png" alt="figure34" /></p>
+            <p><img src="/assets/202006/2020-06-29_16-10-08.png" alt="figure34"></p>
           </li>
         </ul>
       </li>
@@ -847,11 +910,11 @@ var _hmt = _hmt || [];
 
 <p>对于以上现象，可以从 <strong>function space</strong> 的角度来解释，即如果 Model 没有那么复杂，它对应的 function space 就相对较小，可能并没有包含 Target，如下图，</p>
 
-<p><img src="/assets/202006/2020-06-29_16-14-02.png" alt="figure35" /></p>
+<p><img src="/assets/202006/2020-06-29_16-14-02.png" alt="figure35"></p>
 
 <p>相反如果 Model 比较复杂，对应上述 5 次的 Model，其 function space 较大，就可能包含了 Target，如下图，</p>
 
-<p><img src="/assets/202006/2020-06-29_16-17-16.png" alt="figure36" /></p>
+<p><img src="/assets/202006/2020-06-29_16-17-16.png" alt="figure36"></p>
 
 <h4 id="what-to-do-with-large-bias">What to do with large bias?</h4>
 
@@ -864,7 +927,7 @@ var _hmt = _hmt || [];
 
 <p>这两种对应的 Error 的关系如下图，</p>
 
-<p><img src="/assets/202006/2020-06-29_16-56-40.png" alt="figure37" /></p>
+<p><img src="/assets/202006/2020-06-29_16-56-40.png" alt="figure37"></p>
 
 <p>而由于 bias 引起 Error，我们称之为 <strong>Underfitting</strong> ；由于 variance 引起的 Error，我们称之为 <strong>Overfitting</strong>。</p>
 
@@ -876,7 +939,7 @@ var _hmt = _hmt || [];
       <li>
         <p>If your model cannot even fit the training examples, then you have large bias: <strong>Underfitting</strong></p>
 
-        <p><img src="/assets/202006/2020-06-29_17-04-50.png" alt="figure38" /></p>
+        <p><img src="/assets/202006/2020-06-29_17-04-50.png" alt="figure38"></p>
       </li>
       <li>
         <p>If you can fit the training data, but large error on testing data, then you probably have large variance: <strong>Overfitting</strong></p>
@@ -903,7 +966,7 @@ var _hmt = _hmt || [];
   <li>
     <p>more data</p>
 
-    <p><img src="/assets/202006/2020-06-29_17-08-27.png" alt="figure39" /></p>
+    <p><img src="/assets/202006/2020-06-29_17-08-27.png" alt="figure39"></p>
 
     <p>It’s very effective, but not always practical. 也可以根据经验给一个经验的 Model</p>
   </li>
@@ -912,7 +975,7 @@ var _hmt = _hmt || [];
 
     <p>通过 Regularization，使得曲线更加平滑，如下图所示：</p>
 
-    <p><img src="/assets/202006/2020-06-29_17-12-27.png" alt="figure40" /></p>
+    <p><img src="/assets/202006/2020-06-29_17-12-27.png" alt="figure40"></p>
 
     <p>但是这样做，<strong>会伤害到 bias</strong></p>
   </li>
@@ -930,13 +993,13 @@ var _hmt = _hmt || [];
   <li>
     <p>What you should NOT do:</p>
 
-    <p><img src="/assets/202006/2020-06-29_17-17-13.png" alt="figure41" /></p>
+    <p><img src="/assets/202006/2020-06-29_17-17-13.png" alt="figure41"></p>
 
     <p><strong>注意不要直接选择 Model 3，因为绿色的 Testing Set 本身有着自己的 bias，而与实际上的 橙色的 Testing Set 不同 ( $Err &gt; 0.5$ )。</strong></p>
 
     <p>为了更好的理解这个问题，给出下面的举例：<strong>Homework</strong> 中的情况</p>
 
-    <p><img src="/assets/202006/2020-06-29_17-22-53.png" alt="figure42" /></p>
+    <p><img src="/assets/202006/2020-06-29_17-22-53.png" alt="figure42"></p>
 
     <p>更好地理解，比如说小明在班级里排名第一，但在全校可能排不上名次。</p>
 
@@ -946,7 +1009,7 @@ var _hmt = _hmt || [];
 
 <h3 id="cross-validation">Cross Validation</h3>
 
-<p><img src="/assets/202006/2020-06-29_17-32-58.png" alt="figure43" /></p>
+<p><img src="/assets/202006/2020-06-29_17-32-58.png" alt="figure43"></p>
 
 <ol>
   <li>可以将 Training Set，分成两部分，即 Training Set 和 Validation Set</li>
@@ -970,7 +1033,7 @@ var _hmt = _hmt || [];
 
 <p>如果你不相信某一次 Training 结果，可以按下图方式进行：</p>
 
-<p><img src="/assets/202006/2020-06-29_17-44-42.png" alt="figure44" /></p>
+<p><img src="/assets/202006/2020-06-29_17-44-42.png" alt="figure44"></p>
 
 <p>利用这种方法，根据三次实验后的 Average Error，再去进行比较。原则上，少去根据 Testing Set 调整 Model 的话，往往最终得到的 Testing Set 会比较小。</p>
 
@@ -983,13 +1046,11 @@ var _hmt = _hmt || [];
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Last One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2020/06/pytorch-tutorial/"
-				title="link to Pytorch Tutorial">Pytorch Tutorial</a></h2>
-		<p class="excerpt">Pytorch Introduction&hellip;</p>
-		<div class="post-list__meta"><time datetime="2020-06-28 20:07:24 +0800"
-				class="post-list__meta--date date">2020-06-28</time> &#8226; <span
-				class="post-list__meta--tags tags">MachineLearning</span><a class="btn-border-small"
-				href=/2020/06/pytorch-tutorial/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2020/06/pytorch-tutorial/" title="link to Pytorch Tutorial">Pytorch Tutorial</a></h2>
+		<p class="excerpt">Pytorch Introduction…</p>
+		<div class="post-list__meta">
+<time datetime="2020-06-28 20:07:24 +0800" class="post-list__meta--date date">2020-06-28</time> • <span class="post-list__meta--tags tags">MachineLearning</span><a class="btn-border-small" href="/2020/06/pytorch-tutorial/">More</a>
+</div>
 	</div>
 	
 
@@ -997,42 +1058,39 @@ var _hmt = _hmt || [];
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Next One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2020/06/ml-introduction/"
-				title="link to ml-P1 Machine Learning Introduction">ml-P1 Machine Learning Introduction</a></h2>
-		<p class="excerpt">整理自李宏毅教授 2020 机器学习课程  什么是机器学习  机器学习的第一步  怎么告诉机器，你想要找什么样的函数关系式  机器怎么实际找出想要找出的函数式呢  前沿研究  General Regulations什么是机器学习机器学习就是自动找一个函数关系式      Speech Recognition        Image Recognition        Playing Go        Dialogue System  机器学习的第一步  你自己想要找什么样的函数关系式...&hellip;</p>
-		<div class="post-list__meta"><time datetime="2020-06-25 20:31:24 +0800"
-				class="post-list__meta--date date">2020-06-25</time> &#8226; <span
-				class="post-list__meta--tags tags">MachineLearning</span><a class="btn-border-small"
-				href=/2020/06/ml-introduction/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2020/06/ml-introduction/" title="link to ml-P1 Machine Learning Introduction">ml-P1 Machine Learning Introduction</a></h2>
+		<p class="excerpt">整理自李宏毅教授 2020 机器学习课程  什么是机器学习  机器学习的第一步  怎么告诉机器，你想要找什么样的函数关系式  机器怎么实际找出想要找出的函数式呢  前沿研究  General Regulations什么是机器学习机器学习就是自动找一个函数关系式      Speech Recognition        Image Recognition        Playing Go        Dialogue System  机器学习的第一步  你自己想要找什么样的函数关系式...…</p>
+		<div class="post-list__meta">
+<time datetime="2020-06-25 20:31:24 +0800" class="post-list__meta--date date">2020-06-25</time> • <span class="post-list__meta--tags tags">MachineLearning</span><a class="btn-border-small" href="/2020/06/ml-introduction/">More</a>
+</div>
 	</div>
 	
 </section>
 
 	<section class="post-comments">
-<!--
-  
-    <div id="disqus_thread"></div>
-    <script>
-    var disqus_config = function () {
-        this.page.url = "http://localhost:4000/2020/06/ml-Regression-P1/";
-        this.page.identifier = "/2020/06/ml-Regression-P1/";
-    };
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2020/06/ml-Regression-P1/";
+			this.page.identifier = "/2020/06/ml-Regression-P1/";
+		};
 
-    var disqus_shortname = 'zququ';
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
-   
--->
-  
-    <div id="comments"></div> 
-   
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
 
 	<script>
     var valine = new Valine();
@@ -1049,15 +1107,28 @@ var _hmt = _hmt || [];
 </script>
 
 
-</html>
+
 
 			<section class="footer">
-    <footer>
-        <span class="footer__copyright">&copy; 2020  <a href="https://zququcv.netlify.com">@zququ</a> Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
-    </footer>
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
 </section>
 
-		</div>
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
 	</div>
 
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -1067,6 +1138,7 @@ var _hmt = _hmt || [];
 
 
 
-</body>
 
+
+</body>
 </html>

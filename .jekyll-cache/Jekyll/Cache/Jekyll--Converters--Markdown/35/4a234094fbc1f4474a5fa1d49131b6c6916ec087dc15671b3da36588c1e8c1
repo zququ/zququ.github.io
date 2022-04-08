@@ -1,0 +1,34 @@
+I"5<p>写在前面，强烈谴责一下一些名字非常特别的程序，导致需要用的时候，抓耳挠腮也想不起来软件名字，在这里做一下备份。也可作为软件推荐用。</p>
+
+<h3 id="alacarte">alacarte</h3>
+
+<p>用于添加软件到 Ubuntu 软件库，供兼容 i3wm rofi。</p>
+
+<p>其中桌面文件的地址，一般系统桌面文件在 <code class="language-plaintext highlighter-rouge">/usr/share/applications/</code></p>
+
+<p>而 alacarte 的桌面文件管理地址为 <code class="language-plaintext highlighter-rouge">~/.local/applications</code></p>
+
+<h3 id="i3-get-window-criteria">i3-get-window-criteria</h3>
+
+<p>查看 windows 信息，供添加到 i3wm config 文件。</p>
+
+<h3 id="nvm-nodejs">nvm nodejs</h3>
+
+<p>版本管理软件</p>
+
+<p><code class="language-plaintext highlighter-rouge">nvm list</code> ，查看 nodejs 版本</p>
+
+<p><code class="language-plaintext highlighter-rouge">nvm use</code> ，切换 nodejs 版本</p>
+
+<h3 id="fisher">fisher</h3>
+
+<p>fish shell 里非常好用的软件管理程序。</p>
+
+<h3 id="sshfs">sshfs</h3>
+
+<p>sshfs　可以将远程服务器文件夹直接发送到本地，就像挂载外置硬盘一样，非常好用，命令行如下：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$sudo</span> sshfs <span class="nt">-o</span> allow_other <span class="nt">-p</span> <span class="nv">$PORT</span> <span class="nv">$USER</span>@<span class="nv">$IP</span>:/file/fold/to/mount /file/fold/mount/to/
+</code></pre></div></div>
+
+:ET

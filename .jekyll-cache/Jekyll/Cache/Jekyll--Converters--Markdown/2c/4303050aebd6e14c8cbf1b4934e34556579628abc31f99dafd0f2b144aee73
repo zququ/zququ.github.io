@@ -1,0 +1,2 @@
+I"`<p>如果tzinfo属性是None，则返回None；否则返回self.tzinfo.utcoffset(self)</p>
+:ET

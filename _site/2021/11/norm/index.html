@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Norm (partial)</title>
+  <meta name="description" content="Absolute-value norm\(\| x\| = |x|\)">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Norm (partial)">
+  <meta name="twitter:description" content="Absolute-value norm\(\| x\| = |x|\)">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Norm (partial)">
+  <meta property="og:description" content="Absolute-value norm\(\| x\| = |x|\)">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2021/11/norm/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2021-11-18 10:35:35 +0800" itemprop="datePublished" class="post-meta__date date">2021-11-18</time> • <span class="post-meta__tags tags">数学</span>
+			</div>
+
+			<div class="post-tags">
+	标签页 Tags:
+	
+	
+	<a href="/tags/#%E6%95%B0%E5%AD%A6">数学</a>
+	
+</div>
+
+			<br>
+
+			<h1 class="post-title">Norm (partial)</h1>
+
+		</header>
+
+		<section class="post">
+			<h3 id="absolute-value-norm">Absolute-value norm</h3>
+<p>$$
+| x| = |x|
+$$</p>
+
+<p>is a norm on the $\Bbb R^1$ vector spaces formed by the real or complex numbers. Any norm $p$ on a $\Bbb R^1$ is equivalent (norm-preserving isomorphism of vector spaces).</p>
+
+<h3 id="euclidean-norm">Euclidean norm</h3>
+
+<p>On the $\Bbb R^n$ Euclidean space, intuitive notion of length of the vector $\pmb x = (x_1, x_2, …, x_n)$ is</p>
+
+<p>$$
+|\pmb x|_2 := \sqrt{x^2_1+x^2_2+…+x^2_n}
+$$</p>
+
+<p>or for two vectors</p>
+
+<p>$$
+|\pmb x|:= \sqrt{\pmb x\cdot \pmb x}
+$$</p>
+
+<p>which is also called the $L^2$ norm,  $\ell^2$ norm, 2-norm or square norm. And the distance defined by euclidean norm is called the Euclidean length, $L^2$ distance or $\ell^2$ distance.</p>
+
+<h3 id="euclidean-norm-of-complex-numbers">Euclidean norm of complex numbers</h3>
+
+<p>The Euclidean norm of a complex number is the absolute value (also called the modulus) of it, if the complex plane is identified with the Euclidean plane $\Bbb R^2$ , the Euclidean norm is,</p>
+
+<p>$$
+|x + iy| = \sqrt{x^2 + y^2}
+$$</p>
+
+<h3 id="finite-dimensional-complex-normed-spaces">Finite-dimensional complex normed spaces</h3>
+
+<p>On an n-dimensional complex space $\Bbb C^n$, the most common norm is</p>
+
+<p>$$
+|z||:=\sqrt{|z_1|^2 + … + |z_n|^2} = \sqrt{z_1\bar z_1 + … +z_n\bar z_n}
+$$</p>
+
+<p>And can be expressed as the square root of the inner product of the vector and itself,</p>
+
+<p>$$
+|\pmb x|:=\sqrt{\pmb x^H\cdot \pmb x}
+$$</p>
+
+<p>where, $\pmb x$ is represented as a column vector $[x_1;x_2;…;x_n]$, and $\pmb x^H$ denotes its conjugate transpose. Which also can be denoted with,</p>
+
+<p>$$
+|\pmb x|:=\sqrt{\pmb x\cdot \pmb x}
+$$</p>
+
+<h3 id="quaternions-and-octonions">Quaternions and octonions</h3>
+
+<p>There are exactly four Euclidean Hurwitz algebras over the real numbers. real number $\Bbb R$, the complex numbers $\Bbb C$, the quaternions $\Bbb H$ and the octonions $\Bbb O$, with dimension of 1, 2, 4 and 8, respectively.</p>
+
+<h3 id="taxicab-norm-or-manhattan-norm">Taxicab norm or Manhattan norm</h3>
+
+<p>$$
+|\pmb x|_1:= \sum_{i=1}^{n}|x_i|
+$$</p>
+
+<p>Related to the distance a taxi has to drive in a rectangular street grid to get from the origin to the point $x$ . Which can be also called the $\ell^1$ norm, and the distance derived from this norm is called the Manhattan distance or $\ell_1$ distance.</p>
+
+<p>Attention, can’t written into, $\sum_{i=1}^{n}x_i$ instead, because it may yield negative results.</p>
+
+<h3 id="p-norm">p-norm</h3>
+
+<p>Let $p\ge1$ be a real number. The p-norm (also called $\ell_p$-norm) of vector $\pmb x = (x_1, …, x_n)$ is,</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$$|\pmb x|<em>p:=\left(\sum</em>{i-i}^{n}</td>
+      <td>x_i</td>
+      <td>^p\right)^{1/p}$$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>when $p = 1$, we get taxicab norm, $p=2$, we get Euclidean norm and if $p$ approaches $\infty$, we will get the infinity norm or maximum norm:</p>
+
+<p>$$
+|\pmb x|_{\infty}:=\max_i|x_i|.
+$$</p>
+
+<p>The p-norm is related to the generalized mean or power mean.</p>
+
+<p>when $0&lt;p&lt;1$ (wiki)</p>
+
+<h3 id="maximum-norm-special-case-of--infinity-norm--uniform-norm-or-supremum-norm">Maximum norm (special case of : infinity norm , uniform norm or supremum norm)</h3>
+
+<p>$$
+|x|_{\infty} :=max(|x_1|, …, |x+|)
+$$</p>
+
+<p>&lt;++&gt;</p>
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Last One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/01/Talos-L-120C/" title="link to L120C透射电镜操作流程">L120C透射电镜操作流程</a></h2>
+		<p class="excerpt">以连续上样为例：关filament，关Turbo pump —&gt; 上样，（插一半，自动开Turbo，抽真空后，插入后半） —&gt; 开Filament —&gt; 开阀 —&gt; R1 放屏幕 —&gt; LM 低倍数 —&gt; Search （Stage Add）—&gt; 放大倍数 （SA2600X）—&gt; Wobbler, 调整 Z-axis —&gt; 关闭 Wobbler —&gt; Set Alpha 确认 —&gt; 关闭Set Alpha —&gt; 高倍（...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-01-22 16:44:30 +0800" class="post-list__meta--date date">2022-01-22</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2022/01/Talos-L-120C/">More</a>
+</div>
+	</div>
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2021/11/cross-entropy/" title="link to cross entropy introduction">cross entropy introduction</a></h2>
+		<p class="excerpt">In the problem of logistic regression, MSE (Mean Squared Error) is not good enough to describe the loss of the training model. Cross entropy is an important concept in logistic regression, which comes from the information theory.The amount of info...…</p>
+		<div class="post-list__meta">
+<time datetime="2021-11-09 15:00:30 +0800" class="post-list__meta--date date">2021-11-09</time> • <span class="post-list__meta--tags tags">DeepLearning</span><a class="btn-border-small" href="/2021/11/cross-entropy/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<section class="post-comments">
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2021/11/norm/";
+			this.page.identifier = "/2021/11/norm/";
+		};
+
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
+
+	<script>
+    var valine = new Valine();
+    valine.init({
+        av: AV,
+        el: '#comments',
+        app_id: 'FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz',
+        app_key: 'AMHLA0K7K1BXcSEWwusdyllN',
+        notify: true, 
+        verify: true, 
+        avatar: 'avatar', 
+      placeholder: '留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!' 
+    });
+</script>
+
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

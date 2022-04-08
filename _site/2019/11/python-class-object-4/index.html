@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -12,7 +14,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-<head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,7 +31,7 @@ var _hmt = _hmt || [];
   <meta property="og:title" content="python 类和对象 (4) 组合 Mixin 类，类对象与实例对象 绑定">
   <meta property="og:description" content="整理自小甲鱼鱼C论坛组合">
   
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
   
   <link rel="stylesheet" href="/css/main.css">
@@ -38,7 +40,7 @@ var _hmt = _hmt || [];
   <link rel="canonical" href="http://localhost:4000/2019/11/python-class-object-4/">
   <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
   
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
   <!-- Icons -->
   <link rel="shortcut icon" href="img/favicon.ico">
   <!-- mathjax -->
@@ -56,16 +58,17 @@ var _hmt = _hmt || [];
   </script>
   <!--script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script--!>
+  </script-->
   <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <!-- Valine Comment -->
   
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
+
+
+
 </head>
-
-
 <body>
 
 	<span class="mobile btn-mobile-menu">
@@ -79,17 +82,17 @@ var _hmt = _hmt || [];
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
-        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo" /></a>
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
         
         <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
         
-        <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)，预防兽医专业，农学博士。</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
         
         
-        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 计划开展免疫原改造相关研究，可以在 RG 上找到我已发表的论文</a></p>
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
         
         
         <div class="navigation-wrapper">
@@ -106,14 +109,15 @@ var _hmt = _hmt || [];
             </nav>
           </div>
           
-          <div><nav class="cover-navigation navigation--social">
+          <div>
+<nav class="cover-navigation navigation--social">
   <ul class="navigation">
 
   
   <!-- Weibo -->
   <li class="navigation__item">
     <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
-      <i class='social fa fa-weibo'></i>
+      <i class="social fa fa-weibo"></i>
       <span class="label">Weibo</span>
     </a>
   </li>
@@ -123,7 +127,7 @@ var _hmt = _hmt || [];
   <!-- Github -->
   <li class="navigation__item">
     <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
-      <i class='social fa fa-github'></i>
+      <i class="social fa fa-github"></i>
       <span class="label">Github</span>
     </a>
   </li>
@@ -133,7 +137,7 @@ var _hmt = _hmt || [];
   <!-- Twitter -->
   <li class="navigation__item">
     <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
-      <i class='social fa fa-twitter'></i>
+      <i class="social fa fa-twitter"></i>
       <span class="label">Twitter</span>
     </a>
   </li>
@@ -144,7 +148,7 @@ var _hmt = _hmt || [];
   <!-- RSS -->
   <li class="navigation__item">
     <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-      <i class='social fa fa-rss'></i>
+      <i class="social fa fa-rss"></i>
       <span class="label">RSS</span>
     </a>
   </li>
@@ -153,7 +157,7 @@ var _hmt = _hmt || [];
   <!-- Email -->
   <li class="navigation__item">
     <a href="mailto:qzh813@gmail.com" title="Contact me">
-      <i class='social fa fa-envelope'></i>
+      <i class="social fa fa-envelope"></i>
       <span class="label">Email</span>
     </a>
   </li>
@@ -163,7 +167,7 @@ var _hmt = _hmt || [];
   <!-- Research Gate  -->
   <li class="navigation__item">
     <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
-      <i class='fa fa-book'></i>
+      <i class="fa fa-book"></i>
       <span class="label">Researchgate</span>
     </a>
   </li>
@@ -177,7 +181,7 @@ var _hmt = _hmt || [];
     </div>
     
     
-    <div class="panel-cover--overlay cover-red"></div>
+    <div class="panel-cover--overlay cover-blue"></div>
     
   </div>
 </header>
@@ -185,16 +189,14 @@ var _hmt = _hmt || [];
 
 	<div class="content-wrapper">
 		<div class="content-wrapper__inner">
-			<!doctype html>
-<html>
+			
 
-<head>
+
+
 	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
 		<header class="post-header">
 			<div class="post-meta">
-				<time datetime="2019-11-16 20:58:24 +0800" itemprop="datePublished"
-					class="post-meta__date date">2019-11-16</time> &#8226; <span
-					class="post-meta__tags tags">python</span>
+				<time datetime="2019-11-16 20:58:24 +0800" itemprop="datePublished" class="post-meta__date date">2019-11-16</time> • <span class="post-meta__tags tags">python</span>
 			</div>
 
 			<div class="post-tags">
@@ -549,13 +551,11 @@ var _hmt = _hmt || [];
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Last One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object-5/"
-				title="link to python 类和对象 (5) 一些相关的BIF">python 类和对象 (5) 一些相关的BIF</a></h2>
-		<p class="excerpt">整理自小甲鱼鱼C论坛对类或者对象从属判断的内置函数issubclass(class, classinfo)如果第一个参数(class)是第二个参数(classinfo)的一个子类，返回True否则返回False  一个类被认为是其自身的子类  classinfo可以是一个类对象组成的元组，只要class是其中任何一个候选类的子类，则返回True  其他情况会抛出TypeErrorisinstance(object, classinfo)如果第一个参数(object)是第二个参数(class...&hellip;</p>
-		<div class="post-list__meta"><time datetime="2019-11-18 13:30:24 +0800"
-				class="post-list__meta--date date">2019-11-18</time> &#8226; <span
-				class="post-list__meta--tags tags">python</span><a class="btn-border-small"
-				href=/2019/11/python-class-object-5/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object-5/" title="link to python 类和对象 (5) 一些相关的BIF">python 类和对象 (5) 一些相关的BIF</a></h2>
+		<p class="excerpt">整理自小甲鱼鱼C论坛对类或者对象从属判断的内置函数issubclass(class, classinfo)如果第一个参数(class)是第二个参数(classinfo)的一个子类，返回True否则返回False  一个类被认为是其自身的子类  classinfo可以是一个类对象组成的元组，只要class是其中任何一个候选类的子类，则返回True  其他情况会抛出TypeErrorisinstance(object, classinfo)如果第一个参数(object)是第二个参数(class...…</p>
+		<div class="post-list__meta">
+<time datetime="2019-11-18 13:30:24 +0800" class="post-list__meta--date date">2019-11-18</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-class-object-5/">More</a>
+</div>
 	</div>
 	
 
@@ -563,42 +563,39 @@ var _hmt = _hmt || [];
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Next One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-30/"
-				title="link to 汇编语言 7.10 不同寻址方式的灵活运用(2)">汇编语言 7.10 不同寻址方式的灵活运用(2)</a></h2>
-		<p class="excerpt">7.10 不同寻址方式的灵活运用(2)上次提到的代码会出现死循环，下面来分析具体原因以及如何解决。回顾代码：codesg segment  start:  mov ax, datasg          mov ds, ax          mov bx, 0          mov cx, 4     s0:  mov si, 0         ;外层循环          mov cx, 3      s:  mov al, [bx+si]   ;内层循环          an...&hellip;</p>
-		<div class="post-list__meta"><time datetime="2019-11-14 20:29:24 +0800"
-				class="post-list__meta--date date">2019-11-14</time> &#8226; <span
-				class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small"
-				href=/2019/11/assembly-language-30/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-30/" title="link to 汇编语言 7.10 不同寻址方式的灵活运用(2)">汇编语言 7.10 不同寻址方式的灵活运用(2)</a></h2>
+		<p class="excerpt">7.10 不同寻址方式的灵活运用(2)上次提到的代码会出现死循环，下面来分析具体原因以及如何解决。回顾代码：codesg segment  start:  mov ax, datasg          mov ds, ax          mov bx, 0          mov cx, 4     s0:  mov si, 0         ;外层循环          mov cx, 3      s:  mov al, [bx+si]   ;内层循环          an...…</p>
+		<div class="post-list__meta">
+<time datetime="2019-11-14 20:29:24 +0800" class="post-list__meta--date date">2019-11-14</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-30/">More</a>
+</div>
 	</div>
 	
 </section>
 
 	<section class="post-comments">
-<!--
-  
-    <div id="disqus_thread"></div>
-    <script>
-    var disqus_config = function () {
-        this.page.url = "http://localhost:4000/2019/11/python-class-object-4/";
-        this.page.identifier = "/2019/11/python-class-object-4/";
-    };
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2019/11/python-class-object-4/";
+			this.page.identifier = "/2019/11/python-class-object-4/";
+		};
 
-    var disqus_shortname = 'zququ';
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
-   
--->
-  
-    <div id="comments"></div> 
-   
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
 
 	<script>
     var valine = new Valine();
@@ -615,15 +612,28 @@ var _hmt = _hmt || [];
 </script>
 
 
-</html>
+
 
 			<section class="footer">
-    <footer>
-        <span class="footer__copyright">&copy; 2020  <a href="https://zququcv.netlify.com">@zququ</a> Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
-    </footer>
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
 </section>
 
-		</div>
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
 	</div>
 
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -633,6 +643,7 @@ var _hmt = _hmt || [];
 
 
 
-</body>
 
+
+</body>
 </html>

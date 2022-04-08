@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Preliminaries of TEM</title>
+  <meta name="description" content="All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Preliminaries of TEM">
+  <meta name="twitter:description" content="All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Preliminaries of TEM">
+  <meta property="og:description" content="All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2022/03/phase-contrast-1/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2022-03-31 15:57:55 +0800" itemprop="datePublished" class="post-meta__date date">2022-03-31</time> • <span class="post-meta__tags tags">cryo-EM</span>
+			</div>
+
+			<div class="post-tags">
+	标签页 Tags:
+	
+	
+	<a href="/tags/#cryo-EM">cryo-EM</a>
+	
+</div>
+
+			<br>
+
+			<h1 class="post-title">Preliminaries of TEM</h1>
+
+		</header>
+
+		<section class="post">
+			<p>All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.</p>
+
+<!-- TOC GFM -->
+
+<ul>
+  <li>
+<a href="#elementary-principles-of-phase-contrast-tem-imaging">Elementary principles of phase-contrast TEM imaging</a>
+    <ul>
+      <li><a href="#a-simple-optical-bench-experiment">A Simple Optical Bench Experiment</a></li>
+      <li><a href="#discussion-about-how-to-increase-contrast">Discussion about How to Increase Contrast</a></li>
+      <li><a href="#the-reason-why-coherent-but-not-incoherent-illumination">The Reason why Coherent but not Incoherent Illumination</a></li>
+      <li><a href="#how-to-increase-coherent-in-tem">How to Increase Coherent in TEM</a></li>
+    </ul>
+  </li>
+  <li><a href="#instrumental-requirement-for-high-resolution">Instrumental Requirement for high resolution</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="elementary-principles-of-phase-contrast-tem-imaging">Elementary principles of phase-contrast TEM imaging</h2>
+
+<h3 id="a-simple-optical-bench-experiment">A Simple Optical Bench Experiment</h3>
+
+<p>Here is the optical bench arrangement to record the images:</p>
+
+<p><img src="/assets/2022-03-31/20220331_1.png" alt="The optical bench arrangement to record the images"></p>
+
+<p><strong>Figure 1.</strong> Here L1 is a ×40 microscope objective lens at the focus of which is placed a pin-hole aperture P. Lenses L2 and L3 have a focal length of f0 = 14 cm. The object is shown at O and the film plane at F; distances are Y =30cm, U = 17 cm, and V = 80 cm. The pin-hole aperture is used as a spatial filter to provide more uniform illumination. Back-focal plane masks may be inserted at M.</p>
+
+<p><img src="/assets/2022-03-31/2022-03-31_2.png" alt="Figure 2"></p>
+
+<p><strong>Figure 2.</strong> Optical through-focus series showing the effect of focus changes on the image of a small indentation in a glass plate (phase object). The image at (a) was recorded under-focus, that is, with the object too close to the lens L3. It shows a bright fringe surrounding the indentation similar to that seen on electron micrographs of small holes; image (b) is recorded at exact focus and shows only very faint contrast; image (c) is recorded at an over-focus setting (object too far from L3) and so shows a dark Fresnel fringe outlining the indentation. The background fringes arise in the illuminating system.</p>
+
+<p>The result sugested:</p>
+
+<p>High-resolution specimens will be imaged with strong contrast only if a <strong>coherent source of illumination is used (if not see Figure 3)</strong> and if <strong>images are recorded slightly out of focus (defocus)</strong>.</p>
+
+<p>Figure 3 shows the same object imaged using a conventional tungsten lamp-bulb as the source of illumination to provide <strong><em>‘incoherent’</em></strong> illumination conditions. <strong>Despite wide changes in focus, little contrast appears</strong>.</p>
+
+<p><img src="/assets/2022-03-31/2022-04-01-16-53-33.png" alt="Figure 3"></p>
+
+<p><strong>Figure 3.</strong> An image recorded under identical conditions to that shown in Figure 2(a), with the laser source replaced with a tungsten lamp focused onto the object (critical illumination). The faint contrast seen is due to the preservation of some coherence in the illumination introduced by limiting the size of lens L2. This contrast disappears completely if a large lens is used. Variations in the size of this lens (or an aperture near it) are analogous to changes in the size of the second condenser aperture in an electron microscope.</p>
+
+<h3 id="discussion-about-how-to-increase-contrast">Discussion about How to Increase Contrast</h3>
+
+<ol>
+  <li>
+    <p><strong>Reducing the size of the objective aperture.</strong></p>
+
+    <p>Not useful, since image resolution is necessarily limited, as seen in Figure 4.</p>
+
+    <p><img src="/assets/2022-03-31/2022-04-01-10-46-56.png" alt="Figure 4"></p>
+
+    <p><strong>Figure 4.</strong> A small aperture has been placed on the axis at M, <strong>severely limiting the image resolution</strong>. On removing this aperture the image contrast disappears. The use of a small aperture at M (the back-focal plane) is analogous to the normal low-resolution method of obtaining contrast in biological electron microscopy.</p>
+  </li>
+  <li>
+    <p><strong>Introducing a focusing error as in Figure 2(a).</strong></p>
+  </li>
+  <li>
+    <p><strong>Simple interventions in the lens back-focal plane as in Figure 5, where Schlieren contrast is shown (the back-focal plane is approximately the plane of the objective aperture for an electron microscope).</strong></p>
+
+    <p><img src="/assets/2022-03-31/2022-04-01-17-00-41.png" alt="Figure 5"></p>
+
+    <p><strong>Figure 6.</strong> A razor blade has been placed across the beam at M, thus preventing exactly half the diﬀraction pattern from contributing to the image. The resulting image is approximately proportional to the derivative of the phase shift introduced by the object taken in a direction normal to the edge of the razor blade. Notice the fine fringes inside the edge of the indentation arising from multiple reflection within the glass slide.</p>
+  </li>
+  <li>
+    <p><strong>the use of back-focal plane phase plates, similar to the Zernike phase plate used in optical microscopy.</strong></p>
+
+    <p>Phase plates for TEM can be divided into two groups by the symmetry of the modulation pattern they produce:
+ <br></p>
+    <ol>
+      <li>Zernike type phase plate, generate circularly symmetric modulation pattern. The images produced using such phase plates exhibit <strong>isotropic contrast features</strong> around objects.</li>
+      <li>Hilbert type, these devices modulate the diffracted wave asymmetrically <strong>giving rise to anisotropic contrast</strong> in the images.
+ <br>
+</li>
+    </ol>
+
+    <p><img src="/assets/2022-03-31/PhasePlate.jpg" alt="Figure 7"></p>
+
+    <p><strong>Figure 7.</strong> Different kinds of phase plates</p>
+
+    <p><img src="/assets/2022-03-31/2022-04-02-15-42-41.png" alt="Fgure 8"></p>
+
+    <p><strong>Figure 8.</strong> (A) Optical layout of a transmission electron microscope equipped with a Zernike phase plate. (B) Moduli of phase contrast transfer functions without (solid line) and with (dashed line) a Zernike phase plate. kCO is the cut-on frequency ofthe phase plate; Parameters: defocus 0, spherical aberration 5 mm, acceleration voltage 300 kV.</p>
+
+    <p><img src="/assets/2022-03-31/2022-04-02-16-04-42.png" alt="Figure 9"></p>
+
+    <p><strong>Figure 9.</strong> Images of ice-embedded T4 bacteriophage. (A) Defocus phase contrast image, defocus 1.6 mm. (B) Zernike phase contrast image close to focus. (C) and (D) moduli of the Fourier transforms of the images in (A) and (B) respectively. White arrows in (C) indicate the first two zeros ofthe contrast transfer function. Black arrows in (C) and (D) indicate the ring corresponding to the 2.3 nm periodicity of the DNA packed in the phase capsids. Experimental conditions: acceleration voltage 200 kV, electron dose 20 e /A˚2. Scale bars: 50 nm.</p>
+  </li>
+</ol>
+
+<h3 id="the-reason-why-coherent-but-not-incoherent-illumination">The Reason why Coherent but not Incoherent Illumination</h3>
+
+<p>In both electron and optical microscopy the reasons for the lack of contrast at exact focus are the same—these thin specimens (‘phase objects’) affect only the phase of the wave transmitted by the specimen and not its amplitude.</p>
+
+<p>That is, they behave like <strong>a medium of variable refractive index</strong>. It is this variation in refractive index from point to point across the specimen (proportional to the specimen’s atomic potential in volts 6 Preliminaries for electron microscopy) which must be converted into intensity variations in the image if we are to ‘see’, for example, atoms in the electron microscope</p>
+
+<p>For the piece of glass shown in Fig. 1.2, the phase of the wave transmitted through the glass differs from that of an unobstructed reference wave by 2π(n − 1)/λ times the thickness of the glass, where n is the refractive index of the glass.</p>
+
+<p>The amplitude of the optical wave leaving the glass is given from elementary optics can be described as,</p>
+
+<p>$$
+f(x) = \exp(-2\pi int(x)/\lambda) \tag{1}
+$$</p>
+
+<p>in which, the t(x) represented the thickness of the glass at the object point $x$ , and $n$ is the refractive index of the glass. And for coherent illumination,</p>
+
+<p>$$
+I(x)_c = |f(x) * S(x)|^2 \tag{2}
+$$</p>
+
+<p>which for the incoherent illumination,</p>
+
+<p>$$
+I(x)_i = |f(x)|^2 * |S(x)|^2 \tag{3}
+$$</p>
+
+<p><strong>Where $S(x)$ specifies all the instrumental imperfections and parameters</strong> such as objective aperture size (which determines the diffraction limit), the lens aberrations, and the magnitude of any focusing error. <strong>And $f(x)$ represents the object function</strong>.</p>
+
+<p>From the $(1)(2)$ and $(3)$ we can find in the incoherent lumination, the image intensity from such a phase object does not vary with position in the object, since</p>
+
+<p>$$
+|\exp{-2\pi i t(x) n/\lambda}|^2 = 1
+$$</p>
+
+<p>And Here is the Conclusion:</p>
+
+<ol>
+  <li>Only by using coherent illumination and an ‘imperfect’ microscope can we hope to obtain contrast variations in the image of a specimen showing only variations in refractive index.</li>
+  <li>
+<strong>In high-resolution electron microscopy of thin specimens the accurate control of illumination coherence and defect of focus are crucial for success</strong>.</li>
+  <li>The amount of fine detail in a high-resolution TEM micrograph increases dramatically with improved coherence of illumination, while completely misleading detail may be observed in images recorded at the wrong focus setting.</li>
+</ol>
+
+<h3 id="how-to-increase-coherent-in-tem">How to Increase Coherent in TEM</h3>
+
+<p>In practice, for a microscope ﬁtted with a conventional hair-pin ﬁlament, <strong>the illumination coherence is determined by the size of the second condenser lens aperture, a small aperture producing high coherence</strong>. As shown in Figure 10.</p>
+
+<p><img src="/assets/2022-03-31/2022-04-04-173305.png" alt="Figure 10"></p>
+
+<p><strong>Figure 10.</strong> Two electron microscope images of amorphous carbon ﬁlms recorded at the same focus setting but using diﬀerent condenser apertures. In (a) a small second condenser aperture has been used, resulting in an image showing high contrast and ﬁne detail. This contrast is lost in (b), where a large aperture has been used.</p>
+
+<p>In most cases of practical interest the imaging is partially coherent. By this we loosely mean that for object detail below a certain size $X_c$ we can use the model of coherent phase contrast imaging (see Fig. 1.2) while for detail much larger than $X_c$ the imaging is incoherent.</p>
+
+<p>The distance <strong>$X_c$ is given approximately by the electron wavelength divided by the semi-angle subtended by the second condenser aperture at the specimen</strong>, when using a hair-pin ﬁlament.</p>
+
+<h2 id="instrumental-requirement-for-high-resolution">Instrumental Requirement for high resolution</h2>
+
+<p>A laboratory which has recently purchased a TEM and wishes to use it for high-resolution studies should consider the following points.</p>
+
+<ol>
+  <li>The microscope site must be acceptable. Mechanical vibration, stray magnetic ﬁelds, and room temperature must all be within acceptable limits.</li>
+  <li>A reliable supply of clean cooling water at constant temperature and pressure must be assured.</li>
+  <li>In addition, <strong>the spherical aberration constant Cs must be known</strong> for the optimum objective lens excitation. This should be less than 2 mm at 100 kV if high-resolution results are expected.</li>
+  <li>The specimen position, for many lens designs the chromatic aberration coeﬃcient Cc passes through a minimum as a function of lens excitation, and this parameter aﬀects both the contrast and resolution of ﬁne image detail.
+    <ul>
+      <li>The complicated interaction between all these factors which depend on specimen position can best be understood using the ‘damping envelope’, This ‘damping envelope’ controls the information resolution limit (loosely referred to by manufacturers as the ‘line’ or ‘lattice’ resolution) of the instrument and depends chiefly on the size of the illumination aperture and Cc.</li>
+      <li>The point resolution, however, is determined by <strong>spherical aberration</strong>. A method has been described which would <strong>allow both these important resolution limits to be measured as a function of specimen position in the lens</strong> bore through an analysis of optical diﬀractogram pairs</li>
+    </ul>
+  </li>
+  <li>A vacuum of 0.5 × 10−7 Torr or better is needed.</li>
+  <li>The high-voltage supply of the microscope must be suﬃciently stable to allow high-resolution images to be obtained.</li>
+  <li>The room containing the microscope must be easily darkened completely, and a room-light dimmer control needs to be ﬁtted within arm’s reach of the operator’s chair.</li>
+</ol>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Last One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/04/electron-optics/" title="link to Electron optics">Electron optics</a></h2>
+		<p class="excerpt">All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.  The Electron Wavelength and Relativity          Four Problems of EM      The Wavelength $\lambda$                 ...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-04-04 11:18:00 +0800" class="post-list__meta--date date">2022-04-04</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2022/04/electron-optics/">More</a>
+</div>
+	</div>
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/01/Talos-L-120C/" title="link to L120C透射电镜操作流程">L120C透射电镜操作流程</a></h2>
+		<p class="excerpt">以连续上样为例：关filament，关Turbo pump —&gt; 上样，（插一半，自动开Turbo，抽真空后，插入后半） —&gt; 开Filament —&gt; 开阀 —&gt; R1 放屏幕 —&gt; LM 低倍数 —&gt; Search （Stage Add）—&gt; 放大倍数 （SA2600X）—&gt; Wobbler, 调整 Z-axis —&gt; 关闭 Wobbler —&gt; Set Alpha 确认 —&gt; 关闭Set Alpha —&gt; 高倍（...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-01-22 16:44:30 +0800" class="post-list__meta--date date">2022-01-22</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2022/01/Talos-L-120C/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<section class="post-comments">
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2022/03/phase-contrast-1/";
+			this.page.identifier = "/2022/03/phase-contrast-1/";
+		};
+
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
+
+	<script>
+    var valine = new Valine();
+    valine.init({
+        av: AV,
+        el: '#comments',
+        app_id: 'FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz',
+        app_key: 'AMHLA0K7K1BXcSEWwusdyllN',
+        notify: true, 
+        verify: true, 
+        avatar: 'avatar', 
+      placeholder: '留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!' 
+    });
+</script>
+
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

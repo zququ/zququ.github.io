@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>From Logistic Regression to Multi-class Classification and Neural Networks</title>
+  <meta name="description" content="Back Propagation">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="From Logistic Regression to Multi-class Classification and Neural Networks">
+  <meta name="twitter:description" content="Back Propagation">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="From Logistic Regression to Multi-class Classification and Neural Networks">
+  <meta property="og:description" content="Back Propagation">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2021/05/ml-From-LR-to-NW/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2021-05-27 17:44:10 +0800" itemprop="datePublished" class="post-meta__date date">2021-05-27</time> • <span class="post-meta__tags tags">DeepLearning</span>
+			</div>
+
+			<div class="post-tags">
+	标签页 Tags:
+	
+	
+	<a href="/tags/#DeepLearning">DeepLearning</a>
+	
+</div>
+
+			<br>
+
+			<h1 class="post-title">From Logistic Regression to Multi-class Classification and Neural Networks</h1>
+
+		</header>
+
+		<section class="post">
+			<h3 id="back-propagation">Back Propagation</h3>
+
+<p>给定一个神经网络，我们想通过Back Propagation的方法来求解图中任意节点的误差值（ $\delta$ ）。</p>
+
+<p>图中，我将input unit定义为红色，并将output unit定义为绿色。这样很容易理解, input layer中只存在有 input unit，而输出层中也就只有绿色的 output unit。</p>
+
+<p>我们假设有，</p>
+
+<p>$$
+\delta = \frac{J}{z} \tag{1}
+$$</p>
+
+<p>其中 $J$ 为 cost function，而，$z$ 即为对应 unit 的输入input unit （同时也是上一层的output unit）。</p>
+
+<p><img src="/assets/202106/backpropagation_nn.png" alt="BPnn"></p>
+
+<p>首先考虑 output layer (L层)，有如下关系式，</p>
+
+<p>$$
+a_j^{(L)} = z_j^{(L)}
+$$</p>
+
+<p>即其 input unit == output unit。另外根据链式法则，有如下的求导关系：</p>
+
+<p>$$L \rightarrow a_j^{(L)} \rightarrow z_j^{(L)}$$</p>
+
+<p>所以有，</p>
+
+<p>$$
+\delta_j^{(L)} = \frac{\partial L}{\partial z_j^{(L)}} = \frac{\partial L}{\partial a_j^{(L)}}\cdot\frac{\partial a_j^{(L)}}{\partial z_j^{(L)}} = (a_j^{(L)} - y_j^{(L)})\cdot 1
+$$</p>
+
+<p>这样也能够解释为什么选用偏微分的形式来表示 $\delta$ ，即可以联系链式法则，为后续的反向传播做铺垫，在值上又与误差的定义相同，十分的精彩与美丽。</p>
+
+<p>那么对于其中任意个 node 上的任意一个 unit 又如何来计算误差值呢？</p>
+
+<p>例如以求解图中黄色的 $z_j^{(L)}$ 为例，同样由链式法则公式，首先观察链式的关系式。</p>
+
+<p>$$
+L \rightarrow z_k^{(l+1)}(k = 1,…, s_{(l)})\rightarrow z_j^{(l)}
+$$
+其中 $s_{(l)}$ 为 back propagation 中前一层中所有 input layer 中的 unit 数，所以由链式法则，有
+$$
+\delta_j^{(l)} = \sum_k^{s_{(l+1)}} \frac{\partial L}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial z_j^{(l)}} = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot \frac{\partial z_k^{(l+1)}}{\partial z_j^{(l)}}\tag 2
+$$</p>
+
+<p>又因为由 forword propagation 可以得到，</p>
+
+<p>$$
+z_k^{(l+1)} = \sum_p^{s_{(l)}}\theta_{kp}^{(l)}\cdot g(z_j^{(l)}) + b_k^{(l)} \tag 3
+$$</p>
+
+<p>代入 $(2)$ 中，</p>
+
+<p>$$
+\delta_j^{(l)} = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot g^{‘}(z_j^{(l)}) = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot a_j^{(l)}\cdot(1-a_j^{(l)})
+$$</p>
+
+<p>再来观察关于 $J$ 和 $\theta_{ij}^{(l)}$ 的求导关系：</p>
+
+<p>$$
+L \rightarrow z_k^{(l+1)} (k = 1, …, s_{(l)}) \rightarrow \theta_{ij}^{(l)}
+$$</p>
+
+<p>由链式法则，</p>
+
+<p>$$
+\frac{\partial L}{\theta_{ij}^{(l)}} = \sum_k^{s_{(l)}}\frac{\partial L}{\partial z_j^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial \theta_{ij}^{(l)}}= \sum_k^{s_{(l)}} \delta_j^{(l+1)}\cdot \frac{\partial z_k^{(l+1)}}{\partial \theta_{ij}^{(l)}}</p>
+
+<p>$$</p>
+
+<p>当 $k = i, p = j$ 时，$(3)$ 代入原式求导可消去 $\sum$ 留下一项，</p>
+
+<p>$$
+\frac{\partial L}{\theta_{ij}^{(l)}} = \delta_j^{(l+1)}\cdot g(z_j^{(l)}) = \delta_j^{(l+1)}\cdot a_j^{(l)}
+$$</p>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Last One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2021/06/Legendre-transform/" title="link to Legendre Transform 勒让德变换">Legendre Transform 勒让德变换</a></h2>
+		<p class="excerpt">对于给定一个关于 $x, y$ 的函数式：\[f(x, y)\]求它的全微分，\[df(x, y) = \sum_{i=0}^{n}\frac{\partial f_i}{\partial x_i}dx_i + \sum_{i=0}^{n}\frac{\partial f_i}{\partial y_i}dy_i\tag{1}\]我们假设，存在 $g(x, y)$，其自变量 $u$ 存在有，\[u_i = \frac{\partial f_i}{\partial x_i}\]代入 $(1)...…</p>
+		<div class="post-list__meta">
+<time datetime="2021-06-01 13:25:00 +0800" class="post-list__meta--date date">2021-06-01</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2021/06/Legendre-transform/">More</a>
+</div>
+	</div>
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2021/05/Why_colsp_and_rowsp_same_dim/" title="link to 为什么矩阵行、列空间维度相同">为什么矩阵行、列空间维度相同</a></h2>
+		<p class="excerpt">转自：stackexchange 论坛Proof. Suppose that $\lbrace v_1,v_2,\dots,v_k\rbrace$ is a basis for the column space of $A$. Then each column of $A$ can be expressed as a linear combination of these vectors; suppose that the $i$-th column $c_i$ is given by$$...…</p>
+		<div class="post-list__meta">
+<time datetime="2021-05-06 17:48:00 +0800" class="post-list__meta--date date">2021-05-06</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2021/05/Why_colsp_and_rowsp_same_dim/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<section class="post-comments">
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2021/05/ml-From-LR-to-NW/";
+			this.page.identifier = "/2021/05/ml-From-LR-to-NW/";
+		};
+
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
+
+	<script>
+    var valine = new Valine();
+    valine.init({
+        av: AV,
+        el: '#comments',
+        app_id: 'FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz',
+        app_key: 'AMHLA0K7K1BXcSEWwusdyllN',
+        notify: true, 
+        verify: true, 
+        avatar: 'avatar', 
+      placeholder: '留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!' 
+    });
+</script>
+
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>cross entropy introduction</title>
+  <meta name="description" content="In the problem of logistic regression, MSE (Mean Squared Error) is not good enough to describe the loss of the training model. Cross entropy is an important ...">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="cross entropy introduction">
+  <meta name="twitter:description" content="In the problem of logistic regression, MSE (Mean Squared Error) is not good enough to describe the loss of the training model. Cross entropy is an important ...">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="cross entropy introduction">
+  <meta property="og:description" content="In the problem of logistic regression, MSE (Mean Squared Error) is not good enough to describe the loss of the training model. Cross entropy is an important ...">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2021/11/cross-entropy/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2021-11-09 15:00:30 +0800" itemprop="datePublished" class="post-meta__date date">2021-11-09</time> • <span class="post-meta__tags tags">DeepLearning</span>
+			</div>
+
+			<div class="post-tags">
+	标签页 Tags:
+	
+	
+	<a href="/tags/#DeepLearning">DeepLearning</a>
+	
+</div>
+
+			<br>
+
+			<h1 class="post-title">cross entropy introduction</h1>
+
+		</header>
+
+		<section class="post">
+			<p>In the problem of logistic regression, MSE (Mean Squared Error) is not good enough to describe the loss of the training model. <strong>Cross entropy</strong> is an important concept in logistic regression, which comes from the information theory.</p>
+
+<h3 id="the-amount-of-information">The amount of information</h3>
+
+<p>First of all, I will talk about <strong>the amount (quantity) of information (信息量)</strong>, can be defined by $I$,</p>
+
+<p>$$
+I(x_0) = -\log(p(x_0))\tag{1}
+$$</p>
+
+<p>in which, $x_0$ is a random event, and $p(x_0)$ will be the probability of $x_0$ event occurs.</p>
+
+<p><img src="/assets/202111/20211110.png" alt="pic1"></p>
+
+<p>To describe the probability ( $p(x_0)$ ) which in the range of $[0,1]$.</p>
+
+<p>It’s a very interesting thing, because when a small probability event occurs means a bigger amount of information.</p>
+
+<h3 id="entropy">Entropy</h3>
+
+<p>There is another concept named <strong>entropy ($H(X)$)</strong>, which describes the mathematical expectation of all events’ ($x_i$) amount of information,</p>
+
+<p>$$
+H(X) = -\sum_{i=1}^n p(x_i)\log(p(x_i))\tag{2}
+$$</p>
+
+<p>In the problem of binary classification,</p>
+
+<p>$$
+\begin{aligned}
+H(X) &amp;= -\sum_{i=1}^n p(x_i)\log(p(x_i)) <br>
+&amp;= -p(x)\log(p(x)) - (1 - p(x))\log(1-p(x))
+\end{aligned}\tag{3}
+$$</p>
+
+<h3 id="relative-entropy-kullback-leibler-kl-divergence">Relative entropy (Kullback-Leibler (KL) divergence)</h3>
+
+<p><strong>$D_{KL}(P|Q)$ is often called the information gain achieved if P is used instead of Q</strong>.</p>
+
+<p>$$
+D_{KL}(p|q) = \sum_{i=1}^{n}p(x_i)\log\left(\frac{p(x_i)}{q(x_i)}\right)\tag{4}
+$$</p>
+
+<p>from which, we can get the truth that, the smaller $D_{KL}$ is, the closer distribution q and distribution p will be.</p>
+
+<h3 id="cross-entropy">Cross entropy</h3>
+
+<p>$(4)$ can be transformed into,</p>
+
+<p>$$
+\begin{aligned}
+D_{KL}(p|q) &amp; = \sum_{i=1}^{n}p(x_i)\log(p(x_i)) - \sum_{i=1}^{n}p(x_i)\log(q(x_i)) <br>
+&amp; = -H(p(x)) + H(p,q)
+\end{aligned}\tag{5}
+$$</p>
+
+<p>where, the $H(p,q)$ is the so called <strong>cross entropy</strong>, we use the $H(p,q)$ to evaluate the loss of training model instead of the relative entropy $D_{KL}(p|q)$ , it is because the entropy ( $H(p)$ ) is remaining unchanged during the model training process.</p>
+
+<p>In the problem of binary classification, $(5)$ will be transformed into,</p>
+
+<p>$$
+\begin{aligned}
+H(p,q) &amp; = -\sum_{i=1}^{n}p(x_i)\log(q(x_i)) <br>
+&amp; = -p(x)\log(q(x)) - (1-p(x))\log(1-q(x))
+\end{aligned}\tag{6}
+$$</p>
+
+<p>If, we use $y$ to represent the real value while $\hat{y}$ to represent the trained value $(6)$ can be rewritten as,</p>
+
+<p>$$
+J = - y\log{\hat{y}} - (1-y)\log{(1-\hat{y})}\tag{7}
+$$</p>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Last One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2021/11/norm/" title="link to Norm (partial)">Norm (partial)</a></h2>
+		<p class="excerpt">Absolute-value norm\(\| x\| = |x|\)is a norm on the $\Bbb R^1$ vector spaces formed by the real or complex numbers. Any norm $p$ on a $\Bbb R^1$ is equivalent (norm-preserving isomorphism of vector spaces).Euclidean normOn the $\Bbb R^n$ Euclidean...…</p>
+		<div class="post-list__meta">
+<time datetime="2021-11-18 10:35:35 +0800" class="post-list__meta--date date">2021-11-18</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2021/11/norm/">More</a>
+</div>
+	</div>
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2021/07/for-multi-ssh-keygens/" title="link to The configuration of multi-ssh keygens">The configuration of multi-ssh keygens</a></h2>
+		<p class="excerpt">I have two keygens, one for github no password login, while the other for the remote server login. When I have generated key as usual:$ssh-keygen -t rsaAsk me if overwrite the default keygen (of course not!).So I make a new keygen file named rsa2,...…</p>
+		<div class="post-list__meta">
+<time datetime="2021-07-29 13:30:55 +0800" class="post-list__meta--date date">2021-07-29</time> • <span class="post-list__meta--tags tags">Linux</span><a class="btn-border-small" href="/2021/07/for-multi-ssh-keygens/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<section class="post-comments">
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2021/11/cross-entropy/";
+			this.page.identifier = "/2021/11/cross-entropy/";
+		};
+
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
+
+	<script>
+    var valine = new Valine();
+    valine.init({
+        av: AV,
+        el: '#comments',
+        app_id: 'FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz',
+        app_key: 'AMHLA0K7K1BXcSEWwusdyllN',
+        notify: true, 
+        verify: true, 
+        avatar: 'avatar', 
+      placeholder: '留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!' 
+    });
+</script>
+
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

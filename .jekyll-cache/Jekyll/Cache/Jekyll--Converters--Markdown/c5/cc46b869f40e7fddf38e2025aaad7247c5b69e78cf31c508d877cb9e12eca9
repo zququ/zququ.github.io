@@ -1,0 +1,4 @@
+I"�<p>以连续上样为例：</p>
+
+<p>关filament，关Turbo pump —&gt; 上样，（插一半，自动开Turbo，抽真空后，插入后半） —&gt; 开Filament —&gt; 开阀 —&gt; R1 放屏幕 —&gt; LM 低倍数 —&gt; Search （Stage Add）—&gt; 放大倍数 （SA2600X）—&gt; Wobbler, 调整 Z-axis —&gt; <strong>关闭 Wobbler</strong> —&gt; Set Alpha 确认 —&gt; <strong>关闭Set Alpha</strong> —&gt; 高倍（样品而异eg. SA57000X）—&gt; intensity 调整至无明显四角 —&gt; Camera insert —&gt; R1 抬屏幕 —&gt; Camera模式下Search —&gt; live-FFT —&gt; 删除红框（否则只做局部对焦）—&gt; 调节 defocus至欠焦并清晰 —&gt; 拍照 —&gt; 点掉Search —&gt; 拔掉Camera —&gt; 倍数SA2600 —&gt; Holder，清空XYZ —&gt; delete all xyz —&gt; 关闭阀 —&gt; 关filament（不关灯丝如果掉真空会损耗灯丝）—&gt; 下样品 —&gt; (Close All)</p>
+:ET

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Electron optics</title>
+  <meta name="description" content="All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Electron optics">
+  <meta name="twitter:description" content="All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Electron optics">
+  <meta property="og:description" content="All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2022/04/electron-optics/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2022-04-04 11:18:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-04-04</time> • <span class="post-meta__tags tags">cryo-EM</span>
+			</div>
+
+			<div class="post-tags">
+	标签页 Tags:
+	
+	
+	<a href="/tags/#cryo-EM">cryo-EM</a>
+	
+</div>
+
+			<br>
+
+			<h1 class="post-title">Electron optics</h1>
+
+		</header>
+
+		<section class="post">
+			<p>All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.</p>
+
+<!-- TOC GFM -->
+
+<ul>
+  <li>
+<a href="#the-electron-wavelength-and-relativity">The Electron Wavelength and Relativity</a>
+    <ul>
+      <li><a href="#four-problems-of-em">Four Problems of EM</a></li>
+      <li>
+<a href="#the-wavelength-lambda">The Wavelength $\lambda$</a>
+        <ul>
+          <li><a href="#the-wavelength-at-the-anode-lambda">The Wavelength at the anode ($\lambda$)</a></li>
+          <li><a href="#the-wavelength-through-the-specimen-lambda">The Wavelength Through the Specimen ($\lambda’$)</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#simple-lens-properties">Simple lens properties</a>
+        <ul>
+          <li><a href="#the-ideal-lens">The ideal lens</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="the-electron-wavelength-and-relativity">The Electron Wavelength and Relativity</h2>
+
+<h3 id="four-problems-of-em">Four Problems of EM</h3>
+
+<p>Rather than solve the Schrodinger equation for the electron microscope as a whole, it is simpler to separate the four problems:</p>
+
+<ol>
+  <li>Beam–specimen interactions</li>
+  <li>Magnetic lens action</li>
+  <li>Detection</li>
+  <li>Fast electron sources</li>
+</ol>
+
+<p>And a wavelength is assigned to the fast electron.</p>
+
+<h3 id="the-wavelength-lambda">The Wavelength $\lambda$</h3>
+
+<h4 id="the-wavelength-at-the-anode-lambda">The Wavelength at the anode ($\lambda$)</h4>
+
+<p>From the <strong><em>de Broglie</em></strong> relation,</p>
+
+<p>$$
+p = mv = h/\lambda
+$$</p>
+
+<p>and</p>
+
+<p>$$
+E = 1/2mv^2
+$$</p>
+
+<p>We can get the principle of conservation of energy applied to an electron of charge −e traversing a region in which the potential varies from $0$ to $V_0$:</p>
+
+<p>$$
+eV_0 = p^2/2m = h^2/2m\lambda^2 \tag{1}
+$$</p>
+
+<p>where where p is the electron momentum and h is Planck’s constant, and</p>
+
+<p>$$
+\lambda = \frac{h}{\sqrt{2meV_0}} \tag{2}
+$$</p>
+
+<p>An electron leaves the ﬁlament with high potential energy and thermal kinetic energy, and arrives at the anode with no potential energy and high kinetic energy. The zero of potential energy is taken at ground potential. If $\lambda$ is in nanometres and $V_0$ in volts, then</p>
+
+<p>$$
+\lambda = 1.22639/\sqrt{V_0} \tag{3}
+$$</p>
+
+<p>At higher energies the relativistic variation of electron mass must be considered. Neglect of this leads to a 5% error in λ at 100 kV. The relativistically corrected mass is</p>
+
+<p>$$
+m = m_0/(1 - v^2/c^2)^{1/2} 
+$$</p>
+
+<p>and the relativistic equation corresponding to eqn $(1)$ is</p>
+
+<p>$$
+eV_0 = (m - m_0)c^2
+$$</p>
+
+<p>with $m_0$ the electron rest mass and c the velocity of light. These equations may be combined to give an expression for the electron momentum mv. Used in the <em>de Broglie</em> relation, this gives the relativistically corrected electron wavelength as</p>
+
+<p>$$
+\lambda = h/(2m_0eV_r)^{1/2} \tag{4}
+$$</p>
+
+<p>where</p>
+
+<p>$$
+V_r = V_0 + \left(\frac{e}{2m_0c^2}\right)V_0^2
+$$</p>
+
+<p>is the ‘relativistic accelerating voltage’, <strong><em>introduced as a convenience</em></strong>. For computer calculations the value of $\lambda$ may be taken as</p>
+
+<p>$$
+\lambda = 1.22639/(V_0 + 0.97845 \times 10^{-6}V_0^2 )^{1/2} \tag{5}
+$$</p>
+
+<p>with $V_0$ the microscope accelerating voltage in volts and $\lambda$ in nanometres.</p>
+
+<h4 id="the-wavelength-through-the-specimen-lambda">The Wavelength Through the Specimen ($\lambda’$)</h4>
+<p>The positive electrostatic potential $\phi(r)$ (in volts) inside the specimen further accelerates the incident fast electron, resulting in a small reduction in wavelength inside the specimen.</p>
+
+<p><img src="/assets/20220404/2022-04-06-15-47-17.png" alt="Figure 1"></p>
+
+<p><strong>Figure 1</strong> Simpliﬁed potential energy (PE) diagram for an electron microscope. The length of the vertical arrow is proportional to the kinetic energy of the fast electron and inversely proportional to the square of its wavelength. The sum of the electron’s potential energy (represented by the height of the graph) and its kinetic energy is constant. Electrons leave the ﬁlament with low kinetic energy and high potential energy (supplied by the high-voltage set) and exchange this for kinetic energy on their way to the anode, which is at ground potential. As with a ball rolling down a hill, they are further accelerated as they ‘fall in’ to the specimen. Approximate distance down the microscope column is represented on the abscissa and the potential step at the specimen has been exaggerated.</p>
+
+<p>The mean value of this inner potential is given by the zero-order Fourier coeﬃcient of potential, $\upsilon_0 = \phi_0$. The refractive index $n$ of a material for electrons is then given by the ratio of wavelength $\lambda$ in a vacuum to that inside the specimen $\lambda$, so that</p>
+
+<p>$$
+n = \frac{\lambda}{\lambda’}=\frac{\left(\frac{1.23}{\sqrt{V_0}}\right)}{\left(\frac{1.23}{\sqrt{V_0 + \phi_0}}\right)}\approx 1 + \frac{\phi_0}{2V_0} \tag{6}
+$$</p>
+
+<p><strong>The phase shift</strong> of a fast electron passing through a specimen of thickness t with respect to that of the vacuum is then</p>
+
+<p>$$
+\theta = 2\pi(n-1)t/\lambda = \pi\phi_0t/\lambda V_0 = \sigma\phi _0t \tag{7}
+$$</p>
+
+<p>Where, from the $eqn (1)$ we can get</p>
+
+<p>$$
+\begin{aligned}
+\sigma &amp; = \pi/\lambda V_0 <br>
+&amp; = 2\pi me\lambda/h
+\end{aligned}
+$$</p>
+
+<p>If the approximation is then made that the exit-face wave function can be found by computing its phase along a single optical path such as AB (contributions from paths such as CA has been neglected), as shown in Figure 2.</p>
+
+<p><img src="/assets/20220404/2022-04-06-17-27-40.png" alt="Figure 2"></p>
+
+<p><strong>Figure 2</strong> The electron wave illustrated in two cases passing through a specimen. The wave passing through the centre of an atom (where the potential is high) has its wavelength reduced and so suﬀers a phase advance relative to the wave passing between the atoms, which experiences little change in its wavelength. The assumption of this simpliﬁed model, used in the phase grating approximation, is that the amplitude at A can be calculated along the optical path AB with no contribution at A from a point such as C. For thick specimens this approximation is unsatisfactory.</p>
+
+<h3 id="simple-lens-properties">Simple lens properties</h3>
+
+<p>At the high magniﬁcations usually used for high-resolution microscopy, <strong>the lens currents (which determine the focal lengths) of lenses L2, L3, and L4</strong>, for example, might be used to control the magniﬁcation. For a ﬁxed magniﬁcation setting, focusing is achieved by adjusting the strength of the objective lens L1 until the ﬁxed plane P1 is conjugate to the exit face of the specimen.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEoTGVucyBjdXJyZW50cyBvZiBMMiwgTDMgYW5kIEw0KSAtLT4gQihGb2NhbCBsZW5ndGhzKSAtLT4gQyhDb250cm9sIHRoZSBtYWduaWZpY2F0aW9ucylcbi0tPiBHKEZpeGVkICBtYWduaWZpY2F0aW9ucylcbk0oRml4ZWQgbWFnbmlmaWNhdGlvbnMpLS0-RChMZW5zIGN1cnJlbnRzIG9mIG9iamVjdCBsZW5zIEwxKSAtLT4gRShQMSBpcyBjb25qdWdhdGUgdG8gdGhlIGV4aXQgZmFjZSBvZiB0aGUgc3BlY2ltZW4pIC0tPiBGKEZvY3VzaW5nKSIsIm1lcm1haWQiOm51bGx9">
+<img src="/assets/20220404/2022-04-06-222144.png" alt="Figure 3"></p>
+
+<p><strong>Figure 3</strong> Ray diagram for an electron microscope with two condenser lenses, C1 and C2 and four imaging lenses, L1, L2, L3, and L4, operating at high magniﬁcation. A typical set of dimensions for D1 to D7 is given in Table 1, together with the possible range of focal lengths. These values may be used for examples throughout this book. Here OA is the objective aperture, P1 is a ﬁxed plane, and SA is the selected area aperture.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distances btween lens centres (approximate) (mm)</th>
+      <th>Focal length range (mm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>D1 = 143.6</td>
+      <td>1.65 &lt; f(C1) &lt; 19</td>
+    </tr>
+    <tr>
+      <td>D2 = 94.3</td>
+      <td>30 &lt; f(C2) &lt; 1060</td>
+    </tr>
+    <tr>
+      <td>D3 = 251.4</td>
+      <td>15.4 &lt; f((L2) &lt; 281</td>
+    </tr>
+    <tr>
+      <td>D4 = 215.5</td>
+      <td>3.1 &lt; f((L3) &lt; 99.5</td>
+    </tr>
+    <tr>
+      <td>D5 = 44.9</td>
+      <td>2.06 &lt; f(L4) &lt; 16.4</td>
+    </tr>
+    <tr>
+      <td>D6 = 73.6</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>D7 = 345.6</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Table 1.</strong> Electron-optical data for a typical electron microscope. For magniﬁcations greater than 100 000 the magniﬁcation is controlled by adjusting the focal length of L3 with f(L2) = 15.4 mm ﬁxed and f(L4) = 2.1 mm ﬁxed. The focal length of L3 is set as follows: f(L3) = 9.8, 7.0, 5.0, 3.1 mm for M = 150, 200, 400, 750 K, respectively.</p>
+
+<blockquote>
+  <p>Why to study electron optics, seeks to determine the conditions under which the electron waveﬁeld passing through an electron lens satisﬁes the requirements for perfect image formation.</p>
+</blockquote>
+
+<h4 id="the-ideal-lens">The ideal lens</h4>
+
+<p>The ideal lens is a mathematical abstraction which provides perfect imaging given by a projective transformation between the object and image space.</p>
+
+<p>The constants appearing in this transformation specify the positions of the cardinal planes of the lens. The six important cardinal planes are the two focus planes, the two principal planes, and the two nodal planes.</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEoU2l4IGltcG9ydGFudCBjYXJkaW5hbCBwbGFuZXMpIC0tPiBCKHR3byBmb2N1cyBwbGFuZXMpXG5BIC0tPiBDKHR3byBwcmluY2lwYWwgcGxhbmVzKVxuQSAtLT4gRCh0d28gbm9kYWwgcGxhbmVzKSIsIm1lcm1haWQiOm51bGx9"></p>
+
+<p><img src="/assets/20220404/2022-04-06-231108.png" alt="Figure 4"></p>
+
+<p><strong>Figure 4.</strong> The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>♜</td>
+      <td> </td>
+      <td>♝</td>
+      <td>♛</td>
+      <td>♚</td>
+      <td>♝</td>
+      <td>♞</td>
+      <td>♜</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>♟</td>
+      <td>♟</td>
+      <td>♟</td>
+      <td> </td>
+      <td>♟</td>
+      <td>♟</td>
+      <td>♟</td>
+    </tr>
+    <tr>
+      <td>♟</td>
+      <td> </td>
+      <td>♞</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>♗</td>
+      <td> </td>
+      <td> </td>
+      <td>♟</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>♙</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>♘</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>♙</td>
+      <td>♙</td>
+      <td>♙</td>
+      <td>♙</td>
+      <td> </td>
+      <td>♙</td>
+      <td>♙</td>
+      <td>♙</td>
+    </tr>
+    <tr>
+      <td>♖</td>
+      <td>♘</td>
+      <td>♗</td>
+      <td>♕</td>
+      <td>♔</td>
+      <td> </td>
+      <td> </td>
+      <td>♖</td>
+    </tr>
+  </tbody>
+</table>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/03/phase-contrast-1/" title="link to Preliminaries of TEM">Preliminaries of TEM</a></h2>
+		<p class="excerpt">All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.  Elementary principles of phase-contrast TEM imaging          A Simple Optical Bench Experiment      Discussion ab...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-03-31 15:57:55 +0800" class="post-list__meta--date date">2022-03-31</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2022/03/phase-contrast-1/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<section class="post-comments">
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2022/04/electron-optics/";
+			this.page.identifier = "/2022/04/electron-optics/";
+		};
+
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
+
+	<script>
+    var valine = new Valine();
+    valine.init({
+        av: AV,
+        el: '#comments',
+        app_id: 'FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz',
+        app_key: 'AMHLA0K7K1BXcSEWwusdyllN',
+        notify: true, 
+        verify: true, 
+        avatar: 'avatar', 
+      placeholder: '留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!' 
+    });
+</script>
+
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

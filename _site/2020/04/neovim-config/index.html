@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -12,7 +14,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-<head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,7 +31,7 @@ var _hmt = _hmt || [];
   <meta property="og:title" content="The Neovim Config of Mac Users (Normal Keyboard)">
   <meta property="og:description" content="ATTENTION! ALL THIS GUIDE IS PROVIDED BY theCW.">
   
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
   
   <link rel="stylesheet" href="/css/main.css">
@@ -38,7 +40,7 @@ var _hmt = _hmt || [];
   <link rel="canonical" href="http://localhost:4000/2020/04/neovim-config/">
   <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
   
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
   <!-- Icons -->
   <link rel="shortcut icon" href="img/favicon.ico">
   <!-- mathjax -->
@@ -56,16 +58,17 @@ var _hmt = _hmt || [];
   </script>
   <!--script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script--!>
+  </script-->
   <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <!-- Valine Comment -->
   
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
+
+
+
 </head>
-
-
 <body>
 
 	<span class="mobile btn-mobile-menu">
@@ -79,17 +82,17 @@ var _hmt = _hmt || [];
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
-        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo" /></a>
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
         
         <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
         
-        <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)，预防兽医专业，农学博士。</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
         
         
-        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 计划开展免疫原改造相关研究，可以在 RG 上找到我已发表的论文</a></p>
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
         
         
         <div class="navigation-wrapper">
@@ -106,14 +109,15 @@ var _hmt = _hmt || [];
             </nav>
           </div>
           
-          <div><nav class="cover-navigation navigation--social">
+          <div>
+<nav class="cover-navigation navigation--social">
   <ul class="navigation">
 
   
   <!-- Weibo -->
   <li class="navigation__item">
     <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
-      <i class='social fa fa-weibo'></i>
+      <i class="social fa fa-weibo"></i>
       <span class="label">Weibo</span>
     </a>
   </li>
@@ -123,7 +127,7 @@ var _hmt = _hmt || [];
   <!-- Github -->
   <li class="navigation__item">
     <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
-      <i class='social fa fa-github'></i>
+      <i class="social fa fa-github"></i>
       <span class="label">Github</span>
     </a>
   </li>
@@ -133,7 +137,7 @@ var _hmt = _hmt || [];
   <!-- Twitter -->
   <li class="navigation__item">
     <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
-      <i class='social fa fa-twitter'></i>
+      <i class="social fa fa-twitter"></i>
       <span class="label">Twitter</span>
     </a>
   </li>
@@ -144,7 +148,7 @@ var _hmt = _hmt || [];
   <!-- RSS -->
   <li class="navigation__item">
     <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-      <i class='social fa fa-rss'></i>
+      <i class="social fa fa-rss"></i>
       <span class="label">RSS</span>
     </a>
   </li>
@@ -153,7 +157,7 @@ var _hmt = _hmt || [];
   <!-- Email -->
   <li class="navigation__item">
     <a href="mailto:qzh813@gmail.com" title="Contact me">
-      <i class='social fa fa-envelope'></i>
+      <i class="social fa fa-envelope"></i>
       <span class="label">Email</span>
     </a>
   </li>
@@ -163,7 +167,7 @@ var _hmt = _hmt || [];
   <!-- Research Gate  -->
   <li class="navigation__item">
     <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
-      <i class='fa fa-book'></i>
+      <i class="fa fa-book"></i>
       <span class="label">Researchgate</span>
     </a>
   </li>
@@ -177,7 +181,7 @@ var _hmt = _hmt || [];
     </div>
     
     
-    <div class="panel-cover--overlay cover-red"></div>
+    <div class="panel-cover--overlay cover-blue"></div>
     
   </div>
 </header>
@@ -185,16 +189,14 @@ var _hmt = _hmt || [];
 
 	<div class="content-wrapper">
 		<div class="content-wrapper__inner">
-			<!doctype html>
-<html>
+			
 
-<head>
+
+
 	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
 		<header class="post-header">
 			<div class="post-meta">
-				<time datetime="2020-04-29 10:26:24 +0800" itemprop="datePublished"
-					class="post-meta__date date">2020-04-29</time> &#8226; <span
-					class="post-meta__tags tags">vim</span>
+				<time datetime="2020-04-29 10:26:24 +0800" itemprop="datePublished" class="post-meta__date date">2020-04-29</time> • <span class="post-meta__tags tags">vim</span>
 			</div>
 
 			<div class="post-tags">
@@ -226,7 +228,7 @@ var _hmt = _hmt || [];
 
 <h2 id="the-ultimate-neovim-config-of-normal-users"><center>The Ultimate NeoVim Config of Normal Users</center></h2>
 
-<center><img src="https://raw.githubusercontent.com/theniceboy/nvim/master/demo.png" /></center>
+<center><img src="https://raw.githubusercontent.com/theniceboy/nvim/master/demo.png"></center>
 
 <p>Please <strong>DO NOT</strong> just copy this configuration folder without really looking at it! Please, at least, read this README file!</p>
 
@@ -234,7 +236,8 @@ var _hmt = _hmt || [];
 
 <ul>
   <li><a href="#after-installation-you-need-to">After Installation, You Need To</a></li>
-  <li><a href="#after-installation-you-might-want-to">After Installation, You Might Want To</a>
+  <li>
+<a href="#after-installation-you-might-want-to">After Installation, You Might Want To</a>
     <ul>
       <li><a href="#first-of-all">First of all</a></li>
       <li><a href="#for-python-debugger-via-vimspector">For Python Debugger (via <code class="language-plaintext highlighter-rouge">vimspector</code>)</a></li>
@@ -244,9 +247,11 @@ var _hmt = _hmt || [];
       <li><a href="#and-also">And also…</a></li>
     </ul>
   </li>
-  <li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a>
+  <li>
+<a href="#keyboard-shortcuts">Keyboard Shortcuts</a>
     <ul>
-      <li><a href="#1-basic-editor-features">1 Basic Editor Features</a>
+      <li>
+<a href="#1-basic-editor-features">1 Basic Editor Features</a>
         <ul>
           <li><a href="#11-the-most-basics">1.1 The Most Basics</a></li>
           <li><a href="#12-remapped-cursor-movement">1.2 Remapped Cursor Movement</a></li>
@@ -256,7 +261,8 @@ var _hmt = _hmt || [];
           <li><a href="#16-remapped-commands-in-visual-mode">1.6 Remapped Commands in Visual Mode</a></li>
         </ul>
       </li>
-      <li><a href="#2-window-management">2 Window Management</a>
+      <li>
+<a href="#2-window-management">2 Window Management</a>
         <ul>
           <li><a href="#21-creating-window-through-split-screen">2.1 Creating Window Through Split Screen</a></li>
           <li><a href="#22-moving-the-cursor-between-different-windows">2.2 Moving the Cursor Between Different Windows</a></li>
@@ -268,20 +274,24 @@ var _hmt = _hmt || [];
       <li><a href="#4-terminal-keyboard-shortcuts">4 Terminal Keyboard Shortcuts</a></li>
     </ul>
   </li>
-  <li><a href="#plugins-keybindings-screenshotsgif-provided">Plugins Keybindings (Screenshots/GIF provided!)</a>
+  <li>
+<a href="#plugins-keybindings-screenshotsgif-provided">Plugins Keybindings (Screenshots/GIF provided!)</a>
     <ul>
-      <li><a href="#autocompletion">AutoCompletion</a>
+      <li>
+<a href="#autocompletion">AutoCompletion</a>
         <ul>
           <li><a href="#coc-autocompletion">COC (AutoCompletion)</a></li>
           <li><a href="#ultisnips">Ultisnips</a></li>
         </ul>
       </li>
-      <li><a href="#debugger">Debugger</a>
+      <li>
+<a href="#debugger">Debugger</a>
         <ul>
           <li><a href="#vimspector-debugger-plugin">vimspector (debugger-plugin)</a></li>
         </ul>
       </li>
-      <li><a href="#file-navigation">File Navigation</a>
+      <li>
+<a href="#file-navigation">File Navigation</a>
         <ul>
           <li><a href="#coc-explorer-file-browser">coc-explorer (file browser)</a></li>
           <li><a href="#rnvimr---file-browser">rnvimr - file browser</a></li>
@@ -289,11 +299,12 @@ var _hmt = _hmt || [];
           <li><a href="#xtabline-the-fancy-tab-line">xtabline (the fancy tab line)</a></li>
         </ul>
       </li>
-      <li><a href="#text-editing-plugins">Text Editing Plugins</a>
+      <li>
+<a href="#text-editing-plugins">Text Editing Plugins</a>
         <ul>
           <li><a href="#vim-table-mode">vim-table-mode</a></li>
           <li><a href="#undotree">Undotree</a></li>
-          <li><a href="#vim-multiple-cursors">vim-multiple-cursors</a></li>
+          <li><a href="#vim-visual-multi-instead-of-vim-multiple-cursors">vim-visual-multi (instead of vim-multiple-cursors)</a></li>
           <li><a href="#vim-surround">vim-surround</a></li>
           <li><a href="#vim-subversive">vim-subversive</a></li>
           <li><a href="#vim-easy-align">vim-easy-align</a></li>
@@ -301,25 +312,29 @@ var _hmt = _hmt || [];
           <li><a href="#vim-markdown-toc-generate-table-of-contents-for-markdown-files">vim-markdown-toc (generate table of contents for markdown files)</a></li>
         </ul>
       </li>
-      <li><a href="#navigation-within-buffer">Navigation Within Buffer</a>
+      <li>
+<a href="#navigation-within-buffer">Navigation Within Buffer</a>
         <ul>
           <li><a href="#vim-easy-motion">vim-easy-motion</a></li>
           <li><a href="#vistavim">Vista.vim</a></li>
           <li><a href="#vim-signiture---bookmarks">vim-signiture - Bookmarks</a></li>
         </ul>
       </li>
-      <li><a href="#find-and-replace">Find and Replace</a>
+      <li>
+<a href="#find-and-replace">Find and Replace</a>
         <ul>
           <li><a href="#farvim---find-and-replace">Far.vim - find and replace</a></li>
         </ul>
       </li>
-      <li><a href="#git-related">Git Related</a>
+      <li>
+<a href="#git-related">Git Related</a>
         <ul>
           <li><a href="#vim-gitgutter">vim-gitgutter</a></li>
           <li><a href="#fzf-gitignore">fzf-gitignore</a></li>
         </ul>
       </li>
-      <li><a href="#others">Others</a>
+      <li>
+<a href="#others">Others</a>
         <ul>
           <li><a href="#vim-calendar">vim-calendar</a></li>
           <li><a href="#goyo---work-without-distraction">Goyo - Work without distraction</a></li>
@@ -329,12 +344,14 @@ var _hmt = _hmt || [];
       </li>
     </ul>
   </li>
-  <li><a href="#custom-snippets">Custom Snippets</a>
+  <li>
+<a href="#custom-snippets">Custom Snippets</a>
     <ul>
       <li><a href="#markdown">Markdown</a></li>
     </ul>
   </li>
-  <li><a href="#some-weird-stuff">Some Weird Stuff</a>
+  <li>
+<a href="#some-weird-stuff">Some Weird Stuff</a>
     <ul>
       <li><a href="#press-tx-and-enter-your-text">Press <code class="language-plaintext highlighter-rouge">tx</code> and enter your text</a></li>
     </ul>
@@ -345,43 +362,59 @@ var _hmt = _hmt || [];
 
 <h2 id="after-installation-you-need-to">After Installation, You Need To</h2>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">pynvim</code> (pip)</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">nodejs</code>, and do <code class="language-plaintext highlighter-rouge">npm install -g neovim</code></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install nerd-fonts (actually it’s optional but it looks real good)</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">pynvim</code> (pip)</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">nodejs</code>, and do <code class="language-plaintext highlighter-rouge">npm install -g neovim</code>
+</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install nerd-fonts (actually it’s optional but it looks real good)</li>
 </ul>
 
 <h2 id="after-installation-you-might-want-to">After Installation, You Might Want To</h2>
 <h3 id="first-of-all">First of all</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Do <code class="language-plaintext highlighter-rouge">:checkhealth</code></li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Do <code class="language-plaintext highlighter-rouge">:checkhealth</code>
+</li>
 </ul>
 
 <h3 id="for-python-debugger-via-vimspector">For Python Debugger (via <code class="language-plaintext highlighter-rouge">vimspector</code>)</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">debugpy</code> (<code class="language-plaintext highlighter-rouge">pip</code>)</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">debugpy</code> (<code class="language-plaintext highlighter-rouge">pip</code>)</li>
 </ul>
 
 <h3 id="config-python-path">Config <code class="language-plaintext highlighter-rouge">Python</code> path</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Well, make sure you have python</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />See <code class="language-plaintext highlighter-rouge">_machine_specific.vim</code></li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Well, make sure you have python</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>See <code class="language-plaintext highlighter-rouge">_machine_specific.vim</code>
+</li>
 </ul>
 
 <h3 id="for-taglist">For Taglist:</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">ctags</code> for function/class/variable list</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">ctags</code> for function/class/variable list</li>
 </ul>
 
 <h3 id="for-fzf">For FZF</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">fzf</code></li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">ag</code> (<code class="language-plaintext highlighter-rouge">the_silver_searcher</code>)</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">fzf</code>
+</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">ag</code> (<code class="language-plaintext highlighter-rouge">the_silver_searcher</code>)</li>
 </ul>
 
 <h3 id="and-also">And also…</h3>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">figlet</code> for inputing text ASCII art</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Install <code class="language-plaintext highlighter-rouge">xclip</code> for system clipboard access (<code class="language-plaintext highlighter-rouge">Linux</code> and <code class="language-plaintext highlighter-rouge">xorg</code> only)</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">figlet</code> for inputing text ASCII art</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Install <code class="language-plaintext highlighter-rouge">xclip</code> for system clipboard access (<code class="language-plaintext highlighter-rouge">Linux</code> and <code class="language-plaintext highlighter-rouge">xorg</code> only)</li>
 </ul>
 
 <h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
@@ -439,24 +472,32 @@ var _hmt = _hmt || [];
       <td><code class="language-plaintext highlighter-rouge">5j</code></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">J</code></td>
+      <td><code class="language-plaintext highlighter-rouge">0</code></td>
       <td>Cursor to the start of the line</td>
       <td><code class="language-plaintext highlighter-rouge">0</code></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">L</code></td>
+      <td><code class="language-plaintext highlighter-rouge">9</code></td>
       <td>Cursor to the end of the line</td>
       <td><code class="language-plaintext highlighter-rouge">$</code></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">u</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">u</code>
+</td>
       <td>Move the view port up 5 lines without moving the cursor</td>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">y</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">y</code>
+</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">e</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">e</code>
+</td>
       <td>Move the view port down 5 lines without moving the cursor</td>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">e</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">e</code>
+</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">e</code></td>
@@ -520,7 +561,9 @@ var _hmt = _hmt || [];
       <td>Indent</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">SPACE</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">SPACE</code>
+</td>
       <td>Goto the next placeholder (<code class="language-plaintext highlighter-rouge">&lt;++&gt;</code>)</td>
     </tr>
   </tbody>
@@ -541,35 +584,51 @@ var _hmt = _hmt || [];
       <td><strong>Compile/Run the current file</strong></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">c</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">c</code>
+</td>
       <td>Toggle spell suggestion a</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">d</code> <code class="language-plaintext highlighter-rouge">w</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">d</code> <code class="language-plaintext highlighter-rouge">w</code>
+</td>
       <td>Find adjacent duplicated word</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">t</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">t</code>
+</td>
       <td>Convert every 4 Spaces to a tab</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">o</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">o</code>
+</td>
       <td>Fold</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">-</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">-</code>
+</td>
       <td>Previous quick-fix position</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">+</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">+</code>
+</td>
       <td>Next quick-fix position</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">\</code> <code class="language-plaintext highlighter-rouge">p</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">\</code> <code class="language-plaintext highlighter-rouge">p</code>
+</td>
       <td>Show the path of the current file</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">/</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">/</code>
+</td>
       <td>Create a new terminal below the current window</td>
     </tr>
   </tbody>
@@ -604,35 +663,51 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">i</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">i</code>
+</td>
       <td>Create a new horizontal split screen and place it above the current window</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">k</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">k</code>
+</td>
       <td>Create a new horizontal split screen and place it below the current window</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">j</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">j</code>
+</td>
       <td>Create a new vertical split screen and place it left to the current window</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">l</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">l</code>
+</td>
       <td>Create a new vertical split screen and place it right to the current window</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">v</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">v</code>
+</td>
       <td>Set the two splits to be vertical</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">h</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">h</code>
+</td>
       <td>Set the two splits to be horizontal</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">r</code> <code class="language-plaintext highlighter-rouge">v</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">r</code> <code class="language-plaintext highlighter-rouge">v</code>
+</td>
       <td>Rotate splits and arrange splits vertically</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">r</code> <code class="language-plaintext highlighter-rouge">h</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">s</code> <code class="language-plaintext highlighter-rouge">r</code> <code class="language-plaintext highlighter-rouge">h</code>
+</td>
       <td>Rotate splits and arrange splits horizontally</td>
     </tr>
   </tbody>
@@ -649,23 +724,33 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">w</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">w</code>
+</td>
       <td>Move cursor to the next window</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">j</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">j</code>
+</td>
       <td>Move cursor one window left</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">l</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">l</code>
+</td>
       <td>Move cursor one window right</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">i</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">i</code>
+</td>
       <td>Move cursor one window up</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">k</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> + <code class="language-plaintext highlighter-rouge">k</code>
+</td>
       <td>Move cursor one window down</td>
     </tr>
   </tbody>
@@ -689,7 +774,9 @@ var _hmt = _hmt || [];
       <td>Close the current window</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">q</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">q</code>
+</td>
       <td>Close the window below the current window. (The current window will be closed if there is no window below)</td>
     </tr>
   </tbody>
@@ -706,23 +793,33 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">u</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">u</code>
+</td>
       <td>Create a new tab</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">j</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">j</code>
+</td>
       <td>Go one tab left</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">l</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">l</code>
+</td>
       <td>Go One tab right</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">m</code> <code class="language-plaintext highlighter-rouge">j</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">m</code> <code class="language-plaintext highlighter-rouge">j</code>
+</td>
       <td>Move tab left</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">m</code> <code class="language-plaintext highlighter-rouge">l</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">m</code> <code class="language-plaintext highlighter-rouge">l</code>
+</td>
       <td>Move tab right</td>
     </tr>
   </tbody>
@@ -741,7 +838,9 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">n</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">n</code>
+</td>
       <td>Escape from terminal input mode</td>
     </tr>
   </tbody>
@@ -760,7 +859,9 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Space</code> <code class="language-plaintext highlighter-rouge">y</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Space</code> <code class="language-plaintext highlighter-rouge">y</code>
+</td>
       <td><strong>Get yank history list</strong></td>
     </tr>
     <tr>
@@ -780,13 +881,15 @@ var _hmt = _hmt || [];
       <td>Go to type definition</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Space</code> <code class="language-plaintext highlighter-rouge">r</code> <code class="language-plaintext highlighter-rouge">n</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Space</code> <code class="language-plaintext highlighter-rouge">r</code> <code class="language-plaintext highlighter-rouge">n</code>
+</td>
       <td>Rename a variable</td>
     </tr>
   </tbody>
 </table>
 
-<p><img alt="Gif" src="https://user-images.githubusercontent.com/251450/55285193-400a9000-53b9-11e9-8cff-ffe4983c5947.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://user-images.githubusercontent.com/251450/55285193-400a9000-53b9-11e9-8cff-ffe4983c5947.gif" width="60%"></p>
 
 <h4 id="ultisnips">Ultisnips</h4>
 
@@ -799,21 +902,27 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">s</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">s</code>
+</td>
       <td>Expand a snippet</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">s</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">s</code>
+</td>
       <td>(in snippet) Previous Cursor position in snippet</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">b</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">b</code>
+</td>
       <td>(in snippet) Next Cursor position in snippet</td>
     </tr>
   </tbody>
 </table>
 
-<p><img src="https://raw.github.com/SirVer/ultisnips/master/doc/demo.gif" alt="GIF Demo" /></p>
+<p><img src="https://raw.github.com/SirVer/ultisnips/master/doc/demo.gif" alt="GIF Demo"></p>
 
 <h3 id="debugger">Debugger</h3>
 <h4 id="vimspector-debugger-plugin">vimspector (debugger-plugin)</h4>
@@ -867,7 +976,7 @@ var _hmt = _hmt || [];
   </tbody>
 </table>
 
-<p><img alt="Gif" src="https://puremourning.github.io/vimspector-web/img/vimspector-overview.png" width="60%" /></p>
+<p><img alt="Gif" src="https://puremourning.github.io/vimspector-web/img/vimspector-overview.png" width="60%"></p>
 
 <h3 id="file-navigation">File Navigation</h3>
 <h4 id="coc-explorer-file-browser">coc-explorer (file browser)</h4>
@@ -891,11 +1000,41 @@ var _hmt = _hmt || [];
   </tbody>
 </table>
 
-<p><img alt="Png" src="https://user-images.githubusercontent.com/1709861/64966850-1e9f5100-d8d2-11e9-9490-438c6d1cf378.png" width="60%" /></p>
+<p>Some basic operation:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">o</code></td>
+      <td>Expand file folder</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">N</code></td>
+      <td>Collapse file folder</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">i</code></td>
+      <td>Enter file folder</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">q</code></td>
+      <td>Exit</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img alt="Png" src="https://user-images.githubusercontent.com/1709861/64966850-1e9f5100-d8d2-11e9-9490-438c6d1cf378.png" width="60%"></p>
 
 <h4 id="rnvimr---file-browser">rnvimr - file browser</h4>
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Make sure you have ranger installed</li>
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>Make sure you have ranger installed</li>
 </ul>
 
 <p>Press <code class="language-plaintext highlighter-rouge">R</code> to open Ranger (file selector)</p>
@@ -911,21 +1050,27 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">t</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">t</code>
+</td>
       <td>Open the file in a new tab</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">x</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">x</code>
+</td>
       <td>Split up and down with the file</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">v</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">v</code>
+</td>
       <td>Split left and right with the file</td>
     </tr>
   </tbody>
 </table>
 
-<p><img alt="Gif" src="https://user-images.githubusercontent.com/17562139/74416173-b0aa8600-4e7f-11ea-83b5-31c07c384af1.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://user-images.githubusercontent.com/17562139/74416173-b0aa8600-4e7f-11ea-83b5-31c07c384af1.gif" width="60%"></p>
 
 <h4 id="fzf---the-fuzzy-file-finder">FZF - the fuzzy file finder</h4>
 
@@ -938,37 +1083,51 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">p</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">p</code>
+</td>
       <td><strong>FZF Files</strong></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">u</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">u</code>
+</td>
       <td>Move up 1 item</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">e</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">e</code>
+</td>
       <td>Move down 1 item</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">w</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">w</code>
+</td>
       <td>FZF Buffers</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">f</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">f</code>
+</td>
       <td>FZF Files’ Content</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">h</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">h</code>
+</td>
       <td>FZF Recent Files</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">t</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code> <code class="language-plaintext highlighter-rouge">t</code>
+</td>
       <td>FZF Tags</td>
     </tr>
   </tbody>
 </table>
 
-<p><img alt="Gif" src="https://jesseleite.com/uploads/posts/2/tag-finder-opt.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://jesseleite.com/uploads/posts/2/tag-finder-opt.gif" width="60%"></p>
 
 <h4 id="xtabline-the-fancy-tab-line">xtabline (the fancy tab line)</h4>
 
@@ -991,7 +1150,7 @@ var _hmt = _hmt || [];
   </tbody>
 </table>
 
-<p><img alt="Gif" src="https://i.imgur.com/yU6qbU5.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://i.imgur.com/yU6qbU5.gif" width="60%"></p>
 
 <h3 id="text-editing-plugins">Text Editing Plugins</h3>
 <h4 id="vim-table-mode">vim-table-mode</h4>
@@ -1005,11 +1164,15 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">m</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">m</code>
+</td>
       <td>Toggle table mode</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">r</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">t</code> <code class="language-plaintext highlighter-rouge">r</code>
+</td>
       <td>Realign table</td>
     </tr>
   </tbody>
@@ -1028,7 +1191,9 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">H</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">H</code>
+</td>
       <td>Open Undotree</td>
     </tr>
     <tr>
@@ -1042,9 +1207,9 @@ var _hmt = _hmt || [];
   </tbody>
 </table>
 
-<p><img alt="Png" src="https://camo.githubusercontent.com/56430626a5444ea2f0249d71f9288775277c7f5d/68747470733a2f2f73697465732e676f6f676c652e636f6d2f736974652f6d6262696c6c2f756e646f747265655f6e65772e706e67" width="60%" /></p>
+<p><img alt="Png" src="https://camo.githubusercontent.com/56430626a5444ea2f0249d71f9288775277c7f5d/68747470733a2f2f73697465732e676f6f676c652e636f6d2f736974652f6d6262696c6c2f756e646f747265655f6e65772e706e67" width="60%"></p>
 
-<h4 id="vim-multiple-cursors">vim-multiple-cursors</h4>
+<h4 id="vim-visual-multi-instead-of-vim-multiple-cursors">vim-visual-multi (instead of vim-multiple-cursors)</h4>
 
 <table>
   <thead>
@@ -1055,20 +1220,34 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">k</code></td>
-      <td><strong>Select next key (multiple cursors)</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">k</code>
+</td>
+      <td><strong>Select next key</strong></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Alt</code>+<code class="language-plaintext highlighter-rouge">k</code></td>
-      <td><strong>Select all keys (multiple cursors)</strong></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">,</code>+<code class="language-plaintext highlighter-rouge">k</code>
+</td>
+      <td><strong>Select All keys</strong></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">p</code></td>
-      <td>Select previous key</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">s</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">s</code>
+</td>
       <td>Skip key</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">h</code>
+</td>
+      <td>Undo</td>
+    </tr>
+    <tr>
+      <td>
+<code class="language-plaintext highlighter-rouge">Ctrl</code>+<code class="language-plaintext highlighter-rouge">r</code>
+</td>
+      <td>Redo</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Esc</code></td>
@@ -1077,16 +1256,47 @@ var _hmt = _hmt || [];
   </tbody>
 </table>
 
-<p><img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example1.gif" width="60%" />
-<img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example2.gif" width="60%" />
-<img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example3.gif" width="60%" />
-<img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example4.gif" width="60%" /></p>
+<p>After selecting the multiple cursors, you can use <code class="language-plaintext highlighter-rouge">u</code> or <code class="language-plaintext highlighter-rouge">a</code> to switch to multiple insertion mode at the first or the last of the word. You can also use <code class="language-plaintext highlighter-rouge">.</code> to exit the insertion mode.</p>
+
+<p>After entering the visual-multi-mode, use the default derection operator to move:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">h</code></td>
+      <td>Move leftward</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">l</code></td>
+      <td>Move rightward</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">j</code></td>
+      <td>Move downward</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">k</code></td>
+      <td>Move upward</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example1.gif" width="60%">
+<img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example2.gif" width="60%">
+<img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example3.gif" width="60%">
+<img alt="Gif" src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example4.gif" width="60%"></p>
 
 <h4 id="vim-surround">vim-surround</h4>
 <p>To add surround (<code class="language-plaintext highlighter-rouge">string</code> -&gt; <code class="language-plaintext highlighter-rouge">"string"</code>):</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>string
 </code></pre></div></div>
-<p>press: <code class="language-plaintext highlighter-rouge">yskw'</code>:</p>
+<p>press: <code class="language-plaintext highlighter-rouge">ysuw'</code>:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'string'
 </code></pre></div></div>
 
@@ -1097,7 +1307,7 @@ var _hmt = _hmt || [];
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"string"
 </code></pre></div></div>
 
-<p><img alt="Gif" src="https://two-wrongs.com/image/surround_vim.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://two-wrongs.com/image/surround_vim.gif" width="60%"></p>
 
 <h4 id="vim-subversive">vim-subversive</h4>
 <p>New operator: <code class="language-plaintext highlighter-rouge">s</code>:</p>
@@ -1107,7 +1317,7 @@ var _hmt = _hmt || [];
 <h4 id="vim-easy-align">vim-easy-align</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">ga</code> + <strong>symbol</strong> in normal or visual mode to align text based on <strong>symbol</strong></p>
 
-<p><img alt="Gif" src="https://raw.githubusercontent.com/junegunn/i/master/easy-align/equals.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://raw.githubusercontent.com/junegunn/i/master/easy-align/equals.gif" width="60%"></p>
 
 <h4 id="autoformat">AutoFormat</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">\</code> <code class="language-plaintext highlighter-rouge">f</code> to format code</p>
@@ -1115,18 +1325,18 @@ var _hmt = _hmt || [];
 <h4 id="vim-markdown-toc-generate-table-of-contents-for-markdown-files">vim-markdown-toc (generate table of contents for markdown files)</h4>
 <p>In <code class="language-plaintext highlighter-rouge">markdown</code> files, type <code class="language-plaintext highlighter-rouge">:Gen</code> then tab, you’ll see your options.</p>
 
-<p><img alt="Gif" src="https://raw.githubusercontent.com/mzlogin/vim-markdown-toc/master/screenshots/english.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://raw.githubusercontent.com/mzlogin/vim-markdown-toc/master/screenshots/english.gif" width="60%"></p>
 
 <h3 id="navigation-within-buffer">Navigation Within Buffer</h3>
 <h4 id="vim-easy-motion">vim-easy-motion</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">'</code> and a <code class="language-plaintext highlighter-rouge">character</code> jump to <code class="language-plaintext highlighter-rouge">character</code> (similar to Emacs’ <a href="https://www.emacswiki.org/emacs/AceJump">AceJump</a>)</p>
 
-<p><img alt="Gif" src="https://f.cloud.github.com/assets/3797062/2039359/a8e938d6-899f-11e3-8789-60025ea83656.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://f.cloud.github.com/assets/3797062/2039359/a8e938d6-899f-11e3-8789-60025ea83656.gif" width="60%"></p>
 
 <h4 id="vistavim">Vista.vim</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">T</code> to toggle function and variable list</p>
 
-<p><img alt="Gif" src="https://user-images.githubusercontent.com/8850248/56469894-14d40780-6472-11e9-802f-729ac53bd4d5.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://user-images.githubusercontent.com/8850248/56469894-14d40780-6472-11e9-802f-729ac53bd4d5.gif" width="60%"></p>
 
 <h4 id="vim-signiture---bookmarks">vim-signiture - Bookmarks</h4>
 
@@ -1187,19 +1397,21 @@ var _hmt = _hmt || [];
       <td>Move bookmark down a line</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPC</code> <code class="language-plaintext highlighter-rouge">g</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPC</code> <code class="language-plaintext highlighter-rouge">g</code>
+</td>
       <td>Move bookmark to line…</td>
     </tr>
   </tbody>
 </table>
 
-<p><img alt="Gif" src="https://camo.githubusercontent.com/bc2bf1746e30c72d7ff5b79331231e8c388d068a/68747470733a2f2f7261772e6769746875622e636f6d2f4d617474657347726f656765722f76696d2d626f6f6b6d61726b732f6d61737465722f707265766965772e676966" width="60%" /></p>
+<p><img alt="Gif" src="https://camo.githubusercontent.com/bc2bf1746e30c72d7ff5b79331231e8c388d068a/68747470733a2f2f7261772e6769746875622e636f6d2f4d617474657347726f656765722f76696d2d626f6f6b6d61726b732f6d61737465722f707265766965772e676966" width="60%"></p>
 
 <h3 id="find-and-replace">Find and Replace</h3>
 <h4 id="farvim---find-and-replace">Far.vim - find and replace</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">f</code> <code class="language-plaintext highlighter-rouge">r</code> to search in cwd.</p>
 
-<p><img alt="Gif" src="https://cloud.githubusercontent.com/assets/9823254/20861878/77dd1882-b9b4-11e6-9b48-8bc60f3d7ec0.gif" width="60%" /></p>
+<p><img alt="Gif" src="https://cloud.githubusercontent.com/assets/9823254/20861878/77dd1882-b9b4-11e6-9b48-8bc60f3d7ec0.gif" width="60%"></p>
 
 <h3 id="git-related">Git Related</h3>
 <h4 id="vim-gitgutter">vim-gitgutter</h4>
@@ -1213,19 +1425,25 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">H</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Z</code></td>
       <td><strong>Show git hunk at current line</strong></td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">-</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">-</code>
+</td>
       <td>Go to previous git hunk</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">+</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">+</code>
+</td>
       <td>Go to next git hunk</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">f</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">SPACE</code> <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">f</code>
+</td>
       <td>Fold everything except hunks</td>
     </tr>
   </tbody>
@@ -1234,9 +1452,9 @@ var _hmt = _hmt || [];
 <h4 id="fzf-gitignore">fzf-gitignore</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">Space</code> <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">i</code> to create a <code class="language-plaintext highlighter-rouge">.gitignore</code> file</p>
 
-<p><img alt="Png" src="https://user-images.githubusercontent.com/25827968/42945393-96c662da-8b68-11e8-8279-5bcd2e956ca9.png" width="60%" /></p>
+<p><img alt="Png" src="https://user-images.githubusercontent.com/25827968/42945393-96c662da-8b68-11e8-8279-5bcd2e956ca9.png" width="60%"></p>
 
-<p><img alt="Png" src="https://raw.githubusercontent.com/airblade/vim-gitgutter/master/screenshot.png" width="60%" /></p>
+<p><img alt="Png" src="https://raw.githubusercontent.com/airblade/vim-gitgutter/master/screenshot.png" width="60%"></p>
 
 <h3 id="others">Others</h3>
 <h4 id="vim-calendar">vim-calendar</h4>
@@ -1250,22 +1468,26 @@ var _hmt = _hmt || [];
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">\</code> <code class="language-plaintext highlighter-rouge">\</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">\</code> <code class="language-plaintext highlighter-rouge">\</code>
+</td>
       <td>Show clock</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">\</code> <code class="language-plaintext highlighter-rouge">c</code></td>
+      <td>
+<code class="language-plaintext highlighter-rouge">\</code> <code class="language-plaintext highlighter-rouge">c</code>
+</td>
       <td>Show calendar</td>
     </tr>
   </tbody>
 </table>
 
-<p><img alt="Png" src="https://raw.githubusercontent.com/wiki/itchyny/calendar.vim/image/image.png" width="60%" /></p>
+<p><img alt="Png" src="https://raw.githubusercontent.com/wiki/itchyny/calendar.vim/image/image.png" width="60%"></p>
 
 <h4 id="goyo---work-without-distraction">Goyo - Work without distraction</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">g</code> <code class="language-plaintext highlighter-rouge">y</code> to toggle Goyo</p>
 
-<p><img alt="Png" src="https://raw.github.com/junegunn/i/master/goyo.png" width="60%" /></p>
+<p><img alt="Png" src="https://raw.github.com/junegunn/i/master/goyo.png" width="60%"></p>
 
 <h4 id="sudavim">suda.vim</h4>
 <p>Forgot to <code class="language-plaintext highlighter-rouge">sudo vim ...</code>? Just do <code class="language-plaintext highlighter-rouge">:sudowrite</code> or <code class="language-plaintext highlighter-rouge">:sw</code></p>
@@ -1273,7 +1495,7 @@ var _hmt = _hmt || [];
 <h4 id="coc-translator">coc-translator</h4>
 <p>Press <code class="language-plaintext highlighter-rouge">ts</code> to <strong>translate word under cursor</strong>.</p>
 
-<p><img alt="Png" src="https://user-images.githubusercontent.com/20282795/72232547-b56be800-35fc-11ea-980a-3402fea13ec1.png" width="60%" /></p>
+<p><img alt="Png" src="https://user-images.githubusercontent.com/20282795/72232547-b56be800-35fc-11ea-980a-3402fea13ec1.png" width="60%"></p>
 
 <h2 id="custom-snippets">Custom Snippets</h2>
 <h3 id="markdown">Markdown</h3>
@@ -1294,15 +1516,18 @@ var _hmt = _hmt || [];
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,b</code></td>
-      <td><strong>Bold</strong> text</td>
+      <td>
+<strong>Bold</strong> text</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,s</code></td>
-      <td><del>sliced</del> text</td>
+      <td>
+<del>sliced</del> text</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,i</code></td>
-      <td><em>italic</em> text</td>
+      <td>
+<em>italic</em> text</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,d</code></td>
@@ -1310,11 +1535,17 @@ var _hmt = _hmt || [];
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,c</code></td>
-      <td>big <code class="language-plaintext highlighter-rouge">block of code</code></td>
+      <td>big <code class="language-plaintext highlighter-rouge">block of code</code>
+</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,m</code></td>
-      <td>- [ ] check mark</td>
+      <td>
+<ul class="task-list">
+  <li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled>check mark</li>
+</ul>
+</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,p</code></td>
@@ -1326,19 +1557,27 @@ var _hmt = _hmt || [];
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,1</code></td>
-      <td># H1</td>
+      <td>
+<h1 id="h1">H1</h1>
+</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,2</code></td>
-      <td>## H2</td>
+      <td>
+<h2 id="h2">H2</h2>
+</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,3</code></td>
-      <td>### H3</td>
+      <td>
+<h3 id="h3">H3</h3>
+</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,4</code></td>
-      <td>#### H4</td>
+      <td>
+<h4 id="h4">H4</h4>
+</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">,l</code></td>
@@ -1370,13 +1609,11 @@ var _hmt = _hmt || [];
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Last One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2020/05/coc-nvim/"
-				title="link to neoclide/coc.nvim Learning">neoclide/coc.nvim Learning</a></h2>
-		<p class="excerpt">Here I will do some reading notes about the neoclide/coc.nvim. And the main reference is from the coc.txt.coc-IntroductionHere is the coc-introductionCoc.nvim enhances your (Neo)Vim to match the user experience provided by VSCodethrough rich plugi...&hellip;</p>
-		<div class="post-list__meta"><time datetime="2020-05-09 21:06:24 +0800"
-				class="post-list__meta--date date">2020-05-09</time> &#8226; <span
-				class="post-list__meta--tags tags">vim</span><a class="btn-border-small"
-				href=/2020/05/coc-nvim/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2020/06/gra/" title="link to 毕业感言">毕业感言</a></h2>
+		<p class="excerpt">6月23日，博士答完辩了。虽然这件事本身是一件非常开心的事。毕业感言里，却想谈一些题外话。这两天心情一直不是很嗨，主要是因为到了30岁，而立之年，心中却充满了恐惧。在这个追逐正能量，奥利给的年代。互联网却像是大墨缸，到处都在宣扬XX岁不怎么样，你就怎么怎么样的常用的句式。如果成功几率成功地走出了一个高斯曲线，大多数人都想成功地跳进这个上坡车。这挺好，我也想。我对成功的理解是可变的。小时候感觉成功就是诺贝尔奖，大一些觉得成功就是当明星，再大一些觉得成功就是博学，现在觉得，成功就是每天都能开心...…</p>
+		<div class="post-list__meta">
+<time datetime="2020-06-25 10:13:24 +0800" class="post-list__meta--date date">2020-06-25</time> • <span class="post-list__meta--tags tags">blog</span><a class="btn-border-small" href="/2020/06/gra/">More</a>
+</div>
 	</div>
 	
 
@@ -1384,42 +1621,39 @@ var _hmt = _hmt || [];
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Next One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2020/04/Math-Mathematical-Analysis-1/"
-				title="link to 数学分析 第一章 实数和数列极限">数学分析 第一章 实数和数列极限</a></h2>
-		<p class="excerpt">  § 1.1 实数          1.1.1 数轴的建立      1.1.2 建立数轴后引出的2个问题        § 1.2 无尽小数  § 1.3 收敛和收敛数列          1.3.1 极限的数学定义      1.3.2 几个结论及证明        § 1.4 收敛数列的性质          1.4.1 收敛数列极限的唯一性      1.4.2 数列的有界性质      1.4.3 子数列的性质      1.4.4 极限的运算性质      1.4.5 无穷...&hellip;</p>
-		<div class="post-list__meta"><time datetime="2020-04-27 10:03:24 +0800"
-				class="post-list__meta--date date">2020-04-27</time> &#8226; <span
-				class="post-list__meta--tags tags">数学</span><a class="btn-border-small"
-				href=/2020/04/Math-Mathematical-Analysis-1/>More</a></div>
+		<h2 class="post-list__post-title post-title"><a href="/2020/04/Math-Mathematical-Analysis-1/" title="link to 数学分析 第一章 实数和数列极限">数学分析 第一章 实数和数列极限</a></h2>
+		<p class="excerpt">  § 1.1 实数          1.1.1 数轴的建立      1.1.2 建立数轴后引出的2个问题        § 1.2 无尽小数  § 1.3 收敛和收敛数列          1.3.1 极限的数学定义      1.3.2 几个结论及证明        § 1.4 收敛数列的性质          1.4.1 收敛数列极限的唯一性      1.4.2 数列的有界性质      1.4.3 子数列的性质      1.4.4 极限的运算性质      1.4.5 无穷...…</p>
+		<div class="post-list__meta">
+<time datetime="2020-04-27 10:03:24 +0800" class="post-list__meta--date date">2020-04-27</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2020/04/Math-Mathematical-Analysis-1/">More</a>
+</div>
 	</div>
 	
 </section>
 
 	<section class="post-comments">
-<!--
-  
-    <div id="disqus_thread"></div>
-    <script>
-    var disqus_config = function () {
-        this.page.url = "http://localhost:4000/2020/04/neovim-config/";
-        this.page.identifier = "/2020/04/neovim-config/";
-    };
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2020/04/neovim-config/";
+			this.page.identifier = "/2020/04/neovim-config/";
+		};
 
-    var disqus_shortname = 'zququ';
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
-   
--->
-  
-    <div id="comments"></div> 
-   
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
 
 	<script>
     var valine = new Valine();
@@ -1436,15 +1670,28 @@ var _hmt = _hmt || [];
 </script>
 
 
-</html>
+
 
 			<section class="footer">
-    <footer>
-        <span class="footer__copyright">&copy; 2020  <a href="https://zququcv.netlify.com">@zququ</a> Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
-    </footer>
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
 </section>
 
-		</div>
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
 	</div>
 
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -1454,6 +1701,7 @@ var _hmt = _hmt || [];
 
 
 
-</body>
 
+
+</body>
 </html>

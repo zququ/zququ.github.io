@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Ranger 操作手册</title>
+  <meta name="description" content="之前年前一直在忙，现在把 ranger 的配置文件和相应操作命令行总结一下，发出来备用吧。">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ranger 操作手册">
+  <meta name="twitter:description" content="之前年前一直在忙，现在把 ranger 的配置文件和相应操作命令行总结一下，发出来备用吧。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Ranger 操作手册">
+  <meta property="og:description" content="之前年前一直在忙，现在把 ranger 的配置文件和相应操作命令行总结一下，发出来备用吧。">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2021/02/Ranger-Manual/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2021-02-01 17:16:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-02-01</time> • <span class="post-meta__tags tags">Linux</span>
+			</div>
+
+			<div class="post-tags">
+	标签页 Tags:
+	
+	
+	<a href="/tags/#Linux">Linux</a>
+	
+</div>
+
+			<br>
+
+			<h1 class="post-title">Ranger 操作手册</h1>
+
+		</header>
+
+		<section class="post">
+			<p>之前年前一直在忙，现在把 ranger 的配置文件和相应操作命令行总结一下，发出来备用吧。</p>
+
+<p>首先是 ranger 配置文件, <a href="https://github.com/zququ/ranger/blob/master/rc.conf">ranger_config</a></p>
+
+<p>下面是对应的操作命令行：</p>
+
+<h2 id="ranger-快捷命令行">Ranger 快捷命令行</h2>
+
+<ol>
+  <li>gg 到文件最上面；G 到文件最下面</li>
+  <li>可以用默认编辑器打开文档或按 “r” 直接运行对应脚本</li>
+  <li>’[‘，’]’来移动副目录</li>
+  <li>‘H’退回历史操作；’L’历史记录上调</li>
+  <li>可自定义进入文件夹的快捷键, 例如
+    <ul>
+      <li>gi -&gt; github</li>
+      <li>gh -&gt; home</li>
+      <li>gr -&gt; root</li>
+      <li>g 显示可跳跃的目录快捷键</li>
+    </ul>
+  </li>
+  <li>zh 显示掩藏文件</li>
+  <li>o 排序模式</li>
+  <li>’/’ -&gt; ： search() 搜索</li>
+  <li>f -&gt; 只显示含有目标文件</li>
+  <li>真正进入文件夹 (shift+s) ‘S’</li>
+  <li><em>fzf 显示出好多文件，可以模糊匹配</em></li>
+  <li>复制文件内容：
+    <ul>
+      <li>yp -&gt; 复制文件地址</li>
+      <li>yn -&gt; 复制文件名</li>
+      <li>y. -&gt; 复制去掉文件后缀的文件名</li>
+    </ul>
+  </li>
+  <li>‘V’ -&gt; 用vim打开文件</li>
+  <li>‘M’ -&gt; 创建文件夹</li>
+  <li>cw -&gt; 重新命名文件，或者’a’与’A’句前句后重命名</li>
+  <li>按 v 或 space 多选文件，按 cw，识别是否为多文件，如果为多文件则打开vim，并将文件名复制进入批量处理（调用’:bulkrename’）
+    <ul>
+      <li>操作方法：Ctrl + v -&gt; 进入 visual box 模式，选中后 ‘shift + u’ (‘U’) 插入</li>
+    </ul>
+  </li>
+  <li>文件操作方法：
+    <ul>
+      <li>yy -&gt; 文件变灰</li>
+      <li>pp -&gt; 粘贴，当文件较大按’w’可看进度条</li>
+      <li>再 pp -&gt; 文件名.txt_ 加下划线</li>
+      <li>po 覆盖粘贴</li>
+      <li>dd 剪切</li>
+      <li>dD 删除，当删除文件夹时会询问</li>
+      <li>dU 看文件目录大小</li>
+      <li>退出任务管理器 -&gt; ‘q’或’w’</li>
+      <li>打包压缩 -&gt; v选中后  ‘:compress’</li>
+      <li>‘x’ -&gt; 解压缩</li>
+      <li>Markdwon -&gt; cp 制作成pdf</li>
+      <li>ytv -&gt; 下载文件（视频）</li>
+    </ul>
+  </li>
+  <li>配置 ranger:
+    <ul>
+      <li>ranger 目录: ~/.config/ranger/</li>
+      <li>ranger –copy-config=all</li>
+      <li>RANGER_LOAD_DEFAULT_RC FALSE</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">export RANGER_LOAD_DEFAULT_RC=FALSE</code> -&gt; bashrc</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">set -g -x RANGER_LOAD_DEFAULT_RC FALSE</code> -&gt; fishrc</li>
+      <li>command.py</li>
+      <li>rc.conf -&gt; 主要配置</li>
+      <li>rifle.conf -&gt; 默认程序</li>
+      <li>scope.sh -&gt; 预览配置</li>
+      <li>github plugins -&gt; Ranger Devicon (depand on nerdfont)</li>
+      <li>github 脚本 -&gt; Custom commands</li>
+      <li>console -&gt; 执行 ranger 命令等</li>
+    </ul>
+  </li>
+  <li>其他:
+    <ul>
+      <li>vcs_aware 改成TRUE -&gt; github查看状态:<code class="language-plaintext highlighter-rouge">set vcs_aware true</code>
+</li>
+      <li>
+        <p>官方image preview，安装 w3m 浏览器 image loader -&gt; terminal里显示文件</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  set preview_images w3m
+  set preview_images_method w3m
+</code></pre></div>        </div>
+      </li>
+      <li>视频：<code class="language-plaintext highlighter-rouge">scope_sh -&gt; vedeo</code>取消批注</li>
+    </ul>
+  </li>
+  <li>如何定义快捷键 -&gt;github -&gt; keybindings -&gt; Archwikis</li>
+</ol>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Last One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2021/02/3-algorithms-and-deep-learning-core/" title="link to 三种算法代码框架以及深度学习核心的引出">三种算法代码框架以及深度学习核心的引出</a></h2>
+		<p class="excerpt">from sklearn.datasets import load_bostonimport pandas as pdimport seaborn as snsimport numpy as npimport matplotlib.pyplot as pltdata = load_boston() # type: ignore# data.keys()# print(data.keys())dataframe = pd.DataFrame(data['data'])dataframe.co...…</p>
+		<div class="post-list__meta">
+<time datetime="2021-02-02 18:20:24 +0800" class="post-list__meta--date date">2021-02-02</time> • <span class="post-list__meta--tags tags">MachineLearning</span><a class="btn-border-small" href="/2021/02/3-algorithms-and-deep-learning-core/">More</a>
+</div>
+	</div>
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2020/07/regular-expression/" title="link to python 正则表达式">python 正则表达式</a></h2>
+		<p class="excerpt">python 正则表达式 re 模块python 通过 re 模块来实现&gt;&gt;&gt; import re&gt;&gt;&gt; re.research(r'FishC', 'I love FishC.com')&lt;_sre.SRE_Match object; span=(7, 12), match = 'FishC'&gt;  search() 方法用于在字符串中搜索正则表达式模式第一次出现的 位置 。这种方法类似于 find()方法，&gt;&gt;&gt; "I lo...…</p>
+		<div class="post-list__meta">
+<time datetime="2020-07-23 11:59:24 +0800" class="post-list__meta--date date">2020-07-23</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2020/07/regular-expression/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<section class="post-comments">
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2021/02/Ranger-Manual/";
+			this.page.identifier = "/2021/02/Ranger-Manual/";
+		};
+
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
+
+	<script>
+    var valine = new Valine();
+    valine.init({
+        av: AV,
+        el: '#comments',
+        app_id: 'FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz',
+        app_key: 'AMHLA0K7K1BXcSEWwusdyllN',
+        notify: true, 
+        verify: true, 
+        avatar: 'avatar', 
+      placeholder: '留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!' 
+    });
+</script>
+
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>
