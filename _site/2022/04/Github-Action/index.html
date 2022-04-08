@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>如何通过Github Action为Github Pages添加mermaid流程图</title>
+  <meta name="description" content="虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="如何通过Github Action为Github Pages添加mermaid流程图">
+  <meta name="twitter:description" content="虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="如何通过Github Action为Github Pages添加mermaid流程图">
+  <meta property="og:description" content="虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2022/04/Github-Action/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>。</p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-blue"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2022-04-08 16:11:25 +0800" itemprop="datePublished" class="post-meta__date date">2022-04-08</time> • <span class="post-meta__tags tags">blog</span>
+			</div>
+
+			<div class="post-tags">
+	标签页 Tags:
+	
+	
+	<a href="/tags/#blog">blog</a>
+	
+</div>
+
+			<br>
+
+			<h1 class="post-title">如何通过Github Action为Github Pages添加mermaid流程图</h1>
+
+		</header>
+
+		<section class="post">
+			<p>虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。</p>
+
+<p>网上寻找解决办法的过程中，发现了一个优化库 <a href="https://github.com/jeffreytse/jekyll-spaceship">jeffreytse/jekyll-spaceship</a>，可以通过Markdown添加流程图、音乐，可以实现Html代码与Markdown同时使用、并优化了表格系统等等，如下图：</p>
+
+<p><img src="https://user-images.githubusercontent.com/9413601/85282355-2e317300-b4be-11ea-9c30-8f9d61540d14.png" alt="流程图例"></p>
+
+<p><img src="https://user-images.githubusercontent.com/9413601/82813883-9180b300-9ec8-11ea-8778-f450e0056938.png" alt="流程图例2"></p>
+
+<p><img src="https://user-images.githubusercontent.com/9413601/133599796-1d213033-8184-4059-9ec2-5415e50c94dc.png" alt="添加音乐"></p>
+
+<p>具体可以去作者库中看一看详细信息（<a href="https://github.com/jeffreytse/jekyll-spaceship">jeffreytse/jekyll-spaceship</a>）。</p>
+
+<p>按照作者的使用说明(Installation 部分)配置后，发现还是不能搞定，仔细看说明发现作者做了声明：</p>
+
+<p>Tip: Note that GitHub Pages runs in safe mode and only allows a set of whitelisted plugins. To use the gem in GitHub Pages, you need to build locally or use CI (e.g. travis, github workflow) and deploy to your gh-pages branch.
+Additions for Unlimited GitHub Pages</p>
+
+<p>Here is a GitHub Action named jekyll-deploy-action for Jekyll site deployment conveniently. 
+Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your references.</p>
+
+<p>并给出了最优解决方案，<a href="https://github.com/jeffreytse/jekyll-deploy-action">jekyll-deploy-action</a>。但是需要通过Github Action功能先进行配置。以下为主要流程：</p>
+
+<ol>
+  <li>在自己的博客库根目录下添加文件 –&gt; .github/workflows/build-jekyll.yml</li>
+  <li>build-jekyll.yml中添加如下：
+```
+name: Build and Deploy to Github Pages</li>
+</ol>
+
+<p>on:
+  push:
+    branches:
+      - master  # Here source code branch is <code class="language-plaintext highlighter-rouge">master</code>, it could be other branch</p>
+
+<p>jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  # Use GitHub Actions' cache to cache dependencies on servers
+  - uses: actions/cache@v2
+    with:
+      path: vendor/bundle
+      key: $-gems-$
+      restore-keys: |
+        $-gems-
+
+  # Use GitHub Deploy Action to build and deploy to Github
+  - uses: jeffreytse/jekyll-deploy-action@v0.3.1
+    with:
+      provider: 'github'
+      token: $ # It's your Personal Access Token(PAT)
+      repository: ''             # Default is current repository
+      branch: 'gh-pages'         # Default is gh-pages for github provider
+      jekyll_src: './'           # Default is root directory
+      jekyll_cfg: '_config.yml'  # Default is _config.yml
+      jekyll_baseurl: ''         # Default is according to _config.yml
+      bundler_ver: '&gt;=0'         # Default is latest bundler version
+      cname: ''                  # Default is to not use a cname
+      actor: ''                  # Default is the GITHUB_ACTOR
+      pre_build_commands: ''     # Installing additional dependencies (Arch Linux) ```
+</code></pre></div></div>
+
+<p>其中将branches下master改为自己的推送branch名。</p>
+
+<ol>
+  <li>再进行新一轮push后，如果正确将自动添加一个新的branch名称为gh-pages。</li>
+  <li>进入仓库设置，将默认页面改为gh-pages。</li>
+</ol>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/04/electron-optics/" title="link to Electron optics">Electron optics</a></h2>
+		<p class="excerpt">All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.  The Electron Wavelength and Relativity          Four Problems of EM      The Wavelength $\lambda$                 ...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-04-04 11:18:00 +0800" class="post-list__meta--date date">2022-04-04</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2022/04/electron-optics/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<section class="post-comments">
+	<!-- -->
+	
+	<div id="disqus_thread"></div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://localhost:4000/2022/04/Github-Action/";
+			this.page.identifier = "/2022/04/Github-Action/";
+		};
+
+		var disqus_shortname = 'zququ';
+
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>To see the<a href="http://disqus.com/?ref_noscript"> Disqus </a>comment, please run JavaScript</noscript>
+	
+	
+	<div id="comments"></div>
+	
+
+	<script>
+    var valine = new Valine();
+    valine.init({
+        av: AV,
+        el: '#comments',
+        app_id: 'FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz',
+        app_key: 'AMHLA0K7K1BXcSEWwusdyllN',
+        notify: true, 
+        verify: true, 
+        avatar: 'avatar', 
+      placeholder: '留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!' 
+    });
+</script>
+
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</section>
+</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -29,7 +29,8 @@ Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your 
 
 1. 在自己的博客库根目录下添加文件 --> .github/workflows/build-jekyll.yml
 2. build-jekyll.yml中添加如下：
-```
+
+```markdown
 name: Build and Deploy to Github Pages
 
 on:

@@ -5,9 +5,92 @@
     <description>嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Apr 2022 14:36:41 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Apr 2022 14:36:41 +0800</lastBuildDate>
+    <pubDate>Fri, 08 Apr 2022 23:08:02 +0800</pubDate>
+    <lastBuildDate>Fri, 08 Apr 2022 23:08:02 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>如何通过Github Action为Github Pages添加mermaid流程图</title>
+        <description>&lt;p&gt;虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。&lt;/p&gt;
+
+&lt;p&gt;网上寻找解决办法的过程中，发现了一个优化库 &lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;，可以通过Markdown添加流程图、音乐，可以实现Html代码与Markdown同时使用、并优化了表格系统等等，如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/85282355-2e317300-b4be-11ea-9c30-8f9d61540d14.png&quot; alt=&quot;流程图例&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/82813883-9180b300-9ec8-11ea-8778-f450e0056938.png&quot; alt=&quot;流程图例2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/133599796-1d213033-8184-4059-9ec2-5415e50c94dc.png&quot; alt=&quot;添加音乐&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;具体可以去作者库中看一看详细信息（&lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;按照作者的使用说明(Installation 部分)配置后，发现还是不能搞定，仔细看说明发现作者做了声明：&lt;/p&gt;
+
+&lt;p&gt;Tip: Note that GitHub Pages runs in safe mode and only allows a set of whitelisted plugins. To use the gem in GitHub Pages, you need to build locally or use CI (e.g. travis, github workflow) and deploy to your gh-pages branch.
+Additions for Unlimited GitHub Pages&lt;/p&gt;
+
+&lt;p&gt;Here is a GitHub Action named jekyll-deploy-action for Jekyll site deployment conveniently. 
+Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your references.&lt;/p&gt;
+
+&lt;p&gt;并给出了最优解决方案，&lt;a href=&quot;https://github.com/jeffreytse/jekyll-deploy-action&quot;&gt;jekyll-deploy-action&lt;/a&gt;。但是需要通过Github Action功能先进行配置。以下为主要流程：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在自己的博客库根目录下添加文件 –&amp;gt; .github/workflows/build-jekyll.yml&lt;/li&gt;
+  &lt;li&gt;build-jekyll.yml中添加如下：
+```
+name: Build and Deploy to Github Pages&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;on:
+  push:
+    branches:
+      - master  # Here source code branch is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;, it could be other branch&lt;/p&gt;
+
+&lt;p&gt;jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # Use GitHub Actions' cache to cache dependencies on servers
+  - uses: actions/cache@v2
+    with:
+      path: vendor/bundle
+      key: $-gems-$
+      restore-keys: |
+        $-gems-
+
+  # Use GitHub Deploy Action to build and deploy to Github
+  - uses: jeffreytse/jekyll-deploy-action@v0.3.1
+    with:
+      provider: 'github'
+      token: $ # It's your Personal Access Token(PAT)
+      repository: ''             # Default is current repository
+      branch: 'gh-pages'         # Default is gh-pages for github provider
+      jekyll_src: './'           # Default is root directory
+      jekyll_cfg: '_config.yml'  # Default is _config.yml
+      jekyll_baseurl: ''         # Default is according to _config.yml
+      bundler_ver: '&amp;gt;=0'         # Default is latest bundler version
+      cname: ''                  # Default is to not use a cname
+      actor: ''                  # Default is the GITHUB_ACTOR
+      pre_build_commands: ''     # Installing additional dependencies (Arch Linux) ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;其中将branches下master改为自己的推送branch名。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;再进行新一轮push后，如果正确将自动添加一个新的branch名称为gh-pages。&lt;/li&gt;
+  &lt;li&gt;进入仓库设置，将默认页面改为gh-pages。&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Fri, 08 Apr 2022 16:11:25 +0800</pubDate>
+        <link>http://localhost:4000/2022/04/Github-Action/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/04/Github-Action/</guid>
+        
+        <category>blog</category>
+        
+        
+      </item>
     
       <item>
         <title>Electron optics</title>
@@ -854,95 +937,6 @@ $$&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000/2021/06/Legendre-transform/</guid>
         
         <category>数学</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>From Logistic Regression to Multi-class Classification and Neural Networks</title>
-        <description>&lt;h3 id=&quot;back-propagation&quot;&gt;Back Propagation&lt;/h3&gt;
-
-&lt;p&gt;给定一个神经网络，我们想通过Back Propagation的方法来求解图中任意节点的误差值（ $\delta$ ）。&lt;/p&gt;
-
-&lt;p&gt;图中，我将input unit定义为红色，并将output unit定义为绿色。这样很容易理解, input layer中只存在有 input unit，而输出层中也就只有绿色的 output unit。&lt;/p&gt;
-
-&lt;p&gt;我们假设有，&lt;/p&gt;
-
-&lt;p&gt;$$
-\delta = \frac{J}{z} \tag{1}
-$$&lt;/p&gt;
-
-&lt;p&gt;其中 $J$ 为 cost function，而，$z$ 即为对应 unit 的输入input unit （同时也是上一层的output unit）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/202106/backpropagation_nn.png&quot; alt=&quot;BPnn&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;首先考虑 output layer (L层)，有如下关系式，&lt;/p&gt;
-
-&lt;p&gt;$$
-a_j^{(L)} = z_j^{(L)}
-$$&lt;/p&gt;
-
-&lt;p&gt;即其 input unit == output unit。另外根据链式法则，有如下的求导关系：&lt;/p&gt;
-
-&lt;p&gt;$$L \rightarrow a_j^{(L)} \rightarrow z_j^{(L)}$$&lt;/p&gt;
-
-&lt;p&gt;所以有，&lt;/p&gt;
-
-&lt;p&gt;$$
-\delta_j^{(L)} = \frac{\partial L}{\partial z_j^{(L)}} = \frac{\partial L}{\partial a_j^{(L)}}\cdot\frac{\partial a_j^{(L)}}{\partial z_j^{(L)}} = (a_j^{(L)} - y_j^{(L)})\cdot 1
-$$&lt;/p&gt;
-
-&lt;p&gt;这样也能够解释为什么选用偏微分的形式来表示 $\delta$ ，即可以联系链式法则，为后续的反向传播做铺垫，在值上又与误差的定义相同，十分的精彩与美丽。&lt;/p&gt;
-
-&lt;p&gt;那么对于其中任意个 node 上的任意一个 unit 又如何来计算误差值呢？&lt;/p&gt;
-
-&lt;p&gt;例如以求解图中黄色的 $z_j^{(L)}$ 为例，同样由链式法则公式，首先观察链式的关系式。&lt;/p&gt;
-
-&lt;p&gt;$$
-L \rightarrow z_k^{(l+1)}(k = 1,…, s_{(l)})\rightarrow z_j^{(l)}
-$$
-其中 $s_{(l)}$ 为 back propagation 中前一层中所有 input layer 中的 unit 数，所以由链式法则，有
-$$
-\delta_j^{(l)} = \sum_k^{s_{(l+1)}} \frac{\partial L}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial z_j^{(l)}} = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot \frac{\partial z_k^{(l+1)}}{\partial z_j^{(l)}}\tag 2
-$$&lt;/p&gt;
-
-&lt;p&gt;又因为由 forword propagation 可以得到，&lt;/p&gt;
-
-&lt;p&gt;$$
-z_k^{(l+1)} = \sum_p^{s_{(l)}}\theta_{kp}^{(l)}\cdot g(z_j^{(l)}) + b_k^{(l)} \tag 3
-$$&lt;/p&gt;
-
-&lt;p&gt;代入 $(2)$ 中，&lt;/p&gt;
-
-&lt;p&gt;$$
-\delta_j^{(l)} = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot g^{‘}(z_j^{(l)}) = \sum_k^{s_{(l+1)}}\delta_k^{(l+1)}\cdot a_j^{(l)}\cdot(1-a_j^{(l)})
-$$&lt;/p&gt;
-
-&lt;p&gt;再来观察关于 $J$ 和 $\theta_{ij}^{(l)}$ 的求导关系：&lt;/p&gt;
-
-&lt;p&gt;$$
-L \rightarrow z_k^{(l+1)} (k = 1, …, s_{(l)}) \rightarrow \theta_{ij}^{(l)}
-$$&lt;/p&gt;
-
-&lt;p&gt;由链式法则，&lt;/p&gt;
-
-&lt;p&gt;$$
-\frac{\partial L}{\theta_{ij}^{(l)}} = \sum_k^{s_{(l)}}\frac{\partial L}{\partial z_j^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial \theta_{ij}^{(l)}}= \sum_k^{s_{(l)}} \delta_j^{(l+1)}\cdot \frac{\partial z_k^{(l+1)}}{\partial \theta_{ij}^{(l)}}&lt;/p&gt;
-
-&lt;p&gt;$$&lt;/p&gt;
-
-&lt;p&gt;当 $k = i, p = j$ 时，$(3)$ 代入原式求导可消去 $\sum$ 留下一项，&lt;/p&gt;
-
-&lt;p&gt;$$
-\frac{\partial L}{\theta_{ij}^{(l)}} = \delta_j^{(l+1)}\cdot g(z_j^{(l)}) = \delta_j^{(l+1)}\cdot a_j^{(l)}
-$$&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 27 May 2021 17:44:10 +0800</pubDate>
-        <link>http://localhost:4000/2021/05/ml-From-LR-to-NW/</link>
-        <guid isPermaLink="true">http://localhost:4000/2021/05/ml-From-LR-to-NW/</guid>
-        
-        <category>DeepLearning</category>
         
         
       </item>

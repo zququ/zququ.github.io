@@ -195,6 +195,15 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object-3/" title="访问 python 类和对象 (3) 继承 super函数 多重继承 钻石继承">python 类和对象 (3) 继承 super函数 多重继承 钻石继承</a></h2>
+      <p class="excerpt">整理自小甲鱼鱼C论坛继承继承的语法为：class DerivedClassName(BaseClassName):注意的是，如果子类中定义了与父类相同的方法或者属性，会自动覆盖父类的方法或者属性。例如如下代码：import random as rclass Fish:    def __init__(self):        self.x = r.randint(0, 10)        self.y = r.randint(0, 10)    def move(self):     ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-13 20:34:24 +0800" class="post-list__meta--date date">2019-11-13</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-class-object-3/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-29/" title="访问 汇编语言 7.10 不同寻址方式的灵活运用 (1)">汇编语言 7.10 不同寻址方式的灵活运用 (1)</a></h2>
       <p class="excerpt">7.10 不同寻址方式的灵活运用(1)之前有介绍过几种定位内存地址的方法（寻址方式）：  [idata]用一个常量来表示内存地址，可用于直接定义一个内存单元，注意的是，单独使用[idata]只能在debug中被正确识别，如果在masm中，需要表明[idata]对应的段，即ds:[idata]。  [bx]用一个变量来表示内存地址，可用于间接定位一个内存单元。其使用时不用表明对应的段，默认[bx]就是在ds中。  [bx+idata]。  [bx+si]。  [bx+si+idata]用两个...…</p>
       <div class="post-list__meta">
@@ -271,15 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">代码1assume cs:code, ds:data, ss:stackdata segment    dw 0123h, 0456h, 0789h, 0abch, 0defh, 0fedh, 0cbah, 0987hdata endsstack segment    dw 0, 0, 0, 0, 0, 0, 0, 0stack endscode segmentstart: mov ax, stack       mov ss, ax       mov sp, 16       mov ...…</p>
       <div class="post-list__meta">
 <time datetime="2019-11-06 21:49:24 +0800" class="post-list__meta--date date">2019-11-06</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-24/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-23/" title="访问 汇编语言 6.2 6.3 在代码中使用段 将数据代码栈放入不同的段">汇编语言 6.2 6.3 在代码中使用段 将数据代码栈放入不同的段</a></h2>
-      <p class="excerpt">6.2 在代码中使用栈让我们利用栈，将程序中定义的数据逆序存放。实现代码如下：assume cs:codesgcodesg segment        dw 0123h, 0456h, 0789h, 0abch, 0defh, 0fedh, 0cbah, 0987h    dw 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0    ;这里dw定义了16个字型数据，在程序加在后，将取得16个字    ;的内存空间，存放这16个数据。后面将这段空...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-05 18:22:24 +0800" class="post-list__meta--date date">2019-11-05</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-23/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>
