@@ -5,8 +5,8 @@
     <description>嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Apr 2022 14:26:20 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Apr 2022 14:26:20 +0800</lastBuildDate>
+    <pubDate>Fri, 08 Apr 2022 14:36:41 +0800</pubDate>
+    <lastBuildDate>Fri, 08 Apr 2022 14:36:41 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -217,90 +217,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Figure 4.&lt;/strong&gt; The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;♜&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♝&lt;/td&gt;
-      &lt;td&gt;♛&lt;/td&gt;
-      &lt;td&gt;♚&lt;/td&gt;
-      &lt;td&gt;♝&lt;/td&gt;
-      &lt;td&gt;♞&lt;/td&gt;
-      &lt;td&gt;♜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♞&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♗&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♟&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♘&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-      &lt;td&gt;♙&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;♖&lt;/td&gt;
-      &lt;td&gt;♘&lt;/td&gt;
-      &lt;td&gt;♗&lt;/td&gt;
-      &lt;td&gt;♕&lt;/td&gt;
-      &lt;td&gt;♔&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;♖&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;img class=&quot;plantuml&quot; src=&quot;http://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a426f62202d3e20416c696365203a2068656c6c6f20776f726c640a40656e64756d6c&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 04 Apr 2022 11:18:00 +0800</pubDate>

@@ -1,0 +1,45 @@
+<h3 id="about-the-lemonade">About the lemonade</h3>
+
+<p>You can find lemonade here.</p>
+
+<p><a href="https://github.com/lemonade-command/lemonade">github_lemonade</a></p>
+
+<p>Because, neovim depends on xclip to copy and pasta from the remote Server (e.g. The computers in remote which has a greater computation power), for which, the $DISPLAY is needed. So we can only do copy from the local Client (local computer), we cannot do copy from the remote Server, however.</p>
+
+<p>Here is a way to have the lemonade to make it.</p>
+
+<ol>
+  <li>
+    <p>First, we need to install lemonade in both Client and the Server, be attention to the environment set.</p>
+  </li>
+  <li>
+    <p>Second, we need to write a script in Server, named with remote:</p>
+  </li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+ps cax | <span class="nb">grep </span>lemonade&gt; /dev/null
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"lemonade is running."</span>
+<span class="k">else
+  </span><span class="nb">echo</span> <span class="s2">"lemonade is not running."</span>
+  <span class="nb">nohup </span>lemonade server &amp;
+<span class="k">fi
+</span>ssh <span class="nt">-R</span> 2489:127.0.0.1:2489 <span class="nt">-p</span> <span class="nv">$port</span> <span class="nv">$user</span>@<span class="nv">$ipadress</span>
+</code></pre></div></div>
+
+<p>where, <code class="language-plaintext highlighter-rouge">$port</code> is the port, and <code class="language-plaintext highlighter-rouge">$user</code> is the user, <code class="language-plaintext highlighter-rouge">$ipadress</code> is the I adress of the remote Server IP adress :)</p>
+
+<ol>
+  <li>Then copy these in neovim’s init.vim to config the copy or paste key to set the copy command.</li>
+</ol>
+
+<pre><code class="language-vimrc">let g:clipboard = {
+            \'copy': { '+': 'lemonade copy', '*': 'lemonade copy' },
+            \'paste': { '+': 'lemonade paste', '*': 'lemonade paste' },
+            \'name': 'lemonade',
+            \}
+</code></pre>
+
+<p>After <code class="language-plaintext highlighter-rouge">chmod u+x remote</code> ( which you created in the second step), you can then register to the Remote after running remote and inputing the password in the command-line.</p>
+

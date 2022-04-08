@@ -176,15 +176,7 @@ A --> D(two nodal planes)
 
 **Figure 4.** The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.
 
-|---|---|---|---|---|---|---|---|
-| ♜ |   | ♝ | ♛ | ♚ | ♝ | ♞ | ♜ |
-|   | ♟ | ♟ | ♟ |   | ♟ | ♟ | ♟ |
-| ♟ |   | ♞ |   |   |   |   |   |
-|   | ♗ |   |   | ♟ |   |   |   |
-|   |   |   |   | ♙ |   |   |   |
-|   |   |   |   |   | ♘ |   |   |
-| ♙ | ♙ | ♙ | ♙ |   | ♙ | ♙ | ♙ |
-| ♖ | ♘ | ♗ | ♕ | ♔ |   |   | ♖ |
-
-![](https://soundcloud.com/aviciiofficial/preview-avicii-vs-lenny)
+```plantuml!
+Bob -> Alice : hello world
+```
 

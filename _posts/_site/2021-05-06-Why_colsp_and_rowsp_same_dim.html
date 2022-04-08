@@ -1,0 +1,18 @@
+<p>转自：<a href="https://math.stackexchange.com/questions/1900437/proof-that-the-dimension-of-a-matrix-row-space-is-equal-to-the-dimension-of-its">stackexchange 论坛</a></p>
+
+<p>Proof. Suppose that $\lbrace v_1,v_2,\dots,v_k\rbrace$ is a basis for the column space of $A$. Then each column of $A$ can be expressed as a linear combination of these vectors; suppose that the $i$-th column $c_i$ is given by</p>
+
+\[c_i = \gamma_{1i}v_1+\gamma_{2i}v_2+\dots+\gamma_{ki}v_k\]
+
+<p>Now form two matrices as follows: $B$ is an $m\times k$ matrix whose columns are the basis vectors $v_i$, while $C=(\gamma_{ij})$ is a $k\times n$ matrix whose $i$-th column contains the coefficients $\gamma_{1i},\gamma_{2i,}\dots,\gamma_{ki}$. It then follows$^7$ that $A=BC$.</p>
+
+<p>However, we can also view the product $A= BC$ as expressing the rows of $A$ as a linear combination of the rows of $C$ with the $i$-th row of $B$ giving the coefficients for the linear combination that determines the $i$-th row of $A$. Therefore, the rows of $C$ are a spanning set for the row space of $A$, and so the dimension of the row space of $A$ is at most $k$. We conclude that:</p>
+
+\[\dim(\operatorname{rowsp}(A))\leq\dim(\operatorname{colsp}(A))\]
+
+<p>Applying the same argument to $A^t$, we conclude that:</p>
+
+\[\dim(\operatorname{colsp}(A))\leq\dim(\operatorname{rowsp}(A))\]
+
+<p>and hence these values are equal</p>
+

@@ -1,0 +1,250 @@
+<p>整理自小甲鱼<a href="https://fishc.com.cn/">鱼C论坛</a></p>
+<h3 id="继承">继承</h3>
+
+<p>继承的语法为：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">BaseClassName</span><span class="p">):</span>
+</code></pre></div></div>
+<p>注意的是，如果子类中定义了与父类相同的<strong>方法或者属性</strong>，会自动覆盖父类的方法或者属性。</p>
+
+<p>例如如下代码：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="n">r</span>
+<span class="k">class</span> <span class="nc">Fish</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">print</span><span class="p">(</span><span class="sb">`我的位置是: `</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Carp</span><span class="p">(</span><span class="n">Fish</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Shark</span><span class="p">(</span><span class="n">Fish</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">hungry</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">hungry</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"吃"</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">hungry</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"不吃"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>运行代码后，在Carp和Shark类中分别调用<code class="language-plaintext highlighter-rouge">move()</code>方法，观察是否能运行。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="n">fish</span> <span class="o">=</span> <span class="n">Fish</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">fish</span><span class="p">.</span><span class="n">move</span><span class="p">()</span>
+<span class="n">我的位置是</span><span class="err">：</span><span class="mi">5</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">shark</span> <span class="o">=</span> <span class="n">Shark</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">shark</span><span class="p">.</span><span class="n">move</span><span class="p">()</span>
+<span class="n">ArributeError</span><span class="p">:</span> <span class="s">'Shark'</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">atrribute</span> <span class="s">'x'</span>
+</code></pre></div></div>
+
+<p>分析原因就是因为在Shark类中，重新定义了构造方法，覆盖了父类Fish的move()方法。</p>
+
+<p>解决方法有两个：</p>
+
+<p>方法1. 在定义Shark的构造方法时，调用未绑定的父类方法</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Shark</span><span class="p">(</span><span class="n">Fish</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Fish</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">hungry</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+<p>或者</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">calss</span> <span class="n">Shark</span><span class="p">(</span><span class="n">Fish</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Fish</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">shark</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">hungry</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+<p>需要注意的是，这个self并不是父类Fish的实例对象，而是子类的实例对象，而题目所谓的未绑定的父类方法意思就是，并不绑定父类的实例对象，而是直接使用子类的实例对象。</p>
+
+<p>方法2. 使用super函数</p>
+
+<p>super 函数能够自动找到基类的方法，而不需要给出任何基类的名字，会自动找出所有基类以及对应的方法。用法如下：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Shark</span><span class="p">(</span><span class="n">Fish</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">hungry</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<h3 id="多重继承">多重继承</h3>
+
+<p>多重继承的语法是：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">Base1</span><span class="p">,</span> <span class="n">Base2</span><span class="p">,</span> <span class="n">Base3</span><span class="p">):</span>
+</code></pre></div></div>
+<p>举个例子：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Base1</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">foo1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"foo1"</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Base2</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">foo2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"foo2"</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">Base1</span><span class="p">,</span> <span class="n">Base2</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="o">&gt;&gt;&gt;</span><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">c</span><span class="p">.</span><span class="n">foo1</span><span class="p">()</span>
+<span class="n">foo1</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">c</span><span class="p">.</span><span class="n">foo2</span><span class="p">()</span>
+<span class="n">foo2</span>
+</code></pre></div></div>
+
+<p>值得注意的是多重继承问题尽量避免使用，会出现钻石继承问题。</p>
+
+<h3 id="钻石继承">钻石继承</h3>
+
+<p>钻石继承是多重继承的陷阱，如下代码：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">print</span><span class="p">(</span><span class="s">"进入A…"</span><span class="p">)</span>
+       <span class="k">print</span><span class="p">(</span><span class="s">"离开A…"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">print</span><span class="p">(</span><span class="s">"进入B…"</span><span class="p">)</span>
+       <span class="n">A</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"离开B…"</span><span class="p">)</span>
+        
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"进入C…"</span><span class="p">)</span>
+        <span class="n">A</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"离开C…"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"进入D…"</span><span class="p">)</span>
+        <span class="n">B</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">C</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"离开D…"</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">进入D</span><span class="err">…</span>
+<span class="n">进入B</span><span class="err">…</span>
+<span class="n">进入A</span><span class="err">…</span>
+<span class="n">离开A</span><span class="err">…</span>
+<span class="n">离开B</span><span class="err">…</span>
+<span class="n">进入C</span><span class="err">…</span>
+<span class="n">进入A</span><span class="err">…</span>
+<span class="n">离开A</span><span class="err">…</span>
+<span class="n">离开C</span><span class="err">…</span>
+<span class="n">离开D</span><span class="err">…</span>
+</code></pre></div></div>
+<p>如下图所示:
+<img src="/assets/201911/20191113.png" alt="figure1" /></p>
+
+<p>因为从D类继承的方式有通过A类为基类的B类，以及通过A类为基类的C类两个方式继承。这样在调用D类时，就会两个词进入A类。如果这时加入计数器会<strong>发生计数错误的情况</strong>。</p>
+
+<p>解决钻石继承的方法可以使用Method Resolution Order(MRO) 方法解析顺序的方法，以及C3算法。</p>
+
+<p><strong>MRO顺序，就是在避免同一类被调用多次的前提下，使用广度优先和左到右的原则去寻找需要的属性和方法。</strong></p>
+
+<p>C3算法确保同一个类只会被搜寻一次，如果一个属性或者方法在D类中没有被找到，Python就会搜索B类，然后搜索C类，如果都没有找到，会继续搜索B的基类A，如果还没有找到会抛出’AttributeError’异常。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">#方法为类.__mro__获得MRO的顺序
+</span><span class="o">&gt;&gt;&gt;</span><span class="n">D</span><span class="p">.</span><span class="n">__mro__</span>
+<span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">__main__</span><span class="p">.</span><span class="n">D</span><span class="s">'&gt;, &lt;class '</span><span class="n">__main__</span><span class="p">.</span><span class="s">B'&gt;, &lt;class '</span><span class="n">__main__</span><span class="p">.</span><span class="n">C</span><span class="s">'&gt;, &lt;class '</span><span class="n">__main__</span><span class="p">.</span><span class="n">A</span><span class="s">'&gt;, &lt;class '</span><span class="nb">object</span><span class="s">'&gt;)
+ #object是所有类的基类
+</span></code></pre></div></div>
+
+<p>或者利用super函数解决。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"进入A…"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"离开A…"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"进入B…"</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"离开B…"</span><span class="p">)</span>
+        
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"进入C…"</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"离开C…"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"进入D…"</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"离开D…"</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">D</span><span class="p">()</span>
+<span class="n">进入D</span><span class="err">…</span>
+<span class="n">进入B</span><span class="err">…</span>
+<span class="n">进入C</span><span class="err">…</span>
+<span class="n">进入A</span><span class="err">…</span>
+<span class="n">离开A</span><span class="err">…</span>
+<span class="n">离开C</span><span class="err">…</span>
+<span class="n">离开B</span><span class="err">…</span>
+<span class="n">离开D</span><span class="err">…</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>注意1：构造方法不能return值，否则报错</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">TypeError</span><span class="p">:</span> <span class="n">__init__</span><span class="p">()</span> <span class="n">should</span> <span class="k">return</span> <span class="bp">None</span><span class="p">,</span> <span class="ow">not</span> <span class="s">'str'</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>注意2：当子类方法覆盖了父类方法时，不会删除父类方法，只是该子类看不到父类方法了而已</p>
+</blockquote>
+
+<blockquote>
+  <p>注意3：当我们想故意覆盖掉父类的方法时，可以定义一个方法直接pass掉，如下：</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Bird</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"fly"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Penguin</span><span class="p">(</span><span class="n">Bird</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>练习：定义一个点（Point）类和直线（Line）类，使用getLen方法可以获得直线长度</p>
+</blockquote>
+
+<p>提示：
+Python中开根号使用math模块中的sqrt函数</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">class</span> <span class="nc">Point</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valX</span><span class="p">,</span> <span class="n">valY</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">valX</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">valY</span>
+    <span class="k">def</span> <span class="nf">getX</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">x</span>
+    <span class="k">def</span> <span class="nf">getY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">y</span>
+
+<span class="k">class</span> <span class="nc">Line</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pointA</span><span class="p">,</span> <span class="n">pointB</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">diffX</span> <span class="o">=</span> <span class="n">pointA</span><span class="p">.</span><span class="n">getX</span><span class="p">()</span> <span class="o">-</span> <span class="n">pointB</span><span class="p">.</span><span class="n">getX</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">diffY</span> <span class="o">=</span> <span class="n">pointA</span><span class="p">.</span><span class="n">getY</span><span class="p">()</span> <span class="o">-</span> <span class="n">pointB</span><span class="p">.</span><span class="n">getY</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">getLen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">diffX</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">diffX</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">diffY</span> <span class="o">*</span> <span class="bp">self</span><span class="p">.</span><span class="n">diffY</span><span class="p">)</span>
+
+<span class="n">pointA</span>               <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pointB</span>               <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">line</span>                 <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">pointA</span><span class="p">,</span> <span class="n">pointB</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">getLen</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p>本例子中获得的经验：</p>
+
+<ol>
+  <li>定义的类可以作为后面类的参数</li>
+  <li>注意math.sqrt的用法</li>
+  <li>在python中不能用”^2”来表示平方，平方用”**2”来表示</li>
+</ol>
