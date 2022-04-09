@@ -5,15 +5,15 @@
     <description>嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Apr 2022 23:16:27 +0800</pubDate>
-    <lastBuildDate>Fri, 08 Apr 2022 23:16:27 +0800</lastBuildDate>
+    <pubDate>Sun, 10 Apr 2022 01:26:54 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Apr 2022 01:26:54 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
         <title>如何通过Github Action为Github Pages添加mermaid流程图</title>
         <description>&lt;p&gt;虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。&lt;/p&gt;
 
-&lt;p&gt;网上寻找解决办法的过程中，发现了一个优化库 &lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;，可以通过Markdown添加流程图、音乐，可以实现Html代码与Markdown同时使用、并优化了表格系统等等，如下图：&lt;/p&gt;
+&lt;p&gt;网上寻找解决办法的过程中，发现了一个Jekyll博客的优化插件库 &lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;，可以通过Markdown添加流程图、音乐，可以实现Html代码与Markdown同时使用、并优化了表格系统等等，如下图：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/85282355-2e317300-b4be-11ea-9c30-8f9d61540d14.png&quot; alt=&quot;流程图例&quot; /&gt;&lt;/p&gt;
 
@@ -21,30 +21,86 @@
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/133599796-1d213033-8184-4059-9ec2-5415e50c94dc.png&quot; alt=&quot;添加音乐&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;具体可以去作者库中看一看详细信息（&lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;）。&lt;/p&gt;
+&lt;p&gt;具体功能可以去作者库中看一看详细信息（&lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;）。&lt;/p&gt;
 
 &lt;p&gt;按照作者的使用说明(Installation 部分)配置后，发现还是不能搞定，仔细看说明发现作者做了声明：&lt;/p&gt;
 
-&lt;p&gt;Tip: Note that GitHub Pages runs in safe mode and only allows a set of whitelisted plugins. To use the gem in GitHub Pages, you need to build locally or use CI (e.g. travis, github workflow) and deploy to your gh-pages branch.
-Additions for Unlimited GitHub Pages&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Tip: Note that GitHub Pages runs in safe mode and only allows a set of whitelisted plugins. To use the gem in GitHub Pages, you need to build locally or use CI (e.g. travis, github workflow) and deploy to your gh-pages branch.
+Additions for Unlimited GitHub Pages
 
-&lt;p&gt;Here is a GitHub Action named jekyll-deploy-action for Jekyll site deployment conveniently. 
-Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your references.&lt;/p&gt;
+Here is a GitHub Action named jekyll-deploy-action for Jekyll site deployment conveniently. 
+Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your references.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;并给出了最优解决方案，&lt;a href=&quot;https://github.com/jeffreytse/jekyll-deploy-action&quot;&gt;jekyll-deploy-action&lt;/a&gt;。但是需要通过Github Action功能先进行配置。以下为主要流程：&lt;/p&gt;
 
 &lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;通过以下指令，在本地博客目录下建立一个新的 branch，命名为 gh-pages&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git checkout --orphan gh-pages
+ git rm -rf .
+ git commit --allow-empty -m &quot;initial commit&quot;
+ git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
   &lt;li&gt;在自己的博客库根目录下添加文件 –&amp;gt; .github/workflows/build-jekyll.yml&lt;/li&gt;
-  &lt;li&gt;build-jekyll.yml中添加如下：&lt;/li&gt;
+  &lt;li&gt;build-jekyll.yml中添加如下
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; name: Build and Deploy to Github Pages
+	
+ on:
+   push:
+     branches:
+       - master  # Here source code branch is `master`, it could be other branch
+	
+ jobs:
+   build_and_deploy:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2
+	
+       # Use GitHub Actions' cache to cache dependencies on servers
+       - uses: actions/cache@v2
+         with:
+           path: vendor/bundle
+           key: $-gems-$
+           restore-keys: |
+             $-gems-
+	
+       # Use GitHub Deploy Action to build and deploy to Github
+       - uses: jeffreytse/jekyll-deploy-action@v0.3.1
+         with:
+           provider: 'github'
+           token: $ # It's your Personal Access Token(PAT)
+           repository: ''             # Default is current repository
+           branch: 'gh-pages'         # Default is gh-pages for github provider
+           jekyll_src: './'           # Default is root directory
+           jekyll_cfg: '_config.yml'  # Default is _config.yml
+           jekyll_baseurl: ''         # Default is according to _config.yml
+           bundler_ver: '&amp;gt;=0'         # Default is latest bundler version
+           cname: ''                  # Default is to not use a cname
+           actor: ''                  # Default is the GITHUB_ACTOR
+           pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;注：可以将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;branches:&lt;/code&gt;下&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;改为自己的推送branch名，这里标注为默认值&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; branch再进行新一轮push后，如果正确配置将自动将master中的网站自动转换为静态网页代码添加到刚刚在第一步中建立的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;branch中。&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;如何发生推送错误，可以在博客仓库的Action选项栏中观察报错原因中观察错误原因。&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/20220408/2022-04-09-13-44-01.png&quot; alt=&quot;Action选项栏&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;进入仓库设置页面（Pages栏），将默认页面改为gh-pages即可。&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/20220408/2022-04-09-13-37-53.png&quot; alt=&quot;更改默认生成页面的branch&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;其中将branches下master改为自己的推送branch名。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;再进行新一轮push后，如果正确将自动添加一个新的branch名称为gh-pages。&lt;/li&gt;
-  &lt;li&gt;进入仓库设置，将默认页面改为gh-pages。&lt;/li&gt;
-&lt;/ol&gt;
-
 </description>
         <pubDate>Fri, 08 Apr 2022 16:11:25 +0800</pubDate>
         <link>http://localhost:4000/2022/04/Github-Action/</link>
