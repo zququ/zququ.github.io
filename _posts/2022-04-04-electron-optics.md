@@ -217,11 +217,47 @@ For the objective lens of a modern electron microscope operation at moderate mag
 
 PS: $U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.
 
+**The use of this mode in a four-lens instrument has advantages for biological specimens where radiation damage must be minimized**. At this moderate magniﬁcation lens L3 is switched off. At high magniﬁcation all lenses are used. Modern lens designers use the methods of matrix optics.
+
+The simple thin-lens formula can still be used if **the object and image distances $U$ and $V$ are measured from the lens principal planes $H1$ and $H2$**. Equation (2.6) becomes
+
+$$
+\frac{f_i}{U} + \frac{f_0}{V} = 1
+$$
+
+As they are for **magnetic electron lenses, then the refractive indices in the object and images space are equal**, we get
+
+$$
+f_i = f_0 = f \tag{9}
+$$
+
+and
+
+$$
+\frac{1}{U} + \frac{1}{V} = \frac{1}{f} \tag{10}
+$$
+
+Eqn$(10)$ is quite gneral if 
+
 ```mermaid!
-graph LR
-	A()
+graph TD
+A(U) --> M[+] --> B(object is left of H1)
+A --> N[-] --> D(object is right of H1)
+E(V) --> Q[+] --> F(image is right of H2)
+E --> T[-] --> G(image is left of H2)
 ```
 
-<++>
+And there will be three cases:
+
+1. $U < f$ : image is virtual, erect, and magnified.
+2. $f < U < 2f$ : image is real, inverted, and magnified.
+3. $U < 2f$ : image is real, inverted, and reduced.
+
+
+
+
+
+
+
 
 
