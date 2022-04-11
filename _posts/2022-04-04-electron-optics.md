@@ -176,7 +176,52 @@ A --> D(two nodal planes)
 
 **Figure 4.** The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.
 
-```plantuml!
-Bob -> Alice : hello world
+Here comes a conclusion about $x_0$, $x_i$, $f_0$, $f_i$, $U$ and $V$.
+
+```mermaid!
+graph TD
+	A(x0) --> B(from y0 to F1)
+	C(xi) --> D(from yi to F2)
+	E(f0) --> F(from H2 to F2)
+	G(fi) --> H(form H1 to F1)
+	I(U)  --> J(from y0 to H1)
+	K(V)  --> L(from yi to H2)
 ```
+
+For magnetic lenses the **nodal planes coincide with the principal planes**. The points where the axis crosses the nodal planes are called nodal points, N1 and N2. Principal planes are planes of unit lateral magniﬁcation, while nodal planes are planes of unit angular magniﬁcation. For an axially symmetric lens, the projective transformation for perfect imaging simpliﬁes to
+
+$$
+\frac{y_i}{y_0} = \frac{f_i}{x_0} = \frac{x_i}{f_0} \tag{8}
+$$
+
+> $eqn(8)$ is called **the Newton's lens equation**.
+
+
+The determination of the positions of these planes is the key problem of electron optics—once they are known, the rules for graphical construction of ﬁgures satisfying eqn $(8)$ can be used to ﬁnd the image of an arbitrary object. 
+
+```mermaid!
+graph LR
+	C(Object P) --> A(Newton's lens equation) --> B(Image of an arbitrary object P')
+```
+
+The rule for a construction which gives the conjugate image point $P'$ of a known object point $P$ is:
+
+1. Draw a ray through $P$ and $F_1$, intersecting $H1$ at $Q$. Through $Q$ draw a ray $YQ$ parallel to the axis extending into both object and image spaces. 
+2. Draw a ray parallel to the axis through $P$ to intersect $H2$. From this intersection draw a ray through $F2$ to intersect the ray $YQ$ at $P'$. $P'$ is the image of $P$.
+
+For the objective lens of a modern electron microscope operation at moderate magnificaiton (~ 40,000),
+
+![Figure 5](/assets/20220404/2022-04-11-17-15-56.png)
+
+**Figure 5** Ray diagram for the objective lens of a microscope operating at moderate magniﬁcation. The image is virtual and the principal planes are crossed. Object and image focal lengths are equal for magnetic lenses. A typical value for $f_2$ is 2 mm, and the magniﬁcation M = V/U may be about 20.
+
+PS: $U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.
+
+```mermaid!
+graph LR
+	A()
+```
+
+<++>
+
 
