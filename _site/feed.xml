@@ -5,8 +5,8 @@
     <description>嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Apr 2022 01:26:54 +0800</pubDate>
-    <lastBuildDate>Sun, 10 Apr 2022 01:26:54 +0800</lastBuildDate>
+    <pubDate>Tue, 12 Apr 2022 21:32:04 +0800</pubDate>
+    <lastBuildDate>Tue, 12 Apr 2022 21:32:04 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -127,9 +127,22 @@ Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your 
           &lt;li&gt;&lt;a href=&quot;#the-wavelength-through-the-specimen-lambda&quot;&gt;The Wavelength Through the Specimen ($\lambda’$)&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#simple-lens-properties&quot;&gt;Simple lens properties&lt;/a&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#simple-lens-properties&quot;&gt;Simple lens properties&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-ideal-lens&quot;&gt;The ideal lens&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#the-ideal-lens&quot;&gt;The ideal lens&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#some-additional-terms-commonly-used-in-electron-optics&quot;&gt;Some Additional terms commonly used in electron optics&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#1-lateral-magnification&quot;&gt;1. lateral magnification&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#2-the-angular-magnification&quot;&gt;2. The angular magnification&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#3-the-entrance-and-exit-pupils&quot;&gt;3. The entrance and exit pupils&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#4-the-gaussian-reference-sphere&quot;&gt;4. The Gaussian reference sphere&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#5-the-longitudinal-magnification&quot;&gt;5. The longitudinal magnification&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#6-incoherent-imaging-theory&quot;&gt;6. Incoherent imaging theory&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -253,7 +266,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Figure 2&lt;/strong&gt; The electron wave illustrated in two cases passing through a specimen. The wave passing through the centre of an atom (where the potential is high) has its wavelength reduced and so suﬀers a phase advance relative to the wave passing between the atoms, which experiences little change in its wavelength. The assumption of this simpliﬁed model, used in the phase grating approximation, is that the amplitude at A can be calculated along the optical path AB with no contribution at A from a point such as C. For thick specimens this approximation is unsatisfactory.&lt;/p&gt;
 
-&lt;h3 id=&quot;simple-lens-properties&quot;&gt;Simple lens properties&lt;/h3&gt;
+&lt;h2 id=&quot;simple-lens-properties&quot;&gt;Simple lens properties&lt;/h2&gt;
 
 &lt;p&gt;At the high magniﬁcations usually used for high-resolution microscopy, &lt;strong&gt;the lens currents (which determine the focal lengths) of lenses L2, L3, and L4&lt;/strong&gt;, for example, might be used to control the magniﬁcation. For a ﬁxed magniﬁcation setting, focusing is achieved by adjusting the strength of the objective lens L1 until the ﬁxed plane P1 is conjugate to the exit face of the specimen.&lt;/p&gt;
 
@@ -307,7 +320,7 @@ $$&lt;/p&gt;
   &lt;p&gt;Why to study electron optics, seeks to determine the conditions under which the electron waveﬁeld passing through an electron lens satisﬁes the requirements for perfect image formation.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&quot;the-ideal-lens&quot;&gt;The ideal lens&lt;/h4&gt;
+&lt;h3 id=&quot;the-ideal-lens&quot;&gt;The ideal lens&lt;/h3&gt;
 
 &lt;p&gt;The ideal lens is a mathematical abstraction which provides perfect imaging given by a projective transformation between the object and image space.&lt;/p&gt;
 
@@ -319,7 +332,164 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Figure 4.&lt;/strong&gt; The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&quot;plantuml&quot; src=&quot;http://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a426f62202d3e20416c696365203a2068656c6c6f20776f726c640a40656e64756d6c&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Here comes a conclusion about $x_0$, $x_i$, $f_0$, $f_i$, $U$ and $V$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoeDApIC0tPiBCKGZyb20geTAgdG8gRjEpXG5DKHhpKSAtLT4gRChmcm9tIHlpIHRvIEYyKVxuRShmMCkgLS0-IEYoZnJvbSBIMiB0byBGMilcbkcoZmkpIC0tPiBIKGZvcm0gSDEgdG8gRjEpXG5JKFUpICAtLT4gSihmcm9tIHkwIHRvIEgxKVxuSyhWKSAgLS0-IEwoZnJvbSB5aSB0byBIMikiLCJtZXJtYWlkIjpudWxsfQ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For magnetic lenses the &lt;strong&gt;nodal planes coincide with the principal planes&lt;/strong&gt;. The points where the axis crosses the nodal planes are called nodal points, N1 and N2. Principal planes are planes of unit lateral magniﬁcation, while nodal planes are planes of unit angular magniﬁcation. For an axially symmetric lens, the projective transformation for perfect imaging simpliﬁes to&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{y_i}{y_0} = \frac{f_i}{x_0} = \frac{x_i}{f_0} \tag{8}
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$eqn(8)$ is called &lt;strong&gt;the Newton’s lens equation&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The determination of the positions of these planes is the key problem of electron optics—once they are known, the rules for graphical construction of ﬁgures satisfying eqn $(8)$ can be used to ﬁnd the image of an arbitrary object.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkMoT2JqZWN0IFApIC0tPiBBKE5ld3RvbidzIGxlbnMgZXF1YXRpb24pIC0tPiBCKEltYWdlIG9mIGFuIGFyYml0cmFyeSBvYmplY3QgUCcpIiwibWVybWFpZCI6bnVsbH0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The rule for a construction which gives the conjugate image point $P’$ of a known object point $P$ is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Draw a ray through $P$ and $F_1$, intersecting $H1$ at $Q$. Through $Q$ draw a ray $YQ$ parallel to the axis extending into both object and image spaces.&lt;/li&gt;
+  &lt;li&gt;Draw a ray parallel to the axis through $P$ to intersect $H2$. From this intersection draw a ray through $F2$ to intersect the ray $YQ$ at $P’$. $P’$ is the image of $P$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For the objective lens of a modern electron microscope operation at moderate magnificaiton (~ 40,000),&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-11-17-15-56.png&quot; alt=&quot;Figure 5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 5.&lt;/strong&gt; Ray diagram for the objective lens of a microscope operating at moderate magniﬁcation. The image is virtual and the principal planes are crossed. Object and image focal lengths are equal for magnetic lenses. A typical value for $f_2$ is 2 mm, and the magniﬁcation M = V/U may be about 20.&lt;/p&gt;
+
+&lt;p&gt;PS: $U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The use of this mode in a four-lens instrument has advantages for biological specimens where radiation damage must be minimized&lt;/strong&gt;. At this moderate magniﬁcation lens L3 is switched off. At high magniﬁcation all lenses are used. Modern lens designers use the methods of matrix optics.&lt;/p&gt;
+
+&lt;p&gt;The simple thin-lens formula can still be used if &lt;strong&gt;the object and image distances $U$ and $V$ are measured from the lens principal planes $H1$ and $H2$&lt;/strong&gt;. Equation (2.6) becomes&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{f_i}{U} + \frac{f_0}{V} = 1
+$$&lt;/p&gt;
+
+&lt;p&gt;As they are for &lt;strong&gt;magnetic electron lenses, then the refractive indices in the object and images space are equal&lt;/strong&gt;, we get&lt;/p&gt;
+
+&lt;p&gt;$$
+f_i = f_0 = f \tag{9}
+$$&lt;/p&gt;
+
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{1}{U} + \frac{1}{V} = \frac{1}{f} \tag{10}
+$$&lt;/p&gt;
+
+&lt;p&gt;Eqn$(10)$ is quite gneral if&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoVSkgLS0-IE1bK10gLS0-IEIob2JqZWN0IGlzIGxlZnQgb2YgSDEpXG5BIC0tPiBOWy1dIC0tPiBEKG9iamVjdCBpcyByaWdodCBvZiBIMSlcbkUoVikgLS0-IFFbK10gLS0-IEYoaW1hZ2UgaXMgcmlnaHQgb2YgSDIpXG5FIC0tPiBUWy1dIC0tPiBHKGltYWdlIGlzIGxlZnQgb2YgSDIpIiwibWVybWFpZCI6bnVsbH0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From $eqn(10)$, there will be three cases:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$U &amp;lt; f$ : image is virtual, erect, and magnified.&lt;/li&gt;
+  &lt;li&gt;$f &amp;lt; U &amp;lt; 2f$ : image is real, inverted, and magnified.&lt;/li&gt;
+  &lt;li&gt;$U &amp;gt; 2f$ : image is real, inverted, and reduced.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;From $eqn(10)$, Figure(4) and Figure(5)&lt;/p&gt;
+
+&lt;h4 id=&quot;some-additional-terms-commonly-used-in-electron-optics&quot;&gt;Some Additional terms commonly used in electron optics&lt;/h4&gt;
+
+&lt;h5 id=&quot;1-lateral-magnification&quot;&gt;1. lateral magnification&lt;/h5&gt;
+
+&lt;p&gt;The &lt;strong&gt;&lt;em&gt;lateral magnification&lt;/em&gt;&lt;/strong&gt; $M$ is given by&lt;/p&gt;
+
+&lt;p&gt;$$
+M = \frac{y_i}{y_0} = - \frac{V}{U} \tag{11}
+$$&lt;/p&gt;
+
+&lt;p&gt;from $eqn(10)$ and $eqn(11)$, we have&lt;/p&gt;
+
+&lt;p&gt;$$
+M - 1 = - \frac{V}{f} \tag{12}
+$$&lt;/p&gt;
+
+&lt;p&gt;From $eqn(11)$ and $eqn(12)$,&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkUoaGlnaC1yZXNvbHV0aW9uIG9iamVjdGl2ZSBsZW5zKSAtLT5BKE0pIC0tPiB8aW52ZXJzZWx5IHByb3BvcnRpb25hbHwgQihvYmplY3QgbGVucyBmb2NhbCBsZW5ndGgpXG5FIC0tPiBDKFUpIC0tPiB8c2xpZ2h0bHkgZ3JlYXRlciB0aGFufCBCIiwibWVybWFpZCI6bnVsbH0&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;2-the-angular-magnification&quot;&gt;2. The angular magnification&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;The angular magnification&lt;/strong&gt; $m$ is, for small angles,&lt;/p&gt;
+
+&lt;p&gt;$$
+m = \frac{\tan{\theta_i}}{\tan{\theta_0}} \approx \frac{\theta_i}{\theta_0} = \left|\frac{1}{M}\right| \tag{13}
+$$&lt;/p&gt;
+
+&lt;p&gt;as shown in Figure 6,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-12-10-42-49.png&quot; alt=&quot;Figure 6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 6.&lt;/strong&gt; Angular magniﬁcation. The image P of a point P is shown together with the angles which a ray makes with these points.&lt;/p&gt;
+
+&lt;h5 id=&quot;3-the-entrance-and-exit-pupils&quot;&gt;3. The entrance and exit pupils&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The entrance and exit pupils&lt;/em&gt;&lt;/strong&gt; of an optical system are important in limiting its resolution and light-gathering power.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Entrance pupil&lt;/strong&gt;: The image of that aperture, formed by the optical system which precedes it, which subtends the smallest angle at the object. The &lt;strong&gt;‘aperture stop’&lt;/strong&gt; is the physical aperture whose image forms the entrance pupil.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exit pupil&lt;/strong&gt;: The image of the entrance pupil formed by the whole system.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-12-15-10-14.png&quot; alt=&quot;Figure 7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 7.&lt;/strong&gt; The entrance and exit pupils of an optic system. A complicated optical system consisting of many lenses can be treated as a ‘black box’ and speciﬁed by its entrance and exit pupils and a complex transfer function. A Huygens spherical wavefront is shown converging to an image point P.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220404/220px-Apertures.jpg&quot; alt=&quot;Figure 8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 8.&lt;/strong&gt; A camera lens adjusted for large and small aperture. The entrance pupil is the image of the physical aperture, as seen through the front (the object side) of the lens. The size and location may differ from those of the physical aperture, due to magnification by the lens.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220404/220px-Camera_lens_exit_pupil.jpg&quot; alt=&quot;Figure 9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 9.&lt;/strong&gt; The image side of the lens of an SLR camera; the exit pupil is the light area in the middle of the lens.&lt;/p&gt;
+
+&lt;h5 id=&quot;4-the-gaussian-reference-sphere&quot;&gt;4. The Gaussian reference sphere&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The Gaussian reference sphere&lt;/em&gt;&lt;/strong&gt; for an image point P is deﬁned as the sphere, centred on P, which passes through the intersection of the optic axis with the exit pupil (as shown in the Figure 7).&lt;/p&gt;
+
+&lt;p&gt;For an unaberrated optical system, the surface of constant phase for a Huygens spherical wavelet converging toward P coincides with this reference sphere. &lt;strong&gt;The deviation of the wavefront from the Gaussian reference sphere speciﬁes the aberrations of the system&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;5-the-longitudinal-magnification&quot;&gt;5. The longitudinal magnification&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;The longitudinal magniﬁcation&lt;/em&gt;&lt;/strong&gt;, $M_z$, can be used to &lt;strong&gt;relate depth of ﬁeld to depth of focus&lt;/strong&gt; (see below).&lt;/p&gt;
+
+&lt;p&gt;Differentiation of $eqn(10)$,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) &amp;amp; = d\left(\frac{1}{f}\right) &lt;br /&gt;
+-\frac{1}{V^2}dV - \frac{1}{U^2}dU &amp;amp; = 0 \\ 
+\frac{dV}{dU} &amp;amp; = - \frac{V^2}{U^2} &lt;br /&gt;
+\end{aligned} \tag{14}
+$$&lt;/p&gt;
+
+&lt;p&gt;Which makes,&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{\Delta V}{\Delta U} = - M^2 = M_z
+$$&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEobGF0ZXJhbCBtYWduaWZpY2F0aW9uIE0pIC0tPiB8c3F1YXJlIG9mIHxCKGxvbmd0aXR1ZGluYWwgbWFnbmlmaWNhdGlvbiBNeikiLCJtZXJtYWlkIjpudWxsfQ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For example the image planes conjugate to the upper and lower surfaces of an atom 0.3 nm ‘thick’ are separated by 3 m if the lateral magniﬁcation M is 100 000.&lt;/p&gt;
+
+&lt;h5 id=&quot;6-incoherent-imaging-theory&quot;&gt;6. Incoherent imaging theory&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Incoherent imaging theory&lt;/em&gt;&lt;/strong&gt; gives the depth of ﬁeld or range of focus values (referred to the object plane) over which an object point can be considered ‘in focus’ as&lt;/p&gt;
+
+&lt;p&gt;$$
+Z_D = 2d/\theta = 2\lambda/\theta^2
+$$&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;++&amp;gt;&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 04 Apr 2022 11:18:00 +0800</pubDate>

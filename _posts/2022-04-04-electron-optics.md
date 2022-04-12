@@ -13,8 +13,15 @@ All content are summarised from High-Resolution Electron Microscopy (Fourth Edit
 	- [The Wavelength $\lambda$](#the-wavelength-lambda)
 		+ [The Wavelength at the anode ($\lambda$)](#the-wavelength-at-the-anode-lambda)
 		+ [The Wavelength Through the Specimen ($\lambda'$)](#the-wavelength-through-the-specimen-lambda)
-	- [Simple lens properties](#simple-lens-properties)
-		+ [The ideal lens](#the-ideal-lens)
+* [Simple lens properties](#simple-lens-properties)
+	- [The ideal lens](#the-ideal-lens)
+		+ [Some Additional terms commonly used in electron optics](#some-additional-terms-commonly-used-in-electron-optics)
+			* [1. lateral magnification](#1-lateral-magnification)
+			* [2. The angular magnification](#2-the-angular-magnification)
+			* [3. The entrance and exit pupils](#3-the-entrance-and-exit-pupils)
+			* [4. The Gaussian reference sphere](#4-the-gaussian-reference-sphere)
+			* [5. The longitudinal magnification](#5-the-longitudinal-magnification)
+			* [6. Incoherent imaging theory](#6-incoherent-imaging-theory)
 
 <!-- /TOC -->
 
@@ -131,7 +138,7 @@ If the approximation is then made that the exit-face wave function can be found 
 
 **Figure 2** The electron wave illustrated in two cases passing through a specimen. The wave passing through the centre of an atom (where the potential is high) has its wavelength reduced and so suﬀers a phase advance relative to the wave passing between the atoms, which experiences little change in its wavelength. The assumption of this simpliﬁed model, used in the phase grating approximation, is that the amplitude at A can be calculated along the optical path AB with no contribution at A from a point such as C. For thick specimens this approximation is unsatisfactory.
 
-### Simple lens properties
+## Simple lens properties
 
 At the high magniﬁcations usually used for high-resolution microscopy, **the lens currents (which determine the focal lengths) of lenses L2, L3, and L4**, for example, might be used to control the magniﬁcation. For a ﬁxed magniﬁcation setting, focusing is achieved by adjusting the strength of the objective lens L1 until the ﬁxed plane P1 is conjugate to the exit face of the specimen.
 
@@ -159,7 +166,7 @@ At the high magniﬁcations usually used for high-resolution microscopy, **the l
 
 > Why to study electron optics, seeks to determine the conditions under which the electron waveﬁeld passing through an electron lens satisﬁes the requirements for perfect image formation.
 
-#### The ideal lens
+### The ideal lens
 
 The ideal lens is a mathematical abstraction which provides perfect imaging given by a projective transformation between the object and image space.
 
@@ -213,7 +220,7 @@ For the objective lens of a modern electron microscope operation at moderate mag
 
 ![Figure 5](/assets/20220404/2022-04-11-17-15-56.png)
 
-**Figure 5** Ray diagram for the objective lens of a microscope operating at moderate magniﬁcation. The image is virtual and the principal planes are crossed. Object and image focal lengths are equal for magnetic lenses. A typical value for $f_2$ is 2 mm, and the magniﬁcation M = V/U may be about 20.
+**Figure 5.** Ray diagram for the objective lens of a microscope operating at moderate magniﬁcation. The image is virtual and the principal planes are crossed. Object and image focal lengths are equal for magnetic lenses. A typical value for $f_2$ is 2 mm, and the magniﬁcation M = V/U may be about 20.
 
 PS: $U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.
 
@@ -247,17 +254,110 @@ E(V) --> Q[+] --> F(image is right of H2)
 E --> T[-] --> G(image is left of H2)
 ```
 
-And there will be three cases:
+From $eqn(10)$, there will be three cases:
 
 1. $U < f$ : image is virtual, erect, and magnified.
 2. $f < U < 2f$ : image is real, inverted, and magnified.
-3. $U < 2f$ : image is real, inverted, and reduced.
+3. $U > 2f$ : image is real, inverted, and reduced.
 
+From $eqn(10)$, Figure(4) and Figure(5)
 
+#### Some Additional terms commonly used in electron optics
 
+##### 1. lateral magnification 
 
+The ***lateral magnification*** $M$ is given by
 
+$$
+M = \frac{y_i}{y_0} = - \frac{V}{U} \tag{11}
+$$
 
+from $eqn(10)$ and $eqn(11)$, we have 
 
+$$
+M - 1 = - \frac{V}{f} \tag{12}
+$$
 
+From $eqn(11)$ and $eqn(12)$, 
+
+```mermaid!
+graph LR
+	E(high-resolution objective lens) -->A(M) --> |inversely proportional| B(object lens focal length)
+	E --> C(U) --> |slightly greater than| B
+```
+
+##### 2. The angular magnification
+**The angular magnification** $m$ is, for small angles,
+
+$$
+m = \frac{\tan{\theta_i}}{\tan{\theta_0}} \approx \frac{\theta_i}{\theta_0} = \left|\frac{1}{M}\right| \tag{13}
+$$
+
+as shown in Figure 6,
+
+![Figure 6](/assets/20220404/2022-04-12-10-42-49.png)
+
+**Figure 6.** Angular magniﬁcation. The image P of a point P is shown together with the angles which a ray makes with these points.
+
+##### 3. The entrance and exit pupils
+***The entrance and exit pupils*** of an optical system are important in limiting its resolution and light-gathering power.
+
+**Entrance pupil**: The image of that aperture, formed by the optical system which precedes it, which subtends the smallest angle at the object. The **‘aperture stop’** is the physical aperture whose image forms the entrance pupil.
+
+**Exit pupil**: The image of the entrance pupil formed by the whole system.
+
+![Figure 7](/assets/20220404/2022-04-12-15-10-14.png)
+
+**Figure 7.** The entrance and exit pupils of an optic system. A complicated optical system consisting of many lenses can be treated as a ‘black box’ and speciﬁed by its entrance and exit pupils and a complex transfer function. A Huygens spherical wavefront is shown converging to an image point P.
+
+![Figure 8](/assets/20220404/220px-Apertures.jpg)
+
+**Figure 8.** A camera lens adjusted for large and small aperture. The entrance pupil is the image of the physical aperture, as seen through the front (the object side) of the lens. The size and location may differ from those of the physical aperture, due to magnification by the lens.
+
+![Figure 9](/assets/20220404/220px-Camera_lens_exit_pupil.jpg)
+
+**Figure 9.** The image side of the lens of an SLR camera; the exit pupil is the light area in the middle of the lens.
+
+##### 4. The Gaussian reference sphere
+
+***The Gaussian reference sphere*** for an image point P is deﬁned as the sphere, centred on P, which passes through the intersection of the optic axis with the exit pupil (as shown in the Figure 7).
+
+For an unaberrated optical system, the surface of constant phase for a Huygens spherical wavelet converging toward P coincides with this reference sphere. **The deviation of the wavefront from the Gaussian reference sphere speciﬁes the aberrations of the system**.
+
+##### 5. The longitudinal magnification
+
+***The longitudinal magniﬁcation***, $M_z$, can be used to **relate depth of ﬁeld to depth of focus** (see below).
+
+Differentiation of $eqn(10)$,
+
+$$
+\begin{aligned}
+d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) & = d\left(\frac{1}{f}\right) \\
+-\frac{1}{V^2}dV - \frac{1}{U^2}dU & = 0 \\ 
+\frac{dV}{dU} & = - \frac{V^2}{U^2} \\
+\end{aligned} \tag{14}
+$$
+
+Which makes,
+
+$$
+\frac{\Delta V}{\Delta U} = - M^2 = M_z
+$$
+
+```mermaid!
+graph LR
+	A(lateral magnification M) --> |square of |B(longtitudinal magnification Mz)
+```
+
+For example the image planes conjugate to the upper and lower surfaces of an atom 0.3 nm ‘thick’ are separated by 3 m if the lateral magniﬁcation M is 100 000.
+
+##### 6. Incoherent imaging theory
+
+***Incoherent imaging theory*** gives the depth of ﬁeld or range of focus values (referred to the object plane) over which an object point can be considered ‘in focus’ as
+
+$$
+Z_D = 2d/\theta = 2\lambda/\theta^2
+$$
+
+<++>
 
