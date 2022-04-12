@@ -6,6 +6,7 @@ $gray:              #CCCCCC;
 $gray-dark:         #999999;
 $gray-darker:       #666666;
 $gray-darkest:      #333333;
+$background-dark:   #1b1b1eff;
 
 $green:             #156F78;
 $purple:            #493252;
@@ -28,5 +29,5 @@ $serif-font:        "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hir
 $pre-border-radius: 12px;
 $border-radius:     5px;
 
-$dark-background-color: $gray-darker;
+$dark-background-color: $background-dark;
 $dark-hover-color:      lighten($link-color, 15%);
