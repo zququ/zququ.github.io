@@ -21,6 +21,7 @@ All content are summarised from High-Resolution Electron Microscopy (Fourth Edit
 			* [3. The entrance and exit pupils](#3-the-entrance-and-exit-pupils)
 			* [4. The Gaussian reference sphere](#4-the-gaussian-reference-sphere)
 			* [5. The longitudinal magnification](#5-the-longitudinal-magnification)
+			* [6. Incoherent imaging theory](#6-incoherent-imaging-theory)
 
 <!-- /TOC -->
 
@@ -350,22 +351,13 @@ graph LR
 
 For example the image planes conjugate to the upper and lower surfaces of an atom 0.3 nm ‘thick’ are separated by 3 m if the lateral magniﬁcation M is 100 000.
 
+##### 6. Incoherent imaging theory
 
+***Incoherent imaging theory*** gives the depth of ﬁeld or range of focus values (referred to the object plane) over which an object point can be considered ‘in focus’ as
 
+$$
+Z_D = 2d/\theta = 2\lambda/\theta^2
+$$
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<++>
 
