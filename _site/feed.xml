@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zququ's blog</title>
-    <description>嗨，欢迎！我是曲泽慧(@zququ)。现工作于 SIAT 脑图谱中心，从事神经生物学相关研究。</description>
+    <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Apr 2022 17:47:30 +0800</pubDate>
-    <lastBuildDate>Thu, 14 Apr 2022 17:47:30 +0800</lastBuildDate>
+    <pubDate>Thu, 14 Apr 2022 23:05:15 +0800</pubDate>
+    <lastBuildDate>Thu, 14 Apr 2022 23:05:15 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
