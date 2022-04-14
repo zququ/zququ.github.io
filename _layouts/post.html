@@ -12,14 +12,15 @@ layout: default
 					class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; <span
 					class="post-meta__tags tags">{{page.tags | join:' '}}</span>
 			</div>
-
 			{% include post-tag.html %}
-			<br>
-
+			<p>
+				<!-- hitwebcounter Code START -->
+				本文已阅读<img
+					src="https://hitwebcounter.com/counter/counter.php?page=7975161&style=0038&nbdigits=5&type=page&initCount=0"
+					title="Free Counter" Alt="web counter" border="0" />次
+			</p>
 			<h1 class="post-title">{{ page.title }}</h1>
-
 		</header>
-
 		<section class="post">
 			{{ content }}
 		</section>
