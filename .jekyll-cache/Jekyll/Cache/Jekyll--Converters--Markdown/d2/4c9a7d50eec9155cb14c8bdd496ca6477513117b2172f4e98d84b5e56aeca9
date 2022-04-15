@@ -1,245 +1,24 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <title>Electron optics</title>
-  <meta name="description" content="以下内容主要来自于 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
-  <meta name="author" content="Wei Wang">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Electron optics">
-  <meta name="twitter:description" content="以下内容主要来自于 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
-  
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Electron optics">
-  <meta property="og:description" content="以下内容主要来自于 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
-  
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
-  
-  <link rel="stylesheet" href="/css/main.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <link rel="canonical" href="http://localhost:4000/2022/04/electron-optics/">
-  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
-  
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
-  <!-- Icons -->
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <!-- mathjax -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      extensions: ["tex2jax.js"],
-      jax: ["input/TeX", "output/HTML-CSS"],
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-      },
-      "HTML-CSS": { fonts: ["TeX"] }
-    });
-  </script>
-  <!--script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script-->
-  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  <!-- Valine Comment -->
-  
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-
-
-
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-
-	<span class="mobile btn-mobile-menu">
-		<i class="fa fa-list btn-mobile-menu__icon"></i>
-		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
-	</span>
-
-	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
-  <div class="panel-main">
-
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-
-        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
-        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
-        
-        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
-        
-        <hr class="panel-cover__divider">
-        <p class="panel-cover__description">欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary">
-        
-        
-        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a></p>
-        
-        
-        <div class="navigation-wrapper">
-          <div>
-            <nav class="cover-navigation cover-navigation--primary">
-              <ul class="navigation">
-                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
-                
-                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
-                
-                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
-                
-              </ul>
-            </nav>
-          </div>
-          
-          <div>
-<nav class="cover-navigation navigation--social">
-  <ul class="navigation">
-
-  
-  <!-- Weibo -->
-  <li class="navigation__item">
-    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
-      <i class="social fa fa-weibo"></i>
-      <span class="label">Weibo</span>
-    </a>
-  </li>
-  
-
-  
-  <!-- Github -->
-  <li class="navigation__item">
-    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
-      <i class="social fa fa-github"></i>
-      <span class="label">Github</span>
-    </a>
-  </li>
-  
-  
-  
-  <!-- Twitter -->
-  <li class="navigation__item">
-    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
-      <i class="social fa fa-twitter"></i>
-      <span class="label">Twitter</span>
-    </a>
-  </li>
-  
-
-  
-
-  <!-- RSS -->
-  <li class="navigation__item">
-    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-      <i class="social fa fa-rss"></i>
-      <span class="label">RSS</span>
-    </a>
-  </li>
-
-  
-  <!-- Email -->
-  <li class="navigation__item">
-    <a href="mailto:qzh813@gmail.com" title="Contact me">
-      <i class="social fa fa-envelope"></i>
-      <span class="label">Email</span>
-    </a>
-  </li>
-  
-
-  
-  <!-- Research Gate  -->
-  <li class="navigation__item">
-    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
-      <i class="fa fa-book"></i>
-      <span class="label">Researchgate</span>
-    </a>
-  </li>
-  
-
-  </ul>
-</nav>
-</div>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="panel-cover--overlay cover-purple"></div>
-    
-  </div>
-</header>
-
-
-	<div class="content-wrapper">
-		<div class="content-wrapper__inner">
-			
-
-
-
-	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
-		<header class="post-header">
-			<div class="post-meta">
-				<time datetime="2022-04-04 11:18:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-04-04</time> • <span class="post-meta__tags tags">cryo-EM</span>
-			</div>
-			<div class="post-tags">
-	标签页 Tags:
-	
-	
-	<a href="/tags/#cryo-EM">cryo-EM</a>
-	
-</div>
-
-			<p>
-				<!-- hitwebcounter Code START -->
-				本文已阅读<img src="https://hitwebcounter.com/counter/counter.php?page=7975161&style=0038&nbdigits=5&type=page&initCount=0" title="Free Counter" alt="web counter" border="0">次
-			</p>
-			<h1 class="post-title">Electron optics</h1>
-		</header>
-		<section class="post">
-			<p>以下内容主要来自于 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
+I"�M<p>以下内容主要来自于 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
 
 <!-- TOC GFM -->
 
 <ul>
-  <li>
-<a href="#%E4%B8%80%E4%B8%8E%E7%94%B5%E5%AD%90%E6%B3%A2%E9%95%BF%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9">一、与电子波长相关的一些内容</a>
+  <li><a href="#一与电子波长相关的一些内容">一、与电子波长相关的一些内容</a>
     <ul>
-      <li><a href="#11-%E7%94%B5%E5%AD%90%E6%98%BE%E5%BE%AE%E9%95%9C%E7%9A%84%E5%9B%9B%E4%B8%AA%E9%97%AE%E9%A2%98">1.1 电子显微镜的四个问题</a></li>
-      <li>
-<a href="#12-%E6%B3%A2%E9%95%BF-lambda">1.2 波长 $\lambda$</a>
+      <li><a href="#11-电子显微镜的四个问题">1.1 电子显微镜的四个问题</a></li>
+      <li><a href="#12-波长-lambda">1.2 波长 $\lambda$</a>
         <ul>
-          <li><a href="#121-%E9%98%B3%E6%9E%81%E5%A4%84%E7%9A%84%E6%B3%A2%E9%95%BF">1.2.1 阳极处的波长</a></li>
-          <li><a href="#122-%E7%A9%BF%E8%BF%87%E6%A0%B7%E5%93%81%E5%90%8E%E7%9A%84%E6%B3%A2%E9%95%BF">1.2.2 穿过样品后的波长</a></li>
+          <li><a href="#121-阳极处的波长">1.2.1 阳极处的波长</a></li>
+          <li><a href="#122-穿过样品后的波长">1.2.2 穿过样品后的波长</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>
-<a href="#simple-lens-properties">Simple lens properties</a>
+  <li><a href="#simple-lens-properties">Simple lens properties</a>
     <ul>
-      <li>
-<a href="#the-ideal-lens">The ideal lens</a>
+      <li><a href="#the-ideal-lens">The ideal lens</a>
         <ul>
-          <li>
-<a href="#some-additional-terms-commonly-used-in-electron-optics">Some Additional terms commonly used in electron optics</a>
+          <li><a href="#some-additional-terms-commonly-used-in-electron-optics">Some Additional terms commonly used in electron optics</a>
             <ul>
               <li><a href="#1-lateral-magnification">1. lateral magnification</a></li>
               <li><a href="#2-the-angular-magnification">2. The angular magnification</a></li>
@@ -342,7 +121,7 @@ $$</p>
 
 <p>样品内部的正静电电位 $\phi(r)$ 会进一步加速入射的快速电子，导致样品中的波长会少量降低。</p>
 
-<p><img src="/assets/20220404/2022-04-06-15-47-17.png" alt="Figure 1"></p>
+<p><img src="/assets/20220404/2022-04-06-15-47-17.png" alt="Figure 1" /></p>
 
 <center type="text/markdown">
 **图1.** Simpliﬁed potential energy (PE) diagram for an electron microscope. The length of the vertical arrow is proportional to the kinetic energy of the fast electron and inversely proportional to the square of its wavelength. The sum of the electron’s potential energy (represented by the height of the graph) and its kinetic energy is constant. Electrons leave the ﬁlament with low kinetic energy and high potential energy (supplied by the high-voltage set) and exchange this for kinetic energy on their way to the anode, which is at ground potential. As with a ball rolling down a hill, they are further accelerated as they ‘fall in’ to the specimen. Approximate distance down the microscope column is represented on the abscissa and the potential step at the specimen has been exaggerated.</center>
@@ -363,14 +142,14 @@ $$</p>
 
 <p>$$
 \begin{aligned}
-\sigma &amp; = \pi/\lambda V_0 <br>
+\sigma &amp; = \pi/\lambda V_0 <br />
 &amp; = 2\pi me\lambda/h
 \end{aligned}
 $$</p>
 
 <p>If the approximation is then made that the exit-face wave function can be found by computing its phase along a single optical path such as AB (contributions from paths such as CA has been neglected), as shown in Figure 2.</p>
 
-<p><img src="/assets/20220404/2022-04-06-17-27-40.png" alt="Figure 2"></p>
+<p><img src="/assets/20220404/2022-04-06-17-27-40.png" alt="Figure 2" /></p>
 
 <p><strong>Figure 2</strong> The electron wave illustrated in two cases passing through a specimen. The wave passing through the centre of an atom (where the potential is high) has its wavelength reduced and so suﬀers a phase advance relative to the wave passing between the atoms, which experiences little change in its wavelength. The assumption of this simpliﬁed model, used in the phase grating approximation, is that the amplitude at A can be calculated along the optical path AB with no contribution at A from a point such as C. For thick specimens this approximation is unsatisfactory.</p>
 
@@ -378,8 +157,8 @@ $$</p>
 
 <p>At the high magniﬁcations usually used for high-resolution microscopy, <strong>the lens currents (which determine the focal lengths) of lenses L2, L3, and L4</strong>, for example, might be used to control the magniﬁcation. For a ﬁxed magniﬁcation setting, focusing is achieved by adjusting the strength of the objective lens L1 until the ﬁxed plane P1 is conjugate to the exit face of the specimen.</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEoTGVucyBjdXJyZW50cyBvZiBMMiwgTDMgYW5kIEw0KSAtLT4gQihGb2NhbCBsZW5ndGhzKSAtLT4gQyhDb250cm9sIHRoZSBtYWduaWZpY2F0aW9ucylcbi0tPiBHKEZpeGVkICBtYWduaWZpY2F0aW9ucylcbk0oRml4ZWQgbWFnbmlmaWNhdGlvbnMpLS0-RChMZW5zIGN1cnJlbnRzIG9mIG9iamVjdCBsZW5zIEwxKSAtLT4gRShQMSBpcyBjb25qdWdhdGUgdG8gdGhlIGV4aXQgZmFjZSBvZiB0aGUgc3BlY2ltZW4pIC0tPiBGKEZvY3VzaW5nKSIsIm1lcm1haWQiOm51bGx9">
-<img src="/assets/20220404/2022-04-06-222144.png" alt="Figure 3"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEoTGVucyBjdXJyZW50cyBvZiBMMiwgTDMgYW5kIEw0KSAtLT4gQihGb2NhbCBsZW5ndGhzKSAtLT4gQyhDb250cm9sIHRoZSBtYWduaWZpY2F0aW9ucylcbi0tPiBHKEZpeGVkICBtYWduaWZpY2F0aW9ucylcbk0oRml4ZWQgbWFnbmlmaWNhdGlvbnMpLS0-RChMZW5zIGN1cnJlbnRzIG9mIG9iamVjdCBsZW5zIEwxKSAtLT4gRShQMSBpcyBjb25qdWdhdGUgdG8gdGhlIGV4aXQgZmFjZSBvZiB0aGUgc3BlY2ltZW4pIC0tPiBGKEZvY3VzaW5nKSIsIm1lcm1haWQiOm51bGx9" />
+<img src="/assets/20220404/2022-04-06-222144.png" alt="Figure 3" /></p>
 
 <p><strong>Figure 3</strong> Ray diagram for an electron microscope with two condenser lenses, C1 and C2 and four imaging lenses, L1, L2, L3, and L4, operating at high magniﬁcation. A typical set of dimensions for D1 to D7 is given in Table 1, together with the possible range of focal lengths. These values may be used for examples throughout this book. Here OA is the objective aperture, P1 is a ﬁxed plane, and SA is the selected area aperture.</p>
 
@@ -434,15 +213,15 @@ $$</p>
 
 <p>The constants appearing in this transformation specify the positions of the cardinal planes of the lens. The six important cardinal planes are the two focus planes, the two principal planes, and the two nodal planes.</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEoU2l4IGltcG9ydGFudCBjYXJkaW5hbCBwbGFuZXMpIC0tPiBCKHR3byBmb2N1cyBwbGFuZXMpXG5BIC0tPiBDKHR3byBwcmluY2lwYWwgcGxhbmVzKVxuQSAtLT4gRCh0d28gbm9kYWwgcGxhbmVzKSIsIm1lcm1haWQiOm51bGx9"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEoU2l4IGltcG9ydGFudCBjYXJkaW5hbCBwbGFuZXMpIC0tPiBCKHR3byBmb2N1cyBwbGFuZXMpXG5BIC0tPiBDKHR3byBwcmluY2lwYWwgcGxhbmVzKVxuQSAtLT4gRCh0d28gbm9kYWwgcGxhbmVzKSIsIm1lcm1haWQiOm51bGx9" /></p>
 
-<p><img src="/assets/20220404/2022-04-06-231108.png" alt="Figure 4"></p>
+<p><img src="/assets/20220404/2022-04-06-231108.png" alt="Figure 4" /></p>
 
 <p><strong>Figure 4.</strong> The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.</p>
 
 <p>Here comes a conclusion about $x_0$, $x_i$, $f_0$, $f_i$, $U$ and $V$.</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoeDApIC0tPiBCKGZyb20geTAgdG8gRjEpXG5DKHhpKSAtLT4gRChmcm9tIHlpIHRvIEYyKVxuRShmMCkgLS0-IEYoZnJvbSBIMiB0byBGMilcbkcoZmkpIC0tPiBIKGZvcm0gSDEgdG8gRjEpXG5JKFUpICAtLT4gSihmcm9tIHkwIHRvIEgxKVxuSyhWKSAgLS0-IEwoZnJvbSB5aSB0byBIMikiLCJtZXJtYWlkIjpudWxsfQ"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoeDApIC0tPiBCKGZyb20geTAgdG8gRjEpXG5DKHhpKSAtLT4gRChmcm9tIHlpIHRvIEYyKVxuRShmMCkgLS0-IEYoZnJvbSBIMiB0byBGMilcbkcoZmkpIC0tPiBIKGZvcm0gSDEgdG8gRjEpXG5JKFUpICAtLT4gSihmcm9tIHkwIHRvIEgxKVxuSyhWKSAgLS0-IEwoZnJvbSB5aSB0byBIMikiLCJtZXJtYWlkIjpudWxsfQ" /></p>
 
 <p>For magnetic lenses the <strong>nodal planes coincide with the principal planes</strong>. The points where the axis crosses the nodal planes are called nodal points, N1 and N2. Principal planes are planes of unit lateral magniﬁcation, while nodal planes are planes of unit angular magniﬁcation. For an axially symmetric lens, the projective transformation for perfect imaging simpliﬁes to</p>
 
@@ -456,7 +235,7 @@ $$</p>
 
 <p>The determination of the positions of these planes is the key problem of electron optics—once they are known, the rules for graphical construction of ﬁgures satisfying eqn $(8)$ can be used to ﬁnd the image of an arbitrary object.</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkMoT2JqZWN0IFApIC0tPiBBKE5ld3RvbidzIGxlbnMgZXF1YXRpb24pIC0tPiBCKEltYWdlIG9mIGFuIGFyYml0cmFyeSBvYmplY3QgUCcpIiwibWVybWFpZCI6bnVsbH0"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkMoT2JqZWN0IFApIC0tPiBBKE5ld3RvbidzIGxlbnMgZXF1YXRpb24pIC0tPiBCKEltYWdlIG9mIGFuIGFyYml0cmFyeSBvYmplY3QgUCcpIiwibWVybWFpZCI6bnVsbH0" /></p>
 
 <p>The rule for a construction which gives the conjugate image point $P’$ of a known object point $P$ is:</p>
 
@@ -467,7 +246,7 @@ $$</p>
 
 <p>For the objective lens of a modern electron microscope operation at moderate magnificaiton (~ 40,000),</p>
 
-<p><img src="/assets/20220404/2022-04-11-17-15-56.png" alt="Figure 5"></p>
+<p><img src="/assets/20220404/2022-04-11-17-15-56.png" alt="Figure 5" /></p>
 
 <p><strong>Figure 5.</strong> Ray diagram for the objective lens of a microscope operating at moderate magniﬁcation. The image is virtual and the principal planes are crossed. Object and image focal lengths are equal for magnetic lenses. A typical value for $f_2$ is 2 mm, and the magniﬁcation M = V/U may be about 20.</p>
 
@@ -495,7 +274,7 @@ $$</p>
 
 <p>Eqn$(10)$ is quite gneral if</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoVSkgLS0-IE1bK10gLS0-IEIob2JqZWN0IGlzIGxlZnQgb2YgSDEpXG5BIC0tPiBOWy1dIC0tPiBEKG9iamVjdCBpcyByaWdodCBvZiBIMSlcbkUoVikgLS0-IFFbK10gLS0-IEYoaW1hZ2UgaXMgcmlnaHQgb2YgSDIpXG5FIC0tPiBUWy1dIC0tPiBHKGltYWdlIGlzIGxlZnQgb2YgSDIpIiwibWVybWFpZCI6bnVsbH0"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoVSkgLS0-IE1bK10gLS0-IEIob2JqZWN0IGlzIGxlZnQgb2YgSDEpXG5BIC0tPiBOWy1dIC0tPiBEKG9iamVjdCBpcyByaWdodCBvZiBIMSlcbkUoVikgLS0-IFFbK10gLS0-IEYoaW1hZ2UgaXMgcmlnaHQgb2YgSDIpXG5FIC0tPiBUWy1dIC0tPiBHKGltYWdlIGlzIGxlZnQgb2YgSDIpIiwibWVybWFpZCI6bnVsbH0" /></p>
 
 <p>From $eqn(10)$, there will be three cases:</p>
 
@@ -525,7 +304,7 @@ $$</p>
 
 <p>From $eqn(11)$ and $eqn(12)$,</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkUoaGlnaC1yZXNvbHV0aW9uIG9iamVjdGl2ZSBsZW5zKSAtLT5BKE0pIC0tPiB8aW52ZXJzZWx5IHByb3BvcnRpb25hbHwgQihvYmplY3QgbGVucyBmb2NhbCBsZW5ndGgpXG5FIC0tPiBDKFUpIC0tPiB8c2xpZ2h0bHkgZ3JlYXRlciB0aGFufCBCIiwibWVybWFpZCI6bnVsbH0"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkUoaGlnaC1yZXNvbHV0aW9uIG9iamVjdGl2ZSBsZW5zKSAtLT5BKE0pIC0tPiB8aW52ZXJzZWx5IHByb3BvcnRpb25hbHwgQihvYmplY3QgbGVucyBmb2NhbCBsZW5ndGgpXG5FIC0tPiBDKFUpIC0tPiB8c2xpZ2h0bHkgZ3JlYXRlciB0aGFufCBCIiwibWVybWFpZCI6bnVsbH0" /></p>
 
 <h5 id="2-the-angular-magnification">2. The angular magnification</h5>
 <p><strong>The angular magnification</strong> $m$ is, for small angles,</p>
@@ -536,7 +315,7 @@ $$</p>
 
 <p>as shown in Figure 6,</p>
 
-<p><img src="/assets/20220404/2022-04-12-10-42-49.png" alt="Figure 6"></p>
+<p><img src="/assets/20220404/2022-04-12-10-42-49.png" alt="Figure 6" /></p>
 
 <p><strong>Figure 6.</strong> Angular magniﬁcation. The image P of a point P is shown together with the angles which a ray makes with these points.</p>
 
@@ -547,15 +326,15 @@ $$</p>
 
 <p><strong>Exit pupil</strong>: The image of the entrance pupil formed by the whole system.</p>
 
-<p><img src="/assets/20220404/2022-04-12-15-10-14.png" alt="Figure 7"></p>
+<p><img src="/assets/20220404/2022-04-12-15-10-14.png" alt="Figure 7" /></p>
 
 <p><strong>Figure 7.</strong> The entrance and exit pupils of an optic system. A complicated optical system consisting of many lenses can be treated as a ‘black box’ and speciﬁed by its entrance and exit pupils and a complex transfer function. A Huygens spherical wavefront is shown converging to an image point P.</p>
 
-<p><img src="/assets/20220404/220px-Apertures.jpg" alt="Figure 8"></p>
+<p><img src="/assets/20220404/220px-Apertures.jpg" alt="Figure 8" /></p>
 
 <p><strong>Figure 8.</strong> A camera lens adjusted for large and small aperture. The entrance pupil is the image of the physical aperture, as seen through the front (the object side) of the lens. The size and location may differ from those of the physical aperture, due to magnification by the lens.</p>
 
-<p><img src="/assets/20220404/220px-Camera_lens_exit_pupil.jpg" alt="Figure 9"></p>
+<p><img src="/assets/20220404/220px-Camera_lens_exit_pupil.jpg" alt="Figure 9" /></p>
 
 <p><strong>Figure 9.</strong> The image side of the lens of an SLR camera; the exit pupil is the light area in the middle of the lens.</p>
 
@@ -573,9 +352,9 @@ $$</p>
 
 <p>$$
 \begin{aligned}
-d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) &amp; = d\left(\frac{1}{f}\right) <br>
+d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) &amp; = d\left(\frac{1}{f}\right) <br />
 -\frac{1}{V^2}dV - \frac{1}{U^2}dU &amp; = 0 \\ 
-\frac{dV}{dU} &amp; = - \frac{V^2}{U^2} <br>
+\frac{dV}{dU} &amp; = - \frac{V^2}{U^2} <br />
 \end{aligned} \tag{14}
 $$</p>
 
@@ -585,7 +364,7 @@ $$</p>
 \frac{\Delta V}{\Delta U} = - M^2 = M_z
 $$</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEobGF0ZXJhbCBtYWduaWZpY2F0aW9uIE0pIC0tPiB8c3F1YXJlIG9mIHxCKGxvbmd0aXR1ZGluYWwgbWFnbmlmaWNhdGlvbiBNeikiLCJtZXJtYWlkIjpudWxsfQ"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEobGF0ZXJhbCBtYWduaWZpY2F0aW9uIE0pIC0tPiB8c3F1YXJlIG9mIHxCKGxvbmd0aXR1ZGluYWwgbWFnbmlmaWNhdGlvbiBNeikiLCJtZXJtYWlkIjpudWxsfQ" /></p>
 
 <p>For example the image planes conjugate to the upper and lower surfaces of an atom 0.3 nm ‘thick’ are separated by 3 m if the lateral magniﬁcation M is 100 000.</p>
 
@@ -599,70 +378,4 @@ $$</p>
 
 <p>where $\theta$ is the objective aperture semi-angle and $d$ is the microscope resolution. However, this result cannot be accurately applied to the coherent high-resolution imaging of phase objects (see Sections 3.4 and 5.2).</p>
 
-
-		</section>
-	</article>
-
-	<section class="read-more">
-	
-	
-	<div class="read-more-item">
-		<span class="read-more-item-dim">Last One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2022/04/Github-Action/" title="link to 如何通过Github Action为Github Pages添加mermaid流程图">如何通过Github Action为Github Pages添加mermaid流程图</a></h2>
-		<p class="excerpt">虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。网上寻找解决办法的过程中，发现了一个Jekyll博客的优化插件库 jeffreytse/jekyll-spaceship，可以通过Markdown添加流程图、音乐，可以实现Html代码与Markdown同时使用、并优化了表格系统等等，如下图：具体功能可以去作者库中看一看详细信息（jeffreytse/jekyll-spaceship）。按照作者的使用说明(Install...…</p>
-		<div class="post-list__meta">
-<time datetime="2022-04-08 16:11:25 +0800" class="post-list__meta--date date">2022-04-08</time> • <span class="post-list__meta--tags tags">blog</span><a class="btn-border-small" href="/2022/04/Github-Action/">More</a>
-</div>
-	</div>
-	
-
-	
-	
-	<div class="read-more-item">
-		<span class="read-more-item-dim">Next One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2022/03/phase-contrast-1/" title="link to Preliminaries of TEM">Preliminaries of TEM</a></h2>
-		<p class="excerpt">All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.  Elementary principles of phase-contrast TEM imaging          A Simple Optical Bench Experiment      Discussion ab...…</p>
-		<div class="post-list__meta">
-<time datetime="2022-03-31 15:57:55 +0800" class="post-list__meta--date date">2022-03-31</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2022/03/phase-contrast-1/">More</a>
-</div>
-	</div>
-	
-</section>
-
-	<script src="https://utteranc.es/client.js" repo="zququ/zququ.github.io" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async>
-		</script>
-
-
-
-			<section class="footer">
-	<footer>
-		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
-			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
-	</footer>
-</section>
-
-<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
-<!--<script>-->
-<!--$(document).ready(function () {-->
-<!--mermaid.initialize({-->
-<!--startOnLoad: true,-->
-<!--theme: "default",-->
-<!--});-->
-<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
-<!--});-->
-<!--</script>-->
-
-		</div>
-	</div>
-
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<script type="text/javascript" src="/js/main.js"></script>
-
-
-
-
-
-
-</body>
-</html>
+:ET

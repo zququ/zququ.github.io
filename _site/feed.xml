@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Apr 2022 23:05:15 +0800</pubDate>
-    <lastBuildDate>Thu, 14 Apr 2022 23:05:15 +0800</lastBuildDate>
+    <pubDate>Fri, 15 Apr 2022 16:44:01 +0800</pubDate>
+    <lastBuildDate>Fri, 15 Apr 2022 16:44:01 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -113,18 +113,18 @@ Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your 
     
       <item>
         <title>Electron optics</title>
-        <description>&lt;p&gt;All content are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.&lt;/p&gt;
+        <description>&lt;p&gt;以下内容主要来自于 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。&lt;/p&gt;
 
 &lt;!-- TOC GFM --&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#the-electron-wavelength-and-relativity&quot;&gt;The Electron Wavelength and Relativity&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#一与电子波长相关的一些内容&quot;&gt;一、与电子波长相关的一些内容&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#four-problems-of-em&quot;&gt;Four Problems of EM&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#the-wavelength-lambda&quot;&gt;The Wavelength $\lambda$&lt;/a&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-电子显微镜的四个问题&quot;&gt;1.1 电子显微镜的四个问题&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-波长-lambda&quot;&gt;1.2 波长 $\lambda$&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#the-wavelength-at-the-anode-lambda&quot;&gt;The Wavelength at the anode ($\lambda$)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#the-wavelength-through-the-specimen-lambda&quot;&gt;The Wavelength Through the Specimen ($\lambda’$)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#121-阳极处的波长&quot;&gt;1.2.1 阳极处的波长&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#122-穿过样品后的波长&quot;&gt;1.2.2 穿过样品后的波长&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -151,93 +151,95 @@ Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your 
 
 &lt;!-- /TOC --&gt;
 
-&lt;h2 id=&quot;the-electron-wavelength-and-relativity&quot;&gt;The Electron Wavelength and Relativity&lt;/h2&gt;
+&lt;h2 id=&quot;一与电子波长相关的一些内容&quot;&gt;一、与电子波长相关的一些内容&lt;/h2&gt;
 
-&lt;h3 id=&quot;four-problems-of-em&quot;&gt;Four Problems of EM&lt;/h3&gt;
+&lt;h3 id=&quot;11-电子显微镜的四个问题&quot;&gt;1.1 电子显微镜的四个问题&lt;/h3&gt;
 
-&lt;p&gt;Rather than solve the Schrodinger equation for the electron microscope as a whole, it is simpler to separate the four problems:&lt;/p&gt;
+&lt;p&gt;与其使用 Schrodinger 方程将电子显微镜作为一个整体去研究，将其拆分为四个问题更为简单。&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Beam–specimen interactions&lt;/li&gt;
-  &lt;li&gt;Magnetic lens action&lt;/li&gt;
-  &lt;li&gt;Detection&lt;/li&gt;
-  &lt;li&gt;Fast electron sources&lt;/li&gt;
+  &lt;li&gt;电子束与样品的相互作用&lt;/li&gt;
+  &lt;li&gt;磁透镜作用&lt;/li&gt;
+  &lt;li&gt;检测&lt;/li&gt;
+  &lt;li&gt;快速电子源&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;And a wavelength is assigned to the fast electron.&lt;/p&gt;
+&lt;p&gt;波长这部分归于快速电子。&lt;/p&gt;
 
-&lt;h3 id=&quot;the-wavelength-lambda&quot;&gt;The Wavelength $\lambda$&lt;/h3&gt;
+&lt;h3 id=&quot;12-波长-lambda&quot;&gt;1.2 波长 $\lambda$&lt;/h3&gt;
 
-&lt;h4 id=&quot;the-wavelength-at-the-anode-lambda&quot;&gt;The Wavelength at the anode ($\lambda$)&lt;/h4&gt;
+&lt;h4 id=&quot;121-阳极处的波长&quot;&gt;1.2.1 阳极处的波长&lt;/h4&gt;
 
-&lt;p&gt;From the &lt;strong&gt;&lt;em&gt;de Broglie&lt;/em&gt;&lt;/strong&gt; relation,&lt;/p&gt;
+&lt;p&gt;根据 &lt;strong&gt;&lt;em&gt;de Broglie&lt;/em&gt;&lt;/strong&gt; 关系式，&lt;/p&gt;
 
 &lt;p&gt;$$
 p = mv = h/\lambda
 $$&lt;/p&gt;
 
-&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;以及&lt;/p&gt;
 
 &lt;p&gt;$$
 E = 1/2mv^2
 $$&lt;/p&gt;
 
-&lt;p&gt;We can get the principle of conservation of energy applied to an electron of charge −e traversing a region in which the potential varies from $0$ to $V_0$:&lt;/p&gt;
+&lt;p&gt;根据能量守恒定律，分析带有 $-e$ 电荷的电子穿过电势从 $0$ 到 $V_0$ 变化的区域。可以得到&lt;/p&gt;
 
 &lt;p&gt;$$
 eV_0 = p^2/2m = h^2/2m\lambda^2 \tag{1}
 $$&lt;/p&gt;
 
-&lt;p&gt;where where p is the electron momentum and h is Planck’s constant, and&lt;/p&gt;
+&lt;p&gt;其中 $P$ 为 电子的动量，而 $h$ 为 &lt;strong&gt;&lt;em&gt;Plank’s&lt;/em&gt;&lt;/strong&gt; 常量。&lt;/p&gt;
 
 &lt;p&gt;$$
 \lambda = \frac{h}{\sqrt{2meV_0}} \tag{2}
 $$&lt;/p&gt;
 
-&lt;p&gt;An electron leaves the ﬁlament with high potential energy and thermal kinetic energy, and arrives at the anode with no potential energy and high kinetic energy. The zero of potential energy is taken at ground potential. If $\lambda$ is in nanometres and $V_0$ in volts, then&lt;/p&gt;
+&lt;p&gt;一个电子离开具有高势能以及高热动能的灯丝，并以无势能和高动能到达阳极。势能为零取接地电位。如果 $\lambda$ 以纳米为单位，$V_0$ 以伏特为单位，有&lt;/p&gt;
 
 &lt;p&gt;$$
 \lambda = 1.22639/\sqrt{V_0} \tag{3}
 $$&lt;/p&gt;
 
-&lt;p&gt;At higher energies the relativistic variation of electron mass must be considered. Neglect of this leads to a 5% error in λ at 100 kV. The relativistically corrected mass is&lt;/p&gt;
+&lt;p&gt;在使用更高能量时，就需要考虑电子的相对论变化。比如在 100 kV 时，忽略这一点会导致 $\lambda$ 产生 5 % 的误差。经过相对论修正后的质量为&lt;/p&gt;
 
 &lt;p&gt;$$
 m = m_0/(1 - v^2/c^2)^{1/2} 
 $$&lt;/p&gt;
 
-&lt;p&gt;and the relativistic equation corresponding to eqn $(1)$ is&lt;/p&gt;
+&lt;p&gt;对应于 $eqn(1)$ 的相对论方程为&lt;/p&gt;
 
 &lt;p&gt;$$
 eV_0 = (m - m_0)c^2
 $$&lt;/p&gt;
 
-&lt;p&gt;with $m_0$ the electron rest mass and c the velocity of light. These equations may be combined to give an expression for the electron momentum mv. Used in the &lt;em&gt;de Broglie&lt;/em&gt; relation, this gives the relativistically corrected electron wavelength as&lt;/p&gt;
+&lt;p&gt;其中 $m_0$ 为电子静止状态下的质量，$c$ 是光速。这些等式可以结合并给出电子动量 $mv$ 的表达式。在 &lt;strong&gt;&lt;em&gt;de Broglie&lt;/em&gt;&lt;/strong&gt; 关系式中使用，给出相对论修正的电子波长为&lt;/p&gt;
 
 &lt;p&gt;$$
 \lambda = h/(2m_0eV_r)^{1/2} \tag{4}
 $$&lt;/p&gt;
 
-&lt;p&gt;where&lt;/p&gt;
+&lt;p&gt;其中&lt;/p&gt;
 
 &lt;p&gt;$$
 V_r = V_0 + \left(\frac{e}{2m_0c^2}\right)V_0^2
 $$&lt;/p&gt;
 
-&lt;p&gt;is the ‘relativistic accelerating voltage’, &lt;strong&gt;&lt;em&gt;introduced as a convenience&lt;/em&gt;&lt;/strong&gt;. For computer calculations the value of $\lambda$ may be taken as&lt;/p&gt;
+&lt;p&gt;这里为了表述方便，引入$V_r$，称为 &lt;strong&gt;“相对论加速电压”&lt;/strong&gt;。电脑计算时，$\lambda$ 可以取&lt;/p&gt;
 
 &lt;p&gt;$$
 \lambda = 1.22639/(V_0 + 0.97845 \times 10^{-6}V_0^2 )^{1/2} \tag{5}
 $$&lt;/p&gt;
 
-&lt;p&gt;with $V_0$ the microscope accelerating voltage in volts and $\lambda$ in nanometres.&lt;/p&gt;
+&lt;p&gt;其中 $V_0$，显微镜加速电压单位为伏特，$\lambda$ 单位为纳米。&lt;/p&gt;
 
-&lt;h4 id=&quot;the-wavelength-through-the-specimen-lambda&quot;&gt;The Wavelength Through the Specimen ($\lambda’$)&lt;/h4&gt;
-&lt;p&gt;The positive electrostatic potential $\phi(r)$ (in volts) inside the specimen further accelerates the incident fast electron, resulting in a small reduction in wavelength inside the specimen.&lt;/p&gt;
+&lt;h4 id=&quot;122-穿过样品后的波长&quot;&gt;1.2.2 穿过样品后的波长&lt;/h4&gt;
+
+&lt;p&gt;样品内部的正静电电位 $\phi(r)$ 会进一步加速入射的快速电子，导致样品中的波长会少量降低。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-06-15-47-17.png&quot; alt=&quot;Figure 1&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Figure 1&lt;/strong&gt; Simpliﬁed potential energy (PE) diagram for an electron microscope. The length of the vertical arrow is proportional to the kinetic energy of the fast electron and inversely proportional to the square of its wavelength. The sum of the electron’s potential energy (represented by the height of the graph) and its kinetic energy is constant. Electrons leave the ﬁlament with low kinetic energy and high potential energy (supplied by the high-voltage set) and exchange this for kinetic energy on their way to the anode, which is at ground potential. As with a ball rolling down a hill, they are further accelerated as they ‘fall in’ to the specimen. Approximate distance down the microscope column is represented on the abscissa and the potential step at the specimen has been exaggerated.&lt;/p&gt;
+&lt;center type=&quot;text/markdown&quot;&gt;
+**图1.** Simpliﬁed potential energy (PE) diagram for an electron microscope. The length of the vertical arrow is proportional to the kinetic energy of the fast electron and inversely proportional to the square of its wavelength. The sum of the electron’s potential energy (represented by the height of the graph) and its kinetic energy is constant. Electrons leave the ﬁlament with low kinetic energy and high potential energy (supplied by the high-voltage set) and exchange this for kinetic energy on their way to the anode, which is at ground potential. As with a ball rolling down a hill, they are further accelerated as they ‘fall in’ to the specimen. Approximate distance down the microscope column is represented on the abscissa and the potential step at the specimen has been exaggerated.&lt;/center&gt;
 
 &lt;p&gt;The mean value of this inner potential is given by the zero-order Fourier coeﬃcient of potential, $\upsilon_0 = \phi_0$. The refractive index $n$ of a material for electrons is then given by the ratio of wavelength $\lambda$ in a vacuum to that inside the specimen $\lambda$, so that&lt;/p&gt;
 
@@ -486,10 +488,10 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Incoherent imaging theory&lt;/em&gt;&lt;/strong&gt; gives the depth of ﬁeld or range of focus values (referred to the object plane) over which an object point can be considered ‘in focus’ as&lt;/p&gt;
 
 &lt;p&gt;$$
-Z_D = 2d/\theta = 2\lambda/\theta^2
+Z_D = 2d/\theta = 2\lambda/\theta^2 \tag{15}
 $$&lt;/p&gt;
 
-&lt;p&gt;&amp;lt;++&amp;gt;&lt;/p&gt;
+&lt;p&gt;where $\theta$ is the objective aperture semi-angle and $d$ is the microscope resolution. However, this result cannot be accurately applied to the coherent high-resolution imaging of phase objects (see Sections 3.4 and 5.2).&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 04 Apr 2022 11:18:00 +0800</pubDate>
