@@ -5,7 +5,7 @@ date: 2022-04-04 11:18:00:24.000000000 +09:00
 tags: cryo-EM
 ---
 
-以下内容主要来自于 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。
+参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。
 
 <!-- TOC GFM -->
 
@@ -14,8 +14,8 @@ tags: cryo-EM
 	- [1.2 波长 $\lambda$](#12-波长-lambda)
 		+ [1.2.1 阳极处的波长](#121-阳极处的波长)
 		+ [1.2.2 穿过样品后的波长](#122-穿过样品后的波长)
-* [Simple lens properties](#simple-lens-properties)
-	- [The ideal lens](#the-ideal-lens)
+* [简单透镜特点](#简单透镜特点)
+	- [理想透镜](#理想透镜)
 		+ [Some Additional terms commonly used in electron optics](#some-additional-terms-commonly-used-in-electron-optics)
 			* [1. lateral magnification](#1-lateral-magnification)
 			* [2. The angular magnification](#2-the-angular-magnification)
@@ -109,24 +109,23 @@ $$
 
 样品内部的正静电电位 $\phi(r)$ 会进一步加速入射的快速电子，导致样品中的波长会少量降低。
 
-![Figure 1](/assets/20220404/2022-04-06-15-47-17.png) 
+![Figure 1](/assets/20220404/2022-04-06-15-47-17.png =500x) 
 
-**图1.** 电子显微镜势能（PE）的简单示意图。垂直箭头的长度与快速电子动能呈正比，与快速电子波长的平方成反比。电子势能（图中以高度表示）和电子的动能的总和是不变的。电子在离开灯丝时具有低动能与高势能（由高压装置提供），势能在通向阳极过程中逐渐转变为动能（阳极处为地电位)。就像小球从山上滚下来，跌进样品中一样。在显微镜立柱（microscope column）中向下的大概距离由横坐标表示，样品处的电位跃阶（potential step）被夸张展示。
+> **图1.** 电子显微镜势能（PE）的简单示意图。垂直箭头的长度与快速电子动能呈正比，与快速电子波长的平方成反比。电子势能（图中以高度表示）和电子的动能的总和是不变的。电子在离开灯丝时具有低动能与高势能（由高压装置提供），势能在通向阳极过程中逐渐转变为动能（阳极处为地电位)。就像小球从山上滚下来，跌进样品中一样。在显微镜立柱（microscope column）中向下的大概距离由横坐标表示，样品处的电位跃阶（potential step）被夸张展示。
 
-忽略引起衍射和色散表面构造的周期性电位变化，内部电位的平均值由 $\upsilon_0 = \phi_0$ 给出，即电位的零阶傅里叶系数。 典型的 $\$ <++>
-The mean value of this inner potential is given by the zero-order Fourier coeﬃcient of potential, $\upsilon_0 = \phi_0$. The refractive index $n$ of a material for electrons is then given by the ratio of wavelength $\lambda$ in a vacuum to that inside the specimen $\lambda$, so that
+忽略引起衍射和色散表面构造的周期性电位变化，内部电位的平均值由 $\upsilon_0 = \phi_0$ 给出，即电位的零阶傅里叶系数。 真空中波长 $\lambda$ 与电子进入样品后波长 $\lambda'$ 之间的比可以由材料中的折射率 $n$ 来表示。
 
 $$
 n = \frac{\lambda}{\lambda'}=\frac{\left(\frac{1.23}{\sqrt{V_0}}\right)}{\left(\frac{1.23}{\sqrt{V_0 + \phi_0}}\right)}\approx 1 + \frac{\phi_0}{2V_0} \tag{6}
 $$
 
-**The phase shift** of a fast electron passing through a specimen of thickness t with respect to that of the vacuum is then
+快速电子穿过厚度为 $t$ 的样品后，相对于真空中的相位差为
 
 $$
 \theta = 2\pi(n-1)t/\lambda = \pi\phi_0t/\lambda V_0 = \sigma\phi _0t \tag{7}
 $$
 
-Where, from the $eqn (1)$ we can get
+结合 $eqn(1)$，我们可以得到
 
 $$
 \begin{aligned}
@@ -135,97 +134,95 @@ $$
 \end{aligned}
 $$
 
-If the approximation is then made that the exit-face wave function can be found by computing its phase along a single optical path such as AB (contributions from paths such as CA has been neglected), as shown in Figure 2.
+如果利用沿单一光路，如 $AB$ ,来估计出射面波函数（不考虑如 $CA$ 通路）, 如图2所示。
 
 ![Figure 2](/assets/20220404/2022-04-06-17-27-40.png)
 
-**Figure 2** The electron wave illustrated in two cases passing through a specimen. The wave passing through the centre of an atom (where the potential is high) has its wavelength reduced and so suﬀers a phase advance relative to the wave passing between the atoms, which experiences little change in its wavelength. The assumption of this simpliﬁed model, used in the phase grating approximation, is that the amplitude at A can be calculated along the optical path AB with no contribution at A from a point such as C. For thick specimens this approximation is unsatisfactory.
+> **图2.** 电子波穿过样品的两种情况。穿过原子中心（电势更高）的电子会降低波长，相对于从原子之间通过而不改变波长的电子，会发生波相位提前。在相位光栅近似中，这一最简单模型的假设是在 $A$ 处的振幅可以沿光路 $AB$ 计算而 $A$ 处没有来自诸如 $C$ 点的贡献；。对于厚样品，这种近似效果不好。
 
-## Simple lens properties
+## 简单透镜特点
 
-At the high magniﬁcations usually used for high-resolution microscopy, **the lens currents (which determine the focal lengths) of lenses L2, L3, and L4**, for example, might be used to control the magniﬁcation. For a ﬁxed magniﬁcation setting, focusing is achieved by adjusting the strength of the objective lens L1 until the ﬁxed plane P1 is conjugate to the exit face of the specimen.
+现代电子显微镜有着许多焦距可变的成像透镜，为聚焦的目的，需要固定物体及最终观察用的屏幕位置。在高分辨率显微镜中常用的高放大倍率下，例如$L2$，$L3$，及 $L3$ 的透镜电流（决定了焦距）能够被用来调节放大倍率，如图3所示。对于固定放大倍率的配置下，可通过调整物镜 $L1$ 的强度直至固定的 $P1$ 平面与样品的出射面共轭来实现对焦。
 
 ```mermaid!
 	graph LR
-	A(Lens currents of L2, L3 and L4) --> B(Focal lengths) --> C(Control the magnifications)
-	 --> G(Fixed  magnifications)
-	M(Fixed magnifications)-->D(Lens currents of object lens L1) --> E(P1 is conjugate to the exit face of the specimen) --> F(Focusing)
+	A(改变 L2, L3, L4 电流) --> |控制焦距|B(控制放大倍数)
 ```
-![Figure 3](/assets/20220404/2022-04-06-222144.png)
+```mermaid!
+	graph LR
+	D(改变物镜 L1 的电流) --> |放大倍数一定时, 调节至 P1 与样品出射面共轭|F(聚焦)
+```
+<br>
 
-**Figure 3** Ray diagram for an electron microscope with two condenser lenses, C1 and C2 and four imaging lenses, L1, L2, L3, and L4, operating at high magniﬁcation. A typical set of dimensions for D1 to D7 is given in Table 1, together with the possible range of focal lengths. These values may be used for examples throughout this book. Here OA is the objective aperture, P1 is a ﬁxed plane, and SA is the selected area aperture.
+![Figure 3](/assets/20220404/2022-04-06-222144.png =200x)
 
-| Distances btween lens centres (approximate) (mm) | Focal length range (mm) |
-|--------------------------------------------------|-------------------------|
-| D1 = 143.6                                       | 1.65 < f(C1) < 19       |
-| D2 = 94.3                                        | 30 < f(C2) < 1060       |
-| D3 = 251.4                                       | 15.4 < f((L2) < 281     |
-| D4 = 215.5                                       | 3.1 < f((L3) < 99.5     |
-| D5 = 44.9                                        | 2.06 < f(L4) < 16.4     |
-| D6 = 73.6                                        |                         |
-| D7 = 345.6                                       |                         |
+> **图3** 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 ，$D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。
 
-**Table 1.** Electron-optical data for a typical electron microscope. For magniﬁcations greater than 100 000 the magniﬁcation is controlled by adjusting the focal length of L3 with f(L2) = 15.4 mm ﬁxed and f(L4) = 2.1 mm ﬁxed. The focal length of L3 is set as follows: f(L3) = 9.8, 7.0, 5.0, 3.1 mm for M = 150, 200, 400, 750 K, respectively.
+| 透镜间的估计距离 (mm) | 焦距范围 (mm)       |
+|-----------------------|---------------------|
+| D1 = 143.6            | 1.65  < f(C1) < 19  |
+| D2 = 94.3             | 30 < f(C2) < 1060   |
+| D3 = 251.4            | 15.4 < f((L2) < 281 |
+| D4 = 215.5            | 3.1 < f((L3) < 99.5 |
+| D5 = 44.9             | 2.06 < f(L4) < 16.4 |
+| D6 = 73.6             |                     |
+| D7 = 345.6            |                     |
 
-> Why to study electron optics, seeks to determine the conditions under which the electron waveﬁeld passing through an electron lens satisﬁes the requirements for perfect image formation.
+> **表1.** 典型电子显微镜的电子光学数据。对于放大倍率超过 100 000 情况，放大倍数通过 $f(L2) = 15.4mm$ ，$f(L4) = 2.1 mm$ 固定不变，调整 $L3$ 的焦距来进行控制。$L3$ 焦距分别以以下参数进行设置： $f(L3) = 9.9，7.0，5.0，3.1 mm$ 对应 $M = 150，200，400，750 K$ 。
 
-### The ideal lens
+### 理想透镜
 
-The ideal lens is a mathematical abstraction which provides perfect imaging given by a projective transformation between the object and image space.
-
-The constants appearing in this transformation specify the positions of the cardinal planes of the lens. The six important cardinal planes are the two focus planes, the two principal planes, and the two nodal planes.
+理想透镜是一种数学上的抽象，可以通过物体和图像空间的投影变换来提供完美的成像。在这一变换中出现的常数，指定了透镜基平面的位置。六个重要的基平面包括两个焦点平面、两个主平面以及两个节点平面，如图4所示。
 
 ```mermaid!
 graph LR
-A(Six important cardinal planes) --> B(two focus planes)
-A --> C(two principal planes)
-A --> D(two nodal planes)
+	A(六个重要的基平面) --> B(两个焦点平面)
+	A --> C(两个主平面)
+	A --> D(两个节点平面)
 ```
+<br>
 
-![Figure 4](/assets/20220404/2022-04-06-231108.png)
+![Figure 4](/assets/20220404/2022-04-06-231108.png =500x)
 
-**Figure 4.** The thick lens. The nodal planes (N1, N2), principal planes (H1, H2), and focal planes (F1, F2) are shown together with the lens focal lengths ($f_i$, $f_0$)and the object focal distance $z_p$ . For a magnetic electron lens the principal planes are crossed.
+> **图4** 厚透镜。节点平面（$N1$，$N2$），主平面（$H1$，$H2$）以及焦点平面 （$F1$，$F2$）。透镜焦距为 $f_i$，$f_0$，物焦距为 $z_p$ 。对于磁电子透镜，主平面是交叉的。
 
-Here comes a conclusion about $x_0$, $x_i$, $f_0$, $f_i$, $U$ and $V$.
+从图中总结，$x_0$，$x_i$，$f_0$，$f_i$，$U$，以及 $V$ 分别表示为
 
 ```mermaid!
 graph TD
-	A(x0) --> B(from y0 to F1)
-	C(xi) --> D(from yi to F2)
-	E(f0) --> F(from H2 to F2)
-	G(fi) --> H(form H1 to F1)
-	I(U)  --> J(from y0 to H1)
-	K(V)  --> L(from yi to H2)
+	A(x0) --> B(从 y0 到 F1)
+	C(xi) --> D(从 yi 到 F2)
+	E(f0) --> F(从 H2 到 F2)
+	G(fi) --> H(从 H1 到 F1)
+	I(U)  --> J(从 y0 到 H1)
+	K(V)  --> L(从 yi 到 H2)
 ```
+<br>
 
-For magnetic lenses the **nodal planes coincide with the principal planes**. The points where the axis crosses the nodal planes are called nodal points, N1 and N2. Principal planes are planes of unit lateral magniﬁcation, while nodal planes are planes of unit angular magniﬁcation. For an axially symmetric lens, the projective transformation for perfect imaging simpliﬁes to
+对于磁透镜，**节点平面与主平面重合**。轴与节点平面相交的点成为节点，$N1$ 与 $N2$。**主平面为单位横向放大平面**，而**节点平为单位角度放大平面**。对于轴对称透镜，完美成像的投影可以简化为牛顿透镜方程:
 
 $$
 \frac{y_i}{y_0} = \frac{f_i}{x_0} = \frac{x_i}{f_0} \tag{8}
 $$
 
-> $eqn(8)$ is called **the Newton's lens equation**.
-
-
-The determination of the positions of these planes is the key problem of electron optics—once they are known, the rules for graphical construction of ﬁgures satisfying eqn $(8)$ can be used to ﬁnd the image of an arbitrary object. 
+解决这些平面的位置是解决电子透镜的关键问题，满足 $eqn(8)$ 图像的图形构造规则可以用于找到任意物体的图像。
 
 ```mermaid!
 graph LR
-	C(Object P) --> A(Newton's lens equation) --> B(Image of an arbitrary object P')
+	C(物体 P) --> |牛顿透镜方程|B(任意物体的图像 P')
 ```
+<br>
 
-The rule for a construction which gives the conjugate image point $P'$ of a known object point $P$ is:
+从已知物点 $P$ 构建共轭像点 $P'$ 的规则：
 
-1. Draw a ray through $P$ and $F_1$, intersecting $H1$ at $Q$. Through $Q$ draw a ray $YQ$ parallel to the axis extending into both object and image spaces. 
-2. Draw a ray parallel to the axis through $P$ to intersect $H2$. From this intersection draw a ray through $F2$ to intersect the ray $YQ$ at $P'$. $P'$ is the image of $P$.
+1. 通过 $P$ 和 $F_1$ 画一条射线，与 $H1$ 平面交于 $Q$。通过 $Q$ 平行于轴画出射线 $YQ$，延伸到物体和图像空间。
+2. 通过 $P$ 平行于轴绘制射线并与 $H2$ 相交。从这个交点画一条穿过 $F2$ 的射线，与 $YQ$ 在 $P$ 处相交于 $P'$。$P'$ 是 $P$ 的像。
 
-For the objective lens of a modern electron microscope operation at moderate magnificaiton (~ 40,000),
+以中等放大倍率（~ 40,000）的现代的电子显微镜为例，如图5所示。
 
-![Figure 5](/assets/20220404/2022-04-11-17-15-56.png)
+![Figure 5](/assets/20220404/2022-04-11-17-15-56.png =500x)
 
-**Figure 5.** Ray diagram for the objective lens of a microscope operating at moderate magniﬁcation. The image is virtual and the principal planes are crossed. Object and image focal lengths are equal for magnetic lenses. A typical value for $f_2$ is 2 mm, and the magniﬁcation M = V/U may be about 20.
-
-PS: $U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.
+> **图5.** 中等放大倍率的物镜射线图。物焦距与像焦距与磁透镜相等。典型的 $f_2$ 值为 2 mm，放大倍数 $M = V/U$ 大约为 20。
 
 **The use of this mode in a four-lens instrument has advantages for biological specimens where radiation damage must be minimized**. At this moderate magniﬁcation lens L3 is switched off. At high magniﬁcation all lenses are used. Modern lens designers use the methods of matrix optics.
 
@@ -246,6 +243,8 @@ and
 $$
 \frac{1}{U} + \frac{1}{V} = \frac{1}{f} \tag{10}
 $$
+
+$U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.
 
 Eqn$(10)$ is quite gneral if 
 
