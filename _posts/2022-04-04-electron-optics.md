@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Electron optics
+title: 电子光学 part 1
 date: 2022-04-04 11:18:00:24.000000000 +09:00
 tags: cryo-EM
 ---
@@ -16,13 +16,13 @@ tags: cryo-EM
 		+ [1.2.2 穿过样品后的波长](#122-穿过样品后的波长)
 * [简单透镜特点](#简单透镜特点)
 	- [理想透镜](#理想透镜)
-		+ [Some Additional terms commonly used in electron optics](#some-additional-terms-commonly-used-in-electron-optics)
-			* [1. lateral magnification](#1-lateral-magnification)
-			* [2. 角放大率](#2-角放大率)
-			* [3. 入瞳与出瞳（entrance and exit pupils）](#3-入瞳与出瞳entrance-and-exit-pupils)
-			* [4. The Gaussian reference sphere](#4-the-gaussian-reference-sphere)
-			* [5. The longitudinal magnification](#5-the-longitudinal-magnification)
-			* [6. Incoherent imaging theory](#6-incoherent-imaging-theory)
+	- [2.2 电子透镜中其他常用名字](#22-电子透镜中其他常用名字)
+		+ [2.2.1 横向放大率](#221-横向放大率)
+			* [2.2.2 角放大率](#222-角放大率)
+			* [2.2.3. 入瞳与出瞳（entrance and exit pupils）](#223-入瞳与出瞳entrance-and-exit-pupils)
+			* [4. 高斯参考球](#4-高斯参考球)
+			* [5. 纵向放大率](#5-纵向放大率)
+			* [6. 非相干成像理论](#6-非相干成像理论)
 
 <!-- /TOC -->
 
@@ -224,78 +224,72 @@ graph LR
 1. 通过 $P$ 和 $F_1$ 画一条射线，与 $H1$ 平面交于 $Q$。通过 $Q$ 平行于轴画出射线 $YQ$，延伸到物体和图像空间。
 2. 通过 $P$ 平行于轴绘制射线并与 $H2$ 相交。从这个交点画一条穿过 $F2$ 的射线，与 $YQ$ 在 $P$ 处相交于 $P'$。$P'$ 是 $P$ 的像。
 
-以中等放大倍率（~ 40,000）的现代的电子显微镜为例，如图5所示。
+以中等放大倍率（~ 40,000）的现代的电子显微镜为例，如图5所示。在四透镜材中使用这种模式对于必须将辐射损伤降到最低的生物样品具有优势。在中等放大倍率中透镜 $L3$ 被关闭. 在高放大倍率下，所有透镜均被使用。现代透镜的设计师使用矩阵光学的放大。
 
 ![Figure 5](/assets/20220404/2022-04-11-17-15-56.png)
 
 **图5.** 中等放大倍率的物镜射线图。物焦距与像焦距与磁透镜相等。典型的 $f_2$ 值为 2 mm，放大倍数 $M = V/U$ 大约为 20。
 {: style="text-align: center;"}
 
-**The use of this mode in a four-lens instrument has advantages for biological specimens where radiation damage must be minimized**. At this moderate magniﬁcation lens L3 is switched off. At high magniﬁcation all lenses are used. Modern lens designers use the methods of matrix optics.
-
-The simple thin-lens formula can still be used if **the object and image distances $U$ and $V$ are measured from the lens principal planes $H1$ and $H2$**. Equation (2.6) becomes
+如果物距（ $U$ ）和像距（ $V$ ）从透镜主平面 $H1$ 和 $H2$ 位置测量，简单的薄透镜公式仍然使用。$eqn(8)$ 变为
 
 $$
 \frac{f_i}{U} + \frac{f_0}{V} = 1
 $$
 
-As they are for **magnetic electron lenses, then the refractive indices in the object and images space are equal**, we get
+因为对于磁电子透镜，物体和图像空间中的折射率相等，我们有
 
 $$
 f_i = f_0 = f \tag{9}
 $$
 
-and
+又因为在物体出现在 $H1$ 左侧（右侧）时，$U$ 为正（负）；像出现在 $H2$ 右侧（左侧）时，$V$ 为正（负）。
+
+```mermaid!
+graph TD
+A(U) --> M[+] --> B(物体在 H1 左侧)
+A --> N[-] --> D(物体在 H1 右侧)
+E(V) --> Q[+] --> F(像在 H2 右侧)
+E --> T[-] --> G(像在 H2 左侧)
+```
+
+可以推导出
 
 $$
 \frac{1}{U} + \frac{1}{V} = \frac{1}{f} \tag{10}
 $$
 
-$U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.
+从 $eqn(10$ 中分析, 存在三种情况：
 
-Eqn$(10)$ is quite gneral if 
+1. $U < f$ ：像是虚像、直立的、放大的。
+2. $f < U < 2f$ ：像是实像、倒置的、放大的。
+3. $U > 2f$ ：像是实像、倒置的、缩小的。
 
-```mermaid!
-graph TD
-A(U) --> M[+] --> B(object is left of H1)
-A --> N[-] --> D(object is right of H1)
-E(V) --> Q[+] --> F(image is right of H2)
-E --> T[-] --> G(image is left of H2)
-```
+### 2.2 电子透镜中其他常用名字
 
-From $eqn(10)$, there will be three cases:
+#### 2.2.1 横向放大率
 
-1. $U < f$ : image is virtual, erect, and magnified.
-2. $f < U < 2f$ : image is real, inverted, and magnified.
-3. $U > 2f$ : image is real, inverted, and reduced.
-
-From $eqn(10)$, Figure(4) and Figure(5)
-
-#### Some Additional terms commonly used in electron optics
-
-##### 1. lateral magnification 
-
-The ***lateral magnification*** $M$ is given by
+***横向放大率*** $M$ 由以下给出：
 
 $$
 M = \frac{y_i}{y_0} = - \frac{V}{U} \tag{11}
 $$
 
-from $eqn(10)$ and $eqn(11)$, we have 
+从 $eqn(10)$ 以及 $eqn(11)$，我们有
 
 $$
 M - 1 = - \frac{V}{f} \tag{12}
 $$
 
-From $eqn(11)$ and $eqn(12)$, 
+从 $eqn(11)$ and $eqn(12)$ 可以得到
 
 ```mermaid!
 graph LR
-	E(high-resolution objective lens) -->A(M) --> |inversely proportional| B(object lens focal length)
-	E --> C(U) --> |slightly greater than| B
+	E(高分辨率物镜) -->A(M) --> |反比于| B(物镜焦距)
+	E --> C(U) --> |稍大于| B
 ```
 
-##### 2. 角放大率
+##### 2.2.2 角放大率
 
 ***角放大率*** $m$ 对于小角度有
 
@@ -310,7 +304,7 @@ $$
 **图6.** 角放大率。点 $P$ 与其像 $P'$ 同时给出。
 {: style="text-align: center;"}
 
-##### 3. 入瞳与出瞳（entrance and exit pupils）
+##### 2.2.3. 入瞳与出瞳（entrance and exit pupils）
 
 透镜的**入瞳与出瞳**系统对于限制分辨率以及聚光能力是重要的。
 
@@ -327,25 +321,29 @@ $$
 **图7.** 透镜系统的入瞳与出瞳。复杂的透镜系统由许多镜共同组成，可以以整体看成一个黑盒子，由入瞳、出瞳以及复杂的传递函数制定。惠更斯（Huygens）球面波前会聚在点 $P$ 。
 {: style="text-align: center;"}
 
+以相机为例，解释一下入瞳与出瞳
 
+![Figure 8](/assets/20220404/220px-Apertures.jpg)
 
-**Figure 8.** A camera lens adjusted for large and small aperture. The entrance pupil is the image of the physical aperture, as seen through the front (the object side) of the lens. The size and location may differ from those of the physical aperture, due to magnification by the lens.
+**图8.** 相机镜头调整光圈大小。入瞳是物理光圈的像，可以从前方（物体方）看到。物理孔径大小和位置也许会因为镜头的放大倍率不同而存在差异。
+{: style="text-align: center;"}
 
 ![Figure 9](/assets/20220404/220px-Camera_lens_exit_pupil.jpg)
 
-**Figure 9.** The image side of the lens of an SLR camera; the exit pupil is the light area in the middle of the lens.
+**图9.** SLR相机镜头的图像方；出瞳是在镜头中间的发亮区域。
+{: style="text-align: center;"}
 
-##### 4. The Gaussian reference sphere
+##### 4. 高斯参考球
 
-***The Gaussian reference sphere*** for an image point P is deﬁned as the sphere, centred on P, which passes through the intersection of the optic axis with the exit pupil (as shown in the Figure 7).
+***高斯参考球（The Gaussian reference sphere）***对于一个定义为球形的像点 $P$ ，以 $P$ 为中心，通过光轴与出瞳的交点。如图7所示。
 
-For an unaberrated optical system, the surface of constant phase for a Huygens spherical wavelet converging toward P coincides with this reference sphere. **The deviation of the wavefront from the Gaussian reference sphere speciﬁes the aberrations of the system**.
+对于无像差的光学系统，向 $P$ 会聚的惠更斯球面小波的恒相位面与该参考球面重合。**波前与高斯参考求面的偏差制定了系统的像差。**而衍射极限极限由出瞳或等效入瞳的有效大小施加的。 
 
-##### 5. The longitudinal magnification
+##### 5. 纵向放大率
 
-***The longitudinal magniﬁcation***, $M_z$, can be used to **relate depth of ﬁeld to depth of focus** (see below).
+***纵向放大率***，$M_z$，可以用于将联景深与焦距联系起来。
 
-Differentiation of $eqn(10)$,
+求 $eqn(10)$ 的微分可以得到
 
 $$
 \begin{aligned}
@@ -355,7 +353,7 @@ d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) & = d\left(\frac{1}{f}\rig
 \end{aligned} \tag{14}
 $$
 
-Which makes,
+最终获得
 
 $$
 \frac{\Delta V}{\Delta U} = - M^2 = M_z
@@ -363,20 +361,19 @@ $$
 
 ```mermaid!
 graph LR
-	A(lateral magnification M) --> |square of |B(longtitudinal magnification Mz)
+	A(纵向放大率 M) --> |平方|B(横向放大率 Mz)
 ```
 
-For example the image planes conjugate to the upper and lower surfaces of an atom 0.3 nm ‘thick’ are separated by 3 m if the lateral magniﬁcation M is 100 000.
+例如，如果横向放大倍数 $M$ 为 100 000，则与 0.3 nm “厚”原子的上下表面共轭的图像平面相隔 3 m。
 
-##### 6. Incoherent imaging theory
+##### 6. 非相干成像理论
 
-***Incoherent imaging theory*** gives the depth of ﬁeld or range of focus values (referred to the object plane) over which an object point can be considered ‘in focus’ as
+***非相干成像理论***给出了景深或聚焦范围值（称为物平面），在该值上，一个物点可以视“聚焦”
 
 $$
 Z_D = 2d/\theta = 2\lambda/\theta^2 \tag{15}
 $$
 
-where $\theta$ is the objective aperture semi-angle and $d$ is the microscope resolution. However, this result cannot be accurately applied to the coherent high-resolution imaging of phase objects (see Sections 3.4 and 5.2).
+其中 $\theta$ 是物镜孔径半角，$d$ 是显微镜分辨率。然而，这一结果并无法准确应用于相位物体的相干高分辨率成像。
 
-
-
+透镜设计者用来确定电子透镜基面位置的方法将在下一篇博文中进行讨论。从图4 可以看出，**平行于轴进入（离开）的光线与轴的交叉点定义了图像（对象）焦点**。在电子光学中，一旦电子的运动方程可以针对特定的磁场分布求解，则平行于轴进入透镜场的电子轨迹可以类似地用于找到透镜焦点。真实的电子轨迹遵循透镜磁场内的平滑曲线。为了使用理想的镜头模型，可能有必要使用来自远在场影响之外的点的光线的虚拟延伸来定义镜头焦点。
