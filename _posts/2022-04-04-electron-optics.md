@@ -18,8 +18,8 @@ tags: cryo-EM
 	- [理想透镜](#理想透镜)
 		+ [Some Additional terms commonly used in electron optics](#some-additional-terms-commonly-used-in-electron-optics)
 			* [1. lateral magnification](#1-lateral-magnification)
-			* [2. The angular magnification](#2-the-angular-magnification)
-			* [3. The entrance and exit pupils](#3-the-entrance-and-exit-pupils)
+			* [2. 角放大率](#2-角放大率)
+			* [3. 入瞳与出瞳（entrance and exit pupils）](#3-入瞳与出瞳entrance-and-exit-pupils)
 			* [4. The Gaussian reference sphere](#4-the-gaussian-reference-sphere)
 			* [5. The longitudinal magnification](#5-the-longitudinal-magnification)
 			* [6. Incoherent imaging theory](#6-incoherent-imaging-theory)
@@ -111,7 +111,8 @@ $$
 
 ![Figure 1](/assets/20220404/2022-04-06-15-47-17.png) 
 
-> **图1.** 电子显微镜势能（PE）的简单示意图。垂直箭头的长度与快速电子动能呈正比，与快速电子波长的平方成反比。电子势能（图中以高度表示）和电子的动能的总和是不变的。电子在离开灯丝时具有低动能与高势能（由高压装置提供），势能在通向阳极过程中逐渐转变为动能（阳极处为地电位)。就像小球从山上滚下来，跌进样品中一样。在显微镜立柱（microscope column）中向下的大概距离由横坐标表示，样品处的电位跃阶（potential step）被夸张展示。
+**图1.** 电子显微镜势能（PE）的简单示意图。垂直箭头的长度与快速电子动能呈正比，与快速电子波长的平方成反比。电子势能（图中以高度表示）和电子的动能的总和是不变的。电子在离开灯丝时具有低动能与高势能（由高压装置提供），势能在通向阳极过程中逐渐转变为动能（阳极处为地电位)。就像小球从山上滚下来，跌进样品中一样。在显微镜立柱（microscope column）中向下的大概距离由横坐标表示，样品处的电位跃阶（potential step）被夸张展示。
+{: style="text-align: center;"}
 
 忽略引起衍射和色散表面构造的周期性电位变化，内部电位的平均值由 $\upsilon_0 = \phi_0$ 给出，即电位的零阶傅里叶系数。 真空中波长 $\lambda$ 与电子进入样品后波长 $\lambda'$ 之间的比可以由材料中的折射率 $n$ 来表示。
 
@@ -138,7 +139,8 @@ $$
 
 ![Figure 2](/assets/20220404/2022-04-06-17-27-40.png)
 
-> **图2.** 电子波穿过样品的两种情况。穿过原子中心（电势更高）的电子会降低波长，相对于从原子之间通过而不改变波长的电子，会发生波相位提前。在相位光栅近似中，这一最简单模型的假设是在 $A$ 处的振幅可以沿光路 $AB$ 计算而 $A$ 处没有来自诸如 $C$ 点的贡献；。对于厚样品，这种近似效果不好。
+**图2.** 电子波穿过样品的两种情况。穿过原子中心（电势更高）的电子会降低波长，相对于从原子之间通过而不改变波长的电子，会发生波相位提前。在相位光栅近似中，这一最简单模型的假设是在 $A$ 处的振幅可以沿光路 $AB$ 计算而 $A$ 处没有来自诸如 $C$ 点的贡献；。对于厚样品，这种近似效果不好。
+{: style="text-align: center;"}
 
 ## 简单透镜特点
 
@@ -154,9 +156,11 @@ $$
 ```
 <br>
 
-![Figure 3](/assets/20220404/2022-04-06-222144.png)
+![Figure 3](/assets/20220404/2022-04-06-222144.png){: height="500"}
 
-> **图3** 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 ，$D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。
+**图3.** 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 ，$D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。
+{: style="text-align: center;"}
+
 
 | 透镜间的估计距离 (mm) | 焦距范围 (mm)       |
 |-----------------------|---------------------|
@@ -168,7 +172,8 @@ $$
 | D6 = 73.6             |                     |
 | D7 = 345.6            |                     |
 
-> **表1.** 典型电子显微镜的电子光学数据。对于放大倍率超过 100 000 情况，放大倍数通过 $f(L2) = 15.4mm$ ，$f(L4) = 2.1 mm$ 固定不变，调整 $L3$ 的焦距来进行控制。$L3$ 焦距分别以以下参数进行设置： $f(L3) = 9.9，7.0，5.0，3.1 mm$ 对应 $M = 150，200，400，750 K$ 。
+**表1.** 典型电子显微镜的电子光学数据。对于放大倍率超过 100 000 情况，放大倍数通过 $f(L2) = 15.4mm$ ，$f(L4) = 2.1 mm$ 固定不变，调整 $L3$ 的焦距来进行控制。$L3$ 焦距分别以以下参数进行设置： $f(L3) = 9.9，7.0，5.0，3.1 mm$ 对应 $M = 150，200，400，750 K$ 。
+{: style="text-align: center;"}
 
 ### 理想透镜
 
@@ -184,7 +189,8 @@ graph LR
 
 ![Figure 4](/assets/20220404/2022-04-06-231108.png)
 
-> **图4** 厚透镜。节点平面（$N1$，$N2$），主平面（$H1$，$H2$）以及焦点平面 （$F1$，$F2$）。透镜焦距为 $f_i$，$f_0$，物焦距为 $z_p$ 。对于磁电子透镜，主平面是交叉的。
+**图4.** 厚透镜。节点平面（$N1$，$N2$），主平面（$H1$，$H2$）以及焦点平面 （$F1$，$F2$）。透镜焦距为 $f_i$，$f_0$，物焦距为 $z_p$ 。对于磁电子透镜，主平面是交叉的。
+{: style="text-align: center;"}
 
 从图中总结，$x_0$，$x_i$，$f_0$，$f_i$，$U$，以及 $V$ 分别表示为
 
@@ -222,7 +228,8 @@ graph LR
 
 ![Figure 5](/assets/20220404/2022-04-11-17-15-56.png)
 
-> **图5.** 中等放大倍率的物镜射线图。物焦距与像焦距与磁透镜相等。典型的 $f_2$ 值为 2 mm，放大倍数 $M = V/U$ 大约为 20。
+**图5.** 中等放大倍率的物镜射线图。物焦距与像焦距与磁透镜相等。典型的 $f_2$ 值为 2 mm，放大倍数 $M = V/U$ 大约为 20。
+{: style="text-align: center;"}
 
 **The use of this mode in a four-lens instrument has advantages for biological specimens where radiation damage must be minimized**. At this moderate magniﬁcation lens L3 is switched off. At high magniﬁcation all lenses are used. Modern lens designers use the methods of matrix optics.
 
@@ -288,31 +295,39 @@ graph LR
 	E --> C(U) --> |slightly greater than| B
 ```
 
-##### 2. The angular magnification
-**The angular magnification** $m$ is, for small angles,
+##### 2. 角放大率
+
+***角放大率*** $m$ 对于小角度有
 
 $$
 m = \frac{\tan{\theta_i}}{\tan{\theta_0}} \approx \frac{\theta_i}{\theta_0} = \left|\frac{1}{M}\right| \tag{13}
 $$
 
-as shown in Figure 6,
+如图6所示，
 
 ![Figure 6](/assets/20220404/2022-04-12-10-42-49.png)
 
-**Figure 6.** Angular magniﬁcation. The image P of a point P is shown together with the angles which a ray makes with these points.
+**图6.** 角放大率。点 $P$ 与其像 $P'$ 同时给出。
+{: style="text-align: center;"}
 
-##### 3. The entrance and exit pupils
-***The entrance and exit pupils*** of an optical system are important in limiting its resolution and light-gathering power.
+##### 3. 入瞳与出瞳（entrance and exit pupils）
 
-**Entrance pupil**: The image of that aperture, formed by the optical system which precedes it, which subtends the smallest angle at the object. The **‘aperture stop’** is the physical aperture whose image forms the entrance pupil.
+透镜的**入瞳与出瞳**系统对于限制分辨率以及聚光能力是重要的。
 
-**Exit pupil**: The image of the entrance pupil formed by the whole system.
+**入瞳**：由其前面的光学系统形成的光圈的图像，以最小角度与物体相对。
+
+**出瞳**：通过整个系统形成的入瞳的像。
+
+**孔径光阑（aperture stop）** 是其像形成入瞳的物理孔径。
+
+详情见图7 ~ 图9：
 
 ![Figure 7](/assets/20220404/2022-04-12-15-10-14.png)
 
-**Figure 7.** The entrance and exit pupils of an optic system. A complicated optical system consisting of many lenses can be treated as a ‘black box’ and speciﬁed by its entrance and exit pupils and a complex transfer function. A Huygens spherical wavefront is shown converging to an image point P.
+**图7.** 透镜系统的入瞳与出瞳。复杂的透镜系统由许多镜共同组成，可以以整体看成一个黑盒子，由入瞳、出瞳以及复杂的传递函数制定。惠更斯（Huygens）球面波前会聚在点 $P$ 。
+{: style="text-align: center;"}
 
-![Figure 8](/assets/20220404/220px-Apertures.jpg)
+
 
 **Figure 8.** A camera lens adjusted for large and small aperture. The entrance pupil is the image of the physical aperture, as seen through the front (the object side) of the lens. The size and location may differ from those of the physical aperture, due to magnification by the lens.
 

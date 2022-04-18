@@ -1,0 +1,398 @@
+I"�H<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
+
+<!-- TOC GFM -->
+
+<ul>
+  <li><a href="#一与电子波长相关的一些内容">一、与电子波长相关的一些内容</a>
+    <ul>
+      <li><a href="#11-电子显微镜的四个问题">1.1 电子显微镜的四个问题</a></li>
+      <li><a href="#12-波长-lambda">1.2 波长 $\lambda$</a>
+        <ul>
+          <li><a href="#121-阳极处的波长">1.2.1 阳极处的波长</a></li>
+          <li><a href="#122-穿过样品后的波长">1.2.2 穿过样品后的波长</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#简单透镜特点">简单透镜特点</a>
+    <ul>
+      <li><a href="#理想透镜">理想透镜</a>
+        <ul>
+          <li><a href="#some-additional-terms-commonly-used-in-electron-optics">Some Additional terms commonly used in electron optics</a>
+            <ul>
+              <li><a href="#1-lateral-magnification">1. lateral magnification</a></li>
+              <li><a href="#2-角放大率">2. 角放大率</a></li>
+              <li><a href="#3-入瞳与出瞳entrance-and-exit-pupils">3. 入瞳与出瞳（entrance and exit pupils）</a></li>
+              <li><a href="#4-the-gaussian-reference-sphere">4. The Gaussian reference sphere</a></li>
+              <li><a href="#5-the-longitudinal-magnification">5. The longitudinal magnification</a></li>
+              <li><a href="#6-incoherent-imaging-theory">6. Incoherent imaging theory</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="一与电子波长相关的一些内容">一、与电子波长相关的一些内容</h2>
+
+<h3 id="11-电子显微镜的四个问题">1.1 电子显微镜的四个问题</h3>
+
+<p>与其使用 Schrodinger 方程将电子显微镜作为一个整体去研究，将其拆分为四个问题更为简单。</p>
+
+<ol>
+  <li>电子束与样品的相互作用</li>
+  <li>磁透镜作用</li>
+  <li>检测</li>
+  <li>快速电子源</li>
+</ol>
+
+<p>波长这部分归于快速电子。</p>
+
+<h3 id="12-波长-lambda">1.2 波长 $\lambda$</h3>
+
+<h4 id="121-阳极处的波长">1.2.1 阳极处的波长</h4>
+
+<p>根据 <strong><em>de Broglie</em></strong> 关系式，</p>
+
+<p>$$
+p = mv = h/\lambda
+$$</p>
+
+<p>以及</p>
+
+<p>$$
+E = 1/2mv^2
+$$</p>
+
+<p>根据能量守恒定律，分析带有 $-e$ 电荷的电子穿过电势从 $0$ 到 $V_0$ 变化的区域。可以得到</p>
+
+<p>$$
+eV_0 = p^2/2m = h^2/2m\lambda^2 \tag{1}
+$$</p>
+
+<p>其中 $P$ 为 电子的动量，而 $h$ 为 <strong><em>Plank’s</em></strong> 常量。</p>
+
+<p>$$
+\lambda = \frac{h}{\sqrt{2meV_0}} \tag{2}
+$$</p>
+
+<p>一个电子离开具有高势能以及高热动能的灯丝，并以无势能和高动能到达阳极。势能为零取接地电位。如果 $\lambda$ 以纳米为单位，$V_0$ 以伏特为单位，有</p>
+
+<p>$$
+\lambda = 1.22639/\sqrt{V_0} \tag{3}
+$$</p>
+
+<p>在使用更高能量时，就需要考虑电子的相对论变化。比如在 100 kV 时，忽略这一点会导致 $\lambda$ 产生 5 % 的误差。经过相对论修正后的质量为</p>
+
+<p>$$
+m = m_0/(1 - v^2/c^2)^{1/2} 
+$$</p>
+
+<p>对应于 $eqn(1)$ 的相对论方程为</p>
+
+<p>$$
+eV_0 = (m - m_0)c^2
+$$</p>
+
+<p>其中 $m_0$ 为电子静止状态下的质量，$c$ 是光速。这些等式可以结合并给出电子动量 $mv$ 的表达式。在 <strong><em>de Broglie</em></strong> 关系式中使用，给出相对论修正的电子波长为</p>
+
+<p>$$
+\lambda = h/(2m_0eV_r)^{1/2} \tag{4}
+$$</p>
+
+<p>其中</p>
+
+<p>$$
+V_r = V_0 + \left(\frac{e}{2m_0c^2}\right)V_0^2
+$$</p>
+
+<p>这里为了表述方便，引入$V_r$，称为 <strong>“相对论加速电压”</strong>。电脑计算时，$\lambda$ 可以取</p>
+
+<p>$$
+\lambda = 1.22639/(V_0 + 0.97845 \times 10^{-6}V_0^2 )^{1/2} \tag{5}
+$$</p>
+
+<p>其中 $V_0$，显微镜加速电压单位为伏特，$\lambda$ 单位为纳米。</p>
+
+<h4 id="122-穿过样品后的波长">1.2.2 穿过样品后的波长</h4>
+
+<p>样品内部的正静电电位 $\phi(r)$ 会进一步加速入射的快速电子，导致样品中的波长会少量降低。</p>
+
+<p><img src="/assets/20220404/2022-04-06-15-47-17.png" alt="Figure 1" /></p>
+
+<blockquote style="text-align: center;">
+  <p><strong>图1.</strong> 电子显微镜势能（PE）的简单示意图。垂直箭头的长度与快速电子动能呈正比，与快速电子波长的平方成反比。电子势能（图中以高度表示）和电子的动能的总和是不变的。电子在离开灯丝时具有低动能与高势能（由高压装置提供），势能在通向阳极过程中逐渐转变为动能（阳极处为地电位)。就像小球从山上滚下来，跌进样品中一样。在显微镜立柱（microscope column）中向下的大概距离由横坐标表示，样品处的电位跃阶（potential step）被夸张展示。</p>
+</blockquote>
+
+<p>忽略引起衍射和色散表面构造的周期性电位变化，内部电位的平均值由 $\upsilon_0 = \phi_0$ 给出，即电位的零阶傅里叶系数。 真空中波长 $\lambda$ 与电子进入样品后波长 $\lambda’$ 之间的比可以由材料中的折射率 $n$ 来表示。</p>
+
+<p>$$
+n = \frac{\lambda}{\lambda’}=\frac{\left(\frac{1.23}{\sqrt{V_0}}\right)}{\left(\frac{1.23}{\sqrt{V_0 + \phi_0}}\right)}\approx 1 + \frac{\phi_0}{2V_0} \tag{6}
+$$</p>
+
+<p>快速电子穿过厚度为 $t$ 的样品后，相对于真空中的相位差为</p>
+
+<p>$$
+\theta = 2\pi(n-1)t/\lambda = \pi\phi_0t/\lambda V_0 = \sigma\phi _0t \tag{7}
+$$</p>
+
+<p>结合 $eqn(1)$，我们可以得到</p>
+
+<p>$$
+\begin{aligned}
+\sigma &amp; = \pi/\lambda V_0 <br />
+&amp; = 2\pi me\lambda/h
+\end{aligned}
+$$</p>
+
+<p>如果利用沿单一光路，如 $AB$ ,来估计出射面波函数（不考虑如 $CA$ 通路）, 如图2所示。</p>
+
+<p><img src="/assets/20220404/2022-04-06-17-27-40.png" alt="Figure 2" /></p>
+
+<blockquote style="text-align: center;">
+  <p><strong>图2.</strong> 电子波穿过样品的两种情况。穿过原子中心（电势更高）的电子会降低波长，相对于从原子之间通过而不改变波长的电子，会发生波相位提前。在相位光栅近似中，这一最简单模型的假设是在 $A$ 处的振幅可以沿光路 $AB$ 计算而 $A$ 处没有来自诸如 $C$ 点的贡献；。对于厚样品，这种近似效果不好。</p>
+</blockquote>
+
+<h2 id="简单透镜特点">简单透镜特点</h2>
+
+<p>现代电子显微镜有着许多焦距可变的成像透镜，为聚焦的目的，需要固定物体及最终观察用的屏幕位置。在高分辨率显微镜中常用的高放大倍率下，例如$L2$，$L3$，及 $L3$ 的透镜电流（决定了焦距）能够被用来调节放大倍率，如图3所示。对于固定放大倍率的配置下，可通过调整物镜 $L1$ 的强度直至固定的 $P1$ 平面与样品的出射面共轭来实现对焦。</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEo5pS55Y-YIEwyLCBMMywgTDQg55S15rWBKSAtLT4gfOaOp-WItueEpui3nXxCKOaOp-WItuaUvuWkp-WAjeaVsCkiLCJtZXJtYWlkIjpudWxsfQ" />
+<img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkQo5pS55Y-Y54mp6ZWcIEwxIOeahOeUtea1gSkgLS0-IHzmlL7lpKflgI3mlbDkuIDlrprml7YsIOiwg-iKguiHsyBQMSDkuI7moLflk4Hlh7rlsITpnaLlhbHova18RijogZrnhKYpIiwibWVybWFpZCI6bnVsbH0" />
+<br /></p>
+
+<p><img src="/assets/20220404/2022-04-06-222144.png" alt="Figure 3" /></p>
+
+<blockquote style="text-align: center;">
+  <p><strong>图3</strong> 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 ，$D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>透镜间的估计距离 (mm)</th>
+      <th>焦距范围 (mm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>D1 = 143.6</td>
+      <td>1.65  &lt; f(C1) &lt; 19</td>
+    </tr>
+    <tr>
+      <td>D2 = 94.3</td>
+      <td>30 &lt; f(C2) &lt; 1060</td>
+    </tr>
+    <tr>
+      <td>D3 = 251.4</td>
+      <td>15.4 &lt; f((L2) &lt; 281</td>
+    </tr>
+    <tr>
+      <td>D4 = 215.5</td>
+      <td>3.1 &lt; f((L3) &lt; 99.5</td>
+    </tr>
+    <tr>
+      <td>D5 = 44.9</td>
+      <td>2.06 &lt; f(L4) &lt; 16.4</td>
+    </tr>
+    <tr>
+      <td>D6 = 73.6</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>D7 = 345.6</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>表1.</strong> 典型电子显微镜的电子光学数据。对于放大倍率超过 100 000 情况，放大倍数通过 $f(L2) = 15.4mm$ ，$f(L4) = 2.1 mm$ 固定不变，调整 $L3$ 的焦距来进行控制。$L3$ 焦距分别以以下参数进行设置： $f(L3) = 9.9，7.0，5.0，3.1 mm$ 对应 $M = 150，200，400，750 K$ 。</p>
+</blockquote>
+
+<h3 id="理想透镜">理想透镜</h3>
+
+<p>理想透镜是一种数学上的抽象，可以通过物体和图像空间的投影变换来提供完美的成像。在这一变换中出现的常数，指定了透镜基平面的位置。六个重要的基平面包括两个焦点平面、两个主平面以及两个节点平面，如图4所示。</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEo5YWt5Liq6YeN6KaB55qE5Z-65bmz6Z2iKSAtLT4gQijkuKTkuKrnhKbngrnlubPpnaIpXG5BIC0tPiBDKOS4pOS4quS4u-W5s-mdoilcbkEgLS0-IEQo5Lik5Liq6IqC54K55bmz6Z2iKSIsIm1lcm1haWQiOm51bGx9" />
+<br /></p>
+
+<p><img src="/assets/20220404/2022-04-06-231108.png" alt="Figure 4" /></p>
+
+<blockquote style="text-align: center;">
+  <p><strong>图4</strong> 厚透镜。节点平面（$N1$，$N2$），主平面（$H1$，$H2$）以及焦点平面 （$F1$，$F2$）。透镜焦距为 $f_i$，$f_0$，物焦距为 $z_p$ 。对于磁电子透镜，主平面是交叉的。</p>
+</blockquote>
+
+<p>从图中总结，$x_0$，$x_i$，$f_0$，$f_i$，$U$，以及 $V$ 分别表示为</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoeDApIC0tPiBCKOS7jiB5MCDliLAgRjEpXG5DKHhpKSAtLT4gRCjku44geWkg5YiwIEYyKVxuRShmMCkgLS0-IEYo5LuOIEgyIOWIsCBGMilcbkcoZmkpIC0tPiBIKOS7jiBIMSDliLAgRjEpXG5JKFUpICAtLT4gSijku44geTAg5YiwIEgxKVxuSyhWKSAgLS0-IEwo5LuOIHlpIOWIsCBIMikiLCJtZXJtYWlkIjpudWxsfQ" />
+<br /></p>
+
+<p>对于磁透镜，<strong>节点平面与主平面重合</strong>。轴与节点平面相交的点成为节点，$N1$ 与 $N2$。<strong>主平面为单位横向放大平面</strong>，而<strong>节点平为单位角度放大平面</strong>。对于轴对称透镜，完美成像的投影可以简化为牛顿透镜方程:</p>
+
+<p>$$
+\frac{y_i}{y_0} = \frac{f_i}{x_0} = \frac{x_i}{f_0} \tag{8}
+$$</p>
+
+<p>解决这些平面的位置是解决电子透镜的关键问题，满足 $eqn(8)$ 图像的图形构造规则可以用于找到任意物体的图像。</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkMo54mp5L2TIFApIC0tPiB854mb6aG_6YCP6ZWc5pa556iLfEIo5Lu75oSP54mp5L2T55qE5Zu-5YOPIFAnKSIsIm1lcm1haWQiOm51bGx9" />
+<br /></p>
+
+<p>从已知物点 $P$ 构建共轭像点 $P’$ 的规则：</p>
+
+<ol>
+  <li>通过 $P$ 和 $F_1$ 画一条射线，与 $H1$ 平面交于 $Q$。通过 $Q$ 平行于轴画出射线 $YQ$，延伸到物体和图像空间。</li>
+  <li>通过 $P$ 平行于轴绘制射线并与 $H2$ 相交。从这个交点画一条穿过 $F2$ 的射线，与 $YQ$ 在 $P$ 处相交于 $P’$。$P’$ 是 $P$ 的像。</li>
+</ol>
+
+<p>以中等放大倍率（~ 40,000）的现代的电子显微镜为例，如图5所示。</p>
+
+<p><img src="/assets/20220404/2022-04-11-17-15-56.png" alt="Figure 5" /></p>
+
+<blockquote style="text-align: center;">
+  <p><strong>图5.</strong> 中等放大倍率的物镜射线图。物焦距与像焦距与磁透镜相等。典型的 $f_2$ 值为 2 mm，放大倍数 $M = V/U$ 大约为 20。</p>
+</blockquote>
+
+<p><strong>The use of this mode in a four-lens instrument has advantages for biological specimens where radiation damage must be minimized</strong>. At this moderate magniﬁcation lens L3 is switched off. At high magniﬁcation all lenses are used. Modern lens designers use the methods of matrix optics.</p>
+
+<p>The simple thin-lens formula can still be used if <strong>the object and image distances $U$ and $V$ are measured from the lens principal planes $H1$ and $H2$</strong>. Equation (2.6) becomes</p>
+
+<p>$$
+\frac{f_i}{U} + \frac{f_0}{V} = 1
+$$</p>
+
+<p>As they are for <strong>magnetic electron lenses, then the refractive indices in the object and images space are equal</strong>, we get</p>
+
+<p>$$
+f_i = f_0 = f \tag{9}
+$$</p>
+
+<p>and</p>
+
+<p>$$
+\frac{1}{U} + \frac{1}{V} = \frac{1}{f} \tag{10}
+$$</p>
+
+<p>$U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.</p>
+
+<p>Eqn$(10)$ is quite gneral if</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoVSkgLS0-IE1bK10gLS0-IEIob2JqZWN0IGlzIGxlZnQgb2YgSDEpXG5BIC0tPiBOWy1dIC0tPiBEKG9iamVjdCBpcyByaWdodCBvZiBIMSlcbkUoVikgLS0-IFFbK10gLS0-IEYoaW1hZ2UgaXMgcmlnaHQgb2YgSDIpXG5FIC0tPiBUWy1dIC0tPiBHKGltYWdlIGlzIGxlZnQgb2YgSDIpIiwibWVybWFpZCI6bnVsbH0" /></p>
+
+<p>From $eqn(10)$, there will be three cases:</p>
+
+<ol>
+  <li>$U &lt; f$ : image is virtual, erect, and magnified.</li>
+  <li>$f &lt; U &lt; 2f$ : image is real, inverted, and magnified.</li>
+  <li>$U &gt; 2f$ : image is real, inverted, and reduced.</li>
+</ol>
+
+<p>From $eqn(10)$, Figure(4) and Figure(5)</p>
+
+<h4 id="some-additional-terms-commonly-used-in-electron-optics">Some Additional terms commonly used in electron optics</h4>
+
+<h5 id="1-lateral-magnification">1. lateral magnification</h5>
+
+<p>The <strong><em>lateral magnification</em></strong> $M$ is given by</p>
+
+<p>$$
+M = \frac{y_i}{y_0} = - \frac{V}{U} \tag{11}
+$$</p>
+
+<p>from $eqn(10)$ and $eqn(11)$, we have</p>
+
+<p>$$
+M - 1 = - \frac{V}{f} \tag{12}
+$$</p>
+
+<p>From $eqn(11)$ and $eqn(12)$,</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkUoaGlnaC1yZXNvbHV0aW9uIG9iamVjdGl2ZSBsZW5zKSAtLT5BKE0pIC0tPiB8aW52ZXJzZWx5IHByb3BvcnRpb25hbHwgQihvYmplY3QgbGVucyBmb2NhbCBsZW5ndGgpXG5FIC0tPiBDKFUpIC0tPiB8c2xpZ2h0bHkgZ3JlYXRlciB0aGFufCBCIiwibWVybWFpZCI6bnVsbH0" /></p>
+
+<h5 id="2-角放大率">2. 角放大率</h5>
+
+<p><strong><em>角放大率</em></strong> $m$ 对于小角度有</p>
+
+<p>$$
+m = \frac{\tan{\theta_i}}{\tan{\theta_0}} \approx \frac{\theta_i}{\theta_0} = \left|\frac{1}{M}\right| \tag{13}
+$$</p>
+
+<p>如图6所示，</p>
+
+<p><img src="/assets/20220404/2022-04-12-10-42-49.png" alt="Figure 6" /></p>
+
+<blockquote style="text-align: center;">
+  <p><strong>图 6.</strong> 角放大率。点 $P$ 与其像 $P’$ 同时给出。</p>
+</blockquote>
+
+<h5 id="3-入瞳与出瞳entrance-and-exit-pupils">3. 入瞳与出瞳（entrance and exit pupils）</h5>
+
+<p>透镜的<strong>入瞳与出瞳</strong>系统对于限制分辨率以及聚光能力是重要的。</p>
+
+<p><strong>入瞳</strong>：由其前面的光学系统形成的光圈的图像，以最小角度与物体相对。</p>
+
+<p><strong>出瞳</strong>：通过整个系统形成的入瞳的像。</p>
+
+<p><strong>孔径光阑（aperture stop）</strong> 是其像形成入瞳的物理孔径。</p>
+
+<p>详情见图7 ~ 图9：</p>
+
+<p><img src="/assets/20220404/2022-04-12-15-10-14.png" alt="Figure 7" /></p>
+
+<blockquote style="text-align: center;">
+  <p><strong>图7.</strong> 透镜系统的入瞳与出瞳。复杂的透镜系统由许多镜共同组成，可以以整体看成一个黑盒子，由入瞳、出瞳以及复杂的传递函数制定。惠更斯（Huygens）球面波前会聚在点 $P$ 。</p>
+</blockquote>
+
+<p sytle="text-align: center;"><img src="/assets/20220404/220px-Apertures.jpg" alt="Figure 8" /></p>
+
+<p><strong>Figure 8.</strong> A camera lens adjusted for large and small aperture. The entrance pupil is the image of the physical aperture, as seen through the front (the object side) of the lens. The size and location may differ from those of the physical aperture, due to magnification by the lens.</p>
+
+<p><img src="/assets/20220404/220px-Camera_lens_exit_pupil.jpg" alt="Figure 9" /></p>
+
+<p><strong>Figure 9.</strong> The image side of the lens of an SLR camera; the exit pupil is the light area in the middle of the lens.</p>
+
+<h5 id="4-the-gaussian-reference-sphere">4. The Gaussian reference sphere</h5>
+
+<p><strong><em>The Gaussian reference sphere</em></strong> for an image point P is deﬁned as the sphere, centred on P, which passes through the intersection of the optic axis with the exit pupil (as shown in the Figure 7).</p>
+
+<p>For an unaberrated optical system, the surface of constant phase for a Huygens spherical wavelet converging toward P coincides with this reference sphere. <strong>The deviation of the wavefront from the Gaussian reference sphere speciﬁes the aberrations of the system</strong>.</p>
+
+<h5 id="5-the-longitudinal-magnification">5. The longitudinal magnification</h5>
+
+<p><strong><em>The longitudinal magniﬁcation</em></strong>, $M_z$, can be used to <strong>relate depth of ﬁeld to depth of focus</strong> (see below).</p>
+
+<p>Differentiation of $eqn(10)$,</p>
+
+<p>$$
+\begin{aligned}
+d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) &amp; = d\left(\frac{1}{f}\right) <br />
+-\frac{1}{V^2}dV - \frac{1}{U^2}dU &amp; = 0 \\ 
+\frac{dV}{dU} &amp; = - \frac{V^2}{U^2} <br />
+\end{aligned} \tag{14}
+$$</p>
+
+<p>Which makes,</p>
+
+<p>$$
+\frac{\Delta V}{\Delta U} = - M^2 = M_z
+$$</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEobGF0ZXJhbCBtYWduaWZpY2F0aW9uIE0pIC0tPiB8c3F1YXJlIG9mIHxCKGxvbmd0aXR1ZGluYWwgbWFnbmlmaWNhdGlvbiBNeikiLCJtZXJtYWlkIjpudWxsfQ" /></p>
+
+<p>For example the image planes conjugate to the upper and lower surfaces of an atom 0.3 nm ‘thick’ are separated by 3 m if the lateral magniﬁcation M is 100 000.</p>
+
+<h5 id="6-incoherent-imaging-theory">6. Incoherent imaging theory</h5>
+
+<p><strong><em>Incoherent imaging theory</em></strong> gives the depth of ﬁeld or range of focus values (referred to the object plane) over which an object point can be considered ‘in focus’ as</p>
+
+<p>$$
+Z_D = 2d/\theta = 2\lambda/\theta^2 \tag{15}
+$$</p>
+
+<p>where $\theta$ is the objective aperture semi-angle and $d$ is the microscope resolution. However, this result cannot be accurately applied to the coherent high-resolution imaging of phase objects (see Sections 3.4 and 5.2).</p>
+
+:ET
