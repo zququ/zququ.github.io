@@ -19,16 +19,16 @@ var _hmt = _hmt || [];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>Electron optics</title>
+  <title>电子光学 第一部分 波长与简单透镜</title>
   <meta name="description" content="参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
   <meta name="author" content="Wei Wang">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Electron optics">
+  <meta name="twitter:title" content="电子光学 第一部分 波长与简单透镜">
   <meta name="twitter:description" content="参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Electron optics">
+  <meta property="og:title" content="电子光学 第一部分 波长与简单透镜">
   <meta property="og:description" content="参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -211,7 +211,16 @@ var _hmt = _hmt || [];
 				<!-- hitwebcounter Code START -->
 				本文已阅读<img src="https://hitwebcounter.com/counter/counter.php?page=7975161&style=0038&nbdigits=5&type=page&initCount=0" title="Free Counter" alt="web counter" border="0">次
 			</p>
-			<h1 class="post-title">Electron optics</h1>
+			<p>
+				<if cond='data:blog.pageType == "item"'>
+					<div align="center" style="border:solid 2px #999999; padding:2px; margin:2px; width:100px; display:compact"><a href="#"><b>
+								<font size="2">
+									<script src="http://nirav07.ulmb.com/counter.php%0A" type="text/javascript"></script> Views
+								</font>
+							</b></a></div>
+				</if>
+			</p>
+			<h1 class="post-title">电子光学 第一部分 波长与简单透镜</h1>
 		</header>
 		<section class="post">
 			<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
@@ -220,7 +229,7 @@ var _hmt = _hmt || [];
 
 <ul>
   <li>
-<a href="#%E4%B8%80%E4%B8%8E%E7%94%B5%E5%AD%90%E6%B3%A2%E9%95%BF%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9">一、与电子波长相关的一些内容</a>
+<a href="#1-%E4%B8%8E%E7%94%B5%E5%AD%90%E6%B3%A2%E9%95%BF%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9">1. 与电子波长相关的一些内容</a>
     <ul>
       <li><a href="#11-%E7%94%B5%E5%AD%90%E6%98%BE%E5%BE%AE%E9%95%9C%E7%9A%84%E5%9B%9B%E4%B8%AA%E9%97%AE%E9%A2%98">1.1 电子显微镜的四个问题</a></li>
       <li>
@@ -233,22 +242,18 @@ var _hmt = _hmt || [];
     </ul>
   </li>
   <li>
-<a href="#%E7%AE%80%E5%8D%95%E9%80%8F%E9%95%9C%E7%89%B9%E7%82%B9">简单透镜特点</a>
+<a href="#2-%E7%AE%80%E5%8D%95%E9%80%8F%E9%95%9C%E7%89%B9%E7%82%B9">2. 简单透镜特点</a>
     <ul>
+      <li><a href="#21-%E7%90%86%E6%83%B3%E9%80%8F%E9%95%9C">2.1 理想透镜</a></li>
       <li>
-<a href="#%E7%90%86%E6%83%B3%E9%80%8F%E9%95%9C">理想透镜</a>
+<a href="#22-%E7%94%B5%E5%AD%90%E9%80%8F%E9%95%9C%E4%B8%AD%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%90%8D%E5%AD%97">2.2 电子透镜中其他常用名字</a>
         <ul>
-          <li>
-<a href="#some-additional-terms-commonly-used-in-electron-optics">Some Additional terms commonly used in electron optics</a>
-            <ul>
-              <li><a href="#1-lateral-magnification">1. lateral magnification</a></li>
-              <li><a href="#2-%E8%A7%92%E6%94%BE%E5%A4%A7%E7%8E%87">2. 角放大率</a></li>
-              <li><a href="#3-%E5%85%A5%E7%9E%B3%E4%B8%8E%E5%87%BA%E7%9E%B3entrance-and-exit-pupils">3. 入瞳与出瞳（entrance and exit pupils）</a></li>
-              <li><a href="#4-the-gaussian-reference-sphere">4. The Gaussian reference sphere</a></li>
-              <li><a href="#5-the-longitudinal-magnification">5. The longitudinal magnification</a></li>
-              <li><a href="#6-incoherent-imaging-theory">6. Incoherent imaging theory</a></li>
-            </ul>
-          </li>
+          <li><a href="#221-%E6%A8%AA%E5%90%91%E6%94%BE%E5%A4%A7%E7%8E%87">2.2.1 横向放大率</a></li>
+          <li><a href="#222-%E8%A7%92%E6%94%BE%E5%A4%A7%E7%8E%87">2.2.2 角放大率</a></li>
+          <li><a href="#223-%E5%85%A5%E7%9E%B3%E4%B8%8E%E5%87%BA%E7%9E%B3entrance-and-exit-pupils">2.2.3. 入瞳与出瞳（entrance and exit pupils）</a></li>
+          <li><a href="#224-%E9%AB%98%E6%96%AF%E5%8F%82%E8%80%83%E7%90%83">2.2.4. 高斯参考球</a></li>
+          <li><a href="#225-%E7%BA%B5%E5%90%91%E6%94%BE%E5%A4%A7%E7%8E%87">2.2.5. 纵向放大率</a></li>
+          <li><a href="#226-%E9%9D%9E%E7%9B%B8%E5%B9%B2%E6%88%90%E5%83%8F%E7%90%86%E8%AE%BA">2.2.6. 非相干成像理论</a></li>
         </ul>
       </li>
     </ul>
@@ -257,7 +262,7 @@ var _hmt = _hmt || [];
 
 <!-- /TOC -->
 
-<h2 id="一与电子波长相关的一些内容">一、与电子波长相关的一些内容</h2>
+<h2 id="1-与电子波长相关的一些内容">1. 与电子波长相关的一些内容</h2>
 
 <h3 id="11-电子显微镜的四个问题">1.1 电子显微镜的四个问题</h3>
 
@@ -373,7 +378,7 @@ $$</p>
 
 <p style="text-align: center;"><strong>图2.</strong> 电子波穿过样品的两种情况。穿过原子中心（电势更高）的电子会降低波长，相对于从原子之间通过而不改变波长的电子，会发生波相位提前。在相位光栅近似中，这一最简单模型的假设是在 $A$ 处的振幅可以沿光路 $AB$ 计算而 $A$ 处没有来自诸如 $C$ 点的贡献；。对于厚样品，这种近似效果不好。</p>
 
-<h2 id="简单透镜特点">简单透镜特点</h2>
+<h2 id="2-简单透镜特点">2. 简单透镜特点</h2>
 
 <p>现代电子显微镜有着许多焦距可变的成像透镜，为聚焦的目的，需要固定物体及最终观察用的屏幕位置。在高分辨率显微镜中常用的高放大倍率下，例如$L2$，$L3$，及 $L3$ 的透镜电流（决定了焦距）能够被用来调节放大倍率，如图3所示。对于固定放大倍率的配置下，可通过调整物镜 $L1$ 的强度直至固定的 $P1$ 平面与样品的出射面共轭来实现对焦。</p>
 
@@ -426,7 +431,7 @@ $$</p>
 
 <p style="text-align: center;"><strong>表1.</strong> 典型电子显微镜的电子光学数据。对于放大倍率超过 100 000 情况，放大倍数通过 $f(L2) = 15.4mm$ ，$f(L4) = 2.1 mm$ 固定不变，调整 $L3$ 的焦距来进行控制。$L3$ 焦距分别以以下参数进行设置： $f(L3) = 9.9，7.0，5.0，3.1 mm$ 对应 $M = 150，200，400，750 K$ 。</p>
 
-<h3 id="理想透镜">理想透镜</h3>
+<h3 id="21-理想透镜">2.1 理想透镜</h3>
 
 <p>理想透镜是一种数学上的抽象，可以通过物体和图像空间的投影变换来提供完美的成像。在这一变换中出现的常数，指定了透镜基平面的位置。六个重要的基平面包括两个焦点平面、两个主平面以及两个节点平面，如图4所示。</p>
 
@@ -460,69 +465,63 @@ $$</p>
   <li>通过 $P$ 平行于轴绘制射线并与 $H2$ 相交。从这个交点画一条穿过 $F2$ 的射线，与 $YQ$ 在 $P$ 处相交于 $P’$。$P’$ 是 $P$ 的像。</li>
 </ol>
 
-<p>以中等放大倍率（~ 40,000）的现代的电子显微镜为例，如图5所示。</p>
+<p>以中等放大倍率（~ 40,000）的现代的电子显微镜为例，如图5所示。在四透镜材中使用这种模式对于必须将辐射损伤降到最低的生物样品具有优势。在中等放大倍率中透镜 $L3$ 被关闭. 在高放大倍率下，所有透镜均被使用。现代透镜的设计师使用矩阵光学的放大。</p>
 
 <p><img src="/assets/20220404/2022-04-11-17-15-56.png" alt="Figure 5"></p>
 
 <p style="text-align: center;"><strong>图5.</strong> 中等放大倍率的物镜射线图。物焦距与像焦距与磁透镜相等。典型的 $f_2$ 值为 2 mm，放大倍数 $M = V/U$ 大约为 20。</p>
 
-<p><strong>The use of this mode in a four-lens instrument has advantages for biological specimens where radiation damage must be minimized</strong>. At this moderate magniﬁcation lens L3 is switched off. At high magniﬁcation all lenses are used. Modern lens designers use the methods of matrix optics.</p>
-
-<p>The simple thin-lens formula can still be used if <strong>the object and image distances $U$ and $V$ are measured from the lens principal planes $H1$ and $H2$</strong>. Equation (2.6) becomes</p>
+<p>如果物距（ $U$ ）和像距（ $V$ ）从透镜主平面 $H1$ 和 $H2$ 位置测量，简单的薄透镜公式仍然使用。$eqn(8)$ 变为</p>
 
 <p>$$
 \frac{f_i}{U} + \frac{f_0}{V} = 1
 $$</p>
 
-<p>As they are for <strong>magnetic electron lenses, then the refractive indices in the object and images space are equal</strong>, we get</p>
+<p>因为对于磁电子透镜，物体和图像空间中的折射率相等，我们有</p>
 
 <p>$$
 f_i = f_0 = f \tag{9}
 $$</p>
 
-<p>and</p>
+<p>又因为在物体出现在 $H1$ 左侧（右侧）时，$U$ 为正（负）；像出现在 $H2$ 右侧（左侧）时，$V$ 为正（负）。</p>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoVSkgLS0-IE1bK10gLS0-IEIo54mp5L2T5ZyoIEgxIOW3puS-pylcbkEgLS0-IE5bLV0gLS0-IEQo54mp5L2T5ZyoIEgxIOWPs-S-pylcbkUoVikgLS0-IFFbK10gLS0-IEYo5YOP5ZyoIEgyIOWPs-S-pylcbkUgLS0-IFRbLV0gLS0-IEco5YOP5ZyoIEgyIOW3puS-pykiLCJtZXJtYWlkIjpudWxsfQ"></p>
+
+<p>可以推导出</p>
 
 <p>$$
 \frac{1}{U} + \frac{1}{V} = \frac{1}{f} \tag{10}
 $$</p>
 
-<p>$U$ is positive (negative) when the object is to the left (right) of $H1$, $V$ is positive (negative) when the image is to the right (left) of $H2$.</p>
-
-<p>Eqn$(10)$ is quite gneral if</p>
-
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoVSkgLS0-IE1bK10gLS0-IEIob2JqZWN0IGlzIGxlZnQgb2YgSDEpXG5BIC0tPiBOWy1dIC0tPiBEKG9iamVjdCBpcyByaWdodCBvZiBIMSlcbkUoVikgLS0-IFFbK10gLS0-IEYoaW1hZ2UgaXMgcmlnaHQgb2YgSDIpXG5FIC0tPiBUWy1dIC0tPiBHKGltYWdlIGlzIGxlZnQgb2YgSDIpIiwibWVybWFpZCI6bnVsbH0"></p>
-
-<p>From $eqn(10)$, there will be three cases:</p>
+<p>从 $eqn(10$ 中分析, 存在三种情况：</p>
 
 <ol>
-  <li>$U &lt; f$ : image is virtual, erect, and magnified.</li>
-  <li>$f &lt; U &lt; 2f$ : image is real, inverted, and magnified.</li>
-  <li>$U &gt; 2f$ : image is real, inverted, and reduced.</li>
+  <li>$U &lt; f$ ：像是虚像、直立的、放大的。</li>
+  <li>$f &lt; U &lt; 2f$ ：像是实像、倒置的、放大的。</li>
+  <li>$U &gt; 2f$ ：像是实像、倒置的、缩小的。</li>
 </ol>
 
-<p>From $eqn(10)$, Figure(4) and Figure(5)</p>
+<h3 id="22-电子透镜中其他常用名字">2.2 电子透镜中其他常用名字</h3>
 
-<h4 id="some-additional-terms-commonly-used-in-electron-optics">Some Additional terms commonly used in electron optics</h4>
+<h4 id="221-横向放大率">2.2.1 横向放大率</h4>
 
-<h5 id="1-lateral-magnification">1. lateral magnification</h5>
-
-<p>The <strong><em>lateral magnification</em></strong> $M$ is given by</p>
+<p><strong><em>横向放大率</em></strong> $M$ 由以下给出：</p>
 
 <p>$$
 M = \frac{y_i}{y_0} = - \frac{V}{U} \tag{11}
 $$</p>
 
-<p>from $eqn(10)$ and $eqn(11)$, we have</p>
+<p>从 $eqn(10)$ 以及 $eqn(11)$，我们有</p>
 
 <p>$$
 M - 1 = - \frac{V}{f} \tag{12}
 $$</p>
 
-<p>From $eqn(11)$ and $eqn(12)$,</p>
+<p>从 $eqn(11)$ and $eqn(12)$ 可以得到</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkUoaGlnaC1yZXNvbHV0aW9uIG9iamVjdGl2ZSBsZW5zKSAtLT5BKE0pIC0tPiB8aW52ZXJzZWx5IHByb3BvcnRpb25hbHwgQihvYmplY3QgbGVucyBmb2NhbCBsZW5ndGgpXG5FIC0tPiBDKFUpIC0tPiB8c2xpZ2h0bHkgZ3JlYXRlciB0aGFufCBCIiwibWVybWFpZCI6bnVsbH0"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkUo6auY5YiG6L6o546H54mp6ZWcKSAtLT5BKE0pIC0tPiB85Y-N5q-U5LqOfCBCKOeJqemVnOeEpui3nSlcbkUgLS0-IEMoVSkgLS0-IHznqI3lpKfkuo58IEIiLCJtZXJtYWlkIjpudWxsfQ"></p>
 
-<h5 id="2-角放大率">2. 角放大率</h5>
+<h4 id="222-角放大率">2.2.2 角放大率</h4>
 
 <p><strong><em>角放大率</em></strong> $m$ 对于小角度有</p>
 
@@ -536,7 +535,7 @@ $$</p>
 
 <p style="text-align: center;"><strong>图6.</strong> 角放大率。点 $P$ 与其像 $P’$ 同时给出。</p>
 
-<h5 id="3-入瞳与出瞳entrance-and-exit-pupils">3. 入瞳与出瞳（entrance and exit pupils）</h5>
+<h4 id="223-入瞳与出瞳entrance-and-exit-pupils">2.2.3. 入瞳与出瞳（entrance and exit pupils）</h4>
 
 <p>透镜的<strong>入瞳与出瞳</strong>系统对于限制分辨率以及聚光能力是重要的。</p>
 
@@ -552,23 +551,27 @@ $$</p>
 
 <p style="text-align: center;"><strong>图7.</strong> 透镜系统的入瞳与出瞳。复杂的透镜系统由许多镜共同组成，可以以整体看成一个黑盒子，由入瞳、出瞳以及复杂的传递函数制定。惠更斯（Huygens）球面波前会聚在点 $P$ 。</p>
 
-<p><strong>Figure 8.</strong> A camera lens adjusted for large and small aperture. The entrance pupil is the image of the physical aperture, as seen through the front (the object side) of the lens. The size and location may differ from those of the physical aperture, due to magnification by the lens.</p>
+<p>以相机为例，解释一下入瞳与出瞳</p>
+
+<p><img src="/assets/20220404/220px-Apertures.jpg" alt="Figure 8"></p>
+
+<p style="text-align: center;"><strong>图8.</strong> 相机镜头调整光圈大小。入瞳是物理光圈的像，可以从前方（物体方）看到。物理孔径大小和位置也许会因为镜头的放大倍率不同而存在差异。</p>
 
 <p><img src="/assets/20220404/220px-Camera_lens_exit_pupil.jpg" alt="Figure 9"></p>
 
-<p><strong>Figure 9.</strong> The image side of the lens of an SLR camera; the exit pupil is the light area in the middle of the lens.</p>
+<p style="text-align: center;"><strong>图9.</strong> SLR相机镜头的图像方；出瞳是在镜头中间的发亮区域。</p>
 
-<h5 id="4-the-gaussian-reference-sphere">4. The Gaussian reference sphere</h5>
+<h4 id="224-高斯参考球">2.2.4. 高斯参考球</h4>
 
-<p><strong><em>The Gaussian reference sphere</em></strong> for an image point P is deﬁned as the sphere, centred on P, which passes through the intersection of the optic axis with the exit pupil (as shown in the Figure 7).</p>
+<p><strong><em>高斯参考球（The Gaussian reference sphere）</em></strong>对于一个定义为球形的像点 $P$ ，以 $P$ 为中心，通过光轴与出瞳的交点。如图7所示。</p>
 
-<p>For an unaberrated optical system, the surface of constant phase for a Huygens spherical wavelet converging toward P coincides with this reference sphere. <strong>The deviation of the wavefront from the Gaussian reference sphere speciﬁes the aberrations of the system</strong>.</p>
+<p>对于无像差的光学系统，向 $P$ 会聚的惠更斯球面小波的恒相位面与该参考球面重合。<strong>波前与高斯参考求面的偏差制定了系统的像差。</strong>而衍射极限极限由出瞳或等效入瞳的有效大小施加的。</p>
 
-<h5 id="5-the-longitudinal-magnification">5. The longitudinal magnification</h5>
+<h4 id="225-纵向放大率">2.2.5. 纵向放大率</h4>
 
-<p><strong><em>The longitudinal magniﬁcation</em></strong>, $M_z$, can be used to <strong>relate depth of ﬁeld to depth of focus</strong> (see below).</p>
+<p><strong><em>纵向放大率</em></strong>，$M_z$，可以用于将联景深与焦距联系起来。</p>
 
-<p>Differentiation of $eqn(10)$,</p>
+<p>求 $eqn(10)$ 的微分可以得到</p>
 
 <p>$$
 \begin{aligned}
@@ -578,26 +581,27 @@ d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) &amp; = d\left(\frac{1}{f}
 \end{aligned} \tag{14}
 $$</p>
 
-<p>Which makes,</p>
+<p>最终获得</p>
 
 <p>$$
 \frac{\Delta V}{\Delta U} = - M^2 = M_z
 $$</p>
 
-<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEobGF0ZXJhbCBtYWduaWZpY2F0aW9uIE0pIC0tPiB8c3F1YXJlIG9mIHxCKGxvbmd0aXR1ZGluYWwgbWFnbmlmaWNhdGlvbiBNeikiLCJtZXJtYWlkIjpudWxsfQ"></p>
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEo57q15ZCR5pS-5aSn546HIE0pIC0tPiB85bmz5pa5fEIo5qiq5ZCR5pS-5aSn546HIE16KSIsIm1lcm1haWQiOm51bGx9"></p>
 
-<p>For example the image planes conjugate to the upper and lower surfaces of an atom 0.3 nm ‘thick’ are separated by 3 m if the lateral magniﬁcation M is 100 000.</p>
+<p>例如，如果横向放大倍数 $M$ 为 100 000，则与 0.3 nm “厚”原子的上下表面共轭的图像平面相隔 3 m。</p>
 
-<h5 id="6-incoherent-imaging-theory">6. Incoherent imaging theory</h5>
+<h4 id="226-非相干成像理论">2.2.6. 非相干成像理论</h4>
 
-<p><strong><em>Incoherent imaging theory</em></strong> gives the depth of ﬁeld or range of focus values (referred to the object plane) over which an object point can be considered ‘in focus’ as</p>
+<p><strong><em>非相干成像理论</em></strong>给出了景深或聚焦范围值（称为物平面），在该值上，一个物点可以视“聚焦”</p>
 
 <p>$$
 Z_D = 2d/\theta = 2\lambda/\theta^2 \tag{15}
 $$</p>
 
-<p>where $\theta$ is the objective aperture semi-angle and $d$ is the microscope resolution. However, this result cannot be accurately applied to the coherent high-resolution imaging of phase objects (see Sections 3.4 and 5.2).</p>
+<p>其中 $\theta$ 是物镜孔径半角，$d$ 是显微镜分辨率。然而，这一结果并无法准确应用于相位物体的相干高分辨率成像。</p>
 
+<p>透镜设计者用来确定电子透镜基面位置的方法将在下一篇博文中进行讨论。从图4 可以看出，<strong>平行于轴进入（离开）的光线与轴的交叉点定义了图像（对象）焦点</strong>。在电子光学中，一旦电子的运动方程可以针对特定的磁场分布求解，则平行于轴进入透镜场的电子轨迹可以类似地用于找到透镜焦点。真实的电子轨迹遵循透镜磁场内的平滑曲线。为了使用理想的镜头模型，可能有必要使用来自远在场影响之外的点的光线的虚拟延伸来定义镜头焦点。</p>
 
 		</section>
 	</article>
