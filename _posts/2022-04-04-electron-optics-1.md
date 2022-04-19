@@ -2,7 +2,7 @@
 layout: post
 title: 电子光学 第一部分 波长与简单透镜
 date: 2022-04-04 11:18:00:24.000000000 +09:00
-tags: cryo-EM
+tags: TEM
 ---
 
 参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。
@@ -61,7 +61,7 @@ $$
 eV_0 = p^2/2m = h^2/2m\lambda^2 \tag{1}
 $$
 
-其中 $P$ 为 电子的动量，而 $h$ 为 ***Plank's*** 常量。
+其中 $P$ 为 电子的动量，而 $h$ 为 ***Plank's*** 常量。PS：$eV$ 代表电子伏特，是能量单位，代表一个电子经过 1 伏特电位差加速后获得的动量。$1 eV = 1.6021766208(98) \times 10^{-19} J$ 
 
 $$
 \lambda = \frac{h}{\sqrt{2meV_0}} \tag{2}
@@ -158,7 +158,7 @@ $$
 
 ![Figure 3](/assets/20220404/2022-04-06-222144.png){: height="500"}
 
-**图3.** 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 ，$D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。
+**图3.** 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 $D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。
 {: style="text-align: center;"}
 
 

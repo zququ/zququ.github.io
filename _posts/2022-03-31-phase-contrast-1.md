@@ -2,7 +2,7 @@
 layout: post
 title: Preliminaries of TEM
 date: 2022-03-31 15:57:55:24.000000000 +09:00
-tags: cryo-EM
+tags: TEM
 ---
 
 All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.
