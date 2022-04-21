@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zququ's blog</title>
+    <title>曲泽慧（Zehui Qu）</title>
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Apr 2022 12:50:43 +0800</pubDate>
-    <lastBuildDate>Thu, 21 Apr 2022 12:50:43 +0800</lastBuildDate>
+    <pubDate>Thu, 21 Apr 2022 14:59:05 +0800</pubDate>
+    <lastBuildDate>Thu, 21 Apr 2022 14:59:05 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -104,7 +104,7 @@ $$&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图4&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;使用其他光学课本中的一些估计值，$eqn(12)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜钱包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：&lt;/p&gt;
+&lt;p&gt;使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜钱包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：&lt;/p&gt;
 
 &lt;p&gt;$$
 \frac{d^2r}{dz^2} + \frac{e}{8mV_r}B_z^2(z)r = 0 \tag{3}
@@ -141,7 +141,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/20220419/Cylindrical_coordinate_surfaces_2.gif&quot; alt=&quot;Figure 6&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;图6.&lt;/strong&gt; 柱坐标面。三个正交分量，$\rho$ （绿色）、$\varphi$ （红色）、$z$ （蓝色），图中每个分量都以恒定速率增加。该点位于三个彩色表面之间的交点处。&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图6.&lt;/strong&gt; 柱坐标面。三个正交分量，$\rho$ （绿色）、$\varphi$ （红色）、$z$ （蓝色），图中每个分量都以恒定速率增加。该点位于三个彩色表面之间的交点处。&lt;/p&gt;
 
 &lt;p&gt;相似的，也能够得到子午线的螺旋旋转方程。在这个平面的旋转可以用以下关系给出，&lt;/p&gt;
 
