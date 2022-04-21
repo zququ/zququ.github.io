@@ -194,6 +194,15 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/12/disassembly-in-mac/" title="访问 C语言 如何利用mac xcode实现C语言反汇编">C语言 如何利用mac xcode实现C语言反汇编</a></h2>
+      <p class="excerpt">今天谈一下，如何利用mac系统下的xcode实现类似于windows系统下microsoft visual C++的反汇编功能。(1) 首先安装xcode(2) 按顺序在菜单栏目依次选择：file –&gt; new –&gt; Project…(3) 在新弹出的菜单栏中在最上面选择macos标签页下的Command Line Tool图标，如图所示：(4) 在新弹出的菜单栏中的Language选项栏中选择C，(5) 主界面上左侧菜单栏中会出现两个文件夹分别存放代码以及编译好的程序，(6)...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-12-13 09:51:24 +0800" class="post-list__meta--date date">2019-12-13</time> • <span class="post-list__meta--tags tags">C语言</span><a class="btn-border-small" href="/2019/12/disassembly-in-mac/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/12/assembly-language-42/" title="访问 汇编语言 10.4 10.5 10.6 转移的目的地址在指令，寄存器以及内存中的call指令">汇编语言 10.4 10.5 10.6 转移的目的地址在指令，寄存器以及内存中的call指令</a></h2>
       <p class="excerpt">10.4 转移的目的地址在指令中的call指令前面讲的call指令，其对应的及其指令中并没有转移的目的地址，而是相对于当前IP的转移位移。“call far ptr 标号”实现的是段间转移。CPU执行此种格式的call指令时，进行如下的操作。      (sp)=(sp)-2 ((ss)*16+(sp))=(CS)(sp)=(sp)-2((ss)*16+(sp))=(IP)        (CS)=标号所在段的段地址(IP)=标号在段中的偏移地址  从上面的描述中可以看出，如果我们用汇编语...…</p>
       <div class="post-list__meta">
@@ -274,15 +283,6 @@ var _hmt = _hmt || [];
       <hr class="post-list__divider">
     </li>
     
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/12/assembly-language-38/" title="访问 汇编语言 9.7 9.8 jcxz loop 指令">汇编语言 9.7 9.8 jcxz loop 指令</a></h2>
-      <p class="excerpt">9.7 jcxz 指令jcxz 指令为有条件转移指令，所有的有条件转移指令都是短转移，在对应的机器码中包含转移的位移，而不是目的地址。对IP的修改范围都为：-128~127。指令格式：jcxz 标号(如果(cx)=0, 转移到标号处执行。)操作：当(cx)=0时，(IP)=(IP)+8位位移；8位位移 = 标号处的地址 - jcxz指令后的第一个字节的地址；8位位移的范围为-128~127，用补码表示；8位位移由编译程序在编译时算出。当(cx)!=0时，程序继续向下执行。我们从jcxz的功...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-12-02 21:19:24 +0800" class="post-list__meta--date date">2019-12-02</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/12/assembly-language-38/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
   </ol>
 
   <hr class="post-list__divider ">
@@ -291,7 +291,7 @@ var _hmt = _hmt || [];
     
         <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/page/4/#blog">← Recent Posts</a>
     
-    <span class="pagination__page-number">5 / 13</span>
+    <span class="pagination__page-number">5 / 14</span>
     
         <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/page/6/#blog">Earlier Posts →</a>
     

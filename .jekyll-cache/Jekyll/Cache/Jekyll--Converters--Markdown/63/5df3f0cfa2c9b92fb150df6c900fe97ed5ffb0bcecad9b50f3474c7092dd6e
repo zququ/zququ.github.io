@@ -1,4 +1,4 @@
-I"AD<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
+I"�D<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
 
 <!-- TOC GFM -->
 
@@ -64,7 +64,7 @@
 
 \[eV_0 = p^2/2m = h^2/2m\lambda^2 \tag{1}\]
 
-<p>其中 $P$ 为 电子的动量，而 $h$ 为 <strong><em>Plank’s</em></strong> 常量。</p>
+<p>其中 $P$ 为 电子的动量，而 $h$ 为 <strong><em>Plank’s</em></strong> 常量。PS：$eV$ 代表电子伏特，是能量单位，代表一个电子经过 1 伏特电位差加速后获得的动量。$1 eV = 1.6021766208(98) \times 10^{-19} J$</p>
 
 \[\lambda = \frac{h}{\sqrt{2meV_0}} \tag{2}\]
 
@@ -137,7 +137,7 @@
 
 <p><img src="/assets/20220404/2022-04-06-222144.png" alt="Figure 3" height="500" /></p>
 
-<p style="text-align: center;"><strong>图3.</strong> 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 ，$D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。</p>
+<p style="text-align: center;"><strong>图3.</strong> 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 $D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。</p>
 
 <table>
   <thead>

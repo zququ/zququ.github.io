@@ -116,8 +116,8 @@ $eqn(3)$ 是具有两个线性独立解的二阶线性微分方程，描述的�
 
 $$
 \begin{aligned}
-x & = \rho\cos{\varphi} \\
-x & = \rho\sin{\varphi} \\
+x & = \rho\cos{\varphi} \\ 
+x & = \rho\sin{\varphi} \\ 
 z & = z
 \end{aligned}
 $$
@@ -152,10 +152,10 @@ $eqn(3)$ 如在可以忽略掉场对于 $z$ 的依赖性会变得很容易求解
 如果坐标的原点位于极片间隙（长度为 $S$ ）中间的平面上，则 $z$ 方向上的场常数由以下给出，
 
 $$
-B_z(z)
+B_{z}(z)
 \begin{cases}
-= B_p & \text{ for $-S/2$ $\le$ $z$ $\le$ $S/2$ } \\
-= 0 & \text{ elsewhere } 
+=B_{p} & \text { for }-S / 2 \leq z \leq S / 2 \\ 
+=0 & \text { elsewhere }
 \end{cases} \tag{5}
 $$
 
