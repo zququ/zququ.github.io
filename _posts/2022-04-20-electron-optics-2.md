@@ -135,6 +135,7 @@ $$
 ![Figure 6](/assets/20220419/Cylindrical_coordinate_surfaces_2.gif) 
 
 **图6.** 柱坐标面。三个正交分量，$\rho$ （绿色）、$\varphi$ （红色）、$z$ （蓝色），图中每个分量都以恒定速率增加。该点位于三个彩色表面之间的交点处。
+{: style="text-align: center;"}
 
 相似的，也能够得到子午线的螺旋旋转方程。在这个平面的旋转可以用以下关系给出，
 
