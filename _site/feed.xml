@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Apr 2022 12:45:49 +0800</pubDate>
-    <lastBuildDate>Thu, 21 Apr 2022 12:45:49 +0800</lastBuildDate>
+    <pubDate>Thu, 21 Apr 2022 12:50:43 +0800</pubDate>
+    <lastBuildDate>Thu, 21 Apr 2022 12:50:43 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -78,7 +78,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;透镜极片的重要区域的实际布置见图2。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/zququ.github.io/assets/20220419/2022-04-19-13-56-40.png&quot; alt=&quot;Figure 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/20220419/2022-04-19-13-56-40.png&quot; alt=&quot;Figure 2&quot; /&gt;&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图2.&lt;/strong&gt; 实际中高分辨率极片的细节。在这种商业设计中，上极片孔径 $2R1$ 为 9 mm，下极片孔径 $2R2$ 为 3 mm，间隙 $S$ 为 5 mm。近轴射线方程&lt;/p&gt;
 
