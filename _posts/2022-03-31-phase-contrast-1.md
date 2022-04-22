@@ -1,60 +1,70 @@
 ---
 layout: post
-title: Preliminaries of TEM
+title: TEM 准备知识
 date: 2022-03-31 15:57:55:24.000000000 +09:00
 tags: TEM
 ---
 
-All contents are summarised from High-Resolution Electron Microscopy (Fourth Edition, Oxford university press) of John C. H. Spence.
+参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。
 
 <!-- TOC GFM -->
 
-* [Elementary principles of phase-contrast TEM imaging](#elementary-principles-of-phase-contrast-tem-imaging)
-	- [A Simple Optical Bench Experiment](#a-simple-optical-bench-experiment)
-	- [Discussion about How to Increase Contrast](#discussion-about-how-to-increase-contrast)
+* [像差 TEM 成像的基本原理](#像差-tem-成像的基本原理)
+	- [一个简单的光学台架实验](#一个简单的光学台架实验)
+	- [如何提高衬度](#如何提高衬度)
 	- [The Reason why Coherent but not Incoherent Illumination](#the-reason-why-coherent-but-not-incoherent-illumination)
 	- [How to Increase Coherent in TEM](#how-to-increase-coherent-in-tem)
 * [Instrumental Requirement for high resolution](#instrumental-requirement-for-high-resolution)
 
 <!-- /TOC -->
 
-## Elementary principles of phase-contrast TEM imaging
+## 像差 TEM 成像的基本原理
 
-### A Simple Optical Bench Experiment
+### 一个简单的光学台架实验
 
-Here is the optical bench arrangement to record the images:
+这里介绍一个记录成像的光学台架实验
 
-![The optical bench arrangement to record the images](/assets/2022-03-31/20220331_1.png)
+![Figure 1](/assets/2022-03-31/20220331_1.png)
 
-**Figure 1.** Here L1 is a ×40 microscope objective lens at the focus of which is placed a pin-hole aperture P. Lenses L2 and L3 have a focal length of f0 = 14 cm. The object is shown at O and the film plane at F; distances are Y =30cm, U = 17 cm, and V = 80 cm. The pin-hole aperture is used as a spatial filter to provide more uniform illumination. Back-focal plane masks may be inserted at M.
+**图1.** 图中是一个用于记录成像的光具座装置。其中 $L1$ 是一个 $\times40$ 显微镜物镜，其焦点处放置了一个针孔光圈（aperture） $P$ 。透镜 $L2$ 以及 $L3$ 的焦距为 $f_{0}=$ 14 cm。物体在 $O$ 处显示，成像平面在 $F$ 处； 距离 $Y=$ 30 cm，$U =$ 17cm，而 $V=$ 80cm。针孔光圈起到空间滤波器（spatial filter）的作用，以提供更加均匀一致的光照。可在 $M$ 处插入后焦平面（back-focal plane）的掩模（masks）。
+{: style="text-align: center;"}
 
-![Figure 2](/assets/2022-03-31/2022-03-31_2.png)
+![Figure 2](/assets/2022-03-31/2022-03-31_2.png){: height= "450"}
 
-**Figure 2.** Optical through-focus series showing the effect of focus changes on the image of a small indentation in a glass plate (phase object). The image at (a) was recorded under-focus, that is, with the object too close to the lens L3. It shows a bright fringe surrounding the indentation similar to that seen on electron micrographs of small holes; image (b) is recorded at exact focus and shows only very faint contrast; image (c\) is recorded at an over-focus setting (object too far from L3) and so shows a dark Fresnel fringe outlining the indentation. The background fringes arise in the illuminating system.
+**图2.** 光学通过焦点系列显示焦点变化对于玻璃板中的一个小凹槽（相位对象）的成像影响。（a）中图像为欠焦（under-focus）情况下拍摄的，即物体与 $L3$ 透镜太近了。欠焦时，凹槽周围又一圈明亮的边缘（fringe），类似于小孔的电子显微经照片中观察到的边缘。（b）为精确对焦的情况，显示出非常微弱的衬度。（c）为过焦（over-focus）设置下的情况，即物体离 $L3$ 太远，因此在凹槽周围显现出黑色的菲涅尔条纹（Fresnel fringe）。图中可以看到照明系统所引起的背景条纹。
+{: style="text-align: center;"}
 
-The result sugested:
 
-High-resolution specimens will be imaged with strong contrast only if a **coherent source of illumination is used (if not see Figure 3)** and if **images are recorded slightly out of focus (defocus)**.
+下图3展示了与图2中相同的物体在传统的钨灯泡光源下成像的情况，作为**非相干光源**条件。尽管在实验中对焦值进行了大范围调整，对比对度依旧很差。
 
-Figure 3 shows the same object imaged using a conventional tungsten lamp-bulb as the source of illumination to provide ***‘incoherent’*** illumination conditions. **Despite wide changes in focus, little contrast appears**.
+![Figure 3](/assets/2022-03-31/2022-04-01-16-53-33.png) {: height= "150"}
 
-![Figure 3](/assets/2022-03-31/2022-04-01-16-53-33.png) 
+**图3.** 采用与图2(a)中相同的条件显示图像，其中光源替换为对焦在物体上的钨灯泡临界照明（critical illumination）。图中看到的微弱的衬度，是由于限制了透镜 $L2$ 的尺寸而是使得引入的照明保留了一些相干性。如果使用大镜头会使得衬度完全消失。该透镜（或其附近的光圈）大小的变化类似于电子显微镜中聚光镜（condensor）光圈大小的变化。注：临界照明指一类适用于小投影物的聚光系统，聚光镜将光源的像成在投影物上或它的附近，如放映机、幻灯机等。
+{: style="text-align: center;"}
 
-**Figure 3.** An image recorded under identical conditions to that shown in Figure 2(a), with the laser source replaced with a tungsten lamp focused onto the object (critical illumination). The faint contrast seen is due to the preservation of some coherence in the illumination introduced by limiting the size of lens L2. This contrast disappears completely if a large lens is used. Variations in the size of this lens (or an aperture near it) are analogous to changes in the size of the second condenser aperture in an electron microscope.
+以上两个实验结果表明了：
 
-### Discussion about How to Increase Contrast
+高分辨率的样品如果要获得强衬度，只有通过以下两种方法：
 
-1. **Reducing the size of the objective aperture.**
+1. 使用相关光源。
+2. 以轻微欠焦的模式记录成像。
+
+### 如何提高衬度
+
+1. **缩小物镜光圈的大小。**
 
 	Not useful, since image resolution is necessarily limited, as seen in Figure 4.
+	并不实用，因为会影响图像的分辨率，而图像分辨率往往很有限，如图4。
 
 	![Figure 4](/assets/2022-03-31/2022-04-01-10-46-56.png)
 
-	**Figure 4.** A small aperture has been placed on the axis at M, **severely limiting the image resolution**. On removing this aperture the image contrast disappears. The use of a small aperture at M (the back-focal plane) is analogous to the normal low-resolution method of obtaining contrast in biological electron microscopy.
+	**图4.** 在光轴 $M$ 处放置一个小光圈，严重的限制了图像的分辨率。当移除此光圈，图像的衬度消失。在后焦平面 $M$ 点处使用小光圈类似于在生物电子显微镜中获得衬度的正常低分辨率方法。
+	{: style="text-align: center;"}
 
-2. **Introducing a focusing error as in Figure 2(a).**
+2. **引入聚焦"错误"**，如图2(a)所示。
 
-3. **Simple interventions in the lens back-focal plane as in Figure 5, where Schlieren contrast is shown (the back-focal plane is approximately the plane of the objective aperture for an electron microscope).**
+3. **对后焦平面透镜的简单干预**，如下图5所示，其中显示了纹影衬度（Schlieren contrast），后焦平面大约是电子显微镜物镜光圈的平面。
+, where Schlieren contrast is shown (the back-focal plane is approximately the plane of the objective aperture for an electron microscope).**
 
 	![Figure 5](/assets/2022-03-31/2022-04-01-17-00-41.png) 
 
