@@ -64,11 +64,10 @@ tags: TEM
 2. **引入聚焦"错误"**，如图2(a)所示。
 
 3. **对后焦平面透镜的简单干预**，如下图5所示，其中显示了纹影衬度（Schlieren contrast），后焦平面大约是电子显微镜物镜光圈的平面。
-, where Schlieren contrast is shown (the back-focal plane is approximately the plane of the objective aperture for an electron microscope).**
 
 	![Figure 5](/assets/2022-03-31/2022-04-01-17-00-41.png) 
 
-	**Figure 6.** A razor blade has been placed across the beam at M, thus preventing exactly half the diﬀraction pattern from contributing to the image. The resulting image is approximately proportional to the derivative of the phase shift introduced by the object taken in a direction normal to the edge of the razor blade. Notice the fine fringes inside the edge of the indentation arising from multiple reflection within the glass slide.
+	**图5.** +	**Figure 6.** A razor blade has been placed across the beam at M, thus preventing exactly half the diﬀraction pattern from contributing to the image. The resulting image is approximately proportional to the derivative of the phase shift introduced by the object taken in a direction normal to the edge of the razor blade. Notice the fine fringes inside the edge of the indentation arising from multiple reflection within the glass slide.
 
 4. **the use of back-focal plane phase plates, similar to the Zernike phase plate used in optical microscopy.**
 
@@ -77,6 +76,7 @@ tags: TEM
 	1. Zernike type phase plate, generate circularly symmetric modulation pattern. The images produced using such phase plates exhibit **isotropic contrast features** around objects.
 	2. Hilbert type, these devices modulate the diffracted wave asymmetrically **giving rise to anisotropic contrast** in the images.
 	<br>
+
 
 	![Figure 7](/assets/2022-03-31/PhasePlate.jpg)
 
@@ -155,8 +155,6 @@ A laboratory which has recently purchased a TEM and wishes to use it for high-re
 5. A vacuum of 0.5 × 10−7 Torr or better is needed.
 6. The high-voltage supply of the microscope must be suﬃciently stable to allow high-resolution images to be obtained.
 7. The room containing the microscope must be easily darkened completely, and a room-light dimmer control needs to be ﬁtted within arm’s reach of the operator’s chair.
-
-
 
 
 
