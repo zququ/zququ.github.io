@@ -84,7 +84,7 @@ tags: TEM
 
 	![Figure 7](/assets/2022-03-31/2022-04-02-15-42-41.png)
 
-	**图7.**（a）装备 Zernike 相位板的电子透射电镜光学布局。（b）未使用 Zernike 相位板（实线）以及未使用相位板（虚线）时，衬度传递函数（contrast transfer function）的模。$kCO$ 是相位板的截止频率；参数：欠焦值 0；球差（spherical aberration） 5 mm；加速电压 300 kV。
+	**图7.**（a）装备 Zernike 相位板的电子透射电镜光学布局。（b）未使用 Zernike 相位板（实线）以及未使用相位板（虚线）时，衬度传递函数（contrast transfer function）的模。$k_{CO}$ 是相位板的截止频率；参数：欠焦值 0；球差（spherical aberration） 5 mm；加速电压 300 kV。
 
 	![Figure 8](/assets/2022-03-31/2022-04-02-16-04-42.png)
 
