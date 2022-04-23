@@ -1,4 +1,4 @@
-I"�3<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
+I"�2<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
 
 <!-- TOC GFM -->
 
@@ -30,9 +30,9 @@
 
 <p style="text-align: center;"><strong>图2.</strong> 光学通过焦点系列显示焦点变化对于玻璃板中的一个小凹槽（相位对象）的成像影响。（a）中图像为欠焦（under-focus）情况下拍摄的，即物体与 $L3$ 透镜太近了。欠焦时，凹槽周围又一圈明亮的边缘（fringe），类似于小孔的电子显微经照片中观察到的边缘。（b）为精确对焦的情况，显示出非常微弱的衬度。（c）为过焦（over-focus）设置下的情况，即物体离 $L3$ 太远，因此在凹槽周围显现出黑色的菲涅尔条纹（Fresnel fringe）。图中可以看到照明系统所引起的背景条纹。</p>
 
-<p>图3展示了与图2中相同的物体在传统的钨灯泡光源下成像的情况，作为<strong>非相干光源</strong>条件。尽管在实验中对焦值进行了大范围调整，对比对度依旧很差。</p>
+<p>下图3展示了与图2中相同的物体在传统的钨灯泡光源下成像的情况，作为<strong>非相干光源</strong>条件。尽管在实验中对焦值进行了大范围调整，对比对度依旧很差。</p>
 
-<p><img src="/assets/2022-03-31/2022-04-01-16-53-33.png" alt="Figure 3" /> {: height= ‘150’;}</p>
+<p><img src="/assets/2022-03-31/2022-04-01-16-53-33.png" alt="Figure 3" /> {: height= “150”}</p>
 
 <p style="text-align: center;"><strong>图3.</strong> 采用与图2(a)中相同的条件显示图像，其中光源替换为对焦在物体上的钨灯泡临界照明（critical illumination）。图中看到的微弱的衬度，是由于限制了透镜 $L2$ 的尺寸而是使得引入的照明保留了一些相干性。如果使用大镜头会使得衬度完全消失。该透镜（或其附近的光圈）大小的变化类似于电子显微镜中聚光镜（condensor）光圈大小的变化。注：临界照明指一类适用于小投影物的聚光系统，聚光镜将光源的像成在投影物上或它的附近，如放映机、幻灯机等。</p>
 
@@ -59,29 +59,29 @@
     <p style="text-align: center;"><strong>图4.</strong> 在光轴 $M$ 处放置一个小光圈，严重的限制了图像的分辨率。当移除此光圈，图像的衬度消失。在后焦平面 $M$ 点处使用小光圈类似于在生物电子显微镜中获得衬度的正常低分辨率方法。</p>
   </li>
   <li>
-    <p><strong>Introducing a focusing error as in Figure 2(a).</strong></p>
+    <p><strong>引入聚焦”错误”</strong>，如图2(a)所示。</p>
   </li>
   <li>
-    <p><strong>Simple interventions in the lens back-focal plane as in Figure 5, where Schlieren contrast is shown (the back-focal plane is approximately the plane of the objective aperture for an electron microscope).</strong></p>
+    <p><strong>对后焦平面透镜的简单干预</strong>，如下图5所示，其中显示了纹影衬度（Schlieren contrast），后焦平面大约是电子显微镜物镜光圈的平面。</p>
 
     <p><img src="/assets/2022-03-31/2022-04-01-17-00-41.png" alt="Figure 5" /></p>
 
-    <p><strong>Figure 6.</strong> A razor blade has been placed across the beam at M, thus preventing exactly half the diﬀraction pattern from contributing to the image. The resulting image is approximately proportional to the derivative of the phase shift introduced by the object taken in a direction normal to the edge of the razor blade. Notice the fine fringes inside the edge of the indentation arising from multiple reflection within the glass slide.</p>
+    <p><strong>图5.</strong> 将一个剃须刀片放置在 $M$ 处的光束上，这样防止正好一半的衍射图案对图像产生影响。所得到的的图像与物体在垂直于刀片边缘的方向上所引入的相移的导数大致成正比。注意由载玻片内的多次反射引起的凹槽边缘内的细条纹。</p>
   </li>
   <li>
-    <p><strong>the use of back-focal plane phase plates, similar to the Zernike phase plate used in optical microscopy.</strong></p>
+    <p><strong>后焦平面相位板（phase plates）的使用</strong>，类似于光学显微镜中使用的 Zernike 相位板</p>
 
-    <p>Phase plates for TEM can be divided into two groups by the symmetry of the modulation pattern they produce:
- <br /></p>
+    <p>TEM 的相位板可以通过他们产生的调制模式的对称性分为两组：</p>
+
     <ol>
-      <li>Zernike type phase plate, generate circularly symmetric modulation pattern. The images produced using such phase plates exhibit <strong>isotropic contrast features</strong> around objects.</li>
-      <li>Hilbert type, these devices modulate the diffracted wave asymmetrically <strong>giving rise to anisotropic contrast</strong> in the images.
- <br /></li>
+      <li>Zernike 型相位板，产生圆对称调制模式。使用这种相位板产生的图像在物体周围表现出各向同性对比度特征。</li>
+      <li>希尔伯特型相位板，这些设备不对称地调制衍射波，在图像中产生各向异性的对比度特征。
+ <br />
+ <br />
+ <img src="/assets/2022-03-31/PhasePlate.jpg" alt="Figure 6" /></li>
     </ol>
 
-    <p><img src="/assets/2022-03-31/PhasePlate.jpg" alt="Figure 7" /></p>
-
-    <p><strong>Figure 7.</strong> Different kinds of phase plates</p>
+    <p style="text-align: center;"><strong>图6.</strong> 不同类型的相位板</p>
 
     <p><img src="/assets/2022-03-31/2022-04-02-15-42-41.png" alt="Fgure 8" /></p>
 
@@ -103,29 +103,21 @@
 
 <p>The amplitude of the optical wave leaving the glass is given from elementary optics can be described as,</p>
 
-<p>$$
-f(x) = \exp(-2\pi int(x)/\lambda) \tag{1}
-$$</p>
+\[f(x) = \exp(-2\pi int(x)/\lambda) \tag{1}\]
 
 <p>in which, the t(x) represented the thickness of the glass at the object point $x$ , and $n$ is the refractive index of the glass. And for coherent illumination,</p>
 
-<p>$$
-I(x)_c = |f(x) * S(x)|^2 \tag{2}
-$$</p>
+\[I(x)_c = |f(x) * S(x)|^2 \tag{2}\]
 
 <p>which for the incoherent illumination,</p>
 
-<p>$$
-I(x)_i = |f(x)|^2 * |S(x)|^2 \tag{3}
-$$</p>
+\[I(x)_i = |f(x)|^2 * |S(x)|^2 \tag{3}\]
 
 <p><strong>Where $S(x)$ specifies all the instrumental imperfections and parameters</strong> such as objective aperture size (which determines the diffraction limit), the lens aberrations, and the magnitude of any focusing error. <strong>And $f(x)$ represents the object function</strong>.</p>
 
 <p>From the $(1)(2)$ and $(3)$ we can find in the incoherent lumination, the image intensity from such a phase object does not vary with position in the object, since</p>
 
-<p>$$
-|\exp{-2\pi i t(x) n/\lambda}|^2 = 1
-$$</p>
+\[|\exp{-2\pi i t(x) n/\lambda}|^2 = 1\]
 
 <p>And Here is the Conclusion:</p>
 

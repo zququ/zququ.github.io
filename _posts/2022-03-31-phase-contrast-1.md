@@ -12,9 +12,9 @@ tags: TEM
 * [像差 TEM 成像的基本原理](#像差-tem-成像的基本原理)
 	- [一个简单的光学台架实验](#一个简单的光学台架实验)
 	- [如何提高衬度](#如何提高衬度)
-	- [The Reason why Coherent but not Incoherent Illumination](#the-reason-why-coherent-but-not-incoherent-illumination)
-	- [How to Increase Coherent in TEM](#how-to-increase-coherent-in-tem)
-* [Instrumental Requirement for high resolution](#instrumental-requirement-for-high-resolution)
+	- [为什么选用相干光源而不是非相干光源](#为什么选用相干光源而不是非相干光源)
+	- [如何在 TEM 中提高相干性](#如何在-tem-中提高相干性)
+* [高分辨率的仪器要求](#高分辨率的仪器要求)
 
 <!-- /TOC -->
 
@@ -37,7 +37,7 @@ tags: TEM
 
 下图3展示了与图2中相同的物体在传统的钨灯泡光源下成像的情况，作为**非相干光源**条件。尽管在实验中对焦值进行了大范围调整，对比对度依旧很差。
 
-![Figure 3](/assets/2022-03-31/2022-04-01-16-53-33.png) {: height= "150"}
+![Figure 3](/assets/2022-03-31/2022-04-01-16-53-33.png){: height= "150"}
 
 **图3.** 采用与图2(a)中相同的条件显示图像，其中光源替换为对焦在物体上的钨灯泡临界照明（critical illumination）。图中看到的微弱的衬度，是由于限制了透镜 $L2$ 的尺寸而是使得引入的照明保留了一些相干性。如果使用大镜头会使得衬度完全消失。该透镜（或其附近的光圈）大小的变化类似于电子显微镜中聚光镜（condensor）光圈大小的变化。注：临界照明指一类适用于小投影物的聚光系统，聚光镜将光源的像成在投影物上或它的附近，如放映机、幻灯机等。
 {: style="text-align: center;"}
@@ -67,94 +67,89 @@ tags: TEM
 
 	![Figure 5](/assets/2022-03-31/2022-04-01-17-00-41.png) 
 
-	**图5.** +	**Figure 6.** A razor blade has been placed across the beam at M, thus preventing exactly half the diﬀraction pattern from contributing to the image. The resulting image is approximately proportional to the derivative of the phase shift introduced by the object taken in a direction normal to the edge of the razor blade. Notice the fine fringes inside the edge of the indentation arising from multiple reflection within the glass slide.
+	**图5.** 将一个剃须刀片放置在 $M$ 处的光束上，这样防止正好一半的衍射图案对图像产生影响。所得到的的图像与物体在垂直于刀片边缘的方向上所引入的相移的导数大致成正比。注意由载玻片内的多次反射引起的凹槽边缘内的细条纹。
 
-4. **the use of back-focal plane phase plates, similar to the Zernike phase plate used in optical microscopy.**
+4. **后焦平面相位板（phase plates）的使用**，类似于光学显微镜中使用的 Zernike 相位板
 
-	Phase plates for TEM can be divided into two groups by the symmetry of the modulation pattern they produce:
-	<br>
-	1. Zernike type phase plate, generate circularly symmetric modulation pattern. The images produced using such phase plates exhibit **isotropic contrast features** around objects.
-	2. Hilbert type, these devices modulate the diffracted wave asymmetrically **giving rise to anisotropic contrast** in the images.
-	<br>
-
-
-	![Figure 7](/assets/2022-03-31/PhasePlate.jpg)
-
-	**Figure 7.** Different kinds of phase plates
+	TEM 的相位板可以通过他们产生的调制模式的对称性分为两组：
 	
-	![Fgure 8](/assets/2022-03-31/2022-04-02-15-42-41.png)
+	1. Zernike 型相位板，产生圆对称调制模式。使用这种相位板产生的图像在物体周围表现出各向同性对比度特征。
+	2. 希尔伯特型相位板，这些设备不对称地调制衍射波，在图像中产生各向异性的对比度特征。
+	<br>
+	<br>
+	![Figure 6](/assets/2022-03-31/PhasePlate.jpg)
 
-	**Figure 8.** (A) Optical layout of a transmission electron microscope equipped with a Zernike phase plate. (B) Moduli of phase contrast transfer functions without (solid line) and with (dashed line) a Zernike phase plate. kCO is the cut-on frequency ofthe phase plate; Parameters: defocus 0, spherical aberration 5 mm, acceleration voltage 300 kV.
+	**图6.** 不同类型的相位板
+	{: style="text-align: center;"}
 
-	![Figure 9](/assets/2022-03-31/2022-04-02-16-04-42.png)
+	![Figure 7](/assets/2022-03-31/2022-04-02-15-42-41.png)
 
-	**Figure 9.** Images of ice-embedded T4 bacteriophage. (A) Defocus phase contrast image, defocus 1.6 mm. (B) Zernike phase contrast image close to focus. (C) and (D) moduli of the Fourier transforms of the images in (A) and (B) respectively. White arrows in (C) indicate the first two zeros ofthe contrast transfer function. Black arrows in (C) and (D) indicate the ring corresponding to the 2.3 nm periodicity of the DNA packed in the phase capsids. Experimental conditions: acceleration voltage 200 kV, electron dose 20 e /A˚2. Scale bars: 50 nm.
-	
-### The Reason why Coherent but not Incoherent Illumination
+	**图7.**（a）装备 Zernike 相位板的电子透射电镜光学布局。（b）未使用 Zernike 相位板（实线）以及未使用相位板（虚线）时，衬度传递函数（contrast transfer function）的模。$kCO$ 是相位板的截止频率；参数：欠焦值 0；球差（spherical aberration） 5 mm；加速电压 300 kV。
 
-In both electron and optical microscopy the reasons for the lack of contrast at exact focus are the same—these thin specimens (‘phase objects’) affect only the phase of the wave transmitted by the specimen and not its amplitude.
+	![Figure 8](/assets/2022-03-31/2022-04-02-16-04-42.png)
 
-That is, they behave like **a medium of variable refractive index**. It is this variation in refractive index from point to point across the specimen (proportional to the specimen’s atomic potential in volts 6 Preliminaries for electron microscopy) which must be converted into intensity variations in the image if we are to ‘see’, for example, atoms in the electron microscope
+	**图8.** 冰嵌的 T4 噬菌体图像。（a）欠焦相位传递图像，欠焦值 1.6 mm。（B）Zernike 接近于焦值的相位板衬度传递图像。（c）以及（d）分别描述在（a）与（b）中图像的傅里叶变化的模。（c）中白色箭头表明了衬度传递函数的前两个零值。（c）与（d）中的黑色箭头表示与包装在相位衣壳中的 DNA 的2.3 nm周期性相对应的环。实验条件：加速电压 200 kV；电子剂量 20 e/Å^2；比例尺：50 nm。
+	{: style="text-align: center;"}
 
-For the piece of glass shown in Fig. 1.2, the phase of the wave transmitted through the glass differs from that of an unobstructed reference wave by 2π(n − 1)/λ times the thickness of the glass, where n is the refractive index of the glass.
+### 为什么选用相干光源而不是非相干光源
 
-The amplitude of the optical wave leaving the glass is given from elementary optics can be described as,
+在电子显微镜和光学显微镜中，精确焦点处缺乏对比度的原因是相同的——这些薄样品（“相位物体”）**仅影响样品传输的波的相位，而不影响其振幅**。
+
+也就是说，它们的行为类似于一种可变折射率的介质（参见第 2.1 节）。 例如，如果我们要通过电子显微镜“看到”样品中的原子，则必须将这种折射率在样品上的点与点之间的变化（与电子显微镜下样品的原子势能成正比）转换为图像中的强度变化。
+
+对于图2中的玻璃片，透过玻璃的波的相位与无障碍参考波的相位相差 $2\pi(n-1)/\lambda$ 乘以玻璃的厚度，其中 $n$ 是玻璃的厚度，则离开玻璃的光波的幅度由基本光学给出，
 
 $$
 f(x) = \exp(-2\pi int(x)/\lambda) \tag{1}
 $$
 
-in which, the t(x) represented the thickness of the glass at the object point $x$ , and $n$ is the refractive index of the glass. And for coherent illumination,
+其中，$t(x)$ 表征玻璃在物电 $x$ 处的厚度，并且 $n$ 为玻璃的折射率。对于相干光源，
 
 $$
 I(x)_c = |f(x) * S(x)|^2 \tag{2}
 $$
 
-which for the incoherent illumination,
+而对于非相干光源，
 
 $$
 I(x)_i = |f(x)|^2 * |S(x)|^2 \tag{3}
 $$
 
-**Where $S(x)$ specifies all the instrumental imperfections and parameters** such as objective aperture size (which determines the diffraction limit), the lens aberrations, and the magnitude of any focusing error. **And $f(x)$ represents the object function**.
+其中函数 $S(x)$ 被称为仪器脉冲响应（instrumental impulse response），它给出了如果要形成比显微镜分辨率极限小得多的点物体的图像时所观察到的图像振幅。电子显微镜不存在这样的物体；然而，一台现代电子显微镜的 $S(x)$ 的预期形式指定所有仪器缺陷和物镜光圈大小等参数（决定了衍射极限），透镜相差，以及任何聚焦误差的大小。$f(x)$ 为物体函数。$*$ 为卷积操作。
 
-From the $(1)(2)$ and $(3)$ we can find in the incoherent lumination, the image intensity from such a phase object does not vary with position in the object, since
+从 $eqn(1)$、$eqn(2)$ 以及 $eqn(3)$ 中，我们可以发现在非相干光源中，这样的相位物体的图像的强度不会随在物体的位置而发生改变，因为
 
 $$
 |\exp{-2\pi i t(x) n/\lambda}|^2 = 1
 $$
 
-And Here is the Conclusion:
+总结：
 
-1. Only by using coherent illumination and an ‘imperfect’ microscope can we hope to obtain contrast variations in the image of a specimen showing only variations in refractive index. 
-2. **In high-resolution electron microscopy of thin specimens the accurate control of illumination coherence and defect of focus are crucial for success**. 
-3. The amount of fine detail in a high-resolution TEM micrograph increases dramatically with improved coherence of illumination, while completely misleading detail may be observed in images recorded at the wrong focus setting.
+1. 只有使用相干光源和“不完美”的显微镜成像，我们才能有希望获得只显示折射率变化的样品图像的衬度变化。
+2. 在薄样品的高分辨电子显微镜中，精确控制照明相干和焦点缺陷是成功的关键。
+3. 高分辨率 TEM 显微照片中精细细节的数量随着光源相干性的提高而显着增加，而在错误聚焦设置下记录的图像中可能会观察到完全误导性的细节。
 
-### How to Increase Coherent in TEM
+### 如何在 TEM 中提高相干性
 
-In practice, for a microscope ﬁtted with a conventional hair-pin ﬁlament, **the illumination coherence is determined by the size of the second condenser lens aperture, a small aperture producing high coherence**. As shown in Figure 10.
+在实践中，对于配备传统发夹灯丝（hair-pin filament）的显微镜，照明相干性由第二聚光透镜光圈的大小决定，一个小的光圈产生高相干性。
 
-![Figure 10](/assets/2022-03-31/2022-04-04-173305.png)
+![Figure 9](/assets/2022-03-31/2022-04-04-173305.png)
 
-**Figure 10.** Two electron microscope images of amorphous carbon ﬁlms recorded at the same focus setting but using diﬀerent condenser apertures. In (a) a small second condenser aperture has been used, resulting in an image showing high contrast and ﬁne detail. This contrast is lost in (b), where a large aperture has been used.
+**图9.** 在相同焦距设置但使用不同聚光器孔径下记录的两张无定形碳薄膜的电子显微镜图像。在（a）中，使用了较小的第二聚光器光圈，从而使图像显示出高衬度和精细的细节。这种衬度在（b）中丢失，因其使用了大光圈。这种效果在光学衍射图中更加明显。
 
-In most cases of practical interest the imaging is partially coherent. By this we loosely mean that for object detail below a certain size $X_c$ we can use the model of coherent phase contrast imaging (see Fig. 1.2) while for detail much larger than $X_c$ the imaging is incoherent.
+在大多数实际情况下，成像是部分相干的。对于低于一定尺寸 $X_c$ 的物体细节，我们可以使用相干相位对比成像模型（见图2），而对于远远大于 $X_c$ 的细节，成像是非相干的。当使用发夹灯丝时，距离 $X_c$ 大致可以由电子波长除以样品处第二聚光器光圈所对应的半角表示。
 
-The distance **$X_c$ is given approximately by the electron wavelength divided by the semi-angle subtended by the second condenser aperture at the specimen**, when using a hair-pin ﬁlament.
+## 高分辨率的仪器要求
 
-## Instrumental Requirement for high resolution
+最近购买了 TEM 并希望将其用于高分辨率研究的实验室应考虑以下几点。
 
-A laboratory which has recently purchased a TEM and wishes to use it for high-resolution studies should consider the following points.
-
-1. The microscope site must be acceptable. Mechanical vibration, stray magnetic ﬁelds, and room temperature must all be within acceptable limits.
-2. A reliable supply of clean cooling water at constant temperature and pressure must be assured.
+1. 显微镜部位必须是可接受的。机械振动、杂散磁场和室温都必须在可接受的范围内。
+2. 必须确保在恒定温度和压力下可靠地供应清洁的冷却水。
 3. In addition, **the spherical aberration constant Cs must be known** for the optimum objective lens excitation. This should be less than 2 mm at 100 kV if high-resolution results are expected.
-4. The specimen position, for many lens designs the chromatic aberration coeﬃcient Cc passes through a minimum as a function of lens excitation, and this parameter aﬀects both the contrast and resolution of ﬁne image detail.
-	* The complicated interaction between all these factors which depend on specimen position can best be understood using the ‘damping envelope’, This ‘damping envelope’ controls the information resolution limit (loosely referred to by manufacturers as the ‘line’ or ‘lattice’ resolution) of the instrument and depends chiefly on the size of the illumination aperture and Cc.
-	* The point resolution, however, is determined by **spherical aberration**. A method has been described which would **allow both these important resolution limits to be measured as a function of specimen position in the lens** bore through an analysis of optical diﬀractogram pairs
-5. A vacuum of 0.5 × 10−7 Torr or better is needed.
-6. The high-voltage supply of the microscope must be suﬃciently stable to allow high-resolution images to be obtained.
-7. The room containing the microscope must be easily darkened completely, and a room-light dimmer control needs to be ﬁtted within arm’s reach of the operator’s chair.
-
+3. 对于最佳物镜激发，必须知道球面像差常数 $C_s$ 。如果期望得到高分辨率结果，在 100 kV 时 $C_s$ 应该小于 2 mm。
+4. 样品位置，必须通过反复试验找到最佳的“样品高度”。在降低样品高度并因此增加聚焦所需的物镜电流时，镜头焦距和球面像差常数会减小，从而提高分辨率。球面像差与透镜激发存在依赖性。然而，第二个影响来自物镜预场的深度，随着样品更深地浸入透镜间隙，该深度会增加。这会增加照明系统的整体缩小率并增加其角度放大率。结果是晶体样品的衍射点尺寸增加，对于固定的照明光圈，允许球面像差的不良影响在更大的角度范围内起作用。 最后，对于许多镜头设计，色差系数 $C_c$ 作为镜头激发函数的通过最小值，影响精细图像细节的对比度和分辨率。“阻尼包络”（damping envelope）概念可以最好地理解所有这些取决于试样位置的因素之间的复杂相互作用。这个“阻尼包络”控制信息分辨率的极限（制造商称为“line”或“lattice”分辨率），主要取决于照明光圈和 $C_c$ 的大小。然而，点分辨率（point resolution）由球面像差决定。目前已有方法，可以通过分析光学衍射图，将这些重要的分辨率限制作为透镜孔中样品位置的函数来测量。然而，这种系统的分析代表了一个相当大的研究项目，涉及许多实际困难。例如，在这样的分析中，对于一系列样本位置，在类似的焦点缺陷处需要衍射图，但用于建立已知焦点缺陷的“参考焦点”本身取决于 $C_s$ ，它随样本位置而变化。此外，与聚焦控制上的单步相对应的焦距增量和色差常数（影响衍射环图案的“大小”）都取决于样品位置。因此，对于初步工作，一个更简单的方案是在 Scherzer 焦点处记录具有大晶胞的晶体图像，以获取一系列样品高度，并通过肉眼判断选择最高质量的图像。 比较具有大晶胞的晶体的计算图像和实验图像的经验表明，可以通过肉眼对图像质量（对比度、点和线分辨率的组合）做出有用的判断。一旦找到了这个接近最佳的样本位置，就可以使用计算机图像匹配技术和衍射图分析进行进一步的改进。为了在顶入（top-entry）式机器上获得所需的试样高度范围，必须在试样上方或下方安装小黄铜垫圈。可能还需要一个浅螺纹盖来安装在样品上，以使倾斜的样品更靠近下冷指（cold-finger）。然后将测量的使图像聚焦所需的物镜电流用作试样高度的量度，并且必须将每个图像记录下来。后可以为特定的电子显微镜确定并永久记录提供最高质量图像所需的样品高度和相应的透镜电流。具有大晶胞的晶体具有有用的特性，即通常在 Scherzer 焦点附近产生最高对比度的图像，因此使用这些材料的经验丰富的显微镜专家可以经常发现这种焦点设置。
+5. 需要 0.5 × 10−7 Torr 或更高的真空度（在后抽气管中测量）。
+6. 显微镜的高压电源必须足够稳定才能获得高分辨率图像。
+7. 装有显微镜的房间必须很容易完全变暗，并且需要在操作员椅子伸手可及的范围内安装房间灯光调光器控制装置。
 
 
