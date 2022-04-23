@@ -4,7 +4,7 @@ title: 电子光学 第二部分 近轴射线方程与常场近似
 date: 2022-04-20 10:36:35:24.000000000 +09:00
 tags: TEM
 ---
-
+参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。
 
 <!-- TOC GFM -->
 
