@@ -5,13 +5,144 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Apr 2022 16:07:55 +0800</pubDate>
-    <lastBuildDate>Sat, 23 Apr 2022 16:07:55 +0800</lastBuildDate>
+    <pubDate>Wed, 27 Apr 2022 11:15:40 +0800</pubDate>
+    <lastBuildDate>Wed, 27 Apr 2022 11:15:40 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
+        <title>电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）</title>
+        <description>&lt;p&gt;参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。&lt;/p&gt;
+
+&lt;!-- TOC GFM --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#投影透镜&quot;&gt;投影透镜&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;投影透镜&quot;&gt;投影透镜&lt;/h2&gt;
+
+&lt;p&gt;将前一个透镜所成像作为成像物体的镜头，例如图1中的 $L2$，$L3$ 以及 $L4$ 透镜，被成为投影透镜。&lt;strong&gt;中间镜&lt;/strong&gt; 属于投影透镜这一类，以区别于使用物理标本样品作为成像物体的透镜。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-06-222144.png&quot; alt=&quot;Figure 1&quot; height=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图1.&lt;/strong&gt; 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。其中 $L2$，$L3$ 以及 $L3$ 为投影透镜。$OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。&lt;/p&gt;
+
+&lt;p&gt;例如，由 $L2$ 形成的像会出现在 $L3$ 的透镜内，作为新的成像对象。如果该像被 $L3$ 作为新的成像目标，那么可以通过”简单透镜特点”部分中提及的构造找到 $L3$ 所形成的图像。当移除 $L3$ ，或者当 $L2$ 形成的像超出了 $L3$ 的中心，则会观察到 $L2$ 所形成的像。&lt;/p&gt;
+
+&lt;p&gt;之前博文所提及的公式，&lt;/p&gt;
+
+&lt;p&gt;$$
+r = r_{0}\cos{k(z-S/2)} \tag{1}
+$$&lt;/p&gt;
+
+&lt;p&gt;给出表征透镜内真实电子运动轨迹行为的简单模型。现在用这个方程找出等效理想透镜的焦距和主平面位置。然后可以利用理想透镜构造的连续应用找到透镜系统所形成的像。&lt;/p&gt;
+
+&lt;p&gt;投影对象焦点 $f_{p}$ 可能会落在透镜视野之内或之外，如图2所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-04-25-14-25-43.png&quot; alt=&quot;Figure 2&quot; height=&quot;600&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图2.&lt;/strong&gt; （a）物镜与投影透镜焦距（focal length） $f_{obj}$ 和 $f_{p}$ 的定义。同时图中还标注了对焦距离（focal distance），物镜与投影透镜的对焦距离分别表示为 $z_{obj}$ 以及 $z_{p}$ 。物镜样品放置于靠近 $F1’$ 的位置。此图显示了当焦点位于透镜场内部时，透镜同时被用作物镜（焦点在 $F1’$）及用作投影镜（焦点位于 $F1$）。（b）投影透镜的线路图，焦点位于透镜场外（从 $-S/2$ 至 $S/2$ ）。纵坐标表示场强和光线到光轴的距离。图像焦点为 $F2$ 。Asymptote，渐近线。&lt;/p&gt;
+
+&lt;p&gt;使用 $z\rightarrow\infty$ 来表示渐近线方向上的延伸，用来定义“虚拟”或者渐进投影焦距 $f_{p}$ 。图2中主平面与物焦点之间的距离可以表示为，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+f_{p} &amp;amp; = r_{0}/\tan{\theta} \\ 
+&amp;amp; = r_{0}/\left(\frac{\mathrm{d}r}{\mathrm{d}z}\right)_{-\infty} \\ 
+&amp;amp; = r_{0}/\left(\frac{\mathrm{d}r}{\mathrm{d}z}\right)_{-S/2}
+\end{aligned}\tag{2}
+$$&lt;/p&gt;
+
+&lt;p&gt;由 $eqn(1)$ 及 $eqn(2)$ 公式可以推导出，当 $z = -S/2$ 时，&lt;/p&gt;
+
+&lt;p&gt;$$
+f_p/S = [Sk\sin{(Sk)}]^{-1} \tag{3}
+$$&lt;/p&gt;
+
+&lt;p&gt;该函数于图3中画出，展示了投影透镜的最小焦距特征。透镜通常在 $0 \lt Sk\lt 2$ 范围内工作，尽管已经对使用 $Sk &amp;gt; 2$ 的“第二区”透镜的性质进行了高分辨率的研究。$eqn(3)$ 给出了 $f_{p}$ 最小值 $0.56S$。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-04-26-14-40-15.png&quot; alt=&quot;Figure 3&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图3.&lt;/strong&gt; 对于常场模型，物镜与投影透镜的相对焦距（ $f_{obj}$ 及 $f_{p}$ ）作为透镜激发（与电流成比例）的函数。投影透镜的最小焦距出现在 $f_{p} = 0.56S$ ，其中 $S$ 是极片间隙大小。&lt;/p&gt;
+
+&lt;p&gt;利用之前的公式，&lt;/p&gt;
+
+&lt;p&gt;$$
+B_{p} = \frac{\mu_{0}NI}{S} = 4\pi \times10^{-10}\left(\frac{NI}{S}\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;图3中的横坐标 $Sk$ 在常场估计中有，&lt;/p&gt;
+
+&lt;p&gt;$$
+Sk= 0.1862\left(\frac{NI}{\sqrt{V_{r}}}\right) \tag{4}
+$$&lt;/p&gt;
+
+&lt;p&gt;物体焦距 $z_{p}$ 定义为透镜中心与物体焦点之间的距离。从图1(a)中可以看出，与 $f_{p}$ 一起定义了主平面的位置。从图中得，&lt;/p&gt;
+
+&lt;p&gt;$$
+z_{p} = S/2 - r(-S/2)/\left(\frac{\mathrm{d}r}{\mathrm{d}z}\right)_{-S/2}
+$$&lt;/p&gt;
+
+&lt;p&gt;由 $eqn(1)$，&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{Z_p}{S} = \left(\frac{1}{2}-\frac{1}{kS\tan{kS}}\right) \tag{5}
+$$&lt;/p&gt;
+
+&lt;p&gt;当公式用于投影透镜时，如图2(b)，符号是相反的。&lt;/p&gt;
+
+&lt;p&gt;如果焦距远大于透镜间隙（ $f_{p}\gg S$ ），透镜为弱透镜（weak lens）。当 $Sk\lt2$ ，$eqn(3)$ 给出，&lt;/p&gt;
+
+&lt;p&gt;$$
+S/f_{p} = (Sk)^2 \tag{6}
+$$&lt;/p&gt;
+
+&lt;p&gt;当忽略主平面之间的距离时，这是“薄”磁透镜的公式。 Busch (1926) 在最早的一篇关于电子光学的论文中获得了这个结果的稍微更一般的形式。 他的结果是通过对 $eqn(7)$ 进行积分获得的，
+$$
+\frac{\mathrm{d}^2r}{\mathrm{d}z^2} + \frac{e}{8mV_{r}}B_{z}^2(z)r=0\tag{7}
+$$&lt;/p&gt;
+
+&lt;p&gt;假设 $r$ 在透镜场内是常数，然后有&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{1}{f_{p}}=\frac{e}{8mV_{r}}\int_{-\infty}^{\infty}H_{z}^2(z)\mathrm{d}z \tag{8}
+$$&lt;/p&gt;
+
+&lt;p&gt;对于“高帽场”（“top-hat” field） $eqn(8)$ 与 $eqn(6)$ 一致。&lt;/p&gt;
+
+&lt;p&gt;为了在一条通用曲线上表达所有磁透镜的焦点特性，Liebmann (1955) 发现有限孔径 $D$ 的透镜可以用 $eqn(8)$ 的修改形式来描述：&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{1}{f} = \frac{A_{0}(NI)^2}{V_{r}(S+D)}\tag{9}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中 $A_{0}$ 近似为常数。这对于弱激发透镜是一个很好的近似，并且可以通过取&lt;/p&gt;
+
+&lt;p&gt;$$
+D = R_{1} + R_{2}
+$$&lt;/p&gt;
+
+&lt;p&gt;来扩展到包括非对称透镜。&lt;/p&gt;
+
+&lt;p&gt;不幸运的是，强透镜的特性对于极片几何形状的细节越来越敏感，使得 $eqn(9)$ 变得非常不可靠。特别地，由于现代物镜的焦距与极片尺寸先比并不大，因此这些镜头不能被视为“薄”透镜。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 27 Apr 2022 00:38:15 +0800</pubDate>
+        <link>http://localhost:4000/2022/04/Projector-lenses/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/04/Projector-lenses/</guid>
+        
+        <category>TEM</category>
+        
+        
+      </item>
+    
+      <item>
         <title>电子光学 第二部分 近轴射线方程与常场近似</title>
-        <description>&lt;!-- TOC GFM --&gt;
+        <description>&lt;p&gt;参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。&lt;/p&gt;
+
+&lt;!-- TOC GFM --&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#1-近轴射线方程&quot;&gt;1. 近轴射线方程&lt;/a&gt;
@@ -717,11 +848,11 @@ $$&lt;/p&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#一个简单的光学台架实验&quot;&gt;一个简单的光学台架实验&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#如何提高衬度&quot;&gt;如何提高衬度&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#the-reason-why-coherent-but-not-incoherent-illumination&quot;&gt;The Reason why Coherent but not Incoherent Illumination&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#how-to-increase-coherent-in-tem&quot;&gt;How to Increase Coherent in TEM&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#为什么选用相干光源而不是非相干光源&quot;&gt;为什么选用相干光源而不是非相干光源&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#如何在-tem-中提高相干性&quot;&gt;如何在 TEM 中提高相干性&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#instrumental-requirement-for-high-resolution&quot;&gt;Instrumental Requirement for high resolution&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#高分辨率的仪器要求&quot;&gt;高分辨率的仪器要求&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
@@ -742,9 +873,9 @@ $$&lt;/p&gt;
 
 &lt;p&gt;下图3展示了与图2中相同的物体在传统的钨灯泡光源下成像的情况，作为&lt;strong&gt;非相干光源&lt;/strong&gt;条件。尽管在实验中对焦值进行了大范围调整，对比对度依旧很差。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-01-16-53-33.png&quot; alt=&quot;Figure 3&quot; /&gt; {: height= “150”}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-01-16-53-33.png&quot; alt=&quot;Figure 3&quot; /&gt;&lt;/p&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图3.&lt;/strong&gt; 采用与图2(a)中相同的条件显示图像，其中光源替换为对焦在物体上的钨灯泡临界照明（critical illumination）。图中看到的微弱的衬度，是由于限制了透镜 $L2$ 的尺寸而是使得引入的照明保留了一些相干性。如果使用大镜头会使得衬度完全消失。该透镜（或其附近的光圈）大小的变化类似于电子显微镜中聚光镜（condensor）光圈大小的变化。注：临界照明指一类适用于小投影物的聚光系统，聚光镜将光源的像成在投影物上或它的附近，如放映机、幻灯机等。&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图3.&lt;/strong&gt; 采用与图2(a)中相同的条件显示图像，其中光源替换为对焦在物体上的钨灯泡临界照明（critical illumination）。图中看到的微弱的衬度，是由于限制了透镜 $L2$ 的尺寸而使得引入的照明保留了一些相干性。如果使用大镜头会使得衬度完全消失。该透镜（或其附近的光圈）大小的变化类似于电子显微镜中聚光镜（condensor）光圈大小的变化。注：临界照明指一类适用于小投影物的聚光系统，聚光镜将光源的像成在投影物上或它的附近，如放映机、幻灯机等。&lt;/p&gt;
 
 &lt;p&gt;以上两个实验结果表明了：&lt;/p&gt;
 
@@ -761,8 +892,7 @@ $$&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;缩小物镜光圈的大小。&lt;/strong&gt;&lt;/p&gt;
 
-    &lt;p&gt;Not useful, since image resolution is necessarily limited, as seen in Figure 4.
- 并不实用，因为会影响图像的分辨率，而图像分辨率往往很有限，如图4。&lt;/p&gt;
+    &lt;p&gt;并不实用，因为会影响图像的分辨率，而图像分辨率往往很有限，如图4。&lt;/p&gt;
 
     &lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-01-10-46-56.png&quot; alt=&quot;Figure 4&quot; /&gt;&lt;/p&gt;
 
@@ -793,93 +923,84 @@ $$&lt;/p&gt;
 
     &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图6.&lt;/strong&gt; 不同类型的相位板&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-02-15-42-41.png&quot; alt=&quot;Fgure 8&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-02-15-42-41.png&quot; alt=&quot;Figure 7&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;strong&gt;Figure 8.&lt;/strong&gt; (A) Optical layout of a transmission electron microscope equipped with a Zernike phase plate. (B) Moduli of phase contrast transfer functions without (solid line) and with (dashed line) a Zernike phase plate. kCO is the cut-on frequency ofthe phase plate; Parameters: defocus 0, spherical aberration 5 mm, acceleration voltage 300 kV.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;图7.&lt;/strong&gt;（a）装备 Zernike 相位板的电子透射电镜光学布局。（b）未使用 Zernike 相位板（实线）以及未使用相位板（虚线）时，衬度传递函数（contrast transfer function）的模。$k_{CO}$ 是相位板的截止频率；参数：欠焦值 0；球差（spherical aberration） 5 mm；加速电压 300 kV。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-02-16-04-42.png&quot; alt=&quot;Figure 9&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-02-16-04-42.png&quot; alt=&quot;Figure 8&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;strong&gt;Figure 9.&lt;/strong&gt; Images of ice-embedded T4 bacteriophage. (A) Defocus phase contrast image, defocus 1.6 mm. (B) Zernike phase contrast image close to focus. (C) and (D) moduli of the Fourier transforms of the images in (A) and (B) respectively. White arrows in (C) indicate the first two zeros ofthe contrast transfer function. Black arrows in (C) and (D) indicate the ring corresponding to the 2.3 nm periodicity of the DNA packed in the phase capsids. Experimental conditions: acceleration voltage 200 kV, electron dose 20 e /A˚2. Scale bars: 50 nm.&lt;/p&gt;
+    &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图8.&lt;/strong&gt; 冰嵌的 T4 噬菌体图像。（a）欠焦相位传递图像，欠焦值 1.6 mm。（B）Zernike 接近于焦值的相位板衬度传递图像。（c）以及（d）分别描述在（a）与（b）中图像的傅里叶变化的模。（c）中白色箭头表明了衬度传递函数的前两个零值。（c）与（d）中的黑色箭头表示与包装在相位衣壳中的 DNA 的2.3 nm周期性相对应的环。实验条件：加速电压 200 kV；电子剂量 20 e/Å^2；比例尺：50 nm。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;the-reason-why-coherent-but-not-incoherent-illumination&quot;&gt;The Reason why Coherent but not Incoherent Illumination&lt;/h3&gt;
+&lt;h3 id=&quot;为什么选用相干光源而不是非相干光源&quot;&gt;为什么选用相干光源而不是非相干光源&lt;/h3&gt;
 
-&lt;p&gt;In both electron and optical microscopy the reasons for the lack of contrast at exact focus are the same—these thin specimens (‘phase objects’) affect only the phase of the wave transmitted by the specimen and not its amplitude.&lt;/p&gt;
+&lt;p&gt;在电子显微镜和光学显微镜中，精确焦点处缺乏对比度的原因是相同的——这些薄样品（“相位物体”）&lt;strong&gt;仅影响样品传输的波的相位，而不影响其振幅&lt;/strong&gt;。&lt;/p&gt;
 
-&lt;p&gt;That is, they behave like &lt;strong&gt;a medium of variable refractive index&lt;/strong&gt;. It is this variation in refractive index from point to point across the specimen (proportional to the specimen’s atomic potential in volts 6 Preliminaries for electron microscopy) which must be converted into intensity variations in the image if we are to ‘see’, for example, atoms in the electron microscope&lt;/p&gt;
+&lt;p&gt;也就是说，它们的行为类似于一种可变折射率的介质（参见第 2.1 节）。 例如，如果我们要通过电子显微镜“看到”样品中的原子，则必须将这种折射率在样品上的点与点之间的变化（与电子显微镜下样品的原子势能成正比）转换为图像中的强度变化。&lt;/p&gt;
 
-&lt;p&gt;For the piece of glass shown in Fig. 1.2, the phase of the wave transmitted through the glass differs from that of an unobstructed reference wave by 2π(n − 1)/λ times the thickness of the glass, where n is the refractive index of the glass.&lt;/p&gt;
-
-&lt;p&gt;The amplitude of the optical wave leaving the glass is given from elementary optics can be described as,&lt;/p&gt;
+&lt;p&gt;对于图2中的玻璃片，透过玻璃的波的相位与无障碍参考波的相位相差 $2\pi(n-1)/\lambda$ 乘以玻璃的厚度，其中 $n$ 是玻璃的厚度，则离开玻璃的光波的幅度由基本光学给出，&lt;/p&gt;
 
 &lt;p&gt;$$
 f(x) = \exp(-2\pi int(x)/\lambda) \tag{1}
 $$&lt;/p&gt;
 
-&lt;p&gt;in which, the t(x) represented the thickness of the glass at the object point $x$ , and $n$ is the refractive index of the glass. And for coherent illumination,&lt;/p&gt;
+&lt;p&gt;其中，$t(x)$ 表征玻璃在物电 $x$ 处的厚度，并且 $n$ 为玻璃的折射率。对于相干光源，&lt;/p&gt;
 
 &lt;p&gt;$$
 I(x)_c = |f(x) * S(x)|^2 \tag{2}
 $$&lt;/p&gt;
 
-&lt;p&gt;which for the incoherent illumination,&lt;/p&gt;
+&lt;p&gt;而对于非相干光源，&lt;/p&gt;
 
 &lt;p&gt;$$
 I(x)_i = |f(x)|^2 * |S(x)|^2 \tag{3}
 $$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Where $S(x)$ specifies all the instrumental imperfections and parameters&lt;/strong&gt; such as objective aperture size (which determines the diffraction limit), the lens aberrations, and the magnitude of any focusing error. &lt;strong&gt;And $f(x)$ represents the object function&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;其中函数 $S(x)$ 被称为仪器脉冲响应（instrumental impulse response），它给出了如果要形成比显微镜分辨率极限小得多的点物体的图像时所观察到的图像振幅。电子显微镜不存在这样的物体；然而，一台现代电子显微镜的 $S(x)$ 的预期形式指定所有仪器缺陷和物镜光圈大小等参数（决定了衍射极限），透镜相差，以及任何聚焦误差的大小。$f(x)$ 为物体函数。$*$ 为卷积操作。&lt;/p&gt;
 
-&lt;p&gt;From the $(1)(2)$ and $(3)$ we can find in the incoherent lumination, the image intensity from such a phase object does not vary with position in the object, since&lt;/p&gt;
+&lt;p&gt;从 $eqn(1)$、$eqn(2)$ 以及 $eqn(3)$ 中，我们可以发现在非相干光源中，这样的相位物体的图像的强度不会随在物体的位置而发生改变，因为&lt;/p&gt;
 
 &lt;p&gt;$$
 |\exp{-2\pi i t(x) n/\lambda}|^2 = 1
 $$&lt;/p&gt;
 
-&lt;p&gt;And Here is the Conclusion:&lt;/p&gt;
+&lt;p&gt;总结：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Only by using coherent illumination and an ‘imperfect’ microscope can we hope to obtain contrast variations in the image of a specimen showing only variations in refractive index.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;In high-resolution electron microscopy of thin specimens the accurate control of illumination coherence and defect of focus are crucial for success&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;The amount of fine detail in a high-resolution TEM micrograph increases dramatically with improved coherence of illumination, while completely misleading detail may be observed in images recorded at the wrong focus setting.&lt;/li&gt;
+  &lt;li&gt;只有使用相干光源和“不完美”的显微镜成像，我们才能有希望获得只显示折射率变化的样品图像的衬度变化。&lt;/li&gt;
+  &lt;li&gt;在薄样品的高分辨电子显微镜中，精确控制照明相干和焦点缺陷是成功的关键。&lt;/li&gt;
+  &lt;li&gt;高分辨率 TEM 显微照片中精细细节的数量随着光源相干性的提高而显着增加，而在错误聚焦设置下记录的图像中可能会观察到完全误导性的细节。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;how-to-increase-coherent-in-tem&quot;&gt;How to Increase Coherent in TEM&lt;/h3&gt;
+&lt;h3 id=&quot;如何在-tem-中提高相干性&quot;&gt;如何在 TEM 中提高相干性&lt;/h3&gt;
 
-&lt;p&gt;In practice, for a microscope ﬁtted with a conventional hair-pin ﬁlament, &lt;strong&gt;the illumination coherence is determined by the size of the second condenser lens aperture, a small aperture producing high coherence&lt;/strong&gt;. As shown in Figure 10.&lt;/p&gt;
+&lt;p&gt;在实践中，对于配备传统发夹灯丝（hair-pin filament）的显微镜，照明相干性由第二聚光透镜光圈的大小决定，一个小的光圈产生高相干性。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-04-173305.png&quot; alt=&quot;Figure 10&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2022-03-31/2022-04-04-173305.png&quot; alt=&quot;Figure 9&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Figure 10.&lt;/strong&gt; Two electron microscope images of amorphous carbon ﬁlms recorded at the same focus setting but using diﬀerent condenser apertures. In (a) a small second condenser aperture has been used, resulting in an image showing high contrast and ﬁne detail. This contrast is lost in (b), where a large aperture has been used.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;图9.&lt;/strong&gt; 在相同焦距设置但使用不同聚光器孔径下记录的两张无定形碳薄膜的电子显微镜图像。在（a）中，使用了较小的第二聚光器光圈，从而使图像显示出高衬度和精细的细节。这种衬度在（b）中丢失，因其使用了大光圈。这种效果在光学衍射图中更加明显。&lt;/p&gt;
 
-&lt;p&gt;In most cases of practical interest the imaging is partially coherent. By this we loosely mean that for object detail below a certain size $X_c$ we can use the model of coherent phase contrast imaging (see Fig. 1.2) while for detail much larger than $X_c$ the imaging is incoherent.&lt;/p&gt;
+&lt;p&gt;在大多数实际情况下，成像是部分相干的。对于低于一定尺寸 $X_c$ 的物体细节，我们可以使用相干相位对比成像模型（见图2），而对于远远大于 $X_c$ 的细节，成像是非相干的。当使用发夹灯丝时，距离 $X_c$ 大致可以由电子波长除以样品处第二聚光器光圈所对应的半角表示。&lt;/p&gt;
 
-&lt;p&gt;The distance &lt;strong&gt;$X_c$ is given approximately by the electron wavelength divided by the semi-angle subtended by the second condenser aperture at the specimen&lt;/strong&gt;, when using a hair-pin ﬁlament.&lt;/p&gt;
+&lt;h2 id=&quot;高分辨率的仪器要求&quot;&gt;高分辨率的仪器要求&lt;/h2&gt;
 
-&lt;h2 id=&quot;instrumental-requirement-for-high-resolution&quot;&gt;Instrumental Requirement for high resolution&lt;/h2&gt;
-
-&lt;p&gt;A laboratory which has recently purchased a TEM and wishes to use it for high-resolution studies should consider the following points.&lt;/p&gt;
+&lt;p&gt;最近购买了 TEM 并希望将其用于高分辨率研究的实验室应考虑以下几点。&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;The microscope site must be acceptable. Mechanical vibration, stray magnetic ﬁelds, and room temperature must all be within acceptable limits.&lt;/li&gt;
-  &lt;li&gt;A reliable supply of clean cooling water at constant temperature and pressure must be assured.&lt;/li&gt;
-  &lt;li&gt;In addition, &lt;strong&gt;the spherical aberration constant Cs must be known&lt;/strong&gt; for the optimum objective lens excitation. This should be less than 2 mm at 100 kV if high-resolution results are expected.&lt;/li&gt;
-  &lt;li&gt;The specimen position, for many lens designs the chromatic aberration coeﬃcient Cc passes through a minimum as a function of lens excitation, and this parameter aﬀects both the contrast and resolution of ﬁne image detail.
-    &lt;ul&gt;
-      &lt;li&gt;The complicated interaction between all these factors which depend on specimen position can best be understood using the ‘damping envelope’, This ‘damping envelope’ controls the information resolution limit (loosely referred to by manufacturers as the ‘line’ or ‘lattice’ resolution) of the instrument and depends chiefly on the size of the illumination aperture and Cc.&lt;/li&gt;
-      &lt;li&gt;The point resolution, however, is determined by &lt;strong&gt;spherical aberration&lt;/strong&gt;. A method has been described which would &lt;strong&gt;allow both these important resolution limits to be measured as a function of specimen position in the lens&lt;/strong&gt; bore through an analysis of optical diﬀractogram pairs&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;A vacuum of 0.5 × 10−7 Torr or better is needed.&lt;/li&gt;
-  &lt;li&gt;The high-voltage supply of the microscope must be suﬃciently stable to allow high-resolution images to be obtained.&lt;/li&gt;
-  &lt;li&gt;The room containing the microscope must be easily darkened completely, and a room-light dimmer control needs to be ﬁtted within arm’s reach of the operator’s chair.&lt;/li&gt;
+  &lt;li&gt;显微镜部位必须是可接受的。机械振动、杂散磁场和室温都必须在可接受的范围内。&lt;/li&gt;
+  &lt;li&gt;必须确保在恒定温度和压力下可靠地供应清洁的冷却水。&lt;/li&gt;
+  &lt;li&gt;对于最佳物镜激发，必须知道球面像差常数 $C_s$ 。如果期望得到高分辨率结果，在 100 kV 时 $C_s$ 应该小于 2 mm。&lt;/li&gt;
+  &lt;li&gt;样品位置，必须通过反复试验找到最佳的“样品高度”。在降低样品高度并因此增加聚焦所需的物镜电流时，镜头焦距和球面像差常数会减小，从而提高分辨率。球面像差与透镜激发存在依赖性。然而，第二个影响来自物镜预场的深度，随着样品更深地浸入透镜间隙，该深度会增加。这会增加照明系统的整体缩小率并增加其角度放大率。结果是晶体样品的衍射点尺寸增加，对于固定的照明光圈，允许球面像差的不良影响在更大的角度范围内起作用。 最后，对于许多镜头设计，色差系数 $C_c$ 作为镜头激发函数的通过最小值，影响精细图像细节的对比度和分辨率。“阻尼包络”（damping envelope）概念可以最好地理解所有这些取决于试样位置的因素之间的复杂相互作用。这个“阻尼包络”控制信息分辨率的极限（制造商称为“line”或“lattice”分辨率），主要取决于照明光圈和 $C_c$ 的大小。然而，点分辨率（point resolution）由球面像差决定。目前已有方法，可以通过分析光学衍射图，将这些重要的分辨率限制作为透镜孔中样品位置的函数来测量。然而，这种系统的分析代表了一个相当大的研究项目，涉及许多实际困难。例如，在这样的分析中，对于一系列样本位置，在类似的焦点缺陷处需要衍射图，但用于建立已知焦点缺陷的“参考焦点”本身取决于 $C_s$ ，它随样本位置而变化。此外，与聚焦控制上的单步相对应的焦距增量和色差常数（影响衍射环图案的“大小”）都取决于样品位置。因此，对于初步工作，一个更简单的方案是在 Scherzer 焦点处记录具有大晶胞的晶体图像，以获取一系列样品高度，并通过肉眼判断选择最高质量的图像。 比较具有大晶胞的晶体的计算图像和实验图像的经验表明，可以通过肉眼对图像质量（对比度、点和线分辨率的组合）做出有用的判断。一旦找到了这个接近最佳的样本位置，就可以使用计算机图像匹配技术和衍射图分析进行进一步的改进。为了在顶入（top-entry）式机器上获得所需的试样高度范围，必须在试样上方或下方安装小黄铜垫圈。可能还需要一个浅螺纹盖来安装在样品上，以使倾斜的样品更靠近下冷指（cold-finger）。然后将测量的使图像聚焦所需的物镜电流用作试样高度的量度，并且必须将每个图像记录下来。后可以为特定的电子显微镜确定并永久记录提供最高质量图像所需的样品高度和相应的透镜电流。具有大晶胞的晶体具有有用的特性，即通常在 Scherzer 焦点附近产生最高对比度的图像，因此使用这些材料的经验丰富的显微镜专家可以经常发现这种焦点设置。&lt;/li&gt;
+  &lt;li&gt;需要 0.5 × 10−7 Torr 或更高的真空度（在后抽气管中测量）。&lt;/li&gt;
+  &lt;li&gt;显微镜的高压电源必须足够稳定才能获得高分辨率图像。&lt;/li&gt;
+  &lt;li&gt;装有显微镜的房间必须很容易完全变暗，并且需要在操作员椅子伸手可及的范围内安装房间灯光调光器控制装置。&lt;/li&gt;
 &lt;/ol&gt;
 
 </description>
         <pubDate>Thu, 31 Mar 2022 15:57:55 +0800</pubDate>
-        <link>http://localhost:4000/2022/03/phase-contrast-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/03/phase-contrast-1/</guid>
+        <link>http://localhost:4000/2022/03/TEM-preliminaries/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/03/TEM-preliminaries/</guid>
         
         <category>TEM</category>
         
@@ -1200,51 +1321,6 @@ ps cax | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;lemonade&amp;gt; /de
         <guid isPermaLink="true">http://localhost:4000/2021/07/remote-lemonade-configure/</guid>
         
         <category>vim</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>更新日常</title>
-        <description>&lt;p&gt;写在前面，强烈谴责一下一些名字非常特别的程序，导致需要用的时候，抓耳挠腮也想不起来软件名字，在这里做一下备份。也可作为软件推荐用。&lt;/p&gt;
-
-&lt;h3 id=&quot;alacarte&quot;&gt;alacarte&lt;/h3&gt;
-
-&lt;p&gt;用于添加软件到 Ubuntu 软件库，供兼容 i3wm rofi。&lt;/p&gt;
-
-&lt;p&gt;其中桌面文件的地址，一般系统桌面文件在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/usr/share/applications/&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;而 alacarte 的桌面文件管理地址为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.local/applications&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;i3-get-window-criteria&quot;&gt;i3-get-window-criteria&lt;/h3&gt;
-
-&lt;p&gt;查看 windows 信息，供添加到 i3wm config 文件。&lt;/p&gt;
-
-&lt;h3 id=&quot;nvm-nodejs&quot;&gt;nvm nodejs&lt;/h3&gt;
-
-&lt;p&gt;版本管理软件&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvm list&lt;/code&gt; ，查看 nodejs 版本&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvm use&lt;/code&gt; ，切换 nodejs 版本&lt;/p&gt;
-
-&lt;h3 id=&quot;fisher&quot;&gt;fisher&lt;/h3&gt;
-
-&lt;p&gt;fish shell 里非常好用的软件管理程序。&lt;/p&gt;
-
-&lt;h3 id=&quot;sshfs&quot;&gt;sshfs&lt;/h3&gt;
-
-&lt;p&gt;sshfs　可以将远程服务器文件夹直接发送到本地，就像挂载外置硬盘一样，非常好用，命令行如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; sshfs &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; allow_other &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PORT&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt;@&lt;span class=&quot;nv&quot;&gt;$IP&lt;/span&gt;:/file/fold/to/mount /file/fold/mount/to/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 20 Jul 2021 14:52:00 +0800</pubDate>
-        <link>http://localhost:4000/2021/07/Daily-Update/</link>
-        <guid isPermaLink="true">http://localhost:4000/2021/07/Daily-Update/</guid>
-        
-        <category>DailyUpdate</category>
         
         
       </item>

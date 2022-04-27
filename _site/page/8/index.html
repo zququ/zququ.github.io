@@ -195,6 +195,15 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-30/" title="访问 汇编语言 7.10 不同寻址方式的灵活运用(2)">汇编语言 7.10 不同寻址方式的灵活运用(2)</a></h2>
+      <p class="excerpt">7.10 不同寻址方式的灵活运用(2)上次提到的代码会出现死循环，下面来分析具体原因以及如何解决。回顾代码：codesg segment  start:  mov ax, datasg          mov ds, ax          mov bx, 0          mov cx, 4     s0:  mov si, 0         ;外层循环          mov cx, 3      s:  mov al, [bx+si]   ;内层循环          an...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-14 20:29:24 +0800" class="post-list__meta--date date">2019-11-14</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-30/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/amplitude-and-phase-contrast-1/" title="访问 The interaction between the electron and the sample">The interaction between the electron and the sample</a></h2>
       <p class="excerpt">Let’s firstly try to analysis the process, during which the single primary electron shot by the high velocity hits at one atom of the sample.There were three situations:Situation 1. As seen in the (a). The primary electron is unscattered, and noth...…</p>
       <div class="post-list__meta">
@@ -271,15 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">代码1、编写代码段代码，将a段和b段中的数据依次相加，将结果存到c段中。assume cs:codea segment    db 1, 2, 3, 4, 5, 6, 7, 8a endsb segment    db 1, 2, 3, 4, 5, 6, 7, 8b endsc segment    db 0, 0, 0, 0, 0, 0, 0, 0c endscode segmentstart:  mov ax, a        mov ds, ax        mov ax, b ...…</p>
       <div class="post-list__meta">
 <time datetime="2019-11-07 22:22:24 +0800" class="post-list__meta--date date">2019-11-07</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-25/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object/" title="访问 python 类和对象 (1)">python 类和对象 (1)</a></h2>
-      <p class="excerpt">整理自小甲鱼鱼C论坛对象 = 属性 + 方法代码示例：class Turtle:        # Python 中的类名(class)约定以大写字母开头    # 特征的描述成为属性(attribute)，在代码层面来看就是变量    color = 'green'    weight = 10    legs = 4    shell = True    # 方法(method)就是函数，通过调用这些函数来完成工作    def run(self):        print("我正在...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-07 15:16:24 +0800" class="post-list__meta--date date">2019-11-07</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-class-object/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

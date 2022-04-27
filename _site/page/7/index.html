@@ -194,6 +194,15 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-35/" title="访问 汇编语言 8.7 8.8 8.9 div 伪指令dd dup">汇编语言 8.7 8.8 8.9 div 伪指令dd dup</a></h2>
+      <p class="excerpt">8.7 div 指令div是除法指令，有以下注意事项：  除数：有8位和16位两种，在一个reg或者内存单元中。  被除数：默认放在ax或dx和ax中，如果除数为8位，被除数则为16位，默认在ax中存放；如果除数为16位，则被除数则为32位，在dx和ax中存放，dx存放高16位，ax存放在低16位。  结果：如果除数为8位，则al存储除法操作的商, ah存储除法操作的余数；如果除数为16位，则ax存储除法操作的商，dx存储除法操作的余数。除数和被除数的规格总结：            除数...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-24 15:15:24 +0800" class="post-list__meta--date date">2019-11-24</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-35/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/scanning-bright-field-EM/" title="访问 Scanning EM VS Bright Field EM">Scanning EM VS Bright Field EM</a></h2>
       <p class="excerpt">First of all, let’s introduce the definition of the Scannning EM and the Bright field EM respectively:  Scanning EMTake the incoming beam of electrons and focused on very small point, rather that small point back and forth across the image as if y...…</p>
       <div class="post-list__meta">
@@ -270,15 +279,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">整理自小甲鱼鱼C论坛组合所谓”组合”，可以理解为相对于继承来讲的一个概念。有些时候，利用多重继承本身除了存在风险的同时，在有些时候，如果类本身并不存在明显的相互继承关系，强行继承会很别扭。比如定义了两个类，小鸟和老鹰后，我们想定义一个新的类，天空，天空中包含小鸟和老鹰，奈何天空和小鸟和老鹰本身并不存在继承关系，这时就适合用组合来解决这个问题。当执行组合时，我们将需要的类放进目的类中进行实例化，就可以实现组合，例如代码：class Bird():    def __init__(self, ...…</p>
       <div class="post-list__meta">
 <time datetime="2019-11-16 20:58:24 +0800" class="post-list__meta--date date">2019-11-16</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-class-object-4/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-30/" title="访问 汇编语言 7.10 不同寻址方式的灵活运用(2)">汇编语言 7.10 不同寻址方式的灵活运用(2)</a></h2>
-      <p class="excerpt">7.10 不同寻址方式的灵活运用(2)上次提到的代码会出现死循环，下面来分析具体原因以及如何解决。回顾代码：codesg segment  start:  mov ax, datasg          mov ds, ax          mov bx, 0          mov cx, 4     s0:  mov si, 0         ;外层循环          mov cx, 3      s:  mov al, [bx+si]   ;内层循环          an...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-14 20:29:24 +0800" class="post-list__meta--date date">2019-11-14</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-30/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>
