@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Apr 2022 11:15:40 +0800</pubDate>
-    <lastBuildDate>Wed, 27 Apr 2022 11:15:40 +0800</lastBuildDate>
+    <pubDate>Thu, 28 Apr 2022 11:25:27 +0800</pubDate>
+    <lastBuildDate>Thu, 28 Apr 2022 11:25:27 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -16,12 +16,19 @@
 &lt;!-- TOC GFM --&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#投影透镜&quot;&gt;投影透镜&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#投影透镜&quot;&gt;投影透镜&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#投影透镜的概念&quot;&gt;投影透镜的概念&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#投影透镜的相关公式推导&quot;&gt;投影透镜的相关公式推导&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
 
 &lt;h2 id=&quot;投影透镜&quot;&gt;投影透镜&lt;/h2&gt;
+
+&lt;h3 id=&quot;投影透镜的概念&quot;&gt;投影透镜的概念&lt;/h3&gt;
 
 &lt;p&gt;将前一个透镜所成像作为成像物体的镜头，例如图1中的 $L2$，$L3$ 以及 $L4$ 透镜，被成为投影透镜。&lt;strong&gt;中间镜&lt;/strong&gt; 属于投影透镜这一类，以区别于使用物理标本样品作为成像物体的透镜。&lt;/p&gt;
 
@@ -30,6 +37,8 @@
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图1.&lt;/strong&gt; 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。其中 $L2$，$L3$ 以及 $L3$ 为投影透镜。$OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。&lt;/p&gt;
 
 &lt;p&gt;例如，由 $L2$ 形成的像会出现在 $L3$ 的透镜内，作为新的成像对象。如果该像被 $L3$ 作为新的成像目标，那么可以通过”简单透镜特点”部分中提及的构造找到 $L3$ 所形成的图像。当移除 $L3$ ，或者当 $L2$ 形成的像超出了 $L3$ 的中心，则会观察到 $L2$ 所形成的像。&lt;/p&gt;
+
+&lt;h3 id=&quot;投影透镜的相关公式推导&quot;&gt;投影透镜的相关公式推导&lt;/h3&gt;
 
 &lt;p&gt;之前博文所提及的公式，&lt;/p&gt;
 
@@ -63,7 +72,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;该函数于图3中画出，展示了投影透镜的最小焦距特征。透镜通常在 $0 \lt Sk\lt 2$ 范围内工作，尽管已经对使用 $Sk &amp;gt; 2$ 的“第二区”透镜的性质进行了高分辨率的研究。$eqn(3)$ 给出了 $f_{p}$ 最小值 $0.56S$。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-04-26-14-40-15.png&quot; alt=&quot;Figure 3&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-04-26-14-40-15.png&quot; alt=&quot;Figure 3&quot; width=&quot;350&quot; /&gt;&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图3.&lt;/strong&gt; 对于常场模型，物镜与投影透镜的相对焦距（ $f_{obj}$ 及 $f_{p}$ ）作为透镜激发（与电流成比例）的函数。投影透镜的最小焦距出现在 $f_{p} = 0.56S$ ，其中 $S$ 是极片间隙大小。&lt;/p&gt;
 
@@ -73,13 +82,19 @@ $$&lt;/p&gt;
 B_{p} = \frac{\mu_{0}NI}{S} = 4\pi \times10^{-10}\left(\frac{NI}{S}\right)
 $$&lt;/p&gt;
 
-&lt;p&gt;图3中的横坐标 $Sk$ 在常场估计中有，&lt;/p&gt;
+&lt;p&gt;以及&lt;/p&gt;
+
+&lt;p&gt;$$
+k = 1.4827 \times 10^5 B_p / V_r^{1/2}
+$$&lt;/p&gt;
+
+&lt;p&gt;将 $Sk$ 带入上两式，约去 S，得到图3中的横坐标 $Sk$ 在常场估计中有，&lt;/p&gt;
 
 &lt;p&gt;$$
 Sk= 0.1862\left(\frac{NI}{\sqrt{V_{r}}}\right) \tag{4}
 $$&lt;/p&gt;
 
-&lt;p&gt;物体焦距 $z_{p}$ 定义为透镜中心与物体焦点之间的距离。从图1(a)中可以看出，与 $f_{p}$ 一起定义了主平面的位置。从图中得，&lt;/p&gt;
+&lt;p&gt;物体焦距 $z_{p}$ 定义为透镜中心与物体焦点之间的距离。从图1(a)中可以看出，与 $f_{p}$ 一起定义了主平面的位置。从图2(b)中得，&lt;/p&gt;
 
 &lt;p&gt;$$
 z_{p} = S/2 - r(-S/2)/\left(\frac{\mathrm{d}r}{\mathrm{d}z}\right)_{-S/2}
@@ -91,7 +106,7 @@ $$&lt;/p&gt;
 \frac{Z_p}{S} = \left(\frac{1}{2}-\frac{1}{kS\tan{kS}}\right) \tag{5}
 $$&lt;/p&gt;
 
-&lt;p&gt;当公式用于投影透镜时，如图2(b)，符号是相反的。&lt;/p&gt;
+&lt;p&gt;当公式用于投影透镜时，如图2(b)，符号是相反的，即此时的 $z_{p}$ 为负。&lt;/p&gt;
 
 &lt;p&gt;如果焦距远大于透镜间隙（ $f_{p}\gg S$ ），透镜为弱透镜（weak lens）。当 $Sk\lt2$ ，$eqn(3)$ 给出，&lt;/p&gt;
 
@@ -235,7 +250,7 @@ $$&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图4&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜钱包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：&lt;/p&gt;
+&lt;p&gt;使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜前包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：&lt;/p&gt;
 
 &lt;p&gt;$$
 \frac{d^2r}{dz^2} + \frac{e}{8mV_r}B_z^2(z)r = 0 \tag{3}
@@ -323,6 +338,15 @@ r = A\cos{kz} + B\sin{kz} \tag{8}
 $$&lt;/p&gt;
 
 &lt;p&gt;其中 $A$ 与 $B$ 为由边界条件确定的常数。对于使透镜平行于轴的射线，在 $z = S/2$ 处匹配斜率与纵坐标 $r_0$ ，可以得到&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+r = r_{0} &amp;amp; z = 0 \\ 
+\mathrm{d}r/\mathrm{d}z = 0 &amp;amp; z = S/2 \\ 
+\end{cases}
+$$&lt;/p&gt;
+
+&lt;p&gt;推论出下式同时满足 $eqn(6)$ 以及上式，&lt;/p&gt;
 
 &lt;p&gt;$$
 r = r_0\cos{k(z - S/2)} \tag{9}

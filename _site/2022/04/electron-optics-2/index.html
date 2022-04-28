@@ -311,7 +311,7 @@ $$</p>
 
 <p style="text-align: center;"><strong>图4</strong></p>
 
-<p>使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜钱包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：</p>
+<p>使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜前包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：</p>
 
 <p>$$
 \frac{d^2r}{dz^2} + \frac{e}{8mV_r}B_z^2(z)r = 0 \tag{3}
@@ -401,6 +401,15 @@ $$</p>
 <p>其中 $A$ 与 $B$ 为由边界条件确定的常数。对于使透镜平行于轴的射线，在 $z = S/2$ 处匹配斜率与纵坐标 $r_0$ ，可以得到</p>
 
 <p>$$
+\begin{cases}
+r = r_{0} &amp; z = 0 \\ 
+\mathrm{d}r/\mathrm{d}z = 0 &amp; z = S/2 \\ 
+\end{cases}
+$$</p>
+
+<p>推论出下式同时满足 $eqn(6)$ 以及上式，</p>
+
+<p>$$
 r = r_0\cos{k(z - S/2)} \tag{9}
 $$</p>
 
@@ -424,7 +433,7 @@ $$</p>
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Last One</span>
 		<h2 class="post-list__post-title post-title"><a href="/2022/04/Projector-lenses/" title="link to 电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）">电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）</a></h2>
-		<p class="excerpt">参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。  投影透镜投影透镜将前一个透镜所成像作为成像物体的镜头，例如图1中的 $L2$，$L3$ 以及 $L4$ 透镜，被成为投影透镜。中间镜 属于投影透镜这一类，以区别于使用物理标本样品作为成像物体的透镜。图1. 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），...…</p>
+		<p class="excerpt">参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。  投影透镜          投影透镜的概念      投影透镜的相关公式推导      投影透镜投影透镜的概念将前一个透镜所成像作为成像物体的镜头，例如图1中的 $L2$，$L3$ 以及 $L4$ 透镜，被成为投影透镜。中间镜 属于投影透镜这一类，以区别于使用物理标本样品作为成像物...…</p>
 		<div class="post-list__meta">
 <time datetime="2022-04-27 00:38:15 +0800" class="post-list__meta--date date">2022-04-27</time> • <span class="post-list__meta--tags tags">TEM</span><a class="btn-border-small" href="/2022/04/Projector-lenses/">More</a>
 </div>
