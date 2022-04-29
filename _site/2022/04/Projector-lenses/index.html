@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
 
 <ul>
   <li>
-<a href="#%E6%8A%95%E5%BD%B1%E9%80%8F%E9%95%9C">投影透镜</a>
+<a href="#%E6%8A%95%E5%BD%B1%E9%80%8F%E9%95%9Cthe-projector-lens">投影透镜（The projector lens）</a>
     <ul>
       <li><a href="#%E6%8A%95%E5%BD%B1%E9%80%8F%E9%95%9C%E7%9A%84%E6%A6%82%E5%BF%B5">投影透镜的概念</a></li>
       <li><a href="#%E6%8A%95%E5%BD%B1%E9%80%8F%E9%95%9C%E4%B8%AD%E7%9A%84%E7%94%B5%E5%AD%90%E8%BD%A8%E8%BF%B9%E5%8F%82%E6%95%B0">投影透镜中的电子轨迹参数</a></li>
@@ -228,11 +228,12 @@ var _hmt = _hmt || [];
       <li><a href="#%E5%85%B3%E4%BA%8E%E5%AF%B9%E7%A7%B0%E9%80%8F%E9%95%9C%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E9%80%8F%E9%95%9C%E5%AE%9A%E4%B9%89%E7%9A%84%E8%A1%A5%E5%85%85">关于对称透镜与非对称透镜定义的补充</a></li>
     </ul>
   </li>
+  <li><a href="#%E7%89%A9%E9%95%9Cthe-objective-lens">物镜（The objective lens）</a></li>
 </ul>
 
 <!-- /TOC -->
 
-<h2 id="投影透镜">投影透镜</h2>
+<h2 id="投影透镜the-projector-lens">投影透镜（The projector lens）</h2>
 
 <h3 id="投影透镜的概念">投影透镜的概念</h3>
 
@@ -396,6 +397,18 @@ $$</p>
 <p><img src="/assets/20220425/2022-04-29-16-38-56.png" alt="Figure 7" width="400"></p>
 
 <p style="text-align: center;"><strong>图7.</strong> 透镜中心位于两圆中心之间外侧的情况。</p>
+
+<h2 id="物镜the-objective-lens">物镜（The objective lens）</h2>
+
+<p>物镜紧挨着样品，是显微镜的核心。由于角放大率（ $m$ ）与横向放大率（ $M$ ）成反比，</p>
+
+<p>$$
+m = \frac{\tan{\theta_{i}}}{\tan{\theta_{0}}} \approx \frac{\theta_{i}}{\theta_{0}} = \left|\frac{1}{M}\right|
+$$</p>
+
+<p>透镜提供的放大率能够确保射线以非常小的角度进入到所有后续透镜的光轴。透镜的像差随着角度的增加而急剧增加，所以正是物镜中光线与光轴的角度最大，决定了最终成像的质量。</p>
+
+<p>最重要的透镜像差由像差常数 $C_{c}$ 以及 $C_{s}$ 指定，他们与透镜的焦距非常接近。对于高分辨率电镜，减少像差是非常重要的，通过将样品引入物镜场可以减少焦距和透镜像差，这种设计被成为 <strong>侵入式透镜</strong>（immersion lens）。保持在物体照明侧的场成为 <strong>前场</strong> （pre-field），它对于图像的形成不发挥任何作用。可用于成像的剩余区域的范围取决于目标样品的位置。因此，透镜主平面的位置和像差系数取决于物体的位置 $z_{obj}$ ，其成为了这些透镜的重要电子光学参数。它是从</p>
 
 
 		</section>

@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Apr 2022 16:50:56 +0800</pubDate>
-    <lastBuildDate>Fri, 29 Apr 2022 16:50:56 +0800</lastBuildDate>
+    <pubDate>Fri, 29 Apr 2022 18:26:44 +0800</pubDate>
+    <lastBuildDate>Fri, 29 Apr 2022 18:26:44 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -16,7 +16,7 @@
 &lt;!-- TOC GFM --&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#投影透镜&quot;&gt;投影透镜&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#投影透镜the-projector-lens&quot;&gt;投影透镜（The projector lens）&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#投影透镜的概念&quot;&gt;投影透镜的概念&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#投影透镜中的电子轨迹参数&quot;&gt;投影透镜中的电子轨迹参数&lt;/a&gt;&lt;/li&gt;
@@ -24,11 +24,12 @@
       &lt;li&gt;&lt;a href=&quot;#关于对称透镜与非对称透镜定义的补充&quot;&gt;关于对称透镜与非对称透镜定义的补充&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#物镜the-objective-lens&quot;&gt;物镜（The objective lens）&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
 
-&lt;h2 id=&quot;投影透镜&quot;&gt;投影透镜&lt;/h2&gt;
+&lt;h2 id=&quot;投影透镜the-projector-lens&quot;&gt;投影透镜（The projector lens）&lt;/h2&gt;
 
 &lt;h3 id=&quot;投影透镜的概念&quot;&gt;投影透镜的概念&lt;/h3&gt;
 
@@ -192,6 +193,18 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-04-29-16-38-56.png&quot; alt=&quot;Figure 7&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图7.&lt;/strong&gt; 透镜中心位于两圆中心之间外侧的情况。&lt;/p&gt;
+
+&lt;h2 id=&quot;物镜the-objective-lens&quot;&gt;物镜（The objective lens）&lt;/h2&gt;
+
+&lt;p&gt;物镜紧挨着样品，是显微镜的核心。由于角放大率（ $m$ ）与横向放大率（ $M$ ）成反比，&lt;/p&gt;
+
+&lt;p&gt;$$
+m = \frac{\tan{\theta_{i}}}{\tan{\theta_{0}}} \approx \frac{\theta_{i}}{\theta_{0}} = \left|\frac{1}{M}\right|
+$$&lt;/p&gt;
+
+&lt;p&gt;透镜提供的放大率能够确保射线以非常小的角度进入到所有后续透镜的光轴。透镜的像差随着角度的增加而急剧增加，所以正是物镜中光线与光轴的角度最大，决定了最终成像的质量。&lt;/p&gt;
+
+&lt;p&gt;最重要的透镜像差由像差常数 $C_{c}$ 以及 $C_{s}$ 指定，他们与透镜的焦距非常接近。对于高分辨率电镜，减少像差是非常重要的，通过将样品引入物镜场可以减少焦距和透镜像差，这种设计被成为 &lt;strong&gt;侵入式透镜&lt;/strong&gt;（immersion lens）。保持在物体照明侧的场成为 &lt;strong&gt;前场&lt;/strong&gt; （pre-field），它对于图像的形成不发挥任何作用。可用于成像的剩余区域的范围取决于目标样品的位置。因此，透镜主平面的位置和像差系数取决于物体的位置 $z_{obj}$ ，其成为了这些透镜的重要电子光学参数。它是从&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 27 Apr 2022 00:38:15 +0800</pubDate>
