@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Apr 2022 21:07:26 +0800</pubDate>
-    <lastBuildDate>Thu, 28 Apr 2022 21:07:26 +0800</lastBuildDate>
+    <pubDate>Fri, 29 Apr 2022 16:50:56 +0800</pubDate>
+    <lastBuildDate>Fri, 29 Apr 2022 16:50:56 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -20,6 +20,8 @@
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#投影透镜的概念&quot;&gt;投影透镜的概念&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#投影透镜中的电子轨迹参数&quot;&gt;投影透镜中的电子轨迹参数&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#关于强弱磁透镜定义的补充&quot;&gt;关于强弱磁透镜定义的补充&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#关于对称透镜与非对称透镜定义的补充&quot;&gt;关于对称透镜与非对称透镜定义的补充&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -139,7 +141,57 @@ $$&lt;/p&gt;
 
 &lt;p&gt;来扩展到包括非对称透镜。&lt;/p&gt;
 
-&lt;p&gt;不幸运的是，强透镜的特性对于极片几何形状的细节越来越敏感，使得 $eqn(9)$ 变得非常不可靠。特别地，由于现代物镜的焦距与极片尺寸先比并不大，因此这些镜头不能被视为“薄”透镜。&lt;/p&gt;
+&lt;p&gt;不幸运的是，强透镜的特性对于极片几何形状的细节越来越敏感，使得 $eqn(9)$ 变得非常不可靠。特别地，由于现代物镜的焦距与极片尺寸对比并不大，因此这些镜头不能被视为“薄”透镜。&lt;/p&gt;
+
+&lt;h3 id=&quot;关于强弱磁透镜定义的补充&quot;&gt;关于强弱磁透镜定义的补充&lt;/h3&gt;
+
+&lt;p&gt;网上找了很久才找到一些描述。&lt;/p&gt;
+
+&lt;p&gt;弱磁透镜（weak lens），弱压短透镜，长焦，放大倍数可调节 0 ~ 20倍。如中间镜。功能包括控制电镜总放大倍数，成像/衍射模式选择。&lt;/p&gt;
+
+&lt;p&gt;强磁透镜（Strong lens），短焦、强磁透镜，进一步放大中间镜的像。如投影镜，内孔径较小，使电子束进入投影镜孔径角很小。功能包括，景深大，改变中间镜放大倍数，使总倍数变化大，也不影响图像清晰度。焦深长，放宽对荧光屏和底片平面严格位置要求。有些电镜还装有附加投影镜，用以自动校正磁转角。&lt;/p&gt;
+
+&lt;h3 id=&quot;关于对称透镜与非对称透镜定义的补充&quot;&gt;关于对称透镜与非对称透镜定义的补充&lt;/h3&gt;
+
+&lt;p&gt;如果一个透镜的两个圆弧半径相等，则称为对称透镜（symmetric lens），否则称为非对称透镜（asymmetric lens）。双鱼囊（vesica piscis，间图5）是对称透镜的一种形式，由两个圆的弧组成，每个圆的中心位于相反的弧上。圆弧在其端点处以 120° 的角度相交。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/220px-Geometric_lens_examples.png&quot; alt=&quot;Figure 4&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图4.&lt;/strong&gt; 非对称透镜（左右）及对称透镜（中间）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/220px-Vesica_piscis_circles.svg.png&quot; alt=&quot;Figure 5&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图5.&lt;/strong&gt; 双鱼囊（Vesica piscis）是两个圆盘的交点，两个圆盘具有相投的半径 $R$ ，并且中心之间的距离也等于 $R$ 。&lt;/p&gt;
+
+&lt;p&gt;对称透镜的面积可以而用半径（ $R$ ）和弧长（ $\theta$ ）以弧度表示为，&lt;/p&gt;
+
+&lt;p&gt;$$
+A = R^2(\theta - \sin{\theta})
+$$&lt;/p&gt;
+
+&lt;p&gt;非对称透镜的面积则由半径（ $R$ ， $r$ ）以及两者中心之间距离（ $d$ ）给出，&lt;/p&gt;
+
+&lt;p&gt;$$
+A = r^2\cos^{-1}{\left(\frac{d^2 + r^2 - R^2}{2dr}\right)} + R^2\cos^{-1}{\left(\frac{d^2 + R^2 - r^2}{2dR}\right)} - 2\Delta
+$$&lt;/p&gt;
+
+&lt;p&gt;其中 $\Delta$ 为三边分别为 $d$ ，$r$ 以及 $R$ 。&lt;/p&gt;
+
+&lt;p&gt;$$
+\Delta = \frac{1}{4}\sqrt{(-d + r + R)(d - r + R)(d + r - R)(d + r + R)}
+$$&lt;/p&gt;
+
+&lt;p&gt;如果 $d \lt r + R$ 两个圆圈发生重叠，当 $d$ 足够大时，透镜的中心位于两个圆中心之间。如下图6，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-04-29-16-38-33.png&quot; alt=&quot;Figure 6&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图6.&lt;/strong&gt; 透镜中心位于两圆中心之间的情况。&lt;/p&gt;
+
+&lt;p&gt;如果 $d$ 比较小的情况，透镜中心位于连接两圆中心线段外侧。如图7，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-04-29-16-38-56.png&quot; alt=&quot;Figure 7&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图7.&lt;/strong&gt; 透镜中心位于两圆中心之间外侧的情况。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 27 Apr 2022 00:38:15 +0800</pubDate>
