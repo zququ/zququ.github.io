@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Apr 2022 18:26:44 +0800</pubDate>
-    <lastBuildDate>Fri, 29 Apr 2022 18:26:44 +0800</lastBuildDate>
+    <pubDate>Mon, 02 May 2022 00:53:14 +0800</pubDate>
+    <lastBuildDate>Mon, 02 May 2022 00:53:14 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -204,7 +204,63 @@ $$&lt;/p&gt;
 
 &lt;p&gt;透镜提供的放大率能够确保射线以非常小的角度进入到所有后续透镜的光轴。透镜的像差随着角度的增加而急剧增加，所以正是物镜中光线与光轴的角度最大，决定了最终成像的质量。&lt;/p&gt;
 
-&lt;p&gt;最重要的透镜像差由像差常数 $C_{c}$ 以及 $C_{s}$ 指定，他们与透镜的焦距非常接近。对于高分辨率电镜，减少像差是非常重要的，通过将样品引入物镜场可以减少焦距和透镜像差，这种设计被成为 &lt;strong&gt;侵入式透镜&lt;/strong&gt;（immersion lens）。保持在物体照明侧的场成为 &lt;strong&gt;前场&lt;/strong&gt; （pre-field），它对于图像的形成不发挥任何作用。可用于成像的剩余区域的范围取决于目标样品的位置。因此，透镜主平面的位置和像差系数取决于物体的位置 $z_{obj}$ ，其成为了这些透镜的重要电子光学参数。它是从&lt;/p&gt;
+&lt;p&gt;最重要的透镜像差由像差常数 $C_{c}$ 以及 $C_{s}$ 指定，他们与透镜的焦距非常接近。对于高分辨率电镜，减少像差是非常重要的，通过将样品引入物镜场可以减少焦距和透镜像差，这种设计被成为 &lt;strong&gt;侵入式透镜&lt;/strong&gt;（immersion lens）。&lt;/p&gt;
+
+&lt;p&gt;保持在物体照明侧的场成为 &lt;strong&gt;前场&lt;/strong&gt; （pre-field），它对于图像的形成不发挥任何作用。可用于成像的剩余区域的范围取决于目标样品的位置。因此，透镜主平面的位置和像差系数取决于物体的位置 $z_{obj}$ ，其成为了这些透镜的重要电子光学参数。&lt;/p&gt;
+
+&lt;p&gt;$z_{obj}$ 是从透镜的中心测量的，按照惯例，其与物镜焦距 $f_{obj}$ 是为产生无限远（无限放大）图像的透镜而指定的，以便样品处于精确的物体焦点处。 $z_{obj}$ 也因此等于物焦距。&lt;/p&gt;
+
+&lt;p&gt;$$
+k^2 = \left(\frac{e}{8m_{0}V_{r}}\right)B_{p}^2
+$$&lt;/p&gt;
+
+&lt;p&gt;对于由以上公式描述的简单透镜，从对称性中看出像和物焦距是相等的是很容易的。这些由分别平行于轴进入和离开的射线定义。因此可以从以下公式&lt;/p&gt;
+
+&lt;p&gt;$$
+r = r_{0}\cos{k(z-S/2)}
+$$&lt;/p&gt;
+
+&lt;p&gt;看出，当余弦参数为 $-\pi/2$ 时，纵坐标为零。即&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+k(z-S/2)
+&amp;amp;= -\frac{\pi}{2} \\ 
+z &amp;amp;= \frac{\pi}{2k}-\frac{S}{2}
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;所以有&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\frac{z_{obj}}{S} 
+&amp;amp;= \frac{|z|}{S} \\ 
+&amp;amp;= -\left(\frac{\pi}{2kS} - \frac{1}{2}\right) \\ 
+\end{aligned}\tag{10}
+$$&lt;/p&gt;
+
+&lt;p&gt;而真正的焦距 $f_{obj}$ 为&lt;/p&gt;
+
+&lt;p&gt;$$
+f_{obj} = r_{0}/\left(\frac{\mathrm{d}r}{\mathrm{d}z}\right)_{z_{obj}} \tag{11}
+$$&lt;/p&gt;
+
+&lt;p&gt;得出&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{f_{obj}}{S} = (Sk)^{-1}\tag{12}
+$$&lt;/p&gt;
+
+&lt;p&gt;正如图3所示的 $f_{obj}/S$ 曲线所示。与 $eqn(3)$ 相比，&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{f_{p}}{S} = [Sk\sin{(Sk)}]^{-1}\tag{3}
+$$&lt;/p&gt;
+
+&lt;p&gt;表明用作物镜的透镜焦距可能比用于投影镜的焦距短。实际上，焦距的下限是根据透镜极片的饱和度设定的。&lt;/p&gt;
+
+&lt;p&gt;对于高激发状态下的非对称物镜（ $R_{1}\neq R_{2}$ ），焦距取决于 $R_{1}$ 或 $R_{2}$ 中的哪一个在像空间中。对于较弱的透镜，情况并非如此。高度不对称的物镜在现代显微镜中很受欢迎，因为必须适应样品更换机制，所以在顶部入口阶段，样品从上方引入。 对于倾斜台（tilt stage）， $2R_{1}$ 的典型值大约为 20 mm，而 $2R_{2}$ 可能小至 2 mm。极片不对称的影响是会增加 $B_{z}(z)$ 的最大值（ $R_{1}$ 和 $S$ 保持不变）并将最大值对应的位置移向较小的极片 ( $R_{2}$ )。 对于 $R_{2}\rightarrow0$ ，该最大值与消失的极片面一致。对于真实的透镜， $B_{z}(z)$ 是一个平滑的峰值函数，透镜重要的折射效应发生在场的最大值附近。Liebmann 能够通过模拟计算，表明非对称透镜的最大值与极片直径 $D=R_{1}+R_{2}$ 的等效对称透镜（equivalent symmetrical lens）的最大值相差 1%。高度不对称透镜的焦点特性可以通过跟踪穿过透镜的两条射线来获得，一条平行于轴进入，一条平行于轴离开。实际上，通过等效对称透镜追踪的单条光线可以很好地近似透镜的焦距。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 27 Apr 2022 00:38:15 +0800</pubDate>

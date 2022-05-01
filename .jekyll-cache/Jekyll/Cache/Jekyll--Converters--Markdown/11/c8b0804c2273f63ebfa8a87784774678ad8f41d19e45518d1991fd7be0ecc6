@@ -1,234 +1,17 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <title>电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）</title>
-  <meta name="description" content="参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
-  <meta name="author" content="Wei Wang">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）">
-  <meta name="twitter:description" content="参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
-  
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）">
-  <meta property="og:description" content="参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。">
-  
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
-  
-  <link rel="stylesheet" href="/css/main.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <link rel="canonical" href="http://localhost:4000/2022/04/Projector-lenses/">
-  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
-  
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
-  <!-- Icons -->
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <!-- mathjax -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      extensions: ["tex2jax.js"],
-      jax: ["input/TeX", "output/HTML-CSS"],
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-      },
-      "HTML-CSS": { fonts: ["TeX"] }
-    });
-  </script>
-  <!--script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script-->
-  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  <!-- Valine Comment -->
-  
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-
-
-
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-
-	<span class="mobile btn-mobile-menu">
-		<i class="fa fa-list btn-mobile-menu__icon"></i>
-		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
-	</span>
-
-	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
-  <div class="panel-main">
-
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-
-        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
-        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
-        
-        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
-        
-        <hr class="panel-cover__divider">
-        <p class="panel-cover__description">欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary">
-        
-        
-        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a></p>
-        
-        
-        <div class="navigation-wrapper">
-          <div>
-            <nav class="cover-navigation cover-navigation--primary">
-              <ul class="navigation">
-                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
-                
-                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
-                
-                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
-                
-              </ul>
-            </nav>
-          </div>
-          
-          <div>
-<nav class="cover-navigation navigation--social">
-  <ul class="navigation">
-
-  
-  <!-- Weibo -->
-  <li class="navigation__item">
-    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
-      <i class="social fa fa-weibo"></i>
-      <span class="label">Weibo</span>
-    </a>
-  </li>
-  
-
-  
-  <!-- Github -->
-  <li class="navigation__item">
-    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
-      <i class="social fa fa-github"></i>
-      <span class="label">Github</span>
-    </a>
-  </li>
-  
-  
-  
-  <!-- Twitter -->
-  <li class="navigation__item">
-    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
-      <i class="social fa fa-twitter"></i>
-      <span class="label">Twitter</span>
-    </a>
-  </li>
-  
-
-  
-
-  <!-- RSS -->
-  <li class="navigation__item">
-    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-      <i class="social fa fa-rss"></i>
-      <span class="label">RSS</span>
-    </a>
-  </li>
-
-  
-  <!-- Email -->
-  <li class="navigation__item">
-    <a href="mailto:qzh813@gmail.com" title="Contact me">
-      <i class="social fa fa-envelope"></i>
-      <span class="label">Email</span>
-    </a>
-  </li>
-  
-
-  
-  <!-- Research Gate  -->
-  <li class="navigation__item">
-    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
-      <i class="fa fa-book"></i>
-      <span class="label">Researchgate</span>
-    </a>
-  </li>
-  
-
-  </ul>
-</nav>
-</div>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="panel-cover--overlay cover-purple"></div>
-    
-  </div>
-</header>
-
-
-	<div class="content-wrapper">
-		<div class="content-wrapper__inner">
-			
-
-
-
-	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
-		<header class="post-header">
-			<div class="post-meta">
-				<time datetime="2022-04-27 00:38:15 +0800" itemprop="datePublished" class="post-meta__date date">2022-04-27</time> • <span class="post-meta__tags tags">TEM</span>
-			</div>
-			<div class="post-tags">
-	标签页 Tags：
-	
-	
-	<a href="/tags/#TEM">TEM</a>
-	
-</div>
-
-			<p>
-				<!-- hitwebcounter Code START -->
-				本站自2019年7月已访问<img src="https://hitwebcounter.com/counter/counter.php?page=7976892&style=0038&nbdigits=6&type=page&initCount=7314" title="Free Counter" alt="web counter" border="0">
-			</p>
-			<h1 class="post-title">电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）</h1>
-		</header>
-		<section class="post">
-			<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
+I"f4<p>参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。</p>
 
 <!-- TOC GFM -->
 
 <ul>
-  <li>
-<a href="#%E6%8A%95%E5%BD%B1%E9%80%8F%E9%95%9Cthe-projector-lens">投影透镜（The projector lens）</a>
+  <li><a href="#投影透镜the-projector-lens">投影透镜（The projector lens）</a>
     <ul>
-      <li><a href="#%E6%8A%95%E5%BD%B1%E9%80%8F%E9%95%9C%E7%9A%84%E6%A6%82%E5%BF%B5">投影透镜的概念</a></li>
-      <li><a href="#%E6%8A%95%E5%BD%B1%E9%80%8F%E9%95%9C%E4%B8%AD%E7%9A%84%E7%94%B5%E5%AD%90%E8%BD%A8%E8%BF%B9%E5%8F%82%E6%95%B0">投影透镜中的电子轨迹参数</a></li>
-      <li><a href="#%E5%85%B3%E4%BA%8E%E5%BC%BA%E5%BC%B1%E7%A3%81%E9%80%8F%E9%95%9C%E5%AE%9A%E4%B9%89%E7%9A%84%E8%A1%A5%E5%85%85">关于强弱磁透镜定义的补充</a></li>
-      <li><a href="#%E5%85%B3%E4%BA%8E%E5%AF%B9%E7%A7%B0%E9%80%8F%E9%95%9C%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E9%80%8F%E9%95%9C%E5%AE%9A%E4%B9%89%E7%9A%84%E8%A1%A5%E5%85%85">关于对称透镜与非对称透镜定义的补充</a></li>
+      <li><a href="#投影透镜的概念">投影透镜的概念</a></li>
+      <li><a href="#投影透镜中的电子轨迹参数">投影透镜中的电子轨迹参数</a></li>
+      <li><a href="#关于强弱磁透镜定义的补充">关于强弱磁透镜定义的补充</a></li>
+      <li><a href="#关于对称透镜与非对称透镜定义的补充">关于对称透镜与非对称透镜定义的补充</a></li>
     </ul>
   </li>
-  <li><a href="#%E7%89%A9%E9%95%9Cthe-objective-lens">物镜（The objective lens）</a></li>
+  <li><a href="#物镜the-objective-lens">物镜（The objective lens）</a></li>
 </ul>
 
 <!-- /TOC -->
@@ -239,7 +22,7 @@ var _hmt = _hmt || [];
 
 <p>将前一个透镜所成像作为成像物体的镜头，例如图1中的 $L2$，$L3$ 以及 $L4$ 透镜，被成为投影透镜。<strong>中间镜</strong> 属于投影透镜这一类，以区别于使用物理标本样品作为成像物体的透镜。</p>
 
-<p><img src="/assets/20220404/2022-04-06-222144.png" alt="Figure 1" height="500"></p>
+<p><img src="/assets/20220404/2022-04-06-222144.png" alt="Figure 1" height="500" /></p>
 
 <p style="text-align: center;"><strong>图1.</strong> 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。其中 $L2$，$L3$ 以及 $L3$ 为投影透镜。$OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。</p>
 
@@ -257,7 +40,7 @@ $$</p>
 
 <p>投影对象焦点 $f_{p}$ 可能会落在透镜视野之内或之外，如图2所示。</p>
 
-<p><img src="/assets/20220425/2022-04-25-14-25-43.png" alt="Figure 2"></p>
+<p><img src="/assets/20220425/2022-04-25-14-25-43.png" alt="Figure 2" /></p>
 
 <p style="text-align: center;"><strong>图2.</strong> （a）物镜与投影透镜焦距（focal length） $f_{obj}$ 和 $f_{p}$ 的定义。同时图中还标注了对焦距离（focal distance），物镜与投影透镜的对焦距离分别表示为 $z_{obj}$ 以及 $z_{p}$ 。物镜样品放置于靠近 $F1’$ 的位置。此图显示了当焦点位于透镜场内部时，透镜同时被用作物镜（焦点在 $F1’$）及用作投影镜（焦点位于 $F1$）。（b）投影透镜的线路图，焦点位于透镜场外（从 $-S/2$ 至 $S/2$ ）。纵坐标表示场强和光线到光轴的距离。图像焦点为 $F2$ 。Asymptote，渐近线。</p>
 
@@ -279,7 +62,7 @@ $$</p>
 
 <p>该函数于图3中画出，展示了投影透镜的最小焦距特征。透镜通常在 $0 \lt Sk\lt 2$ 范围内工作，尽管已经对使用 $Sk &gt; 2$ 的“第二区”透镜的性质进行了高分辨率的研究。$eqn(3)$ 给出了 $f_{p}$ 最小值 $0.56S$。</p>
 
-<p><img src="/assets/20220425/2022-04-26-14-40-15.png" alt="Figure 3" width="350"></p>
+<p><img src="/assets/20220425/2022-04-26-14-40-15.png" alt="Figure 3" width="350" /></p>
 
 <p style="text-align: center;"><strong>图3.</strong> 对于常场模型，物镜与投影透镜的相对焦距（ $f_{obj}$ 及 $f_{p}$ ）作为透镜激发（与电流成比例）的函数。投影透镜的最小焦距出现在 $f_{p} = 0.56S$ ，其中 $S$ 是极片间隙大小。</p>
 
@@ -360,11 +143,11 @@ $$</p>
 
 <p>如果一个透镜的两个圆弧半径相等，则称为对称透镜（symmetric lens），否则称为非对称透镜（asymmetric lens）。双鱼囊（vesica piscis，间图5）是对称透镜的一种形式，由两个圆的弧组成，每个圆的中心位于相反的弧上。圆弧在其端点处以 120° 的角度相交。</p>
 
-<p><img src="/assets/20220425/220px-Geometric_lens_examples.png" alt="Figure 4"></p>
+<p><img src="/assets/20220425/220px-Geometric_lens_examples.png" alt="Figure 4" /></p>
 
 <p style="text-align: center;"><strong>图4.</strong> 非对称透镜（左右）及对称透镜（中间）</p>
 
-<p><img src="/assets/20220425/220px-Vesica_piscis_circles.svg.png" alt="Figure 5"></p>
+<p><img src="/assets/20220425/220px-Vesica_piscis_circles.svg.png" alt="Figure 5" /></p>
 
 <p style="text-align: center;"><strong>图5.</strong> 双鱼囊（Vesica piscis）是两个圆盘的交点，两个圆盘具有相投的半径 $R$ ，并且中心之间的距离也等于 $R$ 。</p>
 
@@ -388,13 +171,13 @@ $$</p>
 
 <p>如果 $d \lt r + R$ 两个圆圈发生重叠，当 $d$ 足够大时，透镜的中心位于两个圆中心之间。如下图6，</p>
 
-<p><img src="/assets/20220425/2022-04-29-16-38-33.png" alt="Figure 6" width="400"></p>
+<p><img src="/assets/20220425/2022-04-29-16-38-33.png" alt="Figure 6" width="400" /></p>
 
 <p style="text-align: center;"><strong>图6.</strong> 透镜中心位于两圆中心之间的情况。</p>
 
 <p>如果 $d$ 比较小的情况，透镜中心位于连接两圆中心线段外侧。如图7，</p>
 
-<p><img src="/assets/20220425/2022-04-29-16-38-56.png" alt="Figure 7" width="400"></p>
+<p><img src="/assets/20220425/2022-04-29-16-38-56.png" alt="Figure 7" width="400" /></p>
 
 <p style="text-align: center;"><strong>图7.</strong> 透镜中心位于两圆中心之间外侧的情况。</p>
 
@@ -466,60 +249,4 @@ $$</p>
 
 <p>对于高激发状态下的非对称物镜（ $R_{1}\neq R_{2}$ ），焦距取决于 $R_{1}$ 或 $R_{2}$ 中的哪一个在像空间中。对于较弱的透镜，情况并非如此。高度不对称的物镜在现代显微镜中很受欢迎，因为必须适应样品更换机制，所以在顶部入口阶段，样品从上方引入。 对于倾斜台（tilt stage）， $2R_{1}$ 的典型值大约为 20 mm，而 $2R_{2}$ 可能小至 2 mm。极片不对称的影响是会增加 $B_{z}(z)$ 的最大值（ $R_{1}$ 和 $S$ 保持不变）并将最大值对应的位置移向较小的极片 ( $R_{2}$ )。 对于 $R_{2}\rightarrow0$ ，该最大值与消失的极片面一致。对于真实的透镜， $B_{z}(z)$ 是一个平滑的峰值函数，透镜重要的折射效应发生在场的最大值附近。Liebmann 能够通过模拟计算，表明非对称透镜的最大值与极片直径 $D=R_{1}+R_{2}$ 的等效对称透镜（equivalent symmetrical lens）的最大值相差 1%。高度不对称透镜的焦点特性可以通过跟踪穿过透镜的两条射线来获得，一条平行于轴进入，一条平行于轴离开。实际上，通过等效对称透镜追踪的单条光线可以很好地近似透镜的焦距。</p>
 
-
-		</section>
-	</article>
-
-	<section class="read-more">
-	
-
-	
-	
-	<div class="read-more-item">
-		<span class="read-more-item-dim">Next One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2022/04/electron-optics-2/" title="link to 电子光学 第二部分 近轴射线方程与常场近似">电子光学 第二部分 近轴射线方程与常场近似</a></h2>
-		<p class="excerpt">参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。  1. 近轴射线方程          1.1 磁场力                  1.1.1 安培力          1.1.2 洛伦兹力          1.1.3 磁场力的方向判断                    1.2 极片（pole-piece）构造    ...…</p>
-		<div class="post-list__meta">
-<time datetime="2022-04-20 10:36:35 +0800" class="post-list__meta--date date">2022-04-20</time> • <span class="post-list__meta--tags tags">TEM</span><a class="btn-border-small" href="/2022/04/electron-optics-2/">More</a>
-</div>
-	</div>
-	
-</section>
-
-	<script src="https://utteranc.es/client.js" repo="zququ/zququ.github.io" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async>
-		</script>
-
-
-
-			<section class="footer">
-	<footer>
-		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
-			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
-	</footer>
-</section>
-
-<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
-<!--<script>-->
-<!--$(document).ready(function () {-->
-<!--mermaid.initialize({-->
-<!--startOnLoad: true,-->
-<!--theme: "default",-->
-<!--});-->
-<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
-<!--});-->
-<!--</script>-->
-
-		</div>
-	</div>
-
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<script type="text/javascript" src="/js/main.js"></script>
-
-
-
-
-
-
-</body>
-</html>
+:ET
