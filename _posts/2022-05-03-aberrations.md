@@ -37,7 +37,7 @@ $$
 球面像差的结果如图1所示，以大角度 $\theta_{0}$ 离开轴向物点的光线被透镜的外部区域折射相对较强，并被在高斯图像平面之前的汇聚。该平面满足方程，
 
 $$
-\frac{1}{U}+\frac{1}{V}=\frac{1}{f}
+\frac{1}{U}+\frac{1}{V}=\frac{1}{f}\tag{S1}
 $$
 
 其中近轴光线则由下方的近轴轴光线方程获得，并聚焦。
@@ -100,8 +100,17 @@ $$
 上等式的微分给出，
 
 $$
-\frac{\Delta f}{f} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}
+\frac{\Delta f}{f} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}\tag{4}
 $$
 
-<++>
+为了偏离薄透镜定律（ $eqn(S1)$ ）， $eqn(4)$ 中引入比例常数 $K$ 。 色差常数 $C_{\mathrm{c}}$ 定义为 $C_{\mathrm{c}}=Kf$ ，所以有
 
+$$
+\begin{aligned}
+\Delta f 
+& = C_{\mathrm{c}}\left(\frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B}\right) \\ 
+& = C_{\mathrm{c}}\left(\frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}\right) \\ 
+\end{aligned}\tag{5}
+$$
+
+实践中，透镜电流和高电压的波动不太可能相关，因此焦距的随机波动
