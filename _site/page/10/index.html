@@ -195,6 +195,15 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-19/" title="访问 汇编语言 5.5 5.6 loop与[bx]的联合应用 段前缀">汇编语言 5.5 5.6 loop与[bx]的联合应用 段前缀</a></h2>
+      <p class="excerpt">loop 和[bx]的联合应用问题： 计算ffff:0~ffff:b单元中的数据和，结果存储在dx中。分析上述问题，  运算结构是否会超出dx存储范围。不会，因为ffff:0~ffff:b内存单元中每一位都是字节型数据，累加12个不会超出ds的最大存储范围(65535)。  因为ffff:0~ffff:b数据是8位的，不能直接加到16位寄存器dx中。  如果直接将ffff:0~ffff:b中的数据累加到dl中，而设置$(dh)=0$，12个8位数据全部累加到8位数据的dl中，很可能会造成进...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-28 20:56:24 +0800" class="post-list__meta--date date">2019-10-28</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-19/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/10/rep-douban/" title="访问 python 爬虫豆瓣热门电影学习">python 爬虫豆瓣热门电影学习</a></h2>
       <p class="excerpt">本文为学习鱼c论坛相关课程视频笔记，观看原视频访问这里。Requests，与BeautifulSoup模块的安装pip install requestspip install bs4解析网页内容使用BeautifulSoup模块，将复杂的网页结构转化为书籍目录的形式。代码示例import requestsimport bs4res = requests.get("http://movie.douban.com/top250")soup = bs4.BeautifulSoup(res.tex...…</p>
       <div class="post-list__meta">
@@ -271,15 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">4.8 程序装载进入内存并使用之前讲过，在DOS中，可执行文件中P1若要运行，必须有一个正在运行的程序P2，将P1从可执行文件中加载入内存，将CPU的控制权交给它，P1才能得以运行；当P1运行完毕后，应该将CPU的控制权交还给使它得以运行的程序P2。  操作系统的shell操作系统是由多个功能模块组成的庞大、复杂的软件系统。任何通用的操作系统，都要提供一个成为shell（外壳）的程序，用户使用这个程序来操作计算机系统运行工作。  在DOS中直接运行.exe时，是正在运行的command，将...…</p>
       <div class="post-list__meta">
 <time datetime="2019-10-20 13:55:24 +0800" class="post-list__meta--date date">2019-10-20</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-14/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-13/" title="访问 汇编语言 4.3 4.4 4.5 4.6 4.7 源程序标号结构返回以及编译连接">汇编语言 4.3 4.4 4.5 4.6 4.7 源程序标号结构返回以及编译连接</a></h2>
-      <p class="excerpt">4.2后半标号汇编源程序中，除了汇编指令和伪指令外，还有一些标号，比如”codesg”。一个标号指代了一个地址。比如codesg在segment的前面，作为一个段名称，这个段的名称最终将被编译、连接程序处理为一个段的段地址。  标号 —&gt; 段名称 —&gt; 编译、连接处理为一个段的段地址程序的结构之前对于较为简短的程序我们可以在debug中直接运行，但是如果程序比较大，我们就需要写出能让编译器进行编译的程序，这样的源程序应该具备起码的结构。源程序有一些段构成，用来存放代码、数据、或...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-19 16:48:24 +0800" class="post-list__meta--date date">2019-10-19</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-13/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

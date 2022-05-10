@@ -5,12 +5,126 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 May 2022 00:53:14 +0800</pubDate>
-    <lastBuildDate>Mon, 02 May 2022 00:53:14 +0800</lastBuildDate>
+    <pubDate>Tue, 10 May 2022 11:02:36 +0800</pubDate>
+    <lastBuildDate>Tue, 10 May 2022 11:02:36 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
-        <title>电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）</title>
+        <title>像差（aberrations）</title>
+        <description>&lt;!-- TOC GFM --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#前言&quot;&gt;前言&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#球面像差spherical-aberration&quot;&gt;球面像差（spherical aberration）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#色差chromatic-aberration&quot;&gt;色差（Chromatic aberration）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;到了 1960 年左右，也就是目前的像差校正电子显微镜时代之前，电子不稳定性已经被降低到了影响 TEM 相差的程度，包括三阶球面像差（ $C_{s}$ ），色差（ chromatic aberration， $C_{c}$ ）。很多论文中讨论了在射线方程的推导中出现高阶项的后果。由于包含这些术语而导致的偏离完美成像的部分，按照光学中对应的像差进行类比分类。保留 $r^3$ 中的项，类似于将 $\theta^3$ 中的项包含在适用于玻璃透镜的 Snell’s 定律中使用的 $\sin\theta$ 的展开中。结果是产生了三阶像差，其中球面像差在高分辨率下最为重要。&lt;/p&gt;
+
+&lt;p&gt;大多数高分辨率图像以高放大倍率（ $M\gt80 000$ ）进行记录。这里没有讨论透镜系统像差的放大倍率依赖性，讨论将限制在物体靠近物镜焦点的情况下。&lt;/p&gt;
+
+&lt;p&gt;在高倍率下，最终图像的质量是由第一个透镜（物镜）的像差决定，因为这里的散射角（ $\theta_{0}$ ）最大，球面像差（光线像差）取决于这个角的立方。由于后续镜头形成的图像更大，他们的角光谱（angular spectra）（衍射图案）更小。&lt;/p&gt;
+
+&lt;p&gt;另一个对高分辨率成像很重要的图像缺陷来自于电子不稳定性以及光束-样品相互作用，也成为色差。这是指光束中能量扩散的影响。后续会讨论射线像差和波像差之间的区别；这里只讨论像差的几何光学处理。对于表示为波像差或者相移（phase shift）的像差， $\theta_{0}$ 的指数增加一。&lt;/p&gt;
+
+&lt;p&gt;一个优雅的解决像差问题的方式是利用 Fermat’s principle 应用到光路 $W(P_{1}, P_{2})$ 的 $P_{1}$ 和 $P_{2}$ 这两点之间。以 $n$ 表示折射率，有&lt;/p&gt;
+
+&lt;p&gt;$$
+W(P_{1}, P_{2}) = \int_{P_{1}}^{P_{2}}n\mathrm{d}s
+$$&lt;/p&gt;
+
+&lt;p&gt;根据 Fermat’s principle, 该函数是最小值或取平稳值（stationary value）。磁函数 $W(P_{1}, P_{2})$ 也称 Hamilton’s 点特征函数。将此函数展开为幂级数，可以展示出描述完美成像的完美成像的术语。偏离完美成像的偏差用更高阶的项来表示。这个理论远远超出了高分辨率的兴趣；但是，以下各部分总结了像差理论的主要结果，总结了像差校正（aberration-correction）的方法。&lt;/p&gt;
+
+&lt;h2 id=&quot;球面像差spherical-aberration&quot;&gt;球面像差（spherical aberration）&lt;/h2&gt;
+
+&lt;p&gt;球面像差的结果如图1所示，以大角度 $\theta_{0}$ 离开轴向物点的光线被透镜的外部区域折射相对较强，并被在高斯图像平面之前的汇聚。该平面满足方程，&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{1}{U}+\frac{1}{V}=\frac{1}{f}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中近轴光线则由下方的近轴轴光线方程获得，并聚焦。&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{\mathrm{d}^2r}{\mathrm{d}z^2} + \frac{e}{8mV_{r}}B^2_{z}r = 0
+$$&lt;/p&gt;
+
+&lt;p&gt;像差射线的轨迹可以由全射线方程（full-ray equation）计算得出。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220504/2022-05-06-15-35-22.png&quot; alt=&quot;Figure1&quot; width=&quot;450&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图1.&lt;/strong&gt; 球面像差效果图。穿过透镜靠近外缘的射线相比更靠近光轴的射线折射更加强烈。这些外部射线会在高斯图像平面（Gaussion image plane）之前汇聚，并与高斯图像平面相较于距轴 $\Delta r_{i}$ 处。球面像差（或称光圈缺陷，aperture defect）是影响高分辨率图像质量的最重要缺陷。&lt;/p&gt;
+
+&lt;p&gt;如何考虑到来自轴向物点的所有光线，则最小直径的图像圆盘成为最小混淆圆（circle of least confusion）。距离 $\Delta r_{i}$ ，在高放大倍率的图像平面上与 $\theta_{0}^3$ 成正比。如果 $\Delta r_{i}$ 指的是物体空间，其与 $\theta_{0}^3$ 之间的比例常数，为三阶球差常数 $C_{s}$ （third-order spherical aberration constant）。即&lt;/p&gt;
+
+&lt;p&gt;$$
+\Delta r_{0} = C_{s}\theta_{0}^3 \\ 
+\text{和} \\ 
+\Delta r_{i} = MC_{s}\theta_{0}^3 = M^4\theta_{i}^3C_{s} \tag{1}
+$$&lt;/p&gt;
+
+&lt;p&gt;最小混淆圆的半径为 $\frac{1}{4}C_{s}\theta_{0}^3$ 。 $C_{s}$ 的值取决于透镜激发和物体的位置，但对应于高倍率的情况，通常通过靠近物体焦平面的物体确定。在现代未经校正的仪器上， $C_{s}$ 的范围在 0.5 ~ 2.5 mm 之间，并为 “可解释” 的分辨能力设定了极限。 $C_{s}$ 的值可以从完整的（非近轴）方程的计算或者使用 Glaser（1956）给出的表达式获得。&lt;/p&gt;
+
+&lt;p&gt;对于第一种方法， Liebmann（1949）给出了简单的递归关系，表示真实轨迹与沿射线路径增量的近轴轨迹的偏差。如果平行于轴离开物体的近轴光线穿过轴的点处的偏差为 $\Delta$ ，则球面像差由下式给出，&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{s} = \Delta/\beta^3 \tag{2}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中 $\beta$ 为图像焦点处近轴光线的斜率。&lt;/p&gt;
+
+&lt;p&gt;Glaser（1956）发现了 $C_{s}$ 的有用表达式，&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{\mathrm{s}}=\frac{e}{16 m_{0} V_{\mathrm{r}}} \int_{z_{1}}^{z_{2}}\left[\left\{\frac{\partial B_{z}(z)}{\partial z}\right\}^{2}+\frac{3 e}{8 m V_{\mathrm{r}}} B_{z}^{4}(z)-B_{z}^{2}(z)\left\{\frac{h^{\prime}(z)}{h(z)}\right\}^{2}\right] h^{4}(z) \mathrm{d} z \tag{3}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中 $h(z)$ 是离开具有单位斜率的轴向物点的光线的近轴轨迹（paraxial trajectory）。 $eqn(3)$ 中导数的出现使得 $C_{\mathrm{s}}$ 的评估对场 $B_{z}(z)$ 的形状特别敏感。对于高分辨率，分辨率受 $C_{\mathrm{s}}$ 的限制， $eqn(3)$ 也展示了 $B_{z}(z)$ 的详细形式，以及极片的形状，敏感地决定了仪器的分辨率。因此在处理极片时必须要格外小心。&lt;/p&gt;
+
+&lt;p&gt;五阶球面像差项 $C_{5}$ 在非常高的分辨率下也可能很重要。例如，已经发现在 100 kV 时， $C_{\mathrm{s}} = 0.5 mm$ ，对于小于 0.1 nm 的间距， $C_{5}$ 的影响不能忽略不计。&lt;/p&gt;
+
+&lt;h2 id=&quot;色差chromatic-aberration&quot;&gt;色差（Chromatic aberration）&lt;/h2&gt;
+
+&lt;p&gt;色差源自于对于所用射线波长的依赖性，因此与电子能力相关。使用多色照明，在一组平面上形成聚焦图像（in-focus images），每个平面对应着照明射线中存在的每个波长。&lt;/p&gt;
+
+&lt;p&gt;现代仪器中存在三个重要的波长波动来源。对于高分辨率下使用的薄样品（ t &amp;lt; 10 nm ），这些按重要性降序排序：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;离开灯丝的电子的能量扩散：在高枪偏压设置（ high gun-bias setting ）下，有 $\Delta E/E_{0} = 10^{-5}$ 。&lt;/li&gt;
+  &lt;li&gt;高压不稳定型（ High-voltage instabilities ）： 典型的波动规格为 $\Delta V_{0}/V_{0} = 2 \times 10^{-6}/min$ ，其中 $V_{0}$ 为显微镜高压。&lt;/li&gt;
+  &lt;li&gt;样品中的能量损失。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;在色差常数 $C_{c}$ 的定义中包含高压电源和物镜电流的波动较为方便，&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{1}{f} = \frac{A_{0}(NI)^2}{V_{r}(S + D)}
+$$&lt;/p&gt;
+
+&lt;p&gt;上等式的微分给出，&lt;/p&gt;
+
+&lt;p&gt;$$
+\frac{\Delta f}{f} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}
+$$&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;++&amp;gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 03 May 2022 12:32:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/05/aberrations/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/05/aberrations/</guid>
+        
+        <category>TEM</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>电子光学 第三部分 投影镜（Projector lenses）、物镜（Objective lens）及实际透镜设计</title>
         <description>&lt;p&gt;参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。&lt;/p&gt;
 
 &lt;!-- TOC GFM --&gt;
@@ -25,6 +139,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#物镜the-objective-lens&quot;&gt;物镜（The objective lens）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#实际透镜设计&quot;&gt;实际透镜设计&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- /TOC --&gt;
@@ -82,7 +197,7 @@ $$&lt;/p&gt;
 &lt;p&gt;利用之前的公式，&lt;/p&gt;
 
 &lt;p&gt;$$
-B_{p} = \frac{\mu_{0}NI}{S} = 4\pi \times10^{-10}\left(\frac{NI}{S}\right)
+B_{p} = \frac{\mu_{0}NI}{S} = 4\pi \times10^{-10}\left(\frac{NI}{S}\right)\tag{*}
 $$&lt;/p&gt;
 
 &lt;p&gt;以及&lt;/p&gt;
@@ -260,7 +375,19 @@ $$&lt;/p&gt;
 
 &lt;p&gt;表明用作物镜的透镜焦距可能比用于投影镜的焦距短。实际上，焦距的下限是根据透镜极片的饱和度设定的。&lt;/p&gt;
 
+&lt;p&gt;物镜的数据，包括下一部分，实际透镜设计中，根据透镜激发与 $z_{obj}$ 绘制的图。 解释如下，对于指定的激发，纵坐标给出了在无穷远处产生图像所需的物体位置。这将是在高放大倍率下操作的透镜的近似样本位置。物体然后通过焦距与物体主平面分开，并且通常放置于透镜的照明侧。&lt;/p&gt;
+
 &lt;p&gt;对于高激发状态下的非对称物镜（ $R_{1}\neq R_{2}$ ），焦距取决于 $R_{1}$ 或 $R_{2}$ 中的哪一个在像空间中。对于较弱的透镜，情况并非如此。高度不对称的物镜在现代显微镜中很受欢迎，因为必须适应样品更换机制，所以在顶部入口阶段，样品从上方引入。 对于倾斜台（tilt stage）， $2R_{1}$ 的典型值大约为 20 mm，而 $2R_{2}$ 可能小至 2 mm。极片不对称的影响是会增加 $B_{z}(z)$ 的最大值（ $R_{1}$ 和 $S$ 保持不变）并将最大值对应的位置移向较小的极片 ( $R_{2}$ )。 对于 $R_{2}\rightarrow0$ ，该最大值与消失的极片面一致。对于真实的透镜， $B_{z}(z)$ 是一个平滑的峰值函数，透镜重要的折射效应发生在场的最大值附近。Liebmann 能够通过模拟计算，表明非对称透镜的最大值与极片直径 $D=R_{1}+R_{2}$ 的等效对称透镜（equivalent symmetrical lens）的最大值相差 1%。高度不对称透镜的焦点特性可以通过跟踪穿过透镜的两条射线来获得，一条平行于轴进入，一条平行于轴离开。实际上，通过等效对称透镜追踪的单条光线可以很好地近似透镜的焦距。&lt;/p&gt;
+
+&lt;h2 id=&quot;实际透镜设计&quot;&gt;实际透镜设计&lt;/h2&gt;
+
+&lt;p&gt;图8中展示了 JEOL UHP 极片（ $C_{s} \approx0.7 mm$ ）的测量像差常数 $C_{s}$ 和 $C_{c}$ 的变化作为样品位置的函数。可以看到，存在一个能够最小化 $C_{c}$ 的最佳样品位置，但 $C_{s}$ 随着样品高度 $z_{o}$ 稳步降低。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220425/2022-05-03-140120.png&quot; alt=&quot;Figure 8&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图8.&lt;/strong&gt; (a) 对于JEOL UHP极片（ $C_{s} \approx0.7 mm$ ）， $C_{s}$ 和 $C_{c}$ 随样品位置的变化。在这里， $z_{o}$ （样品位置）是从下极片的顶部测量的。（b）通过图像旋转法获得的测量的透镜场分布。显示了样品的位置，即透镜的大部分屈光效应发生的位置。纵坐标表示轴向场强的 $z$ 分量，以千高斯（kilogauss）为单位。&lt;/p&gt;
+
+&lt;p&gt;这里 $b_{1}$ 是上部杆件直径（下部直径为 2 mm）。图8(b) 显示了透镜场分布，通过观察边缘沿光轴向下移动时的阴影图像旋转来测量。磁场的上限由极片铁的饱和来进行设定——对于 Permendur ，一种常用的铁类型，典型的饱和流密度（saturation flux density）为2.4 T（24 000 G）。从这些或者与之相类似的曲线中，我们发现球差和色差常数与透镜的焦距处于同一数量级，并且以类似方式随镜头激发而变化。最佳色差的最佳样品位置被发现在能够很好地靠近透镜中心的照明侧，而通过将样品放置在靠近透镜中心的位置可以最大限度地减少球面像差。通过 $eqn(3)$ ， $eqn(*)$ ， 及 $eqn(9)$ ，我们可以看到，透镜间隙的减少增加了间隙中的通量，并且减少了透镜的焦距，除非另有其他限制。显微镜的整体仪器放大可以增加通过减少投影透镜的透镜间隙，或者如果额外的散热可以通过透镜冷却系统进行吸收，也可以通过增加透镜的电流，从而使仪器更适合高分辨率工作。高倍率下非常大的焦深意味着可以通过减少投影透镜的焦距来增加整体放大倍率，而不会改变其他透镜的强度。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 27 Apr 2022 00:38:15 +0800</pubDate>
@@ -279,7 +406,7 @@ $$&lt;/p&gt;
 &lt;!-- TOC GFM --&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-近轴射线方程&quot;&gt;1. 近轴射线方程&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-近轴射线方程the-paraxial-ray-equation&quot;&gt;1. 近轴射线方程（The paraxial ray equation）&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#11-磁场力&quot;&gt;1.1 磁场力&lt;/a&gt;
         &lt;ul&gt;
@@ -297,7 +424,7 @@ $$&lt;/p&gt;
 
 &lt;!-- /TOC --&gt;
 
-&lt;h2 id=&quot;1-近轴射线方程&quot;&gt;1. 近轴射线方程&lt;/h2&gt;
+&lt;h2 id=&quot;1-近轴射线方程the-paraxial-ray-equation&quot;&gt;1. 近轴射线方程（The paraxial ray equation）&lt;/h2&gt;
 
 &lt;h3 id=&quot;11-磁场力&quot;&gt;1.1 磁场力&lt;/h3&gt;
 
@@ -333,6 +460,12 @@ $$&lt;/p&gt;
 
 &lt;p&gt;左手定则&lt;/p&gt;
 
+&lt;p&gt;主要用来判断力的方向，包括洛伦兹力和安培力。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20220419/1.webp&quot; alt=&quot;Figure s1&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图S1.&lt;/strong&gt; 左手平展，让磁感线穿过手心，使大拇指与其余四指垂直，并且都跟手掌在一个平面内。把左手放入磁场中，让磁感线垂直传入手心，手心面向 $N$ 极，四指指向电流所指方向，则大拇指的方向就是导体受力的方向。&lt;/p&gt;
+
 &lt;h3 id=&quot;12-极片pole-piece构造&quot;&gt;1.2 极片（pole-piece）构造&lt;/h3&gt;
 
 &lt;p&gt;轴对称磁场的聚焦作用可以理解如下。图1中为电子透镜的简化图，包括典型的磁通量线。极片（pole-piece）尺寸 $S$，$R_1$，以及 $R_2$ 在图中显示。&lt;/p&gt;
@@ -357,7 +490,7 @@ $$&lt;/p&gt;
 F = -ev \times B = m\frac{d^2r}{dt^2} \tag{2}
 $$&lt;/p&gt;
 
-&lt;p&gt;$F$ 的方向遵循左右定则（&lt;strong&gt;电流方向与电子方向相反&lt;/strong&gt;），如图1所示，当电子进入左侧场时，左手定则进入纸面（假设上极片为北极）。相反的，如果电子从右侧场进入场，则左手定则外出纸面。这样会导致电子沿螺旋轨迹前进。施加的旋转速度分量 $r_\theta$ 与场 $B_z(r)$ 的 $z$ 方向分量相互作用产生朝向轴方向的力，同样由左手定则给出。这个力控制着透镜的聚焦行为。&lt;/p&gt;
+&lt;p&gt;$F$ 的方向遵循左手则（&lt;strong&gt;电流方向与电子方向相反&lt;/strong&gt;），如图1所示，当电子进入左侧场时，左手定则进入纸面（假设上极片为北极）。相反的，如果电子从右侧场进入场，则左手定则外出纸面。这样会导致电子沿螺旋轨迹前进。施加的旋转速度分量 $r_\theta$ 与场 $B_z(r)$ 的 $z$ 方向分量相互作用产生朝向轴方向的力，同样由左手定则给出。这个力控制着透镜的聚焦行为。&lt;/p&gt;
 
 &lt;p&gt;关于极板，找到了两张感觉更好点的图，如图3，4。&lt;/p&gt;
 
@@ -369,7 +502,7 @@ $$&lt;/p&gt;
 
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图4&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜前包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：&lt;/p&gt;
+&lt;p&gt;使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系（cylindrical coordinate system）中的子午线（meridional rays）。这些是到达透镜前包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：&lt;/p&gt;
 
 &lt;p&gt;$$
 \frac{d^2r}{dz^2} + \frac{e}{8mV_r}B_z^2(z)r = 0 \tag{3}
@@ -390,7 +523,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 x &amp;amp; = \rho\cos{\varphi} \\ 
-x &amp;amp; = \rho\sin{\varphi} \\ 
+y &amp;amp; = \rho\sin{\varphi} \\ 
 z &amp;amp; = z
 \end{aligned}
 $$&lt;/p&gt;
@@ -1407,63 +1540,6 @@ $$&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000/2021/07/for-multi-ssh-keygens/</guid>
         
         <category>Linux</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>lemonade configuration in remote</title>
-        <description>&lt;h3 id=&quot;about-the-lemonade&quot;&gt;About the lemonade&lt;/h3&gt;
-
-&lt;p&gt;You can find lemonade here.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lemonade-command/lemonade&quot;&gt;github_lemonade&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Because, neovim depends on xclip to copy and pasta from the remote Server (e.g. The computers in remote which has a greater computation power), for which, the $DISPLAY is needed. So we can only do copy from the local Client (local computer), we cannot do copy from the remote Server, however.&lt;/p&gt;
-
-&lt;p&gt;Here is a way to have the lemonade to make it.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;First, we need to install lemonade in both Client and the Server, be attention to the environment set.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Second, we need to write a script in Server, named with remote:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
-ps cax | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;lemonade&amp;gt; /dev/null
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-eq&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
-  &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;lemonade is running.&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else
-  &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;lemonade is not running.&quot;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;nohup &lt;/span&gt;lemonade server &amp;amp;
-&lt;span class=&quot;k&quot;&gt;fi
-&lt;/span&gt;ssh &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 2489:127.0.0.1:2489 &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$port&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$user&lt;/span&gt;@&lt;span class=&quot;nv&quot;&gt;$ipadress&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;where, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$port&lt;/code&gt; is the port, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$user&lt;/code&gt; is the user, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ipadress&lt;/code&gt; is the I adress of the remote Server IP adress :)&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Then copy these in neovim’s init.vim to config the copy or paste key to set the copy command.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-vimrc&quot;&gt;let g:clipboard = {
-            \'copy': { '+': 'lemonade copy', '*': 'lemonade copy' },
-            \'paste': { '+': 'lemonade paste', '*': 'lemonade paste' },
-            \'name': 'lemonade',
-            \}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chmod u+x remote&lt;/code&gt; ( which you created in the second step), you can then register to the Remote after running remote and inputing the password in the command-line.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 23 Jul 2021 16:17:45 +0800</pubDate>
-        <link>http://localhost:4000/2021/07/remote-lemonade-configure/</link>
-        <guid isPermaLink="true">http://localhost:4000/2021/07/remote-lemonade-configure/</guid>
-        
-        <category>vim</category>
         
         
       </item>

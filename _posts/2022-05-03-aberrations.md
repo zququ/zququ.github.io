@@ -10,6 +10,7 @@ tags: TEM
 
 * [前言](#前言)
 * [球面像差（spherical aberration）](#球面像差spherical-aberration)
+* [色差（Chromatic aberration）](#色差chromatic-aberration)
 
 <!-- /TOC -->
 
@@ -60,7 +61,7 @@ $$
 \Delta r_{i} = MC_{s}\theta_{0}^3 = M^4\theta_{i}^3C_{s} \tag{1}
 $$
 
-最小混淆圆的半径为 $\frac{1}{4}C_{s}\theta^3_{0}$ 。 $C_{s}$ 的值取决于透镜激发和物体的位置，但对应于高倍率的情况，通常通过靠近物体焦平面的物体确定。在现代未经校正的仪器上， $C_{s}$ 的范围在 0.5 ~ 2.5 mm 之间，并为 “可解释” 的分辨能力设定了极限。 $C_{s}$ 的值可以从完整的（非近轴）方程的计算或者使用 Glaser（1956）给出的表达式获得。
+最小混淆圆的半径为 $\frac{1}{4}C_{s}\theta_{0}^3$ 。 $C_{s}$ 的值取决于透镜激发和物体的位置，但对应于高倍率的情况，通常通过靠近物体焦平面的物体确定。在现代未经校正的仪器上， $C_{s}$ 的范围在 0.5 ~ 2.5 mm 之间，并为 “可解释” 的分辨能力设定了极限。 $C_{s}$ 的值可以从完整的（非近轴）方程的计算或者使用 Glaser（1956）给出的表达式获得。
 
 对于第一种方法， Liebmann（1949）给出了简单的递归关系，表示真实轨迹与沿射线路径增量的近轴轨迹的偏差。如果平行于轴离开物体的近轴光线穿过轴的点处的偏差为 $\Delta$ ，则球面像差由下式给出，
 
@@ -73,27 +74,34 @@ $$
 Glaser（1956）发现了 $C_{s}$ 的有用表达式，
 
 $$
-C_{\mathrm{s}}=\frac{e}{16 m_{0} V_{\mathrm{r}}} \int_{z_{1}}^{z_{2}}\left[\left\{\frac{\partial B_{z}(z)}{\partial z}\right\}^{2}+\frac{3 e}{8 m V_{\mathrm{r}}} B_{z}^{4}(z)-B_{z}^{2}(z)\left\{\frac{h^{\prime}(z)}{h(z)}\right\}^{2}\right] h^{4}(z) \mathrm{d} z \tag{3}
+C_{\mathrm{s}}=\frac{e}{16 m_{0} V_{\mathrm{r}}} \int_{z_{1}}^{z_{2}}\left[\left\\{\frac{\partial B_{z}(z)}{\partial z}\right\\}^{2}+\frac{3 e}{8 m V_{\mathrm{r}}} B_{z}^{4}(z)-B_{z}^{2}(z)\left\\{\frac{h^{\prime}(z)}{h(z)}\right\\}^{2}\right] h^{4}(z) \mathrm{d} z \tag{3}
 $$
 
 其中 $h(z)$ 是离开具有单位斜率的轴向物点的光线的近轴轨迹（paraxial trajectory）。 $eqn(3)$ 中导数的出现使得 $C_{\mathrm{s}}$ 的评估对场 $B_{z}(z)$ 的形状特别敏感。对于高分辨率，分辨率受 $C_{\mathrm{s}}$ 的限制， $eqn(3)$ 也展示了 $B_{z}(z)$ 的详细形式，以及极片的形状，敏感地决定了仪器的分辨率。因此在处理极片时必须要格外小心。
 
 五阶球面像差项 $C_{5}$ 在非常高的分辨率下也可能很重要。例如，已经发现在 100 kV 时， $C_{\mathrm{s}} = 0.5 mm$ ，对于小于 0.1 nm 的间距， $C_{5}$ 的影响不能忽略不计。
 
+## 色差（Chromatic aberration）
 
+色差源自于对于所用射线波长的依赖性，因此与电子能力相关。使用多色照明，在一组平面上形成聚焦图像（in-focus images），每个平面对应着照明射线中存在的每个波长。
 
+现代仪器中存在三个重要的波长波动来源。对于高分辨率下使用的薄样品（ t < 10 nm ），这些按重要性降序排序：
 
+1. 离开灯丝的电子的能量扩散：在高枪偏压设置（ high gun-bias setting ）下，有 $\Delta E/E_{0} = 10^{-5}$ 。
+2. 高压不稳定型（ High-voltage instabilities ）： 典型的波动规格为 $\Delta V_{0}/V_{0} = 2 \times 10^{-6}/min$ ，其中 $V_{0}$ 为显微镜高压。
+3. 样品中的能量损失。
 
+在色差常数 $C_{c}$ 的定义中包含高压电源和物镜电流的波动较为方便，
 
+$$
+\frac{1}{f} = \frac{A_{0}(NI)^2}{V_{r}(S + D)}
+$$
 
+上等式的微分给出，
 
+$$
+\frac{\Delta f}{f} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}
+$$
 
-
-
-
-
-
-
-
-
+<++>
 

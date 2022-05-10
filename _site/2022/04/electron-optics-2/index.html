@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
 
 <ul>
   <li>
-<a href="#1-%E8%BF%91%E8%BD%B4%E5%B0%84%E7%BA%BF%E6%96%B9%E7%A8%8B">1. 近轴射线方程</a>
+<a href="#1-%E8%BF%91%E8%BD%B4%E5%B0%84%E7%BA%BF%E6%96%B9%E7%A8%8Bthe-paraxial-ray-equation">1. 近轴射线方程（The paraxial ray equation）</a>
     <ul>
       <li>
 <a href="#11-%E7%A3%81%E5%9C%BA%E5%8A%9B">1.1 磁场力</a>
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
 
 <!-- /TOC -->
 
-<h2 id="1-近轴射线方程">1. 近轴射线方程</h2>
+<h2 id="1-近轴射线方程the-paraxial-ray-equation">1. 近轴射线方程（The paraxial ray equation）</h2>
 
 <h3 id="11-磁场力">1.1 磁场力</h3>
 
@@ -275,6 +275,12 @@ $$</p>
 
 <p>左手定则</p>
 
+<p>主要用来判断力的方向，包括洛伦兹力和安培力。</p>
+
+<p><img src="/assets/20220419/1.webp" alt="Figure s1" width="500"></p>
+
+<p style="text-align: center;"><strong>图S1.</strong> 左手平展，让磁感线穿过手心，使大拇指与其余四指垂直，并且都跟手掌在一个平面内。把左手放入磁场中，让磁感线垂直传入手心，手心面向 $N$ 极，四指指向电流所指方向，则大拇指的方向就是导体受力的方向。</p>
+
 <h3 id="12-极片pole-piece构造">1.2 极片（pole-piece）构造</h3>
 
 <p>轴对称磁场的聚焦作用可以理解如下。图1中为电子透镜的简化图，包括典型的磁通量线。极片（pole-piece）尺寸 $S$，$R_1$，以及 $R_2$ 在图中显示。</p>
@@ -299,7 +305,7 @@ $$</p>
 F = -ev \times B = m\frac{d^2r}{dt^2} \tag{2}
 $$</p>
 
-<p>$F$ 的方向遵循左右定则（<strong>电流方向与电子方向相反</strong>），如图1所示，当电子进入左侧场时，左手定则进入纸面（假设上极片为北极）。相反的，如果电子从右侧场进入场，则左手定则外出纸面。这样会导致电子沿螺旋轨迹前进。施加的旋转速度分量 $r_\theta$ 与场 $B_z(r)$ 的 $z$ 方向分量相互作用产生朝向轴方向的力，同样由左手定则给出。这个力控制着透镜的聚焦行为。</p>
+<p>$F$ 的方向遵循左手则（<strong>电流方向与电子方向相反</strong>），如图1所示，当电子进入左侧场时，左手定则进入纸面（假设上极片为北极）。相反的，如果电子从右侧场进入场，则左手定则外出纸面。这样会导致电子沿螺旋轨迹前进。施加的旋转速度分量 $r_\theta$ 与场 $B_z(r)$ 的 $z$ 方向分量相互作用产生朝向轴方向的力，同样由左手定则给出。这个力控制着透镜的聚焦行为。</p>
 
 <p>关于极板，找到了两张感觉更好点的图，如图3，4。</p>
 
@@ -311,7 +317,7 @@ $$</p>
 
 <p style="text-align: center;"><strong>图4</strong></p>
 
-<p>使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系中的子午线（meridional rays）。这些是到达透镜前包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：</p>
+<p>使用其他光学课本中的一些估计值，$eqn(2)$ 可以简化为柱坐标系（cylindrical coordinate system）中的子午线（meridional rays）。这些是到达透镜前包含轴的平面中的光线。这一简化过程包括忽略掉会导致不完美成像（镜头像差, lens aberrations）的项。近轴射线方程中仅包含在光轴 $B_z(z)$ 方向评估的磁场的 $z$ 组分分量。简化后的图像为：</p>
 
 <p>$$
 \frac{d^2r}{dz^2} + \frac{e}{8mV_r}B_z^2(z)r = 0 \tag{3}
@@ -332,7 +338,7 @@ $$</p>
 <p>$$
 \begin{aligned}
 x &amp; = \rho\cos{\varphi} \\ 
-x &amp; = \rho\sin{\varphi} \\ 
+y &amp; = \rho\sin{\varphi} \\ 
 z &amp; = z
 \end{aligned}
 $$</p>
@@ -432,8 +438,8 @@ $$</p>
 	
 	<div class="read-more-item">
 		<span class="read-more-item-dim">Last One</span>
-		<h2 class="post-list__post-title post-title"><a href="/2022/04/Projector-lenses/" title="link to 电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）">电子光学 第三部分 投影透镜（Projector lenses）与物镜（Objective lens）</a></h2>
-		<p class="excerpt">参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。  投影透镜（The projector lens）          投影透镜的概念      投影透镜中的电子轨迹参数      关于强弱磁透镜定义的补充      关于对称透镜与非对称透镜定义的补充        物镜（The objective lens）投影透镜（The pr...…</p>
+		<h2 class="post-list__post-title post-title"><a href="/2022/04/Projector-lenses/" title="link to 电子光学 第三部分 投影镜（Projector lenses）、物镜（Objective lens）及实际透镜设计">电子光学 第三部分 投影镜（Projector lenses）、物镜（Objective lens）及实际透镜设计</a></h2>
+		<p class="excerpt">参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。  投影透镜（The projector lens）          投影透镜的概念      投影透镜中的电子轨迹参数      关于强弱磁透镜定义的补充      关于对称透镜与非对称透镜定义的补充        物镜（The objective lens）  实际透镜设计投影透...…</p>
 		<div class="post-list__meta">
 <time datetime="2022-04-27 00:38:15 +0800" class="post-list__meta--date date">2022-04-27</time> • <span class="post-list__meta--tags tags">TEM</span><a class="btn-border-small" href="/2022/04/Projector-lenses/">More</a>
 </div>

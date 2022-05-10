@@ -194,6 +194,15 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/12/assembly-language-44/" title="访问 汇编语言 10.11 10.12 批量数据的传递 寄存器冲突问题">汇编语言 10.11 10.12 批量数据的传递 寄存器冲突问题</a></h2>
+      <p class="excerpt">10.11 批量数据的传递子程序中如果只要一个参数，可以放在寄存器bx中。但是如果应对多个数据需要传递，由于寄存器的数量终究有限，我们不能简单地用寄存器存放多个需要传递的数据。对于返回值，也同样有相同的问题。这种情况，我们将批量数据放到内存中，然后将它们所在的内存空间地址放在寄存器中，传递给需要的子程序。对于具有批量数据的返回结果，也可以用同样的方法。问题： 设计一个子程序，功能：将一个全是字母的字符串转化为大写。分析：这个子程序需要知道两件事，字符串的内容和字符串的长度。因为字符串中的字...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-12-15 09:39:24 +0800" class="post-list__meta--date date">2019-12-15</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/12/assembly-language-44/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/12/assembly-language-43/" title="访问 汇编语言 10.7-10.10 call和ret的配合使用 mul 模块化 参数和结果传递的问题">汇编语言 10.7-10.10 call和ret的配合使用 mul 模块化 参数和结果传递的问题</a></h2>
       <p class="excerpt">10.7 call和ret的配合使用问题(1) 下面程序返回前，bx中的值是多少？assume cs:codecode segmentstart: mov ax, 1       mov cx, 3       call s       mov bx, ax       mov ax, 4c00h       int 21h    s: add ax, ax       loop s       retcode endsend start分析程序运行的过程：  CPU将call s 指令的...…</p>
       <div class="post-list__meta">
@@ -270,15 +279,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">9.9 根据位移进行转移的意义目前转移命令有一下几种：  jmp short 标号  jmp near ptr 标号  jcxz 标号  loop 标号等几种汇编指令，它们对IP的修改是根据转移目的地之和转移起始地址之间的位移来进行的。在他们对应的机器码中不包含转移的目的地址，而包含的是到目的地之的位移。这种设计，方便了程序段在内存中的浮动装配。例如：            汇编指令      机器代码                    mov cx, 6        B9 06 0...…</p>
       <div class="post-list__meta">
 <time datetime="2019-12-06 19:43:24 +0800" class="post-list__meta--date date">2019-12-06</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/12/assembly-language-39/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/12/python-time-relative/" title="访问 python 时间处理模块总结">python 时间处理模块总结</a></h2>
-      <p class="excerpt">整理自小甲鱼鱼C论坛python中与时间处理总结Python中，与时间有关的模块包括：time，datetime以及calender。  datetime模块datetime支持的时间范围object.MINYEAR = 1object.MAXYEAR = 9999timedelta类属性            timedelta.min      timedelta(-999999999)                  timedelta.max      timedelta(day...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-12-04 20:47:24 +0800" class="post-list__meta--date date">2019-12-04</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/12/python-time-relative/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>
