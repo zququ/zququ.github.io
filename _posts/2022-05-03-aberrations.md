@@ -57,8 +57,8 @@ $$
 
 
 $$
-\Delta r_{0} = C_{s}\theta_{0}^3 \\ 
-\text{和} \\ 
+\Delta r_{0} = C_{s}\theta_{0}^3 \\\\ 
+\text{和} \\\\ 
 \Delta r_{i} = MC_{s}\theta_{0}^3 = M^4\theta_{i}^3C_{s} \tag{1}
 $$
 
