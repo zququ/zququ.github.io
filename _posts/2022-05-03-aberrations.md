@@ -55,6 +55,7 @@ $$
 
 如何考虑到来自轴向物点的所有光线，则最小直径的图像圆盘成为最小混淆圆（circle of least confusion）。距离 $\Delta r_{i}$ ，在高放大倍率的图像平面上与 $\theta_{0}^3$ 成正比。如果 $\Delta r_{i}$ 指的是物体空间，其与 $\theta_{0}^3$ 之间的比例常数，为三阶球差常数 $C_{s}$ （third-order spherical aberration constant）。即
 
+
 $$
 \Delta r_{0} = C_{s}\theta_{0}^3 \\ 
 \text{和} \\ 
