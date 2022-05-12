@@ -124,4 +124,79 @@ $$
 
 现在使用几何光学方法作为第一近似值来确定焦距的微小变化对图像的影响。透镜具有较长焦距的能量稍高的射线被带到距离高斯像平面的焦距 $\Delta V$ 处，其中
 
+$$
+\Delta r_{i} = \Delta V\theta_{i}\tag{S2}
+$$
+
+微分透镜方程
+
+$$
+\frac{1}{U} + \frac{1}{V} = \frac{1}{f}
+$$
+
+可以得到
+
+
+$$
+\begin{aligned}
+\mathrm{d}\left(\frac{1}{U}\right) & = \mathrm{d}\left(\frac{1}{f}\right) - \mathrm{d}\left(\frac{1}{V}\right) \\ 
+0 & = \frac{-1}{f^2}\mathrm{d}f + \frac{1}{V^2}\mathrm{d}V \\ 
+\frac{\mathrm{d}V}{\mathrm{d}f} & = \left(\frac{V}{f}\right)^2 \approx M^2 \\ 
+\end{aligned}
+$$
+
+这样有以下关系式，
+
+$$
+\Delta V = M^2\Delta f \tag{7}
+$$
+
+![Figure2](/assets/20220504/2022-05-12-14-44-23.png){: width='450'}
+
+**图2.** 色差的影响，通过势 $V+\Delta V$ 加速的快速电子比通过势 $V$ 加速的相对低能量电子的折射的角度更小。这些更高能量的电子被带到了高斯成像平面上，在距轴 $r_{i}$ 处通过。
+{: style="text-align: center;"}
+
+
+根据 $eqn(S2)$ 有
+
+$$
+\Delta r_{i}=M^2\Delta f\theta_{i}
+$$
+
+参照物空间，轴向物点的扩展圆盘图像（extended disc image）具有半径，
+
+$$
+\begin{aligned}
+\Delta r_{0} &= \frac{1}{M}\Delta r_{i} \\\\
+&=M\Delta f\theta_{i}
+\end{aligned}
+$$
+
+由角放大率公式
+
+$$
+\frac{\tan\theta_{i}}{\tan\theta_{0}}\approx\frac{\theta_{i}}{\theta_{0}}=\left|\frac{1}{M}\right|
+$$
+
+得到
+
+$$
+\Delta r_{0}=\theta_{0}\Delta f
+$$
+
+通过 $eqn(5)$ ，
+
+$$
+\Delta r_{0} =\theta_{0}C_{\mathrm{c}}\left(\frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}\right)\tag{8}
+$$
+
+例如，样品的图像中引入了25 eV 离散能量损失。许多生物样本在这种能量下显示出相当宽的峰值。损失图像将会以物平面为基准失焦 $\Delta U$ 。在高放大倍率下，根据透镜方程可以得到，
+
+$$
+\Delta U \approx \Delta f \tag{9}
+$$
+
+因此，当忽略透镜电流的波动，可以从 $eqn(5)$ 获得损失图像的聚焦缺陷。对于 $C_{\mathrm{c}} = 1.6 mm$ 以及 $\Delta E = 25 eV$ ， 100 keV 时 $\Delta U = 400 nm$ 。由于对于损失电子，透镜的焦距较短， $V$ 固定的情况下，削弱聚焦在弹性图像的物镜电流，使得非弹性图像不得不在聚焦以内。这样非弹性像损失出现在图像欠焦的位置，在这里第一菲涅尔条纹（Fresenl fringe）会显得很亮，说明这时的透镜的电流太弱。不幸的是，对于高分辨率的相位衬度，
+
+
 
