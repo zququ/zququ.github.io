@@ -58,9 +58,9 @@ $$
 
 $$
 \begin{aligned}
-\Delta r_{0} = C_{s}\theta_{0}^3 \\\\ 
-\Delta r_{i} = MC_{s}\theta_{0}^3 = M^4\theta_{i}^3C_{s} \tag{1}
-\end{aligned}
+\Delta r_{0} &= C_{s}\theta_{0}^3 \\\\ 
+\Delta r_{i} &= MC_{s}\theta_{0}^3 = M^4\theta_{i}^3C_{s} 
+\end{aligned} \tag{1}
 $$
 
 
