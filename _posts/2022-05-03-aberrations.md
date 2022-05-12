@@ -5,12 +5,13 @@ date: 2022-05-03 12:32:00:24.000000000 +09:00
 tags: TEM
 ---
 
-
 <!-- TOC GFM -->
 
 * [前言](#前言)
 * [球面像差（spherical aberration）](#球面像差spherical-aberration)
 * [色差（Chromatic aberration）](#色差chromatic-aberration)
+* [像散（Astigmatism）](#像散astigmatism)
+* [总结](#总结)
 
 <!-- /TOC -->
 
@@ -167,9 +168,10 @@ $$
 
 参照物空间，轴向物点的扩展圆盘图像（extended disc image）具有半径，
 
+
 $$
 \begin{aligned}
-\Delta r_{0} &= \frac{1}{M}\Delta r_{i} \\\\
+\Delta r_{0} &= \frac{1}{M}\Delta r_{i} \\\\ 
 &=M\Delta f\theta_{i}
 \end{aligned}
 $$
@@ -209,3 +211,39 @@ $$
 来表示。其中 $h(z)$ 使用 $eqn(3)$ 中的函数。原则上可以通过将磁透镜与静电镜组合来消除色差，因为静电镜的色差符号与磁透镜是相反的。
 
  $C_{\mathrm{c}}$ 可以通过用高电压或者透镜电流测量焦距变化来实验测量。如果样品后为使用透镜，则 STEM 一起不存在色差。后续会介绍也可以用波光学表示色差问题，应该强调 $eqn(8)$ 是一种几何近似，对于中等散焦的点目标的空间非相干成像，即 $\Delta V$ 不太小的情况时是精确地。对于小 $\Delta V$ 或者相干照明（或者两种情况同时），则必须使用波光学方法。
+
+## 像散（Astigmatism）
+
+严重的像散是由不对称的磁场引起的。可以通过将弱柱面透镜（cylindrical lens）叠加在完全对称的透镜上来表示透镜场中与完美对称的背离。下图展示了由像散透镜形成的点的图像，作为在光轴上不同点的两条线焦点（line foci）。
+
+![Figure3](/assets/20220504/2022-05-13-001354.png){: width='450'}
+
+**图3.** 像散。镜头的焦距取决于光线离开物体的方位角 $\alpha$ （azimuthal angle， $\alpha$ ）。这些光线位于包含光轴的平面中。展示了最大和最小焦距的直角平面，平均焦距为 $f$ 。最大焦点和最小焦点之间的差异即为像散常数 $C_{\mathrm{a}}$ 。
+{: style="text-align: center;"}
+
+像散可以认为是一个与方位角相关的焦距，它产生以下公式中的相移动,
+
+$$
+\chi_{4}(\theta)=\frac{2\pi}{\lambda}\left(\frac{1}{4}C_{\mathrm{a}}\theta^2\sin{2\phi}\right)
+$$
+
+后续会讨论测量像散常数 $z_{a}$ 的原位（ *In situ* ）方法。经验丰富的操作员使用配备由像散器的现代仪器来进行矫正像散，可以减少这种像差，从而不会对分辨率造成限制；然而，这需要大量练习。像散器是一种弱四极透镜（weak quadrupole lens），其激发由电子控制，以通过引入具有正确强度和方向的补偿弱柱面透镜（compensating weak cylindrical lens）来校正任何方向的场不对称性。
+
+物镜极片的椭圆度（ovality）需要几微米的加工公差（machining tolerance）以使得像散在易于矫正的范围内。所用铁的均匀性（homogeneity）非常重要。
+
+最近分辨率提高到亚埃级（sub-angstrom level）已经暴露了三倍像散（three-fold astigmatism）。 在 Overwijk（1997） 等人的论文中可以找到其测量和删除的示例。 后续波动光学部分，将从波动光学的角度讨论二重和三重像散。
+
+## 总结
+
+```mermaid!
+graph TB;
+	A(像差 aberrations) --> B(单色像差, monochromatic aberration)
+	A --> E(色差, chromatic aberration)
+	A --> F(色散, chromatic dispersion)
+	B --> C(像散, astigmatism)
+	B --> D(畸变, 球差, ...)
+```
+
+
+
+
