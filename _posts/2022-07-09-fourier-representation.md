@@ -109,11 +109,9 @@ $$
 
 用符号表示为，
 
-{% raw %}
 $$
-p(x, y) = \mathfrak{F}{F(u, v)} , \phantom{kkk} \text{(“Fourier synthesis”)} \tag{7}
+p(x, y) = \mathfrak{F}\lbrace F(u, v)\rbrace , \phantom{kkk} \text{(“Fourier synthesis”)} \tag{7}
 $$
-{% endraw %}
 
 相反地，给定图像，也可以通过类似的互逆表达式获得傅里叶系数 $F_{lm}$：
 
@@ -124,7 +122,7 @@ $$
 符号表达式为，
 
 $$
-F(u,v)=\mathfrak{F}^{-1}\{p(x,y)\}, \phantom{kkk} \text{(“inverse Fourier transformation”)} \tag{9}
+F(u,v)=\mathfrak{F}^{-1}\lbrace p(x,y)\rbrace, \phantom{kkk} \text{(“inverse Fourier transformation”)} \tag{9}
 $$
 
 ## 傅里叶变换的特征
@@ -143,7 +141,7 @@ $$
 \begin{cases}
 F(\mathbf{k}) = c_{1}F_{1}(\mathbf{k}) + c_{2}F_{2}(\mathbf{k}) \\ 
  \\ 
-F(\mathbf{k}) = \mathfrak{F}\{f(\mathbf{r})\}
+F(\mathbf{k}) = \mathfrak{F}\lbrace f(\mathbf{r})\rbrace
 \end{cases}\tag{10}
 $$
 
@@ -161,7 +159,7 @@ $$
 \begin{cases}
 F_{2}(\mathbf{k}) = F_{1}(1/s \mathbf{k}) \\ 
  \\ 
-F(k) = \mathfrak{F}\{f(\mathbf{r})\}
+F(k) = \mathfrak{F}\lbrace f(\mathbf{r})\rbrace
 \end{cases}\tag{11}
 $$
 
@@ -178,7 +176,7 @@ $$
 其中星号代表取复共轭，即：
 
 $$
-[F_{lm}]^{*} = \{\mathfrak{R}\mathrm{e}\{F_{lm}\}, -\mathfrak{I}\mathrm{m}\{F_{lm}\}\}\tag{13}
+[F_{lm}]^{*} = \lbrace \mathfrak{R}\mathrm{e}\lbrace F_{lm}\rbrace, -\mathfrak{I}\mathrm{m}\lbrace F_{lm}\rbrace\rbrace \tag{13}
 $$
 
 可将复数 $F$ 表示为复平面中的向量。其中 $A$ 为振幅或者模（modulus），表示向量的长，而 $\phi$ 为相位，表示为角（逆时针 counterclockwise 为正）表示向量相对于实轴的旋转。
@@ -194,13 +192,13 @@ $$
 其长度（傅里叶变换的振幅）为，
 
 $$
-|F_{lm}| = [|\mathfrak{R}\mathrm{e}\{F_{lm}\}|^2 + |\mathfrak{I}\mathrm{m}\{F_{lm}\}|^{2}]^{1/2}\tag{14}
+|F_{lm}| = [|\mathfrak{R}\mathrm{e}\lbrace F_{lm}\rbrace|^2 + |\mathfrak{I}\mathrm{m}\lbrace F_{lm}\rbrace |^{2}]^{1/2}\tag{14}
 $$
 
 其相位为，
 
 $$
-\varphi_{lm} = \arctan[\mathfrak{I}\mathrm{m}\{F_{lm}\}/\mathfrak{R}\mathrm{e}\{F_{lm}\}]\tag{15}
+\varphi_{lm} = \arctan[\mathfrak{I}\mathrm{m}\lbrace F_{lm}\rbrace /\mathfrak{R}\mathrm{e}\lbrace F_{lm}\rbrace]\tag{15}
 $$
 
 ### 移位定理
@@ -208,7 +206,7 @@ $$
 当图像按照向量 $\Delta\mathbf{r}= (\Delta x, \Delta y)$ 平移，得到图像 $p(x+\Delta x, y+\Delta y)$ ，其傅里叶变换根据 $eqn(8)$ 与指数因子相乘，有
 
 $$
-\mathfrak{F}^{-1}{p(x+\Delta x, y + \Delta y)} =F(u, v)\exp[2\pi i(u\Delta x+ v\Delta y)]\tag{16}
+\mathfrak{F}^{-1}\lbrace p(x+\Delta x, y + \Delta y)\rbrace =F(u, v)\exp[2\pi i(u\Delta x+ v\Delta y)]\tag{16}
 $$
 
 ## 卷积与卷积定理
