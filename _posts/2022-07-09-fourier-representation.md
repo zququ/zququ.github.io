@@ -109,9 +109,11 @@ $$
 
 用符号表示为，
 
+{% raw %}
 $$
-p(x, y) = \mathfrak{F}\{F(u, v)\} , \phantom{kkk} \text{(“Fourier synthesis”)} \tag{7}
+p(x, y) = \mathfrak{F}{F(u, v)} , \phantom{kkk} \text{(“Fourier synthesis”)} \tag{7}
 $$
+{% endraw %}
 
 相反地，给定图像，也可以通过类似的互逆表达式获得傅里叶系数 $F_{lm}$：
 
