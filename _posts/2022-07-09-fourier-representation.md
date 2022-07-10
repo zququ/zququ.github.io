@@ -257,8 +257,8 @@ $$
 
 由此引申计算 $o(x,y)\circ h(x,y)$：
 
-1. 计算 $H(u,v)=\mathfrak{F}\{h(x,y)\}$ 
-2. 计算 $O(u,v)=\mathfrak{F}\{o(x,y)\}$ 
+1. 计算 $H(u,v)=\mathfrak{F}\lbrace h(x,y)\rbrace$ 
+2. 计算 $O(u,v)=\mathfrak{F}\lbrace o(x,y)\rbrace$ 
 3. 计算傅立叶变换后的两函数乘积
 
 $$
@@ -268,7 +268,7 @@ $$
 4. 后可通过计算反向傅里叶变换求出代求结果：
 
 $$
-p(s,y)=\mathfrak{F}^{-1}\{P(u,v)\}\tag{19}
+p(s,y)=\mathfrak{F}^{-1}\lbrace P(u,v)\rbrace\tag{19}
 $$
 
 因为快速傅里叶变换算法的出现（FFT），该步骤要比线性叠加求和的直接结算更有效。
@@ -324,12 +324,12 @@ $$
 p_{1}(x,y) \otimes p_{2}(x,y)
 $$
 
-1. 计算 $P_{1}(u,v) = \mathfrak{F}\{p_{1}(x,y)\}$
-2. 计算 $P_{2}(u,v) = \mathfrak{F}\{p_{2}(x,y)\}$
+1. 计算 $P_{1}(u,v) = \mathfrak{F}\lbrace p_{1}(x,y)\rbrace$
+2. 计算 $P_{2}(u,v) = \mathfrak{F}\lbrace p_{2}(x,y)\rbrace$
 3. 取 $P_{2}(u,v)$ 的复共轭 
 
 $$
-P_{2}^{*}(u,v) = \mathfrak{R}\mathrm{e}\{P_{2}(u,v)\} - i\mathfrak{I}\mathrm{m}\{P_{2}(u,v)\}\tag{22}
+P_{2}^{*}(u,v) = \mathfrak{R}\mathrm{e}\lbrace P_{2}(u,v)\rbrace - i\mathfrak{I}\mathrm{m}\lbrace P_{2}(u,v)\rbrace\tag{22}
 $$
 
 4. 求两个傅里叶变换的共轭积：
@@ -341,7 +341,7 @@ $$
 5. 最终，求结果的反傅里叶变换，即为
 
 $$
-F_{12} = \mathfrak{F}^{-1}\{C(u,v)\}\tag{24}
+F_{12} = \mathfrak{F}^{-1}\lbrace C(u,v)\rbrace\tag{24}
 $$
 
 自相关函数作为相关函数的特殊情况，其中
@@ -352,7 +352,7 @@ $$
 
 这一情况下，计算步骤可以简化为：
 
-1. 计算 $P_{1}(u,v)=\mathfrak{F}\{p_{1}(x,y)\}$ 
+1. 计算 $P_{1}(u,v)=\mathfrak{F}\lbrace p_{1}(x,y)\rbrace$ 
 2. 计算其完全平方，
 
 $$
@@ -362,6 +362,6 @@ $$
 3. 求结果的反向傅里叶变换
 
 $$
-F_{11}(x,y) = \mathfrak{F}^{-1}\{A(u,v)\} \tag{25}
+F_{11}(x,y) = \mathfrak{F}^{-1}\lbrace A(u,v)\rbrace$ \tag{25}
 $$
 
