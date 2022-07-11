@@ -168,7 +168,7 @@ $$
 通过 $eqn(8)$ 可以看到，对于实值函数正常复值傅里叶变换具有以下性质：
 
 $$
-F_{-l-m} = [F_{lm}]^{*}\tag{12}
+F_{-l-m} = [F_{lm}]^{\ast}\tag{12}
 $$
 
 在 X 射线晶体学中，该式被成为弗里德尔对称（Friedel sysmmetry），
@@ -176,7 +176,7 @@ $$
 其中星号代表取复共轭，即：
 
 $$
-[F_{lm}]^{*} = \lbrace \mathfrak{R}\mathrm{e}\lbrace F_{lm}\rbrace, -\mathfrak{I}\mathrm{m}\lbrace F_{lm}\rbrace\rbrace \tag{13}
+[F_{lm}]^{\ast} = \lbrace \mathfrak{R}\mathrm{e}\lbrace F_{lm}\rbrace, -\mathfrak{I}\mathrm{m}\lbrace F_{lm}\rbrace\rbrace \tag{13}
 $$
 
 可将复数 $F$ 表示为复平面中的向量。其中 $A$ 为振幅或者模（modulus），表示向量的长，而 $\phi$ 为相位，表示为角（逆时针 counterclockwise 为正）表示向量相对于实轴的旋转。
@@ -329,13 +329,13 @@ $$
 3. 取 $P_{2}(u,v)$ 的复共轭 
 
 $$
-P_{2}^{*}(u,v) = \mathfrak{R}\mathrm{e}\lbrace P_{2}(u,v)\rbrace - i\mathfrak{I}\mathrm{m}\lbrace P_{2}(u,v)\rbrace\tag{22}
+P_{2}^{\ast}(u,v) = \mathfrak{R}\mathrm{e}\lbrace P_{2}(u,v)\rbrace - i\mathfrak{I}\mathrm{m}\lbrace P_{2}(u,v)\rbrace\tag{22}
 $$
 
 4. 求两个傅里叶变换的共轭积：
 
 $$
-C(u,v) = P_{1}(u,v)P_{2}^{*}(u,v)\tag{23}
+C(u,v) = P_{1}(u,v)P_{2}^{\ast}(u,v)\tag{23}
 $$
 
 5. 最终，求结果的反傅里叶变换，即为
