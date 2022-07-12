@@ -362,6 +362,6 @@ $$
 3. 求结果的反向傅里叶变换
 
 $$
-F_{11}(x,y) = \mathfrak{F}^{-1}\lbrace A(u,v)\rbrace$ \tag{25}
+F_{11}(x,y) = \mathfrak{F}^{-1}\lbrace A(u,v)\rbrace \tag{25}
 $$
 
