@@ -624,8 +624,69 @@ P(w^{n-1})
 \right]}_{多项式的值表示向量}, \phantom{kkk} w = \exp{(\frac{2\pi i}{n})}
 $$
 
+运用单位方根性质：
 
+1. 对任意整数 $i$ ， $j$，由 $w_i^j = w_j^i$ 。
+2. $A = 1 + w_1^$ 
 
+可以推导出以下
+
+$$
+\left[
+\begin{matrix}
+p_{0} \\ 
+p_{1} \\ 
+\vdots \\ 
+p_{d}
+\end{matrix} 
+\right]=
+\frac{1}{n}\left[
+\begin{matrix}
+1 & w^{-0} & w^{-0} & \dots & w^{-0} \\ 
+1 & w^{-1} & w^{-2} & \dots & w^{-(n-1)} \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+1 & w^{-(n-1)} & w^{-2(n-1)} & \dots & w^{-(n-1)(n-1)} \\ 
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+P(w^0) \\ 
+P(w^1) \\ 
+\vdots \\ 
+P(w^{n-1})
+\end{matrix}
+\right], \phantom{kkk} w = \exp{(\frac{2\pi i}{n})}
+$$
+
+原矩阵中的 $w$ 被 $\frac{1}{n}w^{-1}$ 代替。
+
+![p9](/assets/20220718/GetImage6.png)
+
+巧妙之处，即在于 IFFT 与 FFT 可以定义为同一个函数。
+
+$$
+\underbrace{\mathrm{IFFT}(<values>)}_{w=\frac{1}{n}\exp{(\frac{-2\pi i}{n}})} \Longleftrightarrow \underbrace{\mathrm{FFT}(<values>)}_{w=\exp{(\frac{2\pi i}{n})}}
+$$
+
+代码实现仅需变更一个地方，
+
+```python
+def IFFT(P):
+	# P-[p0, p1, ..., pn-1] coeff representation
+	n = len(P) # n is a power of 2
+	if n == 1:
+		return P
+	w = (1/n) * exp((-2pi*i)/n) # 与 FFT 不同之处
+	Pe, Po = [p0, p2, ... , pn-2], [p1, p3, ... , pn-1]
+	ye, yo = FFT(Pe), FFT(Po)
+	y = [0] * n
+	for j in range(n/2):
+		y[j] = ye[j] + w^j*yo[j ]
+		y[j+n/2] = ye[j] - w^j*yo[j]
+	return y
+```
+
+![p10](/assets/20220718/2022-07-22-16-07-17.png){: width='400'}
 
 
 
