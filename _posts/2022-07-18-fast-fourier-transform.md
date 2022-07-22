@@ -353,7 +353,279 @@ graph TD
 	B2 --> C
 ```
 
-也就转换为了解决 $x_{i}^8 = 1$ 的 8 次方根问题。推广为更一般形式，我们有
+也就转换为了解决 $x_{i}^8 = 1$ 的 8 次方根问题。推广为更一般形式，对于 $d$ 阶多项式，先取 $n\gt d$ 个点，一般取
+
+$$
+n = 2^k， k \in \mathit{z}
+$$
+
+可以确定一些具有正负成对性质的点，他们是 1 （unity）的 $n^{\mathrm{th}}$ 方根。
+
+而 1 的 $n^{\mathrm{th}}$ 可以被解释为复平面上沿着单位圆等距排列的一系列点。如下图所示
+
+![p7](/assets/20220718/2022-07-22-08-47-28.png){: width='400'}
+
+其中定义：
+
+$$
+\begin{cases}
+\mathit{z}^{n} = 1 \\ 
+ \\ 
+w = e^{\frac{2\pi i}{n}}
+\end{cases}
+$$
+
+所以求 1 的 $n^{\mathrm{th}}$ 方根等价于在 $\lbrace 1, w, w^1, w^2, \cdots, w^{n-1}\rbrace$ 上求值，而
+
+$$
+w^{j+n/2} = -w^{j}
+$$
+
+即 $(w^j , w^{j+n/2})$ 是正负配对的。
+
+![p7](/assets/20220718/GetImage4.png){: width='400'}
+
+而接下来做的即为用 $w$ 替代 $p$ 即可，
+
+$$
+\begin{cases}
+P(x):[p_{0}, p_{1}, \cdots, p_{n-1}] \\ 
+\\ 
+w = \exp({\frac{2\pi i}{n}}): [w^0, w^1, \cdots, w^{n-1}]
+\end{cases}
+$$
+
+对应的 FFT 也就是用 $w$ 表示 $p$ 的过程：
+
+$$
+\begin{cases}
+P_{e}(x^2):[p_{0}, p_{2}, \cdots, p_{n-2}] \rightarrow [w^0, w^2, \cdots, w^{n-2}] \\ 
+\\ P_{o}(x^2):[p_{1}, p_{3}, \cdots, p_{n-1}] \rightarrow [w^0, w^2, \cdots, w^{n-2}]
+\end{cases}
+$$
+
+用 $w$ 替代 $x$ 重写定义新的函数 $y$，
+
+$$
+\begin{cases}
+y_{e} = [P_{e}(w^0), p_{e}(w^2), \cdots, P_{e}(w^{n-2})] \\ 
+\\ 
+y_{o} = [P_{o}(w^0), p_{o}(w^2), \cdots, P_{o}(w^{n-2})] \\ 
+\end{cases}
+$$
+
+所以原函数式
+
+$$
+\begin{cases}
+P(x_{j}) = P_{e}(x_{j}^2) + x_{j}P_{o}(x_{j}^2) \\ 
+\\ 
+P(-x_{j}) = P_{e}(x_{j}^2) - x_{j}P_{o}(x_{j}^2) \\ 
+\end{cases} \phantom{kkk} j\in \lbrace{0, 1, 2, \cdots ,(n/2-1)}\rbrace
+$$
+
+代入 $x_{j} = w^j$
+
+得出关系式
+
+$$
+\begin{cases}
+P(w^{j}) = P_{e}(w^{2j}) + w^jP_{o}(w^{2j}) \\ 
+\\ 
+P(-w^{j}) = P_{e}(w^{2j}) - w^{j}P_{o}(w^{2j}) \\ 
+\end{cases} \phantom{kkk} j\in \lbrace{0, 1, 2, \cdots ,(n/2-1)}\rbrace
+$$
+
+由
+
+$$
+-w^j = w^{j+n/2}
+$$
+
+可以推导出，
+
+$$
+\begin{cases}
+P(w^{j}) = P_{e}(w^{2j}) + w^jP_{o}(w^{2j}) \\ 
+\\ 
+P(w^{j+n/2}) = P_{e}(w^{2j}) - w^{j}P_{o}(w^{2j}) \\ 
+\end{cases} \phantom{kkk} j\in \lbrace{0, 1, 2, \cdots ,(n/2-1)}\rbrace
+$$
+
+又由
+
+$$
+\begin{cases}
+y_{e}[j] = P_{e}(w^{2j}) \\ 
+ \\ 
+y_{o}[j] = P_{o}(w^{2j})
+\end{cases}
+$$
+
+最终得到 FFT 的表达形式，
+
+$$
+\begin{cases}
+P(w^{j}) = y_{e}[j] + w^jy_{o}[j] \\ 
+\\ 
+P(w^{j+n/2}) = y_{e}[j] - w^{j}y_{o}[j] \\ 
+\end{cases} \phantom{kkk} j\in \lbrace{0, 1, 2, \cdots ,(n/2-1)}\rbrace
+$$
+
+FFT 输出结果为：
+
+$$
+y = [P(w^0), P(w^1), \cdots, P(w^{n-1})]
+$$
+
+## FFT 代码实现
+
+```python
+def FFT(P):
+	# P-[p0, p1, ..., pn-1] coeff representation
+	n = len(P) # n is a power of 2
+	if n == 1:
+		return P
+	w = exp((2pi*i)/n)
+	Pe, Po = [p0, p2, ... , pn-2], [p1, p3, ... , pn-1]
+	ye, yo = FFT(Pe), FFT(Po)
+	y = [0] * n
+	for j in range(n/2):
+		y[j] = ye[j] + w^j*yo[j ]
+		y[j+n/2] = ye[j] - w^j*yo[j]
+	return y
+```
+
+![p8](/assets/20220718/GetImage5.png){: width='400'}
+
+## IFFT 插值问题
+
+![p9](/assets/20220718/2022-07-22-09-42-54.png){: width='500'}
+
+如上图所示，插值（interpolation）定义为从值表示形式转换为系数转换形式的过程。
+
+重新回顾 FFT 的过程：
+
+$$
+P(x) = p_{0} + p_{1}x + p_{2}x^2 + ... + p_{d}x^d \\ 
+P(x_{0}) = p_{0} + p_{1}x_{0} + p_{2}x_{0}^2 + ... + p_{d}x_{0}^d \\ 
+\vdots \\ 
+P(x_{d}) = p_{0} + p_{1}x_{d} + p_{2}x_{d}^2 + \dots + p_{d}x_{d}^d 
+$$
+
+将该数值表示法代入的关系式用矩阵形式表示有，
+
+$$
+\underbrace{
+\left[
+\begin{matrix}
+P(x_{0}) \\ 
+P(x_{1}) \\ 
+\vdots \\ 
+P(x_{d})
+\end{matrix}
+\right]}_{多项式的值表示向量}=
+\underbrace{\left[
+\begin{matrix}
+1 & x_{0} & x_{0}^2 & \dots & x_{0}^d \\ 
+1 & x_{1} & x_{1}^2 & \dots & x_{1}^d \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+1 & x_{d} & x_{d}^2 & \dots & x_{d}^d \\ 
+\end{matrix}
+\right]}_{一组求值点的自变量值矩阵}
+\underbrace{
+\left[
+\begin{matrix}
+p_{0} \\ 
+p_{1} \\ 
+\vdots \\ 
+p_{d}
+\end{matrix} 
+\right]}_{多项式的系数表示向量}
+$$
+
+用以下关系式代入：
+
+$$
+x_k = w^k， w = exp(\frac{2\pi i}{n})
+$$
+
+得到，
+
+$$
+\left[
+\begin{matrix}
+P(w^0) \\ 
+P(w^1) \\ 
+\vdots \\ 
+P(w^{n-1})
+\end{matrix}
+\right]=
+\left[
+\begin{matrix}
+1 & w^{0} & w^{0} & \dots & w^{0} \\ 
+1 & w^{1} & w^{2} & \dots & w^{n-1} \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+1 & w^{n-1} & w^{2(n-1)} & \dots & w^{(n-1)(n-1)} \\ 
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+p_{0} \\ 
+p_{1} \\ 
+\vdots \\ 
+p_{d}
+\end{matrix} 
+\right], \phantom{kkk} w = \exp{(\frac{2\pi i}{n})}
+$$
+
+记忆起来可以看作是原来的 $x$ 的下标和上标相乘。中间的矩阵被称为离散傅里叶变换矩阵（Discrete Fourier Transform， DFT 矩阵）。
+
+$$
+\left[
+\begin{matrix}
+1 & w^{0} & w^{0} & \dots & w^{0} \\ 
+1 & w^{1} & w^{2} & \dots & w^{n-1} \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+1 & w^{n-1} & w^{2(n-1)} & \dots & w^{(n-1)(n-1)} \\ 
+\end{matrix}
+\right]
+$$
+
+而解决后续的插值问题即为求 DFT 矩阵的逆
+
+$$
+\underbrace{
+\left[
+\begin{matrix}
+p_{0} \\ 
+p_{1} \\ 
+\vdots \\ 
+p_{d}
+\end{matrix} 
+\right]}_{多项式的系数表示向量}=
+\underbrace{
+\left[
+\begin{matrix}
+1 & w^{0} & w^{0} & \dots & w^{0} \\ 
+1 & w^{1} & w^{2} & \dots & w^{n-1} \\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+1 & w^{n-1} & w^{2(n-1)} & \dots & w^{(n-1)(n-1)} \\ 
+\end{matrix}
+\right]^{-1}}_{一组求值点的自变量值矩阵的逆}
+\underbrace{
+\left[
+\begin{matrix}
+P(w^0) \\ 
+P(w^1) \\ 
+\vdots \\ 
+P(w^{n-1})
+\end{matrix}
+\right]}_{多项式的值表示向量}, \phantom{kkk} w = \exp{(\frac{2\pi i}{n})}
+$$
+
+
+
 
 
 
