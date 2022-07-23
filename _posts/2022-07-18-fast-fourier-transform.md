@@ -4,6 +4,7 @@ title: 快速傅里叶变换（FFT）算法
 date: 2022-07-18 15:53:24.000000000 +09:00
 tags: cryo-EM
 ---
+<%- include mathjax.html -%>
 
 ## 多项式表示方法
 
