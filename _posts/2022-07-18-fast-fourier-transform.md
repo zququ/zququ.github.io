@@ -4,7 +4,6 @@ title: 快速傅里叶变换（FFT）算法
 date: 2022-07-18 15:53:24.000000000 +09:00
 tags: cryo-EM
 ---
-<%- include mathjax.html -%>
 
 ## 多项式表示方法
 
@@ -231,7 +230,17 @@ $$
 首先我们分离偶数与奇数项有
 
 $$
-P(x) = \underbrace{(2x^4 + 7x^2 + 1)}_{P_{e}(x^2)} + x\cdot \underbrace {(3x^4 + x^2 + 5)}_{P_{o}(x^2)}
+P(x) = (2x^4 + 7x^2 + 1) + x\cdot(3x^4 + x^2 + 5)
+$$
+
+其中
+
+$$
+\begin{cases}
+P_{e}(x^2) = (2x^4 + 7x^2 + 1) \\ 
+\\ 
+P_{o}(x^2) = (3x^4 + x^2 + 5)
+\end{cases}
 $$
 
 进而有
@@ -517,7 +526,6 @@ $$
 将该数值表示法代入的关系式用矩阵形式表示有，
 
 $$
-\underbrace{
 \left[
 \begin{matrix}
 P(x_{0}) \\ 
@@ -525,16 +533,15 @@ P(x_{1}) \\
 \vdots \\ 
 P(x_{d})
 \end{matrix}
-\right]}_{多项式的值表示向量}=
-\underbrace{\left[
+\right]=
+\left[
 \begin{matrix}
 1 & x_{0} & x_{0}^2 & \dots & x_{0}^d \\ 
 1 & x_{1} & x_{1}^2 & \dots & x_{1}^d \\ 
 \vdots & \vdots & \vdots & \ddots & \vdots \\ 
 1 & x_{d} & x_{d}^2 & \dots & x_{d}^d \\ 
 \end{matrix}
-\right]}_{一组求值点的自变量值矩阵}
-\underbrace{
+\right]
 \left[
 \begin{matrix}
 p_{0} \\ 
@@ -542,7 +549,7 @@ p_{1} \\
 \vdots \\ 
 p_{d}
 \end{matrix} 
-\right]}_{多项式的系数表示向量}
+\right]
 $$
 
 用以下关系式代入：
@@ -596,7 +603,6 @@ $$
 而解决后续的插值问题即为求 DFT 矩阵的逆
 
 $$
-\underbrace{
 \left[
 \begin{matrix}
 p_{0} \\ 
@@ -604,8 +610,7 @@ p_{1} \\
 \vdots \\ 
 p_{d}
 \end{matrix} 
-\right]}_{多项式的系数表示向量}=
-\underbrace{
+\right]=
 \left[
 \begin{matrix}
 1 & w^{0} & w^{0} & \dots & w^{0} \\ 
@@ -613,8 +618,7 @@ p_{d}
 \vdots & \vdots & \vdots & \ddots & \vdots \\ 
 1 & w^{n-1} & w^{2(n-1)} & \dots & w^{(n-1)(n-1)} \\ 
 \end{matrix}
-\right]^{-1}}_{一组求值点的自变量值矩阵的逆}
-\underbrace{
+\right]^{-1}
 \left[
 \begin{matrix}
 P(w^0) \\ 
@@ -622,7 +626,7 @@ P(w^1) \\
 \vdots \\ 
 P(w^{n-1})
 \end{matrix}
-\right]}_{多项式的值表示向量}, \phantom{kkk} w = \exp{(\frac{2\pi i}{n})}
+\right], \phantom{kkk} w = \exp{(\frac{2\pi i}{n})}
 $$
 
 运用单位方根性质：
@@ -666,7 +670,11 @@ $$
 巧妙之处，即在于 IFFT 与 FFT 可以定义为同一个函数。
 
 $$
-\underbrace{\mathrm{IFFT}(<values>)}_{w=\frac{1}{n}\exp{(\frac{-2\pi i}{n}})} \Longleftrightarrow \underbrace{\mathrm{FFT}(<values>)}_{w=\exp{(\frac{2\pi i}{n})}}
+\begin{cases}
+\mathrm{IFFT}(<values>), && w=\frac{1}{n}\exp{(\frac{-2\pi i}{n}}) \\ 
+& \Updownarrow \\ 
+\mathrm{FFT}(<values>), && w=\exp{(\frac{2\pi i}{n})}
+\end{cases}
 $$
 
 代码实现仅需变更一个地方，
