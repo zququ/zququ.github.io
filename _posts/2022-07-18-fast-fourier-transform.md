@@ -631,8 +631,8 @@ $$
 
 运用单位方根性质：
 
-1. 对任意整数 $i$ ， $j$，由 $w_i^j = w_j^i$ 。
-2. $A = 1 + w_1^$ 
+1. 对任意整数 $i$ ， $j$，有 $w_i^j = w_j^i$ 。
+2. $A = 1 + w_{1}^{m} + w_{2}^m + \cdots + w_{n}^{m}$ ；当 $n|m$ 时，$A= n$ ，否则 $A=0$ 。
 
 可以推导出以下
 
@@ -671,9 +671,9 @@ $$
 
 $$
 \begin{cases}
-\mathrm{IFFT}(<values>), && w=\frac{1}{n}\exp{(\frac{-2\pi i}{n}}) \\ 
+\mathrm{IFFT}(\<values\>), && w=\frac{1}{n}\exp{(\frac{-2\pi i}{n}}) \\ 
 & \Updownarrow \\ 
-\mathrm{FFT}(<values>), && w=\exp{(\frac{2\pi i}{n})}
+\mathrm{FFT}(\<values\>), && w=\exp{(\frac{2\pi i}{n})}
 \end{cases}
 $$
 
