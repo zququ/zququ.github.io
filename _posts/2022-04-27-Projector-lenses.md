@@ -232,7 +232,7 @@ $$
 $$
 \begin{aligned}
 \frac{z_{obj}}{S} 
-&= \frac{|z|}{S} \\ 
+&= \frac{\lvert z \rvert}{S} \\ 
 &= -\left(\frac{\pi}{2kS} - \frac{1}{2}\right) \\ 
 \end{aligned}\tag{10}
 $$
