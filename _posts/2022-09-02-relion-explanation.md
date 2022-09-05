@@ -26,7 +26,7 @@ $\mathrm{P^{\phi}}$ ，由 $J \times L$ 元素 $\mathrm{P}_{jl}^{\phi}$ 组成�
  2. $\phi$ 定义了遵循 3D 结构的 2D 傅里叶变换方向，由 3D 旋转与负责描述实验图像中相对于原始位置的 2D 偏移的相位平移；<br>
  3. 相似的，可以利用所有 $l$ 进行操作，$\sum_{j=1}^J[\mathrm{P}_{lj}^\phi]^\mathrm{T}X_{ij}$ 重新使一张实验图片从 2D 傅里叶变换放回 3D 变换中。
 
-> $N_{ij}$ 是复平面中的噪音
+$N_{ij}$ 是复平面中的噪音
 1. 假设相互独立、零均值且遵循方差为 $\sigma_{ij}^2$ 。
 
 cryo-EM 的重构问题即为解决给定观察数据 $\mathscr{X}$ 和 先验信息 $\mathscr{Y}$ 求解最大概率为正确的数据集参数 $\Theta$ 的问题。
@@ -37,9 +37,12 @@ $$
 \mathrm{P}(\Theta|\mathscr{X}, \mathscr{Y}) \propto \mathrm{P}(\mathscr{X}|\Theta, \mathscr{Y})\mathrm{P}({\Theta|\mathscr{Y}})\tag{2}
 $$
 
+
 其中似然性 $\mathrm{P}(\mathscr{X}|\Theta, \mathscr{Y})$ 量化了给定模型观察数据的概率。先验 $\mathrm{P}(\Theta|\mathscr{Y})$ 表示了该模型获得了先验信息的可能性。似然的计算基于图像相互独立、并且高斯噪音均值为零的假设，并且边缘化方向 $\phi$ 以及类别 $k$。噪音组分的方差 $\sigma_{ij}^2$ 可以通过分辨率来对非白或者彩色噪音进行描述。前验基于信号傅里叶组分之间相互独立，并且零均值高斯分布，分辨率依赖的方差 $\tau_{kl}^2$ 。
 
+
 模型 $\hat\Theta$ 包括所有的 $V_{kl}$ ， $\sigma_{ij}^2$ 以及 $\tau_{kl}^2$ ，优化后验分布 $\mathrm{P}(\Theta|\mathscr{X}, \mathscr{Y})$ ，称为最大后验证（maximum a posteriori，MAP）估计。注意之前讨论的在傅里叶空间的 ML 方法，旨在优化 $\mathrm{P}(\mathscr{X}|\Theta, \mathscr{y})$ 。
+
 
 $\mathrm{P}(\Theta|\mathscr{X}, \mathscr{Y})$ 的优化可以通过期望最大化算法（expectation-maximization algorithm，EM 算法）实现，见以下迭代算法，
 
