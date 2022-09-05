@@ -5,28 +5,66 @@ date: 2022-09-02 12:22:20:24.000000000 +09:00
 tags: cryo-EM
 ---
 
-cyro-EM 单颗粒重建是即与傅里叶空间中得线性模型，
+cyro-EM 单颗粒重建的 MAP 精修是基于傅里叶空间中的线性模型，
 
 $$
-X_{ij} = \mathrm{CTF}_{ij}\sum_{l=1}^{L}\bold{P}_{jl}^{\phi}V_{kl} + N_{ij}
+X_{ij} = \mathrm{CTF}_{ij}\sum_{l=1}^{L}\bold{P}_{jl}^{\phi}V_{kl} + N_{ij}\tag{1}
 $$
 
 其中，
 
+> $X_{ij}$ ，第 $i$ 张实验图片中第 $j$ 个 2D 傅里叶变换 $\bold{X}_i$ 组分（ $j = 1 ,\dots, J$；$i = 1 ,\dots, N$ ）。
+
+ $\mathrm{CTF}_{ij}$ ，第 $i$ 张实验图片中第 $j$ 个 衬度传递函数组分。
+
+> $V_{kl}$ ，数据集中第 $K$ 个结构 3D 傅里叶变换 $\bold{V}_k$ 中第 $l$ 个组分（ $l = 1 ,\dots, L$ ）
+1. 多个结构 $K$ 用于描述数据中的结构异质性，并假设已知；<br> 
+2. 所有的 $V_{kl}$ 组分假设独立、零均值且遵循方差为 $\tau_{kl}^2$的高斯分布。
+
+ > $\bold{P^{\phi}}$ ，由 $J \times L$ 元素 $\bold{P}_{jl}^{\phi}$ 组成的矩阵
+ 1. 对于所有 $j$ 操作 $\sum_{l=1}^L\bold{P}_{lj}^{\phi}V_{kl}$ 实现从第 $k$ 个待解析结构的 3D 傅里叶变换提取出一个片层；<br> 
+ 2. $\phi$ 定义了遵循 3D 结构的 2D 傅里叶变换方向，由 3D 旋转与负责描述实验图像中相对于原始位置的 2D 偏移的相位平移；<br>
+ 3. 相似的，可以利用所有 $l$ 进行操作，$\sum_{j=1}^J[\bold{P}_{lj}^\phi]^\mathrm{T}X_{ij}$ 重新使一张实验图片从 2D 傅里叶变换放回 3D 变换中。
+
+> $N_{ij}$ 是复平面中的噪音
+1. 假设相互独立、零均值且遵循方差为 $\sigma_{ij}^2$ 。
+
+cryo-EM 的重构问题即为解决给定观察数据 $\mathscr{X}$ 和 先验信息 $\mathscr{Y}$ 求解最大概率为正确的数据集参数 $\Theta$ 的问题。
+
+根据贝叶斯法则，所谓的后验分布可以分解为两个组成部分，
+
 $$
-\begin{cases}
-l = 1 ,\dots, L
-\end{cases}
+\mathrm{P}(\Theta|\mathscr{X}, \mathscr{Y}) \propto \mathrm{P}(\mathscr{X}|\Theta, \mathscr{Y})\mathrm{P}({\Theta|\mathscr{Y}})\tag{2}
 $$
 
-并且，
+其中似然性 $\mathrm{P}(\mathscr{X}|\Theta, \mathscr{Y})$ 量化了给定模型观察数据的概率。先验 $\mathrm{P}(\Theta|\mathscr{Y})$ 表示了该模型获得了先验信息的可能性。似然的计算基于图像相互独立、并且高斯噪音均值为零的假设，并且边缘化方向 $\phi$ 以及类别 $k$。噪音组分的方差 $\sigma_{ij}^2$ 可以通过分辨率来对非白或者彩色噪音进行描述。前验基于信号傅里叶组分之间相互独立，并且零均值高斯分布，分辨率依赖的方差 $\tau_{kl}^2$ 。
 
-| 符号                | 含义                                                             | 备注                                                                                                                                                                                                                                                                                                                                                                                         |
-|---------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| $X_{ij}$            | 第 $i$ 张实验图片中第 $j$ 个 2D 傅里叶变换 $\bold{X}_i$ 组分     | $j = 1 ,\dots, J$；$i = 1 ,\dots, N$                                                                                                                                                                                                                                                                                                                                                         |
-| $\mathrm{CTF}_{ij}$ | 第 $i$ 张实验图片中第 $j$ 个 衬度传递函数组分                    |                                                                                                                                                                                                                                                                                                                                                                                              |
-| $V_{kl}$            | 数据集中第 $K$ 个结构 3D 傅里叶变换 $\bold{V}_k$ 中第 $l$ 个组分 | 1. 多个结构 $K$ 用于描述数据中的结构异质性，并假设已知；<br> 2. 所有的 $V_{kl}$ 组分假设独立、零均值且遵循方差为 $\tau_{kl}^2$的高斯分布；                                                                                                                                                                                                                                                   |
-| $\bold{P^{\phi}}$   | 由 $J \times L$ 元素 $\bold{P}_{jl}^{\phi}$ 组成的矩阵           | 1. 对于所有 $j$ 操作 $\sum_{l=1}^L\bold{P}_{lj}^{\phi}V_{kl}$ 实现从第 $k$ 个待解析结构的 3D 傅里叶变换提取出一个片层；<br> 2. $\phi$ 定义了遵循 3D 结构的 2D 傅里叶变换方向，由 3D 旋转与负责描述实验图像中相对于原始位置的 2D 偏移的相位平移；<br>3. 相似的，可以利用所有 $l$ 进行操作，$\sum_{j=1}^J[\bold{P}_{lj}^\phi]^\mathrm{T}X_{ij}$ 重新一张实验图片从 2D 傅里叶变换放回 3D 变换中； |
+模型 $\hat\Theta$ 包括所有的 $V_{kl}$ ， $\sigma_{ij}^2$ 以及 $\tau_{kl}^2$ ，优化后验分布 $\mathrm{P}(\Theta|\mathscr{X}, \mathscr{Y})$ ，称为最大后验证（maximum a posteriori，MAP）估计。注意之前讨论的在傅里叶空间的 ML 方法，旨在优化 $\mathrm{P}(\mathscr{X}|\Theta, \mathscr{y})$ 。
 
+$\mathrm{P}(\Theta|\mathscr{X}, \mathscr{Y})$ 的优化可以通过期望最大化算法（expectation-maximization algorithm，EM 算法）实现，见以下迭代算法，
+
+$$
+\begin{align}
+V_{kl}^{(n+1)} & = \frac{\sum_{i=1}^{N}\int_{\phi}\Gamma_{ik\phi}^{(n)}\sum_{j=1}^{J}\bold{P}_{lj}^{\phi^{\mathrm{T}}}\frac{\mathrm{CTF}_{ij}X_{ij}}{\sigma_{ij}^{2^{(n)}}}\mathrm{d}\phi}{\sum_{i=1}^{N}\int_{\phi}\Gamma_{ik\phi}^{(n)}\sum_{j=1}^{J}\bold{P}_{lj}^{\phi^{\mathrm{T}}}\frac{\mathrm{CTF}_{ij}^{2}}{\sigma_{ij}^{2^{(n)}}}\mathrm{d}\phi+\frac{1}{\tau_{kl}^{2^{(n)}}}}, \tag{3} \\ 
+\sigma_{ij}^{2^{(n+1)}} & =\frac{1}{2}\sum_{k=1}^{K}\int_{\phi}\Gamma_{ik\phi}^{(n)}\bigg\lvert
+X_{ij} - \mathrm{CTF}_{ij}\sum_{l=1}^{L}\bold{P}_{jl}^{\phi}V_{kl}^{(n)}\bigg\rvert^2\mathrm{d}\phi, \tag{4} \\ 
+\tau_{kl}^{2^{n+1}}&=\frac{1}{2}\big\lvert{V_{kl}^{(n+1)}}\big\rvert^2, \tag{5}
+\end{align}
+$$
+
+其中 $\Gamma_{ik\phi}^{(n)}$ 为第 $i$ 张照片类别 $k$ 以及方向 $\phi$ 的后验概率。计算如下，
+
+$$
+\Gamma_{ik\phi}^{(n)} = \frac{\mathrm{P}(\bold{X}_{i}|k, \phi, \Theta^{(n)}, \mathscr{Y})\mathrm{P}(k, \phi|\Theta^{(n)}, \mathscr{Y})}{\sum_{k'=1}^{K}\int_{\phi'}\mathrm{P}(\bold{X}_i|k', \phi', \Theta^{(n)}, \mathscr{Y})\mathrm{P}(k', \phi'|\Theta^{(n)}, \mathscr{Y})\mathrm{d}\phi'}, \tag{6}
+$$
+
+$$
+\mathrm{P}(\bold{X}_i|k, \phi, \Theta^{(n)}, \mathscr{Y}) = \prod_{j=1}^{J}\frac{1}{2\pi\sigma_{ij}^{2^{(n)}}}\exp{\left(\frac{\big|X_{ij}-\mathrm{CTF}_{ij}\sum_{l=1}^{L}\bold{P}_{jl}{\phi}V_{kl}^{(n)}\big|^2}{-2\sigma_{ij}^{2^{(n)}}}\right)}, \tag{7}
+$$
+用 $\mathrm{P}(k, \phi|\Theta^{(n)}, \mathscr{Y})$ 可以用于表示隐藏变量 $k$ 和 $\phi$ 的前验信息。实际中，对于 $\phi$ 的积分可以替代为离散采样转向的黎曼（Riemann）加和，而平移则限制在用户限定的范围内。信号的平方， $\tau_{kl}^{2}$ ；和噪音的平方， $\sigma_{ij}^{2}$ 均估计为 1D 矢量，仅随着傅里叶组分 $j$ 和 $l$ 的分辨率变化。
+
+公式 (3) - (7) 从起始估计 $\bold{V}_k$ （起始模型）开始迭代。如果类别 $K\gt1$ ，则分别从第一次迭代中的数据分割中获得的不同起始模型中分别开始迭代。对于 $\tau_{kl}$ 和 $\sigma_{ij}$ 的起始估计分别从起始模型和独立的颗粒的能量谱中计算。
+
+由于局部优化的特性，较差的起始模型会导致不好的结果。为减少由于不正确起始模型所导致的偏差，可对起始模型应用强低通滤波处理。
 
 
