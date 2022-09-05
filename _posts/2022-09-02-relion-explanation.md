@@ -8,23 +8,23 @@ tags: cryo-EM
 cyro-EM 单颗粒重建的 MAP 精修是基于傅里叶空间中的线性模型，
 
 $$
-X_{ij} = \mathrm{CTF}_{ij}\sum_{l=1}^{L}\bold{P}_{jl}^{\phi}V_{kl} + N_{ij}\tag{1}
+X_{ij} = \mathrm{CTF}_{ij}\sum_{l=1}^{L}\mathrm{P}_{jl}^{\phi}V_{kl} + N_{ij}\tag{1}
 $$
 
 其中，
 
-> $X_{ij}$ ，第 $i$ 张实验图片中第 $j$ 个 2D 傅里叶变换 $\bold{X}_i$ 组分（ $j = 1 ,\dots, J$；$i = 1 ,\dots, N$ ）。
+$X_{ij}$ ，第 $i$ 张实验图片中第 $j$ 个 2D 傅里叶变换 $\mathrm{X}_i$ 组分（ $j = 1 ,\dots, J$；$i = 1 ,\dots, N$ ）。
 
  $\mathrm{CTF}_{ij}$ ，第 $i$ 张实验图片中第 $j$ 个 衬度传递函数组分。
 
-> $V_{kl}$ ，数据集中第 $K$ 个结构 3D 傅里叶变换 $\bold{V}_k$ 中第 $l$ 个组分（ $l = 1 ,\dots, L$ ）
+$V_{kl}$ ，数据集中第 $K$ 个结构 3D 傅里叶变换 $\mathrm{V}_k$ 中第 $l$ 个组分（ $l = 1 ,\dots, L$ ）
 1. 多个结构 $K$ 用于描述数据中的结构异质性，并假设已知；<br> 
 2. 所有的 $V_{kl}$ 组分假设独立、零均值且遵循方差为 $\tau_{kl}^2$的高斯分布。
 
- > $\bold{P^{\phi}}$ ，由 $J \times L$ 元素 $\bold{P}_{jl}^{\phi}$ 组成的矩阵
- 1. 对于所有 $j$ 操作 $\sum_{l=1}^L\bold{P}_{lj}^{\phi}V_{kl}$ 实现从第 $k$ 个待解析结构的 3D 傅里叶变换提取出一个片层；<br> 
+$\mathrm{P^{\phi}}$ ，由 $J \times L$ 元素 $\mathrm{P}_{jl}^{\phi}$ 组成的矩阵
+ 1. 对于所有 $j$ 操作 $\sum_{l=1}^L\mathrm{P}_{lj}^{\phi}V_{kl}$ 实现从第 $k$ 个待解析结构的 3D 傅里叶变换提取出一个片层；<br> 
  2. $\phi$ 定义了遵循 3D 结构的 2D 傅里叶变换方向，由 3D 旋转与负责描述实验图像中相对于原始位置的 2D 偏移的相位平移；<br>
- 3. 相似的，可以利用所有 $l$ 进行操作，$\sum_{j=1}^J[\bold{P}_{lj}^\phi]^\mathrm{T}X_{ij}$ 重新使一张实验图片从 2D 傅里叶变换放回 3D 变换中。
+ 3. 相似的，可以利用所有 $l$ 进行操作，$\sum_{j=1}^J[\mathrm{P}_{lj}^\phi]^\mathrm{T}X_{ij}$ 重新使一张实验图片从 2D 傅里叶变换放回 3D 变换中。
 
 > $N_{ij}$ 是复平面中的噪音
 1. 假设相互独立、零均值且遵循方差为 $\sigma_{ij}^2$ 。
@@ -45,9 +45,9 @@ $\mathrm{P}(\Theta|\mathscr{X}, \mathscr{Y})$ 的优化可以通过期望最大�
 
 $$
 \begin{align}
-V_{kl}^{(n+1)} & = \frac{\sum_{i=1}^{N}\int_{\phi}\Gamma_{ik\phi}^{(n)}\sum_{j=1}^{J}\bold{P}_{lj}^{\phi^{\mathrm{T}}}\frac{\mathrm{CTF}_{ij}X_{ij}}{\sigma_{ij}^{2^{(n)}}}\mathrm{d}\phi}{\sum_{i=1}^{N}\int_{\phi}\Gamma_{ik\phi}^{(n)}\sum_{j=1}^{J}\bold{P}_{lj}^{\phi^{\mathrm{T}}}\frac{\mathrm{CTF}_{ij}^{2}}{\sigma_{ij}^{2^{(n)}}}\mathrm{d}\phi+\frac{1}{\tau_{kl}^{2^{(n)}}}}, \tag{3} \\ 
+V_{kl}^{(n+1)} & = \frac{\sum_{i=1}^{N}\int_{\phi}\Gamma_{ik\phi}^{(n)}\sum_{j=1}^{J}\mathrm{P}_{lj}^{\phi^{\mathrm{T}}}\frac{\mathrm{CTF}_{ij}X_{ij}}{\sigma_{ij}^{2^{(n)}}}\mathrm{d}\phi}{\sum_{i=1}^{N}\int_{\phi}\Gamma_{ik\phi}^{(n)}\sum_{j=1}^{J}\mathrm{P}_{lj}^{\phi^{\mathrm{T}}}\frac{\mathrm{CTF}_{ij}^{2}}{\sigma_{ij}^{2^{(n)}}}\mathrm{d}\phi+\frac{1}{\tau_{kl}^{2^{(n)}}}}, \tag{3} \\ 
 \sigma_{ij}^{2^{(n+1)}} & =\frac{1}{2}\sum_{k=1}^{K}\int_{\phi}\Gamma_{ik\phi}^{(n)}\bigg\lvert
-X_{ij} - \mathrm{CTF}_{ij}\sum_{l=1}^{L}\bold{P}_{jl}^{\phi}V_{kl}^{(n)}\bigg\rvert^2\mathrm{d}\phi, \tag{4} \\ 
+X_{ij} - \mathrm{CTF}_{ij}\sum_{l=1}^{L}\mathrm{P}_{jl}^{\phi}V_{kl}^{(n)}\bigg\rvert^2\mathrm{d}\phi, \tag{4} \\ 
 \tau_{kl}^{2^{n+1}}&=\frac{1}{2}\big\lvert{V_{kl}^{(n+1)}}\big\rvert^2, \tag{5}
 \end{align}
 $$
@@ -55,15 +55,15 @@ $$
 其中 $\Gamma_{ik\phi}^{(n)}$ 为第 $i$ 张照片类别 $k$ 以及方向 $\phi$ 的后验概率。计算如下，
 
 $$
-\Gamma_{ik\phi}^{(n)} = \frac{\mathrm{P}(\bold{X}_{i}|k, \phi, \Theta^{(n)}, \mathscr{Y})\mathrm{P}(k, \phi|\Theta^{(n)}, \mathscr{Y})}{\sum_{k'=1}^{K}\int_{\phi'}\mathrm{P}(\bold{X}_i|k', \phi', \Theta^{(n)}, \mathscr{Y})\mathrm{P}(k', \phi'|\Theta^{(n)}, \mathscr{Y})\mathrm{d}\phi'}, \tag{6}
+\Gamma_{ik\phi}^{(n)} = \frac{\mathrm{P}(\mathrm{X}_{i}|k, \phi, \Theta^{(n)}, \mathscr{Y})\mathrm{P}(k, \phi|\Theta^{(n)}, \mathscr{Y})}{\sum_{k'=1}^{K}\int_{\phi'}\mathrm{P}(\mathrm{X}_i|k', \phi', \Theta^{(n)}, \mathscr{Y})\mathrm{P}(k', \phi'|\Theta^{(n)}, \mathscr{Y})\mathrm{d}\phi'}, \tag{6}
 $$
 
 $$
-\mathrm{P}(\bold{X}_i|k, \phi, \Theta^{(n)}, \mathscr{Y}) = \prod_{j=1}^{J}\frac{1}{2\pi\sigma_{ij}^{2^{(n)}}}\exp{\left(\frac{\big|X_{ij}-\mathrm{CTF}_{ij}\sum_{l=1}^{L}\bold{P}_{jl}{\phi}V_{kl}^{(n)}\big|^2}{-2\sigma_{ij}^{2^{(n)}}}\right)}, \tag{7}
+\mathrm{P}(\mathrm{X}_i|k, \phi, \Theta^{(n)}, \mathscr{Y}) = \prod_{j=1}^{J}\frac{1}{2\pi\sigma_{ij}^{2^{(n)}}}\exp{\left(\frac{\big|X_{ij}-\mathrm{CTF}_{ij}\sum_{l=1}^{L}\mathrm{P}_{jl}{\phi}V_{kl}^{(n)}\big|^2}{-2\sigma_{ij}^{2^{(n)}}}\right)}, \tag{7}
 $$
 用 $\mathrm{P}(k, \phi|\Theta^{(n)}, \mathscr{Y})$ 可以用于表示隐藏变量 $k$ 和 $\phi$ 的前验信息。实际中，对于 $\phi$ 的积分可以替代为离散采样转向的黎曼（Riemann）加和，而平移则限制在用户限定的范围内。信号的平方， $\tau_{kl}^{2}$ ；和噪音的平方， $\sigma_{ij}^{2}$ 均估计为 1D 矢量，仅随着傅里叶组分 $j$ 和 $l$ 的分辨率变化。
 
-公式 (3) - (7) 从起始估计 $\bold{V}_k$ （起始模型）开始迭代。如果类别 $K\gt1$ ，则分别从第一次迭代中的数据分割中获得的不同起始模型中分别开始迭代。对于 $\tau_{kl}$ 和 $\sigma_{ij}$ 的起始估计分别从起始模型和独立的颗粒的能量谱中计算。
+公式 (3) - (7) 从起始估计 $\mathrm{V}_k$ （起始模型）开始迭代。如果类别 $K\gt1$ ，则分别从第一次迭代中的数据分割中获得的不同起始模型中分别开始迭代。对于 $\tau_{kl}$ 和 $\sigma_{ij}$ 的起始估计分别从起始模型和独立的颗粒的能量谱中计算。
 
 由于局部优化的特性，较差的起始模型会导致不好的结果。为减少由于不正确起始模型所导致的偏差，可对起始模型应用强低通滤波处理。
 
