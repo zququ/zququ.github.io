@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>前场（The pre-field）和像差修正</title>
+  <meta name="description" content="前场（The pre-field）">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="前场（The pre-field）和像差修正">
+  <meta name="twitter:description" content="前场（The pre-field）">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="前场（The pre-field）和像差修正">
+  <meta property="og:description" content="前场（The pre-field）">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2022/05/pre-field/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a></p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-purple"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2022-05-18 19:50:24 +0800" itemprop="datePublished" class="post-meta__date date">2022-05-18</time> • <span class="post-meta__tags tags">TEM</span>
+			</div>
+			<div class="post-tags">
+	标签页 Tags：
+	
+	
+	<a href="/tags/#TEM">TEM</a>
+	
+</div>
+
+			<p>
+				<!-- hitwebcounter Code START -->
+				本站自2019年7月已访问<img src="https://hitwebcounter.com/counter/counter.php?page=7976892&style=0038&nbdigits=6&type=page&initCount=7314" title="Free Counter" alt="web counter" border="0">
+			</p>
+			<h1 class="post-title">前场（The pre-field）和像差修正</h1>
+		</header>
+		<section class="post">
+			<h2 id="前场the-pre-field">前场（The pre-field）</h2>
+
+<p>对于最小球面像差的物镜，样品将很好地放置在透镜视野内。样品照明侧的场称为前场（pre-field），并且具有放置在样品钱的弱透镜效果。图1展示了进入平行于轴的 “恒定场” 物镜的光线，其中透镜激发位于位于样品的右侧，以产生无限远的图像。这些光线定义了前场的焦距和物镜焦距。</p>
+
+<p><img src="/assets/20220518/2022-05-18-210136.png" alt="Figure 1" width="450"></p>
+
+<p style="text-align: center;"><strong>图1.</strong> 物镜前场的的影响。样品进入透镜视场中，平行于轴进入视场的光线向轴弯曲，提供部分会聚照明。衍射点看起来比在样品左侧没有前场的情况更大。显示了前场 $f_{pre}$ 的焦距，这取决于样品的位置。大的前场通常用于高分辨率工作，因为需要尽可能短的焦距来减少像差。</p>
+
+<p>Mulvey 和 Wallington （1972）使用类似于 “物镜章节” 中的分析给出了，前场焦距、焦距和前场对入射光束的缩小的表达式。这对于高分辨率的意义在于，入射光束的发散度以及相干长度可能会受到前场透镜强度的影响。在实践中，如果以后章节中讨论的衍射光斑尺寸的测量中获得横向相干宽度的测量，则前场效应包括在测量中。因此，对于浸没式（immersion lens）透镜，照明条件受样品位置和物镜聚焦的影响。现代趋势是使用越来越对称的 “聚光-物镜” 镜头。这些可以方便地从高分辨率电子显微镜 (HREM) 模式切换到探针形成（probe-forming）模式，以在同一样品区域进行会聚束电子衍射 (CBED) 和 STEM。</p>
+
+<p>### 
+&lt;++&gt;</p>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Last One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/07/fourier-representation/" title="link to 傅里叶与图像的关系">傅里叶与图像的关系</a></h2>
+		<p class="excerpt">  离散二维傅里叶变换          元素图像（elementary images）的数学表征      傅里叶如何表征图像特征      傅里叶表征图像的常用表达式        傅里叶变换的特征          线性（Linearity）特征      参数缩放特征      对称性质      振幅和相位      移位定理        卷积与卷积定理          卷积      卷积定理        傅里叶域分辨率          低通（Low-Pass）与高通（...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-07-09 09:20:10 +0800" class="post-list__meta--date date">2022-07-09</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2022/07/fourier-representation/">More</a>
+</div>
+	</div>
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/05/aberrations/" title="link to 像差（aberrations）">像差（aberrations）</a></h2>
+		<p class="excerpt">  前言  球面像差（spherical aberration）  色差（Chromatic aberration）  像散（Astigmatism）  总结前言到了 1960 年左右，也就是目前的像差校正电子显微镜时代之前，电子不稳定性已经被降低到了影响 TEM 相差的程度，包括三阶球面像差（ $C_{s}$ ），色差（ chromatic aberration， $C_{c}$ ）。很多论文中讨论了在射线方程的推导中出现高阶项的后果。由于包含这些术语而导致的偏离完美成像的部分，按照光学...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-05-03 12:32:00 +0800" class="post-list__meta--date date">2022-05-03</time> • <span class="post-list__meta--tags tags">TEM</span><a class="btn-border-small" href="/2022/05/aberrations/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<script src="https://utteranc.es/client.js" repo="zququ/zququ.github.io" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async>
+		</script>
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

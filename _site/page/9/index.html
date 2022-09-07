@@ -68,6 +68,7 @@ var _hmt = _hmt || [];
 
 
 
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -194,6 +195,51 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-28/" title="访问 汇编语言 7.7 7.8 7.9 SI DI, [bx+si+idata] [bx+di+idata]">汇编语言 7.7 7.8 7.9 SI DI, [bx+si+idata] [bx+di+idata]</a></h2>
+      <p class="excerpt">7.7 SI 和 DIsi和di在8086CPU中与bx的功能非常相似，唯一不同的是si和di均不能被拆成两个8位寄存器来使用，如bx = bh + bl, 但si, di不能这样拆成h和l。  问题： 用si和di实现将字符串’welcome to masm!’复制到它后面的数据区中。assume cs:codesg, ds:datasgdatasg segment  db 'welcome to masm!'  db '................'datasg ends首先就要确...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-12 18:49:24 +0800" class="post-list__meta--date date">2019-11-12</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-28/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object-2/" title="访问 python 类和对象 (2) self 构造方法 Name Mangling">python 类和对象 (2) self 构造方法 Name Mangling</a></h2>
+      <p class="excerpt">整理自小甲鱼鱼C论坛self 是什么Python的self相当于C++的this指针。同一个类可以生成无数个对象，当一个对象的方法被调用时，对象会将自身的引用作为第一个参数传给该方法，python就知道需要操作哪个对象的方法了。以下代码为例，class People:    def setName(self, name):        self.name = name    def intro(self):        print('My name is %s' % self.name...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-11 20:26:24 +0800" class="post-list__meta--date date">2019-11-11</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-class-object-2/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/defocus-1/" title="访问 Defocus in TEM Imaging.1 General">Defocus in TEM Imaging.1 General</a></h2>
+      <p class="excerpt">Relative information is summarised from the Online Book of the Practical Electron Microscopy and Database, in the next posts, I will only reference it in the end of the post.In TEM imaging, the conventional modes of high-resolution imaging are mai...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-11 17:21:24 +0800" class="post-list__meta--date date">2019-11-11</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2019/11/defocus-1/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-27/" title="访问 汇编语言 7.5 7.6 通过[bx+idata]进行数组处理">汇编语言 7.5 7.6 通过[bx+idata]进行数组处理</a></h2>
+      <p class="excerpt">7.5 [bx+idata]例如我们要访问地址[10H], 可以进行如下变换：$$[bx=10H]=[bx=8H+2H]$$[bx+idata]表示一个内存单元，它的偏移地址为(bx)+idata (bx中的数值加上idata)。将这种操作代入指令中，如mov ax, [bx+200]，含义为：$$(ax)=((ds)*16+(bx)+200)$$[bx+idata]的形式有多种方法，如下等同：  mov ax, [200+bx]  mov ax, 200[bx]  mov ax, [bx...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-11 09:39:24 +0800" class="post-list__meta--date date">2019-11-11</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-27/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-26/" title="访问 汇编语言 7.1 7.2 7.3 7.4 and or, ASCII, 按字符给出数据, 大小写转化">汇编语言 7.1 7.2 7.3 7.4 and or, ASCII, 按字符给出数据, 大小写转化</a></h2>
+      <p class="excerpt">7.1 and和or指令and 指令mov al, 01100011Bmov al, 00111011B;结果为 al = 00100011B通过该指令可将操作对象的相应位设为0，其他不变。如将al的第六位设置为零的指令为：and al, 10111111Bor 指令mov al, 01100011Bor al, 00111011B;结果为 al = 01111011B通过该指令可将操作对象的相应位设置为1，其他位不变。如将al的第六位设置为1的指令为：or al, 09000000B7....…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-08 22:11:24 +0800" class="post-list__meta--date date">2019-11-08</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-26/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-25/" title="访问 汇编语言 实验5 第二部分">汇编语言 实验5 第二部分</a></h2>
       <p class="excerpt">代码1、编写代码段代码，将a段和b段中的数据依次相加，将结果存到c段中。assume cs:codea segment    db 1, 2, 3, 4, 5, 6, 7, 8a endsb segment    db 1, 2, 3, 4, 5, 6, 7, 8b endsc segment    db 0, 0, 0, 0, 0, 0, 0, 0c endscode segmentstart:  mov ax, a        mov ds, ax        mov ax, b ...…</p>
       <div class="post-list__meta">
@@ -234,51 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">流程备忘*** Cryosparcimport  |  VMotionCorrection  |  VCTF Estimation  |  VPicker  |  V2D Class  |  VDown Sample  |  VAb-initio  # 这里可以在eman2运行，见下*** relion           *** eman2particles -&gt; e2import particle sets  |                  |  V            ...…</p>
       <div class="post-list__meta">
 <time datetime="2019-11-04 20:56:24 +0800" class="post-list__meta--date date">2019-11-04</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2019/11/cryoem-process/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/icos/" title="访问 二十面体不同转向的命名">二十面体不同转向的命名</a></h2>
-      <p class="excerpt">以下是常用的二十面体转向名称，方便参考I1 对称性：cryosparc默认I2 对称性：relion默认I3 对称性：I4 对称性：eman2默认…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-03 21:06:24 +0800" class="post-list__meta--date date">2019-11-03</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2019/11/icos/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-22/" title="访问 汇编语言 6.1 在CS中使用数据">汇编语言 6.1 在CS中使用数据</a></h2>
-      <p class="excerpt">6.1 在代码段中使用数据这里有个问题，我们希望使用loop的方法将如下数据累加和。数据如下：0123H、0456H、0789H、0ABCH、0DEFH、0FEDH、0CBAH、0987H为此我们进行了编程，代码如下：assume cs:codecode segment  dw 0123H, 0456H, 0789H, 0ABCH, 0DEFH, 0FEDH, 0CBAH, 0987H  ;dw意为define word  mov bx, 0  mov ax, 0  mov cx, 8s:...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-31 15:43:24 +0800" class="post-list__meta--date date">2019-10-31</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-22/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/rep-ncbi-1/" title="访问 python爬取ncbi检索信息的摸索">python爬取ncbi检索信息的摸索</a></h2>
-      <p class="excerpt">爬取前，先准备爬虫所需模块：  requests  bs4  openpyxl安装后，进行爬取。首先伪装user-agent:在浏览器中使用inspect功能寻找浏览器user-agent, 如图中红框所示：爬取代码如下：import requestsimport bs4import openpyxldef open_url(url):    headers = {"user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) ...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-30 20:15:24 +0800" class="post-list__meta--date date">2019-10-30</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/10/rep-ncbi-1/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-21/" title="访问 汇编语言 实验4 [bx]和loop的使用">汇编语言 实验4 [bx]和loop的使用</a></h2>
-      <p class="excerpt">实验4 [bx]和loop的使用问题1：编程， 向内存0:200~0:23F依次复制数据0~63(3FH)。assume cs:codecode segment    mov ax, 0020h     ;0:200~0:23F相当于0020h:0~0020h:23f    mov ds, ax    mov bx, 0    mov cx, 64s:  mov ds:[bx], bl   ;这里因为直接从0开始复制    inc bx    loop s    mov ax, 4c00h...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-30 10:04:24 +0800" class="post-list__meta--date date">2019-10-30</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-21/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-20/" title="访问 汇编语言 5.7 5.8 安全空间，段前缀的使用，附加段">汇编语言 5.7 5.8 安全空间，段前缀的使用，附加段</a></h2>
-      <p class="excerpt">5.7 一段安全的空间  我们需要直接向一段内存中写入内容。  这段内存空间不应存放系统或其他程序的数据或代码，否则写入操作很可能引发错误。  DOS方式下，一般情况，0:200~0:2ff(256字节)空间中没有系统或其他程序的数据或代码。  以后，我们需要直接向一段内存中写入内容时，就是用0:200~0:2ff这段空间。5.8 段前缀的使用我们可以利用段前缀来简化代码，如下面这个例子：将内存ffff:0~ffff:b单元中的数据复制到0:200~0:20b单元中。assume cs:c...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-29 22:36:24 +0800" class="post-list__meta--date date">2019-10-29</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-20/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

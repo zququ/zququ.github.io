@@ -62,3 +62,5 @@ valine_comment:
 # placeholde
     placeholder: "留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!"
 
+## Build settings
+#markdown: kramdown
