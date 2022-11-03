@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 图像几何变换
-date: 2022-11-02 13:30:00:24.000000000 +09:00
-tags: cryo-EM
+date: 2022-11-03 13:30:00:24.000000000 +09:00
+tags: cryo-em
 ---
 
 ## 图像几何变换
@@ -12,28 +12,28 @@ tags: cryo-EM
 对于一个非齐次表达式（nonhomogeneous expression）表征点
 
 $$
-\bold{r} = (x, y, z)
+\mathbf{r} = (x, y, z)
 $$
 
 齐次表达式有，
 
 $$
-\tilde{\bold{r}} = (x, y, z, 1) \tag{1}
+\tilde{\mathbf{r}} = (x, y, z, 1) \tag{1}
 $$
 
 其中有
 
 $$
-\tilde{\bold{r}} \in \R^{3} \times \{1\}
+\tilde{\mathbf{r}} \in \R^{3} \times \{1\}
 $$
 
 几何变换过程可以用齐次表达式坐标之间的矩阵操作表示，
 
 $$
-\tilde{\bold{r}}_{\tilde{A}} = \tilde{A}\tilde{\bold{r}} \tag{2}
+\tilde{\mathbf{r}}_{\tilde{A}} = \tilde{A}\tilde{\mathbf{r}} \tag{2}
 $$
 
-其中， $\tilde{\bold{r}}_{\tilde{A}} \in \R^{3}\times \{1\}$ 为在齐次表达式坐标点 $\tilde{\bold{r}} \in \R^{3}\times \{1\}$ 的变换，
+其中， $\tilde{\mathbf{r}}_{\tilde{A}} \in \R^{3}\times \{1\}$ 为在齐次表达式坐标点 $\tilde{\mathbf{r}} \in \R^{3}\times \{1\}$ 的变换，
 
 $$
 \tilde{A} = \left(
@@ -46,8 +46,8 @@ r_{31} & r_{32} & r_{33} & t_{z} \\
 \right)
 = \left(
 \begin{matrix}
-R & \bold{t} \\
-\bold{0}^{T} & 1
+R & \mathbf{t} \\
+\mathbf{0}^{T} & 1
 \end{matrix}
 \right) \tag{3}
 $$
@@ -55,10 +55,10 @@ $$
 由 (1 ~ 3)， 可以得到
 
 $$
-\bold{r}_{\tilde{A}} = R\bold{r} + \bold{t} \tag{4}
+\mathbf{r}_{\tilde{A}} = R\mathbf{r} + \mathbf{t} \tag{4}
 $$
 
-（4）中$\tilde{A}$ 被称为仿射变换 (affine transformation) 。该操作描述为针对点 $\bold{r}$ 的线性变换（$R\bold{r}$）加上一个平移操作（$\bold{t}$），经过这一操作后的 $（\bold{r}_{\tilde{A}}）$ 与操作前的点 $\bold{r}$ 相比，具有以下三个特征：
+（4）中$\tilde{A}$ 被称为仿射变换 (affine transformation) 。该操作描述为针对点 $\mathbf{r}$ 的线性变换（$R\mathbf{r}$）加上一个平移操作（$\mathbf{t}$），经过这一操作后的 $（\mathbf{r}_{\tilde{A}}）$ 与操作前的点 $\mathbf{r}$ 相比，具有以下三个特征：
 
 1. 保留线性特征，如操作前在共线，操作后同样共线；
 2. 保留比例特征，如中点在操作后同样为中点；
@@ -85,12 +85,12 @@ $$
 
 $$
 \begin{aligned}
-\tilde{\bold{r}_{A}} &= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
-\Rightarrow  \bold{r}_{A} &= \bold{r} + \bold{t}
+\tilde{\mathbf{r}_{A}} &= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
+\Rightarrow  \mathbf{r}_{A} &= \mathbf{r} + \mathbf{t}
 \end{aligned}\tag{6}
 $$
 
-需要注意的是， (6) 中 $\bold{r}_A$ 和 $\bold{r}$ 都是点，而 $\bold{t}$ 是一个向量。
+需要注意的是， (6) 中 $\mathbf{r}_A$ 和 $\mathbf{r}$ 都是点，而 $\mathbf{t}$ 是一个向量。
 
 矩阵 $R$ 只有一个重数（multiplicity）为 3 的特征值 （1）。次特征值相关的特征空间维数为 3 。
 
@@ -117,7 +117,7 @@ s_{x} = s_{y} = s_{z} && \text{isotropic} \\
 变换后有， 
 
 $$
-\tilde{\bold{r}}_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
+\tilde{\mathbf{r}}_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
 $$
 
 $$
@@ -164,7 +164,7 @@ $$
 获得的新坐标为，
 
 $$
-\tilde{\bold{r}}_A = (r_x + h_{xy}r_y, r_y, r_z, 1)^{T} \tag{11}
+\tilde{\mathbf{r}}_A = (r_x + h_{xy}r_y, r_y, r_z, 1)^{T} \tag{11}
 $$
 
 $R_{sh_1}$ 特征值为 1, 重数为 3, 但特征空间仅跨越了维数为 2 的
@@ -222,7 +222,6 @@ $$
 R = OR_{sh_i}O^{T} \tag{16}
 $$
 
-#### 4. 旋转
-
-
+#### 4.
+<++>
 
