@@ -108,10 +108,10 @@ $$
 $$
 R =
 \left(
-\begin{matrix}
-s_x & 0 & 0 \\ 
-0   & s_y & 0 \\ 
-0 & 0 & s_z
+\begin{matrix} 
+s_x & 0 & 0\\ 
+0   & s_y & 0\\  
+0 & 0 & s_z\\ 
 \end{matrix}
 \right) \tag{7}
 $$
@@ -127,7 +127,7 @@ $$
 变换后有， 
 
 $$
-\tilde{\mathbf{r}}_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
+\tilde{\mathbf{r}}\_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
 
 
 $$
