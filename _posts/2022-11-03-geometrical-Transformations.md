@@ -38,15 +38,15 @@ $$
 $$
 \tilde{A} = \left(
 \begin{matrix}
-r_{11} & r_{12} & r_{13} & t_{x} \\
-r_{21} & r_{22} & r_{23} & t_{y} \\
-r_{31} & r_{32} & r_{33} & t_{z} \\
-0 & 0 & 0 & 1 
+r_{11} & r_{12} & r_{13} & t_{x} \\ 
+r_{21} & r_{22} & r_{23} & t_{y} \\ 
+r_{31} & r_{32} & r_{33} & t_{z} \\ 
+0 & 0 & 0 & 1 \\ 
 \end{matrix}
 \right)
 = \left(
 \begin{matrix}
-R & \mathbf{t} \\
+R & \mathbf{t} \\ 
 \mathbf{0}^{T} & 1
 \end{matrix}
 \right) \tag{3}
@@ -73,10 +73,10 @@ $$
 $$
 \tilde{A} = \left(
 \begin{matrix}
-1 & 0 & 0 & t_{x} \\
-0 & 1 & 0 & t_{y} \\
-0 & 0 & 1 & t_{z} \\
-0 & 0 & 0 & 1     \\
+1 & 0 & 0 & t_{x} \\  
+0 & 1 & 0 & t_{y} \\  
+0 & 0 & 1 & t_{z} \\  
+0 & 0 & 0 & 1     \\  
 \end{matrix}
 \right) \tag{5}
 $$
@@ -100,8 +100,8 @@ $$
 R = 
 \left(
 \begin{matrix}
-s_x & 0 & 0 \\
-0   & s_y & 0 \\
+s_x & 0 & 0 \\  
+0   & s_y & 0 \\  
 0 & 0 & s_z
 \end{matrix}
 \right) \tag{7}
@@ -110,7 +110,7 @@ $$
 $$
 \begin{cases}
 s_{x} = s_{y} = s_{z} && \text{isotropic} \\
-\\
+ \\  
 \text{otherwise} && \text{anisotropic}
 \end{cases} $$
 
@@ -122,8 +122,8 @@ $$
 
 $$
 \begin{cases}
-s_{i} \gt 1 && \text{expanded} \\
-\\
+s_{i} \gt 1 && \text{expanded} \\  
+  \\  
 s_{i} \lt 1 && \text{contracted}
 \end{cases}
 $$
@@ -133,8 +133,8 @@ $$
 $$
 R = O\left(
 \begin{matrix}
-s_x & 0 & 0 \\
-0 & s_y & 0 \\
+s_x & 0 & 0 \\  
+0 & s_y & 0 \\  
 0 & 0 & s_z 
 \end{matrix}
 \right)
