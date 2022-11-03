@@ -33,7 +33,7 @@ $$
 \tilde{\mathbf{r}}_{\tilde{A}} = \tilde{A}\tilde{\mathbf{r}} \tag{2}
 $$
 
-其中， $\tilde{\mathbf{r}}_{\tilde{A}} \in \mathbb{R}^{3}\times \{1\}$ 为在齐次表达式坐标点 $\tilde{\mathbf{r}} \in \mathhbb{R}^{3}\times \{1\}$ 的变换，
+其中， $\tilde{\mathbf{r}}_{\tilde{A}} \in \mathbb{R}^{3}\times \{1\}$ 为在齐次表达式坐标点 $\tilde{\mathbf{r}} \in \mathbb{R}^{3}\times \{1\}$ 的变换，
 
 $$
 \tilde{A} = \left(
