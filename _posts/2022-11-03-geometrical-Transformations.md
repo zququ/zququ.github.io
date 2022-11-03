@@ -5,9 +5,18 @@ date: 2022-11-03 13:30:00:24.000000000 +09:00
 tags: cryo-em
 ---
 
-## 图像几何变换
+<!-- TOC GFM -->
 
-### 齐次坐标表示
+* [齐次坐标表示](#齐次坐标表示)
+* [变换细节](#变换细节)
+    - [1. 平移](#1-平移)
+    - [2. 放大](#2-放大)
+    - [3. 剪切（Shears）](#3-剪切shears)
+    - [4. 旋转](#4-旋转)
+
+<!-- /TOC -->
+
+## 齐次坐标表示
 
 对于一个非齐次表达式（nonhomogeneous expression）表征点
 
@@ -38,15 +47,15 @@ $$
 $$
 \tilde{A} = \left(
 \begin{matrix}
-r_{11} & r_{12} & r_{13} & t_{x} \\
-r_{21} & r_{22} & r_{23} & t_{y} \\
-r_{31} & r_{32} & r_{33} & t_{z} \\
+r_{11} & r_{12} & r_{13} & t_{x} \\ 
+r_{21} & r_{22} & r_{23} & t_{y} \\ 
+r_{31} & r_{32} & r_{33} & t_{z} \\ 
 0 & 0 & 0 & 1 
 \end{matrix}
 \right)
 = \left(
 \begin{matrix}
-R & \mathbf{t} \\
+R & \mathbf{t} \\ 
 \mathbf{0}^{T} & 1
 \end{matrix}
 \right) \tag{3}
@@ -64,19 +73,19 @@ $$
 2. 保留比例特征，如中点在操作后同样为中点；
 3. 保留平行特征；
 
-### 变换细节
+## 变换细节
 
-#### 1. 平移
+### 1. 平移
 
 当 (3) 中 $R$ 为单位矩阵时，
 
 $$
 \tilde{A} = \left(
 \begin{matrix}
-1 & 0 & 0 & t_{x} \\
-0 & 1 & 0 & t_{y} \\
-0 & 0 & 1 & t_{z} \\
-0 & 0 & 0 & 1     \\
+1 & 0 & 0 & t_{x} \\ 
+0 & 1 & 0 & t_{y} \\ 
+0 & 0 & 1 & t_{z} \\ 
+0 & 0 & 0 & 1     \\ 
 \end{matrix}
 \right) \tag{5}
 $$
@@ -85,8 +94,8 @@ $$
 
 $$
 \begin{aligned}
-\tilde{\mathbf{r}_{A}} &= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
-\Rightarrow  \mathbf{r}_{A} &= \mathbf{r} + \mathbf{t}
+\tilde{\mathbf{r}\_{A}} &= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
+\Rightarrow  \mathbf{r}\_{A} &= \mathbf{r} + \mathbf{t}
 \end{aligned}\tag{6}
 $$
 
@@ -94,10 +103,10 @@ $$
 
 矩阵 $R$ 只有一个重数（multiplicity）为 3 的特征值 （1）。次特征值相关的特征空间维数为 3 。
 
-#### 2. 放大
+### 2. 放大
 
 $$
-R = 
+R =
 \left(
 \begin{matrix}
 s_x & 0 & 0 \\
@@ -109,10 +118,11 @@ $$
 
 $$
 \begin{cases}
-s_{x} = s_{y} = s_{z} && \text{isotropic} \\
-\\
+s_{x} = s_{y} = s_{z} && \text{isotropic} \\ 
+ \\ 
 \text{otherwise} && \text{anisotropic}
-\end{cases} $$
+\end{cases}
+$$
 
 变换后有， 
 
@@ -122,8 +132,8 @@ $$
 
 $$
 \begin{cases}
-s_{i} \gt 1 && \text{expanded} \\
-\\
+s_{i} \gt 1 && \text{expanded} \\ 
+ \\ 
 s_{i} \lt 1 && \text{contracted}
 \end{cases}
 $$
@@ -133,8 +143,8 @@ $$
 $$
 R = O\left(
 \begin{matrix}
-s_x & 0 & 0 \\
-0 & s_y & 0 \\
+s_x & 0 & 0 \\ 
+0 & s_y & 0 \\ 
 0 & 0 & s_z 
 \end{matrix}
 \right)
@@ -145,7 +155,7 @@ $$
 
 矩阵 $R$ 的特征值为 $s_x$ 、$s_y$ 和 $s_z$，重数均为 1。没种特征值对应特征空间维度为 1 。
 
-#### 3. 剪切（Shears）
+### 3. 剪切（Shears）
 
 剪切过程可以理解为用不同强度和不同方向压缩每个轴的结果，导致体积的变形。
 
@@ -154,7 +164,7 @@ $$
 $$
 R_{sh_{1}} = \left(
 \begin{matrix}
-1 & h_{xy} & 0 \\
+1 & h_{xy} & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 1 
 \end{matrix}
@@ -164,7 +174,7 @@ $$
 获得的新坐标为，
 
 $$
-\tilde{\mathbf{r}}_A = (r_x + h_{xy}r_y, r_y, r_z, 1)^{T} \tag{11}
+\tilde{\mathbf{r}}\_A = (r_x + h_{xy} r\_y, r\_y, r\_z, 1)^{T} \tag{11}
 $$
 
 $R_{sh_1}$ 特征值为 1, 重数为 3, 但特征空间仅跨越了维数为 2 的
@@ -172,9 +182,9 @@ $R_{sh_1}$ 特征值为 1, 重数为 3, 但特征空间仅跨越了维数为 2 �
 $$
 \left(
 \begin{matrix}
-1 & 0 \\
-0 & 0 \\
-0 & 1 \\
+1 & 0 \\ 
+0 & 0 \\ 
+0 & 1 \\ 
 \end{matrix}
 \right) \tag{12}
 $$
@@ -184,7 +194,7 @@ $$
 $$
 R_{sh_{2}} = \left(
 \begin{matrix}
-1 & h_{xy} & h_{xz} \\
+1 & h_{xy} & h_{xz} \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 1 
 \end{matrix}
@@ -197,9 +207,9 @@ $$
 $$
 \left(
 \begin{matrix}
-1 \\
-0 \\
-0 \\
+1 \\ 
+0 \\ 
+0 \\ 
 \end{matrix}
 \right) \tag{14}
 $$
@@ -209,7 +219,7 @@ $$
 $$
 R_{sh_{3}} = \left(
 \begin{matrix}
-1 & h_{xy} & h_{xz} \\
+1 & h_{xy} & h_{xz} \\ 
 0 & 1 & h_{yz} \\ 
 0 & 0 & 1 
 \end{matrix}
@@ -222,6 +232,6 @@ $$
 R = OR_{sh_i}O^{T} \tag{16}
 $$
 
-#### 4.
+### 4. 旋转
 <++>
 

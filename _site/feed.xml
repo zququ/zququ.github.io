@@ -5,9 +5,278 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Sep 2022 13:44:45 +0800</pubDate>
-    <lastBuildDate>Wed, 07 Sep 2022 13:44:45 +0800</lastBuildDate>
+    <pubDate>Thu, 03 Nov 2022 18:33:35 +0800</pubDate>
+    <lastBuildDate>Thu, 03 Nov 2022 18:33:35 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>图像几何变换</title>
+        <description>&lt;!-- TOC GFM --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#齐次坐标表示&quot;&gt;齐次坐标表示&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#变换细节&quot;&gt;变换细节&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-平移&quot;&gt;1. 平移&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-放大&quot;&gt;2. 放大&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-剪切shears&quot;&gt;3. 剪切（Shears）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-旋转&quot;&gt;4. 旋转&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /TOC --&gt;
+
+&lt;h2 id=&quot;齐次坐标表示&quot;&gt;齐次坐标表示&lt;/h2&gt;
+
+&lt;p&gt;对于一个非齐次表达式（nonhomogeneous expression）表征点&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathbf{r} = (x, y, z)
+$$&lt;/p&gt;
+
+&lt;p&gt;齐次表达式有，&lt;/p&gt;
+
+&lt;p&gt;$$
+\tilde{\mathbf{r}} = (x, y, z, 1) \tag{1}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中有&lt;/p&gt;
+
+&lt;p&gt;$$
+\tilde{\mathbf{r}} \in \mathbb{R}^{3} \times {1}
+$$&lt;/p&gt;
+
+&lt;p&gt;几何变换过程可以用齐次表达式坐标之间的矩阵操作表示，&lt;/p&gt;
+
+&lt;p&gt;$$
+\tilde{\mathbf{r}}_{\tilde{A}} = \tilde{A}\tilde{\mathbf{r}} \tag{2}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中， $\tilde{\mathbf{r}}_{\tilde{A}} \in \mathbb{R}^{3}\times {1}$ 为在齐次表达式坐标点 $\tilde{\mathbf{r}} \in \mathbb{R}^{3}\times {1}$ 的变换，&lt;/p&gt;
+
+&lt;p&gt;$$
+\tilde{A} = \left(
+\begin{matrix}
+r_{11} &amp;amp; r_{12} &amp;amp; r_{13} &amp;amp; t_{x} \\ 
+r_{21} &amp;amp; r_{22} &amp;amp; r_{23} &amp;amp; t_{y} \\ 
+r_{31} &amp;amp; r_{32} &amp;amp; r_{33} &amp;amp; t_{z} \\ 
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 
+\end{matrix}
+\right)
+= \left(
+\begin{matrix}
+R &amp;amp; \mathbf{t} \\ 
+\mathbf{0}^{T} &amp;amp; 1
+\end{matrix}
+\right) \tag{3}
+$$&lt;/p&gt;
+
+&lt;p&gt;由 (1 ~ 3)， 可以得到&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathbf{r}_{\tilde{A}} = R\mathbf{r} + \mathbf{t} \tag{4}
+$$&lt;/p&gt;
+
+&lt;p&gt;（4）中$\tilde{A}$ 被称为仿射变换 (affine transformation) 。该操作描述为针对点 $\mathbf{r}$ 的线性变换（$R\mathbf{r}$）加上一个平移操作（$\mathbf{t}$），经过这一操作后的 $（\mathbf{r}_{\tilde{A}}）$ 与操作前的点 $\mathbf{r}$ 相比，具有以下三个特征：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;保留线性特征，如操作前在共线，操作后同样共线；&lt;/li&gt;
+  &lt;li&gt;保留比例特征，如中点在操作后同样为中点；&lt;/li&gt;
+  &lt;li&gt;保留平行特征；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;变换细节&quot;&gt;变换细节&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-平移&quot;&gt;1. 平移&lt;/h3&gt;
+
+&lt;p&gt;当 (3) 中 $R$ 为单位矩阵时，&lt;/p&gt;
+
+&lt;p&gt;$$
+\tilde{A} = \left(
+\begin{matrix}
+1 &amp;amp; 0 &amp;amp; 0 &amp;amp; t_{x} \\ 
+0 &amp;amp; 1 &amp;amp; 0 &amp;amp; t_{y} \\ 
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; t_{z} \\ 
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1     \\ 
+\end{matrix}
+\right) \tag{5}
+$$&lt;/p&gt;
+
+&lt;p&gt;(4) 表示为，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\tilde{\mathbf{r}_{A}} &amp;amp;= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
+\Rightarrow  \mathbf{r}_{A} &amp;amp;= \mathbf{r} + \mathbf{t}
+\end{aligned}\tag{6}
+$$&lt;/p&gt;
+
+&lt;p&gt;需要注意的是， (6) 中 $\mathbf{r}_A$ 和 $\mathbf{r}$ 都是点，而 $\mathbf{t}$ 是一个向量。&lt;/p&gt;
+
+&lt;p&gt;矩阵 $R$ 只有一个重数（multiplicity）为 3 的特征值 （1）。次特征值相关的特征空间维数为 3 。&lt;/p&gt;
+
+&lt;h3 id=&quot;2-放大&quot;&gt;2. 放大&lt;/h3&gt;
+
+&lt;p&gt;$$
+R =
+\left(
+\begin{matrix}
+s_x &amp;amp; 0 &amp;amp; 0 &lt;br /&gt;
+0   &amp;amp; s_y &amp;amp; 0 &lt;br /&gt;
+0 &amp;amp; 0 &amp;amp; s_z
+\end{matrix}
+\right) \tag{7}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+s_{x} = s_{y} = s_{z} &amp;amp;&amp;amp; \text{isotropic} \\ 
+ \\ 
+\text{otherwise} &amp;amp;&amp;amp; \text{anisotropic}
+\end{cases}
+$$&lt;/p&gt;
+
+&lt;p&gt;变换后有，&lt;/p&gt;
+
+&lt;p&gt;$$
+\tilde{\mathbf{r}}_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+s_{i} \gt 1 &amp;amp;&amp;amp; \text{expanded} \\ 
+ \\ 
+s_{i} \lt 1 &amp;amp;&amp;amp; \text{contracted}
+\end{cases}
+$$&lt;/p&gt;
+
+&lt;p&gt;这种操作沿着基坐标 (X, Y, Z) 执行，可以通过正交矩阵（orthogonal matrix, O）将其沿着其他正交方向压缩。&lt;/p&gt;
+
+&lt;p&gt;$$
+R = O\left(
+\begin{matrix}
+s_x &amp;amp; 0 &amp;amp; 0 \\ 
+0 &amp;amp; s_y &amp;amp; 0 \\ 
+0 &amp;amp; 0 &amp;amp; s_z 
+\end{matrix}
+\right)
+O^{T} \tag{9}
+$$&lt;/p&gt;
+
+&lt;p&gt;注：当$OO^{T} = O^{T}O = I$ 时，方阵被称作正交。实际上，正交矩阵也是旋转矩阵的一种。&lt;/p&gt;
+
+&lt;p&gt;矩阵 $R$ 的特征值为 $s_x$ 、$s_y$ 和 $s_z$，重数均为 1。没种特征值对应特征空间维度为 1 。&lt;/p&gt;
+
+&lt;h3 id=&quot;3-剪切shears&quot;&gt;3. 剪切（Shears）&lt;/h3&gt;
+
+&lt;p&gt;剪切过程可以理解为用不同强度和不同方向压缩每个轴的结果，导致体积的变形。&lt;/p&gt;
+
+&lt;p&gt;假设通过压缩 X 轴在 Y 方向上的体积的方式来进行变形，相应的变换矩阵为，&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{sh_{1}} = \left(
+\begin{matrix}
+1 &amp;amp; h_{xy} &amp;amp; 0 \\ 
+0 &amp;amp; 1 &amp;amp; 0 \\ 
+0 &amp;amp; 0 &amp;amp; 1 
+\end{matrix}
+\right) \tag{10}
+$$&lt;/p&gt;
+
+&lt;p&gt;获得的新坐标为，&lt;/p&gt;
+
+&lt;p&gt;$$
+\tilde{\mathbf{r}}_A = (r_x + h_{xy} r_y, r_y, r_z, 1)^{T} \tag{11}
+$$&lt;/p&gt;
+
+&lt;p&gt;$R_{sh_1}$ 特征值为 1, 重数为 3, 但特征空间仅跨越了维数为 2 的&lt;/p&gt;
+
+&lt;p&gt;$$
+\left(
+\begin{matrix}
+1 &amp;amp; 0 \\ 
+0 &amp;amp; 0 \\ 
+0 &amp;amp; 1 \\ 
+\end{matrix}
+\right) \tag{12}
+$$&lt;/p&gt;
+
+&lt;p&gt;我们也可以通过下面矩阵来对矩阵 $X$ 在 $Z$ 方向上进行变形，&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{sh_{2}} = \left(
+\begin{matrix}
+1 &amp;amp; h_{xy} &amp;amp; h_{xz} \\ 
+0 &amp;amp; 1 &amp;amp; 0 \\ 
+0 &amp;amp; 0 &amp;amp; 1 
+\end{matrix}
+\right) \tag{13}
+$$&lt;/p&gt;
+
+&lt;p&gt;这种情况下，特征值与重数不发生改变，但特征空间现在的维度只有 1，&lt;/p&gt;
+
+&lt;p&gt;$$
+\left(
+\begin{matrix}
+1 \\ 
+0 \\ 
+0 \\ 
+\end{matrix}
+\right) \tag{14}
+$$&lt;/p&gt;
+
+&lt;p&gt;最终，我们可以沿着 $Z$ 方向再次对 $Y$ 进行变形，变形矩阵为&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{sh_{3}} = \left(
+\begin{matrix}
+1 &amp;amp; h_{xy} &amp;amp; h_{xz} \\ 
+0 &amp;amp; 1 &amp;amp; h_{yz} \\ 
+0 &amp;amp; 0 &amp;amp; 1 
+\end{matrix}
+\right) \tag{15}
+$$&lt;/p&gt;
+
+&lt;p&gt;能够证明，任何剪切矩阵可以用 $R_{sh}$ 矩阵的函数以及合适的正交矩阵来进行表示。&lt;/p&gt;
+
+&lt;p&gt;$$
+R = OR_{sh_i}O^{T} \tag{16}
+$$&lt;/p&gt;
+
+&lt;h3 id=&quot;4-旋转&quot;&gt;4. 旋转&lt;/h3&gt;
+&lt;p&gt;&amp;lt;++&amp;gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 03 Nov 2022 13:30:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/11/geometrical-Transformations/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/11/geometrical-Transformations/</guid>
+        
+        <category>cryo-em</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>C++ 美代码</title>
+        <description>&lt;h1 id=&quot;计数&quot;&gt;计数&lt;/h1&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randomInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 28 Sep 2022 16:54:55 +0800</pubDate>
+        <link>http://localhost:4000/2022/09/coding-library/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/09/coding-library/</guid>
+        
+        <category>C++</category>
+        
+        
+      </item>
     
       <item>
         <title>REION，一种应用于 cryo-EM 结构解析得贝叶斯方法</title>
@@ -1991,495 +2260,6 @@ $$&lt;/p&gt;
         <pubDate>Wed, 20 Apr 2022 10:36:35 +0800</pubDate>
         <link>http://localhost:4000/2022/04/electron-optics-2/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/04/electron-optics-2/</guid>
-        
-        <category>TEM</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>如何通过Github Action为Github Pages添加mermaid流程图</title>
-        <description>&lt;p&gt;虽然目前Github网站已经支持通过Markdown添加Mermaid流程图，但Github Pages目前仍然没有适配。&lt;/p&gt;
-
-&lt;p&gt;网上寻找解决办法的过程中，发现了一个Jekyll博客的优化插件库 &lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;，可以通过Markdown添加流程图、音乐，可以实现Html代码与Markdown同时使用、并优化了表格系统等等，如下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/85282355-2e317300-b4be-11ea-9c30-8f9d61540d14.png&quot; alt=&quot;流程图例&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/82813883-9180b300-9ec8-11ea-8778-f450e0056938.png&quot; alt=&quot;流程图例2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/9413601/133599796-1d213033-8184-4059-9ec2-5415e50c94dc.png&quot; alt=&quot;添加音乐&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;具体功能可以去作者库中看一看详细信息（&lt;a href=&quot;https://github.com/jeffreytse/jekyll-spaceship&quot;&gt;jeffreytse/jekyll-spaceship&lt;/a&gt;）。&lt;/p&gt;
-
-&lt;p&gt;按照作者的使用说明(Installation 部分)配置后，发现还是不能搞定，仔细看说明发现作者做了声明：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Tip: Note that GitHub Pages runs in safe mode and only allows a set of whitelisted plugins. To use the gem in GitHub Pages, you need to build locally or use CI (e.g. travis, github workflow) and deploy to your gh-pages branch.
-Additions for Unlimited GitHub Pages
-
-Here is a GitHub Action named jekyll-deploy-action for Jekyll site deployment conveniently. 
-Here is a Jekyll site using Travis to build and deploy to GitHub Pages for your references.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;并给出了最优解决方案，&lt;a href=&quot;https://github.com/jeffreytse/jekyll-deploy-action&quot;&gt;jekyll-deploy-action&lt;/a&gt;。但是需要通过Github Action功能先进行配置。以下为主要流程：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;通过以下指令，在本地博客目录下建立一个新的 branch，命名为 gh-pages&lt;/p&gt;
-
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git checkout --orphan gh-pages
- git rm -rf .
- git commit --allow-empty -m &quot;initial commit&quot;
- git push origin gh-pages
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在自己的博客库根目录下添加文件 –&amp;gt; .github/workflows/build-jekyll.yml&lt;/li&gt;
-  &lt;li&gt;build-jekyll.yml中添加如下
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; name: Build and Deploy to Github Pages
-	
- on:
-   push:
-     branches:
-       - master  # Here source code branch is `master`, it could be other branch
-	
- jobs:
-   build_and_deploy:
-     runs-on: ubuntu-latest
-     steps:
-       - uses: actions/checkout@v2
-	
-       # Use GitHub Actions' cache to cache dependencies on servers
-       - uses: actions/cache@v2
-         with:
-           path: vendor/bundle
-           key: $-gems-$
-           restore-keys: |
-             $-gems-
-	
-       # Use GitHub Deploy Action to build and deploy to Github
-       - uses: jeffreytse/jekyll-deploy-action@v0.3.1
-         with:
-           provider: 'github'
-           token: $ # It's your Personal Access Token(PAT)
-           repository: ''             # Default is current repository
-           branch: 'gh-pages'         # Default is gh-pages for github provider
-           jekyll_src: './'           # Default is root directory
-           jekyll_cfg: '_config.yml'  # Default is _config.yml
-           jekyll_baseurl: ''         # Default is according to _config.yml
-           bundler_ver: '&amp;gt;=0'         # Default is latest bundler version
-           cname: ''                  # Default is to not use a cname
-           actor: ''                  # Default is the GITHUB_ACTOR
-           pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;注：可以将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;branches:&lt;/code&gt;下&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;改为自己的推送branch名，这里标注为默认值&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; branch再进行新一轮push后，如果正确配置将自动将master中的网站自动转换为静态网页代码添加到刚刚在第一步中建立的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;branch中。&lt;/p&gt;
-
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git push origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;如何发生推送错误，可以在博客仓库的Action选项栏中观察报错原因中观察错误原因。&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/20220408/2022-04-09-13-44-01.png&quot; alt=&quot;Action选项栏&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;进入仓库设置页面（Pages栏），将默认页面改为gh-pages即可。&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/20220408/2022-04-09-13-37-53.png&quot; alt=&quot;更改默认生成页面的branch&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 08 Apr 2022 16:11:25 +0800</pubDate>
-        <link>http://localhost:4000/2022/04/Github-Action/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/04/Github-Action/</guid>
-        
-        <category>blog</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>电子光学 第一部分 波长与简单透镜</title>
-        <description>&lt;p&gt;参考 John C. H. Spence 著作的 《High-Resolution Electron Microscopy》(Fourth Edition, Oxford university press)。&lt;/p&gt;
-
-&lt;!-- TOC GFM --&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-与电子波长相关的一些内容&quot;&gt;1. 与电子波长相关的一些内容&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#11-电子显微镜的四个问题&quot;&gt;1.1 电子显微镜的四个问题&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#12-波长-lambda&quot;&gt;1.2 波长 $\lambda$&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#121-阳极处的波长&quot;&gt;1.2.1 阳极处的波长&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#122-穿过样品后的波长&quot;&gt;1.2.2 穿过样品后的波长&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-简单透镜特点&quot;&gt;2. 简单透镜特点&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-理想透镜与透镜方程&quot;&gt;2.1 理想透镜与透镜方程&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#22-电子透镜中其他常用名字&quot;&gt;2.2 电子透镜中其他常用名字&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#221-横向放大率&quot;&gt;2.2.1 横向放大率&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#222-角放大率&quot;&gt;2.2.2 角放大率&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#223-入瞳与出瞳entrance-and-exit-pupils&quot;&gt;2.2.3. 入瞳与出瞳（entrance and exit pupils）&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#224-高斯参考球&quot;&gt;2.2.4. 高斯参考球&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#225-纵向放大率&quot;&gt;2.2.5. 纵向放大率&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#226-非相干成像理论&quot;&gt;2.2.6. 非相干成像理论&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- /TOC --&gt;
-
-&lt;h2 id=&quot;1-与电子波长相关的一些内容&quot;&gt;1. 与电子波长相关的一些内容&lt;/h2&gt;
-
-&lt;h3 id=&quot;11-电子显微镜的四个问题&quot;&gt;1.1 电子显微镜的四个问题&lt;/h3&gt;
-
-&lt;p&gt;与其使用 Schrodinger 方程将电子显微镜作为一个整体去研究，将其拆分为四个问题更为简单。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;电子束与样品的相互作用&lt;/li&gt;
-  &lt;li&gt;磁透镜作用&lt;/li&gt;
-  &lt;li&gt;检测&lt;/li&gt;
-  &lt;li&gt;快速电子源&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;波长这部分归于快速电子。&lt;/p&gt;
-
-&lt;h3 id=&quot;12-波长-lambda&quot;&gt;1.2 波长 $\lambda$&lt;/h3&gt;
-
-&lt;h4 id=&quot;121-阳极处的波长&quot;&gt;1.2.1 阳极处的波长&lt;/h4&gt;
-
-&lt;p&gt;根据 &lt;strong&gt;&lt;em&gt;de Broglie&lt;/em&gt;&lt;/strong&gt; 关系式，&lt;/p&gt;
-
-&lt;p&gt;$$
-p = mv = h/\lambda
-$$&lt;/p&gt;
-
-&lt;p&gt;以及&lt;/p&gt;
-
-&lt;p&gt;$$
-E = 1/2mv^2
-$$&lt;/p&gt;
-
-&lt;p&gt;根据能量守恒定律，分析带有 $-e$ 电荷的电子穿过电势从 $0$ 到 $V_0$ 变化的区域。可以得到&lt;/p&gt;
-
-&lt;p&gt;$$
-eV_0 = p^2/2m = h^2/2m\lambda^2 \tag{1}
-$$&lt;/p&gt;
-
-&lt;p&gt;其中 $P$ 为 电子的动量，而 $h$ 为 &lt;strong&gt;&lt;em&gt;Plank’s&lt;/em&gt;&lt;/strong&gt; 常量。PS：$eV$ 代表电子伏特，是能量单位，代表一个电子经过 1 伏特电位差加速后获得的动量。$1 eV = 1.6021766208(98) \times 10^{-19} J$&lt;/p&gt;
-
-&lt;p&gt;$$
-\lambda = \frac{h}{\sqrt{2meV_0}} \tag{2}
-$$&lt;/p&gt;
-
-&lt;p&gt;一个电子离开具有高势能以及高热动能的灯丝，并以无势能和高动能到达阳极。势能为零取接地电位。如果 $\lambda$ 以纳米为单位，$V_0$ 以伏特为单位，有&lt;/p&gt;
-
-&lt;p&gt;$$
-\lambda = 1.22639/\sqrt{V_0} \tag{3}
-$$&lt;/p&gt;
-
-&lt;p&gt;在使用更高能量时，就需要考虑电子的相对论变化。比如在 100 kV 时，忽略这一点会导致 $\lambda$ 产生 5 % 的误差。经过相对论修正后的质量为&lt;/p&gt;
-
-&lt;p&gt;$$
-m = m_0/(1 - v^2/c^2)^{1/2} 
-$$&lt;/p&gt;
-
-&lt;p&gt;对应于 $eqn(1)$ 的相对论方程为&lt;/p&gt;
-
-&lt;p&gt;$$
-eV_0 = (m - m_0)c^2
-$$&lt;/p&gt;
-
-&lt;p&gt;其中 $m_0$ 为电子静止状态下的质量，$c$ 是光速。这些等式可以结合并给出电子动量 $mv$ 的表达式。在 &lt;strong&gt;&lt;em&gt;de Broglie&lt;/em&gt;&lt;/strong&gt; 关系式中使用，给出相对论修正的电子波长为&lt;/p&gt;
-
-&lt;p&gt;$$
-\lambda = h/(2m_0eV_r)^{1/2} \tag{4}
-$$&lt;/p&gt;
-
-&lt;p&gt;其中&lt;/p&gt;
-
-&lt;p&gt;$$
-V_r = V_0 + \left(\frac{e}{2m_0c^2}\right)V_0^2
-$$&lt;/p&gt;
-
-&lt;p&gt;这里为了表述方便，引入$V_r$，称为 &lt;strong&gt;“相对论加速电压”&lt;/strong&gt;。电脑计算时，$\lambda$ 可以取&lt;/p&gt;
-
-&lt;p&gt;$$
-\lambda = 1.22639/(V_0 + 0.97845 \times 10^{-6}V_0^2 )^{1/2} \tag{5}
-$$&lt;/p&gt;
-
-&lt;p&gt;其中 $V_0$，显微镜加速电压单位为伏特，$\lambda$ 单位为纳米。&lt;/p&gt;
-
-&lt;h4 id=&quot;122-穿过样品后的波长&quot;&gt;1.2.2 穿过样品后的波长&lt;/h4&gt;
-
-&lt;p&gt;样品内部的正静电电位 $\phi(r)$ 会进一步加速入射的快速电子，导致样品中的波长会少量降低。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-06-15-47-17.png&quot; alt=&quot;Figure 1&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图1.&lt;/strong&gt; 电子显微镜势能（PE）的简单示意图。垂直箭头的长度与快速电子动能呈正比，与快速电子波长的平方成反比。电子势能（图中以高度表示）和电子的动能的总和是不变的。电子在离开灯丝时具有低动能与高势能（由高压装置提供），势能在通向阳极过程中逐渐转变为动能（阳极处为地电位)。就像小球从山上滚下来，跌进样品中一样。在显微镜立柱（microscope column）中向下的大概距离由横坐标表示，样品处的电位跃阶（potential step）被夸张展示。&lt;/p&gt;
-
-&lt;p&gt;忽略引起衍射和色散表面构造的周期性电位变化，内部电位的平均值由 $\upsilon_0 = \phi_0$ 给出，即电位的零阶傅里叶系数。 真空中波长 $\lambda$ 与电子进入样品后波长 $\lambda’$ 之间的比可以由材料中的折射率 $n$ 来表示。&lt;/p&gt;
-
-&lt;p&gt;$$
-n = \frac{\lambda}{\lambda’}=\frac{\left(\frac{1.23}{\sqrt{V_0}}\right)}{\left(\frac{1.23}{\sqrt{V_0 + \phi_0}}\right)}\approx 1 + \frac{\phi_0}{2V_0} \tag{6}
-$$&lt;/p&gt;
-
-&lt;p&gt;快速电子穿过厚度为 $t$ 的样品后，相对于真空中的相位差为&lt;/p&gt;
-
-&lt;p&gt;$$
-\theta = 2\pi(n-1)t/\lambda = \pi\phi_0t/\lambda V_0 = \sigma\phi _0t \tag{7}
-$$&lt;/p&gt;
-
-&lt;p&gt;结合 $eqn(1)$，我们可以得到&lt;/p&gt;
-
-&lt;p&gt;$$
-\begin{aligned}
-\sigma &amp;amp; = \pi/\lambda V_0 &lt;br /&gt;
-&amp;amp; = 2\pi me\lambda/h
-\end{aligned}
-$$&lt;/p&gt;
-
-&lt;p&gt;如果利用沿单一光路，如 $AB$ ,来估计出射面波函数（不考虑如 $CA$ 通路）, 如图2所示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-06-17-27-40.png&quot; alt=&quot;Figure 2&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图2.&lt;/strong&gt; 电子波穿过样品的两种情况。穿过原子中心（电势更高）的电子会降低波长，相对于从原子之间通过而不改变波长的电子，会发生波相位提前。在相位光栅近似中，这一最简单模型的假设是在 $A$ 处的振幅可以沿光路 $AB$ 计算而 $A$ 处没有来自诸如 $C$ 点的贡献；。对于厚样品，这种近似效果不好。&lt;/p&gt;
-
-&lt;h2 id=&quot;2-简单透镜特点&quot;&gt;2. 简单透镜特点&lt;/h2&gt;
-
-&lt;p&gt;现代电子显微镜有着许多焦距可变的成像透镜，为聚焦的目的，需要固定物体及最终观察用的屏幕位置。在高分辨率显微镜中常用的高放大倍率下，例如$L2$，$L3$，及 $L3$ 的透镜电流（决定了焦距）能够被用来调节放大倍率，如图3所示。对于固定放大倍率的配置下，可通过调整物镜 $L1$ 的强度直至固定的 $P1$ 平面与样品的出射面共轭来实现对焦。&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEo5pS55Y-YIEwyLCBMMywgTDQg55S15rWBKSAtLT4gfOaOp-WItueEpui3nXxCKOaOp-WItuaUvuWkp-WAjeaVsCkiLCJtZXJtYWlkIjpudWxsfQ&quot; /&gt;
-&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkQo5pS55Y-Y54mp6ZWcIEwxIOeahOeUtea1gSkgLS0-IHzmlL7lpKflgI3mlbDkuIDlrprml7YsIOiwg-iKguiHsyBQMSDkuI7moLflk4Hlh7rlsITpnaLlhbHova18RijogZrnhKYpIiwibWVybWFpZCI6bnVsbH0&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-06-222144.png&quot; alt=&quot;Figure 3&quot; height=&quot;500&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图3.&lt;/strong&gt; 在高放大倍率下使用的，具有两个聚光透镜（condenser lenses），$C1$ 和 $C2$，以及四个成像透镜，$L1$，$L2$ 和 $L3$ 的电子显微镜示意图。典型的 $D1$ 至 $D7$ 尺寸以及可能的焦距范围于表1给出。其中 $OA$ 是物镜孔径，$P1$ 是固定平面，$SA$ 是选定区域的孔径。&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;透镜间的估计距离 (mm)&lt;/th&gt;
-      &lt;th&gt;焦距范围 (mm)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D1 = 143.6&lt;/td&gt;
-      &lt;td&gt;1.65  &amp;lt; f(C1) &amp;lt; 19&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D2 = 94.3&lt;/td&gt;
-      &lt;td&gt;30 &amp;lt; f(C2) &amp;lt; 1060&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D3 = 251.4&lt;/td&gt;
-      &lt;td&gt;15.4 &amp;lt; f((L2) &amp;lt; 281&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D4 = 215.5&lt;/td&gt;
-      &lt;td&gt;3.1 &amp;lt; f((L3) &amp;lt; 99.5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D5 = 44.9&lt;/td&gt;
-      &lt;td&gt;2.06 &amp;lt; f(L4) &amp;lt; 16.4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D6 = 73.6&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D7 = 345.6&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;表1.&lt;/strong&gt; 典型电子显微镜的电子光学数据。对于放大倍率超过 100 000 情况，放大倍数通过 $f(L2) = 15.4mm$ ，$f(L4) = 2.1 mm$ 固定不变，调整 $L3$ 的焦距来进行控制。$L3$ 焦距分别以以下参数进行设置： $f(L3) = 9.9，7.0，5.0，3.1 mm$ 对应 $M = 150，200，400，750 K$ 。&lt;/p&gt;
-
-&lt;h3 id=&quot;21-理想透镜与透镜方程&quot;&gt;2.1 理想透镜与透镜方程&lt;/h3&gt;
-
-&lt;p&gt;理想透镜是一种数学上的抽象，可以通过物体和图像空间的投影变换来提供完美的成像。在这一变换中出现的常数，指定了透镜基平面的位置。六个重要的基平面包括两个焦点平面、两个主平面以及两个节点平面，如图4所示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEo5YWt5Liq6YeN6KaB55qE5Z-65bmz6Z2iKSAtLT4gQijkuKTkuKrnhKbngrnlubPpnaIpXG5BIC0tPiBDKOS4pOS4quS4u-W5s-mdoilcbkEgLS0-IEQo5Lik5Liq6IqC54K55bmz6Z2iKSIsIm1lcm1haWQiOm51bGx9&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-06-231108.png&quot; alt=&quot;Figure 4&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图4.&lt;/strong&gt; 厚透镜。节点平面（$N1$，$N2$），主平面（$H1$，$H2$）以及焦点平2022-04-04-electron-optics-1.md*面 （$F1$，$F2$）。透镜焦距为 $f_i$，$f_0$，物焦距为 $z_p$ 。对于磁电子透镜，主平面是交叉的。&lt;/p&gt;
-
-&lt;p&gt;从图中总结，$x_0$，$x_i$，$f_0$，$f_i$，$U$，以及 $V$ 分别表示为&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoeDApIC0tPiBCKOS7jiB5MCDliLAgRjEpXG5DKHhpKSAtLT4gRCjku44geWkg5YiwIEYyKVxuRShmMCkgLS0-IEYo5LuOIEgyIOWIsCBGMilcbkcoZmkpIC0tPiBIKOS7jiBIMSDliLAgRjEpXG5JKFUpICAtLT4gSijku44geTAg5YiwIEgxKVxuSyhWKSAgLS0-IEwo5LuOIHlpIOWIsCBIMikiLCJtZXJtYWlkIjpudWxsfQ&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;对于磁透镜，&lt;strong&gt;节点平面与主平面重合&lt;/strong&gt;。轴与节点平面相交的点成为节点，$N1$ 与 $N2$。&lt;strong&gt;主平面为单位横向放大平面&lt;/strong&gt;，而&lt;strong&gt;节点平为单位角度放大平面&lt;/strong&gt;。对于轴对称透镜，完美成像的投影可以简化为牛顿透镜方程:&lt;/p&gt;
-
-&lt;p&gt;$$
-\frac{y_i}{y_0} = \frac{f_i}{x_0} = \frac{x_i}{f_0} \tag{8}
-$$&lt;/p&gt;
-
-&lt;p&gt;解决这些平面的位置是解决电子透镜的关键问题，满足 $eqn(8)$ 图像的图形构造规则可以用于找到任意物体的图像。&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkMo54mp5L2TIFApIC0tPiB854mb6aG_6YCP6ZWc5pa556iLfEIo5Lu75oSP54mp5L2T55qE5Zu-5YOPIFAnKSIsIm1lcm1haWQiOm51bGx9&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;从已知物点 $P$ 构建共轭像点 $P’$ 的规则：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;通过 $P$ 和 $F_1$ 画一条射线，与 $H1$ 平面交于 $Q$。通过 $Q$ 平行于轴画出射线 $YQ$，延伸到物体和图像空间。&lt;/li&gt;
-  &lt;li&gt;通过 $P$ 平行于轴绘制射线并与 $H2$ 相交。从这个交点画一条穿过 $F2$ 的射线，与 $YQ$ 在 $P$ 处相交于 $P’$。$P’$ 是 $P$ 的像。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以中等放大倍率（~ 40,000）的现代的电子显微镜为例，如图5所示。在四透镜材中使用这种模式对于必须将辐射损伤降到最低的生物样品具有优势。在中等放大倍率中透镜 $L3$ 被关闭. 在高放大倍率下，所有透镜均被使用。现代透镜的设计师使用矩阵光学的放大。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-11-17-15-56.png&quot; alt=&quot;Figure 5&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图5.&lt;/strong&gt; 中等放大倍率的物镜射线图。物焦距与像焦距与磁透镜相等。典型的 $f_2$ 值为 2 mm，放大倍数 $M = V/U$ 大约为 20。&lt;/p&gt;
-
-&lt;p&gt;如果物距（ $U$ ）和像距（ $V$ ）从透镜主平面 $H1$ 和 $H2$ 位置测量，简单的薄透镜公式仍然使用。$eqn(8)$ 变为&lt;/p&gt;
-
-&lt;p&gt;$$
-\frac{f_i}{U} + \frac{f_0}{V} = 1
-$$&lt;/p&gt;
-
-&lt;p&gt;因为对于磁电子透镜，物体和图像空间中的折射率相等，我们有&lt;/p&gt;
-
-&lt;p&gt;$$
-f_i = f_0 = f \tag{9}
-$$&lt;/p&gt;
-
-&lt;p&gt;又因为在物体出现在 $H1$ 左侧（右侧）时，$U$ 为正（负）；像出现在 $H2$ 右侧（左侧）时，$V$ 为正（负）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbkEoVSkgLS0-IE1bK10gLS0-IEIo54mp5L2T5ZyoIEgxIOW3puS-pylcbkEgLS0-IE5bLV0gLS0-IEQo54mp5L2T5ZyoIEgxIOWPs-S-pylcbkUoVikgLS0-IFFbK10gLS0-IEYo5YOP5ZyoIEgyIOWPs-S-pylcbkUgLS0-IFRbLV0gLS0-IEco5YOP5ZyoIEgyIOW3puS-pykiLCJtZXJtYWlkIjpudWxsfQ&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可以推导出&lt;/p&gt;
-
-&lt;p&gt;$$
-\frac{1}{U} + \frac{1}{V} = \frac{1}{f} \tag{10}
-$$&lt;/p&gt;
-
-&lt;p&gt;从 $eqn(10）$ 中分析, 存在三种情况：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$U &amp;lt; f$ ：像是虚像、直立的、放大的。&lt;/li&gt;
-  &lt;li&gt;$f &amp;lt; U &amp;lt; 2f$ ：像是实像、倒置的、放大的。&lt;/li&gt;
-  &lt;li&gt;$U &amp;gt; 2f$ ：像是实像、倒置的、缩小的。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;22-电子透镜中其他常用名字&quot;&gt;2.2 电子透镜中其他常用名字&lt;/h3&gt;
-
-&lt;h4 id=&quot;221-横向放大率&quot;&gt;2.2.1 横向放大率&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;横向放大率&lt;/em&gt;&lt;/strong&gt; $M$ 由以下给出：&lt;/p&gt;
-
-&lt;p&gt;$$
-M = \frac{y_i}{y_0} = - \frac{V}{U} \tag{11}
-$$&lt;/p&gt;
-
-&lt;p&gt;从 $eqn(10)$ 以及 $eqn(11)$，我们有&lt;/p&gt;
-
-&lt;p&gt;$$
-M - 1 = - \frac{V}{f} \tag{12}
-$$&lt;/p&gt;
-
-&lt;p&gt;从 $eqn(11)$ and $eqn(12)$ 可以得到&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkUo6auY5YiG6L6o546H54mp6ZWcKSAtLT5BKE0pIC0tPiB85Y-N5q-U5LqOfCBCKOeJqemVnOeEpui3nSlcbkUgLS0-IEMoVSkgLS0-IHznqI3lpKfkuo58IEIiLCJtZXJtYWlkIjpudWxsfQ&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;222-角放大率&quot;&gt;2.2.2 角放大率&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;角放大率&lt;/em&gt;&lt;/strong&gt; $m$ 对于小角度有&lt;/p&gt;
-
-&lt;p&gt;$$
-m = \frac{\tan{\theta_i}}{\tan{\theta_0}} \approx \frac{\theta_i}{\theta_0} = \left|\frac{1}{M}\right| \tag{13}
-$$&lt;/p&gt;
-
-&lt;p&gt;如图6所示，&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-12-10-42-49.png&quot; alt=&quot;Figure 6&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图6.&lt;/strong&gt; 角放大率。点 $P$ 与其像 $P’$ 同时给出。&lt;/p&gt;
-
-&lt;h4 id=&quot;223-入瞳与出瞳entrance-and-exit-pupils&quot;&gt;2.2.3. 入瞳与出瞳（entrance and exit pupils）&lt;/h4&gt;
-
-&lt;p&gt;透镜的&lt;strong&gt;入瞳与出瞳&lt;/strong&gt;系统对于限制分辨率以及聚光能力是重要的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;入瞳&lt;/strong&gt;：由其前面的光学系统形成的光圈的图像，以最小角度与物体相对。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;出瞳&lt;/strong&gt;：通过整个系统形成的入瞳的像。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;孔径光阑（aperture stop）&lt;/strong&gt; 是其像形成入瞳的物理孔径。&lt;/p&gt;
-
-&lt;p&gt;详情见图7 ~ 图9：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/2022-04-12-15-10-14.png&quot; alt=&quot;Figure 7&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图7.&lt;/strong&gt; 透镜系统的入瞳与出瞳。复杂的透镜系统由许多镜共同组成，可以以整体看成一个黑盒子，由入瞳、出瞳以及复杂的传递函数制定。惠更斯（Huygens）球面波前会聚在点 $P$ 。&lt;/p&gt;
-
-&lt;p&gt;以相机为例，解释一下入瞳与出瞳&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/220px-Apertures.jpg&quot; alt=&quot;Figure 8&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图8.&lt;/strong&gt; 相机镜头调整光圈大小。入瞳是物理光圈的像，可以从前方（物体方）看到。物理孔径大小和位置也许会因为镜头的放大倍率不同而存在差异。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/20220404/220px-Camera_lens_exit_pupil.jpg&quot; alt=&quot;Figure 9&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;图9.&lt;/strong&gt; SLR相机镜头的图像方；出瞳是在镜头中间的发亮区域。&lt;/p&gt;
-
-&lt;h4 id=&quot;224-高斯参考球&quot;&gt;2.2.4. 高斯参考球&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;高斯参考球（The Gaussian reference sphere）&lt;/em&gt;&lt;/strong&gt;对于一个定义为球形的像点 $P$ ，以 $P$ 为中心，通过光轴与出瞳的交点。如图7所示。&lt;/p&gt;
-
-&lt;p&gt;对于无像差的光学系统，向 $P$ 会聚的惠更斯球面小波的恒相位面与该参考球面重合。&lt;strong&gt;波前与高斯参考求面的偏差制定了系统的像差。&lt;/strong&gt;而衍射极限极限由出瞳或等效入瞳的有效大小施加的。&lt;/p&gt;
-
-&lt;h4 id=&quot;225-纵向放大率&quot;&gt;2.2.5. 纵向放大率&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;纵向放大率&lt;/em&gt;&lt;/strong&gt;，$M_z$，可以用于将联景深与焦距联系起来。&lt;/p&gt;
-
-&lt;p&gt;求 $eqn(10)$ 的微分可以得到&lt;/p&gt;
-
-&lt;p&gt;$$
-\begin{aligned}
-d\left(\frac{1}{V}\right) + d\left(\frac{1}{U}\right) &amp;amp; = d\left(\frac{1}{f}\right) &lt;br /&gt;
--\frac{1}{V^2}dV - \frac{1}{U^2}dU &amp;amp; = 0 \\ 
-\frac{dV}{dU} &amp;amp; = - \frac{V^2}{U^2} &lt;br /&gt;
-\end{aligned} \tag{14}
-$$&lt;/p&gt;
-
-&lt;p&gt;最终获得&lt;/p&gt;
-
-&lt;p&gt;$$
-\frac{\Delta V}{\Delta U} = - M^2 = M_z
-$$&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;mermaid&quot; src=&quot;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbkEo57q15ZCR5pS-5aSn546HIE0pIC0tPiB85bmz5pa5fEIo5qiq5ZCR5pS-5aSn546HIE16KSIsIm1lcm1haWQiOm51bGx9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;例如，如果横向放大倍数 $M$ 为 100 000，则与 0.3 nm “厚”原子的上下表面共轭的图像平面相隔 3 m。&lt;/p&gt;
-
-&lt;h4 id=&quot;226-非相干成像理论&quot;&gt;2.2.6. 非相干成像理论&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;非相干成像理论&lt;/em&gt;&lt;/strong&gt;给出了景深或聚焦范围值（称为物平面），在该值上，一个物点可以视“聚焦”&lt;/p&gt;
-
-&lt;p&gt;$$
-Z_D = 2d/\theta = 2\lambda/\theta^2 \tag{15}
-$$&lt;/p&gt;
-
-&lt;p&gt;其中 $\theta$ 是物镜孔径半角，$d$ 是显微镜分辨率。然而，这一结果并无法准确应用于相位物体的相干高分辨率成像。&lt;/p&gt;
-
-&lt;p&gt;透镜设计者用来确定电子透镜基面位置的方法将在下一篇博文中进行讨论。从图4 可以看出，&lt;strong&gt;平行于轴进入（离开）的光线与轴的交叉点定义了图像（对象）焦点&lt;/strong&gt;。在电子光学中，一旦电子的运动方程可以针对特定的磁场分布求解，则平行于轴进入透镜场的电子轨迹可以类似地用于找到透镜焦点。真实的电子轨迹遵循透镜磁场内的平滑曲线。为了使用理想的镜头模型，可能有必要使用来自远在场影响之外的点的光线的虚拟延伸来定义镜头焦点。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 04 Apr 2022 11:18:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/04/electron-optics-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/04/electron-optics-1/</guid>
         
         <category>TEM</category>
         

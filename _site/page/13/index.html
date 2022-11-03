@@ -195,6 +195,24 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/assembly-language-5/" title="访问 汇编语言 2.9 2.10 2.11 2.12 段寄存器，CS IP，代码段">汇编语言 2.9 2.10 2.11 2.12 段寄存器，CS IP，代码段</a></h2>
+      <p class="excerpt">2.9 段寄存器8086CPU在访问内存时，要由相关部件提供内存单元的段地址和偏移地址，送入加法器合成物理地址。8086CPU中有四个段寄存器：  CS, DS, SS, ES2.10 CS 和 IPCS和IP是8086CPU中两个最关键的寄存器。  CS为代码段寄存器， IP为指令指针寄存器(偏移地址寄存器)。8086机中，任意时刻，CPU将CS：IP指向的内容当做指令执行。过程如下：  从CS：IP指向的内存单元读取指令，读取的指令进入指令缓冲器；  IP=IP+所读取指令的长度，从而...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-09-29 09:24:24 +0800" class="post-list__meta--date date">2019-09-29</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/09/assembly-language-5/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/assembly-language-4/" title="访问 汇编语言 2.8 段的概念">汇编语言 2.8 段的概念</a></h2>
+      <p class="excerpt">2.8 段的概念段只是我们主观认为的，CPU在识别内存时都只认识一整条段！在编程时可以根据需要，将若干地址的内存单元看做一个段，用段地址x16必然是16的倍数，所以一个段的起始地址也一定是16的倍数；偏移地址为16位，16位寻址能力为64KB，所以一个段的长度最大值为64KB。CPU可以用不同的段地址和偏移地址形成同一个物理地址。偏移地址为16位，变化范围为0~FFFFH， 仅用偏移地址来寻址最多可寻64KB个内存单元。可以根据需要，将地址连续、起始地址为16的倍数的一组内存单元定义为一个段。…</p>
+      <div class="post-list__meta">
+<time datetime="2019-09-28 20:49:24 +0800" class="post-list__meta--date date">2019-09-28</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/09/assembly-language-4/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/09/About-Gilbert-Strang-LA-notebook/" title="访问 About the Strang LA notebook">About the Strang LA notebook</a></h2>
       <p class="excerpt">I have uploaded the related notes to the github as PDF. Get it as you need!…</p>
       <div class="post-list__meta">
@@ -262,24 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">Summarized from ‘Introduction to Linear algebra’ from Gilbert Strang.Definition of The Vector SpacesVector space is a very important concept, which is denoted by $R^1, R^2, R^3 … R^n$, which consists of a a whole collection of vectors. For example...…</p>
       <div class="post-list__meta">
 <time datetime="2019-09-03 11:30:00 +0800" class="post-list__meta--date date">2019-09-03</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2019/09/Vector-spaces-and-subspaces/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/08/inverse-matrices/" title="访问 Inverse Matrices">Inverse Matrices</a></h2>
-      <p class="excerpt">Something to note  The matrix A is invertible if there exists a matrix $A^{-1}$Two-sided inverse: $$A^{-1}\cdot A = I$$ Not all matrices have inverses. There are six note:  The inverse exists if and only if elimination produces n pivots (row excha...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-08-02 07:33:24 +0800" class="post-list__meta--date date">2019-08-02</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2019/08/inverse-matrices/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/07/the-adjacency-matrix/" title="访问 The Adjacency Matrix">The Adjacency Matrix</a></h2>
-      <p class="excerpt">Define an Adjacency MatrixHere, I want to define a matrix to show the graph or a network which has four nodes. As you can see in the Figure.This is a 0-1 matrix with sij = 1 when nodes i and j are connectd by an edge.$$S_{ij} =  \begin{bmatrix}  0...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-07-16 00:00:00 +0800" class="post-list__meta--date date">2019-07-16</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2019/07/the-adjacency-matrix/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

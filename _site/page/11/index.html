@@ -195,6 +195,24 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/python-read-excel/" title="访问 使用Python 读写Excel (1)">使用Python 读写Excel (1)</a></h2>
+      <p class="excerpt">整理自小甲鱼鱼C论坛 openpyxl 模块简单易用、功能广泛，单元格格式、图片、表格、公式、筛选、批注、文件保护等功能都具有，图表功能是其一大特点。openpyxl模块的安装pip install openpyxl创建并保存Excel文件通过调用openpyxl.Workbook()生成一个Workbook的实例化对象，这个就代表一个工作簿：import openpyxlwb = openpyxl.Workbook()# 获取活跃的工作表ws = wb.active# 数据可以直接赋值给...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-26 21:32:24 +0800" class="post-list__meta--date date">2019-10-26</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/10/python-read-excel/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-17/" title="访问 汇编语言 5.3 Debug跟踪loop循环">汇编语言 5.3 Debug跟踪loop循环</a></h2>
+      <p class="excerpt">5.3 在Debug中跟踪用loop指令实现的循环程序首先要考虑一下超出地址存储能力的问题：加入我们要计算在FFFF:0006单元中的数乘以3，并将结果存储在DX中。  我们每次做这种类似的计算时，要注意是否会超出DX的存储范围！ffff:0006单元中的数是字节型数据，所以范围在0~255之间，这是因为对于字节型数据，计算方式如下：$$2^8=256$$所以范围在0~255之间，相对的对于DX通用寄存器，由于数据存储针对的往往是字型数据，而针对于16位的字型数据，计算方式如下：$$2^{...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-26 11:31:24 +0800" class="post-list__meta--date date">2019-10-26</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-17/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-16/" title="访问 汇编语言 5.2 loop">汇编语言 5.2 loop</a></h2>
       <p class="excerpt">Loop 指令loop 指令的格式是：loop 标号， CPU执行loop指令的时候，要进行两步操作：  $(CX) = (CX) - 1$  判断CX的值，不为零则转至标号处执行程序，如果为零则继续向下执行  CX的值影响着loop指令的执行结果。通常，我们用loop指令来实现循环功能，CX中存放着循环的次数我们编写一个实现$2^12$的代码，代码如下：assume cs:codecode segmentstart: mov ax, 2       mov cx, 11    s: ad...…</p>
       <div class="post-list__meta">
@@ -262,24 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">The related information of correlation is mostly from David Dorran video at youtube, it is very clear and easy understanding.What Is CorrelationCorrelation is a measure of how similar signals are. They are present in things like discrete Fourier t...…</p>
       <div class="post-list__meta">
 <time datetime="2019-10-18 10:34:24 +0800" class="post-list__meta--date date">2019-10-18</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2019/10/correlation-of-discrete-signals/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-12/" title="访问 汇编语言 4.1 4.2 源程序">汇编语言 4.1 4.2 源程序</a></h2>
-      <p class="excerpt">4.1 一个源程序从写出到执行的过程做一个程序从写出到执行分为以下步骤。  第一步：编写汇编源程序。  第二步：对源程序进行编译连接。使用汇编语言编译程序对源程序文件中的源程序进行编译，产生目标文件。再用连接程序对目标文件进行连接，生成可以在操作系统中直接运行的可执行文件。可执行文件包含两部分内容：  程序（从源程序中的汇编指令翻译过来的机器码）以及数据（原程序中定义的数据）  相关的描述信息  第三步：执行可执行文件中的程序。操作系统依照可执行文件中的描述信息，将可执行文件中的机器码和数...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-18 08:24:24 +0800" class="post-list__meta--date date">2019-10-18</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-12/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-11/" title="访问 汇编语言 3.10 栈段">汇编语言 3.10 栈段</a></h2>
-      <p class="excerpt">3.10 栈段对于8086PC机，可以根据需要，将一组内存单元定义为一个段。我们可以将长度为N(N&lt;=64KB)的一组地址连续、起始地址为16的倍数的内存单元，当作栈空间来用，从而定义了一个栈段。例如10010H~1001FH这段长度为16字节的内存空间当作栈来用，以栈的方式进行访问。这段空间就可以成为一个栈段，段地址为1001H，大小为16字节。通过将SS:SP指向我们定义的栈段来使得如push、pop等栈操作指令访问我们定义的栈段。问题 1如果将10000H~1FFFFH这段空间...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-17 09:13:24 +0800" class="post-list__meta--date date">2019-10-17</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-11/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

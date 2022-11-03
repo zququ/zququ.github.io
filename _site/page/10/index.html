@@ -195,6 +195,24 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-23/" title="访问 汇编语言 6.2 6.3 在代码中使用段 将数据代码栈放入不同的段">汇编语言 6.2 6.3 在代码中使用段 将数据代码栈放入不同的段</a></h2>
+      <p class="excerpt">6.2 在代码中使用栈让我们利用栈，将程序中定义的数据逆序存放。实现代码如下：assume cs:codesgcodesg segment        dw 0123h, 0456h, 0789h, 0abch, 0defh, 0fedh, 0cbah, 0987h    dw 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0    ;这里dw定义了16个字型数据，在程序加在后，将取得16个字    ;的内存空间，存放这16个数据。后面将这段空...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-05 18:22:24 +0800" class="post-list__meta--date date">2019-11-05</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-23/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/cryoem-process/" title="访问 单颗粒3D分类较低要求流程的摸索">单颗粒3D分类较低要求流程的摸索</a></h2>
+      <p class="excerpt">流程备忘*** Cryosparcimport  |  VMotionCorrection  |  VCTF Estimation  |  VPicker  |  V2D Class  |  VDown Sample  |  VAb-initio  # 这里可以在eman2运行，见下*** relion           *** eman2particles -&gt; e2import particle sets  |                  |  V            ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-04 20:56:24 +0800" class="post-list__meta--date date">2019-11-04</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2019/11/cryoem-process/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/icos/" title="访问 二十面体不同转向的命名">二十面体不同转向的命名</a></h2>
       <p class="excerpt">以下是常用的二十面体转向名称，方便参考I1 对称性：cryosparc默认I2 对称性：relion默认I3 对称性：I4 对称性：eman2默认…</p>
       <div class="post-list__meta">
@@ -262,24 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">5.4Debug 指令复习首先复习一下Debug命令：-r ;命令显示当前的通用寄存器情况-t ;分步执行命令-d ;查看目标地址的二进制码及ASC码-e ;改写目标地址的二进制代码-a ;从目标地址处开始添加代码-r ;更改代码段或偏移地址指针masm访问内存单元的方法之前在5.3提过，编译环境下并不能直接识别Debug中的mov ax, [0]命令，会将[0]识别为数值0写入ax寄存器中。而实现masm访问内存内存单元的方法有两个:第一种方法：mov ax, 2000H ;这里注意必须...…</p>
       <div class="post-list__meta">
 <time datetime="2019-10-27 11:07:24 +0800" class="post-list__meta--date date">2019-10-27</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-18/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/python-read-excel/" title="访问 使用Python 读写Excel (1)">使用Python 读写Excel (1)</a></h2>
-      <p class="excerpt">整理自小甲鱼鱼C论坛 openpyxl 模块简单易用、功能广泛，单元格格式、图片、表格、公式、筛选、批注、文件保护等功能都具有，图表功能是其一大特点。openpyxl模块的安装pip install openpyxl创建并保存Excel文件通过调用openpyxl.Workbook()生成一个Workbook的实例化对象，这个就代表一个工作簿：import openpyxlwb = openpyxl.Workbook()# 获取活跃的工作表ws = wb.active# 数据可以直接赋值给...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-26 21:32:24 +0800" class="post-list__meta--date date">2019-10-26</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/10/python-read-excel/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-17/" title="访问 汇编语言 5.3 Debug跟踪loop循环">汇编语言 5.3 Debug跟踪loop循环</a></h2>
-      <p class="excerpt">5.3 在Debug中跟踪用loop指令实现的循环程序首先要考虑一下超出地址存储能力的问题：加入我们要计算在FFFF:0006单元中的数乘以3，并将结果存储在DX中。  我们每次做这种类似的计算时，要注意是否会超出DX的存储范围！ffff:0006单元中的数是字节型数据，所以范围在0~255之间，这是因为对于字节型数据，计算方式如下：$$2^8=256$$所以范围在0~255之间，相对的对于DX通用寄存器，由于数据存储针对的往往是字型数据，而针对于16位的字型数据，计算方式如下：$$2^{...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-26 11:31:24 +0800" class="post-list__meta--date date">2019-10-26</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-17/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

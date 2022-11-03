@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18cdfb7c9ee74e1cfba49c447d3945eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>图像几何变换</title>
+  <meta name="description" content="">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="图像几何变换">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="图像几何变换">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2022/11/geometrical-Transformations/">
+  <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <!--script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script-->
+  <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- Valine Comment -->
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+
+
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+	<span class="mobile btn-mobile-menu">
+		<i class="fa fa-list btn-mobile-menu__icon"></i>
+		<i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+	</span>
+
+	<header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Zququ's blog 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Zququ's blog logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Zququ's blog" class="blog-button">Zququ's blog</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">生而为学, 学而不老</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+        
+        
+        <p class="panel-cover__description"><a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a></p>
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="To Home Page" class="blog-button">博客</a></li>
+                
+                  <li class="navigation__item"><a href="https://zququcv.netlify.com" target="_blank" title="Curriculum Vitae">简历</a></li>
+                
+                  <li class="navigation__item"><a href="http://life.zququ.fun/tags/" target="_blank" title="Tags Page">标签</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div>
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/1251190497" title="@1251190497 Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/Zququ" title="@Zququ Github" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/qzh813" title="@qzh813" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class="social fa fa-rss"></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:qzh813@gmail.com" title="Contact me">
+      <i class="social fa fa-envelope"></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Research Gate  -->
+  <li class="navigation__item">
+    <a href="https://www.researchgate.net/profile/Zehui_Qu2" title="@Zehui_Qu2" target="_blank">
+      <i class="fa fa-book"></i>
+      <span class="label">Researchgate</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-purple"></div>
+    
+  </div>
+</header>
+
+
+	<div class="content-wrapper">
+		<div class="content-wrapper__inner">
+			
+
+
+
+	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post-header">
+			<div class="post-meta">
+				<time datetime="2022-11-03 13:30:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-11-03</time> • <span class="post-meta__tags tags">cryo-em</span>
+			</div>
+			<div class="post-tags">
+	标签页 Tags：
+	
+	
+	<a href="/tags/#cryo-em">cryo-em</a>
+	
+</div>
+
+			<p>
+				<!-- hitwebcounter Code START -->
+				本站自2019年7月已访问<img src="https://hitwebcounter.com/counter/counter.php?page=7976892&style=0038&nbdigits=6&type=page&initCount=7314" title="Free Counter" alt="web counter" border="0">
+			</p>
+			<h1 class="post-title">图像几何变换</h1>
+		</header>
+		<section class="post">
+			<!-- TOC GFM -->
+
+<ul>
+  <li><a href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E8%A1%A8%E7%A4%BA">齐次坐标表示</a></li>
+  <li>
+<a href="#%E5%8F%98%E6%8D%A2%E7%BB%86%E8%8A%82">变换细节</a>
+    <ul>
+      <li><a href="#1-%E5%B9%B3%E7%A7%BB">1. 平移</a></li>
+      <li><a href="#2-%E6%94%BE%E5%A4%A7">2. 放大</a></li>
+      <li><a href="#3-%E5%89%AA%E5%88%87shears">3. 剪切（Shears）</a></li>
+      <li><a href="#4-%E6%97%8B%E8%BD%AC">4. 旋转</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /TOC -->
+
+<h2 id="齐次坐标表示">齐次坐标表示</h2>
+
+<p>对于一个非齐次表达式（nonhomogeneous expression）表征点</p>
+
+<p>$$
+\mathbf{r} = (x, y, z)
+$$</p>
+
+<p>齐次表达式有，</p>
+
+<p>$$
+\tilde{\mathbf{r}} = (x, y, z, 1) \tag{1}
+$$</p>
+
+<p>其中有</p>
+
+<p>$$
+\tilde{\mathbf{r}} \in \mathbb{R}^{3} \times {1}
+$$</p>
+
+<p>几何变换过程可以用齐次表达式坐标之间的矩阵操作表示，</p>
+
+<p>$$
+\tilde{\mathbf{r}}_{\tilde{A}} = \tilde{A}\tilde{\mathbf{r}} \tag{2}
+$$</p>
+
+<p>其中， $\tilde{\mathbf{r}}_{\tilde{A}} \in \mathbb{R}^{3}\times {1}$ 为在齐次表达式坐标点 $\tilde{\mathbf{r}} \in \mathbb{R}^{3}\times {1}$ 的变换，</p>
+
+<p>$$
+\tilde{A} = \left(
+\begin{matrix}
+r_{11} &amp; r_{12} &amp; r_{13} &amp; t_{x} \\ 
+r_{21} &amp; r_{22} &amp; r_{23} &amp; t_{y} \\ 
+r_{31} &amp; r_{32} &amp; r_{33} &amp; t_{z} \\ 
+0 &amp; 0 &amp; 0 &amp; 1 
+\end{matrix}
+\right)
+= \left(
+\begin{matrix}
+R &amp; \mathbf{t} \\ 
+\mathbf{0}^{T} &amp; 1
+\end{matrix}
+\right) \tag{3}
+$$</p>
+
+<p>由 (1 ~ 3)， 可以得到</p>
+
+<p>$$
+\mathbf{r}_{\tilde{A}} = R\mathbf{r} + \mathbf{t} \tag{4}
+$$</p>
+
+<p>（4）中$\tilde{A}$ 被称为仿射变换 (affine transformation) 。该操作描述为针对点 $\mathbf{r}$ 的线性变换（$R\mathbf{r}$）加上一个平移操作（$\mathbf{t}$），经过这一操作后的 $（\mathbf{r}_{\tilde{A}}）$ 与操作前的点 $\mathbf{r}$ 相比，具有以下三个特征：</p>
+
+<ol>
+  <li>保留线性特征，如操作前在共线，操作后同样共线；</li>
+  <li>保留比例特征，如中点在操作后同样为中点；</li>
+  <li>保留平行特征；</li>
+</ol>
+
+<h2 id="变换细节">变换细节</h2>
+
+<h3 id="1-平移">1. 平移</h3>
+
+<p>当 (3) 中 $R$ 为单位矩阵时，</p>
+
+<p>$$
+\tilde{A} = \left(
+\begin{matrix}
+1 &amp; 0 &amp; 0 &amp; t_{x} \\ 
+0 &amp; 1 &amp; 0 &amp; t_{y} \\ 
+0 &amp; 0 &amp; 1 &amp; t_{z} \\ 
+0 &amp; 0 &amp; 0 &amp; 1     \\ 
+\end{matrix}
+\right) \tag{5}
+$$</p>
+
+<p>(4) 表示为，</p>
+
+<p>$$
+\begin{aligned}
+\tilde{\mathbf{r}_{A}} &amp;= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
+\Rightarrow  \mathbf{r}_{A} &amp;= \mathbf{r} + \mathbf{t}
+\end{aligned}\tag{6}
+$$</p>
+
+<p>需要注意的是， (6) 中 $\mathbf{r}_A$ 和 $\mathbf{r}$ 都是点，而 $\mathbf{t}$ 是一个向量。</p>
+
+<p>矩阵 $R$ 只有一个重数（multiplicity）为 3 的特征值 （1）。次特征值相关的特征空间维数为 3 。</p>
+
+<h3 id="2-放大">2. 放大</h3>
+
+<p>$$
+R =
+\left(
+\begin{matrix}
+s_x &amp; 0 &amp; 0 <br>
+0   &amp; s_y &amp; 0 <br>
+0 &amp; 0 &amp; s_z
+\end{matrix}
+\right) \tag{7}
+$$</p>
+
+<p>$$
+\begin{cases}
+s_{x} = s_{y} = s_{z} &amp;&amp; \text{isotropic} \\ 
+ \\ 
+\text{otherwise} &amp;&amp; \text{anisotropic}
+\end{cases}
+$$</p>
+
+<p>变换后有，</p>
+
+<p>$$
+\tilde{\mathbf{r}}_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
+$$</p>
+
+<p>$$
+\begin{cases}
+s_{i} \gt 1 &amp;&amp; \text{expanded} \\ 
+ \\ 
+s_{i} \lt 1 &amp;&amp; \text{contracted}
+\end{cases}
+$$</p>
+
+<p>这种操作沿着基坐标 (X, Y, Z) 执行，可以通过正交矩阵（orthogonal matrix, O）将其沿着其他正交方向压缩。</p>
+
+<p>$$
+R = O\left(
+\begin{matrix}
+s_x &amp; 0 &amp; 0 \\ 
+0 &amp; s_y &amp; 0 \\ 
+0 &amp; 0 &amp; s_z 
+\end{matrix}
+\right)
+O^{T} \tag{9}
+$$</p>
+
+<p>注：当$OO^{T} = O^{T}O = I$ 时，方阵被称作正交。实际上，正交矩阵也是旋转矩阵的一种。</p>
+
+<p>矩阵 $R$ 的特征值为 $s_x$ 、$s_y$ 和 $s_z$，重数均为 1。没种特征值对应特征空间维度为 1 。</p>
+
+<h3 id="3-剪切shears">3. 剪切（Shears）</h3>
+
+<p>剪切过程可以理解为用不同强度和不同方向压缩每个轴的结果，导致体积的变形。</p>
+
+<p>假设通过压缩 X 轴在 Y 方向上的体积的方式来进行变形，相应的变换矩阵为，</p>
+
+<p>$$
+R_{sh_{1}} = \left(
+\begin{matrix}
+1 &amp; h_{xy} &amp; 0 \\ 
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 
+\end{matrix}
+\right) \tag{10}
+$$</p>
+
+<p>获得的新坐标为，</p>
+
+<p>$$
+\tilde{\mathbf{r}}_A = (r_x + h_{xy} r_y, r_y, r_z, 1)^{T} \tag{11}
+$$</p>
+
+<p>$R_{sh_1}$ 特征值为 1, 重数为 3, 但特征空间仅跨越了维数为 2 的</p>
+
+<p>$$
+\left(
+\begin{matrix}
+1 &amp; 0 \\ 
+0 &amp; 0 \\ 
+0 &amp; 1 \\ 
+\end{matrix}
+\right) \tag{12}
+$$</p>
+
+<p>我们也可以通过下面矩阵来对矩阵 $X$ 在 $Z$ 方向上进行变形，</p>
+
+<p>$$
+R_{sh_{2}} = \left(
+\begin{matrix}
+1 &amp; h_{xy} &amp; h_{xz} \\ 
+0 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 
+\end{matrix}
+\right) \tag{13}
+$$</p>
+
+<p>这种情况下，特征值与重数不发生改变，但特征空间现在的维度只有 1，</p>
+
+<p>$$
+\left(
+\begin{matrix}
+1 \\ 
+0 \\ 
+0 \\ 
+\end{matrix}
+\right) \tag{14}
+$$</p>
+
+<p>最终，我们可以沿着 $Z$ 方向再次对 $Y$ 进行变形，变形矩阵为</p>
+
+<p>$$
+R_{sh_{3}} = \left(
+\begin{matrix}
+1 &amp; h_{xy} &amp; h_{xz} \\ 
+0 &amp; 1 &amp; h_{yz} \\ 
+0 &amp; 0 &amp; 1 
+\end{matrix}
+\right) \tag{15}
+$$</p>
+
+<p>能够证明，任何剪切矩阵可以用 $R_{sh}$ 矩阵的函数以及合适的正交矩阵来进行表示。</p>
+
+<p>$$
+R = OR_{sh_i}O^{T} \tag{16}
+$$</p>
+
+<h3 id="4-旋转">4. 旋转</h3>
+<p>&lt;++&gt;</p>
+
+
+		</section>
+	</article>
+
+	<section class="read-more">
+	
+
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Next One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/09/coding-library/" title="link to C++ 美代码">C++ 美代码</a></h2>
+		<p class="excerpt">计数for (int n=0; n&lt;5; n++)for (int i = v.size() ? v.size() : 5; i &gt; 0; i --){	v.add(randomInteger(-1000, 1000));	}}…</p>
+		<div class="post-list__meta">
+<time datetime="2022-09-28 16:54:55 +0800" class="post-list__meta--date date">2022-09-28</time> • <span class="post-list__meta--tags tags">C++</span><a class="btn-border-small" href="/2022/09/coding-library/">More</a>
+</div>
+	</div>
+	
+</section>
+
+	<script src="https://utteranc.es/client.js" repo="zququ/zququ.github.io" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async>
+		</script>
+
+
+
+			<section class="footer">
+	<footer>
+		<span class="footer__copyright">© 2022  <a href="https://zququcv.netlify.com">@zququ</a>
+			Powered by the<a href="https://github.com/onevcat/vno-jekyll"> Vno - Jekyll</a> for <a href="https://jekyllrb.com">Jekyll</a> </span>
+	</footer>
+</section>
+
+<!--<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function () {-->
+<!--mermaid.initialize({-->
+<!--startOnLoad: true,-->
+<!--theme: "default",-->
+<!--});-->
+<!--window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));-->
+<!--});-->
+<!--</script>-->
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

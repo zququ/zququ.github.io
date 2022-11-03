@@ -195,6 +195,24 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-12/" title="访问 汇编语言 4.1 4.2 源程序">汇编语言 4.1 4.2 源程序</a></h2>
+      <p class="excerpt">4.1 一个源程序从写出到执行的过程做一个程序从写出到执行分为以下步骤。  第一步：编写汇编源程序。  第二步：对源程序进行编译连接。使用汇编语言编译程序对源程序文件中的源程序进行编译，产生目标文件。再用连接程序对目标文件进行连接，生成可以在操作系统中直接运行的可执行文件。可执行文件包含两部分内容：  程序（从源程序中的汇编指令翻译过来的机器码）以及数据（原程序中定义的数据）  相关的描述信息  第三步：执行可执行文件中的程序。操作系统依照可执行文件中的描述信息，将可执行文件中的机器码和数...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-18 08:24:24 +0800" class="post-list__meta--date date">2019-10-18</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-12/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-11/" title="访问 汇编语言 3.10 栈段">汇编语言 3.10 栈段</a></h2>
+      <p class="excerpt">3.10 栈段对于8086PC机，可以根据需要，将一组内存单元定义为一个段。我们可以将长度为N(N&lt;=64KB)的一组地址连续、起始地址为16的倍数的内存单元，当作栈空间来用，从而定义了一个栈段。例如10010H~1001FH这段长度为16字节的内存空间当作栈来用，以栈的方式进行访问。这段空间就可以成为一个栈段，段地址为1001H，大小为16字节。通过将SS:SP指向我们定义的栈段来使得如push、pop等栈操作指令访问我们定义的栈段。问题 1如果将10000H~1FFFFH这段空间...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-17 09:13:24 +0800" class="post-list__meta--date date">2019-10-17</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-11/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/10/FSC-behaviour-within-a-shell/" title="访问 First Glimpse on Fourier Shell Correlation - FSC Behaviour Within A Shell">First Glimpse on Fourier Shell Correlation - FSC Behaviour Within A Shell</a></h2>
       <p class="excerpt">Let us first assume that the two Fourier-space 3D volumes to be compared each contain a signal “$S(r)$” with an uncorrelated additive noise component “$N(r)$”. And the signal component in bothe volumes can be written as:Eq. (1)$$\begin{array}{l}{F...…</p>
       <div class="post-list__meta">
@@ -262,24 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">什么是DebugDebug是DOS、Windows都提供的实模式（8086方式）程序的调试工具。使用它，可以查看CPU各种寄存器中的内容、内存的情况和在及其码级跟踪程序的运行。Debug的使用  R命令查看、改变CPU寄存器的内容；  D命令查看内存中的内容；  E命令改写内存中的内容；  U命令将内存中的机器指令翻译成汇编指令；  T命令执行一条机器指令；  A命令以汇编指令的格式在内存中写入一条及其指令。指令详解  R命令：-rAX=0000  BX=0000  CX=0000  DX...…</p>
       <div class="post-list__meta">
 <time datetime="2019-09-30 08:39:24 +0800" class="post-list__meta--date date">2019-09-30</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/09/assembly-language-6/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/09/assembly-language-5/" title="访问 汇编语言 2.9 2.10 2.11 2.12 段寄存器，CS IP，代码段">汇编语言 2.9 2.10 2.11 2.12 段寄存器，CS IP，代码段</a></h2>
-      <p class="excerpt">2.9 段寄存器8086CPU在访问内存时，要由相关部件提供内存单元的段地址和偏移地址，送入加法器合成物理地址。8086CPU中有四个段寄存器：  CS, DS, SS, ES2.10 CS 和 IPCS和IP是8086CPU中两个最关键的寄存器。  CS为代码段寄存器， IP为指令指针寄存器(偏移地址寄存器)。8086机中，任意时刻，CPU将CS：IP指向的内容当做指令执行。过程如下：  从CS：IP指向的内存单元读取指令，读取的指令进入指令缓冲器；  IP=IP+所读取指令的长度，从而...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-09-29 09:24:24 +0800" class="post-list__meta--date date">2019-09-29</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/09/assembly-language-5/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/09/assembly-language-4/" title="访问 汇编语言 2.8 段的概念">汇编语言 2.8 段的概念</a></h2>
-      <p class="excerpt">2.8 段的概念段只是我们主观认为的，CPU在识别内存时都只认识一整条段！在编程时可以根据需要，将若干地址的内存单元看做一个段，用段地址x16必然是16的倍数，所以一个段的起始地址也一定是16的倍数；偏移地址为16位，16位寻址能力为64KB，所以一个段的长度最大值为64KB。CPU可以用不同的段地址和偏移地址形成同一个物理地址。偏移地址为16位，变化范围为0~FFFFH， 仅用偏移地址来寻址最多可寻64KB个内存单元。可以根据需要，将地址连续、起始地址为16的倍数的一组内存单元定义为一个段。…</p>
-      <div class="post-list__meta">
-<time datetime="2019-09-28 20:49:24 +0800" class="post-list__meta--date date">2019-09-28</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/09/assembly-language-4/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

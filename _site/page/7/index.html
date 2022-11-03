@@ -68,6 +68,7 @@ var _hmt = _hmt || [];
 
 
 
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -194,6 +195,24 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-37/" title="访问 汇编语言 9.4 9.5 9.6 转移的目的地址以及转移地址在寄存器和内存中的jmp指令">汇编语言 9.4 9.5 9.6 转移的目的地址以及转移地址在寄存器和内存中的jmp指令</a></h2>
+      <p class="excerpt">9.4 转移的目的地址在指令中的jmp指令之前的jmp指令语法都是相当于当前IP的转移位移。jmp far ptr 标号 该命令实现的是段间转移，这种转移也被成为远转移。功能如下：(CS)=标号所在段的段地址；(IP)=标号在段中的偏移地址。如下指令，assume cs:codesg  codesg segment    start:mov ax, 0          mov bx, 0          jmp far ptr s          db 256 dup (0)    ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-30 15:19:24 +0800" class="post-list__meta--date date">2019-11-30</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-37/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/python-magic-method-3/" title="访问 python 魔法方法 (3) 反运算 一元操作符">python 魔法方法 (3) 反运算 一元操作符</a></h2>
+      <p class="excerpt">整理自小甲鱼鱼C论坛反运算执行反运算时首先观察加法规则：$$ a + b $$这个加法中，首先来确定谁是加法的主动一方，谁是被加一方。a 是主动实施加法的一方，而b则是被加一方。而反运算描述的就是被加一方的相关的算数性质。如下：calss Nint(int):    def __rsub__(self, other)        return int.__sub__(other, self)&gt;&gt;&gt; a = Nint(5)&gt;&gt;&gt; b = Nint(3)&amp;...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-28 21:21:24 +0800" class="post-list__meta--date date">2019-11-28</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-magic-method-3/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-36/" title="访问 汇编语言 9.1 9.2 9.3 offset jmp 依据位移进行转移的jmp指令">汇编语言 9.1 9.2 9.3 offset jmp 依据位移进行转移的jmp指令</a></h2>
       <p class="excerpt">9.1 操作符offsetoffset在汇编语言中是由编译器处理的符号，它的功能是取得标号的偏移地址。如下代码，assume cs:codesgcodesg segment  start: mov ax, offset start  ;equal to: mov ax, 0      s: mov ax, offset s      ;equal to: mov ax, 3codesg endsend start这里offset start相当于指明并取得start处的偏移地址0，offs...…</p>
       <div class="post-list__meta">
@@ -261,24 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">First of all, let’s introduce the definition of the Scannning EM and the Bright field EM respectively:  Scanning EMTake the incoming beam of electrons and focused on very small point, rather that small point back and forth across the image as if y...…</p>
       <div class="post-list__meta">
 <time datetime="2019-11-24 12:16:24 +0800" class="post-list__meta--date date">2019-11-24</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2019/11/scanning-bright-field-EM/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/c-introduction/" title="访问 C语言 简介以及C转化asm的初尝试">C语言 简介以及C转化asm的初尝试</a></h2>
-      <p class="excerpt">整理自小甲鱼鱼C论坛编译的概念将助记符转化为机器码的过程叫做编译。C语言的优势(1) 效率高C语言相对于其他第三代编程语言，C语言是编译型语言，源代码最终编译为机器语言，也就是可执行文件，从此CPU就可以直接执行。编译型语言与解释型语言的对比：            C语言      Python                  汇编语言      字节码              机器语言      解释器              CPU执行      CPU执行      (2) ...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-22 09:55:24 +0800" class="post-list__meta--date date">2019-11-22</time> • <span class="post-list__meta--tags tags">C语言</span><a class="btn-border-small" href="/2019/11/c-introduction/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-34/" title="访问 汇编语言 8.6 寻址方式的综合应用">汇编语言 8.6 寻址方式的综合应用</a></h2>
-      <p class="excerpt">8.6 寻址方式的综合应用按照王爽教材里给的例子：            公司名称      DEC              总裁姓名      Ken Olsen              排名      137              收入      40              著名产品      PDP      以上是DEC公司1982年的情况，到了1988年DEC公司的信息放生了变化，如下：            公司名称      DEC              总裁...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-21 14:47:24 +0800" class="post-list__meta--date date">2019-11-21</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-34/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>
