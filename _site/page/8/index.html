@@ -68,7 +68,6 @@ var _hmt = _hmt || [];
 
 
 
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -195,6 +194,51 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/python-magic-method-1/" title="访问 python 魔方方法 (1) 构造与析构">python 魔方方法 (1) 构造与析构</a></h2>
+      <p class="excerpt">整理自小甲鱼鱼C论坛构造与析构__init__(self[,...])__init__()相当于其他面向对象编程语言的构造方法，也就是类在实例化成对象时，首先会调用的方法。class Rectangle:    def __init__(self, x, y):        self.x = x        self.y = y    def getArea(self):        return self.x * self.y&gt;&gt;&gt; rect = Rectangl...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-20 21:13:24 +0800" class="post-list__meta--date date">2019-11-20</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-magic-method-1/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-33/" title="访问 汇编语言 8.4 8.5 寻址方式(2) 指令要处理的数据多长">汇编语言 8.4 8.5 寻址方式(2) 指令要处理的数据多长</a></h2>
+      <p class="excerpt">8.4 寻址方式(2)寻址方式的小结表格:            寻址方式      含义      名称      常用格式举例                  [idata]      EA=idata;SA=(ds)      直接寻址      [idata]              [bx]      EA=(bx);SA=(ds)      寄存器间接寻址      [bx]              [si]      EA=(bx);SA=(ds)           ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-20 15:59:24 +0800" class="post-list__meta--date date">2019-11-20</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-33/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-32/" title="访问 汇编语言 8.1 8.2 8.3 8.4(1) bx,si,di,bp 机器指令数据在哪 数据位置表达 寻址方式(1)直接寻址">汇编语言 8.1 8.2 8.3 8.4(1) bx,si,di,bp 机器指令数据在哪 数据位置表达 寻址方式(1)直接寻址</a></h2>
+      <p class="excerpt">首先规定寄存器(reg，register): ax,bx,cx,dx,ah,al,bh,bl,ch,cl,dh,dl,sp,bp,si,di;规定段寄存器(sreg, segment register): ds,ss,cs,es。8.1 bx、si、di和bp1.在8086CPU中只有bx,bp,si,di这四个寄存器可以在[...], 中来进行内存单元的寻址。比如：mov ax, [bx]mov ax, [bx+si]mov ax, [bx+di]mov ax, [bp]mov ax, ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-19 10:30:24 +0800" class="post-list__meta--date date">2019-11-19</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-32/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-31/" title="访问 汇编语言 第七章总结 实验6 Debug跟踪问题7.9">汇编语言 第七章总结 实验6 Debug跟踪问题7.9</a></h2>
+      <p class="excerpt">问题7.9编程，将datasg段中每个单词的前4个字母改为大写字母。assume cs:codesg, ss:stacksg, ds:datasgstacksg segment  dw 0,0,0,0,0,0,0,0stacksg endsdatasg segment  db '1. display      '  db '2. brows        '  db '3. replace      '  db '4. modify       'datasg endscodesg seg...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-18 15:56:00 +0800" class="post-list__meta--date date">2019-11-18</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-31/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object-5/" title="访问 python 类和对象 (5) 一些相关的BIF">python 类和对象 (5) 一些相关的BIF</a></h2>
+      <p class="excerpt">整理自小甲鱼鱼C论坛对类或者对象从属判断的内置函数issubclass(class, classinfo)如果第一个参数(class)是第二个参数(classinfo)的一个子类，返回True否则返回False  一个类被认为是其自身的子类  classinfo可以是一个类对象组成的元组，只要class是其中任何一个候选类的子类，则返回True  其他情况会抛出TypeErrorisinstance(object, classinfo)如果第一个参数(object)是第二个参数(class...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-18 13:30:24 +0800" class="post-list__meta--date date">2019-11-18</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-class-object-5/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object-4/" title="访问 python 类和对象 (4) 组合 Mixin 类，类对象与实例对象 绑定">python 类和对象 (4) 组合 Mixin 类，类对象与实例对象 绑定</a></h2>
       <p class="excerpt">整理自小甲鱼鱼C论坛组合所谓”组合”，可以理解为相对于继承来讲的一个概念。有些时候，利用多重继承本身除了存在风险的同时，在有些时候，如果类本身并不存在明显的相互继承关系，强行继承会很别扭。比如定义了两个类，小鸟和老鹰后，我们想定义一个新的类，天空，天空中包含小鸟和老鹰，奈何天空和小鸟和老鹰本身并不存在继承关系，这时就适合用组合来解决这个问题。当执行组合时，我们将需要的类放进目的类中进行实例化，就可以实现组合，例如代码：class Bird():    def __init__(self, ...…</p>
       <div class="post-list__meta">
@@ -235,51 +279,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">7.10 不同寻址方式的灵活运用(1)之前有介绍过几种定位内存地址的方法（寻址方式）：  [idata]用一个常量来表示内存地址，可用于直接定义一个内存单元，注意的是，单独使用[idata]只能在debug中被正确识别，如果在masm中，需要表明[idata]对应的段，即ds:[idata]。  [bx]用一个变量来表示内存地址，可用于间接定位一个内存单元。其使用时不用表明对应的段，默认[bx]就是在ds中。  [bx+idata]。  [bx+si]。  [bx+si+idata]用两个...…</p>
       <div class="post-list__meta">
 <time datetime="2019-11-13 00:00:00 +0800" class="post-list__meta--date date">2019-11-13</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-29/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-28/" title="访问 汇编语言 7.7 7.8 7.9 SI DI, [bx+si+idata] [bx+di+idata]">汇编语言 7.7 7.8 7.9 SI DI, [bx+si+idata] [bx+di+idata]</a></h2>
-      <p class="excerpt">7.7 SI 和 DIsi和di在8086CPU中与bx的功能非常相似，唯一不同的是si和di均不能被拆成两个8位寄存器来使用，如bx = bh + bl, 但si, di不能这样拆成h和l。  问题： 用si和di实现将字符串’welcome to masm!’复制到它后面的数据区中。assume cs:codesg, ds:datasgdatasg segment  db 'welcome to masm!'  db '................'datasg ends首先就要确...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-12 18:49:24 +0800" class="post-list__meta--date date">2019-11-12</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-28/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/python-class-object-2/" title="访问 python 类和对象 (2) self 构造方法 Name Mangling">python 类和对象 (2) self 构造方法 Name Mangling</a></h2>
-      <p class="excerpt">整理自小甲鱼鱼C论坛self 是什么Python的self相当于C++的this指针。同一个类可以生成无数个对象，当一个对象的方法被调用时，对象会将自身的引用作为第一个参数传给该方法，python就知道需要操作哪个对象的方法了。以下代码为例，class People:    def setName(self, name):        self.name = name    def intro(self):        print('My name is %s' % self.name...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-11 20:26:24 +0800" class="post-list__meta--date date">2019-11-11</time> • <span class="post-list__meta--tags tags">python</span><a class="btn-border-small" href="/2019/11/python-class-object-2/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/defocus-1/" title="访问 Defocus in TEM Imaging.1 General">Defocus in TEM Imaging.1 General</a></h2>
-      <p class="excerpt">Relative information is summarised from the Online Book of the Practical Electron Microscopy and Database, in the next posts, I will only reference it in the end of the post.In TEM imaging, the conventional modes of high-resolution imaging are mai...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-11 17:21:24 +0800" class="post-list__meta--date date">2019-11-11</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2019/11/defocus-1/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-27/" title="访问 汇编语言 7.5 7.6 通过[bx+idata]进行数组处理">汇编语言 7.5 7.6 通过[bx+idata]进行数组处理</a></h2>
-      <p class="excerpt">7.5 [bx+idata]例如我们要访问地址[10H], 可以进行如下变换：$$[bx=10H]=[bx=8H+2H]$$[bx+idata]表示一个内存单元，它的偏移地址为(bx)+idata (bx中的数值加上idata)。将这种操作代入指令中，如mov ax, [bx+200]，含义为：$$(ax)=((ds)*16+(bx)+200)$$[bx+idata]的形式有多种方法，如下等同：  mov ax, [200+bx]  mov ax, 200[bx]  mov ax, [bx...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-11 09:39:24 +0800" class="post-list__meta--date date">2019-11-11</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-27/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-26/" title="访问 汇编语言 7.1 7.2 7.3 7.4 and or, ASCII, 按字符给出数据, 大小写转化">汇编语言 7.1 7.2 7.3 7.4 and or, ASCII, 按字符给出数据, 大小写转化</a></h2>
-      <p class="excerpt">7.1 and和or指令and 指令mov al, 01100011Bmov al, 00111011B;结果为 al = 00100011B通过该指令可将操作对象的相应位设为0，其他不变。如将al的第六位设置为零的指令为：and al, 10111111Bor 指令mov al, 01100011Bor al, 00111011B;结果为 al = 01111011B通过该指令可将操作对象的相应位设置为1，其他位不变。如将al的第六位设置为1的指令为：or al, 09000000B7....…</p>
-      <div class="post-list__meta">
-<time datetime="2019-11-08 22:11:24 +0800" class="post-list__meta--date date">2019-11-08</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-26/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

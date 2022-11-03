@@ -195,6 +195,51 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-16/" title="访问 汇编语言 5.2 loop">汇编语言 5.2 loop</a></h2>
+      <p class="excerpt">Loop 指令loop 指令的格式是：loop 标号， CPU执行loop指令的时候，要进行两步操作：  $(CX) = (CX) - 1$  判断CX的值，不为零则转至标号处执行程序，如果为零则继续向下执行  CX的值影响着loop指令的执行结果。通常，我们用loop指令来实现循环功能，CX中存放着循环的次数我们编写一个实现$2^12$的代码，代码如下：assume cs:codecode segmentstart: mov ax, 2       mov cx, 11    s: ad...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-25 16:07:24 +0800" class="post-list__meta--date date">2019-10-25</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-16/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/markdown-highlight/" title="访问 Markdown 语言高亮关键字（转载）">Markdown 语言高亮关键字（转载）</a></h2>
+      <p class="excerpt">转载自CSDN, 原作者yxys01.            语言名      关键字                  Bash      bash              CoffeeScript      coffeescript              C++      cpp              C#      cs              CSS      css              Diff      diff              HTTP      ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-24 10:21:24 +0800" class="post-list__meta--date date">2019-10-24</time> • <span class="post-list__meta--tags tags">blog</span><a class="btn-border-small" href="/2019/10/markdown-highlight/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-15/" title="访问 汇编语言 5.1 [bx]">汇编语言 5.1 [bx]</a></h2>
+      <p class="excerpt">[bx]和内存单元我们在debug中，可以输入以下命令来执行对于段地址偏移地址的操作：mov ax, [0]     ；字传输mov al, [0]     ；字节传输但是当我们将这个命令在编译环境下执行，则会出现问题，例如我们写一个汇编脚本：assume cs:codesgcodesg segmentstart: mov ax, 2000H       mov ds, ax       mov al, [0]       mov bl, [1]       mov cl, [2]    ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-24 09:16:24 +0800" class="post-list__meta--date date">2019-10-24</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-15/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/cross-correlation/" title="访问 Cross Correlation">Cross Correlation</a></h2>
+      <p class="excerpt">% A demonstration of cross correlation in action.% Hit the space bar during the demo to execute% % https://dadorran.wordpress.com/2014/04/25/cross-correlation-demo/clc;close alla = [0.1 0.2  -0.1 4.1 -2 1.5 0 ];b = [0.1 4 -2.2 1.6 0.1 0.1 0.2]; le...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-21 08:41:24 +0800" class="post-list__meta--date date">2019-10-21</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2019/10/cross-correlation/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-14/" title="访问 汇编语言 4.8 4.9 程序装载内存以及执行过程跟踪">汇编语言 4.8 4.9 程序装载内存以及执行过程跟踪</a></h2>
+      <p class="excerpt">4.8 程序装载进入内存并使用之前讲过，在DOS中，可执行文件中P1若要运行，必须有一个正在运行的程序P2，将P1从可执行文件中加载入内存，将CPU的控制权交给它，P1才能得以运行；当P1运行完毕后，应该将CPU的控制权交还给使它得以运行的程序P2。  操作系统的shell操作系统是由多个功能模块组成的庞大、复杂的软件系统。任何通用的操作系统，都要提供一个成为shell（外壳）的程序，用户使用这个程序来操作计算机系统运行工作。  在DOS中直接运行.exe时，是正在运行的command，将...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-10-20 13:55:24 +0800" class="post-list__meta--date date">2019-10-20</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-14/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-13/" title="访问 汇编语言 4.3 4.4 4.5 4.6 4.7 源程序标号结构返回以及编译连接">汇编语言 4.3 4.4 4.5 4.6 4.7 源程序标号结构返回以及编译连接</a></h2>
       <p class="excerpt">4.2后半标号汇编源程序中，除了汇编指令和伪指令外，还有一些标号，比如”codesg”。一个标号指代了一个地址。比如codesg在segment的前面，作为一个段名称，这个段的名称最终将被编译、连接程序处理为一个段的段地址。  标号 —&gt; 段名称 —&gt; 编译、连接处理为一个段的段地址程序的结构之前对于较为简短的程序我们可以在debug中直接运行，但是如果程序比较大，我们就需要写出能让编译器进行编译的程序，这样的源程序应该具备起码的结构。源程序有一些段构成，用来存放代码、数据、或...…</p>
       <div class="post-list__meta">
@@ -235,51 +280,6 @@ var _hmt = _hmt || [];
       <p class="excerpt">3.10 栈段对于8086PC机，可以根据需要，将一组内存单元定义为一个段。我们可以将长度为N(N&lt;=64KB)的一组地址连续、起始地址为16的倍数的内存单元，当作栈空间来用，从而定义了一个栈段。例如10010H~1001FH这段长度为16字节的内存空间当作栈来用，以栈的方式进行访问。这段空间就可以成为一个栈段，段地址为1001H，大小为16字节。通过将SS:SP指向我们定义的栈段来使得如push、pop等栈操作指令访问我们定义的栈段。问题 1如果将10000H~1FFFFH这段空间...…</p>
       <div class="post-list__meta">
 <time datetime="2019-10-17 09:13:24 +0800" class="post-list__meta--date date">2019-10-17</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-11/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/FSC-behaviour-within-a-shell/" title="访问 First Glimpse on Fourier Shell Correlation - FSC Behaviour Within A Shell">First Glimpse on Fourier Shell Correlation - FSC Behaviour Within A Shell</a></h2>
-      <p class="excerpt">Let us first assume that the two Fourier-space 3D volumes to be compared each contain a signal “$S(r)$” with an uncorrelated additive noise component “$N(r)$”. And the signal component in bothe volumes can be written as:Eq. (1)$$\begin{array}{l}{F...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-16 20:18:24 +0800" class="post-list__meta--date date">2019-10-16</time> • <span class="post-list__meta--tags tags">cryo-EM</span><a class="btn-border-small" href="/2019/10/FSC-behaviour-within-a-shell/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-10/" title="访问 汇编语言 3.8 3.9 栈顶超界问题 push pop">汇编语言 3.8 3.9 栈顶超界问题 push pop</a></h2>
-      <p class="excerpt">3.8 栈顶超界问题之前在3.6，3.7我们知道了8086CPU用SS和SP指示栈顶的地址，并提供push和pop指令实现入栈和出栈。在出栈或者入栈时，可能会出现超出栈空间的情况，如下所示：这里我们引入一个新的概念，栈空间。栈顶超界是危险的，因为栈空间之外的空间里很可能存放了具有其他用途的数据。CPU在执行push指令的时候考检测栈顶上线寄存器、在执行pop指令时候检测栈底寄存器保证不会超界。但8086CPU不具有这个功能，它只知道栈顶在何处（SS：SP指示），而不知道我们安排的栈空间的大...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-16 10:37:24 +0800" class="post-list__meta--date date">2019-10-16</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-10/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/the-complete-solution/" title="访问 LA3.3 The Complete Solution to Ax=b">LA3.3 The Complete Solution to Ax=b</a></h2>
-      <p class="excerpt">Simply show the Row Echelon Form R with b at the right sideAt the LA3.2, we didn’t pay much attention to the right side $b$, it is because $b$ is $0$ when we only talk about the nullspace of A.For now, in LA3.3, $b$ is not zero. As the Row Echelon...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-15 15:07:24 +0800" class="post-list__meta--date date">2019-10-15</time> • <span class="post-list__meta--tags tags">数学</span><a class="btn-border-small" href="/2019/10/the-complete-solution/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-9/" title="访问 汇编语言 3.6 3.7 栈 CPU栈机制">汇编语言 3.6 3.7 栈 CPU栈机制</a></h2>
-      <p class="excerpt">3.6 栈栈是一种具有特殊的访问方式的存储空间。它的特殊性就在于，最后进入这个空间的数据，最先出去。栈有两个基本的操作：入栈和出栈。入栈就是将新的元素放在栈顶，出栈就是从栈顶去除一个元素。栈顶的元素总是最后入栈，需要出栈时，又最先被从栈中取出。栈的这种操作规则被称为：LIFO1 (Last In First out)。3.7 CPU提供的栈机制8086CPU最基本的两个入栈和出栈指令PUSH 和 POP。push ax表示将寄存器ax中的数据送入栈中，pop ax表示从栈顶取出数据送入ax...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-15 09:43:24 +0800" class="post-list__meta--date date">2019-10-15</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-9/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/how-to-run-debug-in-mac/" title="访问 在mac或者linux运行debug的优雅解决方案">在mac或者linux运行debug的优雅解决方案</a></h2>
-      <p class="excerpt">I want to run debug in mac or linux sys, however, debug is only designed for windows.There are two ways:  Just install the win virtual box  (Recommend) install DOS virtual box DOSBox hereFor the DOSBoxWhen you have installed the DOSBox, firstly mo...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-14 11:16:24 +0800" class="post-list__meta--date date">2019-10-14</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/how-to-run-debug-in-mac/">More</a>
 </div>
       <hr class="post-list__divider">
     </li>

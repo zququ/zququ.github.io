@@ -1,0 +1,43 @@
+I"#
+<p>这里对 centos-8 安装 ccls 方法进行回顾与备注。</p>
+
+<p>简单流程：</p>
+
+<ol>
+  <li>首先安装 llvm、clang</li>
+</ol>
+
+<p>从 llvm-project 仓库中，Rleases 下载完整的 llvm + clang 压缩包。</p>
+
+<ol>
+  <li>解压后使用以下命令进行安装</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake <span class="nt">-S</span> llvm <span class="nt">-B</span> build <span class="nt">-DLLVM_ENABLE_PROJECTS</span><span class="o">=</span><span class="s2">"clang"</span> <span class="nt">-DCMAKE_INSTALL_PREFIX</span><span class="o">=</span>/home/zququ-centos8/Software/llvm-clang/ <span class="nt">-DCMAKE_BUILD_TYPE</span><span class="o">=</span>MinSizeRel
+</code></pre></div></div>
+
+<p>这样就可以同时安装 <code class="language-plaintext highlighter-rouge">llvm</code> 以及 <code class="language-plaintext highlighter-rouge">clang</code> 。其中 <code class="language-plaintext highlighter-rouge">DCMAKE_INSTALL_PREFIX</code> 选项默认安装到 <code class="language-plaintext highlighter-rouge">/usr/local/</code> 中。由于编译包比较大，需要几十个 g，可以考虑安装到 <code class="language-plaintext highlighter-rouge">/home</code> 中，其实如果这样选择一般后续安装会直接安装到软件编译 <code class="language-plaintext highlighter-rouge">build</code> 目录的 <code class="language-plaintext highlighter-rouge">bin</code> 和 <code class="language-plaintext highlighter-rouge">lib</code> 中。<code class="language-plaintext highlighter-rouge">-DCMAKE_BUILD_TYPE=MinSizeRel</code> 即按最小体积进行编译，实际证明，已经可以实现后续对于 <code class="language-plaintext highlighter-rouge">ccls</code> 的安装。</p>
+
+<ol>
+  <li>使用以下命令进行编译</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake --build build -j 8
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>安装好后，从 ccls 仓库拉取对应压缩包。</p>
+  </li>
+  <li>
+    <p>解压后以下命令对 <code class="language-plaintext highlighter-rouge">ccls</code> 进行编译。</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release
+</code></pre></div></div>
+
+<ol>
+  <li>将 <code class="language-plaintext highlighter-rouge">ccls/Release</code> 中的 <code class="language-plaintext highlighter-rouge">ccls</code> 加入环境变量。</li>
+</ol>
+:ET

@@ -220,6 +220,8 @@ var _hmt = _hmt || [];
   <li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
   <li><a href="#%E7%90%83%E9%9D%A2%E5%83%8F%E5%B7%AEspherical-aberration">球面像差（spherical aberration）</a></li>
   <li><a href="#%E8%89%B2%E5%B7%AEchromatic-aberration">色差（Chromatic aberration）</a></li>
+  <li><a href="#%E5%83%8F%E6%95%A3astigmatism">像散（Astigmatism）</a></li>
+  <li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
 </ul>
 
 <!-- /TOC -->
@@ -247,7 +249,7 @@ $$</p>
 <p>球面像差的结果如图1所示，以大角度 $\theta_{0}$ 离开轴向物点的光线被透镜的外部区域折射相对较强，并被在高斯图像平面之前的汇聚。该平面满足方程，</p>
 
 <p>$$
-\frac{1}{U}+\frac{1}{V}=\frac{1}{f}
+\frac{1}{U}+\frac{1}{V}=\frac{1}{f}\tag{S1}
 $$</p>
 
 <p>其中近轴光线则由下方的近轴轴光线方程获得，并聚焦。</p>
@@ -265,9 +267,10 @@ $$</p>
 <p>如何考虑到来自轴向物点的所有光线，则最小直径的图像圆盘成为最小混淆圆（circle of least confusion）。距离 $\Delta r_{i}$ ，在高放大倍率的图像平面上与 $\theta_{0}^3$ 成正比。如果 $\Delta r_{i}$ 指的是物体空间，其与 $\theta_{0}^3$ 之间的比例常数，为三阶球差常数 $C_{s}$ （third-order spherical aberration constant）。即</p>
 
 <p>$$
-\Delta r_{0} = C_{s}\theta_{0}^3 \\ 
-\text{和} \\ 
-\Delta r_{i} = MC_{s}\theta_{0}^3 = M^4\theta_{i}^3C_{s} \tag{1}
+\begin{aligned}
+\Delta r_{0} &amp;= C_{s}\theta_{0}^3 \\\ 
+\Delta r_{i} &amp;= MC_{s}\theta_{0}^3 = M^4\theta_{i}^3C_{s} 
+\end{aligned} \tag{1}
 $$</p>
 
 <p>最小混淆圆的半径为 $\frac{1}{4}C_{s}\theta_{0}^3$ 。 $C_{s}$ 的值取决于透镜激发和物体的位置，但对应于高倍率的情况，通常通过靠近物体焦平面的物体确定。在现代未经校正的仪器上， $C_{s}$ 的范围在 0.5 ~ 2.5 mm 之间，并为 “可解释” 的分辨能力设定了极限。 $C_{s}$ 的值可以从完整的（非近轴）方程的计算或者使用 Glaser（1956）给出的表达式获得。</p>
@@ -311,16 +314,149 @@ $$</p>
 <p>上等式的微分给出，</p>
 
 <p>$$
-\frac{\Delta f}{f} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}
+\frac{\Delta f}{f} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B} = \frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}\tag{4}
 $$</p>
 
-<p>&lt;++&gt;</p>
+<p>为了偏离薄透镜定律（ $eqn(S1)$ ）， $eqn(4)$ 中引入比例常数 $K$ 。 色差常数 $C_{\mathrm{c}}$ 定义为 $C_{\mathrm{c}}=Kf$ ，所以有</p>
+
+<p>$$
+\begin{aligned}
+\Delta f 
+&amp; = C_{\mathrm{c}}\left(\frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta B}{B}\right) \\ 
+&amp; = C_{\mathrm{c}}\left(\frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}\right) \\ 
+\end{aligned}\tag{5}
+$$</p>
+
+<p>实践中，透镜电流和高电压的波动不太可能相关，因此焦距的随机波动应该从统计理论中的方差操作规则中获得。添加正交波动（fluctuations in quadrature）给出方差，</p>
+
+<p>$$
+\frac{\sigma(f)}{(f)}=\left[\frac{\sigma^2(V_{0})}{V_{0}^2} + \frac{4\sigma^2(I)}{I^2}\right]^{1/2}=\Delta/C_{\mathrm{c}}\tag{6}
+$$</p>
+
+<p>$I$ 和 $V_{0}$ 的方差必须通过测量获得，或者可以通过将 $\Delta$ 作为拟合参数或从衍射图分析推导出它们的值。</p>
+
+<p>现在使用几何光学方法作为第一近似值来确定焦距的微小变化对图像的影响。透镜具有较长焦距的能量稍高的射线被带到距离高斯像平面的焦距 $\Delta V$ 处，其中</p>
+
+<p>$$
+\Delta r_{i} = \Delta V\theta_{i}\tag{S2}
+$$</p>
+
+<p>微分透镜方程</p>
+
+<p>$$
+\frac{1}{U} + \frac{1}{V} = \frac{1}{f}
+$$</p>
+
+<p>可以得到</p>
+
+<p>$$
+\begin{aligned}
+\mathrm{d}\left(\frac{1}{U}\right) &amp; = \mathrm{d}\left(\frac{1}{f}\right) - \mathrm{d}\left(\frac{1}{V}\right) \\ 
+0 &amp; = \frac{-1}{f^2}\mathrm{d}f + \frac{1}{V^2}\mathrm{d}V \\ 
+\frac{\mathrm{d}V}{\mathrm{d}f} &amp; = \left(\frac{V}{f}\right)^2 \approx M^2 \\ 
+\end{aligned}
+$$</p>
+
+<p>这样有以下关系式，</p>
+
+<p>$$
+\Delta V = M^2\Delta f \tag{7}
+$$</p>
+
+<p><img src="/assets/20220504/2022-05-12-14-44-23.png" alt="Figure2" width="450"></p>
+
+<p style="text-align: center;"><strong>图2.</strong> 色差的影响，通过势 $V+\Delta V$ 加速的快速电子比通过势 $V$ 加速的相对低能量电子的折射的角度更小。这些更高能量的电子被带到了高斯成像平面上，在距轴 $r_{i}$ 处通过。</p>
+
+<p>根据 $eqn(S2)$ 有</p>
+
+<p>$$
+\Delta r_{i}=M^2\Delta f\theta_{i}
+$$</p>
+
+<p>参照物空间，轴向物点的扩展圆盘图像（extended disc image）具有半径，</p>
+
+<p>$$
+\begin{aligned}
+\Delta r_{0} &amp;= \frac{1}{M}\Delta r_{i} \\\ 
+&amp;=M\Delta f\theta_{i}
+\end{aligned}
+$$</p>
+
+<p>由角放大率公式</p>
+
+<p>$$
+\frac{\tan\theta_{i}}{\tan\theta_{0}}\approx\frac{\theta_{i}}{\theta_{0}}=\left|\frac{1}{M}\right|
+$$</p>
+
+<p>得到</p>
+
+<p>$$
+\Delta r_{0}=\theta_{0}\Delta f
+$$</p>
+
+<p>通过 $eqn(5)$ ，</p>
+
+<p>$$
+\Delta r_{0} =\theta_{0}C_{\mathrm{c}}\left(\frac{\Delta V_{0}}{V_{0}} - \frac{2\Delta I}{I}\right)\tag{8}
+$$</p>
+
+<p>例如，样品的图像中引入了 25 eV 离散能量损失。许多生物样本在这种能量下显示出相当宽的峰值。损失电子后的图像将会以物平面为基准 $\Delta U$ 。在高放大倍率下，根据透镜方程可以得到，</p>
+
+<p>$$
+\Delta U \approx \Delta f \tag{9}
+$$</p>
+
+<p>因此，当忽略透镜电流的波动，可以从 $eqn(5)$ 获得损失图像的聚焦缺陷。对于 $C_{\mathrm{c}} = 1.6 mm$ 以及 $\Delta E = 25 eV$ ， 100 keV 时 $\Delta U = 400 nm$ 。由于对于损失电子的情况，透镜的焦距较短， $V$ 固定的情况下，不得不通过削弱聚焦在弹性图像的物镜电流，使得非弹性图像在聚焦在焦距以内。这样非弹性像损失会出现在图像欠焦的情况，这时第一菲涅尔条纹（Fresenl fringe）会显得很亮，这时透镜的电流太弱。不幸的是，对于高分辨率的相位衬度，会出现在聚焦不足的情况（在 100 kV 下约为 90 nm），使得任何非弹性的贡献在弹性图像中表现为过焦背景模糊。对于许多样品，总的非弹性图像贡献可能超过弹性贡献。</p>
+
+<p>实践中，一旦场分布已知， $C_{\mathrm{c}}$ 可以使用</p>
+
+<p>$$
+C_{\mathrm{c}} = \frac{e}{8mV_{r}}\int_{z_{1}}^{z_{2}}B_{z}^2(z)h^2(z)\mathrm{d}z \tag{10}
+$$</p>
+
+<p>来表示。其中 $h(z)$ 使用 $eqn(3)$ 中的函数。原则上可以通过将磁透镜与静电镜组合来消除色差，因为静电镜的色差符号与磁透镜是相反的。</p>
+
+<p>$C_{\mathrm{c}}$ 可以通过用高电压或者透镜电流测量焦距变化来实验测量。如果样品后为使用透镜，则 STEM 一起不存在色差。后续会介绍也可以用波光学表示色差问题，应该强调 $eqn(8)$ 是一种几何近似，对于中等散焦的点目标的空间非相干成像，即 $\Delta V$ 不太小的情况时是精确地。对于小 $\Delta V$ 或者相干照明（或者两种情况同时），则必须使用波光学方法。</p>
+
+<h2 id="像散astigmatism">像散（Astigmatism）</h2>
+
+<p>严重的像散是由不对称的磁场引起的。可以通过将弱柱面透镜（cylindrical lens）叠加在完全对称的透镜上来表示透镜场中与完美对称的背离。下图展示了由像散透镜形成的点的图像，作为在光轴上不同点的两条线焦点（line foci）。</p>
+
+<p><img src="/assets/20220504/2022-05-13-001354.png" alt="Figure3" width="450"></p>
+
+<p style="text-align: center;"><strong>图3.</strong> 像散。镜头的焦距取决于光线离开物体的方位角 $\alpha$ （azimuthal angle， $\alpha$ ）。这些光线位于包含光轴的平面中。展示了最大和最小焦距的直角平面，平均焦距为 $f$ 。最大焦点和最小焦点之间的差异即为像散常数 $C_{\mathrm{a}}$ 。</p>
+
+<p>像散可以认为是一个与方位角相关的焦距，它产生以下公式中的相移动,</p>
+
+<p>$$
+\chi_{4}(\theta)=\frac{2\pi}{\lambda}\left(\frac{1}{4}C_{\mathrm{a}}\theta^2\sin{2\phi}\right)
+$$</p>
+
+<p>后续会讨论测量像散常数 $z_{a}$ 的原位（ <em>In situ</em> ）方法。经验丰富的操作员使用配备由像散器的现代仪器来进行矫正像散，可以减少这种像差，从而不会对分辨率造成限制；然而，这需要大量练习。像散器是一种弱四极透镜（weak quadrupole lens），其激发由电子控制，以通过引入具有正确强度和方向的补偿弱柱面透镜（compensating weak cylindrical lens）来校正任何方向的场不对称性。</p>
+
+<p>物镜极片的椭圆度（ovality）需要几微米的加工公差（machining tolerance）以使得像散在易于矫正的范围内。所用铁的均匀性（homogeneity）非常重要。</p>
+
+<p>最近分辨率提高到亚埃级（sub-angstrom level）已经暴露了三倍像散（three-fold astigmatism）。 在 Overwijk（1997） 等人的论文中可以找到其测量和删除的示例。 后续波动光学部分，将从波动光学的角度讨论二重和三重像散。</p>
+
+<h2 id="总结">总结</h2>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVEI7XG5BKOWDj-W3riBhYmVycmF0aW9ucykgLS0-IEIo5Y2V6Imy5YOP5beuLCBtb25vY2hyb21hdGljIGFiZXJyYXRpb24pXG5BIC0tPiBFKOiJsuW3riwgY2hyb21hdGljIGFiZXJyYXRpb24pXG5BIC0tPiBGKOiJsuaVoywgY2hyb21hdGljIGRpc3BlcnNpb24pXG5CIC0tPiBDKOWDj-aVoywgYXN0aWdtYXRpc20pXG5CIC0tPiBEKOeVuOWPmCwg55CD5beuLCAuLi4pIiwibWVybWFpZCI6bnVsbH0"></p>
 
 
 		</section>
 	</article>
 
 	<section class="read-more">
+	
+	
+	<div class="read-more-item">
+		<span class="read-more-item-dim">Last One</span>
+		<h2 class="post-list__post-title post-title"><a href="/2022/05/pre-field/" title="link to 前场（The pre-field）和像差修正">前场（The pre-field）和像差修正</a></h2>
+		<p class="excerpt">前场（The pre-field）对于最小球面像差的物镜，样品将很好地放置在透镜视野内。样品照明侧的场称为前场（pre-field），并且具有放置在样品钱的弱透镜效果。图1展示了进入平行于轴的 “恒定场” 物镜的光线，其中透镜激发位于位于样品的右侧，以产生无限远的图像。这些光线定义了前场的焦距和物镜焦距。图1. 物镜前场的的影响。样品进入透镜视场中，平行于轴进入视场的光线向轴弯曲，提供部分会聚照明。衍射点看起来比在样品左侧没有前场的情况更大。显示了前场 $f_{pre}$ 的焦距，这取决于...…</p>
+		<div class="post-list__meta">
+<time datetime="2022-05-18 19:50:24 +0800" class="post-list__meta--date date">2022-05-18</time> • <span class="post-list__meta--tags tags">TEM</span><a class="btn-border-small" href="/2022/05/pre-field/">More</a>
+</div>
+	</div>
 	
 
 	
