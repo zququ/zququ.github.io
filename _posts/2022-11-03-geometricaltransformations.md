@@ -128,7 +128,7 @@ $$
 
 $$
 \tilde{\mathbf{r}}\_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
-
+$$
 
 $$
 \begin{cases}
