@@ -2,7 +2,7 @@
 layout: post
 title: 图像几何变换
 date: 2022-11-03 13:30:00:24.000000000 +09:00
-tags: cryo-em
+tags: cryo-EM
 ---
 
 ## 图像几何变换
