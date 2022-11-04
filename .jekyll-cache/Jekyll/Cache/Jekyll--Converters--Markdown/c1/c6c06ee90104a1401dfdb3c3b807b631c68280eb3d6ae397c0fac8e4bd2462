@@ -1,4 +1,4 @@
-I"<!-- TOC GFM -->
+I"5<!-- TOC GFM -->
 
 <ul>
   <li><a href="#齐次坐标表示">齐次坐标表示</a></li>
@@ -6,8 +6,9 @@
     <ul>
       <li><a href="#1-平移">1. 平移</a></li>
       <li><a href="#2-放大">2. 放大</a></li>
-      <li><a href="#3-剪切shears">3. 剪切（Shears）</a></li>
-      <li><a href="#4-旋转">4. 旋转</a></li>
+      <li><a href="#3-切变shearing">3. 切变（Shearing）</a></li>
+      <li><a href="#4-镜面">4. 镜面</a></li>
+      <li><a href="#5-旋转">5. 旋转</a></li>
     </ul>
   </li>
 </ul>
@@ -18,23 +19,32 @@
 
 <p>对于一个非齐次表达式（nonhomogeneous expression）表征点</p>
 
-\[\mathbf{r} = (x, y, z)\]
+<p>$$
+\mathbf{r} = (x, y, z)
+$$</p>
 
 <p>齐次表达式有，</p>
 
-\[\tilde{\mathbf{r}} = (x, y, z, 1) \tag{1}\]
+<p>$$
+\tilde{\mathbf{r}} = (x, y, z, 1) \tag{1}
+$$</p>
 
 <p>其中有</p>
 
-\[\tilde{\mathbf{r}} \in \mathbb{R}^{3} \times \{1\}\]
+<p>$$
+\tilde{\mathbf{r}} \in \mathbb{R}^{3} \times {1}
+$$</p>
 
 <p>几何变换过程可以用齐次表达式坐标之间的矩阵操作表示，</p>
 
-\[\tilde{\mathbf{r}}_{\tilde{A}} = \tilde{A}\tilde{\mathbf{r}} \tag{2}\]
+<p>$$
+\tilde{\mathbf{r}}_{\tilde{A}} = \tilde{A}\tilde{\mathbf{r}} \tag{2}
+$$</p>
 
 <p>其中， $\tilde{\mathbf{r}}_{\tilde{A}} \in \mathbb{R}^{3}\times {1}$ 为在齐次表达式坐标点 $\tilde{\mathbf{r}} \in \mathbb{R}^{3}\times {1}$ 的变换，</p>
 
-\[\tilde{A} = \left(
+<p>$$
+\tilde{A} = \left(
 \begin{matrix}
 r_{11} &amp; r_{12} &amp; r_{13} &amp; t_{x} \\ 
 r_{21} &amp; r_{22} &amp; r_{23} &amp; t_{y} \\ 
@@ -47,11 +57,14 @@ r_{31} &amp; r_{32} &amp; r_{33} &amp; t_{z} \\
 R &amp; \mathbf{t} \\ 
 \mathbf{0}^{T} &amp; 1
 \end{matrix}
-\right) \tag{3}\]
+\right) \tag{3}
+$$</p>
 
 <p>由 (1 ~ 3)， 可以得到</p>
 
-\[\mathbf{r}_{\tilde{A}} = R\mathbf{r} + \mathbf{t} \tag{4}\]
+<p>$$
+\mathbf{r}_{\tilde{A}} = R\mathbf{r} + \mathbf{t} \tag{4}
+$$</p>
 
 <p>（4）中$\tilde{A}$ 被称为仿射变换 (affine transformation) 。该操作描述为针对点 $\mathbf{r}$ 的线性变换（$R\mathbf{r}$）加上一个平移操作（$\mathbf{t}$），经过这一操作后的 $（\mathbf{r}_{\tilde{A}}）$ 与操作前的点 $\mathbf{r}$ 相比，具有以下三个特征：</p>
 
@@ -67,21 +80,25 @@ R &amp; \mathbf{t} \\
 
 <p>当 (3) 中 $R$ 为单位矩阵时，</p>
 
-\[\tilde{A} = \left(
+<p>$$
+\tilde{A} = \left(
 \begin{matrix}
 1 &amp; 0 &amp; 0 &amp; t_{x} \\ 
 0 &amp; 1 &amp; 0 &amp; t_{y} \\ 
 0 &amp; 0 &amp; 1 &amp; t_{z} \\ 
 0 &amp; 0 &amp; 0 &amp; 1     \\ 
 \end{matrix}
-\right) \tag{5}\]
+\right) \tag{5}
+$$</p>
 
 <p>(4) 表示为，</p>
 
-\[\begin{aligned}
-\tilde{\mathbf{r}\_{A}} &amp;= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
-\Rightarrow  \mathbf{r}\_{A} &amp;= \mathbf{r} + \mathbf{t}
-\end{aligned}\tag{6}\]
+<p>$$
+\begin{aligned}
+\tilde{\mathbf{r}_{A}} &amp;= (r_x + t_x, r_y + t_y, r_z + t_z, 1)^{T} \\ 
+\Rightarrow  \mathbf{r}_{A} &amp;= \mathbf{r} + \mathbf{t}
+\end{aligned}\tag{6}
+$$</p>
 
 <p>需要注意的是， (6) 中 $\mathbf{r}_A$ 和 $\mathbf{r}$ 都是点，而 $\mathbf{t}$ 是一个向量。</p>
 
@@ -89,109 +106,222 @@ R &amp; \mathbf{t} \\
 
 <h3 id="2-放大">2. 放大</h3>
 
-\[R =
+<p>$$
+R =
 \left(
-\begin{matrix}
-s_x &amp; 0 &amp; 0 \\
-0   &amp; s_y &amp; 0 \\
-0 &amp; 0 &amp; s_z
+\begin{matrix} 
+s_x &amp; 0 &amp; 0\\ 
+0   &amp; s_y &amp; 0\\<br />
+0 &amp; 0 &amp; s_z\\ 
 \end{matrix}
-\right) \tag{7}\]
+\right) \tag{7}
+$$</p>
 
-\[\begin{cases}
+<p>$$
+\begin{cases}
 s_{x} = s_{y} = s_{z} &amp;&amp; \text{isotropic} \\ 
  \\ 
 \text{otherwise} &amp;&amp; \text{anisotropic}
-\end{cases}\]
+\end{cases}
+$$</p>
 
 <p>变换后有，</p>
 
-\[\tilde{\mathbf{r}}_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}\]
+<p>$$
+\tilde{\mathbf{r}}_{A}  = (s_xr_x, s_yr_y, s_zr_z, 1)^{T} \tag{8}
+$$</p>
 
-\[\begin{cases}
+<p>$$
+\begin{cases}
 s_{i} \gt 1 &amp;&amp; \text{expanded} \\ 
  \\ 
 s_{i} \lt 1 &amp;&amp; \text{contracted}
-\end{cases}\]
+\end{cases}
+$$</p>
 
 <p>这种操作沿着基坐标 (X, Y, Z) 执行，可以通过正交矩阵（orthogonal matrix, O）将其沿着其他正交方向压缩。</p>
 
-\[R = O\left(
+<p>$$
+R = O\left(
 \begin{matrix}
 s_x &amp; 0 &amp; 0 \\ 
 0 &amp; s_y &amp; 0 \\ 
 0 &amp; 0 &amp; s_z 
 \end{matrix}
 \right)
-O^{T} \tag{9}\]
+O^{T} \tag{9}
+$$</p>
 
 <p>注：当$OO^{T} = O^{T}O = I$ 时，方阵被称作正交。实际上，正交矩阵也是旋转矩阵的一种。</p>
 
 <p>矩阵 $R$ 的特征值为 $s_x$ 、$s_y$ 和 $s_z$，重数均为 1。没种特征值对应特征空间维度为 1 。</p>
 
-<h3 id="3-剪切shears">3. 剪切（Shears）</h3>
+<h3 id="3-切变shearing">3. 切变（Shearing）</h3>
 
 <p>剪切过程可以理解为用不同强度和不同方向压缩每个轴的结果，导致体积的变形。</p>
 
 <p>假设通过压缩 X 轴在 Y 方向上的体积的方式来进行变形，相应的变换矩阵为，</p>
 
-\[R_{sh_{1}} = \left(
+<p>$$
+R_{sh_{1}} = \left(
 \begin{matrix}
 1 &amp; h_{xy} &amp; 0 \\ 
 0 &amp; 1 &amp; 0 \\ 
-0 &amp; 0 &amp; 1 
+0 &amp; 0 &amp; 1 \\ 
 \end{matrix}
-\right) \tag{10}\]
+\right) \tag{10}
+$$</p>
 
 <p>获得的新坐标为，</p>
 
-\[\tilde{\mathbf{r}}\_A = (r_x + h_{xy} r\_y, r\_y, r\_z, 1)^{T} \tag{11}\]
+<p>$$
+\tilde{\mathbf{r}}_A = (r_x + h_{xy} r_y, r_y, r_z, 1)^{T} \tag{11}
+$$</p>
 
 <p>$R_{sh_1}$ 特征值为 1, 重数为 3, 但特征空间仅跨越了维数为 2 的</p>
 
-\[\left(
+<p>$$
+\left(
 \begin{matrix}
 1 &amp; 0 \\ 
 0 &amp; 0 \\ 
 0 &amp; 1 \\ 
 \end{matrix}
-\right) \tag{12}\]
+\right) \tag{12}
+$$</p>
 
 <p>我们也可以通过下面矩阵来对矩阵 $X$ 在 $Z$ 方向上进行变形，</p>
 
-\[R_{sh_{2}} = \left(
+<p>$$
+R_{sh_{2}} = \left(
 \begin{matrix}
 1 &amp; h_{xy} &amp; h_{xz} \\ 
 0 &amp; 1 &amp; 0 \\ 
 0 &amp; 0 &amp; 1 
 \end{matrix}
-\right) \tag{13}\]
+\right) \tag{13}
+$$</p>
 
 <p>这种情况下，特征值与重数不发生改变，但特征空间现在的维度只有 1，</p>
 
-\[\left(
+<p>$$
+\left(
 \begin{matrix}
 1 \\ 
 0 \\ 
 0 \\ 
 \end{matrix}
-\right) \tag{14}\]
+\right) \tag{14}
+$$</p>
 
 <p>最终，我们可以沿着 $Z$ 方向再次对 $Y$ 进行变形，变形矩阵为</p>
 
-\[R_{sh_{3}} = \left(
+<p>$$
+R_{sh_{3}} = \left(
 \begin{matrix}
 1 &amp; h_{xy} &amp; h_{xz} \\ 
 0 &amp; 1 &amp; h_{yz} \\ 
 0 &amp; 0 &amp; 1 
 \end{matrix}
-\right) \tag{15}\]
+\right) \tag{15}
+$$</p>
 
 <p>能够证明，任何剪切矩阵可以用 $R_{sh}$ 矩阵的函数以及合适的正交矩阵来进行表示。</p>
 
-\[R = OR_{sh_i}O^{T} \tag{16}\]
+<p>$$
+R = OR_{sh_i}O^{T} \tag{16}
+$$</p>
 
-<h3 id="4-旋转">4. 旋转</h3>
-<p>&lt;++&gt;</p>
+<h3 id="4-镜面">4. 镜面</h3>
+
+<p>根据一个面进行镜面处理，通过简单的翻转一个坐标。如根据 $\mathrm{YZ}$ 平面进行翻转，</p>
+
+<p>$$
+R_{plane} = \left(
+\begin{matrix}
+-1 &amp; 0 &amp; 0 \\ 
+ 0 &amp; 1 &amp; 0 \\ 
+ 0 &amp; 0 &amp; 1 \\ 
+\end{matrix}
+\right) \tag{17}
+$$</p>
+
+<p>此时特征值为 -1（重数为 1，特征空间为 1 维） 和 1（重数为 2， 特征空间为 2 维）。</p>
+
+<p>也可以根据一条线进行镜面处理。如根据 $\mathrm{Z}$ 轴进行镜面操作，</p>
+
+<p>$$
+R_{line} = \left(
+\begin{matrix}
+-1 &amp;  0 &amp; 0 \\ 
+ 0 &amp; -1 &amp; 0 \\ 
+ 0 &amp;  0 &amp; 1 \\ 
+\end{matrix}
+\right) \tag{18}
+$$</p>
+
+<p>根据点镜面操作则为，</p>
+
+<p>$$
+R_{line} = \left(
+\begin{matrix}
+-1 &amp;  0 &amp;  0 \\ 
+ 0 &amp; -1 &amp;  0 \\ 
+ 0 &amp;  0 &amp; -1 \\ 
+\end{matrix}
+\right) \tag{19}
+$$</p>
+
+<p>与之前变换相似，可以通过使用合适的正交矩阵遵从任意平面或线操作，</p>
+
+<p>$$
+R = OR_{i}O^{T} \tag{20}
+$$</p>
+
+<h3 id="5-旋转">5. 旋转</h3>
+
+<p>旋转矩阵能够帮助将重构出的体积与实验投影相关联，是非常重要的。如果矩阵属于 $SO(3)$（三次特殊正交群——例如，具有实系数且行列式为 1 的 $3\times3$ 正交矩阵集合）。</p>
+
+<p>3DEM 中，围绕其中轴旋转执行左手旋转规则（正旋转为顺时针旋转）：</p>
+
+<p>$$
+R_{X}(\alpha) = \left(
+\begin{matrix}
+1 &amp; 0            &amp; 0            \\ 
+0 &amp; \cos{\alpha} &amp; \sin{\alpha} \\ 
+0 &amp; -\sin{\alpha}&amp; \cos{\alpha} \\ 
+\end{matrix}
+\right) \tag{21}
+$$</p>
+
+<p>$$
+R_{Y}(\alpha) = \left(
+\begin{matrix}
+\cos{\alpha} &amp; 0 &amp; -\sin{\alpha} \\ 
+0 &amp; 1 &amp; 0 \\ 
+\sin{\alpha} &amp; 0 &amp; \cos{\alpha} \\ 
+\end{matrix}
+\right) \tag{22}
+$$</p>
+
+<p>$$
+R_{Z}{\alpha} = \left(
+\begin{matrix}
+\cos{\alpha} &amp; \sin{\alpha} &amp; 0 \\ 
+-\sin{\alpha} &amp; \cos{\alpha} &amp; 0 \\ 
+0 &amp; 0 &amp; 1 \\ 
+\end{matrix} \tag{23}
+\right)
+$$</p>
+
+<p>旋转矩阵的特征值为 $e^{ia}$ ， $e^{-ia}$ 和 1 。重数均为 1 且相关特征空间维度为 1 。</p>
+
+<p>同样可以利用合适正交矩阵求解围绕任意轴的旋转矩阵，</p>
+
+<p>$$
+R = OR_{i}O^{T} \tag{24}
+$$</p>
+
+<p>然而实际上，对于任意旋转的更紧凑的方法————欧拉角（Euler angles）或四元数（quaternions）和视图向量（view vectors）。</p>
 
 :ET

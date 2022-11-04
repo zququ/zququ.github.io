@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Nov 2022 18:33:35 +0800</pubDate>
-    <lastBuildDate>Thu, 03 Nov 2022 18:33:35 +0800</lastBuildDate>
+    <pubDate>Fri, 04 Nov 2022 11:32:56 +0800</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2022 11:32:56 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -19,8 +19,9 @@
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#1-平移&quot;&gt;1. 平移&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#2-放大&quot;&gt;2. 放大&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-剪切shears&quot;&gt;3. 剪切（Shears）&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#4-旋转&quot;&gt;4. 旋转&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-切变shearing&quot;&gt;3. 切变（Shearing）&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-镜面&quot;&gt;4. 镜面&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5-旋转&quot;&gt;5. 旋转&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -121,10 +122,10 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 R =
 \left(
-\begin{matrix}
-s_x &amp;amp; 0 &amp;amp; 0 &lt;br /&gt;
-0   &amp;amp; s_y &amp;amp; 0 &lt;br /&gt;
-0 &amp;amp; 0 &amp;amp; s_z
+\begin{matrix} 
+s_x &amp;amp; 0 &amp;amp; 0\\ 
+0   &amp;amp; s_y &amp;amp; 0\\&lt;br /&gt;
+0 &amp;amp; 0 &amp;amp; s_z\\ 
 \end{matrix}
 \right) \tag{7}
 $$&lt;/p&gt;
@@ -168,7 +169,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;矩阵 $R$ 的特征值为 $s_x$ 、$s_y$ 和 $s_z$，重数均为 1。没种特征值对应特征空间维度为 1 。&lt;/p&gt;
 
-&lt;h3 id=&quot;3-剪切shears&quot;&gt;3. 剪切（Shears）&lt;/h3&gt;
+&lt;h3 id=&quot;3-切变shearing&quot;&gt;3. 切变（Shearing）&lt;/h3&gt;
 
 &lt;p&gt;剪切过程可以理解为用不同强度和不同方向压缩每个轴的结果，导致体积的变形。&lt;/p&gt;
 
@@ -179,7 +180,7 @@ R_{sh_{1}} = \left(
 \begin{matrix}
 1 &amp;amp; h_{xy} &amp;amp; 0 \\ 
 0 &amp;amp; 1 &amp;amp; 0 \\ 
-0 &amp;amp; 0 &amp;amp; 1 
+0 &amp;amp; 0 &amp;amp; 1 \\ 
 \end{matrix}
 \right) \tag{10}
 $$&lt;/p&gt;
@@ -244,15 +245,104 @@ $$&lt;/p&gt;
 R = OR_{sh_i}O^{T} \tag{16}
 $$&lt;/p&gt;
 
-&lt;h3 id=&quot;4-旋转&quot;&gt;4. 旋转&lt;/h3&gt;
-&lt;p&gt;&amp;lt;++&amp;gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-镜面&quot;&gt;4. 镜面&lt;/h3&gt;
+
+&lt;p&gt;根据一个面进行镜面处理，通过简单的翻转一个坐标。如根据 $\mathrm{YZ}$ 平面进行翻转，&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{plane} = \left(
+\begin{matrix}
+-1 &amp;amp; 0 &amp;amp; 0 \\ 
+ 0 &amp;amp; 1 &amp;amp; 0 \\ 
+ 0 &amp;amp; 0 &amp;amp; 1 \\ 
+\end{matrix}
+\right) \tag{17}
+$$&lt;/p&gt;
+
+&lt;p&gt;此时特征值为 -1（重数为 1，特征空间为 1 维） 和 1（重数为 2， 特征空间为 2 维）。&lt;/p&gt;
+
+&lt;p&gt;也可以根据一条线进行镜面处理。如根据 $\mathrm{Z}$ 轴进行镜面操作，&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{line} = \left(
+\begin{matrix}
+-1 &amp;amp;  0 &amp;amp; 0 \\ 
+ 0 &amp;amp; -1 &amp;amp; 0 \\ 
+ 0 &amp;amp;  0 &amp;amp; 1 \\ 
+\end{matrix}
+\right) \tag{18}
+$$&lt;/p&gt;
+
+&lt;p&gt;根据点镜面操作则为，&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{line} = \left(
+\begin{matrix}
+-1 &amp;amp;  0 &amp;amp;  0 \\ 
+ 0 &amp;amp; -1 &amp;amp;  0 \\ 
+ 0 &amp;amp;  0 &amp;amp; -1 \\ 
+\end{matrix}
+\right) \tag{19}
+$$&lt;/p&gt;
+
+&lt;p&gt;与之前变换相似，可以通过使用合适的正交矩阵遵从任意平面或线操作，&lt;/p&gt;
+
+&lt;p&gt;$$
+R = OR_{i}O^{T} \tag{20}
+$$&lt;/p&gt;
+
+&lt;h3 id=&quot;5-旋转&quot;&gt;5. 旋转&lt;/h3&gt;
+
+&lt;p&gt;旋转矩阵能够帮助将重构出的体积与实验投影相关联，是非常重要的。如果矩阵属于 $SO(3)$（三次特殊正交群——例如，具有实系数且行列式为 1 的 $3\times3$ 正交矩阵集合）。&lt;/p&gt;
+
+&lt;p&gt;3DEM 中，围绕其中轴旋转执行左手旋转规则（正旋转为顺时针旋转）：&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{X}(\alpha) = \left(
+\begin{matrix}
+1 &amp;amp; 0            &amp;amp; 0            \\ 
+0 &amp;amp; \cos{\alpha} &amp;amp; \sin{\alpha} \\ 
+0 &amp;amp; -\sin{\alpha}&amp;amp; \cos{\alpha} \\ 
+\end{matrix}
+\right) \tag{21}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{Y}(\alpha) = \left(
+\begin{matrix}
+\cos{\alpha} &amp;amp; 0 &amp;amp; -\sin{\alpha} \\ 
+0 &amp;amp; 1 &amp;amp; 0 \\ 
+\sin{\alpha} &amp;amp; 0 &amp;amp; \cos{\alpha} \\ 
+\end{matrix}
+\right) \tag{22}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{Z}{\alpha} = \left(
+\begin{matrix}
+\cos{\alpha} &amp;amp; \sin{\alpha} &amp;amp; 0 \\ 
+-\sin{\alpha} &amp;amp; \cos{\alpha} &amp;amp; 0 \\ 
+0 &amp;amp; 0 &amp;amp; 1 \\ 
+\end{matrix} \tag{23}
+\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;旋转矩阵的特征值为 $e^{ia}$ ， $e^{-ia}$ 和 1 。重数均为 1 且相关特征空间维度为 1 。&lt;/p&gt;
+
+&lt;p&gt;同样可以利用合适正交矩阵求解围绕任意轴的旋转矩阵，&lt;/p&gt;
+
+&lt;p&gt;$$
+R = OR_{i}O^{T} \tag{24}
+$$&lt;/p&gt;
+
+&lt;p&gt;然而实际上，对于任意旋转的更紧凑的方法————欧拉角（Euler angles）或四元数（quaternions）和视图向量（view vectors）。&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 03 Nov 2022 13:30:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/11/geometrical-Transformations/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/11/geometrical-Transformations/</guid>
+        <pubDate>Wed, 02 Nov 2022 12:11:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/11/geometricaltransformations/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/11/geometricaltransformations/</guid>
         
-        <category>cryo-em</category>
+        <category>cryo-EM</category>
         
         
       </item>

@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2022/11/geometrical-Transformations/">
+  <link rel="canonical" href="http://localhost:4000/2022/11/geometricaltransformations/">
   <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
@@ -197,13 +197,13 @@ var _hmt = _hmt || [];
 	<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
 		<header class="post-header">
 			<div class="post-meta">
-				<time datetime="2022-11-03 13:30:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-11-03</time> • <span class="post-meta__tags tags">cryo-em</span>
+				<time datetime="2022-11-02 12:11:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-11-02</time> • <span class="post-meta__tags tags">cryo-EM</span>
 			</div>
 			<div class="post-tags">
 	标签页 Tags：
 	
 	
-	<a href="/tags/#cryo-em">cryo-em</a>
+	<a href="/tags/#cryo-EM">cryo-EM</a>
 	
 </div>
 
@@ -223,8 +223,9 @@ var _hmt = _hmt || [];
     <ul>
       <li><a href="#1-%E5%B9%B3%E7%A7%BB">1. 平移</a></li>
       <li><a href="#2-%E6%94%BE%E5%A4%A7">2. 放大</a></li>
-      <li><a href="#3-%E5%89%AA%E5%88%87shears">3. 剪切（Shears）</a></li>
-      <li><a href="#4-%E6%97%8B%E8%BD%AC">4. 旋转</a></li>
+      <li><a href="#3-%E5%88%87%E5%8F%98shearing">3. 切变（Shearing）</a></li>
+      <li><a href="#4-%E9%95%9C%E9%9D%A2">4. 镜面</a></li>
+      <li><a href="#5-%E6%97%8B%E8%BD%AC">5. 旋转</a></li>
     </ul>
   </li>
 </ul>
@@ -325,10 +326,10 @@ $$</p>
 <p>$$
 R =
 \left(
-\begin{matrix}
-s_x &amp; 0 &amp; 0 <br>
-0   &amp; s_y &amp; 0 <br>
-0 &amp; 0 &amp; s_z
+\begin{matrix} 
+s_x &amp; 0 &amp; 0\\ 
+0   &amp; s_y &amp; 0\\<br>
+0 &amp; 0 &amp; s_z\\ 
 \end{matrix}
 \right) \tag{7}
 $$</p>
@@ -372,7 +373,7 @@ $$</p>
 
 <p>矩阵 $R$ 的特征值为 $s_x$ 、$s_y$ 和 $s_z$，重数均为 1。没种特征值对应特征空间维度为 1 。</p>
 
-<h3 id="3-剪切shears">3. 剪切（Shears）</h3>
+<h3 id="3-切变shearing">3. 切变（Shearing）</h3>
 
 <p>剪切过程可以理解为用不同强度和不同方向压缩每个轴的结果，导致体积的变形。</p>
 
@@ -383,7 +384,7 @@ R_{sh_{1}} = \left(
 \begin{matrix}
 1 &amp; h_{xy} &amp; 0 \\ 
 0 &amp; 1 &amp; 0 \\ 
-0 &amp; 0 &amp; 1 
+0 &amp; 0 &amp; 1 \\ 
 \end{matrix}
 \right) \tag{10}
 $$</p>
@@ -448,8 +449,97 @@ $$</p>
 R = OR_{sh_i}O^{T} \tag{16}
 $$</p>
 
-<h3 id="4-旋转">4. 旋转</h3>
-<p>&lt;++&gt;</p>
+<h3 id="4-镜面">4. 镜面</h3>
+
+<p>根据一个面进行镜面处理，通过简单的翻转一个坐标。如根据 $\mathrm{YZ}$ 平面进行翻转，</p>
+
+<p>$$
+R_{plane} = \left(
+\begin{matrix}
+-1 &amp; 0 &amp; 0 \\ 
+ 0 &amp; 1 &amp; 0 \\ 
+ 0 &amp; 0 &amp; 1 \\ 
+\end{matrix}
+\right) \tag{17}
+$$</p>
+
+<p>此时特征值为 -1（重数为 1，特征空间为 1 维） 和 1（重数为 2， 特征空间为 2 维）。</p>
+
+<p>也可以根据一条线进行镜面处理。如根据 $\mathrm{Z}$ 轴进行镜面操作，</p>
+
+<p>$$
+R_{line} = \left(
+\begin{matrix}
+-1 &amp;  0 &amp; 0 \\ 
+ 0 &amp; -1 &amp; 0 \\ 
+ 0 &amp;  0 &amp; 1 \\ 
+\end{matrix}
+\right) \tag{18}
+$$</p>
+
+<p>根据点镜面操作则为，</p>
+
+<p>$$
+R_{line} = \left(
+\begin{matrix}
+-1 &amp;  0 &amp;  0 \\ 
+ 0 &amp; -1 &amp;  0 \\ 
+ 0 &amp;  0 &amp; -1 \\ 
+\end{matrix}
+\right) \tag{19}
+$$</p>
+
+<p>与之前变换相似，可以通过使用合适的正交矩阵遵从任意平面或线操作，</p>
+
+<p>$$
+R = OR_{i}O^{T} \tag{20}
+$$</p>
+
+<h3 id="5-旋转">5. 旋转</h3>
+
+<p>旋转矩阵能够帮助将重构出的体积与实验投影相关联，是非常重要的。如果矩阵属于 $SO(3)$（三次特殊正交群——例如，具有实系数且行列式为 1 的 $3\times3$ 正交矩阵集合）。</p>
+
+<p>3DEM 中，围绕其中轴旋转执行左手旋转规则（正旋转为顺时针旋转）：</p>
+
+<p>$$
+R_{X}(\alpha) = \left(
+\begin{matrix}
+1 &amp; 0            &amp; 0            \\ 
+0 &amp; \cos{\alpha} &amp; \sin{\alpha} \\ 
+0 &amp; -\sin{\alpha}&amp; \cos{\alpha} \\ 
+\end{matrix}
+\right) \tag{21}
+$$</p>
+
+<p>$$
+R_{Y}(\alpha) = \left(
+\begin{matrix}
+\cos{\alpha} &amp; 0 &amp; -\sin{\alpha} \\ 
+0 &amp; 1 &amp; 0 \\ 
+\sin{\alpha} &amp; 0 &amp; \cos{\alpha} \\ 
+\end{matrix}
+\right) \tag{22}
+$$</p>
+
+<p>$$
+R_{Z}{\alpha} = \left(
+\begin{matrix}
+\cos{\alpha} &amp; \sin{\alpha} &amp; 0 \\ 
+-\sin{\alpha} &amp; \cos{\alpha} &amp; 0 \\ 
+0 &amp; 0 &amp; 1 \\ 
+\end{matrix} \tag{23}
+\right)
+$$</p>
+
+<p>旋转矩阵的特征值为 $e^{ia}$ ， $e^{-ia}$ 和 1 。重数均为 1 且相关特征空间维度为 1 。</p>
+
+<p>同样可以利用合适正交矩阵求解围绕任意轴的旋转矩阵，</p>
+
+<p>$$
+R = OR_{i}O^{T} \tag{24}
+$$</p>
+
+<p>然而实际上，对于任意旋转的更紧凑的方法————欧拉角（Euler angles）或四元数（quaternions）和视图向量（view vectors）。</p>
 
 
 		</section>
