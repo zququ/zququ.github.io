@@ -14,6 +14,7 @@ tags: cryo-EM
     - [3. 切变（Shearing）](#3-切变shearing)
     - [4. 镜面](#4-镜面)
     - [5. 旋转](#5-旋转)
+        + [旋转矩阵推导（附）](#旋转矩阵推导附)
 
 <!-- /TOC -->
 
@@ -325,5 +326,53 @@ R = OR_{i}O^{T} \tag{24}
 $$
 
 然而实际上，对于任意旋转的更紧凑的方法————欧拉角（Euler angles）或四元数（quaternions）和视图向量（view vectors）。
+
+#### 旋转矩阵推导（附）
+
+对于一个直角坐标系，可以使用极坐标表示，例如，
+
+$$
+\begin{cases}
+x = \cos{\psi}\cdot r \\ 
+ \\ 
+y = \sin{\psi}\cdot r \\ 
+\end{cases} \tag{S1}
+$$
+
+其中 $r$ 为极坐标旋转半径。
+
+对于经过旋转处理后的坐标，
+
+$$
+\begin{cases}
+x' = \cos{(\psi + \phi)}\cdot r \\ 
+ \\ 
+y' = \sin{(\psi + \phi)}\cdot r \\ 
+\end{cases} \tag{S2}
+$$
+
+将 (S2) 中三角函数展开有，
+
+
+$$
+\begin{cases}
+x' = (\cos{\psi}\cos{\phi} - \sin{\psi}\sin{\phi}) \cdot r \\ 
+ \\ 
+y' = (\sin{\psi}\cos{\phi} + \sin{\phi}\cos{\psi})\cdot r \\ 
+\end{cases} \tag{S2}
+$$
+
+将 (S1) 带入 (S1) 可得，
+
+$$
+\begin{cases}
+x' = \cos{\phi}\cdot x -\sin{\phi}\cdot y \\ 
+ \\ 
+y' = \sin{\phi}\cdot x + \cos{\phi}\cdot y \\ 
+\end{cases} \tag{S3}
+$$
+
+
+
 
 
