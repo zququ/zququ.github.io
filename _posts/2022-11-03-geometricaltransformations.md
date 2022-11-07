@@ -15,6 +15,7 @@ tags: cryo-EM
     - [4. 镜面](#4-镜面)
     - [5. 旋转](#5-旋转)
         + [旋转矩阵推导（附）](#旋转矩阵推导附)
+    - [欧拉角](#欧拉角)
 
 <!-- /TOC -->
 
@@ -308,7 +309,7 @@ R_{Y}(\alpha) = \left(
 $$
 
 $$
-R_{Z}{\alpha} = \left(
+R_{Z}{(\alpha)} = \left(
 \begin{matrix}
 \cos{\alpha} & \sin{\alpha} & 0 \\ 
 -\sin{\alpha} & \cos{\alpha} & 0 \\ 
@@ -330,6 +331,8 @@ $$
 #### 旋转矩阵推导（附）
 
 对于一个直角坐标系，可以使用极坐标表示，例如，
+
+![p1](/assets/202211/2022-11-07-12-59-01.png =400x) 
 
 $$
 \begin{cases}
@@ -372,7 +375,80 @@ y' = \sin{\phi}\cdot x + \cos{\phi}\cdot y \\
 \end{cases} \tag{S3}
 $$
 
+### 欧拉角
 
+欧拉角是3DEM中表示旋转的最常用的表示方法。描述为，首先围绕给定坐标轴进行第一次旋转，这样就形成一组新的旋转坐标系，后围绕其中一个变换轴进行第二次旋转，最后围绕两次变换轴进行第三次旋转。在数学上，表示为
 
+$$
+R =R_3R_2R_1 \tag{S4}
+$$
+
+如图所示，
+
+![p2](/assets/202211/2022-11-07-13-21-39.png =400x)
+
+这是一种非常紧凑的表示方式，因为只有 3 个数字（三个欧拉角），就可以表示完整的旋转矩阵（ $3\times3$ ）。3DEM 中最广泛使用的惯例为 $ZYZ$ ：第一次旋转围绕 $Z$ 轴（被称为旋转角，rotational angle，$\phi$ ），第二次旋转围绕 $Y$ 轴（成为方位角，azimuthal angle，$\theta$ ），第三次正旋转围绕 $Z$ 轴（ 称为平面内旋转，in-plane rotation，$\psi$ ）。
+
+按照欧拉角定义，将(23)、(24)带入(S4)，
+
+得到，
+
+$$
+\left(
+\begin{matrix}
+\cos{\phi} & \sin{\phi} & 0 \\ 
+\cos{\phi} & \cos{\phi} & 0 \\ 
+0 & 0 & 1 \\ 
+\end{matrix}
+\right) 
+
+\left(
+\begin{matrix}
+\cos{\theta} & 0 & -\sin{\theta} \\ 
+0 & 1 & 0 \\ 
+\sin{\theta} & 0 & \cos{\theta} \\ 
+\end{matrix}
+\right) 
+
+\left(
+\begin{matrix}
+\cos{\psi} & \sin{\psi} & 0 \\ 
+\cos{\psi} & \cos{\psi} & 0 \\ 
+0 & 0 & 1 \\ 
+\end{matrix}
+\right) 
+$$
+
+最终推导出相关的欧拉矩阵为，
+
+$$
+\begin{aligned}
+R & = R_Z(\psi)R_Y(\theta)R_Z(\phi) \\ 
+  & = \left(
+\begin{matrix}
+\cos{\psi}\cos{\theta}\cos{\phi}-\sin{\psi}\sin{\phi} & \cos{\psi}\cos{\theta}\sin{\phi}+\sin{\psi}\cos{\theta} & -\cos{\psi}\sin{\theta} \\ 
+-\sin{\psi}\cos{\theta}\cos{\phi} - \cos{\psi}\sin{\theta} & -\sin{\psi}\cos{\theta}\sin{\theta} + \cos{\psi}\cos{\phi} & \sin{\psi}\sin{\theta} \\ 
+\sin{\theta}\cos{\phi} & \sin{\theta}\sin{\phi} & \cos{\theta} 
+\end{matrix}
+\right)
+\end{aligned}
+$$
+
+在 Imagic 中，旋转矩阵为右手旋转定则（逆时针），所以使用角（ $-\phi, \theta, -\psi$ ）而
+对于MRC，则需要使用角 ( $\phi,\theta,-\psi$ )。
+
+给定旋转矩阵，可以通过以下计算来获得欧拉角。
+
+计算 
+
+$$
+\lvert\sin\theta\rvert = \sqrt{r^{2}_{13} + r^{2}_{23}}
+$$
+
+$$
+\begin{cases}
+
+\end{cases}
+$$
 
 
