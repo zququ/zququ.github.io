@@ -15,7 +15,7 @@ tags: cryo-EM
     - [4. 镜面](#4-镜面)
     - [5. 旋转](#5-旋转)
         + [旋转矩阵推导（附）](#旋转矩阵推导附)
-    - [欧拉角](#欧拉角)
+    - [6. 欧拉角](#6-欧拉角)
 
 <!-- /TOC -->
 
@@ -332,7 +332,7 @@ $$
 
 对于一个直角坐标系，可以使用极坐标表示，例如，
 
-![p1](/assets/202211/2022-11-07-12-59-01.png =400x) 
+![p1](/assets/202211/2022-11-07-12-59-01.png){: width='400'}
 
 $$
 \begin{cases}
@@ -375,7 +375,7 @@ y' = \sin{\phi}\cdot x + \cos{\phi}\cdot y \\
 \end{cases} \tag{S3}
 $$
 
-### 欧拉角
+### 6. 欧拉角
 
 欧拉角是3DEM中表示旋转的最常用的表示方法。描述为，首先围绕给定坐标轴进行第一次旋转，这样就形成一组新的旋转坐标系，后围绕其中一个变换轴进行第二次旋转，最后围绕两次变换轴进行第三次旋转。在数学上，表示为
 
@@ -385,7 +385,7 @@ $$
 
 如图所示，
 
-![p2](/assets/202211/2022-11-07-13-21-39.png =400x)
+![p2](/assets/202211/2022-11-07-13-21-39.png){: width='400'}
 
 这是一种非常紧凑的表示方式，因为只有 3 个数字（三个欧拉角），就可以表示完整的旋转矩阵（ $3\times3$ ）。3DEM 中最广泛使用的惯例为 $ZYZ$ ：第一次旋转围绕 $Z$ 轴（被称为旋转角，rotational angle，$\phi$ ），第二次旋转围绕 $Y$ 轴（成为方位角，azimuthal angle，$\theta$ ），第三次正旋转围绕 $Z$ 轴（ 称为平面内旋转，in-plane rotation，$\psi$ ）。
 
@@ -398,25 +398,25 @@ $$
 \begin{matrix}
 \cos{\phi} & \sin{\phi} & 0 \\ 
 \cos{\phi} & \cos{\phi} & 0 \\ 
-0 & 0 & 1 \\ 
+0 & 0 & 1
 \end{matrix}
-\right) 
-
+\right)
+\cdot
 \left(
 \begin{matrix}
 \cos{\theta} & 0 & -\sin{\theta} \\ 
 0 & 1 & 0 \\ 
 \sin{\theta} & 0 & \cos{\theta} \\ 
 \end{matrix}
-\right) 
-
+\right)
+\cdot
 \left(
 \begin{matrix}
 \cos{\psi} & \sin{\psi} & 0 \\ 
 \cos{\psi} & \cos{\psi} & 0 \\ 
 0 & 0 & 1 \\ 
 \end{matrix}
-\right) 
+\right)
 $$
 
 最终推导出相关的欧拉矩阵为，
@@ -424,31 +424,79 @@ $$
 $$
 \begin{aligned}
 R & = R_Z(\psi)R_Y(\theta)R_Z(\phi) \\ 
-  & = \left(
+  & = \left[
 \begin{matrix}
 \cos{\psi}\cos{\theta}\cos{\phi}-\sin{\psi}\sin{\phi} & \cos{\psi}\cos{\theta}\sin{\phi}+\sin{\psi}\cos{\theta} & -\cos{\psi}\sin{\theta} \\ 
 -\sin{\psi}\cos{\theta}\cos{\phi} - \cos{\psi}\sin{\theta} & -\sin{\psi}\cos{\theta}\sin{\theta} + \cos{\psi}\cos{\phi} & \sin{\psi}\sin{\theta} \\ 
 \sin{\theta}\cos{\phi} & \sin{\theta}\sin{\phi} & \cos{\theta} 
 \end{matrix}
-\right)
-\end{aligned}
+\right]
+\end{aligned}\tag{S5}
 $$
 
 在 Imagic 中，旋转矩阵为右手旋转定则（逆时针），所以使用角（ $-\phi, \theta, -\psi$ ）而
 对于MRC，则需要使用角 ( $\phi,\theta,-\psi$ )。
 
-给定旋转矩阵，可以通过以下计算来获得欧拉角。
-
-计算 
+给定旋转矩阵，可以通过以下计算来获得欧拉角，(S5) 中的每个元素用 r(row, col) 来表示，则明显可以得到，
 
 $$
-\lvert\sin\theta\rvert = \sqrt{r^{2}_{13} + r^{2}_{23}}
+\begin{aligned}
+\lvert\sin{\theta}\rvert &= \sqrt{r_{13}^2 + r_{23}^2} \\ 
+& = \sqrt{\sin^2{\theta}(\cos^2{\theta + \sin^2{\theta}})}
+\end{aligned} \tag{S6}
 $$
+
+这里考虑一些，欧拉角是否为 0 或 $\pi$ 的临界情况，
+
+首先如果 $\lvert\sin{\theta}\rvert > 0$ ，
+
+$$
+\theta = atan2(r_{32}, r_{31}) = \arctan{\left(\frac{\sin{\theta}\sin{\phi}}{\sin{\theta}\cos{\phi}}\right)}
+ \\ 
+\psi = atan2(r_{23}, -r_{13}) = \arctan{\left(\frac{\sin{\psi}\sin{\theta}}{\cos{\psi}\sin{\theta}}\right)}\tag{S7}
+$$
+
+这里通过 $\psi$ 的值来推算 $\sin{\theta}$ 的符号 $s$ ，
 
 $$
 \begin{cases}
-
-\end{cases}
+\sin{\psi} = 0 && s=\mathrm{sign}\left(\frac{-r_{13}}{\cos{\psi}}\right) = \mathrm{sign}(-\sin{\theta}) \\ 
+ \\ 
+\sin{\psi}\neq 0 && s=\mathrm{sign}\left(\frac{r_{23}}{\sin(\psi)}\right) = \mathrm{sign}(\sin{\theta})
+\end{cases} \tag{S8}
 $$
 
+最终求出 $\theta$ 的值为，
+
+$$
+\theta = atan2(s\lvert\sin{\theta}\rvert, r_{33})\tag{S9}
+$$
+
+同理，当 $\theta = 0$ 时，
+
+$$
+\begin{cases}
+\mathrm{sign}(r_{33}) = \cos{\theta}>0 && \theta=0, \psi=atan2(r_{21}, -r_{11}) \\ 
+  \\ 
+\mathrm{sign}(r_{33})<0 && \theta=\pi, \psi=atan2(r_{21}, -r_{11})
+\end{cases} \tag{S10}
+$$
+
+不同软件对于欧拉角计算存在差异，如 EMAN 使用 $ZXZ$ ，但可以通过算法进行转换。在 EMAN 中使用 $\phi$，方位角（azimuth, az），以及高度（altitude, alt），
+
+$$
+R_{EMAN} = R_Z{\phi_{EMAN}}R_X(alt)R_Z(az) \tag{S11}
+$$
+
+两个系统中的转换关系如下：
+
+$$
+az = \phi + \frac{\pi}{2}
+$$
+$$
+alt = \phi
+$$
+$$
+\phi_{EMAN} = \psi - \frac{\pi}{2} \tag{S12}
+$$
 

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zququ's blog</title>
-    <description>欢迎！我是曲泽慧(@zququ)。农学博士，研究方向为结构病毒学与精准疫苗学。</description>
+    <description>欢迎！我是曲泽慧(@zququ)，目前在深圳（ICBI，BCBDI，SIAT）任职助理研究员。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Nov 2022 11:32:56 +0800</pubDate>
-    <lastBuildDate>Fri, 04 Nov 2022 11:32:56 +0800</lastBuildDate>
+    <pubDate>Tue, 08 Nov 2022 16:07:18 +0800</pubDate>
+    <lastBuildDate>Tue, 08 Nov 2022 16:07:18 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -21,7 +21,12 @@
       &lt;li&gt;&lt;a href=&quot;#2-放大&quot;&gt;2. 放大&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#3-切变shearing&quot;&gt;3. 切变（Shearing）&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#4-镜面&quot;&gt;4. 镜面&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#5-旋转&quot;&gt;5. 旋转&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5-旋转&quot;&gt;5. 旋转&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#旋转矩阵推导附&quot;&gt;旋转矩阵推导（附）&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#6-欧拉角&quot;&gt;6. 欧拉角&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -318,7 +323,7 @@ R_{Y}(\alpha) = \left(
 $$&lt;/p&gt;
 
 &lt;p&gt;$$
-R_{Z}{\alpha} = \left(
+R_{Z}{(\alpha)} = \left(
 \begin{matrix}
 \cos{\alpha} &amp;amp; \sin{\alpha} &amp;amp; 0 \\ 
 -\sin{\alpha} &amp;amp; \cos{\alpha} &amp;amp; 0 \\ 
@@ -336,6 +341,177 @@ R = OR_{i}O^{T} \tag{24}
 $$&lt;/p&gt;
 
 &lt;p&gt;然而实际上，对于任意旋转的更紧凑的方法————欧拉角（Euler angles）或四元数（quaternions）和视图向量（view vectors）。&lt;/p&gt;
+
+&lt;h4 id=&quot;旋转矩阵推导附&quot;&gt;旋转矩阵推导（附）&lt;/h4&gt;
+
+&lt;p&gt;对于一个直角坐标系，可以使用极坐标表示，例如，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/202211/2022-11-07-12-59-01.png&quot; alt=&quot;p1&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+x = \cos{\psi}\cdot r \\ 
+ \\ 
+y = \sin{\psi}\cdot r \\ 
+\end{cases} \tag{S1}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中 $r$ 为极坐标旋转半径。&lt;/p&gt;
+
+&lt;p&gt;对于经过旋转处理后的坐标，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+x’ = \cos{(\psi + \phi)}\cdot r \\ 
+ \\ 
+y’ = \sin{(\psi + \phi)}\cdot r \\ 
+\end{cases} \tag{S2}
+$$&lt;/p&gt;
+
+&lt;p&gt;将 (S2) 中三角函数展开有，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+x’ = (\cos{\psi}\cos{\phi} - \sin{\psi}\sin{\phi}) \cdot r \\ 
+ \\ 
+y’ = (\sin{\psi}\cos{\phi} + \sin{\phi}\cos{\psi})\cdot r \\ 
+\end{cases} \tag{S2}
+$$&lt;/p&gt;
+
+&lt;p&gt;将 (S1) 带入 (S1) 可得，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+x’ = \cos{\phi}\cdot x -\sin{\phi}\cdot y \\ 
+ \\ 
+y’ = \sin{\phi}\cdot x + \cos{\phi}\cdot y \\ 
+\end{cases} \tag{S3}
+$$&lt;/p&gt;
+
+&lt;h3 id=&quot;6-欧拉角&quot;&gt;6. 欧拉角&lt;/h3&gt;
+
+&lt;p&gt;欧拉角是3DEM中表示旋转的最常用的表示方法。描述为，首先围绕给定坐标轴进行第一次旋转，这样就形成一组新的旋转坐标系，后围绕其中一个变换轴进行第二次旋转，最后围绕两次变换轴进行第三次旋转。在数学上，表示为&lt;/p&gt;
+
+&lt;p&gt;$$
+R =R_3R_2R_1 \tag{S4}
+$$&lt;/p&gt;
+
+&lt;p&gt;如图所示，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/202211/2022-11-07-13-21-39.png&quot; alt=&quot;p2&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是一种非常紧凑的表示方式，因为只有 3 个数字（三个欧拉角），就可以表示完整的旋转矩阵（ $3\times3$ ）。3DEM 中最广泛使用的惯例为 $ZYZ$ ：第一次旋转围绕 $Z$ 轴（被称为旋转角，rotational angle，$\phi$ ），第二次旋转围绕 $Y$ 轴（成为方位角，azimuthal angle，$\theta$ ），第三次正旋转围绕 $Z$ 轴（ 称为平面内旋转，in-plane rotation，$\psi$ ）。&lt;/p&gt;
+
+&lt;p&gt;按照欧拉角定义，将(23)、(24)带入(S4)，&lt;/p&gt;
+
+&lt;p&gt;得到，&lt;/p&gt;
+
+&lt;p&gt;$$
+\left(
+\begin{matrix}
+\cos{\phi} &amp;amp; \sin{\phi} &amp;amp; 0 \\ 
+\cos{\phi} &amp;amp; \cos{\phi} &amp;amp; 0 \\ 
+0 &amp;amp; 0 &amp;amp; 1
+\end{matrix}
+\right)
+\cdot
+\left(
+\begin{matrix}
+\cos{\theta} &amp;amp; 0 &amp;amp; -\sin{\theta} \\ 
+0 &amp;amp; 1 &amp;amp; 0 \\ 
+\sin{\theta} &amp;amp; 0 &amp;amp; \cos{\theta} \\ 
+\end{matrix}
+\right)
+\cdot
+\left(
+\begin{matrix}
+\cos{\psi} &amp;amp; \sin{\psi} &amp;amp; 0 \\ 
+\cos{\psi} &amp;amp; \cos{\psi} &amp;amp; 0 \\ 
+0 &amp;amp; 0 &amp;amp; 1 \\ 
+\end{matrix}
+\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;最终推导出相关的欧拉矩阵为，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+R &amp;amp; = R_Z(\psi)R_Y(\theta)R_Z(\phi) \\ 
+  &amp;amp; = \left[
+\begin{matrix}
+\cos{\psi}\cos{\theta}\cos{\phi}-\sin{\psi}\sin{\phi} &amp;amp; \cos{\psi}\cos{\theta}\sin{\phi}+\sin{\psi}\cos{\theta} &amp;amp; -\cos{\psi}\sin{\theta} \\ 
+-\sin{\psi}\cos{\theta}\cos{\phi} - \cos{\psi}\sin{\theta} &amp;amp; -\sin{\psi}\cos{\theta}\sin{\theta} + \cos{\psi}\cos{\phi} &amp;amp; \sin{\psi}\sin{\theta} \\ 
+\sin{\theta}\cos{\phi} &amp;amp; \sin{\theta}\sin{\phi} &amp;amp; \cos{\theta} 
+\end{matrix}
+\right]
+\end{aligned}\tag{S5}
+$$&lt;/p&gt;
+
+&lt;p&gt;在 Imagic 中，旋转矩阵为右手旋转定则（逆时针），所以使用角（ $-\phi, \theta, -\psi$ ）而
+对于MRC，则需要使用角 ( $\phi,\theta,-\psi$ )。&lt;/p&gt;
+
+&lt;p&gt;给定旋转矩阵，可以通过以下计算来获得欧拉角，(S5) 中的每个元素用 r(row, col) 来表示，则明显可以得到，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\lvert\sin{\theta}\rvert &amp;amp;= \sqrt{r_{13}^2 + r_{23}^2} \\ 
+&amp;amp; = \sqrt{\sin^2{\theta}(\cos^2{\theta + \sin^2{\theta}})}
+\end{aligned} \tag{S6}
+$$&lt;/p&gt;
+
+&lt;p&gt;这里考虑一些，欧拉角是否为 0 或 $\pi$ 的临界情况，&lt;/p&gt;
+
+&lt;p&gt;首先如果 $\lvert\sin{\theta}\rvert &amp;gt; 0$ ，&lt;/p&gt;
+
+&lt;p&gt;$$
+\theta = atan2(r_{32}, r_{31}) = \arctan{\left(\frac{\sin{\theta}\sin{\phi}}{\sin{\theta}\cos{\phi}}\right)}
+ \\ 
+\psi = atan2(r_{23}, -r_{13}) = \arctan{\left(\frac{\sin{\psi}\sin{\theta}}{\cos{\psi}\sin{\theta}}\right)}\tag{S7}
+$$&lt;/p&gt;
+
+&lt;p&gt;这里通过 $\psi$ 的值来推算 $\sin{\theta}$ 的符号 $s$ ，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+\sin{\psi} = 0 &amp;amp;&amp;amp; s=\mathrm{sign}\left(\frac{-r_{13}}{\cos{\psi}}\right) = \mathrm{sign}(-\sin{\theta}) \\ 
+ \\ 
+\sin{\psi}\neq 0 &amp;amp;&amp;amp; s=\mathrm{sign}\left(\frac{r_{23}}{\sin(\psi)}\right) = \mathrm{sign}(\sin{\theta})
+\end{cases} \tag{S8}
+$$&lt;/p&gt;
+
+&lt;p&gt;最终求出 $\theta$ 的值为，&lt;/p&gt;
+
+&lt;p&gt;$$
+\theta = atan2(s\lvert\sin{\theta}\rvert, r_{33})\tag{S9}
+$$&lt;/p&gt;
+
+&lt;p&gt;同理，当 $\theta = 0$ 时，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+\mathrm{sign}(r_{33}) = \cos{\theta}&amp;gt;0 &amp;amp;&amp;amp; \theta=0, \psi=atan2(r_{21}, -r_{11}) \\ 
+  \\ 
+\mathrm{sign}(r_{33})&amp;lt;0 &amp;amp;&amp;amp; \theta=\pi, \psi=atan2(r_{21}, -r_{11})
+\end{cases} \tag{S10}
+$$&lt;/p&gt;
+
+&lt;p&gt;不同软件对于欧拉角计算存在差异，如 EMAN 使用 $ZXZ$ ，但可以通过算法进行转换。在 EMAN 中使用 $\phi$，方位角（azimuth, az），以及高度（altitude, alt），&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{EMAN} = R_Z{\phi_{EMAN}}R_X(alt)R_Z(az) \tag{S11}
+$$&lt;/p&gt;
+
+&lt;p&gt;两个系统中的转换关系如下：&lt;/p&gt;
+
+&lt;p&gt;$$
+az = \phi + \frac{\pi}{2}
+$$
+$$
+alt = \phi
+$$
+$$
+\phi_{EMAN} = \psi - \frac{\pi}{2} \tag{S12}
+$$&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 02 Nov 2022 12:11:00 +0800</pubDate>
