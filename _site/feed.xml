@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)，目前在深圳（ICBI，BCBDI，SIAT）任职助理研究员。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Nov 2022 16:07:18 +0800</pubDate>
-    <lastBuildDate>Tue, 08 Nov 2022 16:07:18 +0800</lastBuildDate>
+    <pubDate>Wed, 09 Nov 2022 14:37:34 +0800</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2022 14:37:34 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -26,7 +26,12 @@
           &lt;li&gt;&lt;a href=&quot;#旋转矩阵推导附&quot;&gt;旋转矩阵推导（附）&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#6-欧拉角&quot;&gt;6. 欧拉角&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#6-欧拉角&quot;&gt;6. 欧拉角&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#欧拉角的非唯一性&quot;&gt;欧拉角的非唯一性&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#7-四元数和视图向量quaternions-and-view-vectors&quot;&gt;7. 四元数和视图向量（Quaternions and View Vectors）&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -393,7 +398,7 @@ $$&lt;/p&gt;
 &lt;p&gt;欧拉角是3DEM中表示旋转的最常用的表示方法。描述为，首先围绕给定坐标轴进行第一次旋转，这样就形成一组新的旋转坐标系，后围绕其中一个变换轴进行第二次旋转，最后围绕两次变换轴进行第三次旋转。在数学上，表示为&lt;/p&gt;
 
 &lt;p&gt;$$
-R =R_3R_2R_1 \tag{S4}
+R =R_3R_2R_1 \tag{25}
 $$&lt;/p&gt;
 
 &lt;p&gt;如图所示，&lt;/p&gt;
@@ -402,7 +407,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;这是一种非常紧凑的表示方式，因为只有 3 个数字（三个欧拉角），就可以表示完整的旋转矩阵（ $3\times3$ ）。3DEM 中最广泛使用的惯例为 $ZYZ$ ：第一次旋转围绕 $Z$ 轴（被称为旋转角，rotational angle，$\phi$ ），第二次旋转围绕 $Y$ 轴（成为方位角，azimuthal angle，$\theta$ ），第三次正旋转围绕 $Z$ 轴（ 称为平面内旋转，in-plane rotation，$\psi$ ）。&lt;/p&gt;
 
-&lt;p&gt;按照欧拉角定义，将(23)、(24)带入(S4)，&lt;/p&gt;
+&lt;p&gt;按照欧拉角定义，将(23)、(24)带入(25)，&lt;/p&gt;
 
 &lt;p&gt;得到，&lt;/p&gt;
 
@@ -444,7 +449,7 @@ R &amp;amp; = R_Z(\psi)R_Y(\theta)R_Z(\phi) \\
 \sin{\theta}\cos{\phi} &amp;amp; \sin{\theta}\sin{\phi} &amp;amp; \cos{\theta} 
 \end{matrix}
 \right]
-\end{aligned}\tag{S5}
+\end{aligned}\tag{26}
 $$&lt;/p&gt;
 
 &lt;p&gt;在 Imagic 中，旋转矩阵为右手旋转定则（逆时针），所以使用角（ $-\phi, \theta, -\psi$ ）而
@@ -456,7 +461,7 @@ $$&lt;/p&gt;
 \begin{aligned}
 \lvert\sin{\theta}\rvert &amp;amp;= \sqrt{r_{13}^2 + r_{23}^2} \\ 
 &amp;amp; = \sqrt{\sin^2{\theta}(\cos^2{\theta + \sin^2{\theta}})}
-\end{aligned} \tag{S6}
+\end{aligned} \tag{27}
 $$&lt;/p&gt;
 
 &lt;p&gt;这里考虑一些，欧拉角是否为 0 或 $\pi$ 的临界情况，&lt;/p&gt;
@@ -466,7 +471,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \theta = atan2(r_{32}, r_{31}) = \arctan{\left(\frac{\sin{\theta}\sin{\phi}}{\sin{\theta}\cos{\phi}}\right)}
  \\ 
-\psi = atan2(r_{23}, -r_{13}) = \arctan{\left(\frac{\sin{\psi}\sin{\theta}}{\cos{\psi}\sin{\theta}}\right)}\tag{S7}
+\psi = atan2(r_{23}, -r_{13}) = \arctan{\left(\frac{\sin{\psi}\sin{\theta}}{\cos{\psi}\sin{\theta}}\right)}\tag{28}
 $$&lt;/p&gt;
 
 &lt;p&gt;这里通过 $\psi$ 的值来推算 $\sin{\theta}$ 的符号 $s$ ，&lt;/p&gt;
@@ -476,13 +481,13 @@ $$&lt;/p&gt;
 \sin{\psi} = 0 &amp;amp;&amp;amp; s=\mathrm{sign}\left(\frac{-r_{13}}{\cos{\psi}}\right) = \mathrm{sign}(-\sin{\theta}) \\ 
  \\ 
 \sin{\psi}\neq 0 &amp;amp;&amp;amp; s=\mathrm{sign}\left(\frac{r_{23}}{\sin(\psi)}\right) = \mathrm{sign}(\sin{\theta})
-\end{cases} \tag{S8}
+\end{cases} \tag{29}
 $$&lt;/p&gt;
 
 &lt;p&gt;最终求出 $\theta$ 的值为，&lt;/p&gt;
 
 &lt;p&gt;$$
-\theta = atan2(s\lvert\sin{\theta}\rvert, r_{33})\tag{S9}
+\theta = atan2(s\lvert\sin{\theta}\rvert, r_{33})\tag{30}
 $$&lt;/p&gt;
 
 &lt;p&gt;同理，当 $\theta = 0$ 时，&lt;/p&gt;
@@ -492,13 +497,13 @@ $$&lt;/p&gt;
 \mathrm{sign}(r_{33}) = \cos{\theta}&amp;gt;0 &amp;amp;&amp;amp; \theta=0, \psi=atan2(r_{21}, -r_{11}) \\ 
   \\ 
 \mathrm{sign}(r_{33})&amp;lt;0 &amp;amp;&amp;amp; \theta=\pi, \psi=atan2(r_{21}, -r_{11})
-\end{cases} \tag{S10}
+\end{cases} \tag{31}
 $$&lt;/p&gt;
 
 &lt;p&gt;不同软件对于欧拉角计算存在差异，如 EMAN 使用 $ZXZ$ ，但可以通过算法进行转换。在 EMAN 中使用 $\phi$，方位角（azimuth, az），以及高度（altitude, alt），&lt;/p&gt;
 
 &lt;p&gt;$$
-R_{EMAN} = R_Z{\phi_{EMAN}}R_X(alt)R_Z(az) \tag{S11}
+R_{EMAN} = R_Z{\phi_{EMAN}}R_X(alt)R_Z(az) \tag{32}
 $$&lt;/p&gt;
 
 &lt;p&gt;两个系统中的转换关系如下：&lt;/p&gt;
@@ -510,7 +515,83 @@ $$
 alt = \phi
 $$
 $$
-\phi_{EMAN} = \psi - \frac{\pi}{2} \tag{S12}
+\phi_{EMAN} = \psi - \frac{\pi}{2} \tag{33}
+$$&lt;/p&gt;
+
+&lt;h4 id=&quot;欧拉角的非唯一性&quot;&gt;欧拉角的非唯一性&lt;/h4&gt;
+
+&lt;p&gt;由于欧拉角分解遵循一定的协议，如 $ZYZ$ 会存在非唯一性，第二个非唯一性来源于&lt;/p&gt;
+
+&lt;p&gt;$$
+R(\phi, \theta, \psi) = R(\phi+\pi, -\theta, \psi-\pi)\tag{34}
+$$&lt;/p&gt;
+
+&lt;p&gt;表征两个完全不同的欧拉角变换（ $ZYZ$ ）可能会表示相同的旋转。&lt;/p&gt;
+
+&lt;p&gt;第三个非唯一性来源于围绕相同轴旋转两次，称为万向节锁问题（gimbal lock problem）。让我们假设 $\theta =0$ 有&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+R(\phi, \theta, \psi) &amp;amp;= R_Z(\psi)R_Y(0)RZ(\phi) \\ 
+&amp;amp; = R_Z(\psi+\phi)
+\end{aligned}\tag{35}
+$$&lt;/p&gt;
+
+&lt;p&gt;这样的话，对于任意 $\alpha$ 值，都有&lt;/p&gt;
+
+&lt;p&gt;$$
+R(\phi, 0, \psi)=R(\phi+\alpha, 0, \psi-\alpha)\tag{36}
+$$&lt;/p&gt;
+
+&lt;p&gt;所以在判断两个投影之间是否相近（&lt;strong&gt;投影方向只与 $\phi$, $\theta$ 有关&lt;/strong&gt;），不能仅仅从欧拉角判断，还需要检查投影方向（ $R$ 矩阵第三行）是否接近。&lt;/p&gt;
+
+&lt;h3 id=&quot;7-四元数和视图向量quaternions-and-view-vectors&quot;&gt;7. 四元数和视图向量（Quaternions and View Vectors）&lt;/h3&gt;
+
+&lt;p&gt;四元数作为复数的补充，其虚部为 3D 向量。写作&lt;/p&gt;
+
+&lt;p&gt;$$
+q = a + bi + cj + dk\tag{37}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中，$a$ 为实部，$b$、$c$、$d$ 为虚部，而 $i$、$j$、$k$ 相当于虚数 $i$ 。也可以将四元数写作一个四维向量，&lt;/p&gt;
+
+&lt;p&gt;$$
+q =(a, b, c, d)\tag{38}
+$$&lt;/p&gt;
+
+&lt;p&gt;或者表示为数字和 3D 向量的和，&lt;/p&gt;
+
+&lt;p&gt;$$
+q = a + (b, c, d)\tag{39}
+$$&lt;/p&gt;
+
+&lt;p&gt;加法与复数相似，表示为&lt;/p&gt;
+
+&lt;p&gt;$$
+(a, b, c, d) + (a’, b’, c’, d’) = (a+a’, b+b’, c+c’, d+d’)\tag{40}
+$$&lt;/p&gt;
+
+&lt;p&gt;乘法更为复杂，参考复数的乘法，表示为&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+(a\cdot1+b\cdot i)\cdot(a’\cdot1+b’\cdot i)&amp;amp;=aa’(1\cdot1)+ba’(i\cdot1)+ab’(1\cdot i)+bb’(i\cdot i) \\ 
+&amp;amp;=(aa’-bb’)\cdot1+(ba’+ab’)\cdot i
+\end{aligned}\tag{41}
+$$&lt;/p&gt;
+
+&lt;p&gt;虚数乘积遵循以下关系，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/202211/2022-11-09-14-17-39.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但对于四元数则更加复杂，遵循以下规则&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/202211/2022-11-09-14-23-22.png&quot; alt=&quot;p2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;四元数可以在 Bsoft 旋转的内部表示中使用。围绕给定 3D 轴 $\mathbf{u}$ 旋转可以用四元数表示为，&lt;/p&gt;
+
+&lt;p&gt;$$
+q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert}
 $$&lt;/p&gt;
 
 </description>

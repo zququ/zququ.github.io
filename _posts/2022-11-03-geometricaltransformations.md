@@ -16,6 +16,8 @@ tags: cryo-EM
     - [5. 旋转](#5-旋转)
         + [旋转矩阵推导（附）](#旋转矩阵推导附)
     - [6. 欧拉角](#6-欧拉角)
+        + [欧拉角的非唯一性](#欧拉角的非唯一性)
+    - [7. 四元数和视图向量（Quaternions and View Vectors）](#7-四元数和视图向量quaternions-and-view-vectors)
 
 <!-- /TOC -->
 
@@ -380,7 +382,7 @@ $$
 欧拉角是3DEM中表示旋转的最常用的表示方法。描述为，首先围绕给定坐标轴进行第一次旋转，这样就形成一组新的旋转坐标系，后围绕其中一个变换轴进行第二次旋转，最后围绕两次变换轴进行第三次旋转。在数学上，表示为
 
 $$
-R =R_3R_2R_1 \tag{S4}
+R =R_3R_2R_1 \tag{25}
 $$
 
 如图所示，
@@ -389,7 +391,7 @@ $$
 
 这是一种非常紧凑的表示方式，因为只有 3 个数字（三个欧拉角），就可以表示完整的旋转矩阵（ $3\times3$ ）。3DEM 中最广泛使用的惯例为 $ZYZ$ ：第一次旋转围绕 $Z$ 轴（被称为旋转角，rotational angle，$\phi$ ），第二次旋转围绕 $Y$ 轴（成为方位角，azimuthal angle，$\theta$ ），第三次正旋转围绕 $Z$ 轴（ 称为平面内旋转，in-plane rotation，$\psi$ ）。
 
-按照欧拉角定义，将(23)、(24)带入(S4)，
+按照欧拉角定义，将(23)、(24)带入(25)，
 
 得到，
 
@@ -431,7 +433,7 @@ R & = R_Z(\psi)R_Y(\theta)R_Z(\phi) \\
 \sin{\theta}\cos{\phi} & \sin{\theta}\sin{\phi} & \cos{\theta} 
 \end{matrix}
 \right]
-\end{aligned}\tag{S5}
+\end{aligned}\tag{26}
 $$
 
 在 Imagic 中，旋转矩阵为右手旋转定则（逆时针），所以使用角（ $-\phi, \theta, -\psi$ ）而
@@ -443,7 +445,7 @@ $$
 \begin{aligned}
 \lvert\sin{\theta}\rvert &= \sqrt{r_{13}^2 + r_{23}^2} \\ 
 & = \sqrt{\sin^2{\theta}(\cos^2{\theta + \sin^2{\theta}})}
-\end{aligned} \tag{S6}
+\end{aligned} \tag{27}
 $$
 
 这里考虑一些，欧拉角是否为 0 或 $\pi$ 的临界情况，
@@ -453,7 +455,7 @@ $$
 $$
 \theta = atan2(r_{32}, r_{31}) = \arctan{\left(\frac{\sin{\theta}\sin{\phi}}{\sin{\theta}\cos{\phi}}\right)}
  \\ 
-\psi = atan2(r_{23}, -r_{13}) = \arctan{\left(\frac{\sin{\psi}\sin{\theta}}{\cos{\psi}\sin{\theta}}\right)}\tag{S7}
+\psi = atan2(r_{23}, -r_{13}) = \arctan{\left(\frac{\sin{\psi}\sin{\theta}}{\cos{\psi}\sin{\theta}}\right)}\tag{28}
 $$
 
 这里通过 $\psi$ 的值来推算 $\sin{\theta}$ 的符号 $s$ ，
@@ -463,13 +465,13 @@ $$
 \sin{\psi} = 0 && s=\mathrm{sign}\left(\frac{-r_{13}}{\cos{\psi}}\right) = \mathrm{sign}(-\sin{\theta}) \\ 
  \\ 
 \sin{\psi}\neq 0 && s=\mathrm{sign}\left(\frac{r_{23}}{\sin(\psi)}\right) = \mathrm{sign}(\sin{\theta})
-\end{cases} \tag{S8}
+\end{cases} \tag{29}
 $$
 
 最终求出 $\theta$ 的值为，
 
 $$
-\theta = atan2(s\lvert\sin{\theta}\rvert, r_{33})\tag{S9}
+\theta = atan2(s\lvert\sin{\theta}\rvert, r_{33})\tag{30}
 $$
 
 同理，当 $\theta = 0$ 时，
@@ -479,13 +481,13 @@ $$
 \mathrm{sign}(r_{33}) = \cos{\theta}>0 && \theta=0, \psi=atan2(r_{21}, -r_{11}) \\ 
   \\ 
 \mathrm{sign}(r_{33})<0 && \theta=\pi, \psi=atan2(r_{21}, -r_{11})
-\end{cases} \tag{S10}
+\end{cases} \tag{31}
 $$
 
 不同软件对于欧拉角计算存在差异，如 EMAN 使用 $ZXZ$ ，但可以通过算法进行转换。在 EMAN 中使用 $\phi$，方位角（azimuth, az），以及高度（altitude, alt），
 
 $$
-R_{EMAN} = R_Z{\phi_{EMAN}}R_X(alt)R_Z(az) \tag{S11}
+R_{EMAN} = R_Z{\phi_{EMAN}}R_X(alt)R_Z(az) \tag{32}
 $$
 
 两个系统中的转换关系如下：
@@ -497,6 +499,85 @@ $$
 alt = \phi
 $$
 $$
-\phi_{EMAN} = \psi - \frac{\pi}{2} \tag{S12}
+\phi_{EMAN} = \psi - \frac{\pi}{2} \tag{33}
 $$
+
+#### 欧拉角的非唯一性
+
+由于欧拉角分解遵循一定的协议，如 $ZYZ$ 会存在非唯一性，第二个非唯一性来源于
+
+$$
+R(\phi, \theta, \psi) = R(\phi+\pi, -\theta, \psi-\pi)\tag{34}
+$$
+
+表征两个完全不同的欧拉角变换（ $ZYZ$ ）可能会表示相同的旋转。
+
+第三个非唯一性来源于围绕相同轴旋转两次，称为万向节锁问题（gimbal lock problem）。让我们假设 $\theta =0$ 有
+
+$$
+\begin{aligned}
+R(\phi, \theta, \psi) &= R_Z(\psi)R_Y(0)RZ(\phi) \\ 
+& = R_Z(\psi+\phi)
+\end{aligned}\tag{35}
+$$
+
+这样的话，对于任意 $\alpha$ 值，都有
+
+$$
+R(\phi, 0, \psi)=R(\phi+\alpha, 0, \psi-\alpha)\tag{36}
+$$
+
+所以在判断两个投影之间是否相近（**投影方向只与 $\phi$, $\theta$ 有关**），不能仅仅从欧拉角判断，还需要检查投影方向（ $R$ 矩阵第三行）是否接近。
+
+### 7. 四元数和视图向量（Quaternions and View Vectors）
+
+四元数作为复数的补充，其虚部为 3D 向量。写作
+
+$$
+q = a + bi + cj + dk\tag{37}
+$$
+
+其中，$a$ 为实部，$b$、$c$、$d$ 为虚部，而 $i$、$j$、$k$ 相当于虚数 $i$ 。也可以将四元数写作一个四维向量，
+
+$$
+q =(a, b, c, d)\tag{38}
+$$
+
+或者表示为数字和 3D 向量的和，
+
+$$
+q = a + (b, c, d)\tag{39}
+$$
+
+加法与复数相似，表示为
+
+$$
+(a, b, c, d) + (a', b', c', d') = (a+a', b+b', c+c', d+d')\tag{40}
+$$
+
+乘法更为复杂，参考复数的乘法，表示为
+
+$$
+\begin{aligned}
+(a\cdot1+b\cdot i)\cdot(a'\cdot1+b'\cdot i)&=aa'(1\cdot1)+ba'(i\cdot1)+ab'(1\cdot i)+bb'(i\cdot i) \\ 
+&=(aa'-bb')\cdot1+(ba'+ab')\cdot i
+\end{aligned}\tag{41}
+$$
+
+虚数乘积遵循以下关系，
+
+![p1](/assets/202211/2022-11-09-14-17-39.png)
+
+但对于四元数则更加复杂，遵循以下规则
+
+![p2](/assets/202211/2022-11-09-14-23-22.png)
+
+四元数可以在 Bsoft 旋转的内部表示中使用。围绕给定 3D 轴 $\mathbf{u}$ 旋转可以用四元数表示为，
+
+$$
+q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert}
+$$
+
+
+
 
