@@ -19,16 +19,16 @@ var _hmt = _hmt || [];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>C++ 美代码</title>
+  <title>C++ 代码收集</title>
   <meta name="description" content="计数">
   <meta name="author" content="Wei Wang">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="C++ 美代码">
+  <meta name="twitter:title" content="C++ 代码收集">
   <meta name="twitter:description" content="计数">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="C++ 美代码">
+  <meta property="og:title" content="C++ 代码收集">
   <meta property="og:description" content="计数">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -37,7 +37,7 @@ var _hmt = _hmt || [];
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2022/09/coding-library/">
+  <link rel="canonical" href="http://localhost:4000/2022/09/cplusplus/">
   <link rel="alternate" type="application/rss+xml" title="Zququ's blog" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw">
@@ -211,10 +211,12 @@ var _hmt = _hmt || [];
 				<!-- hitwebcounter Code START -->
 				本站自2019年7月已访问<img src="https://hitwebcounter.com/counter/counter.php?page=7976892&style=0038&nbdigits=6&type=page&initCount=7314" title="Free Counter" alt="web counter" border="0">
 			</p>
-			<h1 class="post-title">C++ 美代码</h1>
+			<h1 class="post-title">C++ 代码收集</h1>
 		</header>
 		<section class="post">
-			<h1 id="计数">计数</h1>
+			<h2 id="计数">计数</h2>
+
+<h3 id="2022-09-28">2022-09-28</h3>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="n">n</span><span class="o">++</span><span class="p">)</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">?</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">:</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">--</span><span class="p">){</span>
@@ -223,6 +225,33 @@ var _hmt = _hmt || [];
 <span class="err">}</span>
 </code></pre></div></div>
 
+<h2 id="特殊符号">特殊符号</h2>
+
+<h3 id="2022-11-09">2022-11-09</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="n">Point</span> <span class="n">point</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">point</span><span class="p">.</span><span class="n">toString</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>这里含义为描述类为标准库中 <code class="language-plaintext highlighter-rouge">ostream</code> 类的操作符 <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> 定义，输入参数为 <code class="language-plaintext highlighter-rouge">ostream</code> 类以及 <code class="language-plaintext highlighter-rouge">Point</code> 类中的 <code class="language-plaintext highlighter-rouge">point</code>。</p>
+
+<p>这里第一行不能更改为</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>std::ostream operator
+</code></pre></div></div>
+
+<p>的原因是，会影响 <code class="language-plaintext highlighter-rouge">&lt;&lt;</code> 的连续使用，即</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>只能使用</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">;</span> 
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>&lt;++&gt;</p>
 
 		</section>
 	</article>
