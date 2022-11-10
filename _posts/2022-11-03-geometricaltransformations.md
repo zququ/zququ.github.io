@@ -5,6 +5,7 @@ date: 2022-11-02 12:11:00:24.000000000 +09:00
 tags: cryo-EM
 ---
 
+
 <!-- TOC GFM -->
 
 * [齐次坐标表示](#齐次坐标表示)
@@ -575,9 +576,92 @@ $$
 四元数可以在 Bsoft 旋转的内部表示中使用。围绕给定 3D 轴 $\mathbf{u}$ 旋转可以用四元数表示为，
 
 $$
-q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert}
+q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert} \tag{42}
 $$
 
+如果将 $q_{\mathbf{u}, \alpha}$ 改写为 $q_{\mathbf{u}, \alpha} = a + (b, c, d)$ 的形式，可以推导出旋转矩阵为，
+
+$$
+R = \left(
+\begin{matrix}
+a^2 + b^2 - c^2 - d^2 & 2bc-ad & 2bd+2ac \\ 
+2bc+2ad & a^2 - b^2 + c^2 - d^2 & 2cd - 2ab \\ 
+2bd-2ac & 2cd + 2ab & a^2 - b^2 - c^2 + d^2
+\end{matrix}
+\right)\tag{43}
+$$
+
+该旋转矩阵可以按照公式 (2) 中相似的操作去进行旋转计算。对于每个旋转矩阵，存在唯一的范数为 1 的四元数 （单位四元数，unitary quaternion）。
+
+可以通过求解下面的等式来从旋转矩阵对角线中恢复四元数，
+
+$$
+\left(
+\begin{matrix}
+1 & 1 & -1 & -1 \\ 
+1 & -1 & 1 & -1 \\ 
+1 & -1 & -1 & 1 \\ 
+1 & 1 & 1 & 1 
+\end{matrix}
+\right)
+{}
+\left(
+\begin{matrix}
+a^2 \\ 
+b^2 \\ 
+c^2 \\ 
+d^2 \\ 
+\end{matrix}
+\right)=
+\left(
+\begin{matrix}
+r_{11} \\ 
+r_{22} \\ 
+r_{33} \\ 
+1
+\end{matrix}
+\right) \tag{44}
+$$
+
+其中最后一个等式强迫四元数范数为 1 。可以通过下面的等式求出四元数组分的符号，
+
+$$
+\begin{aligned}
+\mathrm{sign}(a) &= 1; \\ 
+\mathrm{sign}(b) &= \mathrm{sign}(r_{32} - r_{23}); \\ 
+\mathrm{sign}(c) &= \mathrm{sign}(r_{13} - r_{31}); \\ 
+\mathrm{sign}(d) &= \mathrm{sign}(r_{21} - r_{12});
+\end{aligned} \tag{45}
+$$
+
+四元数在这种情况下的唯一性是很重要的特性，因为可以通过对于他们相关表示的简单对比来比较两个几何上的情况。
+
+除了四元数，视图向量也可用于表示旋转。其**通过旋转轴 $(x, y, z)$ 以及围绕该轴的角度 $\alpha$ 来表示一个旋转过程**。有下面两个有点，
+
+1. 用四元数表示更加显而易见；
+2. 能提供如果从视图向量转换为欧拉 $ZYZ$ 角的转换公式。
 
 
+用下面参数进行计算与表示，
+
+$$
+\begin{aligned}
+x &= \cos{\phi}\sin{\theta} \\ 
+y &= \sin{\phi}\sin{\theta} \\ 
+z &= \cos{\theta} \\ 
+\alpha &= \phi + \psi
+\end{aligned} \tag{46}
+$$
+
+以上参数来自于公式 (26) 的第三行，并可以根据以上的视图向量可以获得欧拉角，
+
+$$
+\begin{cases}
+x = y = 0 && \phi = \theta = 0; \\ 
+ \\ 
+\text{else} && \phi = \arctan{(\frac{y}{x})}, \theta = \arctan{(z)};
+\end{cases} \tag{47}
+$$
+
+后由 $\psi = \alpha - \theta$ 计算 $\psi$ 的值。
 

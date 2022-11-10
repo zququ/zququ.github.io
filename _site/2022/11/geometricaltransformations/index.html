@@ -797,8 +797,95 @@ $$</p>
 <p>四元数可以在 Bsoft 旋转的内部表示中使用。围绕给定 3D 轴 $\mathbf{u}$ 旋转可以用四元数表示为，</p>
 
 <p>$$
-q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert}
+q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert} \tag{42}
 $$</p>
+
+<p>如果将 $q_{\mathbf{u}, \alpha}$ 改写为 $q_{\mathbf{u}, \alpha} = a + (b, c, d)$ 的形式，可以推导出旋转矩阵为，</p>
+
+<p>$$
+R = \left(
+\begin{matrix}
+a^2 + b^2 - c^2 - d^2 &amp; 2bc-ad &amp; 2bd+2ac \\ 
+2bc+2ad &amp; a^2 - b^2 + c^2 - d^2 &amp; 2cd - 2ab \\ 
+2bd-2ac &amp; 2cd + 2ab &amp; a^2 - b^2 - c^2 + d^2
+\end{matrix}
+\right)\tag{43}
+$$</p>
+
+<p>该旋转矩阵可以按照公式 (2) 中相似的操作去进行旋转计算。对于每个旋转矩阵，存在唯一的范数为 1 的四元数 （单位四元数，unitary quaternion）。</p>
+
+<p>可以通过求解下面的等式来从旋转矩阵对角线中恢复四元数，</p>
+
+<p>$$
+\left(
+\begin{matrix}
+1 &amp; 1 &amp; -1 &amp; -1 \\ 
+1 &amp; -1 &amp; 1 &amp; -1 \\ 
+1 &amp; -1 &amp; -1 &amp; 1 \\ 
+1 &amp; 1 &amp; 1 &amp; 1 
+\end{matrix}
+\right)
+{}
+\left(
+\begin{matrix}
+a^2 \\ 
+b^2 \\ 
+c^2 \\ 
+d^2 \\ 
+\end{matrix}
+\right)=
+\left(
+\begin{matrix}
+r_{11} \\ 
+r_{22} \\ 
+r_{33} \\ 
+1
+\end{matrix}
+\right) \tag{44}
+$$</p>
+
+<p>其中最后一个等式强迫四元数范数为 1 。可以通过下面的等式求出四元数组分的符号，</p>
+
+<p>$$
+\begin{aligned}
+\mathrm{sign}(a) &amp;= 1; \\ 
+\mathrm{sign}(b) &amp;= \mathrm{sign}(r_{32} - r_{23}); \\ 
+\mathrm{sign}(c) &amp;= \mathrm{sign}(r_{13} - r_{31}); \\ 
+\mathrm{sign}(d) &amp;= \mathrm{sign}(r_{21} - r_{12});
+\end{aligned} \tag{45}
+$$</p>
+
+<p>四元数在这种情况下的唯一性是很重要的特性，因为可以通过对于他们相关表示的简单对比来比较两个几何上的情况。</p>
+
+<p>除了四元数，视图向量也可用于表示旋转。其<strong>通过旋转轴 $(x, y, z)$ 以及围绕该轴的角度 $\alpha$ 来表示一个旋转过程</strong>。有下面两个有点，</p>
+
+<ol>
+  <li>用四元数表示更加显而易见；</li>
+  <li>能提供如果从视图向量转换为欧拉 $ZYZ$ 角的转换公式。</li>
+</ol>
+
+<p>用下面参数进行计算与表示，</p>
+
+<p>$$
+\begin{aligned}
+x &amp;= \cos{\phi}\sin{\theta} \\ 
+y &amp;= \sin{\phi}\sin{\theta} \\ 
+z &amp;= \cos{\theta} \\ 
+\alpha &amp;= \phi + \psi
+\end{aligned} \tag{46}
+$$</p>
+
+<p>以上参数来自于公式 (26) 的第三行，并可以根据以上的视图向量可以获得欧拉角，</p>
+
+<p>$$
+\begin{cases}
+x = y = 0 &amp;&amp; \phi = \theta = 0; \\ 
+ \\ 
+\text{else} &amp;&amp; \phi = \arctan{(\frac{y}{x})}, \theta = \arctan{(z)};
+\end{cases} \tag{47}
+$$</p>
+
+<p>后由 $\psi = \alpha - \theta$ 计算 $\psi$ 的值。</p>
 
 
 		</section>

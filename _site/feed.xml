@@ -5,8 +5,8 @@
     <description>欢迎！我是曲泽慧(@zququ)，目前在深圳（ICBI，BCBDI，SIAT）任职助理研究员。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Nov 2022 21:32:42 +0800</pubDate>
-    <lastBuildDate>Wed, 09 Nov 2022 21:32:42 +0800</lastBuildDate>
+    <pubDate>Thu, 10 Nov 2022 14:48:35 +0800</pubDate>
+    <lastBuildDate>Thu, 10 Nov 2022 14:48:35 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -591,8 +591,95 @@ $$&lt;/p&gt;
 &lt;p&gt;四元数可以在 Bsoft 旋转的内部表示中使用。围绕给定 3D 轴 $\mathbf{u}$ 旋转可以用四元数表示为，&lt;/p&gt;
 
 &lt;p&gt;$$
-q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert}
+q_{\mathbf{u},\alpha}=\cos{(\frac{\alpha}{2})} + \sin{(\frac{\alpha}{2})}\frac{\mathbf{u}}{\lvert\lvert \mathbf{u}\rvert\rvert} \tag{42}
 $$&lt;/p&gt;
+
+&lt;p&gt;如果将 $q_{\mathbf{u}, \alpha}$ 改写为 $q_{\mathbf{u}, \alpha} = a + (b, c, d)$ 的形式，可以推导出旋转矩阵为，&lt;/p&gt;
+
+&lt;p&gt;$$
+R = \left(
+\begin{matrix}
+a^2 + b^2 - c^2 - d^2 &amp;amp; 2bc-ad &amp;amp; 2bd+2ac \\ 
+2bc+2ad &amp;amp; a^2 - b^2 + c^2 - d^2 &amp;amp; 2cd - 2ab \\ 
+2bd-2ac &amp;amp; 2cd + 2ab &amp;amp; a^2 - b^2 - c^2 + d^2
+\end{matrix}
+\right)\tag{43}
+$$&lt;/p&gt;
+
+&lt;p&gt;该旋转矩阵可以按照公式 (2) 中相似的操作去进行旋转计算。对于每个旋转矩阵，存在唯一的范数为 1 的四元数 （单位四元数，unitary quaternion）。&lt;/p&gt;
+
+&lt;p&gt;可以通过求解下面的等式来从旋转矩阵对角线中恢复四元数，&lt;/p&gt;
+
+&lt;p&gt;$$
+\left(
+\begin{matrix}
+1 &amp;amp; 1 &amp;amp; -1 &amp;amp; -1 \\ 
+1 &amp;amp; -1 &amp;amp; 1 &amp;amp; -1 \\ 
+1 &amp;amp; -1 &amp;amp; -1 &amp;amp; 1 \\ 
+1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1 
+\end{matrix}
+\right)
+{}
+\left(
+\begin{matrix}
+a^2 \\ 
+b^2 \\ 
+c^2 \\ 
+d^2 \\ 
+\end{matrix}
+\right)=
+\left(
+\begin{matrix}
+r_{11} \\ 
+r_{22} \\ 
+r_{33} \\ 
+1
+\end{matrix}
+\right) \tag{44}
+$$&lt;/p&gt;
+
+&lt;p&gt;其中最后一个等式强迫四元数范数为 1 。可以通过下面的等式求出四元数组分的符号，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\mathrm{sign}(a) &amp;amp;= 1; \\ 
+\mathrm{sign}(b) &amp;amp;= \mathrm{sign}(r_{32} - r_{23}); \\ 
+\mathrm{sign}(c) &amp;amp;= \mathrm{sign}(r_{13} - r_{31}); \\ 
+\mathrm{sign}(d) &amp;amp;= \mathrm{sign}(r_{21} - r_{12});
+\end{aligned} \tag{45}
+$$&lt;/p&gt;
+
+&lt;p&gt;四元数在这种情况下的唯一性是很重要的特性，因为可以通过对于他们相关表示的简单对比来比较两个几何上的情况。&lt;/p&gt;
+
+&lt;p&gt;除了四元数，视图向量也可用于表示旋转。其&lt;strong&gt;通过旋转轴 $(x, y, z)$ 以及围绕该轴的角度 $\alpha$ 来表示一个旋转过程&lt;/strong&gt;。有下面两个有点，&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;用四元数表示更加显而易见；&lt;/li&gt;
+  &lt;li&gt;能提供如果从视图向量转换为欧拉 $ZYZ$ 角的转换公式。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;用下面参数进行计算与表示，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x &amp;amp;= \cos{\phi}\sin{\theta} \\ 
+y &amp;amp;= \sin{\phi}\sin{\theta} \\ 
+z &amp;amp;= \cos{\theta} \\ 
+\alpha &amp;amp;= \phi + \psi
+\end{aligned} \tag{46}
+$$&lt;/p&gt;
+
+&lt;p&gt;以上参数来自于公式 (26) 的第三行，并可以根据以上的视图向量可以获得欧拉角，&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{cases}
+x = y = 0 &amp;amp;&amp;amp; \phi = \theta = 0; \\ 
+ \\ 
+\text{else} &amp;amp;&amp;amp; \phi = \arctan{(\frac{y}{x})}, \theta = \arctan{(z)};
+\end{cases} \tag{47}
+$$&lt;/p&gt;
+
+&lt;p&gt;后由 $\psi = \alpha - \theta$ 计算 $\psi$ 的值。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 02 Nov 2022 12:11:00 +0800</pubDate>
@@ -639,11 +726,10 @@ $$&lt;/p&gt;
 
 &lt;p&gt;只能使用&lt;/p&gt;
 
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&amp;lt;++&amp;gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 28 Sep 2022 16:54:55 +0800</pubDate>
         <link>http://localhost:4000/2022/09/cplusplus/</link>
