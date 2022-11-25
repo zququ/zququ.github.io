@@ -19,6 +19,7 @@ tags: cryo-EM
     - [6. 欧拉角](#6-欧拉角)
         + [欧拉角的非唯一性](#欧拉角的非唯一性)
     - [7. 四元数和视图向量（Quaternions and View Vectors）](#7-四元数和视图向量quaternions-and-view-vectors)
+    - [8. 仿射变换：几个变换的组合](#8-仿射变换几个变换的组合)
 
 <!-- /TOC -->
 
@@ -664,4 +665,48 @@ x = y = 0 && \phi = \theta = 0; \\
 $$
 
 后由 $\psi = \alpha - \theta$ 计算 $\psi$ 的值。
+
+### 8. 仿射变换：几个变换的组合
+
+对于有限次数 $N$ 次连锁操作，包括之前所总结的平移、放大、缩小、切变、镜像以及旋转等等，如以下，
+
+$$
+\begin{aligned}
+\tilde{\mathbf{r}_{\tilde{A}_{1}}} &= \tilde{A}_{1}\tilde{\mathbf{r}} \\ 
+\tilde{\mathbf{r}_{\tilde{A}_{2}}} &= \tilde{A}_{2}\tilde{\mathbf{r}_{\tilde{A}_{1}}} \\ 
+\cdots \\ 
+\tilde{\mathbf{r}_{\tilde{A}_{N}}} &= \tilde{A}_{N}\tilde{\mathbf{r}}_{\tilde{A}_{N-1}} \\ 
+\end{aligned} \tag{48}
+$$
+
+以上可以结合为一个关系式，
+
+$$
+\tilde{A}_{\tilde{A}_{N}} = \left(\tilde{A}_{N}\cdots\tilde{A}_{2}\tilde{A}_{1}\right)\tilde{\mathbf{r}} \tag{49}
+$$
+
+给定一个仿射变换 $\tilde{A}$ ，首先对其进行第一步分解为，
+
+$$
+\tilde{A} = \tilde{T}\tilde{A}' = 
+\left(
+\begin{matrix}
+I_3 & \mathbf{t} \\ 
+\mathbf{0}^T & 1
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+A_3 & \mathbf{0} \\ 
+\mathbf{0}^T & 1
+\end{matrix}
+\right) \tag{50}
+$$
+
+
+
+
+
+
+
 

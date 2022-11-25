@@ -195,6 +195,15 @@ var _hmt = _hmt || [];
   <ol class="post-list">
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-24/" title="访问 汇编语言 实验5 第一部分">汇编语言 实验5 第一部分</a></h2>
+      <p class="excerpt">代码1assume cs:code, ds:data, ss:stackdata segment    dw 0123h, 0456h, 0789h, 0abch, 0defh, 0fedh, 0cbah, 0987hdata endsstack segment    dw 0, 0, 0, 0, 0, 0, 0, 0stack endscode segmentstart: mov ax, stack       mov ss, ax       mov sp, 16       mov ...…</p>
+      <div class="post-list__meta">
+<time datetime="2019-11-06 21:49:24 +0800" class="post-list__meta--date date">2019-11-06</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/11/assembly-language-24/">More</a>
+</div>
+      <hr class="post-list__divider">
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2019/11/assembly-language-23/" title="访问 汇编语言 6.2 6.3 在代码中使用段 将数据代码栈放入不同的段">汇编语言 6.2 6.3 在代码中使用段 将数据代码栈放入不同的段</a></h2>
       <p class="excerpt">6.2 在代码中使用栈让我们利用栈，将程序中定义的数据逆序存放。实现代码如下：assume cs:codesgcodesg segment        dw 0123h, 0456h, 0789h, 0abch, 0defh, 0fedh, 0cbah, 0987h    dw 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0    ;这里dw定义了16个字型数据，在程序加在后，将取得16个字    ;的内存空间，存放这16个数据。后面将这段空...…</p>
       <div class="post-list__meta">
@@ -275,15 +284,6 @@ var _hmt = _hmt || [];
       <hr class="post-list__divider">
     </li>
     
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/assembly-language-18/" title="访问 汇编语言 5.4 Debug masm对指令的不同处理">汇编语言 5.4 Debug masm对指令的不同处理</a></h2>
-      <p class="excerpt">5.4Debug 指令复习首先复习一下Debug命令：-r ;命令显示当前的通用寄存器情况-t ;分步执行命令-d ;查看目标地址的二进制码及ASC码-e ;改写目标地址的二进制代码-a ;从目标地址处开始添加代码-r ;更改代码段或偏移地址指针masm访问内存单元的方法之前在5.3提过，编译环境下并不能直接识别Debug中的mov ax, [0]命令，会将[0]识别为数值0写入ax寄存器中。而实现masm访问内存内存单元的方法有两个:第一种方法：mov ax, 2000H ;这里注意必须...…</p>
-      <div class="post-list__meta">
-<time datetime="2019-10-27 11:07:24 +0800" class="post-list__meta--date date">2019-10-27</time> • <span class="post-list__meta--tags tags">汇编语言</span><a class="btn-border-small" href="/2019/10/assembly-language-18/">More</a>
-</div>
-      <hr class="post-list__divider">
-    </li>
-    
   </ol>
 
   <hr class="post-list__divider ">
@@ -292,7 +292,7 @@ var _hmt = _hmt || [];
     
         <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/page/9/#blog">← Recent Posts</a>
     
-    <span class="pagination__page-number">10 / 14</span>
+    <span class="pagination__page-number">10 / 15</span>
     
         <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/page/11/#blog">Earlier Posts →</a>
     
