@@ -17,8 +17,6 @@ $$
 \cos(\pi\Delta zk^2 + \frac{\pi}{2}k^4)
 $$
 
-#### case1: 
-
 $\Delta z = 0$
 
 ![p1](/assets/20221206/2022-12-06-14-44-53.png)
