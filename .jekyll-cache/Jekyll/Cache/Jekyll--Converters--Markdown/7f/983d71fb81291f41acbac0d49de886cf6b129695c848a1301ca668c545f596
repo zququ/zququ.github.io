@@ -1,0 +1,28 @@
+I")<p>将添加 VPP 后的 CTF 函数表达为：</p>
+
+<p>$$
+\cos(\pi\Delta z \lambda k^2 + \frac{\pi}{2}\mathrm{Cs}\lambda^3k^4)
+$$</p>
+
+<p>其中令 $\lambda$, $\mathrm{Cs}$ 值为 1，原式简化为，</p>
+
+<p>$$
+\cos(\pi\Delta zk^2 + \frac{\pi}{2}k^4)
+$$</p>
+
+<p>$\Delta z = 0$</p>
+
+<p><img src="/assets/20221206/2022-12-06-14-44-53.png" alt="p1" /></p>
+
+<p>$\Delta z = 1$</p>
+
+<p><img src="/assets/20221206/2022-12-06-14-46-00.png" alt="p2" /></p>
+
+<p>$\Delta z = 5$</p>
+
+<p><img src="/assets/20221206/2022-12-06-14-46-33.png" alt="p3" /></p>
+
+<p>可以看出，随着欠交值 $\Delta z$ 的增大，在低频范围内，曲线趋于水平，这也就是为什么在使用 VPP 的情况下，一些文章将 $\Delta z$ 近似估计为 0 。</p>
+
+<p>虽然我个人觉得这种估计不是很严谨。</p>
+:ET
