@@ -10,7 +10,7 @@ tags: math
 设 $\mathrm{X}$ 与 $\mathrm{Y}$ 函数符合联合分布，即 $(\mathrm{X}, \mathrm{Y})$ ~ $f(x, y)$，则 $\mathrm{Z} = \mathrm{X} + \mathrm{Y}$ 的概率密度为：
 
 $$
-f_{\mathrm{Z}}(z) = \int_{-\infin}^{+\infin}f(x, z-x)\mathrm{d}x
+f_{\mathrm{Z}}(z) = \int_{-\infty}^{+\infty}f(x, z-x)\mathrm{d}x
 $$
 
 由于联合分布概率密度可以写成边缘概率密度的乘积，给出 $\mathrm{F}_{\mathrm{z}}(z)$ 的定义，
@@ -19,7 +19,7 @@ $$
 \begin{aligned}
 \mathrm{F}_{\mathrm{Z}}(z) & \triangleq \mathrm{P}\lbrace\mathrm{Z} \leq z\rbrace = \mathrm{P}\lbrace \mathrm{X} + \mathrm{Y}\leq \mathrm{Z}\rbrace \\ 
 & = \int\int f(x, y) \mathrm{d}x\mathrm{d}y \\ 
-& = \int_{-\infin}^{+\infin}\mathrm{d}x\int_{-\infin}^{z-x}f(x, y)\mathrm{d}y \\ 
+& = \int_{-\infty}^{+\infty}\mathrm{d}x\int_{-\infty}^{z-x}f(x, y)\mathrm{d}y \\ 
 \end{aligned}
 $$
 
@@ -28,8 +28,8 @@ $$
 $$
 \begin{aligned}
 f_{\mathrm{Z}}(z) & = F_{\mathrm{Z}}^{'} \\ 
-& = \left(\int_{-{\infin}}^{+\infin}\left[\int_{-\infin}^{z-x}f(x,y)\mathrm{d}y\right]\mathrm{d}x\right) ^ {'}_{z} \\ 
-& = \int_{-\infin}^{+\infin}\left(\int_{-\infin}^{z-x}f(x,y)\mathrm{d}y\right)_{z}^{'}\mathrm{d}x \\ 
+& = \left(\int_{-{\infty}}^{+\infty}\left[\int_{-\infty}^{z-x}f(x,y)\mathrm{d}y\right]\mathrm{d}x\right) ^ {'}_{z} \\ 
+& = \int_{-\infty}^{+\infty}\left(\int_{-\infty}^{z-x}f(x,y)\mathrm{d}y\right)_{z}^{'}\mathrm{d}x \\ 
 & = \int f(x, z-x)\mathrm{d}x
 \end{aligned}
 $$
