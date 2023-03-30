@@ -28,9 +28,9 @@ $$
 
 $$
 \begin{aligned}
-f\_{\mathrm{Z}}(z) & = F\_{\mathrm{Z}}^{'} \\ 
-& = \left(\int\_{-{\infty}}^{+\infty}\left[\int\_{-\infty}^{z-x}f(x,y)\mathrm{d}y\right]\mathrm{d}x\right) ^ {'}\_{z} \\ 
-& = \int\_{-\infty}^{+\infty}\left(\int\_{-\infty}^{z-x}f(x,y)\mathrm{d}y\right)\_{z}^{'}\mathrm{d}x \\ 
+f\_{\mathrm{Z}}(z) & = F\_{\mathrm{Z}}' \\ 
+& = \left(\int\_{-{\infty}}^{+\infty}\left[\int\_{-\infty}^{z-x}f(x,y)\mathrm{d}y\right]\mathrm{d}x\right)'\_{z} \\ 
+& = \int\_{-\infty}^{+\infty}\left(\int\_{-\infty}^{z-x}f(x,y)\mathrm{d}y\right)\_{z}'\mathrm{d}x \\ 
 & = \int f(x, z-x)\mathrm{d}x
 \end{aligned}
 $$
