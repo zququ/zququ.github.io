@@ -15,7 +15,7 @@ $$
 \int\_{-\infty}^{\infty} \lvert x(t)\rvert ^2 \mathrm{d}t = \int\_{-\infty}^{\infty} \lvert X(f)\rvert ^2 \mathrm{d}f
 $$
 
-定义一组可以在时域与频域相互转换的信号关系式：
+定义一组可以在时域与频域相互转换的信号关系式，为了证明这一点，分别表示在时域和频域上的能量：
 
 $$
 X(f) = \int\_{-\infty}^{\infty} x(t) e^{-j2\pi ft}\mathrm{d}t
@@ -25,9 +25,7 @@ $$
 x(t) = \int\_{-\infty}^{\infty} X(f) e^{-j2\pi ft}\mathrm{d}f
 $$
 
-
-
-为了证明这一点，分别表示在时域和频域上的能量：
+带入能量方程：
 
 $$
 \begin{aligned}
