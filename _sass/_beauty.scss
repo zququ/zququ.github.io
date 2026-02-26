@@ -1,0 +1,117 @@
+// ------------------------------
+// BLOG BEAUTY OVERRIDES
+// ------------------------------
+
+.blog-hero {
+  margin: 0 0 2.5em;
+  padding: 1.2em 0 1.6em;
+  border-bottom: 1px dashed rgba($gray, .5);
+
+  &__title {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: .02em;
+    color: $gray-darkest;
+  }
+
+  &__subtitle {
+    margin: .6em 0 .5em;
+    color: $gray-dark;
+    font-size: 1.02em;
+    line-height: 1.6;
+    max-width: 62ch;
+  }
+
+  &__meta {
+    margin: 0;
+    color: darken($gray, 20%);
+    font-size: .9em;
+  }
+}
+
+.main-post-list {
+  position: relative;
+  margin-top: 1.1em;
+}
+
+.post-list {
+  li.post-list__item {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid $gray-light;
+    border-radius: 14px;
+    padding: 1.3em 1.4em 0.95em;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+    transition: transform .25s ease, box-shadow .25s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.09);
+      border-color: lighten($primary-color, 5%);
+    }
+
+    .post-list__post-title {
+      margin-bottom: .45em;
+      a {
+        color: $gray-darkest;
+        &:hover {
+          color: $hover-color;
+        }
+      }
+    }
+
+    .excerpt {
+      color: $body-color;
+      font-size: .96em;
+      line-height: 1.72;
+    }
+
+    .post-list__divider {
+      margin-top: 1.4em;
+      width: 100%;
+      border-top: 1px solid $gray-light;
+    }
+  }
+
+  li + li {
+    margin-top: 1.3em;
+  }
+}
+
+.post-list__meta--tags {
+  display: inline-block;
+  margin-right: .4em;
+  padding: .12em .55em;
+  border-radius: 999px;
+  background: lighten($secondary-color, 40%);
+  border: 1px solid lighten($secondary-color, 28%);
+  font-size: .74em;
+}
+
+.blog-button {
+  text-decoration: none;
+}
+
+.content-wrapper {
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.9));
+}
+
+.footer {
+  border-top-color: rgba($gray, .22);
+}
+
+@media all and (max-width: 960px) {
+  .post-list {
+    li.post-list__item {
+      padding: 1.05em;
+    }
+  }
+
+  .blog-hero {
+    &__title { font-size: 1.55rem; }
+    &__subtitle { max-width: 100%; }
+  }
+
+  .content-wrapper {
+    background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.93));
+  }
+}

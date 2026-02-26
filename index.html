@@ -2,18 +2,26 @@
 layout: default
 ---
 
-<div class="main-post-list hidden">
+<section class="blog-hero">
+  <h1 class="blog-hero__title">{{ site.title }}</h1>
+  <p class="blog-hero__subtitle">{{ site.description }}</p>
+  <p class="blog-hero__meta">
+    共 {{ site.posts | size }} 篇文章 • 最近更新：{{ site.posts.first.date | date: "%Y-%m-%d" }}
+  </p>
+</section>
 
-  <ol class="post-list">
+<div class="main-post-list">
+
+  <ul class="post-list">
     {% for post in paginator.posts %}
-    <li>
+    <li class="post-list__item">
       <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
-      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
-      <div class="post-list__meta"><time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">{{ post.date | date: "%F"}}</time> &#8226; <span class="post-list__meta--tags tags">{{ post.tags | join:' ' }}</span><a class="btn-border-small" href={{ post.url }}>More</a></div>
+      <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 260 }}&hellip;</p>
+      <div class="post-list__meta"><time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">{{ post.date | date: "%F"}}</time> &#8226; <span class="post-list__meta--tags tags">{{ post.tags | join:' ' }}</span><a class="btn-border-small" href={{ post.url }}>阅读全文</a></div>
       <hr class="post-list__divider" />
     </li>
     {% endfor %}
-  </ol>
+  </ul>
 
   {% include pagination.html %}
 
