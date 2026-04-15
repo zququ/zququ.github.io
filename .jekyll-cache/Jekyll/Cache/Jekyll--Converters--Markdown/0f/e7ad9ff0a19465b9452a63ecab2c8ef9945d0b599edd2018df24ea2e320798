@@ -1,2 +1,0 @@
-I"þ<p>In the problem of logistic regression, MSE (Mean Squared Error) is not good enough to describe the loss of the training model. <strong>Cross entropy</strong> is an important concept in logistic regression, which comes from the information theory.</p>
-:ET

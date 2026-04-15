@@ -1,0 +1,8 @@
+node_modules/
+public/
+db.json
+.deploy_git/
+.DS_Store
+_legacy_jekyll/.bundle/
+_legacy_jekyll/.jekyll-cache/
+_legacy_jekyll/_site/

@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<section id="about" class="home-section">
+  <p>{{ site.description }}</p>
+  {% if site.welcome_message %}
+  <p>{{ site.welcome_message }}</p>
+  {% endif %}
+  {% include social.html %}
+</section>
+
+<section id="writing" class="home-section">
+  <div class="section-heading">
+    <h2 class="section-title"><a href="{{ '/' | relative_url }}">Articles</a></h2>
+    <p class="section-meta">
+      共 {{ site.posts | size }} 篇文章{% if site.posts.first %}，最近更新 {{ site.posts.first.date | date: "%Y-%m-%d" }}{% endif %}
+    </p>
+  </div>
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+    <li class="post-item">
+      <time class="meta" datetime="{{ post.date | date: date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <span><a href="{{ post.url | relative_url }}" title="访问 {{ post.title }}">{{ post.title }}</a></span>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% include pagination.html %}
+</section>

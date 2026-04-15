@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+{% include head.html %}
+<body class="{% if page.layout == 'post' %}template-post{% elsif page.url == '/tags/' %}template-tags{% endif %}">
+  <div class="site-shell">
+    <div class="site-frame">
+      {% include header.html %}
+      <main class="site-content{% if page.url == '/' %} site-content--home{% endif %}">
+        {{ content }}
+      </main>
+      {% include footer.html %}
+    </div>
+  </div>
+  <script src="{{ '/js/main.js' | relative_url }}"></script>
+</body>
+</html>

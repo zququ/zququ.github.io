@@ -1,0 +1,11 @@
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" role="navigation">
+  {% if paginator.previous_page %}
+  <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>
+  {% endif %}
+  <span class="page-number">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+  <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>
+  {% endif %}
+</nav>
+{% endif %}

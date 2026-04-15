@@ -1,2 +1,0 @@
-I"W<p>如果tzinfo为None，返回None；否则返回self.tzinfo.utcoffset(self)</p>
-:ET

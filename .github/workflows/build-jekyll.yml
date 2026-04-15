@@ -1,4 +1,4 @@
-name: Build and Deploy to Github Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -12,22 +12,24 @@ permissions:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    container: ruby:2.7
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
       - name: Install dependencies
-        run: |
-          bundle config set path vendor/bundle
-          bundle install --jobs 4 --retry 3
+        run: npm install
 
       - name: Build site
-        run: bundle exec jekyll build -d ./_site
+        run: npm run build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./_site
+          publish_dir: ./public
           force_orphan: true

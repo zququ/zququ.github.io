@@ -1,0 +1,19 @@
+{% if page.next or page.previous %}
+<section class="read-more">
+  <h2 class="section-title">More Writing</h2>
+  <ul class="post-list post-list--related">
+    {% if page.next %}
+    <li class="post-item">
+      <time class="meta" datetime="{{ page.next.date | date: date_to_xmlschema }}">{{ page.next.date | date: "%Y-%m-%d" }}</time>
+      <span><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a></span>
+    </li>
+    {% endif %}
+    {% if page.previous %}
+    <li class="post-item">
+      <time class="meta" datetime="{{ page.previous.date | date: date_to_xmlschema }}">{{ page.previous.date | date: "%Y-%m-%d" }}</time>
+      <span><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a></span>
+    </li>
+    {% endif %}
+  </ul>
+</section>
+{% endif %}

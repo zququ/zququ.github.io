@@ -1,0 +1,20 @@
+<footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; {{ site.time | date: "%Y" }} {{ site.creator | strip_html | default: site.title }}
+  </div>
+  <div class="footer-right">
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">home</a></li>
+        {% for item in site.nav %}
+        {% assign item_external = item.url contains '://' %}
+        <li>
+          <a href="{% if item_external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" {% if item_external %}target="_blank" rel="noopener"{% endif %}>
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</footer>

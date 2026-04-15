@@ -1,0 +1,66 @@
+# Basic
+title: 曲曲的秘密学术基地
+subtitle: 纯化欲望、坚持严肃性
+welcome_message: <a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>
+description: 欢迎！我是曲泽慧(@zququ)，目前在深圳（ICBI，BCBDI，SIAT）任职助理研究员。
+creator: <a href="https://zququcv.netlify.com">@zququ</a>
+
+url: "http://life.zququ.fun"
+
+permalink: /:year/:month/:title/
+
+# Format
+highlighter: rouge
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: purple 
+
+# The blog button should not be removed.
+blog_button:
+    title: 博客
+    description: To Home Page
+
+# Navigation buttons in the front page.
+nav:
+    - {title: 简历, description: Curriculum Vitae, url: 'https://zququcv.netlify.com'}
+    - {title: 标签, description: Tags Page, url: '/tags/'}
+
+# Pagination
+plugins: 
+  - jekyll-paginate
+  - jekyll-spaceship
+paginate: 10
+paginate_path: "page/:num/"
+
+# Comment
+comment:
+    disqus: zququ
+    #
+# Social
+social:
+    weibo: 1251190497
+    github: Zququ
+    twitter: qzh813
+    mail: qzh813@gmail.com
+    rg: Zehui_Qu2
+
+
+# Google Analytics
+#ga:
+    # id: your_ga_id 
+    # host: your_host
+
+# Baidu Analysis
+baidu-analysis: 18cdfb7c9ee74e1cfba49c447d3945eb 
+
+valine_comment:
+    enable: true
+# app_id
+    leancloud_appid: FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz 
+# app_key
+    leancloud_appkey: AMHLA0K7K1BXcSEWwusdyllN
+# placeholde
+    placeholder: "留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!"
+
+## Build settings
+#markdown: kramdown

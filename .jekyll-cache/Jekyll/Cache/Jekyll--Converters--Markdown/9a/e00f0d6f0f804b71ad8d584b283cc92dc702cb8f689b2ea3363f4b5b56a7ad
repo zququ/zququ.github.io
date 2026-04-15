@@ -1,2 +1,0 @@
-I"]<p>返回一个表示日期的字符串，同time.ctime(time.mktime(d/timetuple()))</p>
-:ET

@@ -1,0 +1,45 @@
+<div class="social-links">
+  <span class="social-links__label">Find me on</span>
+  <ul class="social-links__list">
+    {% if site.social.github %}
+    <li>
+      <a href="https://github.com/{{ site.social.github }}" title="GitHub" target="_blank" rel="noopener">
+        <i class="fa fa-github"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.social.twitter %}
+    <li>
+      <a href="https://twitter.com/{{ site.social.twitter }}" title="Twitter" target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.social.weibo %}
+    <li>
+      <a href="https://weibo.com/{{ site.social.weibo }}" title="Weibo" target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.social.rg %}
+    <li>
+      <a href="https://www.researchgate.net/profile/{{ site.social.rg }}" title="ResearchGate" target="_blank" rel="noopener">
+        <i class="fa fa-book"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.social.mail %}
+    <li>
+      <a href="mailto:{{ site.social.mail }}" title="Email">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+    {% endif %}
+    <li>
+      <a href="{{ '/feed.xml' | relative_url }}" title="RSS">
+        <i class="fa fa-rss"></i>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,66 +1,142 @@
-# Basic
 title: 曲曲的秘密学术基地
 subtitle: 纯化欲望、坚持严肃性
-welcome_message: <a href="https://www.researchgate.net/profile/Zehui_Qu2"> 病毒学、免疫学及结构生物学背景，可以在 RG 上找到我已发表的论文</a>
-description: 欢迎！我是曲泽慧(@zququ)，目前在深圳（ICBI，BCBDI，SIAT）任职助理研究员。
-creator: <a href="https://zququcv.netlify.com">@zququ</a>
+description: |
+  欢迎！我是曲泽慧（@zququ），目前在深圳（ICBI，BCBDI，SIAT）任职助理研究员。
 
-url: "http://life.zququ.fun"
-
-permalink: /:year/:month/:title/
-
-# Format
-highlighter: rouge
-
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: purple 
-
-# The blog button should not be removed.
-blog_button:
-    title: 博客
-    description: To Home Page
-
-# Navigation buttons in the front page.
-nav:
-    - {title: 简历, description: Curriculum Vitae, url: 'https://zququcv.netlify.com'}
-    - {title: 标签, description: Tags Page, url: 'http://life.zququ.fun/tags/'}
-
-# Pagination
-plugins: 
-  - jekyll-paginate
-  - jekyll-spaceship
-paginate: 10
-paginate_path: "page/:num/"
-
-# Comment
-comment:
-    disqus: zququ
-    #
-# Social
-social:
-    weibo: 1251190497
-    github: Zququ
-    twitter: qzh813
-    mail: qzh813@gmail.com
-    rg: Zehui_Qu2
-
-
-# Google Analytics
-#ga:
-    # id: your_ga_id 
-    # host: your_host
-
-# Baidu Analysis
-baidu-analysis: 18cdfb7c9ee74e1cfba49c447d3945eb 
-
-valine_comment:
+  [病毒学、免疫学及结构生物学背景，可以在 ResearchGate 上找到我已发表的论文](https://www.researchgate.net/profile/Zehui_Qu2)
+author: 曲泽慧
+language: zh-CN
+timezone: Asia/Shanghai
+url: http://life.zququ.fun
+root: /
+permalink: :year/:month/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+markdown:
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  auto_detect: false
+  line_number: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: false
+  line_number: false
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+per_page: 10
+pagination_dir: page
+archive_generator:
+  per_page: 20
+  yearly: true
+  monthly: true
+  daily: false
+tag_generator:
+  per_page: 30
+category_generator:
+  per_page: 20
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  autodiscovery: true
+  content: false
+theme: cactus
+theme_config:
+  projects_url: https://github.com/Zququ
+  direction: ltr
+  nav:
+    home: /
+    articles: /archives/
+    tag: /tags/
+    简历: https://zququcv.netlify.com
+  social_links:
+    - icon: github
+      link: https://github.com/Zququ
+    - icon: twitter
+      link: https://twitter.com/qzh813
+    - icon: weibo
+      link: https://weibo.com/1251190497
+    - icon: researchgate
+      link: https://www.researchgate.net/profile/Zehui_Qu2
+    - icon: mail
+      link: mailto:qzh813@gmail.com
+  tags_overview: false
+  posts_overview:
+    show_all_posts: true
+    sort_updated: false
+  archive:
+    sort_updated: false
+  post:
+    show_updated: false
+  copyright:
+    start_year: 2019
+  error_404:
+    enabled: true
+    title: 404 页面不存在
+    description: 你访问的页面不存在，或者已经被移动。
+  logo:
+    enabled: true
+    width: 50
+    height: 50
+    url: /images/avatar.jpg
+    gravatar: false
+    grayout: false
+  favicon:
+    desktop:
+      url: /favicon.ico
+      gravatar: false
+    android:
+      url: /images/avatar.jpg
+      gravatar: false
+    apple:
+      url: /images/avatar.jpg
+      gravatar: false
+  colorscheme: white
+  page_width: 48
+  rss: atom.xml
+  mathjax:
+    enabled: true
+  utterances:
+    enabled: true
+    repo: zququ/zququ.github.io
+    issue_term: pathname
+    label: Comment
+    theme: github-light
+  baidu_analytics:
+    enabled: true
+    id: 18cdfb7c9ee74e1cfba49c447d3945eb
+  mermaid:
+    enabled: true
+    theme: default
+  cdn:
     enable: true
-# app_id
-    leancloud_appid: FjbsHwFujLmrV58RJWOoC1XG-gzGzoHsz 
-# app_key
-    leancloud_appkey: AMHLA0K7K1BXcSEWwusdyllN
-# placeholde
-    placeholder: "留下昵称和邮箱可以获得回复通知. Leave a nickname and email to get a reply. Welcome your comment!"
-
-## Build settings
-#markdown: kramdown
+    jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js
+    clipboard: https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js
+    font_awesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+    justified_gallery_css: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css
+    justified_gallery_js: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
