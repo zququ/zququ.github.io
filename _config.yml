@@ -94,7 +94,7 @@ theme_config:
   post:
     show_updated: false
   copyright:
-    start_year: 2019
+    start_year: 2026
   error_404:
     enabled: true
     title: 404 页面不存在
