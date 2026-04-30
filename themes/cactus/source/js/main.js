@@ -11,6 +11,35 @@ if (!!$.prototype.justifiedGallery) {
 }
 
 $(document).ready(function() {
+  var goyoToggle = document.getElementById("goyo-toggle");
+  if (goyoToggle) {
+    var goyoStorageKey = "zququ-goyo-mode";
+    var setGoyoMode = function(active) {
+      document.body.classList.toggle("goyo-active", active);
+      goyoToggle.setAttribute("aria-pressed", active ? "true" : "false");
+      goyoToggle.setAttribute("aria-label", active ? "Exit Goyo reading mode" : "Enter Goyo reading mode");
+      goyoToggle.textContent = active ? "Exit Goyo" : "Goyo";
+      try {
+        window.localStorage.setItem(goyoStorageKey, active ? "1" : "0");
+      } catch (err) {}
+    };
+
+    try {
+      setGoyoMode(window.localStorage.getItem(goyoStorageKey) === "1");
+    } catch (err) {
+      setGoyoMode(false);
+    }
+
+    goyoToggle.addEventListener("click", function() {
+      setGoyoMode(!document.body.classList.contains("goyo-active"));
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape" && document.body.classList.contains("goyo-active")) {
+        setGoyoMode(false);
+      }
+    });
+  }
 
   /**
    * Shows the responsive navigation menu on mobile.

@@ -233,3 +233,159 @@ code
 
 #header-post #actions
   direction: ltr !important
+
+.goyo-toggle
+  position: fixed
+  top: 1rem
+  right: 1rem
+  z-index: 1000
+  padding: .35rem .65rem
+  border: 1px solid $color-border
+  border-radius: 3px
+  background: $color-background
+  color: $color-text
+  font: 600 .72rem $font-family-mono
+  letter-spacing: 0
+  line-height: 1
+  cursor: pointer
+  opacity: .72
+  transition: opacity .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease
+
+  &:hover
+    opacity: 1
+
+body.goyo-active
+  max-width: none
+  padding-right: 0
+  padding-left: 0
+  border-top: 0
+  background: #4b4b4b
+  color: #d8d2cc
+  font-family: $font-family-mono
+
+  .goyo-toggle
+    border-color: #8f8774
+    background: #4b4b4b
+    color: #d9b47c
+    opacity: .9
+
+  #header-post,
+  #footer-post,
+  .article-gallery,
+  .meta,
+  .article-tag,
+  .article-category,
+  .comments,
+  #comments,
+  #disqus_thread,
+  #utterances_thread,
+  .utterances,
+  footer,
+  .footer,
+  #footer,
+  .post + *
+    display: none !important
+
+  > .content
+    display: block
+    max-width: 46rem
+    min-height: auto
+    margin: 0 auto
+    padding: 12vh 2rem 16vh
+    background: transparent
+
+  article.post
+    margin: 0
+    color: #d8d2cc
+
+    header
+      margin-bottom: 2.5rem
+
+    .posttitle
+      color: #e6bcbc
+      font-family: $font-family-mono
+      font-size: 1.5rem
+      font-weight: 400
+      line-height: 1.35
+      text-transform: none
+
+      &:after
+        display: block
+        width: max-content
+        margin-top: .25rem
+        color: #bdb178
+        content: "================"
+        font-size: 1rem
+
+    .content
+      display: block
+      min-height: 0
+      color: #d8d2cc
+      font-size: 1.02rem
+      line-height: 1.95
+
+      p
+        text-align: left
+        hyphens: manual
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6
+        color: #e6bcbc
+        font-family: $font-family-mono
+        font-weight: 400
+        letter-spacing: 0
+
+      h2:before
+        display: none
+
+      h2:after,
+      h3:after
+        display: block
+        width: max-content
+        margin-top: .1rem
+        color: #bdb178
+        content: "------------"
+        font-size: .9rem
+
+      a
+        color: #f1c984
+        background-image: none
+        text-decoration: underline
+        text-decoration-thickness: 1px
+        text-underline-offset: .18em
+
+      strong
+        color: #efe4d6
+        font-weight: 700
+
+      blockquote
+        border-left: 2px solid #8f8774
+        color: #c7c0b7
+
+      code
+        border-color: #746d63
+        background: #424242
+        color: #f1c984
+
+      pre,
+      .highlight
+        border-color: #746d63
+        background: #424242
+
+@media (max-width: 720px)
+  .goyo-toggle
+    top: .75rem
+    right: .75rem
+
+  body.goyo-active
+    > .content
+      padding: 5rem 1.25rem 6rem
+
+    article.post
+      .content
+        font-size: .98rem
+        line-height: 1.85

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html<%= config.language ? " lang=" + config.language.substring(0, 2) : ""%>>
 <%- partial('_partial/head') %>
-<body class="max-width mx-auto px3 <%- theme.direction -%>">
+<body class="max-width mx-auto px3 <%- theme.direction -%><%= is_post() ? ' has-goyo-mode' : '' %>">
+    <% if (is_post()) { %>
+      <button id="goyo-toggle" class="goyo-toggle" type="button" aria-label="Enter Goyo reading mode" aria-pressed="false">Goyo</button>
+    <% } %>
     <% if (is_post()) { %>
       <%- partial('_partial/post/actions_desktop') %>
     <% } %>
