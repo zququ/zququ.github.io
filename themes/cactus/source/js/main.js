@@ -1,16 +1,4 @@
-/**
- * Sets up Justified Gallery.
- */
-if (!!$.prototype.justifiedGallery) {
-  var options = {
-    rowHeight: 140,
-    margins: 4,
-    lastRow: "justify"
-  };
-  $(".article-gallery").justifiedGallery(options);
-}
-
-$(document).ready(function() {
+function setupGoyoMode() {
   var goyoToggle = document.getElementById("goyo-toggle");
   if (goyoToggle) {
     var goyoStorageKey = "zququ-goyo-mode";
@@ -18,7 +6,7 @@ $(document).ready(function() {
       document.body.classList.toggle("goyo-active", active);
       goyoToggle.setAttribute("aria-pressed", active ? "true" : "false");
       goyoToggle.setAttribute("aria-label", active ? "Exit Goyo reading mode" : "Enter Goyo reading mode");
-      goyoToggle.textContent = active ? "Exit Goyo" : "Goyo";
+      goyoToggle.textContent = "g";
       try {
         window.localStorage.setItem(goyoStorageKey, active ? "1" : "0");
       } catch (err) {}
@@ -40,6 +28,30 @@ $(document).ready(function() {
       }
     });
   }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupGoyoMode);
+} else {
+  setupGoyoMode();
+}
+
+if (typeof window.jQuery !== "undefined") {
+  var $ = window.jQuery;
+
+  /**
+   * Sets up Justified Gallery.
+   */
+  if (!!$.prototype.justifiedGallery) {
+    var options = {
+      rowHeight: 140,
+      margins: 4,
+      lastRow: "justify"
+    };
+    $(".article-gallery").justifiedGallery(options);
+  }
+
+$(document).ready(function() {
 
   /**
    * Shows the responsive navigation menu on mobile.
@@ -140,3 +152,4 @@ $(document).ready(function() {
     }
   }
 });
+}
