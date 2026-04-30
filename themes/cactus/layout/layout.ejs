@@ -3,7 +3,7 @@
 <%- partial('_partial/head') %>
 <body class="max-width mx-auto px3 <%- theme.direction -%><%= is_post() ? ' has-goyo-mode' : '' %>">
     <% if (is_post()) { %>
-      <button id="goyo-toggle" class="goyo-toggle" type="button" aria-label="Enter Goyo reading mode" aria-pressed="false">g</button>
+      <button id="goyo-toggle" class="goyo-toggle" type="button" aria-label="Enter Goyo reading mode" aria-pressed="false">goyo</button>
     <% } %>
     <% if (is_post()) { %>
       <%- partial('_partial/post/actions_desktop') %>

@@ -6,7 +6,7 @@ function setupGoyoMode() {
       document.body.classList.toggle("goyo-active", active);
       goyoToggle.setAttribute("aria-pressed", active ? "true" : "false");
       goyoToggle.setAttribute("aria-label", active ? "Exit Goyo reading mode" : "Enter Goyo reading mode");
-      goyoToggle.textContent = "g";
+      goyoToggle.textContent = "goyo";
       try {
         window.localStorage.setItem(goyoStorageKey, active ? "1" : "0");
       } catch (err) {}

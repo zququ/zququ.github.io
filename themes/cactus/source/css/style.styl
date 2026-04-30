@@ -236,27 +236,27 @@ code
 
 .goyo-toggle
   position: fixed
-  top: 1.95rem
-  right: 5.75rem
+  top: 2rem
+  right: 5.35rem
   z-index: 1000
-  padding: 0
-  width: 1.35rem
-  height: 1.35rem
+  padding: 0 .15rem
+  width: auto
+  height: 1.5rem
   border: 0
   background: transparent
-  color: $color-text
-  font: 700 1rem $font-family-mono
-  letter-spacing: 0
-  line-height: 1.35rem
+  color: $color-accent-1
+  font: 500 .95rem $font-family-mono
+  letter-spacing: .01em
+  line-height: 1.5rem
   text-align: center
   text-transform: lowercase
   cursor: pointer
-  opacity: .72
-  transition: opacity .15s ease, color .15s ease, transform .15s ease
+  opacity: .82
+  transition: opacity .15s ease, color .15s ease
 
   &:hover
     opacity: 1
-    color: $color-accent-1
+    color: $color-link
 
   &:focus
     outline: none
@@ -278,7 +278,6 @@ body.goyo-active
   .goyo-toggle
     color: #d9b47c
     opacity: 1
-    transform: scale(1.08)
 
   #header-post,
   #footer-post,
@@ -390,7 +389,7 @@ body.goyo-active
 @media (max-width: 720px)
   .goyo-toggle
     top: .75rem
-    right: 4.75rem
+    right: 4.25rem
 
   body.goyo-active
     > .content
