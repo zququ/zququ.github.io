@@ -10,9 +10,7 @@ tags:
 comments: true
 ---
 
-本文基于 Zotero collection `ZququRAY / seeg/warning` 中的文献整理而成。导出时 collection 内共有 16 条记录，其中 15 条与癫痫发作检测、预测、SEEG/iEEG/EEG 信号分析或临床转化相关；另有 1 条数学博客网页记录（原 Zotero 编号 S12）与本主题无关，本文不纳入综述。
-
-这组文献不只是在比较“哪个模型准确率更高”，而是在回答三个层次的问题。第一，EEG/SEEG 信号怎样被转换为可以学习的表示，例如频谱功率、时频图、纹理特征或图像化波形 <sup class="citation">[<a href="#ref-s1">1</a>,<a href="#ref-s15">14</a>,<a href="#ref-s16">15</a>]</sup>。第二，模型怎样利用这些表示完成检测、预测或分类，例如 SVM、FCN、MobileNetV2、1D CNN 和 SEEGformer <sup class="citation">[<a href="#ref-s2">2</a>,<a href="#ref-s8">8</a>,<a href="#ref-s9">9</a>,<a href="#ref-s13">12</a>,<a href="#ref-s14">13</a>]</sup>。第三，算法结果能否进入临床流程，例如发作前期窗口、误报率、有效连接、手术预后和基础模型迁移 <sup class="citation">[<a href="#ref-s3">3</a>,<a href="#ref-s4">4</a>,<a href="#ref-s7">7</a>,<a href="#ref-s10">10</a>]</sup>。
+围绕 SEEG/EEG 癫痫发作检测与预测，当前研究不只是在比较“哪个模型准确率更高”，而是在回答三个层次的问题。第一，EEG/SEEG 信号怎样被转换为可以学习的表示，例如频谱功率、时频图、纹理特征或图像化波形 <sup class="citation">[<a href="#ref-s1">1</a>,<a href="#ref-s15">14</a>,<a href="#ref-s16">15</a>]</sup>。第二，模型怎样利用这些表示完成检测、预测或分类，例如 SVM、FCN、MobileNetV2、1D CNN 和 SEEGformer <sup class="citation">[<a href="#ref-s2">2</a>,<a href="#ref-s8">8</a>,<a href="#ref-s9">9</a>,<a href="#ref-s13">12</a>,<a href="#ref-s14">13</a>]</sup>。第三，算法结果能否进入临床流程，例如发作前期窗口、误报率、有效连接、手术预后和基础模型迁移 <sup class="citation">[<a href="#ref-s3">3</a>,<a href="#ref-s4">4</a>,<a href="#ref-s7">7</a>,<a href="#ref-s10">10</a>]</sup>。
 
 ## 1. 先区分任务：检测、预测、鉴别诊断和术前定位不是一回事
 
@@ -26,7 +24,7 @@ Fussner 等的工作很适合作为“任务进入临床流程”的例子。他
 
 **图 1 说明。** 这张图的关键不在于模型名字，而在于它把“临床已经存在的阅片对象”变成了机器学习输入。A 部分是数据采集：Site A 和 Site B 的 EMU 诊断与临床 EEG 数据先经过 montage、频率滤波和 plot length 设置，再捕获成 EEG plot data。B 部分是数据处理：图像被切成 5-6 秒片段，经过人工 review 和 EMG artifact image removal。C 部分才进入 CNN：图像被 resize 到 224 x 224，然后划分训练与测试数据。这个流程说明，深度学习并不一定要从原始电压序列开始；它也可以学习医生实际看到的图像化信号。不过这种设计也带来限制：模型性能会受到显示软件、montage、截图长度、artifact 过滤规则和跨中心图像风格差异的影响。
 
-这一点对 SEEG/EEG 博客写作很重要：讨论算法前必须先说清楚输入是什么、任务是什么、评价单位是什么。检测模型可以重点报告 accuracy、specificity、AUC 或 recall；预测模型必须同时回答能否提前预测、提前多久、每小时误报多少次。Zhang 和 Parhi 的低复杂度 iEEG/sEEG 预测工作突出实时和低功耗部署，属于预测系统范式 <sup class="citation">[<a href="#ref-s1">1</a>]</sup>；Gomez 等的 imaged-EEG FCN 工作主要面向自动检测，并报告 false alarms per hour <sup class="citation">[<a href="#ref-s13">12</a>]</sup>；Ren 等的综述则提醒我们，比较 seizure prediction model 时必须把指标定义和验证协议一起看 <sup class="citation">[<a href="#ref-s7">7</a>]</sup>。
+因此，在调研 SEEG/EEG 癫痫自动分析时，必须先说清楚输入是什么、任务是什么、评价单位是什么。检测模型可以重点报告 accuracy、specificity、AUC 或 recall；预测模型必须同时回答能否提前预测、提前多久、每小时误报多少次。Zhang 和 Parhi 的低复杂度 iEEG/sEEG 预测工作突出实时和低功耗部署，属于预测系统范式 <sup class="citation">[<a href="#ref-s1">1</a>]</sup>；Gomez 等的 imaged-EEG FCN 工作主要面向自动检测，并报告 false alarms per hour <sup class="citation">[<a href="#ref-s13">12</a>]</sup>；Ren 等的综述则提醒我们，比较 seizure prediction model 时必须把指标定义和验证协议一起看 <sup class="citation">[<a href="#ref-s7">7</a>]</sup>。
 
 ## 2. 传统特征工程仍然有价值：它把电生理先验显式写进模型
 
