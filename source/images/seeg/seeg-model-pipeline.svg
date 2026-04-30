@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">SEEG model pipeline</title>
+  <desc id="desc">A schematic comparison between feature engineering, deep learning, and foundation model pipelines.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffdfa"/>
+      <stop offset="1" stop-color="#f4fbff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0f172a" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="520" rx="34" fill="url(#bg)"/>
+  <text x="80" y="72" font-family="Menlo, Consolas, monospace" font-size="30" font-weight="700" fill="#172554">From hand-crafted features to foundation models</text>
+  <text x="80" y="108" font-family="Menlo, Consolas, monospace" font-size="16" fill="#52616b">The practical system is usually a hybrid, not a single isolated model.</text>
+  <g transform="translate(80 160)" font-family="Menlo, Consolas, monospace" filter="url(#shadow)">
+    <g>
+      <rect width="255" height="88" rx="20" fill="#ecfeff" stroke="#06b6d4"/>
+      <text x="24" y="34" font-size="18" font-weight="700" fill="#0e7490">Signal windows</text>
+      <text x="24" y="59" font-size="13" fill="#475569">SEEG / iEEG / EEG</text>
+    </g>
+    <g transform="translate(315 0)">
+      <rect width="255" height="88" rx="20" fill="#f0fdf4" stroke="#22c55e"/>
+      <text x="24" y="30" font-size="17" font-weight="700" fill="#15803d">Feature route</text>
+      <text x="24" y="55" font-size="13" fill="#475569">power, ratios, texture, PCA</text>
+    </g>
+    <g transform="translate(630 0)">
+      <rect width="255" height="88" rx="20" fill="#eff6ff" stroke="#3b82f6"/>
+      <text x="24" y="30" font-size="17" font-weight="700" fill="#1d4ed8">Deep route</text>
+      <text x="24" y="55" font-size="13" fill="#475569">CNN, Transformer, plot images</text>
+    </g>
+  </g>
+  <g stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M335 204 L390 204"/>
+    <path d="M650 204 L705 204"/>
+    <path d="M965 204 C1030 204 1030 305 965 305"/>
+  </g>
+  <g transform="translate(220 315)" font-family="Menlo, Consolas, monospace" filter="url(#shadow)">
+    <rect width="760" height="110" rx="26" fill="#fff" stroke="#dbe4ee"/>
+    <text x="32" y="38" font-size="19" font-weight="700" fill="#334155">Calibrated clinical risk score</text>
+    <text x="32" y="68" font-size="14" fill="#52616b">prediction horizon, false alarms per hour, patient-specific thresholds</text>
+    <g transform="translate(548 23)">
+      <rect width="160" height="54" rx="16" fill="#fdf2f8" stroke="#d946ef"/>
+      <text x="20" y="33" font-size="16" font-weight="700" fill="#a21caf">deployment</text>
+    </g>
+  </g>
+  <g transform="translate(136 270)" font-family="Menlo, Consolas, monospace" font-size="13" fill="#64748b">
+    <text x="0" y="0">expert prior</text>
+    <text x="302" y="0">learned representation</text>
+    <text x="646" y="0">pretraining / adaptation</text>
+  </g>
+</svg>

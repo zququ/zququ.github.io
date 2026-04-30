@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">SEEG and EEG seizure task map</title>
+  <desc id="desc">A schematic map separating seizure detection, prediction, localisation, and surgical outcome assessment.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fffb"/>
+      <stop offset="1" stop-color="#eef7ff"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0" x2="1">
+      <stop offset="0" stop-color="#2bbc8a"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1f2937" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="520" rx="34" fill="url(#bg)"/>
+  <g transform="translate(80 70)">
+    <text x="0" y="0" font-family="Menlo, Consolas, monospace" font-size="30" font-weight="700" fill="#12372f">SEEG / EEG seizure analytics</text>
+    <text x="0" y="38" font-family="Menlo, Consolas, monospace" font-size="16" fill="#53645f">Detection, prediction, localisation, and prognosis answer different clinical questions.</text>
+  </g>
+  <g transform="translate(80 165)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="1040" height="210" rx="28" fill="#fff"/>
+    <path d="M60 112 C105 45 155 176 205 106 S305 71 355 120 455 170 505 92 605 62 655 122 755 170 805 92 905 54 980 120" fill="none" stroke="url(#signal)" stroke-width="8" stroke-linecap="round"/>
+    <line x1="0" y1="150" x2="1040" y2="150" stroke="#d8e5e0" stroke-width="2"/>
+    <g font-family="Menlo, Consolas, monospace" font-size="15" fill="#334155">
+      <text x="65" y="185">interictal</text>
+      <text x="285" y="185">preictal window</text>
+      <text x="552" y="185">ictal event</text>
+      <text x="785" y="185">postictal</text>
+    </g>
+    <g fill="#2bbc8a">
+      <circle cx="565" cy="112" r="9"/>
+      <circle cx="328" cy="101" r="7"/>
+    </g>
+  </g>
+  <g transform="translate(92 410)" font-family="Menlo, Consolas, monospace">
+    <g>
+      <rect width="225" height="62" rx="16" fill="#f0fdf4" stroke="#2bbc8a"/>
+      <text x="22" y="27" font-size="18" font-weight="700" fill="#0f766e">Detection</text>
+      <text x="22" y="48" font-size="13" fill="#475569">Has a seizure occurred?</text>
+    </g>
+    <g transform="translate(270 0)">
+      <rect width="225" height="62" rx="16" fill="#eff6ff" stroke="#3b82f6"/>
+      <text x="22" y="27" font-size="18" font-weight="700" fill="#1d4ed8">Prediction</text>
+      <text x="22" y="48" font-size="13" fill="#475569">Can warning be early?</text>
+    </g>
+    <g transform="translate(540 0)">
+      <rect width="225" height="62" rx="16" fill="#fff7ed" stroke="#f59e0b"/>
+      <text x="22" y="27" font-size="18" font-weight="700" fill="#b45309">Localisation</text>
+      <text x="22" y="48" font-size="13" fill="#475569">Where is the network?</text>
+    </g>
+    <g transform="translate(810 0)">
+      <rect width="225" height="62" rx="16" fill="#fdf2f8" stroke="#d946ef"/>
+      <text x="22" y="27" font-size="18" font-weight="700" fill="#a21caf">Outcome</text>
+      <text x="22" y="48" font-size="13" fill="#475569">Will surgery help?</text>
+    </g>
+  </g>
+</svg>
