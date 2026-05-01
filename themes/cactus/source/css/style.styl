@@ -268,22 +268,25 @@ code
 
 #reader-note-controls
   position: fixed
-  top: 2rem
-  right: 8.4rem
+  top: 34vh
+  left: 1.35rem
   z-index: 1001
   display: flex
+  flex-direction: column
   align-items: center
-  gap: .55rem
+  gap: .35rem
   font-family: $font-family-mono
+  pointer-events: auto
 
   button
-    padding: 0 .05rem
+    padding: .12rem .18rem
     border: 0
     background: transparent
     color: $color-accent-1
-    font: 500 .9rem $font-family-mono
+    font: 500 .78rem $font-family-mono
     letter-spacing: .01em
-    line-height: 1.5rem
+    line-height: 1.1
+    writing-mode: vertical-rl
     text-transform: lowercase
     cursor: pointer
     opacity: .68
@@ -303,7 +306,7 @@ code
     &[aria-pressed="true"]
       color: $color-link
       opacity: 1
-      transform: translateY(-1px)
+      transform: translateX(1px)
 
 #reader-note-layer
   position: absolute
@@ -619,12 +622,23 @@ body.goyo-active
     right: 4.25rem
 
   #reader-note-controls
-    top: .75rem
-    right: 7rem
-    gap: .42rem
+    top: auto
+    right: 1rem
+    bottom: 4.75rem
+    left: auto
+    flex-direction: row
+    gap: .36rem
+    padding: .18rem .32rem
+    border: 1px solid alpha($color-accent-1, .2)
+    border-radius: 999px
+    background: alpha($color-background, .86)
+    box-shadow: 0 10px 24px alpha($color-text, .08)
+    backdrop-filter: blur(8px)
 
     button
       font-size: .82rem
+      line-height: 1.25rem
+      writing-mode: horizontal-tb
 
   .reader-note-bubble
     width: 16rem
