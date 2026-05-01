@@ -266,6 +266,215 @@ code
     outline: 1px solid $color-accent-1
     outline-offset: 4px
 
+#reader-note-controls
+  position: fixed
+  top: 2rem
+  right: 8.4rem
+  z-index: 1001
+  display: flex
+  align-items: center
+  gap: .55rem
+  font-family: $font-family-mono
+
+  button
+    padding: 0 .05rem
+    border: 0
+    background: transparent
+    color: $color-accent-1
+    font: 500 .9rem $font-family-mono
+    letter-spacing: .01em
+    line-height: 1.5rem
+    text-transform: lowercase
+    cursor: pointer
+    opacity: .68
+    transition: opacity .15s ease, color .15s ease, transform .15s ease
+
+    &:hover
+      color: $color-link
+      opacity: 1
+
+    &:focus
+      outline: none
+
+    &:focus-visible
+      outline: 1px solid $color-accent-1
+      outline-offset: 4px
+
+    &[aria-pressed="true"]
+      color: $color-link
+      opacity: 1
+      transform: translateY(-1px)
+
+#reader-note-layer
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 920
+  width: 100%
+  pointer-events: none
+
+.reader-note-bubble
+  position: absolute
+  width: 15.5rem
+  max-width: calc(100vw - 2rem)
+  padding: .55rem .7rem .55rem .8rem
+  border-left: 2px solid alpha($color-accent-1, .7)
+  border-radius: 3px 10px 10px 3px
+  background: alpha($color-background, .82)
+  box-shadow: 0 10px 30px alpha($color-text, .08)
+  color: alpha($color-text, .74)
+  font-family: $font-family-body
+  font-size: .78rem
+  line-height: 1.55
+  pointer-events: auto
+  backdrop-filter: blur(6px)
+  transform: translateY(-50%)
+  transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease
+
+  &:hover
+    color: $color-text
+    box-shadow: 0 14px 38px alpha($color-text, .12)
+
+    .reader-note-delete
+      opacity: .65
+
+  &.is-new
+    animation: note-drift-in .35s ease both
+
+.reader-note-quote
+  margin-bottom: .25rem
+  color: alpha($color-accent-1, .88)
+  font-family: $font-family-mono
+  font-size: .68rem
+  line-height: 1.3
+
+.reader-note-text
+  white-space: normal
+
+.reader-note-delete
+  position: absolute
+  top: .2rem
+  right: .35rem
+  padding: 0
+  border: 0
+  background: transparent
+  color: $color-meta
+  font-size: .95rem
+  line-height: 1
+  cursor: pointer
+  opacity: 0
+  transition: opacity .15s ease, color .15s ease
+
+  &:hover
+    color: $color-link
+    opacity: 1
+
+.reader-highlight
+  padding: .03em .08em
+  border-radius: .18em
+  background: linear-gradient(transparent 48%, alpha($color-accent-1, .24) 48%, alpha($color-accent-1, .24) 92%, transparent 92%)
+  color: inherit
+
+#reader-note-toolbar
+  position: absolute
+  z-index: 1100
+  display: none
+  gap: .15rem
+  padding: .22rem .25rem
+  border: 1px solid alpha($color-accent-1, .28)
+  border-radius: 999px
+  background: alpha($color-background, .9)
+  box-shadow: 0 12px 32px alpha($color-text, .1)
+  backdrop-filter: blur(8px)
+
+  &.is-visible
+    display: flex
+
+  button
+    padding: .18rem .48rem
+    border: 0
+    border-radius: 999px
+    background: transparent
+    color: $color-accent-1
+    font: 500 .72rem $font-family-mono
+    cursor: pointer
+
+    &:hover
+      background: alpha($color-accent-1, .1)
+      color: $color-link
+
+#reader-note-composer
+  position: fixed
+  z-index: 1101
+  display: none
+  width: 17.5rem
+  padding: .55rem
+  border: 1px solid alpha($color-accent-1, .32)
+  border-radius: 12px
+  background: alpha($color-background, .94)
+  box-shadow: 0 16px 40px alpha($color-text, .13)
+  backdrop-filter: blur(10px)
+
+  &.is-visible
+    display: block
+
+  textarea
+    display: block
+    width: 100%
+    min-height: 4.8rem
+    padding: .45rem .5rem
+    border: 0
+    border-radius: 8px
+    background: alpha($color-accent-1, .06)
+    color: $color-text
+    font: .82rem/1.55 $font-family-body
+    resize: vertical
+
+    &:focus
+      outline: 1px solid alpha($color-accent-1, .36)
+
+.reader-note-composer-actions
+  display: flex
+  justify-content: flex-end
+  gap: .35rem
+  margin-top: .45rem
+
+  button
+    padding: .16rem .5rem
+    border: 0
+    border-radius: 999px
+    background: transparent
+    color: $color-accent-1
+    font: .72rem $font-family-mono
+    cursor: pointer
+
+    &:hover
+      background: alpha($color-accent-1, .1)
+      color: $color-link
+
+body.reader-note-mode
+  cursor: crosshair
+
+  article.post .content
+    cursor: crosshair
+
+body.reader-notes-hidden
+  .reader-highlight
+    background: transparent
+
+  #reader-note-layer,
+  #reader-note-toolbar,
+  #reader-note-composer
+    display: none !important
+
+@keyframes note-drift-in
+  from
+    opacity: 0
+    transform: translateY(-50%) translateX(16px)
+  to
+    opacity: 1
+    transform: translateY(-50%) translateX(0)
+
 body.goyo-active
   max-width: none
   padding-right: 0
@@ -278,6 +487,24 @@ body.goyo-active
   .goyo-toggle
     color: #d9b47c
     opacity: 1
+
+  #reader-note-controls
+    button
+      color: #d9b47c
+
+      &:hover
+        color: #f1c984
+
+  .reader-note-bubble
+    border-left-color: #d9b47c
+    background: alpha(#424242, .9)
+    color: #d8d2cc
+
+  .reader-note-quote
+    color: #f1c984
+
+  .reader-highlight
+    background: linear-gradient(transparent 48%, alpha(#d9b47c, .28) 48%, alpha(#d9b47c, .28) 92%, transparent 92%)
 
   #header-post,
   #footer-post,
@@ -390,6 +617,23 @@ body.goyo-active
   .goyo-toggle
     top: .75rem
     right: 4.25rem
+
+  #reader-note-controls
+    top: .75rem
+    right: 7rem
+    gap: .42rem
+
+    button
+      font-size: .82rem
+
+  .reader-note-bubble
+    width: 16rem
+    max-width: calc(100vw - 2rem)
+    font-size: .74rem
+
+  #reader-note-composer
+    width: 17rem
+    max-width: calc(100vw - 2rem)
 
   body.goyo-active
     > .content
