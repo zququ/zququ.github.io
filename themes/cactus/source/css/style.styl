@@ -461,6 +461,12 @@ body.reader-note-mode
   article.post .content
     cursor: crosshair
 
+  .reader-highlight
+    cursor: pointer
+
+    &:hover
+      background: linear-gradient(transparent 40%, alpha($color-link, .28) 40%, alpha($color-link, .28) 94%, transparent 94%)
+
 body.reader-notes-hidden
   .reader-highlight
     background: transparent

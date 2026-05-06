@@ -81,6 +81,7 @@ function setupReaderNotes() {
 
   var noteToggle = document.getElementById("reader-note-toggle");
   var visibilityToggle = document.getElementById("reader-note-visibility");
+  var highlightToggle = toolbar.querySelector("[data-action=\"highlight\"]");
   var composerTextarea = composer.querySelector("textarea");
   var composerContext = null;
 
@@ -108,7 +109,7 @@ function setupReaderNotes() {
       return;
     }
     if (action === "highlight") {
-      addHighlight(activeSelection);
+      toggleHighlight(activeSelection);
       hideToolbar();
       clearSelection();
     } else if (action === "note") {
@@ -145,6 +146,15 @@ function setupReaderNotes() {
 
   document.addEventListener("click", function(event) {
     if (!noteMode) {
+      return;
+    }
+    var existingHighlight = event.target.closest(".reader-highlight");
+    if (existingHighlight && article.contains(existingHighlight)) {
+      event.preventDefault();
+      event.stopPropagation();
+      removeHighlights([existingHighlight.getAttribute("data-highlight-id")]);
+      hideToolbar();
+      clearSelection();
       return;
     }
     if (event.target.closest("#reader-note-controls, #reader-note-toolbar, #reader-note-composer, .reader-note-bubble")) {
@@ -274,6 +284,7 @@ function setupReaderNotes() {
       sameBlock: sameBlock
     };
 
+    updateHighlightToggle(activeSelection);
     toolbar.style.left = Math.max(16, window.scrollX + rect.left + rect.width / 2 - 58) + "px";
     toolbar.style.top = Math.max(16, window.scrollY + rect.top - 42) + "px";
     toolbar.classList.add("is-visible");
@@ -291,8 +302,15 @@ function setupReaderNotes() {
     return prefixRange.toString().length;
   }
 
-  function addHighlight(selectionInfo) {
+  function toggleHighlight(selectionInfo) {
     if (!selectionInfo.sameBlock || selectionInfo.end <= selectionInfo.start) {
+      return;
+    }
+    var overlapping = getOverlappingHighlights(selectionInfo);
+    if (overlapping.length) {
+      removeHighlights(overlapping.map(function(highlight) {
+        return highlight.id;
+      }));
       return;
     }
     var id = makeId("hl");
@@ -304,6 +322,49 @@ function setupReaderNotes() {
     });
     saveState();
     wrapRange(selectionInfo.range, id);
+  }
+
+  function updateHighlightToggle(selectionInfo) {
+    if (!highlightToggle) {
+      return;
+    }
+    highlightToggle.textContent = getOverlappingHighlights(selectionInfo).length ? "unmark" : "mark";
+  }
+
+  function getOverlappingHighlights(selectionInfo) {
+    return state.highlights.filter(function(highlight) {
+      return highlight.start < selectionInfo.end && selectionInfo.start < highlight.end;
+    });
+  }
+
+  function removeHighlights(ids) {
+    var idMap = ids.reduce(function(map, id) {
+      if (id) {
+        map[id] = true;
+      }
+      return map;
+    }, {});
+    state.highlights = state.highlights.filter(function(highlight) {
+      return !idMap[highlight.id];
+    });
+    Array.prototype.forEach.call(article.querySelectorAll(".reader-highlight"), function(mark) {
+      if (idMap[mark.getAttribute("data-highlight-id")]) {
+        unwrapHighlight(mark);
+      }
+    });
+    saveState();
+  }
+
+  function unwrapHighlight(mark) {
+    var parent = mark.parentNode;
+    if (!parent) {
+      return;
+    }
+    while (mark.firstChild) {
+      parent.insertBefore(mark.firstChild, mark);
+    }
+    parent.removeChild(mark);
+    parent.normalize();
   }
 
   function applyStoredHighlights() {
