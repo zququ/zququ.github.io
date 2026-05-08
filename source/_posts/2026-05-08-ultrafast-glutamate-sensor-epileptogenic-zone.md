@@ -14,6 +14,10 @@ comments: true
 
 这篇文章的价值不只是“谷氨酸和癫痫有关”。这个结论早已有大量微透析和代谢研究支持。它真正想解决的是测量分辨率问题：传统 microdialysis 结合 HPLC 能看到癫痫发作相关的细胞外 glutamate 升高，但时间分辨率通常在分钟级，适合观察缓慢的 tonic 变化，却很难捕捉突触传递中单个囊泡释放对应的快速 transient。对于癫痫灶这种异常兴奋网络来说，慢变量和快变量都重要；如果只能看到慢变量，就会漏掉突触前释放本身是否已经病理化。
 
+![自绘示意图：超快谷氨酸传感器从制备到脑片记录的流程](/images/glutamate-sensor/ultrafast-sensor-workflow.svg)
+
+*图 1. 自绘示意图，概括 Zhao 等工作的技术路线：先通过 chitosan-based electrodeposition 在 carbon fiber electrode 表面形成超薄 GluOx-CS 酶层，再把工作电极和 enzyme-free sentinel electrode 放入 ex vivo brain slice 中记录 glutamate signal。该图不是原文图片复制，而是根据论文 Figure 1-3 和方法描述重新绘制。*
+
 ## 1. 传感器设计：把酶层做薄，才有机会看见快事件
 
 作者的核心技术路线是把 glutamate oxidase（GluOx）固定在 carbon fiber electrode（CFE）表面，但不是用厚的 dip coating，而是用 chitosan-based electrodeposition 形成 nanoscale enzyme coating <sup class="citation">[<a href="#ref-1">1</a>]</sup>。具体来说，GluOx 和 chitosan 混合液被放在电极附近；在 platinized CFE 表面施加电位后，氧还原反应会局部提高 pH，使 chitosan 从可溶状态转为凝胶状态，从而把 GluOx 温和地困在电极表面。
@@ -39,6 +43,10 @@ comments: true
 更关键的是 phasic release。作者在人体脑组织中解析到单个 amperometric spikes，并把“真事件”定义为 working electrode 上存在、sentinel electrode 上不存在的 spike。事件频率没有显著改变，但单 spike 的平均幅度在 foci 中更高：foci 为 33.5 ± 2.8 pA，ctrl 为 25.0 ± 3.3 pA；半峰宽维持在约 3.8 ms <sup class="citation">[<a href="#ref-1">1</a>]</sup>。换句话说，癫痫灶并不只是背景 glutamate 更高，它的单次突触前释放事件也更大。
 
 作者进一步用 Faraday's law 估计单 spike 对应释放的 glutamate molecules 数量，中心值大约为 280,000 molecules。整体分布的峰值在不同组之间相近，但 foci 中大事件更多，尤其在刺激诱发条件下累积分布明显右移 <sup class="citation">[<a href="#ref-1">1</a>]</sup>。这给出了一个更细的病理图景：癫痫灶可能存在“更容易释放大包谷氨酸”的突触前状态，而不只是细胞外谷氨酸清除或代谢异常。
+
+![自绘示意图：FCD 癫痫灶中 tonic 和 phasic glutamate release 的病理改变](/images/glutamate-sensor/fcd-release-profile.svg)
+
+*图 2. 自绘结果示意图，概括论文报告的三个核心现象：刺激后 foci 的 tonic glutamate release 增量远高于 ctrl；单个 phasic amperometric spike 的平均幅度在 foci 中更大；释放分子数分布在 foci 中向大事件方向偏移。数值来自论文正文，图形只用于解释趋势，不是原文统计图复制。*
 
 ## 4. 这篇文章改变了什么问题的问法
 
