@@ -14,10 +14,6 @@ comments: true
 
 这篇文章的价值不只是“谷氨酸和癫痫有关”。这个结论早已有大量微透析和代谢研究支持。它真正想解决的是测量分辨率问题：传统 microdialysis 结合 HPLC 能看到癫痫发作相关的细胞外 glutamate 升高，但时间分辨率通常在分钟级，适合观察缓慢的 tonic 变化，却很难捕捉突触传递中单个囊泡释放对应的快速 transient。对于癫痫灶这种异常兴奋网络来说，慢变量和快变量都重要；如果只能看到慢变量，就会漏掉突触前释放本身是否已经病理化。
 
-![自绘示意图：超快谷氨酸传感器从制备到脑片记录的流程](/images/glutamate-sensor/ultrafast-sensor-workflow.svg)
-
-*图 1. 自绘示意图，概括 Zhao 等工作的技术路线：先通过 chitosan-based electrodeposition 在 carbon fiber electrode 表面形成超薄 GluOx-CS 酶层，再把工作电极和 enzyme-free sentinel electrode 放入 ex vivo brain slice 中记录 glutamate signal。该图不是原文图片复制，而是根据论文 Figure 1-3 和方法描述重新绘制。*
-
 ## 1. 传感器设计：把酶层做薄，才有机会看见快事件
 
 作者的核心技术路线是把 glutamate oxidase（GluOx）固定在 carbon fiber electrode（CFE）表面，但不是用厚的 dip coating，而是用 chitosan-based electrodeposition 形成 nanoscale enzyme coating <sup class="citation">[<a href="#ref-1">1</a>]</sup>。具体来说，GluOx 和 chitosan 混合液被放在电极附近；在 platinized CFE 表面施加电位后，氧还原反应会局部提高 pH，使 chitosan 从可溶状态转为凝胶状态，从而把 GluOx 温和地困在电极表面。
@@ -26,6 +22,12 @@ comments: true
 
 这就是原文 Figure 1 的核心信息：它不是单纯展示一个传感器外观，而是在说明“薄酶层”怎样被制造出来。CFE 提供微米级探针，PtNPs 改善电化学反应界面，GluOx-CS 层负责把 glutamate 转换为可检测信号。对神经组织记录来说，这种结构的意义在于尽量减少扩散和反应造成的时间拖尾。
 
+![Zhao 等 2026 原文 Figure 1：超快 glutamate sensor 的制备策略和 nanoscale enzyme coating](/images/glutamate-sensor/zhao-2026-fig1-sensor-fabrication.jpg)
+
+*图 1. Zhao 等 2026 原文 Figure 1，展示 ultra-fast glutamate sensor 的制备路线、氧还原驱动的 chitosan electrodeposition、carbon fiber electrode 结构和 nanoscale GluOx-CS coating <sup class="citation">[<a href="#ref-1">1</a>]</sup>。*
+
+**图 1 说明。** A 部分画出电极尖端进入 electrodepositing tank 中的 GluOx/CS 液滴，说明制备过程发生在微小液滴和电极尖端局部，而不是整支电极被厚层包裹。B 部分是化学机制：platinized electrode 表面发生 oxygen reduction reaction，局部 pH 从酸性升高到 chitosan 的 gelation 区间，使 CS 凝胶化并把 GluOx 固定在表面。C 部分用 cyclic voltammetry 证明空气条件下的 ORR 活性强于 N<sub>2</sub> 条件，支持“靠溶解氧还原触发局部 pH 改变”的机制。D 部分展示 carbon fiber electrode 的尖端形态，说明探针足够细，可以进入组织局部微环境。E 部分最关键：光镜、SEM 和 backscattered electron image 显示 CFE/PtNPs/GluOx-CS 的层状结构，其中 enzyme layer 很薄。这个薄层是后文能够解析快速 glutamate transient 的技术前提。
+
 ## 2. 性能验证：灵敏度、稳定性和高速记录缺一不可
 
 在电化学表征中，这支传感器对 glutamate 的检测线性范围为 1-100 μM，limit of detection 为 0.1 μM；重复测量的 RSD 约为 3.67%，4°C 保存一周后灵敏度没有显著下降 <sup class="citation">[<a href="#ref-1">1</a>]</sup>。这些指标说明它可以胜任脑组织外液中 glutamate 动态的定量检测。
@@ -33,6 +35,12 @@ comments: true
 但对这篇文章来说，更关键的是它能不能在组织里抓到快速 transient。作者先在小鼠 hippocampal CA1 区域测试，使用 20 kHz amperometric recording 记录 spontaneous glutamate transients，观察到半峰宽约 1.4 ms 的单 spike 事件 <sup class="citation">[<a href="#ref-1">1</a>]</sup>。这一步相当于证明：这套电极和记录系统不只是能测浓度，也能在活组织环境里解析接近突触释放尺度的瞬时事件。
 
 这里需要避免一个误读：传感器的常规响应时间表征和组织中记录到的 spike 宽度不是同一个概念。前者反映校准条件下传感器对外源 glutamate 变化的整体响应，后者反映局部释放事件在电极附近形成的 amperometric transient。真正支撑本文结论的是后者：在高采样率下，电极能把单个快速释放事件从背景中分辨出来。
+
+![Zhao 等 2026 原文 Figure 2：超快 glutamate sensor 的电化学性能和小鼠脑片验证](/images/glutamate-sensor/zhao-2026-fig2-electrochemical-characterization.jpg)
+
+*图 2. Zhao 等 2026 原文 Figure 2，展示传感器对不同 glutamate 浓度的 amperometric response、calibration curve、小鼠 hippocampal slice 中的电极定位，以及 20 kHz 记录到的 spontaneous glutamate transients <sup class="citation">[<a href="#ref-1">1</a>]</sup>。*
+
+**图 2 说明。** A 部分是逐步加入 1-200 μM glutamate 后的 current response，电流平台随浓度升高而增加，说明传感器能把浓度变化转换成可量化的 amperometric signal。B 部分是 calibration curve，1-100 μM 区间呈线性关系，R<sup>2</sup> = 0.994，说明在脑组织相关浓度范围内可以做定量。C 部分把传感器放到小鼠 hippocampal CA1 区域，说明它不是只在 PBS 校准液里工作，也可以进入脑片环境。D 部分是这张图的核心：20 kHz 记录下可以看到毫秒尺度的 spontaneous glutamate transients，局部放大图显示单个 spike 的上升和衰减过程。也就是说，Figure 2 把“电化学校准”和“组织内快速事件记录”接在了一起。
 
 ## 3. 人体 FCD 切片：慢性升高和快速释放都发生改变
 
@@ -44,9 +52,11 @@ comments: true
 
 作者进一步用 Faraday's law 估计单 spike 对应释放的 glutamate molecules 数量，中心值大约为 280,000 molecules。整体分布的峰值在不同组之间相近，但 foci 中大事件更多，尤其在刺激诱发条件下累积分布明显右移 <sup class="citation">[<a href="#ref-1">1</a>]</sup>。这给出了一个更细的病理图景：癫痫灶可能存在“更容易释放大包谷氨酸”的突触前状态，而不只是细胞外谷氨酸清除或代谢异常。
 
-![自绘示意图：FCD 癫痫灶中 tonic 和 phasic glutamate release 的病理改变](/images/glutamate-sensor/fcd-release-profile.svg)
+![Zhao 等 2026 原文 Figure 3：人体 FCD 癫痫灶中的 tonic 和 phasic glutamate release](/images/glutamate-sensor/zhao-2026-fig3-human-fcd-release.jpg)
 
-*图 2. 自绘结果示意图，概括论文报告的三个核心现象：刺激后 foci 的 tonic glutamate release 增量远高于 ctrl；单个 phasic amperometric spike 的平均幅度在 foci 中更大；释放分子数分布在 foci 中向大事件方向偏移。数值来自论文正文，图形只用于解释趋势，不是原文统计图复制。*
+*图 3. Zhao 等 2026 原文 Figure 3，展示从 FCD 患者手术组织到 ex vivo glutamate monitoring 的流程，以及 foci 与 ctrl 组织中 tonic release、phasic release amplitude 和 released molecule number distribution 的差异 <sup class="citation">[<a href="#ref-1">1</a>]</sup>。*
+
+**图 3 说明。** A 和 B 部分先定义研究对象：癫痫灶位于患者脑内，手术切除组织中的目标区域被圈出。C 和 D 部分展示记录几何：glutamate sensor 和 self-referencing electrode 插入脑片，传感器靠近 glutamatergic pyramidal neurons。E 部分解释 self-reference 的必要性：蓝色工作电极信号减去灰色 sentinel 信号后，黑色 trace 才更接近 glutamate-specific response。F 部分直接比较 ctrl 与 foci 在 0 Mg<sup>2+</sup>、25 K<sup>+</sup> 刺激下的慢性 tonic response，foci 的 baseline rise 明显更大。G 部分放大单个 phasic events，红色 foci trace 的 spike 幅度更大。H 和 I 分别量化 tonic release 和 phasic release amplitude，二者在 foci 中都升高。J 和 K 把单 spike 换算成 released molecules number：主要峰值接近，但 foci 尤其在 stimulation 条件下出现更多大事件，累积分布右移。整张 Figure 3 支撑一个核心结论：FCD 癫痫灶不只是细胞外 glutamate 背景升高，突触前 quantal release profile 也发生了病理改变。
 
 ## 4. 这篇文章改变了什么问题的问法
 
