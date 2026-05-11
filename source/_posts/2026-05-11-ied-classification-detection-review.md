@@ -32,6 +32,10 @@ Interictal epileptiform discharge（IED，发作间期癫痫样放电）不是�
 
 因此，判断一个事件是不是 IED，不能只看“尖不尖”。还要看它是否突出于背景、是否有合理电场分布、是否伴随后随慢波或背景扰动、是否符合该年龄和状态下的正常变异，以及是否可以被伪迹解释。
 
+![IED morphology schematic](/images/seeg/ied/ied-morphology-schematic.png)
+
+图 1. IED 形态教学示意图。该图为原创示意，不是患者数据，也不是从单篇论文直接截图；目的是把 spike、sharp wave、spike-and-slow-wave 和 polyspike-and-wave 的时间尺度与后随慢波关系画清楚。真实判读不能只套图形模板，还要结合电场、背景、状态、伪迹和临床上下文。
+
 ## 2. 空间分布：同样的波形，定位意义完全不同
 
 IED 的临床意义高度依赖空间分布。一个 left anterior temporal sharp wave 与 generalized spike-and-wave 的诊断方向完全不同。常用描述包括 focal、regional、multifocal、generalized、lateralized、bilateral independent、unilateral independent 和 multifocal periodic。
@@ -39,6 +43,10 @@ IED 的临床意义高度依赖空间分布。一个 left anterior temporal shar
 ACNS 2021 术语体系把 critical care EEG 中 rhythmic/periodic patterns 的空间主项系统化为 generalized、lateralized、bilateral independent、unilateral independent、multifocal 等，并强调这些术语服务于标准化报告和多中心研究 <sup class="citation">[<a href="#ref-2">2</a>]</sup>。
 
 在 SEEG/iEEG 中，空间分布还需要更细：不仅要报告“哪个脑叶”，还要描述 contacts、极性反转、局部场域、是否跨电极传播、是否只在某个接触点最大、是否与病灶/切除区/SOZ 重叠。宏观 scalp EEG 的 generalized 或 regional pattern，在 SEEG 里可能拆成多个局灶起源和传播通路。
+
+![IED spatial and SEEG schematic](/images/seeg/ied/ied-spatial-seeg-schematic.png)
+
+图 2. 空间组织教学示意图。左侧展示双极导联中相位反转对局部场最大点的提示作用；右侧展示 SEEG contact 层面可能出现的毫秒级传播和幅度梯度。该图同样为原创示意，不代表真实患者定位结论；SOZ 判断仍需结合发作起始、影像、半定量频率、HFO/LoWS、刺激反应和术后结局等证据。
 
 ## 3. 时间组织：从散发 IED 到 ictal-interictal continuum
 
@@ -86,6 +94,10 @@ IED 自动检测的目标不是替代医生“判读整份 EEG”，而是在长
   -> 空间/时间后处理
   -> 人工复核与性能评估
 ```
+
+![IED detection window schematic](/images/seeg/ied/ied-detection-window-schematic.png)
+
+图 3. IED 检测窗口教学示意图。候选事件不应只看瞬时尖锐成分，还要检查后随慢波、背景扰动、相邻通道场分布和前后状态。该图为合成波形，用于解释检测逻辑，不是模型训练样本或诊断标准。
 
 ### 6.1 人工视觉判读仍是参照标准，但不是完美 gold standard
 
