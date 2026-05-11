@@ -15,13 +15,965 @@
     ]
   },
   "counts": {
-    "items": 1,
+    "items": 16,
     "attachments": 1,
     "existingAttachments": 1
   },
   "items": [
     {
       "sourceID": "S1",
+      "itemID": 3503,
+      "key": "ZF6LIT55",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "A revised glossary of terms most commonly used by clinical electroencephalographers and updated proposal for the report format of the EEG findings. Revision 2017",
+        "publicationTitle": "Clinical Neurophysiology Practice",
+        "date": "2017-00-00 2017",
+        "DOI": "10.1016/j.cnp.2017.07.002",
+        "url": "https://doi.org/10.1016/j.cnp.2017.07.002",
+        "volume": "2",
+        "pages": "170-185",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "2467-981X"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Nick Kane"
+        },
+        {
+          "type": "author",
+          "name": "Jayant Acharya"
+        },
+        {
+          "type": "author",
+          "name": "Sandor Beniczky"
+        },
+        {
+          "type": "author",
+          "name": "Luis Caboclo"
+        },
+        {
+          "type": "author",
+          "name": "Simon Finnigan"
+        },
+        {
+          "type": "author",
+          "name": "Peter W. Kaplan"
+        },
+        {
+          "type": "author",
+          "name": "Hiroshi Shibasaki"
+        },
+        {
+          "type": "author",
+          "name": "Ronit Pressler"
+        },
+        {
+          "type": "author",
+          "name": "Michel J.A.M. van Putten"
+        }
+      ],
+      "creatorSummary": "Nick Kane et al.",
+      "year": "2017",
+      "attachments": []
+    },
+    {
+      "sourceID": "S2",
+      "itemID": 3504,
+      "key": "LXXQEXQX",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "American Clinical Neurophysiology Society's Standardized Critical Care EEG Terminology: 2021 Version",
+        "publicationTitle": "Journal of Clinical Neurophysiology",
+        "date": "2021-01-00 2021-01",
+        "DOI": "10.1097/wnp.0000000000000806",
+        "url": "https://doi.org/10.1097/wnp.0000000000000806",
+        "volume": "38",
+        "issue": "1",
+        "pages": "1-29",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "0736-0258"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Lawrence J. Hirsch"
+        },
+        {
+          "type": "author",
+          "name": "Michael W.K. Fong"
+        },
+        {
+          "type": "author",
+          "name": "Markus Leitinger"
+        },
+        {
+          "type": "author",
+          "name": "Suzette M. LaRoche"
+        },
+        {
+          "type": "author",
+          "name": "Sandor Beniczky"
+        },
+        {
+          "type": "author",
+          "name": "Nicholas S. Abend"
+        },
+        {
+          "type": "author",
+          "name": "Jong Woo Lee"
+        },
+        {
+          "type": "author",
+          "name": "Courtney J. Wusthoff"
+        },
+        {
+          "type": "author",
+          "name": "Cecil D. Hahn"
+        },
+        {
+          "type": "author",
+          "name": "M. Brandon Westover"
+        },
+        {
+          "type": "author",
+          "name": "Elizabeth E. Gerard"
+        },
+        {
+          "type": "author",
+          "name": "Susan T. Herman"
+        },
+        {
+          "type": "author",
+          "name": "Hiba Arif Haider"
+        },
+        {
+          "type": "author",
+          "name": "Gamaleldin Osman"
+        },
+        {
+          "type": "author",
+          "name": "Andres Rodriguez-Ruiz"
+        },
+        {
+          "type": "author",
+          "name": "Carolina B. Maciel"
+        },
+        {
+          "type": "author",
+          "name": "Emily J. Gilmore"
+        },
+        {
+          "type": "author",
+          "name": "Andres Fernandez"
+        },
+        {
+          "type": "author",
+          "name": "Eric S. Rosenthal"
+        },
+        {
+          "type": "author",
+          "name": "Jan Claassen"
+        },
+        {
+          "type": "author",
+          "name": "Aatif M. Husain"
+        },
+        {
+          "type": "author",
+          "name": "Ji Yeoun Yoo"
+        },
+        {
+          "type": "author",
+          "name": "Elson L. So"
+        },
+        {
+          "type": "author",
+          "name": "Peter W. Kaplan"
+        },
+        {
+          "type": "author",
+          "name": "Marc R. Nuwer"
+        },
+        {
+          "type": "author",
+          "name": "Michel van Putten"
+        },
+        {
+          "type": "author",
+          "name": "Raoul Sutter"
+        },
+        {
+          "type": "author",
+          "name": "Frank W. Drislane"
+        },
+        {
+          "type": "author",
+          "name": "Eugen Trinka"
+        },
+        {
+          "type": "author",
+          "name": "Nicolas Gaspard"
+        }
+      ],
+      "creatorSummary": "Lawrence J. Hirsch et al.",
+      "year": "2021",
+      "attachments": []
+    },
+    {
+      "sourceID": "S3",
+      "itemID": 3505,
+      "key": "J6UCP7X2",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Prevalence of epileptiform electroencephalographic abnormalities in people without a history of seizures: A systematic review and meta‐analysis",
+        "abstractNote": "AbstractAbnormal patterns identified on electroencephalogram (EEG) are one of the primary diagnostic tests for epilepsy. However, epidemiological studies have established that both benign and epileptiform abnormalities (EAs) occur on the EEG of nonepileptic, seizure‐free people as well. The reported rates of EAs in nonepileptic, seizure‐free populations vary, and the true prevalence is unknown. The primary objective of this systematic review and meta‐analysis was to estimate the overall prevalence of EAs in the EEG of people without a history of seizures. Secondary aims were to characterize (1) the cortical localization of focal abnormalities, (2) the proportion of findings that occurred during standard EEG stimulation protocols, and (3) the persistence and implications of abnormalities at follow‐up. A comprehensive electronic search of six bibliographic databases was completed: Embase, MEDLINE, PsycInfo, Cumulative Index of Nursing and Allied Health Literature, Cochrane Central Register for Controlled Trials, and Web of Science. No search date restrictions were applied. Overall effect size was calculated using a generalized linear mixed‐effects model. Fifty‐three studies, totaling 73 990 individuals, met our inclusion criteria. The overall point prevalence of EAs was 1.74% (95% confidence interval [CI] = 1.13–2.67). Due to the risk of bias in the literature, especially from participant selection, we believe this to be an overestimate of the true prevalence. Prevalence of EAs was greater in children (2.45%, 95% CI = 1.41–4.21) and the elderly (5.96%, 95% CI = 1.39–22.13) compared with adults (.93%, 95% CI = .48–1.80). Reports of developing epilepsy after an EA‐positive EEG were rare. The likelihood of subsequent positive findings on follow‐up EEG may be as high as 50%. Our study has limitations in that males were overrepresented in the study samples, there is substantial heterogeneity among studies, and many studies provided insufficient detail about their exclusion criteria. Nonetheless, our estimates provide benchmark data for future studies examining EAs in clinical populations, particularly behavioral and psychiatric populations.",
+        "publicationTitle": "Epilepsia",
+        "date": "2024-03-00 2024-03",
+        "DOI": "10.1111/epi.17864",
+        "url": "https://doi.org/10.1111/epi.17864",
+        "volume": "65",
+        "issue": "3",
+        "pages": "583-599",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "0013-9580, 1528-1167"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Amir Aschner"
+        },
+        {
+          "type": "author",
+          "name": "Christine Kowal"
+        },
+        {
+          "type": "author",
+          "name": "Olivia Arski"
+        },
+        {
+          "type": "author",
+          "name": "James A. G. Crispo"
+        },
+        {
+          "type": "author",
+          "name": "Nawal Farhat"
+        },
+        {
+          "type": "author",
+          "name": "Elizabeth Donner"
+        }
+      ],
+      "creatorSummary": "Amir Aschner et al.",
+      "year": "2024",
+      "attachments": []
+    },
+    {
+      "sourceID": "S4",
+      "itemID": 3506,
+      "key": "JEFVW5F9",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Facilitation of epileptic activity during sleep is mediated by high amplitude slow waves",
+        "publicationTitle": "Brain",
+        "date": "2015-06-00 2015-06",
+        "DOI": "10.1093/brain/awv073",
+        "url": "https://doi.org/10.1093/brain/awv073",
+        "volume": "138",
+        "issue": "6",
+        "pages": "1629-1641",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "0006-8950, 1460-2156"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Birgit Frauscher"
+        },
+        {
+          "type": "author",
+          "name": "Nicolás von Ellenrieder"
+        },
+        {
+          "type": "author",
+          "name": "Taissa Ferrari-Marinho"
+        },
+        {
+          "type": "author",
+          "name": "Massimo Avoli"
+        },
+        {
+          "type": "author",
+          "name": "François Dubeau"
+        },
+        {
+          "type": "author",
+          "name": "Jean Gotman"
+        }
+      ],
+      "creatorSummary": "Birgit Frauscher et al.",
+      "year": "2015",
+      "attachments": []
+    },
+    {
+      "sourceID": "S5",
+      "itemID": 3507,
+      "key": "UCEQE72E",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Human interictal epileptiform discharges are bidirectional traveling waves echoing ictal discharges",
+        "abstractNote": "Interictal epileptiform discharges (IEDs), also known as interictal spikes, are large intermittent electrophysiological events observed between seizures in patients with epilepsy. Although they occur far more often than seizures, IEDs are less studied, and their relationship to seizures remains unclear. To better understand this relationship, we examined multi-day recordings of microelectrode arrays implanted in human epilepsy patients, allowing us to precisely observe the spatiotemporal propagation of IEDs, spontaneous seizures, and how they relate. These recordings showed that the majority of IEDs are traveling waves, traversing the same path as ictal discharges during seizures, and with a fixed direction relative to seizure propagation. Moreover, the majority of IEDs, like ictal discharges, were bidirectional, with one predominant and a second, less frequent antipodal direction. These results reveal a fundamental spatiotemporal similarity between IEDs and ictal discharges. These results also imply that most IEDs arise in brain tissue outside the site of seizure onset and propagate toward it, indicating that the propagation of IEDs provides useful information for localizing the seizure focus.",
+        "publicationTitle": "eLife",
+        "date": "2022-01-20 2022-01-20",
+        "DOI": "10.7554/elife.73541",
+        "url": "https://doi.org/10.7554/elife.73541",
+        "volume": "11",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "2050-084X"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Elliot H Smith"
+        },
+        {
+          "type": "author",
+          "name": "Jyun-you Liou"
+        },
+        {
+          "type": "author",
+          "name": "Edward M Merricks"
+        },
+        {
+          "type": "author",
+          "name": "Tyler Davis"
+        },
+        {
+          "type": "author",
+          "name": "Kyle Thomson"
+        },
+        {
+          "type": "author",
+          "name": "Bradley Greger"
+        },
+        {
+          "type": "author",
+          "name": "Paul House"
+        },
+        {
+          "type": "author",
+          "name": "Ronald G Emerson"
+        },
+        {
+          "type": "author",
+          "name": "Robert Goodman"
+        },
+        {
+          "type": "author",
+          "name": "Guy M McKhann"
+        },
+        {
+          "type": "author",
+          "name": "Sameer Sheth"
+        },
+        {
+          "type": "author",
+          "name": "Catherine Schevon"
+        },
+        {
+          "type": "author",
+          "name": "John D Rolston"
+        }
+      ],
+      "creatorSummary": "Elliot H Smith et al.",
+      "year": "2022",
+      "attachments": []
+    },
+    {
+      "sourceID": "S6",
+      "itemID": 3508,
+      "key": "ATPLPYSB",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Interictal high-frequency oscillations (100–500 Hz) in the intracerebral EEG of epileptic patients",
+        "publicationTitle": "Brain",
+        "date": "2007-09-00 2007-09",
+        "DOI": "10.1093/brain/awm149",
+        "url": "https://doi.org/10.1093/brain/awm149",
+        "volume": "130",
+        "issue": "9",
+        "pages": "2354-2366",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "1460-2156, 0006-8950"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Elena Urrestarazu"
+        },
+        {
+          "type": "author",
+          "name": "Rahul Chander"
+        },
+        {
+          "type": "author",
+          "name": "Francçois Dubeau"
+        },
+        {
+          "type": "author",
+          "name": "Jean Gotman"
+        }
+      ],
+      "creatorSummary": "Elena Urrestarazu et al.",
+      "year": "2007",
+      "attachments": []
+    },
+    {
+      "sourceID": "S7",
+      "itemID": 3509,
+      "key": "LDKYH6I5",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Dynamic Interplay Between Wake Slow Waves and Epileptiform Discharges in the Epileptogenic Zone",
+        "publicationTitle": "Neurology",
+        "date": "2025-09-09 2025-09-09",
+        "DOI": "10.1212/wnl.0000000000214001",
+        "url": "https://doi.org/10.1212/wnl.0000000000214001",
+        "volume": "105",
+        "issue": "5",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "0028-3878, 1526-632X"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Laurent Sheybani"
+        },
+        {
+          "type": "author",
+          "name": "Umesh Vivekananda"
+        },
+        {
+          "type": "author",
+          "name": "Nishant Sinha"
+        },
+        {
+          "type": "author",
+          "name": "Erin Conrad"
+        },
+        {
+          "type": "author",
+          "name": "Brian Litt"
+        },
+        {
+          "type": "author",
+          "name": "Neil Burgess"
+        },
+        {
+          "type": "author",
+          "name": "Daniel Bush"
+        },
+        {
+          "type": "author",
+          "name": "Matthew C. Walker"
+        }
+      ],
+      "creatorSummary": "Laurent Sheybani et al.",
+      "year": "2025",
+      "attachments": []
+    },
+    {
+      "sourceID": "S8",
+      "itemID": 3510,
+      "key": "BFQXEGLA",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "A review of signal processing and machine learning techniques for interictal epileptiform discharge detection",
+        "publicationTitle": "Computers in Biology and Medicine",
+        "date": "2024-01-00 2024-01",
+        "DOI": "10.1016/j.compbiomed.2023.107782",
+        "url": "https://doi.org/10.1016/j.compbiomed.2023.107782",
+        "volume": "168",
+        "pages": "107782",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "0010-4825"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Bahman Abdi-Sargezeh"
+        },
+        {
+          "type": "author",
+          "name": "Sepehr Shirani"
+        },
+        {
+          "type": "author",
+          "name": "Saeid Sanei"
+        },
+        {
+          "type": "author",
+          "name": "Clive Cheong Took"
+        },
+        {
+          "type": "author",
+          "name": "Oana Geman"
+        },
+        {
+          "type": "author",
+          "name": "Gonzalo Alarcon"
+        },
+        {
+          "type": "author",
+          "name": "Antonio Valentin"
+        }
+      ],
+      "creatorSummary": "Bahman Abdi-Sargezeh et al.",
+      "year": "2024",
+      "attachments": []
+    },
+    {
+      "sourceID": "S9",
+      "itemID": 3511,
+      "key": "6CNS5UJG",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Development of Expert-Level Automated Detection of Epileptiform Discharges During Electroencephalogram Interpretation",
+        "publicationTitle": "JAMA Neurology",
+        "date": "2020-01-01 2020-01-01",
+        "DOI": "10.1001/jamaneurol.2019.3485",
+        "url": "https://doi.org/10.1001/jamaneurol.2019.3485",
+        "volume": "77",
+        "issue": "1",
+        "pages": "103",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "2168-6149"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Jin Jing"
+        },
+        {
+          "type": "author",
+          "name": "Haoqi Sun"
+        },
+        {
+          "type": "author",
+          "name": "Jennifer A. Kim"
+        },
+        {
+          "type": "author",
+          "name": "Aline Herlopian"
+        },
+        {
+          "type": "author",
+          "name": "Ioannis Karakis"
+        },
+        {
+          "type": "author",
+          "name": "Marcus Ng"
+        },
+        {
+          "type": "author",
+          "name": "Jonathan J. Halford"
+        },
+        {
+          "type": "author",
+          "name": "Douglas Maus"
+        },
+        {
+          "type": "author",
+          "name": "Fonda Chan"
+        },
+        {
+          "type": "author",
+          "name": "Marjan Dolatshahi"
+        },
+        {
+          "type": "author",
+          "name": "Carlos Muniz"
+        },
+        {
+          "type": "author",
+          "name": "Catherine Chu"
+        },
+        {
+          "type": "author",
+          "name": "Valeria Sacca"
+        },
+        {
+          "type": "author",
+          "name": "Jay Pathmanathan"
+        },
+        {
+          "type": "author",
+          "name": "Wendong Ge"
+        },
+        {
+          "type": "author",
+          "name": "Justin Dauwels"
+        },
+        {
+          "type": "author",
+          "name": "Alice Lam"
+        },
+        {
+          "type": "author",
+          "name": "Andrew J. Cole"
+        },
+        {
+          "type": "author",
+          "name": "Sydney S. Cash"
+        },
+        {
+          "type": "author",
+          "name": "M. Brandon Westover"
+        }
+      ],
+      "creatorSummary": "Jin Jing et al.",
+      "year": "2020",
+      "attachments": []
+    },
+    {
+      "sourceID": "S10",
+      "itemID": 3512,
+      "key": "FBU7Y2EK",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Deep learning for robust detection of interictal epileptiform discharges",
+        "abstractNote": "Abstract\n                  \n                    Objective.\n                    Automatic detection of interictal epileptiform discharges (IEDs, short as ‘spikes’) from an epileptic brain can help predict seizure recurrence and support the diagnosis of epilepsy. Developing fast, reliable and robust detection methods for IEDs based on scalp or intracranial electroencephalogram (iEEG) may facilitate online seizure monitoring and closed-loop neurostimulation.\n                    Approach.\n                    We developed a new deep learning approach, which employs a long short-term memory network architecture (‘IEDnet’) and an auxiliary classifier generative adversarial network (AC-GAN), to train on both expert-annotated and augmented spike events from iEEG recordings of epilepsy patients. We validated our IEDnet with two real-world iEEG datasets, and compared IEDnet with the support vector machine (SVM) and random forest (RF) classifiers on their detection performances.\n                    Main results.\n                    IEDnet achieved excellent cross-validated detection performances in terms of both sensitivity and specificity, and outperformed SVM and RF. Synthetic spike samples augmented by AC-GAN further improved the detection performance. In addition, the performance of IEDnet was robust with respect to the sampling frequency and noise. Furthermore, we demonstrated the cross-institutional generalization ability of IEDnet while testing between two datasets.\n                    Significance.\n                    IEDnet achieves excellent detection performances in identifying interictal spikes. AC-GAN can produce augmented iEEG samples to improve supervised deep learning.",
+        "publicationTitle": "Journal of Neural Engineering",
+        "date": "2021-10-01 2021-10-01",
+        "DOI": "10.1088/1741-2552/abf28e",
+        "url": "https://doi.org/10.1088/1741-2552/abf28e",
+        "volume": "18",
+        "issue": "5",
+        "pages": "056015",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "1741-2560, 1741-2552"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "David Geng"
+        },
+        {
+          "type": "author",
+          "name": "Ayham Alkhachroum"
+        },
+        {
+          "type": "author",
+          "name": "Manuel A Melo Bicchi"
+        },
+        {
+          "type": "author",
+          "name": "Jonathan R Jagid"
+        },
+        {
+          "type": "author",
+          "name": "Iahn Cajigas"
+        },
+        {
+          "type": "author",
+          "name": "Zhe Sage Chen"
+        }
+      ],
+      "creatorSummary": "David Geng et al.",
+      "year": "2021",
+      "attachments": []
+    },
+    {
+      "sourceID": "S11",
+      "itemID": 3513,
+      "key": "QQ9CMRIM",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "A Self-Adapting System for the Automated Detection of Inter-Ictal Epileptiform Discharges",
+        "publicationTitle": "PLoS ONE",
+        "date": "2014-01-15 2014-01-15",
+        "DOI": "10.1371/journal.pone.0085180",
+        "url": "https://doi.org/10.1371/journal.pone.0085180",
+        "volume": "9",
+        "issue": "1",
+        "pages": "e85180",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "1932-6203"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Shaun S. Lodder"
+        },
+        {
+          "type": "author",
+          "name": "Michel J. A. M. van Putten"
+        }
+      ],
+      "creatorSummary": "Shaun S. Lodder and Michel J. A. M. van Putten",
+      "year": "2014",
+      "attachments": []
+    },
+    {
+      "sourceID": "S12",
+      "itemID": 3514,
+      "key": "FAADZUJQ",
+      "itemType": "bookSection",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Automatic detection of interictal epileptiform discharges",
+        "date": "2003-00-00 2003",
+        "DOI": "10.1016/S1567-4231(03)03006-5",
+        "url": "https://doi.org/10.1016/s1567-4231(03)03006-5",
+        "pages": "73-84",
+        "extra": "Imported for seeg/IED IED review.",
+        "publisher": "Elsevier",
+        "bookTitle": "Handbook of Clinical Neurophysiology"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Richard C. Burgess"
+        },
+        {
+          "type": "author",
+          "name": "John P. Turnbull"
+        }
+      ],
+      "creatorSummary": "Richard C. Burgess and John P. Turnbull",
+      "year": "2003",
+      "attachments": []
+    },
+    {
+      "sourceID": "S13",
+      "itemID": 3515,
+      "key": "RBKKX8CT",
+      "itemType": "conferencePaper",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "SpikeGUI: Software for rapid interictal discharge annotation via template matching and online machine learning",
+        "date": "2014-08-00 2014-08",
+        "DOI": "10.1109/embc.2014.6944608",
+        "url": "https://doi.org/10.1109/embc.2014.6944608",
+        "pages": "4435-4438",
+        "extra": "Imported for seeg/IED IED review.",
+        "publisher": "IEEE",
+        "proceedingsTitle": "2014 36th Annual International Conference of the IEEE Engineering in Medicine and Biology Society"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Jing Jin"
+        },
+        {
+          "type": "author",
+          "name": "Justin Dauwels"
+        },
+        {
+          "type": "author",
+          "name": "Sydney Cash"
+        },
+        {
+          "type": "author",
+          "name": "M. Brandon Westover"
+        }
+      ],
+      "creatorSummary": "Jing Jin et al.",
+      "year": "2014",
+      "attachments": []
+    },
+    {
+      "sourceID": "S14",
+      "itemID": 3516,
+      "key": "VWPUNVWL",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "Interrater Reliability of Experts in Identifying Interictal Epileptiform Discharges in Electroencephalograms",
+        "publicationTitle": "JAMA Neurology",
+        "date": "2020-01-01 2020-01-01",
+        "DOI": "10.1001/jamaneurol.2019.3531",
+        "url": "https://doi.org/10.1001/jamaneurol.2019.3531",
+        "volume": "77",
+        "issue": "1",
+        "pages": "49",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "2168-6149"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Jin Jing"
+        },
+        {
+          "type": "author",
+          "name": "Aline Herlopian"
+        },
+        {
+          "type": "author",
+          "name": "Ioannis Karakis"
+        },
+        {
+          "type": "author",
+          "name": "Marcus Ng"
+        },
+        {
+          "type": "author",
+          "name": "Jonathan J. Halford"
+        },
+        {
+          "type": "author",
+          "name": "Alice Lam"
+        },
+        {
+          "type": "author",
+          "name": "Douglas Maus"
+        },
+        {
+          "type": "author",
+          "name": "Fonda Chan"
+        },
+        {
+          "type": "author",
+          "name": "Marjan Dolatshahi"
+        },
+        {
+          "type": "author",
+          "name": "Carlos F. Muniz"
+        },
+        {
+          "type": "author",
+          "name": "Catherine Chu"
+        },
+        {
+          "type": "author",
+          "name": "Valeria Sacca"
+        },
+        {
+          "type": "author",
+          "name": "Jay Pathmanathan"
+        },
+        {
+          "type": "author",
+          "name": "WenDong Ge"
+        },
+        {
+          "type": "author",
+          "name": "Haoqi Sun"
+        },
+        {
+          "type": "author",
+          "name": "Justin Dauwels"
+        },
+        {
+          "type": "author",
+          "name": "Andrew J. Cole"
+        },
+        {
+          "type": "author",
+          "name": "Daniel B. Hoch"
+        },
+        {
+          "type": "author",
+          "name": "Sydney S. Cash"
+        },
+        {
+          "type": "author",
+          "name": "M. Brandon Westover"
+        }
+      ],
+      "creatorSummary": "Jin Jing et al.",
+      "year": "2020",
+      "attachments": []
+    },
+    {
+      "sourceID": "S15",
+      "itemID": 3517,
+      "key": "IN9X47SY",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-11 09:05:47",
+      "dateModified": "2026-05-11 09:05:47",
+      "fields": {
+        "title": "AiED: Artificial intelligence for the detection of intracranial interictal epileptiform discharges",
+        "publicationTitle": "Clinical Neurophysiology",
+        "date": "2022-01-00 2022-01",
+        "DOI": "10.1016/j.clinph.2021.09.018",
+        "url": "https://doi.org/10.1016/j.clinph.2021.09.018",
+        "volume": "133",
+        "pages": "1-8",
+        "extra": "Imported for seeg/IED IED review.",
+        "ISSN": "1388-2457"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Robert J. Quon"
+        },
+        {
+          "type": "author",
+          "name": "Stephen Meisenhelter"
+        },
+        {
+          "type": "author",
+          "name": "Edward J. Camp"
+        },
+        {
+          "type": "author",
+          "name": "Markus E. Testorf"
+        },
+        {
+          "type": "author",
+          "name": "Yinchen Song"
+        },
+        {
+          "type": "author",
+          "name": "Qingyuan Song"
+        },
+        {
+          "type": "author",
+          "name": "George W. Culler"
+        },
+        {
+          "type": "author",
+          "name": "Payam Moein"
+        },
+        {
+          "type": "author",
+          "name": "Barbara C. Jobst"
+        }
+      ],
+      "creatorSummary": "Robert J. Quon et al.",
+      "year": "2022",
+      "attachments": []
+    },
+    {
+      "sourceID": "S16",
       "itemID": 3471,
       "key": "2VRMVLHS",
       "itemType": "journalArticle",

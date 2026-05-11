@@ -1,5 +1,14 @@
-# IED 综述：分类、网络意义与自动检测方法
-
+---
+title: IED 综述：分类、网络意义与自动检测方法
+date: 2026-05-11 16:45:00
+tags:
+  - SEEG
+  - IED
+  - 癫痫
+  - EEG
+  - 自动检测
+comments: true
+---
 Interictal epileptiform discharge（IED，发作间期癫痫样放电）不是一种单一波形，而是一组在发作间期出现、短暂、尖锐、突出于背景、常伴后随慢波的异常放电事件。临床上，IED 可以支持癫痫诊断、帮助综合征分类、提示 irritative zone 或 seizure-onset zone（SOZ）相关网络；但 IED 不能脱离病史和临床表现单独诊断癫痫，因为癫痫样异常也可偶见于无癫痫发作史人群 <sup class="citation">[<a href="#ref-3">3</a>]</sup>。
 
 最实用的理解方式是把 IED 放进四个维度：形态 morphology、空间分布 topography、时间组织 temporal organization、状态依赖 state relation。对 SEEG/iEEG 来说，还应再加一个维度：它与 SOZ、HFO、LoWS、传播方向和层状微环路之间的关系。
@@ -243,3 +252,4 @@ IED 的核心不在“尖波清单”，而在四维组织：形态、空间、�
 <span id="ref-15" class="ref-label">[15]</span> Jing J, Herlopian A, Karakis I, et al. Interrater Reliability of Experts in Identifying Interictal Epileptiform Discharges in Electroencephalograms. *JAMA Neurology*. 2020;77(1):49-57. https://pmc.ncbi.nlm.nih.gov/articles/PMC6806666/
 
 <span id="ref-16" class="ref-label">[16]</span> Quon RJ, Meisenhelter S, Camp EJ, et al. AiED: Artificial intelligence for the detection of intracranial interictal epileptiform discharges. *Clinical Neurophysiology*. 2022;133:1-8. https://pubmed.ncbi.nlm.nih.gov/34773796/
+

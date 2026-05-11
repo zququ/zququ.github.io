@@ -1,0 +1,1137 @@
+{
+  "library": "groups/6414762",
+  "collection": "seeg/IED",
+  "collectionKey": "seeg/IED",
+  "dryRun": true,
+  "created": [
+    {
+      "index": 1,
+      "raw": "{\"doi\": \"10.1016/j.cnp.2017.07.002\", \"tags\": [\"IED\", \"EEG terminology\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1016/j.cnp.2017.07.002\", \"tags\": [\"IED\", \"EEG terminology\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Nick",
+            "lastName": "Kane"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jayant",
+            "lastName": "Acharya"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Sandor",
+            "lastName": "Beniczky"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Luis",
+            "lastName": "Caboclo"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Simon",
+            "lastName": "Finnigan"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Peter W.",
+            "lastName": "Kaplan"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Hiroshi",
+            "lastName": "Shibasaki"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Ronit",
+            "lastName": "Pressler"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Michel J.A.M.",
+            "lastName": "van Putten"
+          }
+        ],
+        "title": "A revised glossary of terms most commonly used by clinical electroencephalographers and updated proposal for the report format of the EEG findings. Revision 2017",
+        "date": "2017",
+        "DOI": "10.1016/j.cnp.2017.07.002",
+        "url": "https://doi.org/10.1016/j.cnp.2017.07.002",
+        "publicationTitle": "Clinical Neurophysiology Practice",
+        "volume": "2",
+        "pages": "170-185",
+        "ISSN": "2467-981X",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 2,
+      "raw": "{\"doi\": \"10.1097/WNP.0000000000000806\", \"tags\": [\"IED\", \"ACNS\", \"critical care EEG\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1097/WNP.0000000000000806\", \"tags\": [\"IED\", \"ACNS\", \"critical care EEG\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Lawrence J.",
+            "lastName": "Hirsch"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Michael W.K.",
+            "lastName": "Fong"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Markus",
+            "lastName": "Leitinger"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Suzette M.",
+            "lastName": "LaRoche"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Sandor",
+            "lastName": "Beniczky"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Nicholas S.",
+            "lastName": "Abend"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jong Woo",
+            "lastName": "Lee"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Courtney J.",
+            "lastName": "Wusthoff"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Cecil D.",
+            "lastName": "Hahn"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "M. Brandon",
+            "lastName": "Westover"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Elizabeth E.",
+            "lastName": "Gerard"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Susan T.",
+            "lastName": "Herman"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Hiba Arif",
+            "lastName": "Haider"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Gamaleldin",
+            "lastName": "Osman"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Andres",
+            "lastName": "Rodriguez-Ruiz"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Carolina B.",
+            "lastName": "Maciel"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Emily J.",
+            "lastName": "Gilmore"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Andres",
+            "lastName": "Fernandez"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Eric S.",
+            "lastName": "Rosenthal"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jan",
+            "lastName": "Claassen"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Aatif M.",
+            "lastName": "Husain"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Ji Yeoun",
+            "lastName": "Yoo"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Elson L.",
+            "lastName": "So"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Peter W.",
+            "lastName": "Kaplan"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Marc R.",
+            "lastName": "Nuwer"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Michel",
+            "lastName": "van Putten"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Raoul",
+            "lastName": "Sutter"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Frank W.",
+            "lastName": "Drislane"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Eugen",
+            "lastName": "Trinka"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Nicolas",
+            "lastName": "Gaspard"
+          }
+        ],
+        "title": "American Clinical Neurophysiology Society's Standardized Critical Care EEG Terminology: 2021 Version",
+        "date": "2021-01",
+        "DOI": "10.1097/wnp.0000000000000806",
+        "url": "https://doi.org/10.1097/wnp.0000000000000806",
+        "publicationTitle": "Journal of Clinical Neurophysiology",
+        "volume": "38",
+        "issue": "1",
+        "pages": "1-29",
+        "ISSN": "0736-0258",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 3,
+      "raw": "{\"doi\": \"10.1111/epi.17864\", \"tags\": [\"IED\", \"epileptiform abnormality\", \"prevalence\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1111/epi.17864\", \"tags\": [\"IED\", \"epileptiform abnormality\", \"prevalence\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Amir",
+            "lastName": "Aschner"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Christine",
+            "lastName": "Kowal"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Olivia",
+            "lastName": "Arski"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "James A. G.",
+            "lastName": "Crispo"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Nawal",
+            "lastName": "Farhat"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Elizabeth",
+            "lastName": "Donner"
+          }
+        ],
+        "title": "Prevalence of epileptiform electroencephalographic abnormalities in people without a history of seizures: A systematic review and meta‐analysis",
+        "date": "2024-03",
+        "DOI": "10.1111/epi.17864",
+        "url": "https://doi.org/10.1111/epi.17864",
+        "abstractNote": "AbstractAbnormal patterns identified on electroencephalogram (EEG) are one of the primary diagnostic tests for epilepsy. However, epidemiological studies have established that both benign and epileptiform abnormalities (EAs) occur on the EEG of nonepileptic, seizure‐free people as well. The reported rates of EAs in nonepileptic, seizure‐free populations vary, and the true prevalence is unknown. The primary objective of this systematic review and meta‐analysis was to estimate the overall prevalence of EAs in the EEG of people without a history of seizures. Secondary aims were to characterize (1) the cortical localization of focal abnormalities, (2) the proportion of findings that occurred during standard EEG stimulation protocols, and (3) the persistence and implications of abnormalities at follow‐up. A comprehensive electronic search of six bibliographic databases was completed: Embase, MEDLINE, PsycInfo, Cumulative Index of Nursing and Allied Health Literature, Cochrane Central Register for Controlled Trials, and Web of Science. No search date restrictions were applied. Overall effect size was calculated using a generalized linear mixed‐effects model. Fifty‐three studies, totaling 73 990 individuals, met our inclusion criteria. The overall point prevalence of EAs was 1.74% (95% confidence interval [CI] = 1.13–2.67). Due to the risk of bias in the literature, especially from participant selection, we believe this to be an overestimate of the true prevalence. Prevalence of EAs was greater in children (2.45%, 95% CI = 1.41–4.21) and the elderly (5.96%, 95% CI = 1.39–22.13) compared with adults (.93%, 95% CI = .48–1.80). Reports of developing epilepsy after an EA‐positive EEG were rare. The likelihood of subsequent positive findings on follow‐up EEG may be as high as 50%. Our study has limitations in that males were overrepresented in the study samples, there is substantial heterogeneity among studies, and many studies provided insufficient detail about their exclusion criteria. Nonetheless, our estimates provide benchmark data for future studies examining EAs in clinical populations, particularly behavioral and psychiatric populations.",
+        "publicationTitle": "Epilepsia",
+        "volume": "65",
+        "issue": "3",
+        "pages": "583-599",
+        "ISSN": "0013-9580, 1528-1167",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 4,
+      "raw": "{\"doi\": \"10.1038/s41593-026-02258-4\", \"tags\": [\"IED\", \"SEEG\", \"Neuropixels\", \"microcircuit\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1038/s41593-026-02258-4\", \"tags\": [\"IED\", \"SEEG\", \"Neuropixels\", \"microcircuit\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Alexander B.",
+            "lastName": "Silva"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Siddharth A.",
+            "lastName": "Marathe"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Quinn R.",
+            "lastName": "Greicius"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Duo",
+            "lastName": "Xu"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Shailee",
+            "lastName": "Jain"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jason E.",
+            "lastName": "Chung"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Xiaofang",
+            "lastName": "Yang"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Ankit N.",
+            "lastName": "Khambhati"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Matthew K.",
+            "lastName": "Leonard"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jonathan K.",
+            "lastName": "Kleen"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Edward F.",
+            "lastName": "Chang"
+          }
+        ],
+        "title": "Laminar organization of cellular microcircuits modulating human interictal epileptiform discharges",
+        "date": "2026-04-30",
+        "DOI": "10.1038/s41593-026-02258-4",
+        "url": "https://doi.org/10.1038/s41593-026-02258-4",
+        "abstractNote": "Abstract\n                  Interictal epileptiform discharges (IEDs) are pathological bursts of brain activity between seizures in people with epilepsy. Despite their importance in diagnosis, cognitive comorbidities and therapeutic implications as biomarkers for neurostimulation, it is unknown how IEDs arise from structured large-scale neuronal firing across human cortical lamina. We used high-density Neuropixels probes to record from epileptogenic tissue in patients undergoing resective surgery, sampling 1,152 neurons during 1,094 IEDs across nine neocortical sites. We identified microcircuits for IEDs organized by firing pattern, neocortical depth and putative cell type. Regular-spiking cells, concentrated in superficial cortical lamina, initiated and coded the amplitude of the sharp discharge and excitatory–inhibitory imbalances across neocortical lamina preceded IEDs, enabling IED prediction up to 1,000 ms in advance. Most neurons that were modulated during IEDs also encoded cognitive information and adhered to physiological rhythms at baseline. Thus, neocortical IEDs are generated from predictable laminar–cellular interactions, providing the groundwork for new neurostimulation therapies that harness the granularity of single neurons.",
+        "publicationTitle": "Nature Neuroscience",
+        "ISSN": "1097-6256, 1546-1726",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 5,
+      "raw": "{\"doi\": \"10.1093/brain/awv073\", \"tags\": [\"IED\", \"sleep\", \"slow waves\", \"HFO\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1093/brain/awv073\", \"tags\": [\"IED\", \"sleep\", \"slow waves\", \"HFO\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Birgit",
+            "lastName": "Frauscher"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Nicolás",
+            "lastName": "von Ellenrieder"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Taissa",
+            "lastName": "Ferrari-Marinho"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Massimo",
+            "lastName": "Avoli"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "François",
+            "lastName": "Dubeau"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jean",
+            "lastName": "Gotman"
+          }
+        ],
+        "title": "Facilitation of epileptic activity during sleep is mediated by high amplitude slow waves",
+        "date": "2015-06",
+        "DOI": "10.1093/brain/awv073",
+        "url": "https://doi.org/10.1093/brain/awv073",
+        "publicationTitle": "Brain",
+        "volume": "138",
+        "issue": "6",
+        "pages": "1629-1641",
+        "ISSN": "0006-8950, 1460-2156",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 6,
+      "raw": "{\"doi\": \"10.7554/eLife.73541\", \"tags\": [\"IED\", \"traveling waves\", \"iEEG\", \"SOZ\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.7554/eLife.73541\", \"tags\": [\"IED\", \"traveling waves\", \"iEEG\", \"SOZ\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Elliot H",
+            "lastName": "Smith"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jyun-you",
+            "lastName": "Liou"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Edward M",
+            "lastName": "Merricks"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Tyler",
+            "lastName": "Davis"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Kyle",
+            "lastName": "Thomson"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Bradley",
+            "lastName": "Greger"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Paul",
+            "lastName": "House"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Ronald G",
+            "lastName": "Emerson"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Robert",
+            "lastName": "Goodman"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Guy M",
+            "lastName": "McKhann"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Sameer",
+            "lastName": "Sheth"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Catherine",
+            "lastName": "Schevon"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "John D",
+            "lastName": "Rolston"
+          }
+        ],
+        "title": "Human interictal epileptiform discharges are bidirectional traveling waves echoing ictal discharges",
+        "date": "2022-01-20",
+        "DOI": "10.7554/elife.73541",
+        "url": "https://doi.org/10.7554/elife.73541",
+        "abstractNote": "Interictal epileptiform discharges (IEDs), also known as interictal spikes, are large intermittent electrophysiological events observed between seizures in patients with epilepsy. Although they occur far more often than seizures, IEDs are less studied, and their relationship to seizures remains unclear. To better understand this relationship, we examined multi-day recordings of microelectrode arrays implanted in human epilepsy patients, allowing us to precisely observe the spatiotemporal propagation of IEDs, spontaneous seizures, and how they relate. These recordings showed that the majority of IEDs are traveling waves, traversing the same path as ictal discharges during seizures, and with a fixed direction relative to seizure propagation. Moreover, the majority of IEDs, like ictal discharges, were bidirectional, with one predominant and a second, less frequent antipodal direction. These results reveal a fundamental spatiotemporal similarity between IEDs and ictal discharges. These results also imply that most IEDs arise in brain tissue outside the site of seizure onset and propagate toward it, indicating that the propagation of IEDs provides useful information for localizing the seizure focus.",
+        "publicationTitle": "eLife",
+        "volume": "11",
+        "ISSN": "2050-084X",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 7,
+      "raw": "{\"doi\": \"10.1093/brain/awm149\", \"tags\": [\"HFO\", \"IED\", \"intracranial EEG\", \"SOZ\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1093/brain/awm149\", \"tags\": [\"HFO\", \"IED\", \"intracranial EEG\", \"SOZ\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Elena",
+            "lastName": "Urrestarazu"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Rahul",
+            "lastName": "Chander"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Francçois",
+            "lastName": "Dubeau"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jean",
+            "lastName": "Gotman"
+          }
+        ],
+        "title": "Interictal high-frequency oscillations (100–500 Hz) in the intracerebral EEG of epileptic patients",
+        "date": "2007-09",
+        "DOI": "10.1093/brain/awm149",
+        "url": "https://doi.org/10.1093/brain/awm149",
+        "publicationTitle": "Brain",
+        "volume": "130",
+        "issue": "9",
+        "pages": "2354-2366",
+        "ISSN": "1460-2156, 0006-8950",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 8,
+      "raw": "{\"doi\": \"10.1212/WNL.0000000000214001\", \"tags\": [\"IED\", \"LoWS\", \"epileptogenic zone\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1212/WNL.0000000000214001\", \"tags\": [\"IED\", \"LoWS\", \"epileptogenic zone\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Laurent",
+            "lastName": "Sheybani"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Umesh",
+            "lastName": "Vivekananda"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Nishant",
+            "lastName": "Sinha"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Erin",
+            "lastName": "Conrad"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Brian",
+            "lastName": "Litt"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Neil",
+            "lastName": "Burgess"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Daniel",
+            "lastName": "Bush"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Matthew C.",
+            "lastName": "Walker"
+          }
+        ],
+        "title": "Dynamic Interplay Between Wake Slow Waves and Epileptiform Discharges in the Epileptogenic Zone",
+        "date": "2025-09-09",
+        "DOI": "10.1212/wnl.0000000000214001",
+        "url": "https://doi.org/10.1212/wnl.0000000000214001",
+        "publicationTitle": "Neurology",
+        "volume": "105",
+        "issue": "5",
+        "ISSN": "0028-3878, 1526-632X",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 9,
+      "raw": "{\"doi\": \"10.1016/j.compbiomed.2023.107782\", \"tags\": [\"IED detection\", \"machine learning\", \"signal processing\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1016/j.compbiomed.2023.107782\", \"tags\": [\"IED detection\", \"machine learning\", \"signal processing\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Bahman",
+            "lastName": "Abdi-Sargezeh"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Sepehr",
+            "lastName": "Shirani"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Saeid",
+            "lastName": "Sanei"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Clive Cheong",
+            "lastName": "Took"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Oana",
+            "lastName": "Geman"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Gonzalo",
+            "lastName": "Alarcon"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Antonio",
+            "lastName": "Valentin"
+          }
+        ],
+        "title": "A review of signal processing and machine learning techniques for interictal epileptiform discharge detection",
+        "date": "2024-01",
+        "DOI": "10.1016/j.compbiomed.2023.107782",
+        "url": "https://doi.org/10.1016/j.compbiomed.2023.107782",
+        "publicationTitle": "Computers in Biology and Medicine",
+        "volume": "168",
+        "pages": "107782",
+        "ISSN": "0010-4825",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 10,
+      "raw": "{\"doi\": \"10.1001/jamaneurol.2019.3485\", \"tags\": [\"IED detection\", \"SpikeNet\", \"deep learning\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1001/jamaneurol.2019.3485\", \"tags\": [\"IED detection\", \"SpikeNet\", \"deep learning\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Jin",
+            "lastName": "Jing"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Haoqi",
+            "lastName": "Sun"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jennifer A.",
+            "lastName": "Kim"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Aline",
+            "lastName": "Herlopian"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Ioannis",
+            "lastName": "Karakis"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Marcus",
+            "lastName": "Ng"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jonathan J.",
+            "lastName": "Halford"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Douglas",
+            "lastName": "Maus"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Fonda",
+            "lastName": "Chan"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Marjan",
+            "lastName": "Dolatshahi"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Carlos",
+            "lastName": "Muniz"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Catherine",
+            "lastName": "Chu"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Valeria",
+            "lastName": "Sacca"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jay",
+            "lastName": "Pathmanathan"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Wendong",
+            "lastName": "Ge"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Justin",
+            "lastName": "Dauwels"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Alice",
+            "lastName": "Lam"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Andrew J.",
+            "lastName": "Cole"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Sydney S.",
+            "lastName": "Cash"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "M. Brandon",
+            "lastName": "Westover"
+          }
+        ],
+        "title": "Development of Expert-Level Automated Detection of Epileptiform Discharges During Electroencephalogram Interpretation",
+        "date": "2020-01-01",
+        "DOI": "10.1001/jamaneurol.2019.3485",
+        "url": "https://doi.org/10.1001/jamaneurol.2019.3485",
+        "publicationTitle": "JAMA Neurology",
+        "volume": "77",
+        "issue": "1",
+        "pages": "103",
+        "ISSN": "2168-6149",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 11,
+      "raw": "{\"doi\": \"10.1088/1741-2552/abf28e\", \"tags\": [\"IED detection\", \"iEEG\", \"deep learning\", \"IEDnet\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1088/1741-2552/abf28e\", \"tags\": [\"IED detection\", \"iEEG\", \"deep learning\", \"IEDnet\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "David",
+            "lastName": "Geng"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Ayham",
+            "lastName": "Alkhachroum"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Manuel A",
+            "lastName": "Melo Bicchi"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jonathan R",
+            "lastName": "Jagid"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Iahn",
+            "lastName": "Cajigas"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Zhe Sage",
+            "lastName": "Chen"
+          }
+        ],
+        "title": "Deep learning for robust detection of interictal epileptiform discharges",
+        "date": "2021-10-01",
+        "DOI": "10.1088/1741-2552/abf28e",
+        "url": "https://doi.org/10.1088/1741-2552/abf28e",
+        "abstractNote": "Abstract\n                  \n                    Objective.\n                    Automatic detection of interictal epileptiform discharges (IEDs, short as ‘spikes’) from an epileptic brain can help predict seizure recurrence and support the diagnosis of epilepsy. Developing fast, reliable and robust detection methods for IEDs based on scalp or intracranial electroencephalogram (iEEG) may facilitate online seizure monitoring and closed-loop neurostimulation.\n                    Approach.\n                    We developed a new deep learning approach, which employs a long short-term memory network architecture (‘IEDnet’) and an auxiliary classifier generative adversarial network (AC-GAN), to train on both expert-annotated and augmented spike events from iEEG recordings of epilepsy patients. We validated our IEDnet with two real-world iEEG datasets, and compared IEDnet with the support vector machine (SVM) and random forest (RF) classifiers on their detection performances.\n                    Main results.\n                    IEDnet achieved excellent cross-validated detection performances in terms of both sensitivity and specificity, and outperformed SVM and RF. Synthetic spike samples augmented by AC-GAN further improved the detection performance. In addition, the performance of IEDnet was robust with respect to the sampling frequency and noise. Furthermore, we demonstrated the cross-institutional generalization ability of IEDnet while testing between two datasets.\n                    Significance.\n                    IEDnet achieves excellent detection performances in identifying interictal spikes. AC-GAN can produce augmented iEEG samples to improve supervised deep learning.",
+        "publicationTitle": "Journal of Neural Engineering",
+        "volume": "18",
+        "issue": "5",
+        "pages": "056015",
+        "ISSN": "1741-2560, 1741-2552",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 12,
+      "raw": "{\"doi\": \"10.1371/journal.pone.0085180\", \"tags\": [\"IED detection\", \"template matching\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1371/journal.pone.0085180\", \"tags\": [\"IED detection\", \"template matching\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Shaun S.",
+            "lastName": "Lodder"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Michel J. A. M.",
+            "lastName": "van Putten"
+          }
+        ],
+        "title": "A Self-Adapting System for the Automated Detection of Inter-Ictal Epileptiform Discharges",
+        "date": "2014-01-15",
+        "DOI": "10.1371/journal.pone.0085180",
+        "url": "https://doi.org/10.1371/journal.pone.0085180",
+        "publicationTitle": "PLoS ONE",
+        "volume": "9",
+        "issue": "1",
+        "pages": "e85180",
+        "ISSN": "1932-6203",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 13,
+      "raw": "{\"doi\": \"10.1016/S1567-4231(03)03006-5\", \"tags\": [\"IED detection\", \"EEG\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1016/S1567-4231(03)03006-5\", \"tags\": [\"IED detection\", \"EEG\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "bookSection",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Richard C.",
+            "lastName": "Burgess"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "John P.",
+            "lastName": "Turnbull"
+          }
+        ],
+        "title": "Automatic detection of interictal epileptiform discharges",
+        "date": "2003",
+        "url": "https://doi.org/10.1016/s1567-4231(03)03006-5",
+        "bookTitle": "Handbook of Clinical Neurophysiology",
+        "publisher": "Elsevier",
+        "pages": "73-84",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 14,
+      "raw": "{\"doi\": \"10.1109/EMBC.2014.6944608\", \"tags\": [\"IED detection\", \"template matching\", \"annotation\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1109/EMBC.2014.6944608\", \"tags\": [\"IED detection\", \"template matching\", \"annotation\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "conferencePaper",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "",
+            "lastName": "Jing Jin"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Justin",
+            "lastName": "Dauwels"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Sydney",
+            "lastName": "Cash"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "M. Brandon",
+            "lastName": "Westover"
+          }
+        ],
+        "title": "SpikeGUI: Software for rapid interictal discharge annotation via template matching and online machine learning",
+        "date": "2014-08",
+        "DOI": "10.1109/embc.2014.6944608",
+        "url": "https://doi.org/10.1109/embc.2014.6944608",
+        "proceedingsTitle": "2014 36th Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+        "publisher": "IEEE",
+        "pages": "4435-4438",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 15,
+      "raw": "{\"doi\": \"10.1001/jamaneurol.2019.3531\", \"tags\": [\"IED\", \"interrater reliability\", \"annotation\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1001/jamaneurol.2019.3531\", \"tags\": [\"IED\", \"interrater reliability\", \"annotation\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Jin",
+            "lastName": "Jing"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Aline",
+            "lastName": "Herlopian"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Ioannis",
+            "lastName": "Karakis"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Marcus",
+            "lastName": "Ng"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jonathan J.",
+            "lastName": "Halford"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Alice",
+            "lastName": "Lam"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Douglas",
+            "lastName": "Maus"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Fonda",
+            "lastName": "Chan"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Marjan",
+            "lastName": "Dolatshahi"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Carlos F.",
+            "lastName": "Muniz"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Catherine",
+            "lastName": "Chu"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Valeria",
+            "lastName": "Sacca"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Jay",
+            "lastName": "Pathmanathan"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "WenDong",
+            "lastName": "Ge"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Haoqi",
+            "lastName": "Sun"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Justin",
+            "lastName": "Dauwels"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Andrew J.",
+            "lastName": "Cole"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Daniel B.",
+            "lastName": "Hoch"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Sydney S.",
+            "lastName": "Cash"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "M. Brandon",
+            "lastName": "Westover"
+          }
+        ],
+        "title": "Interrater Reliability of Experts in Identifying Interictal Epileptiform Discharges in Electroencephalograms",
+        "date": "2020-01-01",
+        "DOI": "10.1001/jamaneurol.2019.3531",
+        "url": "https://doi.org/10.1001/jamaneurol.2019.3531",
+        "publicationTitle": "JAMA Neurology",
+        "volume": "77",
+        "issue": "1",
+        "pages": "49",
+        "ISSN": "2168-6149",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    },
+    {
+      "index": 16,
+      "raw": "{\"doi\": \"10.1016/j.clinph.2021.09.018\", \"tags\": [\"IED detection\", \"AiED\", \"intracranial EEG\", \"deep learning\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "source": "{\"doi\": \"10.1016/j.clinph.2021.09.018\", \"tags\": [\"IED detection\", \"AiED\", \"intracranial EEG\", \"deep learning\", \"review-source\"], \"extra\": \"Imported for seeg/IED IED review.\"}",
+      "metadataRoute": "crossref-doi",
+      "plannedItem": {
+        "itemType": "journalArticle",
+        "creators": [
+          {
+            "creatorType": "author",
+            "firstName": "Robert J.",
+            "lastName": "Quon"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Stephen",
+            "lastName": "Meisenhelter"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Edward J.",
+            "lastName": "Camp"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Markus E.",
+            "lastName": "Testorf"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Yinchen",
+            "lastName": "Song"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Qingyuan",
+            "lastName": "Song"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "George W.",
+            "lastName": "Culler"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Payam",
+            "lastName": "Moein"
+          },
+          {
+            "creatorType": "author",
+            "firstName": "Barbara C.",
+            "lastName": "Jobst"
+          }
+        ],
+        "title": "AiED: Artificial intelligence for the detection of intracranial interictal epileptiform discharges",
+        "date": "2022-01",
+        "DOI": "10.1016/j.clinph.2021.09.018",
+        "url": "https://doi.org/10.1016/j.clinph.2021.09.018",
+        "publicationTitle": "Clinical Neurophysiology",
+        "volume": "133",
+        "pages": "1-8",
+        "ISSN": "1388-2457",
+        "extra": "Imported for seeg/IED IED review."
+      },
+      "file": null
+    }
+  ],
+  "existing": [],
+  "failed": []
+}

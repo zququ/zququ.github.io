@@ -1,0 +1,82 @@
+[
+  {
+    "doi": "10.1016/j.cnp.2017.07.002",
+    "tags": ["IED", "EEG terminology", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1097/WNP.0000000000000806",
+    "tags": ["IED", "ACNS", "critical care EEG", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1111/epi.17864",
+    "tags": ["IED", "epileptiform abnormality", "prevalence", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1038/s41593-026-02258-4",
+    "tags": ["IED", "SEEG", "Neuropixels", "microcircuit", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1093/brain/awv073",
+    "tags": ["IED", "sleep", "slow waves", "HFO", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.7554/eLife.73541",
+    "tags": ["IED", "traveling waves", "iEEG", "SOZ", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1093/brain/awm149",
+    "tags": ["HFO", "IED", "intracranial EEG", "SOZ", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1212/WNL.0000000000214001",
+    "tags": ["IED", "LoWS", "epileptogenic zone", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1016/j.compbiomed.2023.107782",
+    "tags": ["IED detection", "machine learning", "signal processing", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1001/jamaneurol.2019.3485",
+    "tags": ["IED detection", "SpikeNet", "deep learning", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1088/1741-2552/abf28e",
+    "tags": ["IED detection", "iEEG", "deep learning", "IEDnet", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1371/journal.pone.0085180",
+    "tags": ["IED detection", "template matching", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1016/S1567-4231(03)03006-5",
+    "tags": ["IED detection", "EEG", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1109/EMBC.2014.6944608",
+    "tags": ["IED detection", "template matching", "annotation", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1001/jamaneurol.2019.3531",
+    "tags": ["IED", "interrater reliability", "annotation", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  },
+  {
+    "doi": "10.1016/j.clinph.2021.09.018",
+    "tags": ["IED detection", "AiED", "intracranial EEG", "deep learning", "review-source"],
+    "extra": "Imported for seeg/IED IED review."
+  }
+]
