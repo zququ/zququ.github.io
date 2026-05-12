@@ -271,8 +271,14 @@ function setupReaderNotes() {
       return;
     }
 
+    var startBlock = getTextBlock(range.startContainer);
+    var endBlock = getTextBlock(range.endContainer);
+    if (!startBlock || startBlock !== endBlock) {
+      hideToolbar();
+      return;
+    }
+
     var startOffset = getTextOffset(range);
-    var sameBlock = getTextBlock(range.startContainer) === getTextBlock(range.endContainer);
     activeSelection = {
       range: range.cloneRange(),
       start: startOffset,
@@ -281,7 +287,7 @@ function setupReaderNotes() {
       x: window.scrollX + rect.left + rect.width / 2,
       y: window.scrollY + rect.bottom + 10,
       side: getSideFromX(rect.left + rect.width / 2),
-      sameBlock: sameBlock
+      sameBlock: true
     };
 
     updateHighlightToggle(activeSelection);
@@ -292,7 +298,7 @@ function setupReaderNotes() {
 
   function getTextBlock(node) {
     var element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
-    return element && element.closest("p, li, figcaption, blockquote, h1, h2, h3, h4, h5, h6");
+    return element && element.closest("p, li, figcaption, blockquote, h1, h2, h3, h4, h5, h6, td, th");
   }
 
   function getTextOffset(range) {

@@ -408,10 +408,28 @@ code
     opacity: 1
 
 .reader-highlight
-  padding: .03em .08em
-  border-radius: .18em
+  display: inline
+  padding: 0
+  border-radius: 0
   background: linear-gradient(transparent 48%, alpha($color-accent-1, .24) 48%, alpha($color-accent-1, .24) 92%, transparent 92%)
   color: inherit
+  font: inherit
+  line-height: inherit
+  vertical-align: baseline
+  box-decoration-break: clone
+  -webkit-box-decoration-break: clone
+
+td .reader-highlight,
+th .reader-highlight
+  display: inline
+  padding: 0
+  border-radius: 0
+  background: linear-gradient(transparent 52%, alpha($color-accent-1, .22) 52%, alpha($color-accent-1, .22) 90%, transparent 90%)
+  font: inherit
+  line-height: inherit
+  letter-spacing: inherit
+  word-spacing: inherit
+  white-space: inherit
 
 #reader-note-toolbar
   position: absolute
