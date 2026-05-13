@@ -73,7 +73,7 @@ theme_config:
     home: /
     articles: /archives/
     tag: /tags/
-    简历: https://zququcv.netlify.com
+    简历: /cv/
   social_links:
     - icon: github
       link: https://github.com/Zququ
