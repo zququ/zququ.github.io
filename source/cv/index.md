@@ -20,14 +20,6 @@ comments: false
 | 电生理信号分析 | 关注多通道时序信号处理、事件检测、时频分析、网络传播和可复核的自动化分析流程。 |
 | 结构生物学与病毒学背景 | 具备晶体学、冷冻电镜、病毒学和免疫学训练，可将结构生物学经验迁移到神经科学中的数据处理与机制解释。 |
 
-## 教育背景
-
-| 时间 | 经历 |
-| --- | --- |
-| 2016 至今 | 中国农业大学，博士研究生，兽医微生物与免疫 |
-| 2013 | 中国农业科学院研究生院，硕士，兽医分子病毒学 |
-| 2009 | 东北农业大学，学士，兽医 |
-
 ## 技能关键词
 
 - SEEG / iEEG：癫痫术前评估数据、IED、SOZ/IZ 相关分析
@@ -54,7 +46,3 @@ comments: false
 5. Gao F, Qu Z, Li L, Yu L, Jiang Y, Zhou Y, Zheng H, Tong W, Li G, Tong G. Recombinant porcine reproductive and respiratory syndrome virus expressing luciferase genes provide a new indication of viral propagation in both permissive and target cells. *Research in Veterinary Science*. 2016.
 6. Li L, Gao F, Jiang Y, Yu L, Zhou Y, Zheng H, Tong W, Yang S, Xia T, Qu Z, Tong GZ. Cellular miR-130b inhibits replication of porcine reproductive and respiratory syndrome virus in vitro and in vivo. *Scientific Reports*. 2015.
 7. Jiang Y, Xia T, Zhou Y, Yu L, Yang S, Huang Q, Li L, Gao F, Qu Z, Tong W, Tong G. Characterization of three porcine reproductive and respiratory syndrome virus isolates from a single swine farm bearing strong homology to a vaccine strain. *Veterinary Microbiology*. 2015.
-
-## 当前求职方向
-
-希望寻找与 SEEG/MEA、电生理信号分析、癫痫网络机制、神经工程或神经数据科学相关的科研岗位。也欢迎与结构生物学、病毒学和跨学科数据分析相关的合作方向。更完整的经历和材料见页面顶部 PDF。
