@@ -3,6 +3,11 @@
 <%- partial('_partial/head') %>
 <body class="max-width mx-auto px3 <%- theme.direction -%><%= is_post() ? ' has-goyo-mode' : '' %>">
     <% if (is_post()) { %>
+      <nav id="post-top-nav" aria-label="Primary">
+        <% for (var i in theme.nav) { %><!--
+       --><a href="<%- url_for(theme.nav[i]) %>"><%= __('nav.'+i).replace("nav.", "") %></a><!--
+     --><% } %>
+      </nav>
       <button id="goyo-toggle" class="goyo-toggle" type="button" aria-label="Enter Goyo reading mode" aria-pressed="false">goyo</button>
     <% } %>
     <% if (is_post()) { %>
