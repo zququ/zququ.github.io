@@ -148,16 +148,7 @@ function setupReaderNotes() {
     if (!noteMode) {
       return;
     }
-    var existingHighlight = event.target.closest(".reader-highlight");
-    if (existingHighlight && article.contains(existingHighlight)) {
-      event.preventDefault();
-      event.stopPropagation();
-      removeHighlights([existingHighlight.getAttribute("data-highlight-id")]);
-      hideToolbar();
-      clearSelection();
-      return;
-    }
-    if (event.target.closest("#reader-note-controls, #reader-note-toolbar, #reader-note-composer, .reader-note-bubble")) {
+    if (event.target.closest("#reader-note-controls, #reader-note-toolbar, #reader-note-composer, .reader-note-bubble, .reader-highlight-overlay")) {
       return;
     }
     if (event.target.closest("a, button, input, textarea, select")) {
@@ -170,6 +161,15 @@ function setupReaderNotes() {
   }, true);
 
   layer.addEventListener("click", function(event) {
+    var highlightOverlay = event.target.closest(".reader-highlight-overlay");
+    if (highlightOverlay && noteMode) {
+      event.preventDefault();
+      event.stopPropagation();
+      removeHighlights([highlightOverlay.getAttribute("data-highlight-id")]);
+      hideToolbar();
+      clearSelection();
+      return;
+    }
     if (!event.target.classList.contains("reader-note-delete")) {
       return;
     }
@@ -181,7 +181,11 @@ function setupReaderNotes() {
     renderNotes();
   });
 
-  window.addEventListener("resize", renderNotes);
+  window.addEventListener("resize", function() {
+    renderNotes();
+    renderHighlights();
+  });
+  window.addEventListener("load", renderHighlights);
 
   document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
@@ -328,7 +332,7 @@ function setupReaderNotes() {
       text: selectionInfo.text
     });
     saveState();
-    wrapRange(selectionInfo.range, id);
+    renderHighlights();
   }
 
   function updateHighlightToggle(selectionInfo) {
@@ -354,11 +358,7 @@ function setupReaderNotes() {
     state.highlights = state.highlights.filter(function(highlight) {
       return !idMap[highlight.id];
     });
-    Array.prototype.forEach.call(article.querySelectorAll(".reader-highlight"), function(mark) {
-      if (idMap[mark.getAttribute("data-highlight-id")]) {
-        unwrapHighlight(mark);
-      }
-    });
+    renderHighlights();
     saveState();
   }
 
@@ -375,6 +375,7 @@ function setupReaderNotes() {
   }
 
   function applyStoredHighlights() {
+    unwrapDomHighlights();
     var changed = false;
     state.highlights.forEach(function(highlight) {
       var normalized = expandAsciiWordBoundaries(highlight.start, highlight.end);
@@ -387,12 +388,7 @@ function setupReaderNotes() {
     if (changed) {
       saveState();
     }
-    state.highlights
-      .slice()
-      .sort(function(a, b) { return b.start - a.start; })
-      .forEach(function(highlight) {
-        wrapOffsets(highlight.start, highlight.end, highlight.id);
-      });
+    renderHighlights();
   }
 
   function normalizeSelectionInfo(selectionInfo) {
@@ -474,12 +470,39 @@ function setupReaderNotes() {
     return range;
   }
 
-  function wrapOffsets(start, end, id) {
-    var range = getRangeFromOffsets(start, end);
+  function renderHighlights() {
+    Array.prototype.forEach.call(layer.querySelectorAll(".reader-highlight-overlay"), function(node) {
+      node.parentNode.removeChild(node);
+    });
+    state.highlights.forEach(function(highlight) {
+      renderHighlight(highlight);
+    });
+  }
+
+  function renderHighlight(highlight) {
+    var range = getRangeFromOffsets(highlight.start, highlight.end);
     if (!range) {
       return;
     }
-    wrapRange(range, id);
+    Array.prototype.forEach.call(range.getClientRects(), function(rect) {
+      if (!rect.width || !rect.height) {
+        return;
+      }
+      var overlay = document.createElement("span");
+      overlay.className = "reader-highlight-overlay";
+      overlay.setAttribute("data-highlight-id", highlight.id);
+      overlay.style.left = window.scrollX + rect.left + "px";
+      overlay.style.top = window.scrollY + rect.top + rect.height * 0.1 + "px";
+      overlay.style.width = rect.width + "px";
+      overlay.style.height = rect.height * 0.82 + "px";
+      layer.appendChild(overlay);
+    });
+  }
+
+  function unwrapDomHighlights() {
+    Array.prototype.forEach.call(article.querySelectorAll(".reader-highlight"), function(mark) {
+      unwrapHighlight(mark);
+    });
   }
 
   function shouldUseTextNode(node) {
@@ -491,16 +514,6 @@ function setupReaderNotes() {
       return false;
     }
     return !parent.closest("pre, code, script, style, textarea, .reader-highlight");
-  }
-
-  function wrapRange(range, id) {
-    try {
-      var mark = document.createElement("mark");
-      mark.className = "reader-highlight";
-      mark.setAttribute("data-highlight-id", id);
-      mark.appendChild(range.extractContents());
-      range.insertNode(mark);
-    } catch (err) {}
   }
 
   function openComposer(pageX, pageY, side, quote) {

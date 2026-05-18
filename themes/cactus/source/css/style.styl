@@ -377,28 +377,16 @@ code
     opacity: 1
 
 .reader-highlight
-  display: inline
-  padding: 0
-  border-radius: 0
-  background: linear-gradient(transparent 48%, alpha($color-accent-1, .24) 48%, alpha($color-accent-1, .24) 92%, transparent 92%)
+  background: transparent !important
   color: inherit
   font: inherit
-  line-height: inherit
-  vertical-align: baseline
-  box-decoration-break: clone
-  -webkit-box-decoration-break: clone
 
-td .reader-highlight,
-th .reader-highlight
-  display: inline
-  padding: 0
-  border-radius: 0
-  background: linear-gradient(transparent 52%, alpha($color-accent-1, .22) 52%, alpha($color-accent-1, .22) 90%, transparent 90%)
-  font: inherit
-  line-height: inherit
-  letter-spacing: inherit
-  word-spacing: inherit
-  white-space: inherit
+.reader-highlight-overlay
+  position: absolute
+  z-index: 0
+  border-radius: 2px
+  background: alpha($color-accent-1, .2)
+  pointer-events: none
 
 #reader-note-toolbar
   position: absolute
@@ -483,14 +471,16 @@ body.reader-note-mode
   article.post .content
     cursor: crosshair
 
-  .reader-highlight
+  .reader-highlight-overlay
     cursor: pointer
+    pointer-events: auto
 
     &:hover
-      background: linear-gradient(transparent 40%, alpha($color-link, .28) 40%, alpha($color-link, .28) 94%, transparent 94%)
+      background: alpha($color-link, .25)
 
 body.reader-notes-hidden
-  .reader-highlight
+  .reader-highlight,
+  .reader-highlight-overlay
     background: transparent
 
   #reader-note-layer,
@@ -534,8 +524,8 @@ body.goyo-active
   .reader-note-quote
     color: #f1c984
 
-  .reader-highlight
-    background: linear-gradient(transparent 48%, alpha(#d9b47c, .28) 48%, alpha(#d9b47c, .28) 92%, transparent 92%)
+  .reader-highlight-overlay
+    background: alpha(#d9b47c, .24)
 
   #header-post,
   #header.post-page-header,
