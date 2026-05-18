@@ -47,7 +47,7 @@ $$
 $$
 {% endraw %}
 
-这里 `x_i` 表示第 `i` 个脑区的动力学状态，`eta_i` 表示区域兴奋性或 epileptogenicity，`C_ij` 表示结构或功能连接，`G` 是全局耦合强度，`H` 是从其他脑区传来的输入函数，`epsilon_i(t)` 是噪声或未建模扰动。
+这里 xᵢ 表示第 i 个脑区的动力学状态，ηᵢ 表示区域兴奋性或 epileptogenicity，Cᵢⱼ 表示结构或功能连接，G 是全局耦合强度，H 是从其他脑区传来的输入函数，εᵢ(t) 是噪声或未建模扰动。
 
 读 Epileptor 时要抓住四个关键词。
 
@@ -77,7 +77,7 @@ $$
 $$
 {% endraw %}
 
-`E_i` 和 `I_i` 分别表示第 `i` 个区域的兴奋性和抑制性群体活动，`C_ij` 表示区域间耦合，`u_i` 是外部输入或刺激，`S_E` 和 `S_I` 是非线性响应函数。
+Eᵢ 和 Iᵢ 分别表示第 i 个区域的兴奋性和抑制性群体活动，Cᵢⱼ 表示区域间耦合，uᵢ 是外部输入或刺激，S_E 和 S_I 是非线性响应函数。
 
 NMM 在癫痫里的用途主要有三类。
 
@@ -140,7 +140,7 @@ p(\theta).
 $$
 {% endraw %}
 
-这里 `theta` 是待估参数，例如区域 epileptogenicity、coupling、delay、gain、noise；`x_1:T` 是潜在脑区状态轨迹；`y_1:T` 是观测到的 SEEG/EEG/MEG/fMRI 特征；`C` 是连接矩阵；`M` 是选择的动力学模型。
+这里 θ 是待估参数，例如区域 epileptogenicity、coupling、delay、gain、noise；x₁:T 是潜在脑区状态轨迹；y₁:T 是观测到的 SEEG/EEG/MEG/fMRI 特征；C 是连接矩阵；M 是选择的动力学模型。
 
 这条公式翻译成人话就是：给定个体脑网络和观测数据，反推出哪些参数组合最能解释真实发作，同时保留“不确定性”。因此 Bayesian VEP 的输出不应该只是一张红黄蓝脑图，而应该包括每个区域的 posterior mean、credible interval、区域排名、模型诊断和预测检查。
 
@@ -190,7 +190,7 @@ H^{(l+1)} =
 $$
 {% endraw %}
 
-其中 `H^(l)` 是第 `l` 层节点表示，`A_tilde` 是归一化后的连接矩阵，`W^(l)` 是可学习权重，`sigma` 是非线性函数。放到 DeepEZ 里，节点是脑区，边来自 rs-fMRI 功能连接，输出是每个区域更像 SOZ 还是 non-SOZ。
+其中 H^(l) 是第 l 层节点表示，A_tilde 是归一化后的连接矩阵，W^(l) 是可学习权重，sigma 是非线性函数。放到 DeepEZ 里，节点是脑区，边来自 rs-fMRI 功能连接，输出是每个区域更像 SOZ 还是 non-SOZ。
 
 DeepEZ 与 VEP 的差别很重要。
 

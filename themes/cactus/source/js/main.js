@@ -377,6 +377,7 @@ function setupReaderNotes() {
   function applyStoredHighlights() {
     unwrapDomHighlights();
     var changed = false;
+    var retained = [];
     state.highlights.forEach(function(highlight) {
       var normalized = expandAsciiWordBoundaries(highlight.start, highlight.end);
       if (normalized.start !== highlight.start || normalized.end !== highlight.end) {
@@ -384,7 +385,13 @@ function setupReaderNotes() {
         highlight.end = normalized.end;
         changed = true;
       }
+      if (isStoredHighlightCurrent(highlight)) {
+        retained.push(highlight);
+      } else {
+        changed = true;
+      }
     });
+    state.highlights = retained;
     if (changed) {
       saveState();
     }
@@ -400,11 +407,34 @@ function setupReaderNotes() {
     if (!range) {
       return selectionInfo;
     }
+    var text = normalizeStoredText(range.toString()).slice(0, 240);
     return Object.assign({}, selectionInfo, {
       range: range,
       start: normalized.start,
-      end: normalized.end
+      end: normalized.end,
+      text: text || selectionInfo.text
     });
+  }
+
+  function isStoredHighlightCurrent(highlight) {
+    if (!highlight || highlight.end <= highlight.start) {
+      return false;
+    }
+    var range = getRangeFromOffsets(highlight.start, highlight.end);
+    if (!range) {
+      return false;
+    }
+    var currentText = normalizeStoredText(range.toString());
+    var storedText = normalizeStoredText(highlight.text);
+    if (!storedText) {
+      highlight.text = currentText.slice(0, 240);
+      return !!currentText;
+    }
+    return !!currentText && (currentText === storedText || currentText.indexOf(storedText) === 0);
+  }
+
+  function normalizeStoredText(text) {
+    return (text || "").replace(/\s+/g, " ").trim();
   }
 
   function expandAsciiWordBoundaries(start, end) {
@@ -492,9 +522,9 @@ function setupReaderNotes() {
       overlay.className = "reader-highlight-overlay";
       overlay.setAttribute("data-highlight-id", highlight.id);
       overlay.style.left = window.scrollX + rect.left + "px";
-      overlay.style.top = window.scrollY + rect.top + rect.height * 0.1 + "px";
+      overlay.style.top = window.scrollY + rect.top + rect.height * 0.68 + "px";
       overlay.style.width = rect.width + "px";
-      overlay.style.height = rect.height * 0.82 + "px";
+      overlay.style.height = Math.max(2, rect.height * 0.24) + "px";
       layer.appendChild(overlay);
     });
   }
