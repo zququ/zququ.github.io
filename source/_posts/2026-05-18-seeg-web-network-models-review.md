@@ -12,8 +12,6 @@ comments: true
 
 这组文献可以按一条主线来读：癫痫术前评估正在从“找一个点”转向“解释一个网络”。SEEG 仍然是最关键的功能证据，但它越来越多地被放进 MRI/DTI、fMRI、MEG、网络科学、神经质量模型和机器学习组成的系统里。目标不是让模型替代医生，而是让 epileptogenic zone（EZ）、seizure onset zone（SOZ）和 epileptogenic zone network（EZN）的判断更可解释、更可验证。
 
-[下载 PPT：SEEG/WEB 文献综述](/files/seeg-web-network-models-review.pptx)
-
 先给一句总纲：**SEEG/WEB 这条线最值得复习的不是某一个算法，而是“同步证据 + 个体化模型 + 临床可解释性”的组合。** 动力学模型解释发作为何发生，VEP 把个体结构和 SEEG 放进同一个虚拟脑，AI 方法补充非侵入式预测，多模态病例则提醒我们，局灶和广泛性并不总是二分。
 
 插图只选用能在原 PDF 中确认开放许可或已整理过的原文图；版权不明确的文章只做文字总结，避免把未授权截图直接塞进公开笔记。
@@ -53,6 +51,30 @@ Virtual Epileptic Patient 的核心不是“做一个漂亮 3D 脑图”，而�
 图 1 最值得看的是闭环关系。左上角输入 MRI/DTI，右上角构建 network anatomy；中间通过 The Virtual Brain / VEP 放置 network model；左下角把 empirical observations 作为模型约束；右下角用 Stan/PyMC3 等概率编程框架做 inference/prediction。也就是说，VEP 不是把 SEEG 结果画在脑上，而是用 SEEG 反过来限制“哪些脑区更可能具有高 epileptogenicity”。
 
 Hashemi 等 2020 的 Bayesian VEP 进一步强调不确定性：他们用 NUTS 和 ADVI 推断脑区 epileptogenicity map，并比较 centered 与 non-centered parameterization 的收敛行为 <sup class="citation">[<a href="#ref-s2">2</a>]</sup>。这点很重要，因为术前讨论不能只要一个“最可能答案”，还要知道这个答案有多稳、哪些区域是模型不确定的边界。
+
+### Bayesian VEP 里的推断算法到底在做什么
+
+Bayesian VEP 的目标可以写成一句话：**给定个体连接组、SEEG/MEG/fMRI 等观测和发作传播模型，反推每个脑区的 epileptogenicity、coupling、time delay 等参数的后验分布。** 这里的“后验分布”比单个分数更有用，因为它同时告诉我们两个问题：某个脑区是不是更可能高致痫，以及这个判断有多不确定。
+
+可以把常见算法分成三类：点估计、采样、近似推断。
+
+| 算法/概念 | 本质 | 在 VEP/癫痫模型里做什么 | 优点 | 风险 |
+| --- | --- | --- | --- | --- |
+| MAP | maximum a posteriori，最大后验点估计 | 找到一组最可能的参数，比如某些脑区 epileptogenicity 最高 | 快、容易解释、适合初始化 | 只给一个点，不告诉不确定性；多峰后验时可能只找到局部答案 |
+| MCMC | Markov chain Monte Carlo，马尔可夫链蒙特卡洛采样 | 从后验分布中抽很多组可能参数，看每个脑区高致痫概率 | 能表达不确定性和参数相关性 | 慢；需要收敛诊断；高维模型容易混合差 |
+| HMC | Hamiltonian Monte Carlo，哈密顿蒙特卡洛 | 用梯度信息在高维参数空间里更高效地采样 | 比普通 random-walk MCMC 更适合连续高维参数 | 需要可微模型；步长、轨迹长度不合适会出问题 |
+| NUTS | No-U-Turn Sampler，HMC 的自动化变体 | 自动决定 HMC 轨迹长度，用于更可靠地采样 epileptogenicity posterior | 相对准确，能给 credible interval、区域概率和诊断指标 | 计算开销大；模型参数化差时会出现 divergence |
+| VI | variational inference，变分推断 | 用一个简单分布近似真实后验，把推断变成优化问题 | 快、可扩展，适合先做探索 | 近似分布太简单时会低估不确定性 |
+| ADVI | automatic differentiation variational inference | 自动微分 + 变分推断，快速近似 VEP 参数后验 | 实现方便，适合复杂概率模型的快速初筛或初始化 | 常见问题是 posterior variance 偏小；多峰/强相关后验会被抹平 |
+| SVI | stochastic variational inference | 用小批量数据做变分优化 | 适合大数据和在线学习 | 依赖优化稳定性；临床小样本下不一定比完整推断更可靠 |
+| Laplace approximation | 在 MAP 附近用高斯近似后验 | 用局部曲率粗略估计参数不确定性 | 快，适合模型比较或初步误差条 | 只看 MAP 附近，无法处理明显非高斯或多峰后验 |
+| WAIC / PSIS-LOO | Bayesian model comparison / predictive accuracy 评估 | 比较不同模型、不同先验或不同网络假设的预测表现 | 比只看拟合误差更稳健 | 不能证明模型是真的，只能比较候选模型谁预测更好 |
+
+NUTS 和 ADVI 的关系最适合这样理解：**NUTS 更像严谨复核，ADVI 更像快速草图。** NUTS 通过采样保留较完整的 posterior 形状，适合最后报告不确定性；ADVI 通过优化快速给出近似 posterior，适合先看模型是否跑得通、哪些区域可能重要，或者作为 NUTS 初始化。若 NUTS 和 ADVI 对高 epileptogenicity 区域给出相似排序，说明结论更稳；若差异很大，通常提示 posterior 复杂、参数相关强、先验影响大，不能只相信 ADVI 的快速结果。
+
+实际读 Bayesian VEP 结果时，不应只看彩色脑图。更可靠的检查顺序是：第一，看 posterior 是否集中，某个脑区的 epileptogenicity 是稳定偏高，还是 credible interval 很宽；第二，看采样诊断，NUTS 是否有足够 effective sample size、R-hat 是否接近 1、有没有 divergence；第三，看预测检查，模型生成的 SEEG/MEG/fMRI 特征是否能复现真实传播顺序；第四，看模型比较，不同先验、不同连接矩阵或不同 EZ 假设下，WAIC/LOO 或 posterior predictive check 是否支持同一个临床结论 <sup class="citation">[<a href="#ref-s2">2</a>]</sup>。
+
+一句话总结：**MAP 告诉你“最可能是哪一组参数”，NUTS 告诉你“这一判断有多不确定”，ADVI 告诉你“快速近似下大概是什么方向”，WAIC/LOO 帮你比较“哪个候选模型更能预测数据”。** 放到术前评估里，它们都只是把不确定性显式化的工具，不能绕过 SEEG 覆盖范围、临床症状、影像病灶和术后结果这些硬证据。
 
 ![Jirsa 2017 Figure 2：SEEG 发作记录与模拟发作](/images/seeg-web-network-models-review/s7-jirsa-2017-fig2-seeg-simulation.png)
 
