@@ -10,6 +10,9 @@ function setupGoyoMode() {
       try {
         window.localStorage.setItem(goyoStorageKey, active ? "1" : "0");
       } catch (err) {}
+      window.dispatchEvent(new CustomEvent("zququ:goyochange", {
+        detail: { active: active }
+      }));
     };
 
     try {
@@ -181,11 +184,9 @@ function setupReaderNotes() {
     renderNotes();
   });
 
-  window.addEventListener("resize", function() {
-    renderNotes();
-    renderHighlights();
-  });
-  window.addEventListener("load", renderHighlights);
+  window.addEventListener("resize", refreshAnchoredLayers);
+  window.addEventListener("load", refreshAnchoredLayers);
+  window.addEventListener("zququ:goyochange", refreshAnchoredLayers);
 
   document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
@@ -218,6 +219,19 @@ function setupReaderNotes() {
     try {
       window.localStorage.setItem(storageKey, JSON.stringify(state));
     } catch (err) {}
+  }
+
+  function refreshAnchoredLayers() {
+    renderNotes();
+    renderHighlights();
+    window.requestAnimationFrame(function() {
+      renderNotes();
+      renderHighlights();
+    });
+    window.setTimeout(function() {
+      renderNotes();
+      renderHighlights();
+    }, 180);
   }
 
   function makeId(prefix) {
@@ -522,9 +536,9 @@ function setupReaderNotes() {
       overlay.className = "reader-highlight-overlay";
       overlay.setAttribute("data-highlight-id", highlight.id);
       overlay.style.left = window.scrollX + rect.left + "px";
-      overlay.style.top = window.scrollY + rect.top + rect.height * 0.68 + "px";
+      overlay.style.top = window.scrollY + rect.top + rect.height * 0.78 + "px";
       overlay.style.width = rect.width + "px";
-      overlay.style.height = Math.max(2, rect.height * 0.24) + "px";
+      overlay.style.height = Math.max(2, Math.min(4, rect.height * 0.16)) + "px";
       layer.appendChild(overlay);
     });
   }
