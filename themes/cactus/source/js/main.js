@@ -186,6 +186,7 @@ function setupReaderNotes() {
 
   window.addEventListener("resize", refreshAnchoredLayers);
   window.addEventListener("load", refreshAnchoredLayers);
+  window.addEventListener("scroll", scheduleHighlightRefresh, { passive: true });
   window.addEventListener("zququ:goyochange", refreshAnchoredLayers);
 
   document.addEventListener("keydown", function(event) {
@@ -232,6 +233,17 @@ function setupReaderNotes() {
       renderNotes();
       renderHighlights();
     }, 180);
+  }
+
+  function scheduleHighlightRefresh() {
+    if (scheduleHighlightRefresh.pending) {
+      return;
+    }
+    scheduleHighlightRefresh.pending = true;
+    window.requestAnimationFrame(function() {
+      scheduleHighlightRefresh.pending = false;
+      renderHighlights();
+    });
   }
 
   function makeId(prefix) {
@@ -535,8 +547,8 @@ function setupReaderNotes() {
       var overlay = document.createElement("span");
       overlay.className = "reader-highlight-overlay";
       overlay.setAttribute("data-highlight-id", highlight.id);
-      overlay.style.left = window.scrollX + rect.left + "px";
-      overlay.style.top = window.scrollY + rect.top + rect.height * 0.78 + "px";
+      overlay.style.left = rect.left + "px";
+      overlay.style.top = rect.top + rect.height * 0.78 + "px";
       overlay.style.width = rect.width + "px";
       overlay.style.height = Math.max(2, Math.min(4, rect.height * 0.16)) + "px";
       layer.appendChild(overlay);
