@@ -312,6 +312,7 @@ function setupReaderNotes() {
     if (!selectionInfo.sameBlock || selectionInfo.end <= selectionInfo.start) {
       return;
     }
+    selectionInfo = normalizeSelectionInfo(selectionInfo);
     var overlapping = getOverlappingHighlights(selectionInfo);
     if (overlapping.length) {
       removeHighlights(overlapping.map(function(highlight) {
@@ -374,6 +375,18 @@ function setupReaderNotes() {
   }
 
   function applyStoredHighlights() {
+    var changed = false;
+    state.highlights.forEach(function(highlight) {
+      var normalized = expandAsciiWordBoundaries(highlight.start, highlight.end);
+      if (normalized.start !== highlight.start || normalized.end !== highlight.end) {
+        highlight.start = normalized.start;
+        highlight.end = normalized.end;
+        changed = true;
+      }
+    });
+    if (changed) {
+      saveState();
+    }
     state.highlights
       .slice()
       .sort(function(a, b) { return b.start - a.start; })
@@ -382,7 +395,51 @@ function setupReaderNotes() {
       });
   }
 
-  function wrapOffsets(start, end, id) {
+  function normalizeSelectionInfo(selectionInfo) {
+    var normalized = expandAsciiWordBoundaries(selectionInfo.start, selectionInfo.end);
+    if (normalized.start === selectionInfo.start && normalized.end === selectionInfo.end) {
+      return selectionInfo;
+    }
+    var range = getRangeFromOffsets(normalized.start, normalized.end);
+    if (!range) {
+      return selectionInfo;
+    }
+    return Object.assign({}, selectionInfo, {
+      range: range,
+      start: normalized.start,
+      end: normalized.end
+    });
+  }
+
+  function expandAsciiWordBoundaries(start, end) {
+    var text = getArticleOffsetText();
+    var isWord = function(char) {
+      return /[A-Za-z0-9_]/.test(char || "");
+    };
+    while (start > 0 && isWord(text.charAt(start - 1)) && isWord(text.charAt(start))) {
+      start -= 1;
+    }
+    while (end < text.length && isWord(text.charAt(end - 1)) && isWord(text.charAt(end))) {
+      end += 1;
+    }
+    return { start: start, end: end };
+  }
+
+  function getArticleOffsetText() {
+    var text = "";
+    var walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        return shouldUseTextNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var node;
+    while ((node = walker.nextNode())) {
+      text += node.nodeValue;
+    }
+    return text;
+  }
+
+  function getRangeFromOffsets(start, end) {
     var walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
       acceptNode: function(node) {
         return shouldUseTextNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
@@ -394,7 +451,6 @@ function setupReaderNotes() {
     var startNodeOffset = 0;
     var endNodeOffset = 0;
     var node;
-
     while ((node = walker.nextNode())) {
       var length = node.nodeValue.length;
       var next = current + length;
@@ -409,14 +465,20 @@ function setupReaderNotes() {
       }
       current = next;
     }
-
     if (!startNode || !endNode) {
-      return;
+      return null;
     }
-
     var range = document.createRange();
     range.setStart(startNode, startNodeOffset);
     range.setEnd(endNode, endNodeOffset);
+    return range;
+  }
+
+  function wrapOffsets(start, end, id) {
+    var range = getRangeFromOffsets(start, end);
+    if (!range) {
+      return;
+    }
     wrapRange(range, id);
   }
 
