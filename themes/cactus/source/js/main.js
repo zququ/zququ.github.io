@@ -308,11 +308,15 @@ function setupReaderNotes() {
       return;
     }
 
-    var startOffset = getTextOffset(range);
+    var offsets = getTextOffsets(range);
+    if (!offsets || offsets.end <= offsets.start) {
+      hideToolbar();
+      return;
+    }
     activeSelection = {
       range: range.cloneRange(),
-      start: startOffset,
-      end: startOffset + selection.toString().length,
+      start: offsets.start,
+      end: offsets.end,
       text: text.slice(0, 240),
       x: window.scrollX + rect.left + rect.width / 2,
       y: window.scrollY + rect.bottom + 10,
@@ -331,11 +335,30 @@ function setupReaderNotes() {
     return element && element.closest("p, li, figcaption, blockquote, h1, h2, h3, h4, h5, h6, td, th");
   }
 
-  function getTextOffset(range) {
-    var prefixRange = document.createRange();
-    prefixRange.selectNodeContents(article);
-    prefixRange.setEnd(range.startContainer, range.startOffset);
-    return prefixRange.toString().length;
+  function getTextOffsets(range) {
+    var walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        return shouldUseTextNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var current = 0;
+    var start = null;
+    var end = null;
+    var node;
+    while ((node = walker.nextNode())) {
+      if (node === range.startContainer) {
+        start = current + range.startOffset;
+      }
+      if (node === range.endContainer) {
+        end = current + range.endOffset;
+        break;
+      }
+      current += node.nodeValue.length;
+    }
+    if (start === null || end === null) {
+      return null;
+    }
+    return { start: start, end: end };
   }
 
   function toggleHighlight(selectionInfo) {
@@ -548,9 +571,9 @@ function setupReaderNotes() {
       overlay.className = "reader-highlight-overlay";
       overlay.setAttribute("data-highlight-id", highlight.id);
       overlay.style.left = rect.left + "px";
-      overlay.style.top = rect.top + rect.height * 0.78 + "px";
+      overlay.style.top = rect.top + rect.height * 0.16 + "px";
       overlay.style.width = rect.width + "px";
-      overlay.style.height = Math.max(2, Math.min(4, rect.height * 0.16)) + "px";
+      overlay.style.height = Math.max(6, rect.height * 0.68) + "px";
       layer.appendChild(overlay);
     });
   }
