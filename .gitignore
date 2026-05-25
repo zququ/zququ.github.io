@@ -7,3 +7,7 @@ source/files/seeg-web-network-models-review.pptx
 _legacy_jekyll/.bundle/
 _legacy_jekyll/.jekyll-cache/
 _legacy_jekyll/_site/
+
+# Local-only drafts and generated review workspaces
+_local_drafts/
+tmp_zotero_eds_drug_em_review/
