@@ -1,0 +1,1031 @@
+{
+  "zoteroDataDir": "G:\\Zotero",
+  "database": "G:\\Zotero\\zotero.sqlite",
+  "library": {
+    "libraryID": 2,
+    "type": "group",
+    "groupID": 6414762,
+    "name": "ZququRAY"
+  },
+  "collection": {
+    "collectionID": 243,
+    "path": "EDS",
+    "includedCollectionIDs": [
+      243
+    ]
+  },
+  "counts": {
+    "items": 19,
+    "attachments": 15,
+    "existingAttachments": 15
+  },
+  "items": [
+    {
+      "sourceID": "S1",
+      "itemID": 3571,
+      "key": "YDQC49XX",
+      "itemType": "webpage",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Liposomes containing dopamine entrapped in response to transmembrane ammonium sulfate gradient as carrier system for dopamine delivery into the brain of parkinsonian mice",
+        "url": "https://hero.epa.gov/reference/3812665/",
+        "language": "en",
+        "websiteTitle": "hero.epa.gov"
+      },
+      "creators": [],
+      "creatorSummary": "",
+      "year": "",
+      "attachments": []
+    },
+    {
+      "sourceID": "S2",
+      "itemID": 3572,
+      "key": "Q9H5QBSM",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Dopamine-loaded blood exosomes targeted to brain for better treatment of Parkinson's disease",
+        "publicationTitle": "Journal of Controlled Release",
+        "date": "2018-10-00 2018-10",
+        "DOI": "10.1016/j.jconrel.2018.08.035",
+        "url": "https://doi.org/10.1016/j.jconrel.2018.08.035",
+        "volume": "287",
+        "pages": "156-166",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://www.sciencedirect.com/science/article/abs/pii/S0168365918305017"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Mengke Qu"
+        },
+        {
+          "type": "author",
+          "name": "Qing Lin"
+        },
+        {
+          "type": "author",
+          "name": "Luyi Huang"
+        },
+        {
+          "type": "author",
+          "name": "Yao Fu"
+        },
+        {
+          "type": "author",
+          "name": "Luyao Wang"
+        },
+        {
+          "type": "author",
+          "name": "Shanshan He"
+        },
+        {
+          "type": "author",
+          "name": "Yu Fu"
+        },
+        {
+          "type": "author",
+          "name": "Shengyong Yang"
+        },
+        {
+          "type": "author",
+          "name": "Zhirong Zhang"
+        },
+        {
+          "type": "author",
+          "name": "Ling Zhang"
+        },
+        {
+          "type": "author",
+          "name": "Xun Sun"
+        }
+      ],
+      "creatorSummary": "Mengke Qu et al.",
+      "year": "2018",
+      "attachments": [
+        {
+          "itemID": 3601,
+          "key": "RENGQQYP",
+          "path": "storage:j.jconrel.2018.08.035.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\RENGQQYP\\j.jconrel.2018.08.035.pdf.pdf",
+          "exists": true
+        },
+        {
+          "itemID": 3602,
+          "key": "8U9NX2IC",
+          "path": "storage:j.jconrel.2018.08.035.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\8U9NX2IC\\j.jconrel.2018.08.035.pdf.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S3",
+      "itemID": 3573,
+      "key": "ES9Q3AWA",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Niosomes for nose-to-brain delivery of bromocriptine: Formulation development, efficacy evaluation and toxicity profiling",
+        "publicationTitle": "Journal of Drug Delivery Science and Technology",
+        "date": "2020-08-00 2020-8",
+        "DOI": "10.1016/j.jddst.2020.101791",
+        "url": "https://doi.org/10.1016/j.jddst.2020.101791",
+        "volume": "58",
+        "pages": "101791",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://www.researchgate.net/publication/341257372_Niosomes_for_nose-to-brain_delivery_of_bromocriptine_Formulation_development_efficacy_evaluation_and_toxicity_profiling"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "V.G. Sita"
+        },
+        {
+          "type": "author",
+          "name": "Dhananjay Jadhav"
+        },
+        {
+          "type": "author",
+          "name": "Pradeep Vavia"
+        }
+      ],
+      "creatorSummary": "V.G. Sita et al.",
+      "year": "2020",
+      "attachments": [
+        {
+          "itemID": 3596,
+          "key": "VYUZFWFG",
+          "path": "storage:j.jddst.2020.101791.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\VYUZFWFG\\j.jddst.2020.101791.pdf.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S4",
+      "itemID": 3574,
+      "key": "AYHPFC62",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Identification of large channels in cationic PEGylated cubosome nanoparticles by synchrotron radiation SAXS and Cryo-TEM imaging",
+        "publicationTitle": "Soft Matter",
+        "date": "2015-00-00 2015",
+        "DOI": "10.1039/C5SM00169B",
+        "url": "https://doi.org/10.1039/C5SM00169B",
+        "volume": "11",
+        "issue": "18",
+        "pages": "3686-3692",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pubs.rsc.org/en/content/articlehtml/2015/sm/c5sm00169b"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Borislav Angelov"
+        },
+        {
+          "type": "author",
+          "name": "Angelina Angelova"
+        },
+        {
+          "type": "author",
+          "name": "Markus Drechsler"
+        },
+        {
+          "type": "author",
+          "name": "Vasil M. Garamus"
+        },
+        {
+          "type": "author",
+          "name": "Rada Mutafchieva"
+        },
+        {
+          "type": "author",
+          "name": "Sylviane Lesieur"
+        }
+      ],
+      "creatorSummary": "Borislav Angelov et al.",
+      "year": "2015",
+      "attachments": [
+        {
+          "itemID": 3593,
+          "key": "FYJ8CGVH",
+          "path": "storage:Angelov et al. - 2015 - Identification of large channels in cationic PEGylated cubosome nanoparticles by synchrotron radiati.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\FYJ8CGVH\\Angelov et al. - 2015 - Identification of large channels in cationic PEGylated cubosome nanoparticles by synchrotron radiati.pdf",
+          "exists": true
+        },
+        {
+          "itemID": 3599,
+          "key": "IZYUQTCE",
+          "path": "storage:c5sm00169b.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\IZYUQTCE\\c5sm00169b.pdf.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S5",
+      "itemID": 3575,
+      "key": "4XVL6MUU",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Artificial Melanogenesis by Confining Melanin/Polydopamine Production inside Polymersomes",
+        "publicationTitle": "Macromolecular Bioscience",
+        "date": "2021-12-00 2021-12",
+        "DOI": "10.1002/mabi.202100249",
+        "url": "https://doi.org/10.1002/mabi.202100249",
+        "volume": "21",
+        "issue": "12",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://onlinelibrary.wiley.com/doi/full/10.1002/mabi.202100249"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Claire E. Meyer"
+        },
+        {
+          "type": "author",
+          "name": "Cora‐Ann Schoenenberger"
+        },
+        {
+          "type": "author",
+          "name": "Riccardo P. Wehr"
+        },
+        {
+          "type": "author",
+          "name": "Dalin Wu"
+        },
+        {
+          "type": "author",
+          "name": "Cornelia G. Palivan"
+        }
+      ],
+      "creatorSummary": "Claire E. Meyer et al.",
+      "year": "2021",
+      "attachments": []
+    },
+    {
+      "sourceID": "S6",
+      "itemID": 3576,
+      "key": "I3IHCKSQ",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Continuous preparation of bicelles using hydrodynamic focusing method for bicelle to vesicle transition",
+        "publicationTitle": "Micro and Nano Systems Letters",
+        "date": "2021-12-00 2021-12",
+        "DOI": "10.1186/s40486-021-00133-4",
+        "url": "https://doi.org/10.1186/s40486-021-00133-4",
+        "volume": "9",
+        "issue": "1",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://link.springer.com/article/10.1186/s40486-021-00133-4"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "SungHak Choi"
+        },
+        {
+          "type": "author",
+          "name": "BongSu Kang"
+        },
+        {
+          "type": "author",
+          "name": "Toshinori Shimanouchi"
+        },
+        {
+          "type": "author",
+          "name": "Keesung Kim"
+        },
+        {
+          "type": "author",
+          "name": "HoSup Jung"
+        }
+      ],
+      "creatorSummary": "SungHak Choi et al.",
+      "year": "2021",
+      "attachments": [
+        {
+          "itemID": 3592,
+          "key": "N4XDZ7NP",
+          "path": "storage:Choi et al. - 2021 - Continuous preparation of bicelles using hydrodynamic focusing method for bicelle to vesicle transit.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\N4XDZ7NP\\Choi et al. - 2021 - Continuous preparation of bicelles using hydrodynamic focusing method for bicelle to vesicle transit.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S7",
+      "itemID": 3577,
+      "key": "4D732M96",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Fatty Acid-Based Coacervates as a Membrane-free Protocell Model",
+        "publicationTitle": "Bioconjugate Chemistry",
+        "date": "2022-03-16 2022-3-16",
+        "DOI": "10.1021/acs.bioconjchem.1c00559",
+        "url": "https://doi.org/10.1021/acs.bioconjchem.1c00559",
+        "volume": "33",
+        "issue": "3",
+        "pages": "444-451",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pubs.acs.org/doi/10.1021/acs.bioconjchem.1c00559"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Lili Zhou"
+        },
+        {
+          "type": "author",
+          "name": "J. Justin Koh"
+        },
+        {
+          "type": "author",
+          "name": "Jing Wu"
+        },
+        {
+          "type": "author",
+          "name": "Xiaotong Fan"
+        },
+        {
+          "type": "author",
+          "name": "Haiming Chen"
+        },
+        {
+          "type": "author",
+          "name": "Xunan Hou"
+        },
+        {
+          "type": "author",
+          "name": "Lu Jiang"
+        },
+        {
+          "type": "author",
+          "name": "Xuehong Lu"
+        },
+        {
+          "type": "author",
+          "name": "Zibiao Li"
+        },
+        {
+          "type": "author",
+          "name": "Chaobin He"
+        }
+      ],
+      "creatorSummary": "Lili Zhou et al.",
+      "year": "2022",
+      "attachments": []
+    },
+    {
+      "sourceID": "S8",
+      "itemID": 3578,
+      "key": "HJKJH48D",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Porous Nanoparticle Supported Lipid Bilayers (Protocells) as Delivery Vehicles",
+        "publicationTitle": "Journal of the American Chemical Society",
+        "date": "2009-02-04 2009-2-4",
+        "DOI": "10.1021/ja808018y",
+        "url": "https://doi.org/10.1021/ja808018y",
+        "volume": "131",
+        "issue": "4",
+        "pages": "1354-1355",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pmc.ncbi.nlm.nih.gov/articles/PMC2649781/"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Juewen Liu"
+        },
+        {
+          "type": "author",
+          "name": "Alison Stace-Naughton"
+        },
+        {
+          "type": "author",
+          "name": "Xingmao Jiang"
+        },
+        {
+          "type": "author",
+          "name": "C. Jeffrey Brinker"
+        }
+      ],
+      "creatorSummary": "Juewen Liu et al.",
+      "year": "2009",
+      "attachments": [
+        {
+          "itemID": 3595,
+          "key": "Q3NIEY9F",
+          "path": "storage:ja808018y.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\Q3NIEY9F\\ja808018y.pdf.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S9",
+      "itemID": 3579,
+      "key": "TVGN67CR",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Dynamic light scattering and transmission electron microscopy in drug delivery: a roadmap for correct characterization of nanoparticles and interpretation of results",
+        "publicationTitle": "Materials Horizons",
+        "date": "2023-00-00 2023",
+        "DOI": "10.1039/D3MH00717K",
+        "url": "https://doi.org/10.1039/D3MH00717K",
+        "volume": "10",
+        "issue": "12",
+        "pages": "5354-5370",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://centaur.reading.ac.uk/113481/9/d3mh00717k.pdf"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Sergey K. Filippov"
+        },
+        {
+          "type": "author",
+          "name": "Ramil Khusnutdinov"
+        },
+        {
+          "type": "author",
+          "name": "Anastasiia Murmiliuk"
+        },
+        {
+          "type": "author",
+          "name": "Wali Inam"
+        },
+        {
+          "type": "author",
+          "name": "Lucia Ya. Zakharova"
+        },
+        {
+          "type": "author",
+          "name": "Hongbo Zhang"
+        },
+        {
+          "type": "author",
+          "name": "Vitaliy V. Khutoryanskiy"
+        }
+      ],
+      "creatorSummary": "Sergey K. Filippov et al.",
+      "year": "2023",
+      "attachments": [
+        {
+          "itemID": 3591,
+          "key": "DUZXKBK9",
+          "path": "storage:Filippov et al. - 2023 - Dynamic light scattering and transmission electron microscopy in drug delivery a roadmap for correc.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\DUZXKBK9\\Filippov et al. - 2023 - Dynamic light scattering and transmission electron microscopy in drug delivery a roadmap for correc.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S10",
+      "itemID": 3580,
+      "key": "KGCZQNQY",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Cryogenic transmission electron microscopy (cryo-TEM) for studying the morphology of colloidal drug delivery systems",
+        "publicationTitle": "International Journal of Pharmaceutics",
+        "date": "2011-09-00 2011-9",
+        "DOI": "10.1016/j.ijpharm.2011.02.001",
+        "url": "https://doi.org/10.1016/j.ijpharm.2011.02.001",
+        "volume": "417",
+        "issue": "1-2",
+        "pages": "120-137",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://www.sciencedirect.com/science/article/abs/pii/S0378517311001153"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Judith Kuntsche"
+        },
+        {
+          "type": "author",
+          "name": "Jennifer C. Horst"
+        },
+        {
+          "type": "author",
+          "name": "Heike Bunjes"
+        }
+      ],
+      "creatorSummary": "Judith Kuntsche et al.",
+      "year": "2011",
+      "attachments": [
+        {
+          "itemID": 3600,
+          "key": "7BAP8JEV",
+          "path": "storage:j.ijpharm.2011.02.001.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\7BAP8JEV\\j.ijpharm.2011.02.001.pdf.pdf",
+          "exists": true
+        },
+        {
+          "itemID": 3603,
+          "key": "76U3FBNI",
+          "path": "storage:j.ijpharm.2011.02.001.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\76U3FBNI\\j.ijpharm.2011.02.001.pdf.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S11",
+      "itemID": 3581,
+      "key": "DLMSVLXH",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "In vitro Development of Controlled-Release Nanoniosomes for Improved Delivery and Anticancer Activity of Letrozole for Breast Cancer Treatment",
+        "publicationTitle": "International Journal of Nanomedicine",
+        "date": "2022-12-00 2022-12",
+        "DOI": "10.2147/IJN.S384085",
+        "url": "https://doi.org/10.2147/IJN.S384085",
+        "volume": "Volume 17",
+        "pages": "6233-6255",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pmc.ncbi.nlm.nih.gov/articles/PMC9753765/"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Saeedeh Ahmadi"
+        },
+        {
+          "type": "author",
+          "name": "Mahmoud Seraj"
+        },
+        {
+          "type": "author",
+          "name": "Mohsen Chiani"
+        },
+        {
+          "type": "author",
+          "name": "SeyedAyin Hosseini"
+        },
+        {
+          "type": "author",
+          "name": "Saba Bazzazan"
+        },
+        {
+          "type": "author",
+          "name": "Iman Akbarzadeh"
+        },
+        {
+          "type": "author",
+          "name": "Samaneh Saffar"
+        },
+        {
+          "type": "author",
+          "name": "Ebrahim Mostafavi"
+        }
+      ],
+      "creatorSummary": "Saeedeh Ahmadi et al.",
+      "year": "2022",
+      "attachments": [
+        {
+          "itemID": 3594,
+          "key": "32B6Y8HE",
+          "path": "storage:Ahmadi et al. - 2022 - In vitro Development of Controlled-Release Nanoniosomes for Improved Delivery and Anticancer Activit.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\32B6Y8HE\\Ahmadi et al. - 2022 - In vitro Development of Controlled-Release Nanoniosomes for Improved Delivery and Anticancer Activit.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S12",
+      "itemID": 3582,
+      "key": "LT4HGGTA",
+      "itemType": "webpage",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Limitations of quantitative analysis - EDS",
+        "url": "https://myscope.training/EDS_Limitations_of_quantitative_analysis",
+        "language": "en",
+        "websiteTitle": "myscope.training"
+      },
+      "creators": [],
+      "creatorSummary": "",
+      "year": "",
+      "attachments": []
+    },
+    {
+      "sourceID": "S13",
+      "itemID": 3583,
+      "key": "24XZJJPA",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Iodine-Rich Polymersomes Enable Versatile SPECT/CT Imaging and Potent Radioisotope Therapy for Tumor in Vivo",
+        "publicationTitle": "ACS Applied Materials &amp; Interfaces",
+        "date": "2019-05-29 2019-5-29",
+        "DOI": "10.1021/acsami.9b04294",
+        "url": "https://doi.org/10.1021/acsami.9b04294",
+        "volume": "11",
+        "issue": "21",
+        "pages": "18953-18959",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pubs.acs.org/doi/10.1021/acsami.9b04294"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Jinsong Cao"
+        },
+        {
+          "type": "author",
+          "name": "Yaohua Wei"
+        },
+        {
+          "type": "author",
+          "name": "Yanxiang Zhang"
+        },
+        {
+          "type": "author",
+          "name": "Guanglin Wang"
+        },
+        {
+          "type": "author",
+          "name": "Xiang Ji"
+        },
+        {
+          "type": "author",
+          "name": "Zhiyuan Zhong"
+        }
+      ],
+      "creatorSummary": "Jinsong Cao et al.",
+      "year": "2019",
+      "attachments": [
+        {
+          "itemID": 3597,
+          "key": "UJPGX9IU",
+          "path": "storage:acsami.9b04294.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\UJPGX9IU\\acsami.9b04294.pdf.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S14",
+      "itemID": 3584,
+      "key": "G49PJYTZ",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Unlocking the Potential of Niosomes: A Comprehensive Review",
+        "publicationTitle": "Asian Journal of Pharmaceutical Research and Development",
+        "date": "2024-06-15 2024-6-15",
+        "DOI": "10.22270/ajprd.v11i3.1421",
+        "url": "https://doi.org/10.22270/ajprd.v11i3.1421",
+        "volume": "12",
+        "issue": "3",
+        "pages": "239-246",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://www.researchgate.net/publication/386035911_Unlocking_the_Potential_of_Niosomes_A_Comprehensive_Review"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Punam V. Ritthe"
+        },
+        {
+          "type": "author",
+          "name": "Dr. Ajay Fugate"
+        },
+        {
+          "type": "author",
+          "name": "Dr. Sameer Shafi"
+        },
+        {
+          "type": "author",
+          "name": "Muktai N. Rudrurkar"
+        },
+        {
+          "type": "author",
+          "name": "Anis J. Kazi"
+        },
+        {
+          "type": "author",
+          "name": "Sneha R. Patil"
+        },
+        {
+          "type": "author",
+          "name": "Rohini U. Sante"
+        },
+        {
+          "type": "author",
+          "name": "Imran Shaikh."
+        }
+      ],
+      "creatorSummary": "Punam V. Ritthe et al.",
+      "year": "2024",
+      "attachments": [
+        {
+          "itemID": 3589,
+          "key": "9RJX2AMV",
+          "path": "storage:Ritthe et al. - 2024 - Unlocking the Potential of Niosomes A Comprehensive Review.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\9RJX2AMV\\Ritthe et al. - 2024 - Unlocking the Potential of Niosomes A Comprehensive Review.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S15",
+      "itemID": 3585,
+      "key": "W4RH3T8C",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Cubosomes in Drug Delivery—A Comprehensive Review on Its Structural Components, Preparation Techniques and Therapeutic Applications",
+        "publicationTitle": "Biomedicines",
+        "date": "2023-04-07 2023-4-7",
+        "DOI": "10.3390/biomedicines11041114",
+        "url": "https://doi.org/10.3390/biomedicines11041114",
+        "volume": "11",
+        "issue": "4",
+        "pages": "1114",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pmc.ncbi.nlm.nih.gov/articles/PMC10135881/"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Durgaramani Sivadasan"
+        },
+        {
+          "type": "author",
+          "name": "Muhammad H. Sultan"
+        },
+        {
+          "type": "author",
+          "name": "Saad S. Alqahtani"
+        },
+        {
+          "type": "author",
+          "name": "Shamama Javed"
+        }
+      ],
+      "creatorSummary": "Durgaramani Sivadasan et al.",
+      "year": "2023",
+      "attachments": []
+    },
+    {
+      "sourceID": "S16",
+      "itemID": 3586,
+      "key": "GKPET6MA",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Formulating and Characterizing an Exosome-based Dopamine Carrier System",
+        "publicationTitle": "Journal of Visualized Experiments",
+        "date": "2022-04-04 2022-4-4",
+        "DOI": "10.3791/63624",
+        "url": "https://doi.org/10.3791/63624",
+        "issue": "182",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://www.jove.com/v/63624/formulating-characterizing-an-exosome-based-dopamine-carrier"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Burçak Yavuz"
+        },
+        {
+          "type": "author",
+          "name": "Hakan Darici"
+        },
+        {
+          "type": "author",
+          "name": "Aslı Pınar Zorba Yildiz"
+        },
+        {
+          "type": "author",
+          "name": "Emrah Şefik Abamor"
+        },
+        {
+          "type": "author",
+          "name": "Murat Topuzoğullari"
+        },
+        {
+          "type": "author",
+          "name": "Melahat Bağirova"
+        },
+        {
+          "type": "author",
+          "name": "Adil Allahverdiyev"
+        },
+        {
+          "type": "author",
+          "name": "Erdal Karaoz"
+        }
+      ],
+      "creatorSummary": "Burçak Yavuz et al.",
+      "year": "2022",
+      "attachments": []
+    },
+    {
+      "sourceID": "S17",
+      "itemID": 3587,
+      "key": "4324S8FU",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Liposome-Derived Nanosystems for the Treatment of Behavioral and Neurodegenerative Diseases: The Promise of Niosomes, Transfersomes, and Ethosomes for Increased Brain Drug Bioavailability",
+        "publicationTitle": "Pharmaceuticals",
+        "date": "2023-10-08 2023-10-8",
+        "DOI": "10.3390/ph16101424",
+        "url": "https://doi.org/10.3390/ph16101424",
+        "volume": "16",
+        "issue": "10",
+        "pages": "1424",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pmc.ncbi.nlm.nih.gov/articles/PMC10610493/"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "Patrícia C. Pires"
+        },
+        {
+          "type": "author",
+          "name": "Ana Cláudia Paiva-Santos"
+        },
+        {
+          "type": "author",
+          "name": "Francisco Veiga"
+        }
+      ],
+      "creatorSummary": "Patrícia C. Pires et al.",
+      "year": "2023",
+      "attachments": [
+        {
+          "itemID": 3590,
+          "key": "LSRYY4ZT",
+          "path": "storage:Pires et al. - 2023 - Liposome-Derived Nanosystems for the Treatment of Behavioral and Neurodegenerative Diseases The Pro.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\LSRYY4ZT\\Pires et al. - 2023 - Liposome-Derived Nanosystems for the Treatment of Behavioral and Neurodegenerative Diseases The Pro.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S18",
+      "itemID": 3588,
+      "key": "U43HBGEG",
+      "itemType": "journalArticle",
+      "dateAdded": "2026-05-25 10:23:43",
+      "dateModified": "2026-05-25 10:23:43",
+      "fields": {
+        "title": "Imaging and elemental mapping of biological specimens with a dual-EDS dedicated scanning transmission electron microscope",
+        "publicationTitle": "Ultramicroscopy",
+        "date": "2013-05-00 2013-5",
+        "DOI": "10.1016/j.ultramic.2013.01.004",
+        "url": "https://doi.org/10.1016/j.ultramic.2013.01.004",
+        "volume": "128",
+        "pages": "24-31",
+        "language": "en",
+        "extra": "Source URL from review PDF: https://pmc.ncbi.nlm.nih.gov/articles/PMC3658130/"
+      },
+      "creators": [
+        {
+          "type": "author",
+          "name": "J.S. Wu"
+        },
+        {
+          "type": "author",
+          "name": "A.M. Kim"
+        },
+        {
+          "type": "author",
+          "name": "R. Bleher"
+        },
+        {
+          "type": "author",
+          "name": "B.D. Myers"
+        },
+        {
+          "type": "author",
+          "name": "R.G. Marvin"
+        },
+        {
+          "type": "author",
+          "name": "H. Inada"
+        },
+        {
+          "type": "author",
+          "name": "K. Nakamura"
+        },
+        {
+          "type": "author",
+          "name": "X.F. Zhang"
+        },
+        {
+          "type": "author",
+          "name": "E. Roth"
+        },
+        {
+          "type": "author",
+          "name": "S.Y. Li"
+        },
+        {
+          "type": "author",
+          "name": "T.K. Woodruff"
+        },
+        {
+          "type": "author",
+          "name": "T.V. O’Halloran"
+        },
+        {
+          "type": "author",
+          "name": "Vinayak P. Dravid"
+        }
+      ],
+      "creatorSummary": "J.S. Wu et al.",
+      "year": "2013",
+      "attachments": [
+        {
+          "itemID": 3598,
+          "key": "7P8D94JT",
+          "path": "storage:j.ultramic.2013.01.004.pdf.pdf",
+          "contentType": "application/pdf",
+          "linkMode": 1,
+          "localPath": "G:\\Zotero\\storage\\7P8D94JT\\j.ultramic.2013.01.004.pdf.pdf",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "sourceID": "S19",
+      "itemID": 3570,
+      "key": "2WSMLB94",
+      "itemType": "document",
+      "dateAdded": "2026-05-25 10:12:35",
+      "dateModified": "2026-05-25 10:12:35",
+      "fields": {
+        "title": "用于包裹神经递质并开展常温电镜与冷冻电镜研究的载体体系综述",
+        "language": "zh-CN"
+      },
+      "creators": [],
+      "creatorSummary": "",
+      "year": "",
+      "attachments": []
+    }
+  ]
+}
