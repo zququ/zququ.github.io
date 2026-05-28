@@ -59,7 +59,7 @@ comments: true
 
 #### 式 (1)：Goldman-Hodgkin-Katz 方程
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 v_m
 &=
@@ -80,7 +80,7 @@ P_{\mathrm{Cl}}[\mathrm{Cl}^-]_{\mathrm{out}}
 }
 \end{aligned}
 \tag{1}
-$$
+</script>
 
 式 (1) 是 Goldman-Hodgkin-Katz membrane potential equation，用来估计细胞膜内外的电位差。$v_m$ 是膜电位，$R$ 是气体常数，$T$ 是绝对温度，$F$ 是 Faraday 常数。$P_K$、$P_{\mathrm{Na}}$、$P_{\mathrm{Cl}}$ 是膜对不同离子的通透性。
 
@@ -88,7 +88,7 @@ $$
 
 #### 式 (2)：静息膜电位
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 E_m
 &=
@@ -111,7 +111,7 @@ E_m
 -70.15\ \mathrm{mV}
 \end{aligned}
 \tag{2}
-$$
+</script>
 
 式 (2) 是把典型静息状态下的离子浓度和相对通透性代入式 (1)。论文给出的静息通透性比例是 $P_K:P_{\mathrm{Na}}:P_{\mathrm{Cl}}=1:0.04:0.45$。结果约为 $-70.15\ \mathrm{mV}$，说明细胞内相对于细胞外更负。
 
@@ -119,7 +119,7 @@ $$
 
 #### 式 (3)：动作电位峰值
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 v_{\mathrm{peak}}
 &=
@@ -142,7 +142,7 @@ v_{\mathrm{peak}}
 38.43\ \mathrm{mV}
 \end{aligned}
 \tag{3}
-$$
+</script>
 
 式 (3) 模拟动作电位峰值。动作电位发生时，钠通道开放，$\mathrm{Na}^+$ 通透性显著升高。论文用峰值时的近似比例 $P_K:P_{\mathrm{Na}}:P_{\mathrm{Cl}}=1:12:0.45$，得到约 $38.43\ \mathrm{mV}$。
 
@@ -152,14 +152,14 @@ $$
 
 #### 式 (4)：ANN 层的向量形式
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \mathbf{r}
 &=
 f(W\mathbf{u}+\mathbf{b})
 \end{aligned}
 \tag{4}
-$$
+</script>
 
 式 (4) 是标准 ANN 层。$\mathbf{u}\in\mathbb{R}^{N_{\mathrm{pre}}}$ 是上一层神经元的 firing rate 或激活值，$\mathbf{r}\in\mathbb{R}^{N_{\mathrm{post}}}$ 是当前层输出。$W$ 是权重矩阵，$\mathbf{b}$ 是 bias，$f(\cdot)$ 是非线性激活函数。
 
@@ -169,7 +169,7 @@ ANN 和 SNN 的关键区别就在这里：ANN 用连续值 $\mathbf{r}$ 表达�
 
 #### 式 (5)：膜电容方程
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 C_m\frac{dv_m(t)}{dt}
 &=
@@ -178,7 +178,7 @@ I_{\mathrm{ion}}(t)
 I_{\mathrm{syn}}(t)
 \end{aligned}
 \tag{5}
-$$
+</script>
 
 式 (5) 把细胞膜看成电容。$C_m$ 是膜电容，$v_m$ 是膜电位。左边是膜电位变化需要的电荷变化；右边是离子电流 $I_{\mathrm{ion}}$ 和突触输入电流 $I_{\mathrm{syn}}$。
 
@@ -186,7 +186,7 @@ $$
 
 #### 式 (6)：离子电流
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 I_{\mathrm{ion}}(t)
 &=
@@ -197,7 +197,7 @@ G_{\mathrm{Na}}m^3h(v_m-E_{\mathrm{Na}})
 G_L(v_m-E_L)
 \end{aligned}
 \tag{6}
-$$
+</script>
 
 式 (6) 把离子电流拆成三部分：钾电流、钠电流、漏电流。$G_K$、$G_{\mathrm{Na}}$、$G_L$ 是最大电导；$E_K$、$E_{\mathrm{Na}}$、$E_L$ 是反转电位。
 
@@ -205,7 +205,7 @@ $n$ 是钾通道激活变量，$m$ 是钠通道激活变量，$h$ 是钠通道�
 
 #### 式 (7)：门控变量动力学
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{dg}{dt}
 &=
@@ -214,7 +214,7 @@ $$
 \beta_g(v_m)g
 \end{aligned}
 \tag{7}
-$$
+</script>
 
 式 (7) 描述门控变量 $g$ 的变化，$g$ 可以是 $n$、$m$ 或 $h$。$\alpha_g(v_m)$ 是从关闭到打开的速率，$\beta_g(v_m)$ 是从打开到关闭的速率。
 
@@ -222,7 +222,7 @@ $$
 
 #### 式 (8)：HH 门控速率函数
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \alpha_m(v_m)
 &=
@@ -246,7 +246,7 @@ $$
 0.125\exp(-v_m/80)
 \end{aligned}
 \tag{8}
-$$
+</script>
 
 式 (8) 给出 $m$、$h$、$n$ 的电压依赖速率。$m$ 控制钠通道激活，$h$ 控制钠通道失活，$n$ 控制钾通道激活。
 
@@ -256,7 +256,7 @@ $$
 
 #### 式 (9)：Leaky Integrate-and-Fire
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 C_m\frac{dv_m}{dt}
 &=
@@ -268,7 +268,7 @@ v_m\leftarrow v_{\mathrm{peak}}\quad\text{then}\quad
 v_m\leftarrow v_{\mathrm{reset}}
 \end{aligned}
 \tag{9}
-$$
+</script>
 
 式 (9) 是 LIF 模型。第一行描述膜电位积分和泄漏。$-G_L(v_m-E_L)$ 是 leak term，它把膜电位拉回漏电位 $E_L$；$I_{\mathrm{syn}}$ 是突触输入。
 
@@ -276,7 +276,7 @@ $$
 
 #### 式 (10)：恒定输入下的膜电位解
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 v_m(t)
 &=
@@ -286,7 +286,7 @@ R_m I
 \right)
 \end{aligned}
 \tag{10}
-$$
+</script>
 
 式 (10) 是在 $I_{\mathrm{syn}}(t)=I$ 且 $v_{\mathrm{reset}}=0$ 时，LIF 的解析解。$R_m$ 是膜电阻，$\tau_m=R_mC_m$ 是膜时间常数。
 
@@ -294,7 +294,7 @@ $$
 
 #### 式 (11)：第一次发放时间
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 t^{(1)}
 &=
@@ -303,7 +303,7 @@ t^{(1)}
 \frac{R_mI}{R_mI-v_\theta}
 \end{aligned}
 \tag{11}
-$$
+</script>
 
 式 (11) 是把式 (10) 设为阈值 $v_\theta$ 后解出来的第一次 spike 时间。$R_mI$ 越大，膜电位越快到阈值，$t^{(1)}$ 越短。
 
@@ -311,7 +311,7 @@ $$
 
 #### 式 (12)：稳态发放率
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 f
 &=
@@ -324,7 +324,7 @@ f
 \right)^{-1}
 \end{aligned}
 \tag{12}
-$$
+</script>
 
 式 (12) 把一次发放周期写成“积分到阈值的时间 + refractory period”。取倒数就是 firing rate。
 
@@ -334,7 +334,7 @@ $$
 
 #### 式 (13)：膜电位方程
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 C_m\frac{dv_m}{dt}
 &=
@@ -343,7 +343,7 @@ k(v_m-E_L)(v_m-v_t)
 +I_{\mathrm{syn}}(t)
 \end{aligned}
 \tag{13}
-$$
+</script>
 
 式 (13) 是 Izhikevich 模型的膜电位方程。$k(v_m-E_L)(v_m-v_t)$ 是二次非线性项，用来产生快速上升的 spike 动力学。$u$ 是恢复变量，代表钾电流激活和钠电流失活带来的负反馈。
 
@@ -351,14 +351,14 @@ $$
 
 #### 式 (14)：恢复变量方程
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{du(t)}{dt}
 &=
 a\left(b(v_m-E_m)-u\right)
 \end{aligned}
 \tag{14}
-$$
+</script>
 
 式 (14) 描述恢复变量 $u$ 如何跟随膜电位变化。$a$ 控制恢复速度，$b$ 控制膜电位对恢复变量的影响强度。
 
@@ -366,7 +366,7 @@ $$
 
 #### 式 (15)：Izhikevich reset
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \text{if}\quad v_m\ge v_\theta,\quad
 \begin{cases}
@@ -375,7 +375,7 @@ u\leftarrow u+d
 \end{cases}
 \end{aligned}
 \tag{15}
-$$
+</script>
 
 式 (15) 是 spike 后的重置规则。$v_m$ 被设为 $c$，恢复变量 $u$ 增加 $d$。
 
@@ -385,7 +385,7 @@ $$
 
 #### 式 (16)：AdEx 膜电位方程
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 C_m\frac{dv_m}{dt}
 &=
@@ -397,7 +397,7 @@ G_L\Delta_T
 +I_{\mathrm{syn}}
 \end{aligned}
 \tag{16}
-$$
+</script>
 
 式 (16) 是 Adaptive Exponential Integrate-and-Fire 模型。第一项是 leak，第二项是指数项，用来模拟接近阈值时钠通道激活导致的快速上升。$w$ 是适应电流，会抑制膜电位继续升高。
 
@@ -405,14 +405,14 @@ $\Delta_T$ 控制 spike onset 的陡峭程度。$\Delta_T$ 越小，模型越接
 
 #### 式 (17)：AdEx 适应变量
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \tau_w\frac{dw}{dt}
 &=
 a(v_m-E_L)-w
 \end{aligned}
 \tag{17}
-$$
+</script>
 
 式 (17) 描述适应变量 $w$。$\tau_w$ 是适应时间常数，$a$ 控制膜电位对适应电流的影响。
 
@@ -420,7 +420,7 @@ $$
 
 #### 式 (18)：AdEx reset
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \text{if}\quad v_m\ge v_\theta,\quad
 \begin{cases}
@@ -429,7 +429,7 @@ w\leftarrow w+b
 \end{cases}
 \end{aligned}
 \tag{18}
-$$
+</script>
 
 式 (18) 是 AdEx 的 spike 后 reset。膜电位回到 $v_{\mathrm{reset}}$，适应变量增加 $b$。
 
@@ -439,7 +439,7 @@ $b$ 越大，每次 spike 后适应抑制越强，后续发放越慢。这让模
 
 #### 式 (19)：单指数突触动力学
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 f(t-t_k)
 &=
@@ -450,7 +450,7 @@ s_{\mathrm{syn}}(t)
 f(t-t_k)
 \end{aligned}
 \tag{19}
-$$
+</script>
 
 式 (19) 假设 spike 到达后突触响应瞬间上升，然后按时间常数 $\tau_d$ 指数衰减。$t_k$ 是第 $k$ 次 spike 的时间。
 
@@ -458,7 +458,7 @@ $s_{\mathrm{syn}}(t)$ 是所有历史 spike 留下的突触痕迹之和。这个
 
 #### 式 (20)：单指数模型的微分形式
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{ds_{\mathrm{syn}}}{dt}
 &=
@@ -469,7 +469,7 @@ $$
 \delta(t-t_k)
 \end{aligned}
 \tag{20}
-$$
+</script>
 
 式 (20) 是式 (19) 的微分方程形式。第一项表示突触状态自然衰减；第二项表示每次 spike 到达时，用 Dirac delta 给系统一次瞬时输入。
 
@@ -477,7 +477,7 @@ $$
 
 #### 式 (21)：双指数突触模型
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 f(t)
 &=
@@ -495,7 +495,7 @@ A
 \right)^{\frac{\tau_r}{\tau_r-\tau_d}}
 \end{aligned}
 \tag{21}
-$$
+</script>
 
 式 (21) 同时描述 rise 和 decay。$\tau_r$ 是上升时间常数，$\tau_d$ 是衰减时间常数。两个指数相减后，响应会先上升再下降，更接近真实 PSC/PSP。
 
@@ -503,7 +503,7 @@ $A$ 是归一化常数，用来控制峰值尺度。单指数只有衰减，不�
 
 #### 式 (22)：双指数模型的状态方程
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{ds_{\mathrm{syn}}}{dt}
 &=
@@ -518,7 +518,7 @@ $$
 \delta(t-t_k)
 \end{aligned}
 \tag{22}
-$$
+</script>
 
 式 (22) 用两个状态变量实现双指数响应。$h$ 是辅助变量，负责上升过程；$s_{\mathrm{syn}}$ 负责最终突触状态。
 
@@ -526,24 +526,24 @@ $$
 
 #### 式 (23)：突触输入电流
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \mathbf{I}_{\mathrm{syn}}(t)
 &=
 W\mathbf{s}_{\mathrm{syn}}(t)
 \end{aligned}
 \tag{23}
-$$
+</script>
 
-式 (23) 把 presynaptic synaptic kinetics 转成 postsynaptic input current。$\mathbf{s}_{\mathrm{syn}}$ 是前突触神经元的突触状态向量，$W$ 是突触权重矩阵，$\mathbf{I}_{\mathrm{syn}}$ 是后突触输入电流。
+式 (23) 把 presynaptic synaptic kinetics 转成 postsynaptic input current。<script type="math/tex">\mathbf{s}_{\mathrm{syn}}</script> 是前突触神经元的突触状态向量，$W$ 是突触权重矩阵，<script type="math/tex">\mathbf{I}_{\mathrm{syn}}</script> 是后突触输入电流。
 
-这和 ANN 的 $W\mathbf{u}$ 很像，但 $\mathbf{s}_{\mathrm{syn}}(t)$ 来自 spike history，而不是静态激活值。
+这和 ANN 的 $W\mathbf{u}$ 很像，但 <script type="math/tex">\mathbf{s}_{\mathrm{syn}}(t)</script> 来自 spike history，而不是静态激活值。
 
 ### 3.8 Spike-based backpropagation
 
 #### 式 (24)：SuperSpike 损失
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 L
 &=
@@ -555,7 +555,7 @@ L
 dt
 \end{aligned}
 \tag{24}
-$$
+</script>
 
 式 (24) 用平滑后的 spike train 差异定义损失。$s(t)$ 是输出 spike train，$\hat{s}(t)$ 是目标 spike train，$\alpha$ 是平滑卷积核，$*$ 表示时间卷积。
 
@@ -563,7 +563,7 @@ $$
 
 #### 式 (25)：用 surrogate function 近似 spike 导数
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{\partial s}{\partial w}
 &\approx
@@ -573,23 +573,23 @@ $$
 \frac{\partial v_m}{\partial w}
 \end{aligned}
 \tag{25}
-$$
+</script>
 
 式 (25) 是 SNN 训练的关键。真正的 spike function 不可导，所以用连续函数 $\sigma(v_m)$ 近似。论文使用 fast sigmoid：
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \sigma(x)
 &=
 \frac{x}{1+|x|}
 \end{aligned}
-$$
+</script>
 
 这个思想就是 surrogate gradient：前向仍然发 spike，反向传播时用可导近似替代不可导的 spike 导数。
 
 #### 式 (26)：SuperSpike 梯度
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{\partial L}{\partial w}
 &=
@@ -606,7 +606,7 @@ $$
 dt
 \end{aligned}
 \tag{26}
-$$
+</script>
 
 式 (26) 可以拆成两部分。第一部分 $\alpha*(s-\hat{s})$ 是误差信号；第二部分是 eligibility trace，表示这个突触在当前误差里“有没有资格负责”。
 
@@ -614,7 +614,7 @@ $s_{\mathrm{pre}}$ 是 presynaptic spike train，$\epsilon$ 是平滑核。这�
 
 #### 式 (27)：SLAYER 梯度
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{\partial L}{\partial w}
 &=
@@ -629,7 +629,7 @@ $$
 dt
 \end{aligned}
 \tag{27}
-$$
+</script>
 
 式 (27) 来自 SLAYER。$\rho(t)$ 是 spike escape rate 相关的概率密度，$e$ 是反向传播得到的误差信号，$\odot$ 表示时间上的 element-wise correlation。
 
@@ -639,7 +639,7 @@ SLAYER 的重点是把误差信用分配到时间上，解决 spike 事件对未
 
 #### 式 (28)：标准 STDP
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \Delta w
 &=
@@ -653,7 +653,7 @@ A_+
 \end{cases}
 \end{aligned}
 \tag{28}
-$$
+</script>
 
 式 (28) 是 spike-time-dependent plasticity。若 presynaptic spike 早于 postsynaptic spike，突触增强；若顺序相反，突触减弱。
 
@@ -661,7 +661,7 @@ $\tau_+$ 和 $\tau_-$ 控制时间窗口。两个 spike 越接近，权重变化
 
 #### 式 (29)：权重依赖的 STDP 幅度
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 A_+(w)
 &=
@@ -673,7 +673,7 @@ A_-(w)
 \exp(w-w_{\mathrm{init}})
 \end{aligned}
 \tag{29}
-$$
+</script>
 
 式 (29) 让 STDP 的幅度依赖当前权重。$w$ 太大时，增强幅度会变小，减弱幅度会变大；$w$ 太小时则相反。
 
@@ -681,7 +681,7 @@ $$
 
 #### 式 (30)：trace 形式的 STDP 权重更新
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{dw}{dt}
 &=
@@ -690,7 +690,7 @@ A_+x_{\mathrm{pre}}\delta_{\mathrm{post}}
 A_-x_{\mathrm{post}}\delta_{\mathrm{pre}}
 \end{aligned}
 \tag{30}
-$$
+</script>
 
 式 (30) 用 spike trace 避免保存所有 spike 时间。$x_{\mathrm{pre}}$ 是 presynaptic trace，$x_{\mathrm{post}}$ 是 postsynaptic trace。$\delta_{\mathrm{post}}$ 表示 post spike 到来，$\delta_{\mathrm{pre}}$ 表示 pre spike 到来。
 
@@ -698,7 +698,7 @@ $$
 
 #### 式 (31)：pre/post spike trace
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{dx_{\mathrm{pre}}}{dt}
 &=
@@ -710,7 +710,7 @@ $$
 +\delta(t)
 \end{aligned}
 \tag{31}
-$$
+</script>
 
 式 (31) 说明 spike trace 会指数衰减，并在 spike 到来时增加。$\tau_+$ 和 $\tau_-$ 控制记忆时间。
 
@@ -718,7 +718,7 @@ $$
 
 #### 式 (32)：anti-Hebbian STDP
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \Delta w
 &=
@@ -736,7 +736,7 @@ A_+
 \end{cases}
 \end{aligned}
 \tag{32}
-$$
+</script>
 
 式 (32) 是 anti-Hebbian STDP，方向和标准 STDP 相反。pre 早于 post 时不增强，反而倾向减弱；post 早于 pre 时倾向增强。
 
@@ -744,7 +744,7 @@ $$
 
 #### 式 (33)：probabilistic STDP
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \Delta w
 &=
@@ -756,7 +756,7 @@ $$
 \end{cases}
 \end{aligned}
 \tag{33}
-$$
+</script>
 
 式 (33) 是 probabilistic STDP 的简化形式。LTP 的幅度随当前权重 $w$ 增大而减小，避免权重过度增强；LTD 使用固定负更新。
 
@@ -764,14 +764,14 @@ $$
 
 #### 式 (34)：reward-modulated STDP 权重更新
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{dw}{dt}
 &=
 \eta r(t)z_{i,j}(t)
 \end{aligned}
 \tag{34}
-$$
+</script>
 
 式 (34) 是 R-STDP。$r(t)$ 是 reward，$z_{i,j}(t)$ 是 eligibility trace。$\eta$ 是学习率。
 
@@ -779,7 +779,7 @@ STDP 本身只看 pre/post spike 的时间关系；R-STDP 加入 reward，把局
 
 #### 式 (35)：eligibility trace
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \frac{dz_{i,j}}{dt}
 &=
@@ -788,7 +788,7 @@ $$
 \mathrm{STDP}(t)
 \end{aligned}
 \tag{35}
-$$
+</script>
 
 式 (35) 说明 eligibility trace 会衰减，并由当前 STDP 事件补充。它记录“这个突触刚才有没有发生值得学习的时序关系”。
 
@@ -796,14 +796,14 @@ reward 往往是延迟到来的。eligibility trace 的作用就是保留短期�
 
 #### 式 (36)：PES 学习规则
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \Delta w
 &=
 \eta e(t)a
 \end{aligned}
 \tag{36}
-$$
+</script>
 
 式 (36) 是 prescribed error sensitivity。$e(t)$ 是外部误差信号，$a$ 是神经元 rate activity，$\eta$ 是学习率。
 
@@ -811,7 +811,7 @@ $$
 
 #### 式 (37)：intrinsic plasticity 调节量
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \phi
 &=
@@ -831,7 +831,7 @@ $$
 \end{cases}
 \end{aligned}
 \tag{37}
-$$
+</script>
 
 式 (37) 根据 inter-spike interval, ISI 调节神经元自身兴奋性。$\Delta t_{\mathrm{ISI}}$ 太小表示神经元发得太频繁，需要降低兴奋性；$\Delta t_{\mathrm{ISI}}$ 太大表示发得太少，需要提高兴奋性。
 
@@ -839,14 +839,14 @@ $$
 
 #### 式 (38)：intrinsic bias 更新
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 b
 &\leftarrow
 b+b_{\max}\phi
 \end{aligned}
 \tag{38}
-$$
+</script>
 
 式 (38) 把式 (37) 的调节量加到神经元 bias 或 excitability 参数上。$b_{\max}$ 控制最大调节尺度。
 
@@ -856,7 +856,7 @@ $$
 
 #### 式 (39)：时间窗内 spike count
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 n
 &=
@@ -866,7 +866,7 @@ n
 \,dt
 \end{aligned}
 \tag{39}
-$$
+</script>
 
 式 (39) 统计时间窗 $[0,T]$ 内的 spike 数量。$t_k$ 是第 $k$ 个 spike 的时间，Dirac delta 在 spike 发生时给出一个单位事件。
 
@@ -874,14 +874,14 @@ $$
 
 #### 式 (40)：firing rate
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 r
 &=
 \frac{n}{T}
 \end{aligned}
 \tag{40}
-$$
+</script>
 
 式 (40) 把 spike count 除以时间窗长度，得到 firing rate。$T$ 越长，估计越平滑；$T$ 越短，时间分辨率越高但噪声更大。
 
@@ -889,7 +889,7 @@ rate encoding 容易和 ANN 的连续激活值对接，但会损失精细 spike 
 
 #### 式 (41)：Poisson spike 发生概率
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 P\{N(\Delta t)=1\}
 &=
@@ -903,7 +903,7 @@ e^{-\lambda\Delta t}
 o(\Delta t)
 \end{aligned}
 \tag{41}
-$$
+</script>
 
 式 (41) 来自 Poisson process。$\lambda$ 是强度或 firing rate，$\Delta t$ 是很短的时间步。若 $\Delta t$ 足够小，发生一次 spike 的概率近似为 $\lambda\Delta t$。
 
@@ -911,7 +911,7 @@ $$
 
 #### 式 (42)：根据随机数生成 spike
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 s
 &=
@@ -923,7 +923,7 @@ s
 \end{cases}
 \end{aligned}
 \tag{42}
-$$
+</script>
 
 式 (42) 是 Poisson rate encoding 的实际采样规则。每个时间步生成一个均匀随机数 $\xi$。如果 $\xi<r\Delta t$，就产生 spike；否则不产生。
 
@@ -963,7 +963,7 @@ $$
 
 这篇论文的价值在于，它把 SNN 的基础组件按工程链条排好了：
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \text{neuron model}
 \rightarrow
@@ -975,7 +975,7 @@ $$
 \rightarrow
 \text{application}
 \end{aligned}
-$$
+</script>
 
 如果刚开始学 SNN，最应该抓住四个问题：
 
@@ -995,7 +995,7 @@ $$
 
 SNN 的核心不是“把 ANN 变得更像大脑”这么简单，而是换了一套计算单位：
 
-$$
+<script type="math/tex; mode=display">
 \begin{aligned}
 \text{continuous activation}
 \quad
@@ -1003,7 +1003,7 @@ $$
 \quad
 \text{discrete spike events in time}
 \end{aligned}
-$$
+</script>
 
 这带来三个直接后果：
 
