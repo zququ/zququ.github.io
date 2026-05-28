@@ -35,15 +35,39 @@ comments: true
 
 **Figure 1** 展示生物神经元结构：dendrite 接收输入，soma 积分膜电位，axon 传导动作电位，synapse 负责神经元之间的信息传递。理解 SNN 时，dendrite/soma/axon/synapse 可以分别对应输入整合、状态更新、spike 输出和连接权重。
 
+![Yamazaki 2022 Figure 1：生物神经元与突触结构](/images/snn-review/fig1-biological-neuron-synapse.png)
+
+*图 1. Yamazaki 等 2022 原文 Figure 1，展示生物神经元、轴突、树突、髓鞘、突触和 neurotransmitter 释放位置。原文为 CC BY 4.0 开放获取。*
+
 **Figure 2** 对比 biological neuron、ANN neuron 和 SNN neuron。ANN 的输出是连续标量；SNN 的输出是 spike 序列。这个图的重点不是“形状像不像神经元”，而是信息表达方式不同：ANN 是数值幅度编码，SNN 是事件时间编码。
+
+![Yamazaki 2022 Figure 2：生物神经元、ANN neuron 与 SNN neuron 对比](/images/snn-review/fig2-biological-ann-snn-comparison.png)
+
+*图 2. Yamazaki 等 2022 原文 Figure 2，对比 biological neuron、ANN neuron 和 SNN neuron 的输入、突触权重、树突整合与输出形式。原文为 CC BY 4.0 开放获取。*
 
 **Figure 3** 对比不同 spiking neuron models 的生物真实性和实现成本。HH 最生物真实但最重；LIF 最简单、最适合大规模模拟；Izhikevich 和 AdEx 介于二者之间。
 
+![Yamazaki 2022 Figure 3：spiking neuron models 的生物真实性与实现成本](/images/snn-review/fig3-model-cost-biological-plausibility.png)
+
+*图 3. Yamazaki 等 2022 原文 Figure 3，用 biological plausibility 和 implementation cost 对不同 spiking neuron models 做二维比较。原文为 CC BY 4.0 开放获取。*
+
 **Figure 4** 解释 STDP：pre-synaptic spike 和 post-synaptic spike 的先后顺序决定突触增强还是减弱。pre 早于 post 通常对应 LTP；post 早于 pre 通常对应 LTD。
+
+![Yamazaki 2022 Figure 4：STDP 中 pre/post spike 与突触权重变化](/images/snn-review/fig4-stdp-weight-change.png)
+
+*图 4. Yamazaki 等 2022 原文 Figure 4，展示 pre-spike、post-spike、trace 变量和突触权重在在线 STDP 过程中的变化。原文为 CC BY 4.0 开放获取。*
 
 **Figure 5** 是 DCSNN 的 digit recognition 结构。它说明 SNN 可以做类似 CNN 的层级视觉处理，但训练常依赖 STDP、R-STDP 或 ANN-to-SNN conversion。
 
+![Yamazaki 2022 Figure 5：DCSNN digit recognition 结构](/images/snn-review/fig5-dcsnn-digit-recognition.png)
+
+*图 5. Yamazaki 等 2022 原文 Figure 5，展示 DCSNN 从输入图像、DoG filter、卷积/池化窗口到全局池化和决策层的结构。原文为 CC BY 4.0 开放获取。*
+
 **Figure 6** 是用于 SLAM 的 SNN 架构。这里 SNN 不只是分类器，而是可以嵌入机器人感知、位置估计和导航回路。
+
+![Yamazaki 2022 Figure 6：用于 SLAM 的 SNN 架构](/images/snn-review/fig6-slam-snn-architecture.png)
+
+*图 6. Yamazaki 等 2022 原文 Figure 6，展示距离编码、速度编码、head direction network、Bayesian inference network 和 observation likelihood network 在 SLAM 回路中的连接。原文为 CC BY 4.0 开放获取。*
 
 **Table 1** 的核心是三列对照：biological NNs 用 spike 和 synaptic plasticity；ANNs 用 scalar 和 BP；SNNs 用 spike，但学习可以是 plasticity 或 BP。
 
