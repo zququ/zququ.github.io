@@ -55,7 +55,9 @@ function setupReaderNotes() {
   controls.id = "reader-note-controls";
   controls.innerHTML = [
     "<button id=\"reader-note-toggle\" type=\"button\" aria-pressed=\"false\">note</button>",
-    "<button id=\"reader-note-visibility\" type=\"button\">hide</button>"
+    "<button id=\"reader-note-visibility\" type=\"button\">hide</button>",
+    "<button id=\"reader-note-export\" type=\"button\" title=\"Copy notes for this page\">out</button>",
+    "<button id=\"reader-note-import\" type=\"button\" title=\"Import notes for this page\">in</button>"
   ].join("");
   document.body.appendChild(controls);
 
@@ -84,9 +86,13 @@ function setupReaderNotes() {
 
   var noteToggle = document.getElementById("reader-note-toggle");
   var visibilityToggle = document.getElementById("reader-note-visibility");
+  var exportToggle = document.getElementById("reader-note-export");
+  var importToggle = document.getElementById("reader-note-import");
   var highlightToggle = toolbar.querySelector("[data-action=\"highlight\"]");
   var composerTextarea = composer.querySelector("textarea");
   var composerContext = null;
+
+  state = importStateFromHash(state);
 
   applyStoredHighlights();
   setNotesHidden(!!state.hidden, false);
@@ -101,6 +107,9 @@ function setupReaderNotes() {
   visibilityToggle.addEventListener("click", function() {
     setNotesHidden(!document.body.classList.contains("reader-notes-hidden"), true);
   });
+
+  exportToggle.addEventListener("click", exportReaderState);
+  importToggle.addEventListener("click", promptImportReaderState);
 
   toolbar.addEventListener("mousedown", function(event) {
     event.preventDefault();
@@ -220,6 +229,197 @@ function setupReaderNotes() {
     try {
       window.localStorage.setItem(storageKey, JSON.stringify(state));
     } catch (err) {}
+  }
+
+  function exportReaderState() {
+    if (!state.highlights.length && !state.notes.length) {
+      flashButton(exportToggle, "empty");
+      return;
+    }
+    var payload = JSON.stringify({
+      version: 1,
+      type: "zququ-reader-notes",
+      origin: window.location.origin,
+      path: window.location.pathname,
+      title: document.title,
+      exportedAt: new Date().toISOString(),
+      state: {
+        highlights: state.highlights,
+        notes: state.notes
+      }
+    });
+    var syncUrl = window.location.origin + window.location.pathname + "#reader-notes=" + encodeURIComponent(payload);
+    var output = syncUrl.length < 7000 ? syncUrl : payload;
+    copyText(output, "Copy this note sync text:");
+  }
+
+  function promptImportReaderState() {
+    var input = window.prompt("Paste note sync link or JSON:");
+    if (!input) {
+      return;
+    }
+    var imported = parseReaderStatePayload(input);
+    if (!imported) {
+      flashButton(importToggle, "bad");
+      return;
+    }
+    applyImportedState(imported);
+    flashButton(importToggle, "ok");
+  }
+
+  function importStateFromHash(currentState) {
+    var hash = window.location.hash || "";
+    if (hash.indexOf("#reader-notes=") !== 0) {
+      return currentState;
+    }
+    var imported = parseReaderStatePayload(hash);
+    if (!imported) {
+      return currentState;
+    }
+    var next = mergeReaderStates(currentState, imported);
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(next));
+    } catch (err) {}
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    }
+    window.setTimeout(function() {
+      flashButton(importToggle, "ok");
+    }, 0);
+    return next;
+  }
+
+  function applyImportedState(imported) {
+    state = mergeReaderStates(state, imported);
+    state.hidden = false;
+    saveState();
+    applyStoredHighlights();
+    setNotesHidden(false, true);
+    renderNotes();
+    renderHighlights();
+    refreshAnchoredLayers();
+  }
+
+  function parseReaderStatePayload(input) {
+    var text = (input || "").trim();
+    var marker = "#reader-notes=";
+    var markerIndex = text.indexOf(marker);
+    if (markerIndex !== -1) {
+      text = text.slice(markerIndex + marker.length);
+    }
+    if (!text) {
+      return null;
+    }
+    try {
+      text = decodeURIComponent(text);
+    } catch (err) {}
+    try {
+      var parsed = JSON.parse(text);
+      if (parsed && parsed.type === "zququ-reader-notes" && parsed.path && normalizePath(parsed.path) !== normalizePath(window.location.pathname)) {
+        if (!window.confirm("This note pack is for another page. Import anyway?")) {
+          return null;
+        }
+      }
+      return parsed && parsed.state ? parsed.state : parsed;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function mergeReaderStates(baseState, incomingState) {
+    return {
+      highlights: mergeById(baseState.highlights, sanitizeHighlights(incomingState.highlights)),
+      notes: mergeById(baseState.notes, sanitizeNotes(incomingState.notes)),
+      hidden: false
+    };
+  }
+
+  function sanitizeHighlights(highlights) {
+    if (!Array.isArray(highlights)) {
+      return [];
+    }
+    return highlights.reduce(function(result, highlight) {
+      var start = Number(highlight && highlight.start);
+      var end = Number(highlight && highlight.end);
+      if (!isFinite(start) || !isFinite(end) || end <= start) {
+        return result;
+      }
+      result.push({
+        id: highlight.id || makeId("hl"),
+        start: Math.max(0, Math.round(start)),
+        end: Math.max(0, Math.round(end)),
+        text: normalizeStoredText(highlight.text).slice(0, 240)
+      });
+      return result;
+    }, []);
+  }
+
+  function sanitizeNotes(notes) {
+    if (!Array.isArray(notes)) {
+      return [];
+    }
+    return notes.reduce(function(result, note) {
+      var text = (note && note.text ? String(note.text) : "").replace(/\s+/g, " ").trim();
+      if (!text) {
+        return result;
+      }
+      var y = Number(note.y);
+      result.push({
+        id: note.id || makeId("note"),
+        y: isFinite(y) ? Math.max(0, y) : 0,
+        side: note.side === "left" ? "left" : "right",
+        text: text,
+        quote: note.quote ? String(note.quote) : "",
+        createdAt: note.createdAt || new Date().toISOString()
+      });
+      return result;
+    }, []);
+  }
+
+  function mergeById(existing, incoming) {
+    var seen = {};
+    var merged = [];
+    (Array.isArray(existing) ? existing : []).concat(incoming || []).forEach(function(item) {
+      if (!item || !item.id) {
+        return;
+      }
+      if (!seen[item.id]) {
+        seen[item.id] = item;
+        merged.push(item);
+      } else {
+        Object.assign(seen[item.id], item);
+      }
+    });
+    return merged;
+  }
+
+  function copyText(text, fallbackMessage) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function() {
+        flashButton(exportToggle, "ok");
+      }).catch(function() {
+        window.prompt(fallbackMessage, text);
+      });
+      return;
+    }
+    window.prompt(fallbackMessage, text);
+  }
+
+  function flashButton(button, label) {
+    if (!button) {
+      return;
+    }
+    var original = button.getAttribute("data-original-label") || button.textContent;
+    button.setAttribute("data-original-label", original);
+    button.textContent = label;
+    window.clearTimeout(button.readerNoteFlashTimer);
+    button.readerNoteFlashTimer = window.setTimeout(function() {
+      button.textContent = original;
+    }, 1100);
+  }
+
+  function normalizePath(path) {
+    return String(path || "").replace(/\/+$/, "") || "/";
   }
 
   function refreshAnchoredLayers() {
