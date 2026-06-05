@@ -34,7 +34,7 @@ Interictal epileptiform discharge（IED，发作间期癫痫样放电）不是�
 
 ![IED morphology schematic](/images/seeg/ied/ied-morphology-schematic.png)
 
-图 1. IED 形态教学示意图。该图为原创示意，不是患者数据，也不是从单篇论文直接截图；目的是把 spike、sharp wave、spike-and-slow-wave 和 polyspike-and-wave 的时间尺度与后随慢波关系画清楚。真实判读不能只套图形模板，还要结合电场、背景、状态、伪迹和临床上下文。
+图 1. IED 形态与时间组织教学示意图。该图为原创示意，不是患者数据，也不是从单篇论文直接截图；目的是把 spike、sharp wave、spike-and-slow-wave、sharp-and-slow-wave、polyspike、polyspike-and-wave、periodic discharges 和 BIRDs 的典型时间尺度与组织方式画清楚。Periodic discharges 和 BIRDs 更偏向重复/节律性时间组织模式，不应被理解为单个波形模板。真实判读不能只套图形模板，还要结合电场、背景、状态、伪迹、演变和临床上下文。
 
 ## 2. 空间分布：同样的波形，定位意义完全不同
 
@@ -47,6 +47,65 @@ ACNS 2021 术语体系把 critical care EEG 中 rhythmic/periodic patterns 的�
 ![IED spatial and SEEG schematic](/images/seeg/ied/ied-spatial-seeg-schematic.png)
 
 图 2. 空间组织教学示意图。左侧展示双极导联中相位反转对局部场最大点的提示作用；右侧展示 SEEG contact 层面可能出现的毫秒级传播和幅度梯度。该图同样为原创示意，不代表真实患者定位结论；SOZ 判断仍需结合发作起始、影像、半定量频率、HFO/LoWS、刺激反应和术后结局等证据。
+
+### 2.1 先看差分，再看噪音，最后看混合
+
+初学 SEEG 时很容易把屏幕上的每一条线理解成“某个电极自己记录到的真实脑电”。这个理解不够准确。实际显示出来的信号一定经过了记录链路和 montage 变换：电极接触点有局部场电位，线缆和放大器会引入噪声，参考电极也不是数学上的零点，最后软件还可能显示 referential montage 或 bipolar/differential montage。
+
+下面这张图按三个层次读：第一步只看干净 contact 和干净 bipolar 差分；第二步单独看噪音和参考污染；第三步再把真实局部场与噪音混合起来，看 referential 和 bipolar 显示会变成什么样。它不是患者数据，也不是诊断模板，只是帮助建立读图直觉。
+
+![Simulated SEEG noise reference differential schematic](/images/seeg/ied/seeg-noise-reference-differential-schematic.png)
+
+图 3. 模拟 SEEG 中差分、噪音和混合显示的关系。1A：干净 contact potentials，假设 C4-C5 附近有一个局部 IED 源，越靠近源的 contact 幅度越大。1B：先不加噪音，只做相邻 contact 的 bipolar differential，可以看到局部源被转换成相邻 pair 上的空间梯度。2A：单独列出慢漂移、50 Hz 工频、宽带肌电样噪声、电极 pop 和 contaminated reference。2B：只看噪音经过 referential montage 后的显示，reference 污染会以相似形式出现在多条通道上。3A：真实局部场和噪音混合后的 referential montage。3B：混合后的 bipolar/differential montage，公共 reference 成分被抵消，但局部 contact 噪声仍可能残留。
+
+可以把第 $i$ 个 contact 附近的真实局部场写成 $v_i(t)$。如果有一个局部 IED 源 $s(t)$，它到不同 contact 的权重不同，那么最简化的表达是：
+
+<script type="math/tex; mode=display">
+\begin{aligned}
+v_i(t) = a_i\,s(t).
+\end{aligned}
+\tag{1}
+</script>
+
+$a_i$ 表示第 $i$ 个 contact 距离局部源多近、方向和组织导电性如何。离源近，$a_i$ 大；离源远，$a_i$ 小。真实 SEEG 当然不止一个源，但式 (1) 足够说明为什么同一个 IED 会在相邻 contacts 上呈现幅度梯度。
+
+先在没有噪音的情况下看差分。bipolar/differential montage 不是多记录了一个新电极，而是把相邻 contact 相减：
+
+<script type="math/tex; mode=display">
+\begin{aligned}
+b_i(t) = v_i(t)-v_{i+1}(t).
+\end{aligned}
+\tag{2}
+</script>
+
+式 (2) 只看干净局部场的空间梯度。如果一个局部 IED 在 C4/C5 附近最大，那么 C3-C4、C4-C5、C5-C6 这些相邻差分通道会出现最明显变化，且常可见相邻 pair 的方向改变。这个“梯度”比单纯看 referential 幅度更能提示局部场最大点。
+
+第二步再单独看噪音。referential montage 显示的不是 $v_i(t)$ 本身，而是 contact 信号减去 reference，同时还混入每个 contact 自己的噪声：
+
+<script type="math/tex; mode=display">
+\begin{aligned}
+y_i(t) = v_i(t) + n_i(t) - r(t).
+\end{aligned}
+\tag{3}
+</script>
+
+这里 $n_i(t)$ 是第 $i$ 个 contact 自己的噪声，$r(t)$ 是参考电极或参考组合里的信号。重点是：reference 不是“绝对安静的 0”。如果 $r(t)$ 里有工频、慢漂移、电极噪声或真实脑电活动，那么这些成分会以相反符号进入所有 $y_i(t)$。所以在 referential montage 里看到“很多通道同时有一个相似波形”，不一定说明全脑同步放电，也可能是参考污染或共同噪声。
+
+最后再看混合后的差分。把式 (3) 的 referential 信号做相邻相减，得到：
+
+<script type="math/tex; mode=display">
+\begin{aligned}
+d_i(t)
+&= y_i(t)-y_{i+1}(t)\\
+&= \left[v_i(t)-v_{i+1}(t)\right]
+ + \left[n_i(t)-n_{i+1}(t)\right].
+\end{aligned}
+\tag{4}
+</script>
+
+式 (4) 里，公共 reference $r(t)$ 被抵消了。这就是双极导联能减少共同参考噪声的原因。但它只能抵消“共同”的部分，不能自动消灭局部噪音；如果某个 contact 自己有电极 pop 或接触不稳，它会同时污染相邻两个 bipolar channels。
+
+但差分导联也有代价。第一，两个相邻 contact 都受到同一个广泛场影响时，相减会把真实的广泛同步活动削弱。第二，如果某一个 contact 有电极噪声，它会同时污染两个 bipolar channels，例如 C3 噪声会进入 C2-C3 和 C3-C4。第三，差分波形的极性和幅度依赖 contact 排列方向，不能把某一条 bipolar trace 误解成一个独立电极。实际判读时，最好同时查看 referential、bipolar、common average 或 source/localization 信息，而不是只看一种 montage。
 
 ## 3. 时间组织：从散发 IED 到 ictal-interictal continuum
 
@@ -97,7 +156,7 @@ IED 自动检测的目标不是替代医生“判读整份 EEG”，而是在长
 
 ![IED detection window schematic](/images/seeg/ied/ied-detection-window-schematic.png)
 
-图 3. IED 检测窗口教学示意图。候选事件不应只看瞬时尖锐成分，还要检查后随慢波、背景扰动、相邻通道场分布和前后状态。该图为合成波形，用于解释检测逻辑，不是模型训练样本或诊断标准。
+图 4. IED 检测窗口教学示意图。候选事件不应只看瞬时尖锐成分，还要检查后随慢波、背景扰动、相邻通道场分布和前后状态。该图为合成波形，用于解释检测逻辑，不是模型训练样本或诊断标准。
 
 ### 6.1 人工视觉判读仍是参照标准，但不是完美 gold standard
 
