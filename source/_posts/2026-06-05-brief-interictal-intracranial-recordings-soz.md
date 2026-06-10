@@ -39,9 +39,25 @@ comments: true
 
 ## 数据和预处理
 
-每名患者采集 5 分钟 resting SEEG。原始信号经过 Butterworth filter，保留 1-59 Hz、61-119 Hz、121-150 Hz 三个频段，相当于避开 60 Hz 附近工频干扰。然后把信号切成 30 秒窗口，stride 为 18 秒，所以每名患者大约得到 16 个窗口。
+这里最容易误解的是“采样到底采的是什么”。模型输入不是 seizure onset 附近的 ictal 片段，也不是刺激诱发数据。作者每名患者取的是 5 分钟 resting state SEEG，论文明确说明为 interictal、non-SPES。记录时患者清醒、闭眼，并被要求尽量不要睡着；这些片段距离 electroclinical activity 至少 4 小时。因此，模型真正学习的是短时 resting interictal iEEG 里有没有 SOZ-like signature，而不是直接学习发作开始时的演变模式。
 
-电极定位方面，作者用术后 CT 和自定义 SEEG planning 软件 CRAVE，把每个 contact 分配到 DK atlas 脑区。SOZ 标签按脑区定义：如果某 DK 区域包含被临床判定参与 ictal onset 的 contact，则该区域标为 SOZ。
+原始信号经过 Butterworth filter，保留 1-59 Hz、61-119 Hz、121-150 Hz 三个频段，相当于避开 60 Hz 附近工频干扰。然后把信号切成 30 秒窗口，stride 为 18 秒。5 分钟是 300 秒，最后一个完整 30 秒窗口的起点是 270 秒；从 0 秒开始每隔 18 秒取一次起点，所以每名患者得到 16 个重叠窗口。
+
+窗口起点可以这样理解：
+
+| 窗口 | 起点 | 覆盖范围 |
+|---:|---:|---|
+| 1 | 0 秒 | 0-30 秒 |
+| 2 | 18 秒 | 18-48 秒 |
+| 3 | 36 秒 | 36-66 秒 |
+| ... | ... | ... |
+| 16 | 270 秒 | 270-300 秒 |
+
+这里的 stride 不是窗口长度，而是相邻窗口起点之间的距离。因此相邻 30 秒窗口会重叠 12 秒。
+
+电极定位也不是模型自己猜的。患者的 SEEG contacts 来自临床植入；作者用术后 CT 和自定义 SEEG planning 软件 CRAVE 定位每一个 contact，再把每个 contact 分配到 Desikan-Killiany atlas 的一个解剖脑区。contact 位置还经过 staff engineer、attending neurosurgeon 和 attending epileptologist 核验。也就是说，模型输入的空间单位不是“随便抽 4 根电极”，而是“同一个 DK 解剖区域内的 4 个 contacts”。
+
+SOZ 标签来自临床 ictal data 的判读，但训练输入仍然是 interictal resting data。具体做法是：如果某个 DK 脑区包含至少一个被癫痫专科医生判定参与一次或多次 ictal onset 的 contact，这个脑区就标为 SOZ；否则标为 non-SOZ。这个定义很重要，因为模型学的是“这个解剖区域是否属于 SOZ”，不是“这个 30 秒窗口里是否正在发作”。
 
 ## 模型整体流程
 
@@ -79,9 +95,20 @@ X_R \in \mathbb{R}^{4 \times T}.
 
 ## 为什么要抽 4 个 contact
 
-作者只纳入至少有 4 个 contact 的区域，并对每个区域抽取所有 4-contact permutation。这样做有两个目的。第一，让不同区域的输入形状一致，模型都看到 4 条通道。第二，一个区域里不同 contact 组合可以形成大量训练样本，使模型看到区域内部信号的多样性。
+作者只纳入至少有 4 个 contacts 的 DK 脑区。对每个合格脑区，作者从该区域内部抽取所有 4-contact permutations，再把每一个 4-contact set 和每一个 30 秒窗口配对，形成模型训练样本。这样做后，每个样本的形状固定为“4 条 contact 通道 × 30 秒时间序列”，CNN 才能用同一套输入结构处理不同患者、不同脑区。
 
-但这也带来一个限制：模型判断的是 sampled contact set 或 region，不是单个 contact 的精确病理状态。最后的区域级结果需要对多个组合、多个窗口的预测做 aggregation。
+可以把生成样本的流程读成四步：
+
+| 步骤 | 做了什么 | 目的 |
+|---:|---|---|
+| 1 | 把每个 contact 定位到 DK 脑区 | 建立“contact 属于哪个解剖区域”的映射 |
+| 2 | 只保留至少有 4 个 contacts 的脑区 | 保证每个输入都能凑出 4 条通道 |
+| 3 | 在同一脑区内抽取所有 4-contact permutations | 让模型看到该区域内部不同 contact 组合的波形 |
+| 4 | 每个 4-contact set 配上 16 个 30 秒 interictal 窗口 | 扩大样本数，并覆盖 5 分钟内的时间变化 |
+
+这也是为什么论文能得到超过 100 万个 processed windows：样本数不是只有“78 名患者 × 16 个窗口”，而是还乘上了每个患者、每个 DK 区域内大量 4-contact permutations。
+
+但这个设计也带来限制：模型判断的是 sampled contact set 或 region，不是单个 contact 的精确病理状态。contact-set 级预测会先在 5 分钟内做 confidence-weighted average，区域级预测再对同一 DK 脑区内的多个 contact sets 做 confidence-weighted average。因此最后报告的更接近“这个脑区整体是否 SOZ-like”，而不是“某一个 contact 一定是病灶核心”。
 
 ## 损失函数和评价指标
 
