@@ -69,6 +69,14 @@ X_R \in \mathbb{R}^{4 \times T}.
 
 这不是手工特征工程。作者没有先计算频带功率、连接矩阵或 spike rate，而是把预处理后的原始波形送进 CNN。
 
+## multi-head CNN 到底在做什么
+
+图 1C 里的 multi-head CNN 可以理解成“几组并行的时间尺度滤波器”。输入不是单条 EEG，而是同一个解剖区域里 4 个 contact 的 30 秒波形；CNN 的卷积核沿时间轴滑动，同时看这 4 条通道之间的局部组合。所谓 multi-head，不是 Transformer 里的 self-attention head，而是多个并行卷积分支：每个 head 使用不同长度的一维卷积核，先从同一段输入里抽取不同时间尺度的模式，再把这些分支得到的特征合并起来做 SOZ / non-SOZ 分类。
+
+图中标出的 initial kernel size 从 3、11 一直到 129。这个设计的直觉是：短 kernel 更容易捕捉很短的 sharp transient、spike edge 或高频样活动；长 kernel 能覆盖更宽的 deflection、节律片段或低幅度持续形态。也就是说，模型不是预先规定“只找 spike”或“只算某个频带功率”，而是让不同尺度的卷积分支同时扫描原始波形，再由训练过程决定哪些尺度、哪些形态组合对 SOZ 标签最有用。
+
+这也解释了为什么它被称为 multichannel、multiscale、one-dimensional CNN。multichannel 指输入有 4 个 contact；multiscale 指并行分支覆盖不同时间长度；one-dimensional 指卷积主要沿时间轴做，而不是把信号先变成二维时频图。它的局限也在这里：模型一次只看一个区域内部的 4-contact 组合，不显式学习区域之间的传播网络或图结构，所以更像是在判断“这个区域内部有没有 SOZ-like interictal signature”，而不是重建完整 seizure network。
+
 ## 为什么要抽 4 个 contact
 
 作者只纳入至少有 4 个 contact 的区域，并对每个区域抽取所有 4-contact permutation。这样做有两个目的。第一，让不同区域的输入形状一致，模型都看到 4 条通道。第二，一个区域里不同 contact 组合可以形成大量训练样本，使模型看到区域内部信号的多样性。
