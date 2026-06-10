@@ -110,6 +110,27 @@ X_R \in \mathbb{R}^{4 \times T}.
 
 但这个设计也带来限制：模型判断的是 sampled contact set 或 region，不是单个 contact 的精确病理状态。contact-set 级预测会先在 5 分钟内做 confidence-weighted average，区域级预测再对同一 DK 脑区内的多个 contact sets 做 confidence-weighted average。因此最后报告的更接近“这个脑区整体是否 SOZ-like”，而不是“某一个 contact 一定是病灶核心”。
 
+## 训练到底怎么做
+
+这不是把 SOZ 和 non-SOZ 各取很多段“30 分钟”数据，再做逻辑回归。每个患者只有 5 分钟 resting interictal SEEG；切出来的是 30 秒窗口。真正的训练样本可以理解成下面这个单位：
+
+| 训练样本字段 | 含义 |
+|---|---|
+| 患者 | 来自 78 名 drug-resistant epilepsy 患者之一 |
+| 解剖区域 | 一个 DK atlas 脑区 |
+| contact set | 该脑区内部的一个 4-contact permutation |
+| 时间窗口 | 5 分钟 resting interictal SEEG 中的一个 30 秒窗口 |
+| 输入 | 4 条 contact 通道的原始波形 |
+| 标签 | 该 DK 脑区是否包含 ictal onset contact |
+
+所以，一个正样本不是“某一段 30 秒里正在发作”，而是“这个 30 秒 interictal 波形来自一个被临床判定为 SOZ 的 DK 脑区”。一个负样本则是来自 non-SOZ DK 脑区的 30 秒 interictal 波形。标签挂在区域上，再继承给该区域内的 4-contact set 和 30 秒窗口。
+
+模型训练方式是 supervised deep learning。CNN 接收 4 通道、30 秒波形，多个 convolution heads 自动学习不同时间尺度的波形模式，最后输出该输入属于 SOZ 区域的概率。训练时用 weighted binary cross-entropy 比较预测概率和 SOZ/non-SOZ 标签，再用 Adam optimizer with weight decay 更新 CNN 的所有参数。论文还提到训练在 3 个 epoch 后停止，并在每个 fold 的 validation set 上选择表现最好的 epoch。
+
+数据划分也不是把同一个患者的数据混在训练和测试里。作者做 five-fold assessment：每个 fold 约 65% 患者用于 training，15% 用于 validation，20% 作为 held-out test；同一患者不会同时出现在 train、validation、test 中。作者还强调同一 contact 的所有时间窗口只进入一个 split，以减少同源窗口泄漏。
+
+逻辑回归的直觉可以用来理解最后一步“输出一个概率”，但不能把这篇方法叫逻辑回归。逻辑回归通常是先手工得到一个特征向量，再学一个线性分类边界；这篇文章是把预处理后的原始波形直接送进 multichannel、multiscale 1D CNN，让卷积层自己学习 spike、sharp transient、large deflection 或低幅度形态等有用模式。
+
 ## 损失函数和评价指标
 
 论文提到模型使用 weighted binary cross-entropy。可以写成：
