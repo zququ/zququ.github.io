@@ -63,7 +63,7 @@ SOZ 标签来自临床 ictal data 的判读，但训练输入仍然是 intericta
 
 ![方法流程图](/images/brief-interictal-intracranial-recordings-soz/fig1-methodology.png)
 
-**图 1 怎么读。** A-B：从 5 分钟 resting SEEG 中取 30 秒窗口，并从同一解剖区域里抽取 4 个 contact 的组合。C：输入进入 multi-head、multi-scale 的一维 CNN；不同 kernel size 对应不同时间尺度，可以同时看短暂尖波和较长时间模式。D：模型先输出 contact set 级预测，再通过 contact 或 region voting/aggregation 得到 anatomical region 是否属于 SOZ。E：训练后保存模型权重，并对表现最好的 fold 做 SHAP 分析，找哪些时间点和波形形态对 SOZ/非 SOZ 判断贡献最大。
+**图 1 怎么读。** A-B：从 5 分钟 resting SEEG 中取 30 秒窗口，并从同一解剖区域里抽取 4 个 contact 的组合。C：输入进入 multi-head、multi-scale 的一维 CNN；不同 kernel size 对应不同时间尺度，可以同时看短暂尖波和较长时间模式。D：模型先输出 contact set 级预测，再通过 contact 或 region voting/aggregation 得到 anatomical region 是否属于 SOZ。E：训练后保存模型权重，并对表现最好的 fold 做 SHAP 分析。这里的“取最佳 fold 的权重”不是重新训练模型，而是加载那个 fold 已经训练完成、在 validation/test 表现最好的 CNN 参数，再问这个固定模型：输入里的哪些通道和时间点把 SOZ 分数推高或推低。
 
 输入可以抽象成一个 4 通道、30 秒长的矩阵：
 
@@ -206,28 +206,33 @@ $J=0$ 接近随机，$J=1$ 表示敏感性和特异性都达到 1。
 
 ## SHAP：模型到底看到了什么波形
 
-SHAP 的作用不是再训练一个新分类器，而是在模型已经训练好以后解释它为什么给出某个预测。本文的流程是：先保存训练好的模型权重，再选择表现最好的 fold，用 SHAP 去 interrogate 这个 fold 的模型。也就是说，SHAP 解释的是“这个已训练 CNN 在这些输入波形上依赖了什么”，不是独立的临床标注。
+SHAP 的作用不是再训练一个新分类器，而是在模型已经训练好以后解释它为什么给出某个预测。本文 Methods 2.4 交代得比较具体：作者在一个已经训练好的 fold 上使用 SHAP 的 `GradientExplainer`，从 training data 里取 1000 个 background examples，然后对 test data 中选出的示例计算 SHAP values。Figure 1E 里说的 highest performing fold，就是加载这个表现最好的 fold 的 CNN 权重，用固定后的模型做解释。
 
-SHAP 的基本思想是把模型输出拆成各输入特征的贡献：
+这一步可以按下面的顺序理解：
+
+| 步骤 | 论文中的做法 | 这一步回答什么问题 |
+|---:|---|---|
+| 1 | 先完成 five-fold CNN 训练，并保存每个 fold 的模型权重 | 先得到真正用于 SOZ 分类的模型 |
+| 2 | 选取表现最好的 fold，加载该 fold 的 CNN 权重 | 解释对象是一个固定 CNN，不是重新训练 |
+| 3 | 从 training data 里取 1000 个 background examples | 给 SHAP 一个参考分布：模型在“背景输入”上通常会怎样输出 |
+| 4 | 用 `GradientExplainer` 解释 selected test examples | 对测试样本中的每个输入位置估计贡献 |
+| 5 | 得到 raw positive 和 raw negative SHAP values | 区分哪些位置推高 SOZ score，哪些位置推低 SOZ score |
+| 6 | 正负 SHAP values 分别做 histogram equalization，缩放到可视化范围 | 让热图颜色能覆盖从弱贡献到强贡献的范围 |
+
+为什么需要 background examples？因为 SHAP 不是只看某个波形点的绝对电压，而是问：相对 training data 提供的背景参考，这个 test input 里的某个位置让模型输出改变了多少。对本文的输入来说，一个输入位置大致对应 4-contact、30 秒矩阵里的某个 contact 和某个时间点附近的波形信息。模型输出可以近似拆成：
 
 <script type="math/tex; mode=display">
 \begin{aligned}
-f(x) = \phi_0 + \sum_{k=1}^{M}\phi_k.
+f(x) &= E[f(x_{\mathrm{background}})] + \sum_{k=1}^{M}\phi_k
 \end{aligned}
 \tag{5}
 </script>
 
-$\phi_k$ 表示第 $k$ 个输入位置对预测的贡献。对这篇文章的输入来说，一个“输入位置”可以理解成某个 contact 通道、某个时间点附近的波形片段。正的 SHAP 值表示这个位置把模型输出往 SOZ 方向推；负的 SHAP 值表示这个位置把模型输出往 non-SOZ 方向推。图上的红色就是 positive SOZ contribution，蓝色就是 negative SOZ contribution。
+这里 $f(x)$ 是 CNN 对当前 4-contact、30 秒输入给出的 SOZ score，$E[f(x_{\mathrm{background}})]$ 是 1000 个 training background examples 上的参考输出，$\phi_k$ 是第 $k$ 个输入位置对当前预测的贡献。$\phi_k > 0$ 表示这个位置把模型输出往 SOZ 方向推；$\phi_k < 0$ 表示这个位置把模型输出往 non-SOZ 方向推。
 
-具体到 Figure 1E 和 Figure 4，SHAP 做了几件事：
+`GradientExplainer` 的意义是：CNN 是可微模型，可以用梯度信息近似估计这些输入位置对输出的贡献，而不是把 4 通道乘以所有时间点的组合逐个枚举遮挡。论文没有公开更细的实现参数，比如 background examples 如何抽样、解释的是 logit 还是 probability、是否对时间点做额外平滑，所以博客不能把这些细节写死。
 
-| 步骤 | 做法 | 读图含义 |
-|---:|---|---|
-| 1 | 取训练后表现最好的 fold 的 CNN 权重 | 解释的是最佳 fold 的已训练模型 |
-| 2 | 对 4-contact、30 秒输入计算 SHAP value | 每个通道/时间位置得到一个正负贡献值 |
-| 3 | 把正贡献和负贡献做成 input-length masks | mask 和原始波形同长度，可以叠到波形上 |
-| 4 | 用红色显示正贡献、蓝色显示负贡献 | 红色推向 SOZ，蓝色推向 non-SOZ |
-| 5 | 对 raw SHAP value output 做 histogram equalization 用于显示 | 让强弱贡献在图上更容易看出来 |
+Figure 4 里的红/蓝 mask 就来自这组 SHAP values：红色是 positive SOZ contribution，蓝色是 negative SOZ contribution。raw positive 和 raw negative SHAP values 会分别经过 histogram equalization 再显示，所以颜色深浅主要用于看同一张图里的相对贡献强弱，不应该直接当作概率大小。
 
 因此，图题里的 `SHAP: +67.9% / -32.1%` 不应该读成模型概率，也不是准确率。它是这个示例中正向/负向 SHAP 贡献的方向性总结：更多红色说明该输入里有较多片段把模型推向 SOZ；蓝色则表示有些片段把模型推向 non-SOZ。
 
@@ -235,7 +240,7 @@ $\phi_k$ 表示第 $k$ 个输入位置对预测的贡献。对这篇文章的输
 
 **图 4 怎么读。** A 是 true positive：模型预测 SOZ，临床标签也是 SOZ。红色 SHAP 集中在 spike、HFO-like activity 和 large deflection 附近。B 是 false positive：模型预测 SOZ，但标签是 non-SOZ；这些片段也有类似 sharp transient，因此可能“像 SOZ”。C 是 true negative：信号更平滑、低幅度，蓝色贡献更多。D 是 false negative：SOZ 区域没有明显大幅异常，模型可能漏掉更微弱或更复杂的异常形态。
 
-这张图的意义在于，模型并不是完全不可解释。它确实关注了临床熟悉的 IED 形态，但也可能被 non-SOZ 区域的尖锐瞬变误导。需要注意的是，SHAP 是模型 attribution，不是因果证明。红色区域不是说“这个时间点就是 SOZ”，而是说“对这个 CNN 来说，这里的波形让 SOZ score 升高”。论文主文也没有说明使用的是哪一个具体 SHAP backend，所以这里只能解释到 SHAP value/mask 的层面，不能进一步声称用了某个特定实现。
+这张图的意义在于，模型并不是完全不可解释。它确实关注了临床熟悉的 IED 形态，但也可能被 non-SOZ 区域的尖锐瞬变误导。需要注意的是，SHAP 是模型 attribution，不是因果证明。红色区域不是说“这个时间点就是 SOZ”，而是说“对这个 CNN 来说，这里的波形让 SOZ score 升高”。同理，蓝色区域也不是临床上的“保护性区域”，只是该模型在该输入上的负向证据。
 
 ## 中位数归一化和直方图均衡化
 
