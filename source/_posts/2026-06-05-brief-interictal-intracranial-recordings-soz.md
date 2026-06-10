@@ -230,6 +230,10 @@ f(x) &= E[f(x_{\mathrm{background}})] + \sum_{k=1}^{M}\phi_k
 
 这里 $f(x)$ 是 CNN 对当前 4-contact、30 秒输入给出的 SOZ score，$E[f(x_{\mathrm{background}})]$ 是 1000 个 training background examples 上的参考输出，$\phi_k$ 是第 $k$ 个输入位置对当前预测的贡献。$\phi_k > 0$ 表示这个位置把模型输出往 SOZ 方向推；$\phi_k < 0$ 表示这个位置把模型输出往 non-SOZ 方向推。
 
+所以你的理解可以作为直觉，但要稍微改一下：SHAP 不是把某一个采样点从 30 秒信号里物理删除，因为删除会改变输入长度，CNN 就不能接收同样形状的输入。更准确地说，它问的是：如果这个位置不带有当前 test waveform 的取值，而是由 training background/reference 来代表，那么模型输出会怎样变化？如果当前位置的真实波形相对 background 让 SOZ score 变高，它就是正 SHAP；如果让 SOZ score 变低，它就是负 SHAP。
+
+传统 Shapley value 会考虑“某个特征加入不同特征组合前后，输出平均改变多少”，所以直觉上像反复遮挡、替换、加入特征后看分数升降。但本文用的是 `GradientExplainer`，它不是逐点暴力枚举所有删点组合，而是利用 CNN 的梯度，在 1000 个 training background examples 作为参考的条件下近似估计每个 contact/time 位置的边际贡献。
+
 `GradientExplainer` 的意义是：CNN 是可微模型，可以用梯度信息近似估计这些输入位置对输出的贡献，而不是把 4 通道乘以所有时间点的组合逐个枚举遮挡。论文没有公开更细的实现参数，比如 background examples 如何抽样、解释的是 logit 还是 probability、是否对时间点做额外平滑，所以博客不能把这些细节写死。
 
 Figure 4 里的红/蓝 mask 就来自这组 SHAP values：红色是 positive SOZ contribution，蓝色是 negative SOZ contribution。raw positive 和 raw negative SHAP values 会分别经过 histogram equalization 再显示，所以颜色深浅主要用于看同一张图里的相对贡献强弱，不应该直接当作概率大小。
