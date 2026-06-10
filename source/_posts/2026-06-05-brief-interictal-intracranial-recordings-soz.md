@@ -63,7 +63,7 @@ SOZ 标签来自临床 ictal data 的判读，但训练输入仍然是 intericta
 
 ![方法流程图](/images/brief-interictal-intracranial-recordings-soz/fig1-methodology.png)
 
-**图 1 怎么读。** A-B：从 5 分钟 resting SEEG 中取 30 秒窗口，并从同一解剖区域里抽取 4 个 contact 的组合。C：输入进入 multi-head、multi-scale 的一维 CNN；不同 kernel size 对应不同时间尺度，可以同时看短暂尖波和较长时间模式。D：模型输出 contact set 或 anatomical region 是否属于 SOZ。E：训练后用 SHAP 分析输入波形，找哪些时间点和波形形态对 SOZ/非 SOZ 判断贡献最大。
+**图 1 怎么读。** A-B：从 5 分钟 resting SEEG 中取 30 秒窗口，并从同一解剖区域里抽取 4 个 contact 的组合。C：输入进入 multi-head、multi-scale 的一维 CNN；不同 kernel size 对应不同时间尺度，可以同时看短暂尖波和较长时间模式。D：模型先输出 contact set 级预测，再通过 contact 或 region voting/aggregation 得到 anatomical region 是否属于 SOZ。E：训练后保存模型权重，并对表现最好的 fold 做 SHAP 分析，找哪些时间点和波形形态对 SOZ/非 SOZ 判断贡献最大。
 
 输入可以抽象成一个 4 通道、30 秒长的矩阵：
 
@@ -83,15 +83,26 @@ X_R \in \mathbb{R}^{4 \times T}.
 \tag{2}
 </script>
 
-这不是手工特征工程。作者没有先计算频带功率、连接矩阵或 spike rate，而是把预处理后的原始波形送进 CNN。
+这不是手工特征工程。作者没有先计算频带功率、连接矩阵或 spike rate，而是把预处理后的原始波形送进 CNN。整条路径可以拆成下面几个技术节点：
+
+| 节点 | 输入 | 做了什么 | 输出 |
+|---|---|---|---|
+| 30 秒窗口 | 5 分钟 resting interictal SEEG | 以 30 秒窗口、18 秒 stride 切片 | 约 16 个时间窗口 |
+| 4-contact set | 同一个 DK 脑区内的 contacts | 生成所有 4-contact permutations | 固定 4 通道输入 |
+| multi-head 1D CNN | 4 通道、30 秒原始波形 | 多个并行卷积分支用不同 kernel size 扫描时间轴 | 多尺度波形特征 |
+| 分类头 | 融合后的 CNN features | 输出 SOZ 概率 | 一个 contact set/window 的 SOZ score |
+| aggregation | 同一 contact set 的多个窗口、同一脑区的多个 contact sets | confidence-weighted average | contact-set 级或 region 级 SOZ 判断 |
+| SHAP | 已训练模型和输入波形 | 估计每个输入位置对 SOZ score 的正负贡献 | 红/蓝输入重要性 mask |
 
 ## multi-head CNN 到底在做什么
 
-图 1C 里的 multi-head CNN 可以理解成“几组并行的时间尺度滤波器”。输入不是单条 EEG，而是同一个解剖区域里 4 个 contact 的 30 秒波形；CNN 的卷积核沿时间轴滑动，同时看这 4 条通道之间的局部组合。所谓 multi-head，不是 Transformer 里的 self-attention head，而是多个并行卷积分支：每个 head 使用不同长度的一维卷积核，先从同一段输入里抽取不同时间尺度的模式，再把这些分支得到的特征合并起来做 SOZ / non-SOZ 分类。
+图 1C 里的 multi-head CNN 可以理解成“几组并行的时间尺度滤波器”。输入不是单条 EEG，而是同一个解剖区域里 4 个 contact 的 30 秒波形；CNN 的一维卷积核沿时间轴滑动，同时保留 4 条通道之间的局部组合信息。所谓 multi-head，不是 Transformer 里的 self-attention head，而是多个并行卷积分支：每个 head 使用不同长度的一维卷积核，先从同一段输入里抽取不同时间尺度的模式，再把这些分支得到的特征合并起来做 SOZ / non-SOZ 分类。
 
-图中标出的 initial kernel size 从 3、11 一直到 129。这个设计的直觉是：短 kernel 更容易捕捉很短的 sharp transient、spike edge 或高频样活动；长 kernel 能覆盖更宽的 deflection、节律片段或低幅度持续形态。也就是说，模型不是预先规定“只找 spike”或“只算某个频带功率”，而是让不同尺度的卷积分支同时扫描原始波形，再由训练过程决定哪些尺度、哪些形态组合对 SOZ 标签最有用。
+图中标出的 initial kernel size 从 3、11 一直到 129。这里的 kernel size 指卷积核覆盖的时间采样点数量，不是手工指定的频段。短 kernel 更容易捕捉很短的 sharp transient、spike edge 或高频样活动；长 kernel 能覆盖更宽的 deflection、节律片段或低幅度持续形态。换句话说，模型不是预先规定“只找 spike”或“只算某个频带功率”，而是让不同尺度的卷积分支同时扫描原始波形，再由训练过程决定哪些尺度、哪些形态组合对 SOZ 标签最有用。
 
-这也解释了为什么它被称为 multichannel、multiscale、one-dimensional CNN。multichannel 指输入有 4 个 contact；multiscale 指并行分支覆盖不同时间长度；one-dimensional 指卷积主要沿时间轴做，而不是把信号先变成二维时频图。它的局限也在这里：模型一次只看一个区域内部的 4-contact 组合，不显式学习区域之间的传播网络或图结构，所以更像是在判断“这个区域内部有没有 SOZ-like interictal signature”，而不是重建完整 seizure network。
+这也解释了为什么它被称为 multichannel、multiscale、one-dimensional CNN。multichannel 指输入有 4 个 contact；multiscale 指并行分支覆盖不同时间长度；one-dimensional 指卷积主要沿时间轴做，而不是把信号先变成二维时频图。论文主文没有展开每个 parallel block 的具体层数、通道数、dropout 或激活函数，所以这些不能从图 1 推断成确定超参数。能确定的是：输入是原始波形，特征提取由并行一维卷积分支完成，输出是区域 SOZ yes/no 的概率。
+
+它的局限也在这里：模型一次只看一个区域内部的 4-contact 组合，不显式学习区域之间的传播网络或图结构，所以更像是在判断“这个区域内部有没有 SOZ-like interictal signature”，而不是重建完整 seizure network。
 
 ## 为什么要抽 4 个 contact
 
@@ -129,7 +140,26 @@ X_R \in \mathbb{R}^{4 \times T}.
 
 数据划分也不是把同一个患者的数据混在训练和测试里。作者做 five-fold assessment：每个 fold 约 65% 患者用于 training，15% 用于 validation，20% 作为 held-out test；同一患者不会同时出现在 train、validation、test 中。作者还强调同一 contact 的所有时间窗口只进入一个 split，以减少同源窗口泄漏。
 
+训练和测试的单位可以再拆细一点：
+
+| 阶段 | 具体做法 | 为什么重要 |
+|---|---|---|
+| 样本生成 | 每个 DK 脑区内的 4-contact set 乘以 16 个 30 秒窗口 | 产生超过 100 万个 processed windows |
+| 标签继承 | 同一 DK 脑区内的所有 4-contact/window 样本继承区域 SOZ 标签 | 输入是 interictal，标签来自 ictal onset 判读 |
+| 类别平衡 | loss 使用 SOZ/non-SOZ 权重 | 避免 non-SOZ 多数类压倒 SOZ 少数类 |
+| 优化 | Adam optimizer with weight decay | 更新 CNN 卷积核和分类层参数 |
+| 早停/选择 | 训练 3 个 epoch，取 validation 表现最好的 epoch | 防止只报告训练集效果 |
+| 对照 | 做 random SOZ label permutation control | 检查模型是否真的学到标签相关信息 |
+
 逻辑回归的直觉可以用来理解最后一步“输出一个概率”，但不能把这篇方法叫逻辑回归。逻辑回归通常是先手工得到一个特征向量，再学一个线性分类边界；这篇文章是把预处理后的原始波形直接送进 multichannel、multiscale 1D CNN，让卷积层自己学习 spike、sharp transient、large deflection 或低幅度形态等有用模式。
+
+## 推理和 aggregation 怎么做
+
+训练时每个 30 秒窗口、每个 4-contact set 都能得到一个 SOZ 概率，但临床上真正关心的是 contact set 或解剖区域。因此作者没有只看单个窗口，而是做两级汇总。
+
+第一，contact-set 级结果：对同一组 4 contacts 在整个 5 分钟内的多个 30 秒窗口预测做 confidence-weighted average，得到这一组 contact set 的 SOZ 判断。第二，region 级结果：对同一 DK 脑区内所有 4-contact sets 的预测再做 confidence-weighted average，得到这个解剖脑区是否 SOZ 的判断。
+
+这里的 confidence-weighted average 可以理解成“更有把握的预测权重更高”。但论文主文没有给出 confidence 的精确定义或公式，所以不能把它写成某个固定数学表达。重要的是读懂层级：窗口预测不是最终终点，最终结果来自 5 分钟内的时间汇总和同一脑区内的 contact-set 汇总。
 
 ## 损失函数和评价指标
 
@@ -176,6 +206,8 @@ $J=0$ 接近随机，$J=1$ 表示敏感性和特异性都达到 1。
 
 ## SHAP：模型到底看到了什么波形
 
+SHAP 的作用不是再训练一个新分类器，而是在模型已经训练好以后解释它为什么给出某个预测。本文的流程是：先保存训练好的模型权重，再选择表现最好的 fold，用 SHAP 去 interrogate 这个 fold 的模型。也就是说，SHAP 解释的是“这个已训练 CNN 在这些输入波形上依赖了什么”，不是独立的临床标注。
+
 SHAP 的基本思想是把模型输出拆成各输入特征的贡献：
 
 <script type="math/tex; mode=display">
@@ -185,21 +217,37 @@ f(x) = \phi_0 + \sum_{k=1}^{M}\phi_k.
 \tag{5}
 </script>
 
-$\phi_k$ 表示第 $k$ 个输入位置对预测的贡献。红色代表更支持 SOZ 预测，蓝色代表更支持 non-SOZ 预测。对 SEEG 波形来说，SHAP 可以告诉我们：模型是因为 spike、sharp transient、large deflection 还是某些低幅度形态而做出判断。
+$\phi_k$ 表示第 $k$ 个输入位置对预测的贡献。对这篇文章的输入来说，一个“输入位置”可以理解成某个 contact 通道、某个时间点附近的波形片段。正的 SHAP 值表示这个位置把模型输出往 SOZ 方向推；负的 SHAP 值表示这个位置把模型输出往 non-SOZ 方向推。图上的红色就是 positive SOZ contribution，蓝色就是 negative SOZ contribution。
+
+具体到 Figure 1E 和 Figure 4，SHAP 做了几件事：
+
+| 步骤 | 做法 | 读图含义 |
+|---:|---|---|
+| 1 | 取训练后表现最好的 fold 的 CNN 权重 | 解释的是最佳 fold 的已训练模型 |
+| 2 | 对 4-contact、30 秒输入计算 SHAP value | 每个通道/时间位置得到一个正负贡献值 |
+| 3 | 把正贡献和负贡献做成 input-length masks | mask 和原始波形同长度，可以叠到波形上 |
+| 4 | 用红色显示正贡献、蓝色显示负贡献 | 红色推向 SOZ，蓝色推向 non-SOZ |
+| 5 | 对 raw SHAP value output 做 histogram equalization 用于显示 | 让强弱贡献在图上更容易看出来 |
+
+因此，图题里的 `SHAP: +67.9% / -32.1%` 不应该读成模型概率，也不是准确率。它是这个示例中正向/负向 SHAP 贡献的方向性总结：更多红色说明该输入里有较多片段把模型推向 SOZ；蓝色则表示有些片段把模型推向 non-SOZ。
 
 ![SHAP 混淆矩阵示例](/images/brief-interictal-intracranial-recordings-soz/fig4-shap-confusion-examples.png)
 
 **图 4 怎么读。** A 是 true positive：模型预测 SOZ，临床标签也是 SOZ。红色 SHAP 集中在 spike、HFO-like activity 和 large deflection 附近。B 是 false positive：模型预测 SOZ，但标签是 non-SOZ；这些片段也有类似 sharp transient，因此可能“像 SOZ”。C 是 true negative：信号更平滑、低幅度，蓝色贡献更多。D 是 false negative：SOZ 区域没有明显大幅异常，模型可能漏掉更微弱或更复杂的异常形态。
 
-这张图的意义在于，模型并不是完全不可解释。它确实关注了临床熟悉的 IED 形态，但也可能被 non-SOZ 区域的尖锐瞬变误导。
+这张图的意义在于，模型并不是完全不可解释。它确实关注了临床熟悉的 IED 形态，但也可能被 non-SOZ 区域的尖锐瞬变误导。需要注意的是，SHAP 是模型 attribution，不是因果证明。红色区域不是说“这个时间点就是 SOZ”，而是说“对这个 CNN 来说，这里的波形让 SOZ score 升高”。论文主文也没有说明使用的是哪一个具体 SHAP backend，所以这里只能解释到 SHAP value/mask 的层面，不能进一步声称用了某个特定实现。
 
 ## 中位数归一化和直方图均衡化
 
 作者还比较了 median/IQR normalization 和 histogram equalization 两种输入归一化策略。前者更保留原始幅度形态，所以大 spike 和大 deflection 更突出；后者会弱化幅度差异，让低幅度形态也有机会被模型关注。
 
+这一步不是只把同一张图换一种颜色显示，而是重新训练并评价 histogram-equalized input data 的模型，然后再做 SHAP 对比。论文这样做是为了回答一个关键问题：模型是不是只会盯着大幅 spike？如果 median-normalized 模型的 SHAP 总是集中在大幅 spike 和 large deflection 上，那可能只是幅度主导；histogram equalization 则能测试低幅度波形在被凸显后是否也能支持 SOZ 分类。
+
 ![SHAP 归一化策略对比](/images/brief-interictal-intracranial-recordings-soz/fig5-shap-normalization.png)
 
 **图 5 怎么读。** A 是 median normalization 表现更好的例子。大幅异常波形对模型判断贡献明显，histogram equalization 反而可能过度强调低幅度 deflection，导致错误倾向。B 是 histogram equalization 表现更好的例子。这里 median normalization 可能忽略了一些低幅度但有意义的 epileptiform morphology，而 histogram equalization 把这些信息凸显出来。
+
+作者专门挑选了两种归一化模型输出差异最大的样本来展示。Figure 5A 是 median normalization 正确、histogram equalization 错误的 true negative：histogram equalization 可能过度放大低幅度 deflection，让模型误判为 SOZ。Figure 5B 则相反：histogram equalization 捕捉到一些 median normalization 没有凸显的低幅度 epileptiform morphology，因此把它们赋予正向 SOZ SHAP。
 
 这个结果很有启发：SOZ 相关信息不一定都是“肉眼很大的 spike”。一些低幅度、形态 subtle 的波形也可能有价值。后续如果做自动 IED 或 SOZ 模型，不能只把大幅尖波当作唯一目标。
 
@@ -221,9 +269,11 @@ $\phi_k$ 表示第 $k$ 个输入位置对预测的贡献。红色代表更支持
 
 第四，5 分钟可能不足以覆盖所有 interictal variability。对于 spike 稀少、睡眠状态依赖明显或发作网络复杂的患者，更长时间或不同状态的数据可能必要。
 
+第五，论文只评估了一个 model architecture，主文也没有给出每个 CNN block 的完整层数、隐藏通道数等实现细节。因此读者可以清楚理解模型路线和关键节点，但如果要完全复现实验，还需要代码或补充实现信息。
+
 ## 一句话总结
 
-这篇文章可以理解为：用 5 分钟 resting interictal SEEG，按解剖区域抽 4-contact、30 秒窗口，训练多尺度 1D CNN 判断区域是否属于 SOZ，再用 SHAP 解释模型关注的 IED 和低幅度波形。它在 benchmark 里的位置很清楚：代表“不依赖 ictal seizure 捕获、直接从 interictal 原始波形学习 SOZ signature”的路线。
+这篇文章可以理解为：用 5 分钟 resting interictal SEEG，按 DK 解剖区域定位 contacts，生成区域内部 4-contact、30 秒窗口样本，训练多通道、多尺度 1D CNN 判断区域是否属于 SOZ，再通过 confidence-weighted aggregation 得到 contact-set/region 级结果，并用 SHAP 解释模型关注的 IED、大幅 deflection 和低幅度形态。它在 benchmark 里的位置很清楚：代表“不依赖 ictal seizure 捕获、直接从 interictal 原始波形学习 SOZ signature”的路线。
 
 ## 参考文献
 
