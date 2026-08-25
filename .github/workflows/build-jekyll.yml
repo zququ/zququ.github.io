@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy encrypted private portal
 
 on:
   push:
@@ -15,21 +15,21 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build site
-        run: npm run build
+      - name: Verify isolated deployment allowlist
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected=$'.nojekyll\n404.html\nCNAME\nindex.html\npayload.bin\nrobots.txt'
+          actual="$(find private_portal/dist -maxdepth 1 -type f -printf '%f\n' | sort)"
+          test "$actual" = "$expected"
+          test "$(cat private_portal/dist/CNAME)" = "life.zququ.fun"
+          grep -Fxq 'Disallow: /' private_portal/dist/robots.txt
+          ! grep -aEiq 'ZLM|JOB[0-9]+|3S_output|patient id|subject id|medical record' private_portal/dist/*
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./public
+          publish_dir: ./private_portal/dist
           force_orphan: true
