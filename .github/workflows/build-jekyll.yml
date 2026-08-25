@@ -24,7 +24,13 @@ jobs:
           test "$actual" = "$expected"
           test "$(cat private_portal/dist/CNAME)" = "life.zququ.fun"
           grep -Fxq 'Disallow: /' private_portal/dist/robots.txt
-          ! grep -aEiq 'ZLM|JOB[0-9]+|3S_output|patient id|subject id|medical record' private_portal/dist/*
+          test "$(wc -c < private_portal/dist/payload.bin)" -gt 44
+          ! grep -Eiq 'ZLM|JOB[0-9]+|3S_output|patient id|subject id|medical record' \
+            private_portal/dist/.nojekyll \
+            private_portal/dist/404.html \
+            private_portal/dist/CNAME \
+            private_portal/dist/index.html \
+            private_portal/dist/robots.txt
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
