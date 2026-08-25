@@ -53,7 +53,7 @@
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      if (!window.crypto?.subtle) {
+      if (!window.crypto?.subtle || !window.DecompressionStream) {
         fail("当前浏览器不支持安全解锁，请更新微信或系统浏览器。");
         return;
       }
@@ -61,7 +61,7 @@
       submit.textContent = "正在解锁…";
       status.textContent = "";
       try {
-        const response = await fetch(`payload.bin?v=1`, { cache: "no-store" });
+        const response = await fetch(`payload.bin?v=2`, { cache: "no-store" });
         if (!response.ok) throw new Error("payload unavailable");
         const bytes = new Uint8Array(await response.arrayBuffer());
         const salt = bytes.slice(0, 16);
@@ -81,7 +81,8 @@
         combined.set(ciphertext, 0);
         combined.set(tag, ciphertext.length);
         const plaintext = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, combined);
-        const html = new TextDecoder().decode(plaintext);
+        const decompressedStream = new Blob([plaintext]).stream().pipeThrough(new DecompressionStream("gzip"));
+        const html = new TextDecoder().decode(await new Response(decompressedStream).arrayBuffer());
         passwordInput.value = "";
         document.open();
         document.write(html);
