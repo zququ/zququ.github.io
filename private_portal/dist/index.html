@@ -61,7 +61,7 @@
       submit.textContent = "正在解锁…";
       status.textContent = "";
       try {
-        const response = await fetch(`payload.bin?v=3`, { cache: "no-store" });
+        const response = await fetch(`payload.bin?v=4`, { cache: "no-store" });
         if (!response.ok) throw new Error("payload unavailable");
         const bytes = new Uint8Array(await response.arrayBuffer());
         const salt = bytes.slice(0, 16);
