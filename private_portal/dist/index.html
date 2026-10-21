@@ -7,15 +7,17 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; frame-src 'self'; img-src data: blob:; font-src data:; worker-src blob:; base-uri 'none'; form-action 'self'">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#101214">
-  <title>Life · Private</title>
+  <title>曲泽慧 · life</title>
   <style>
     :root { color-scheme: dark; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     * { box-sizing: border-box; }
     html, body { min-height: 100%; margin: 0; background: #101214; color: #f3f3ef; }
     body { display: grid; place-items: center; padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom)); }
-    main { width: min(100%, 360px); }
+    main { width: min(100%, 420px); }
     h1 { margin: 0 0 8px; font-size: 23px; font-weight: 650; letter-spacing: -0.02em; }
+    .handle { margin-left: 8px; color: #a9adb2; font-size: 14px; font-weight: 400; letter-spacing: normal; }
     p { margin: 0 0 24px; color: #a9adb2; font-size: 14px; line-height: 1.55; }
+    .bio { font-size: 15px; line-height: 1.8; }
     form { display: grid; gap: 12px; }
     label { color: #d8d9d5; font-size: 14px; }
     input { width: 100%; height: 46px; border: 1px solid #45494f; border-radius: 8px; background: #191c1f; color: #fff; padding: 0 13px; font: inherit; outline: none; }
@@ -30,15 +32,15 @@
 </head>
 <body>
   <main>
-    <h1>Private visualization</h1>
-    <p>请输入访问密码。片段切换无需再次输入；刷新或关闭后重新锁定。</p>
+    <h1>曲泽慧<span class="handle">@Zququ</span></h1>
+    <p class="bio">我在深圳理工大学生命健康学院做神经生物学研究，主要用 SEEG 和 MEA 研究癫痫相关的神经网络活动。此前做过兽医病毒学、免疫学和结构生物学研究，平时也写代码。</p>
     <form id="unlock-form">
       <label for="password">访问密码</label>
       <input id="password" name="password" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required autofocus>
       <button id="submit" type="submit">解锁</button>
       <p id="status" role="alert" aria-live="polite"></p>
     </form>
-    <p class="note">内容以加密文件保存，不使用本地持久登录。</p>
+    <p class="note">刷新或关闭后需重新解锁。</p>
   </main>
   <script>
     // Same-tab in-memory session. No password/key/plaintext in browser storage.
